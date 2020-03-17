@@ -1,22 +1,39 @@
-.staff{
+.staff {
   padding-top: 18px;
   margin-bottom: 30px;
-  .container{
+  @media screen and (min-width: 961px){
+    background-color: white;
+  }
+
+  .container {
     padding: 0;
   }
-  &__block{
+
+  &__block {
     flex-grow: 1;
     width: 100%;
+    @media screen and (min-width: 961px){
+      margin-top: 48px;
+      box-shadow: 0px 10px 30px rgba(12, 28, 56, 0.08);
+    }
   }
-  &__head{
+
+  &__head {
     padding: 0 15px;
-    .title{
+    @media screen and (min-width: 961px){
+      background-color: $bg-gray;
+      padding: 48px 15px 0 15px;
+    }
+
+    .title {
       margin-bottom: 18px;
     }
   }
-  &__tabs{
+
+  &__tabs {
     display: flex;
-    &_item{
+
+    &_item {
       font-weight: bold;
       padding: 10px 15px;
       margin-right: 16px;
@@ -25,38 +42,57 @@
       transition: color .5s, background .5s;
       cursor: pointer;
       font-size: 14px;
-      &:hover{
+      text-align: center;
+      @media screen and (min-width: 961px){
+        font-size: 16px;
+        padding: 10px;
+        flex-basis: calc(100% / 4);
+      }
+
+      &:hover {
         background: $main-color;
         color: white;
       }
-      &:last-child{
+
+      &:last-child {
         margin-right: 0;
       }
-      &_active{
+
+
+      &_active {
         background: $main-color;
         color: white;
       }
     }
   }
-  &__content{
+
+  &__content {
     background: white;
     padding: 0 15px;
     padding-bottom: 13px;
+    &-top{
+      @media screen and (min-width: 961px){
+        display: flex;
+        padding-top: 30px;
+      }
+      @media screen and (min-width: 1180px){
+        margin-bottom: 48px;
+      }
+    }
   }
+
   &__search-form-wrapper {
     padding: 20px 0px;
-    @media screen and (min-width: 960px) {
-      display: none;
+    @media screen and (min-width: 961px) {
+      display: block;
+      flex-basis: 50%;
+      padding: 0;
+      margin-right: 25px;
     }
-    @media screen and (min-width: 1145px){
+    @media screen and (min-width: 1145px) {
       display: block;
       padding: 0;
       flex-grow: 1;
-      margin: 0  30px ;
-    }
-    @media screen and (min-width: 1400px){
-      flex-grow: unset;
-      margin: 0;
     }
   }
 
@@ -67,30 +103,16 @@
     position: relative;
     background: #FCFCFC;
     border: 1px solid #D9DEE7;
-    @media screen and (min-width: 1100px){
-      display: block;
-      z-index: 2;
-      width: 100%;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      color: rgba(255, 255, 255, 0.5);
-      background: linear-gradient(0deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05));
-    }
-
-    @media screen and (min-width: 1400px) {
-      margin-right: 77px;
-      width: 310px;
-    }
-
 
     &_focus {
       background-color: white;
 
-      .header__search-form-field {
+      .stuff__search-form-field {
         background-color: white;
         color: $main-color;
       }
 
-      .header__search-form-button {
+      .stuff__search-form-button {
         filter: sepia(10) saturate(52.5) hue-rotate(179deg) saturate(76.5) contrast(64.5) grayscale(0.35) hue-rotate(335deg);
       }
     }
@@ -98,7 +120,7 @@
     &-button {
       position: absolute;
       top: 14px;
-      left: 12px;
+      right: 12px;
       width: 12px;
       height: 12px;
       padding: 0;
@@ -107,19 +129,17 @@
       background: none;
       cursor: pointer;
       z-index: 3;
-      @media screen and (max-width: 960px) {
-        filter: invert(1);
-      }
+      filter: invert(1);
     }
 
     &-field {
       outline: none;
 
-      color: rgba(255, 255, 255, 0.5);
+      color: $main-color;
       font-size: 14px;
       position: absolute;
       top: 12px;
-      left: 38px;
+      left: 12px;
       background: none;
       padding: 0;
       border: none;
@@ -130,36 +150,58 @@
       }
 
       &::placeholder {
-        color: rgba(255, 255, 255, 0.5);
-        @media screen and (max-width: 960px) {
           color: gray;
-        }
       }
     }
   }
-  &__filters{
+
+  &__filters  {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     margin-bottom: 30px;
-    &_item{
+    @media screen and (min-width: 961px) {
+      flex-basis: 50%;
+      margin-bottom: 0;
+      align-items: center;
+    }
+
+    &_item {
       font-size: 14px;
       border-bottom: 1px dashed $main-color;
       margin-right: 20px;
       color: $main-color;
       line-height: 120%;
       padding-bottom: 6px;
+      margin-bottom: 12px;
+      @media screen and (min-width: 961px) {
+        margin-right: 20px;
+        line-height: unset;
+        padding-bottom: 0;
+        font-size: 16px;
+        &:last-child{
+          margin-right: 0;
+        }
+      }
+      @media screen and (min-width: 1180px){
+        margin-right: 0;
+        margin-bottom: 0;
+      }
     }
   }
-  &__ordinary{
+
+  &__ordinary {
     margin-bottom: 30px;
-    &:last-child{
+
+    &:last-child {
       margin-bottom: 0;
     }
-    .specialists__slider{
+
+    .specialists__slider {
       margin-bottom: 0;
     }
-    .title{
+
+    .title {
       margin-bottom: 18px;
     }
   }

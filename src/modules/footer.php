@@ -8,7 +8,7 @@
                                                                 alt="Иконка услуг"></div>
                         Услуги
                     </a>
-                    <a href="#" class="tap-menu__button">
+                    <a href="doctors.php" class="tap-menu__button">
                         <div class="tap-menu__button_logo"><img src="./assets/img/tap-menu/doctor-icon.svg"
                                                                 alt="Иконка врача"></div>
                         Врачи

@@ -38,7 +38,7 @@
             <div class="header__bottom">
                 <div class="header__primary-menu"> <!--            Нижняя часть-->
                     <ul>
-                        <li><a href="#">Врачи</a></li>
+                        <li><a href="doctors.php">Врачи</a></li>
                         <li class="dropdown-menu__open-button"><a href="#">Услуги</a></li>
                         <li><a href="#">Телемедицина</a></li>
                         <li><a href="#">Check-up программы</a></li>
@@ -66,7 +66,7 @@
                     </ul>
                     <div class="header__primary-menu-title">Специалисты</div>
                     <ul>
-                        <li><a href="#">Врачи</a></li>
+                        <li><a href="doctors.php">Врачи</a></li>
                         <li><a href="#">Кураторы направлений</a></li>
                     </ul>
                     <div class="header__primary-menu-title">Информация</div>
