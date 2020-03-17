@@ -588,6 +588,30 @@ $(document).ready(function () {
             }, 300)
         });
     }
+    if (isSet($('.staff'))) {
+        const staffTabs = $('.staff__tabs_item');
+        staffTabs.on('click', function (event) {
+            const index = staffTabs.index(event.currentTarget);
+            const staffContentTabs = $('.staff__content_tab');
+            staffTabs.removeClass('staff__tabs_item_active');
+            $(event.currentTarget).addClass('staff__tabs_item_active');
+            staffContentTabs.removeClass('staff__content_tab_active');
+            $(staffContentTabs[index]).addClass('staff__content_tab_active');
+        });
+
+        const staffFilters = $('.staff__filters_item');
+        staffFilters.on('click', function (event) {
+            if($('.staff__filters_item').is(event.target)) {
+                if (!$(event.target).hasClass('staff__filters_item_active')) {
+                    $(event.target).addClass('staff__filters_item_active').append('<span class="staff__filters_item_cancel">&#10006;</span>');
+                }
+            }
+            else if ($('.staff__filters_item_cancel').is(event.target)){
+                $(event.target).parent().removeClass('staff__filters_item_active');
+                $(event.target).detach();
+            }
+        });
+    }
 
 
     //Вкладки на выпадающем меню хэдера

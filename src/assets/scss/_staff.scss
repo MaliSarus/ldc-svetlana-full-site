@@ -50,7 +50,7 @@
       }
 
       &:hover {
-        background: $main-color;
+        background: $main-color-light;
         color: white;
       }
 
@@ -77,6 +77,12 @@
       }
       @media screen and (min-width: 1180px){
         margin-bottom: 48px;
+      }
+    }
+    &_tab{
+      display: none;
+      &_active{
+        display: block;
       }
     }
   }
@@ -145,9 +151,6 @@
       border: none;
       z-index: 3;
       width: calc(100% - 50px);
-      @media screen and (min-width: 1400px) {
-        width: calc(310px - 50px);
-      }
 
       &::placeholder {
           color: gray;
@@ -174,6 +177,7 @@
       line-height: 120%;
       padding-bottom: 6px;
       margin-bottom: 12px;
+      cursor: pointer;
       @media screen and (min-width: 961px) {
         margin-right: 20px;
         line-height: unset;
@@ -186,6 +190,15 @@
       @media screen and (min-width: 1180px){
         margin-right: 0;
         margin-bottom: 0;
+      }
+      &_active{
+        border-bottom: none;
+        color:white;
+        background-color: $main-color;
+        padding: 5px;
+      }
+      &_cancel{
+        margin-left: 5px;
       }
     }
   }

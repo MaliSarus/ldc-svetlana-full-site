@@ -6,7 +6,7 @@
                     <div class="content">
                         <div class="title">Врачи ЛДЦ</div>
                         <div class="staff__tabs">
-                            <div class="staff__tabs_item">Врачи</div>
+                            <div class="staff__tabs_item staff__tabs_item_active">Врачи</div>
                             <div class="staff__tabs_item">Кураторы направлений</div>
                         </div>
                     </div>
@@ -30,17 +30,27 @@
                             </div>
                         </div>
                         <div class="staff__content-bottom">
-                            <div class="staff__ordinary">
-                                <div class="title">Неврологи</div>
-                                <?php
-                                require "specialists__slider.php"
-                                ?>
+                            <div class="staff__content_tab staff__content_tab_active">
+                                <div class="staff__ordinary">
+                                    <div class="title">Неврологи</div>
+                                    <?php
+                                    require "specialists__slider.php"
+                                    ?>
+                                </div>
+                                <div class="staff__ordinary">
+                                    <div class="title">Онкологи</div>
+                                    <?php
+                                    require "specialists__slider.php"
+                                    ?>
+                                </div>
                             </div>
-                            <div class="staff__ordinary">
-                                <div class="title">Онкологи</div>
-                                <?php
-                                require "specialists__slider.php"
-                                ?>
+                            <div class="staff__content_tab">
+                                <div class="staff__ordinary">
+                                    <div class="title">Неврологи</div>
+                                    <?php
+                                    require "specialists__slider.php"
+                                    ?>
+                                </div>
                             </div>
                         </div>
                     </div>
