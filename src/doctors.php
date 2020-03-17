@@ -5,7 +5,7 @@ require "./modules/headlings.php";
 <link rel="stylesheet" href="./assets/css/slick.css"/>
 <link rel="stylesheet" href="./assets/css/slick-theme.css"/>
 <link rel="stylesheet" href="./assets/css/doctors/style.css">
-<script src="./assets/js/jquery-3.4.1.js"></script>
+<script src="./assets/js/jquery-3.4.1.min.js"></script>
 </head>
 <body>
 
