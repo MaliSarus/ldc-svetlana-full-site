@@ -3,11 +3,16 @@
         <div class="row row_center">
             <div class="header__top">
                 <div class="header__logo"> <!--            Верхняя часть-->
-                    <img src="./assets/img/header/logo.svg" alt="Логотип" class="logo">
+                    <a href="index.php">
+                        <img src="./assets/img/header/logo.svg" alt="Логотип" class="logo">
+                    </a>
                 </div>
                 <div class="header__logo-mobile">
-                    <img src="./assets/img/header/mobile-logo.svg" alt="Логотип" class="logo">
+                    <a href="index.php">
+                        <img src="./assets/img/header/mobile-logo.svg" alt="Логотип" class="logo">
+                    </a>
                 </div>
+
                 <div class="header__main-menu">
                     <ul>
                         <li><a href="#">О центре</a></li>
@@ -46,7 +51,8 @@
                         <button type="submit" class="header__search-form-button">
                             <img src="./assets/img/header/search.svg" alt="Поиск">
                         </button>
-                        <input name="search" type="search" class="header__search-form-field" placeholder="Поиск по сайту">
+                        <input name="search" type="search" class="header__search-form-field"
+                               placeholder="Поиск по сайту">
                     </form>
                 </div>
                 <div class="header__primary-menu_mobile">
@@ -75,9 +81,12 @@
                         <p class="header__license-text_item"><a href="#">Лицензия № ЛО-78-01-009435</a></p>
                     </div>
                     <div class="header__icons">
-                        <a href="#" class="header__icons-item"><img src="./assets/img/header/vk-circle-icon.svg" alt="иконка вк"></a>
-                        <a href="#" class="header__icons-item"><img src="./assets/img/header/fb-circle-icon.svg" alt="иконка фб"></a>
-                        <a href="#" class="header__icons-item"><img src="./assets/img/header/insta-circle-icon.svg" alt="иконка инсты">
+                        <a href="#" class="header__icons-item"><img src="./assets/img/header/vk-circle-icon.svg"
+                                                                    alt="иконка вк"></a>
+                        <a href="#" class="header__icons-item"><img src="./assets/img/header/fb-circle-icon.svg"
+                                                                    alt="иконка фб"></a>
+                        <a href="#" class="header__icons-item"><img src="./assets/img/header/insta-circle-icon.svg"
+                                                                    alt="иконка инсты">
                         </a>
                     </div>
                 </div>

@@ -63,6 +63,7 @@
         width: 100%;
         max-width: 350px;
         float: right;
+        background-color: unset;
       }
     }
 
@@ -70,7 +71,8 @@
       position: relative;
       cursor: pointer;
       padding: 10px 15px;
-      border-bottom: 1px solid rgba($main-color, .3);
+      border-bottom: 0.5px solid rgba(#2A4472, .2);
+      background: transparent;
 
       &:hover {
         background: $main-color-light;
@@ -90,6 +92,7 @@
       @media screen and (min-width: 961px) {
         padding: 11px;
         padding-right: 0;
+        border-bottom: none;
 
         &:hover {
           background-color: white;

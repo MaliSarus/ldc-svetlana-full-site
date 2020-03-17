@@ -87,7 +87,6 @@ const windowMobileSizeChange = () => {
 const DropdownOpenButtonHandler = () => {
     $('body').on('click', function (event) {
         if ($(window).width() >= 961) {
-            console.log(event.target);
             if ($('.dropdown-menu__open-button').is(event.target) || $('.dropdown-menu__open-button').has(event.target).length !== 0) {
                 if (!dropdownMenuContainer.hasClass('dropdown-menu__container_active')) {
                     dropdownMenuContainer.fadeIn(400).addClass('dropdown-menu__container_active');
@@ -147,7 +146,6 @@ const onReadyMobileMediaChange = () => {
     $('.feedback__head > .title').html('Отзывы');
     $('.dropdown-menu__open-button').append('<div class="with-arrow"></div>');
     dropdownTabs.append('<div class="with-arrow"></div>');
-
     $('.dropdown-menu__open-button').off('click');
 };
 
@@ -232,10 +230,6 @@ $(window).on('resize', function () {
 // Обработка событий при полной загрузки страницы
 window.onload = function () {
 
-
-    $('.about__slider').on('destroy', function () {
-        console.log('destroy');
-    });
     //Слайдер специалистов и кнопки слайдера специалистов
     const specSlick = $('.specialists__slider');
     specSlick.slick({
@@ -498,20 +492,20 @@ $(document).ready(function () {
             appointmentPhoneInput.siblings('label').css({
                 color: '#E84E2C'
             });
-            $('.appointment__form').unbind('submit')
+            $('.appointment__form').unbind('submit');
+        } else {
         }
     });
 
     appointmentPhoneInput.on('keyup', function (event) {
-        if (typeof(event.originalEvent) != 'undefined') {
+        if (typeof (event.originalEvent) != 'undefined') {
             appointmentPhoneInput.each(function (index) {
-               if(index == appointmentPhoneInput.index(event.target)){
-                   console.log(index);
-               }
-               else{
-                   $(this).val($(this).val() + event.originalEvent.key)
-               }
-            })
+                if (index == appointmentPhoneInput.index(event.target)) {
+                } else {
+                    // $(this).val($(this).val() + event.originalEvent.key);
+                    $(this).val($(event.currentTarget).val());
+                }
+            });
         }
 
     });
@@ -547,7 +541,10 @@ $(document).ready(function () {
                 showMaskOnFocus: true,
                 'onincomplete': function () {
                     appointmentPhoneInput.inputmask("remove")
-
+                },
+                "oncomplete": function () {
+                    appointmentPhoneInput.attr('style', '');
+                    appointmentPhoneInput.siblings('label').attr('style', '');
                 }
             });
         }, 300)
@@ -603,7 +600,6 @@ $(document).ready(function () {
     //Блоки с отзывами
     const feedbackContent = $('.feedback__item-content');
     $(document).on('click', '.feedback__item-content', function (event) {
-        console.log(event.target);
         if ($(this).hasClass('feedback__item-content_unhide')) {
             $(this).removeClass('feedback__item-content_unhide');
         } else {
@@ -710,6 +706,7 @@ $(document).ready(function () {
     //Обработка медиа запроса
     if (window.matchMedia('screen and (max-width: 960px)').matches) {
         onReadyMobileMediaChange();
+        mobileDropdownOpenButtonHandler();
         $('.units__features').append('<a class="btn btn_red_fill">Записаться на прием</a>');
         appendFlag = 0;
     } else {
