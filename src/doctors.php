@@ -37,9 +37,11 @@ require "./modules/headlings.php";
 <?php
 require "./modules/header.php";
 require "./modules/dropdown-menu.php";
+require "./modules/staff.php";
 require "./modules/footer.php";
 ?>
 
+<script src="./assets/js/slick-slider/slick.min.js"></script>
 <script src="./assets/js/script.js"></script>
 </body>
 </html>

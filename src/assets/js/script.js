@@ -15,46 +15,55 @@ let appendFlag = 0;
 let resizeFlag = 0;
 let prependFlag = 0;
 
+const isSlickLoaded = (typeof $.fn.slick !== 'undefined');
+
+function isSet(element) {
+    return element.length !== 0;
+}
+
+
 const aboutSliderInit = () => {
-    $('.about__slider').slick({
-        slidesToShow: 1,
-        dots: false,
-        arrows: false,
-        infinite: false,
-    })
+    if (isSet($('.about__slider'))) {
+        $('.about__slider').slick({
+            slidesToShow: 1,
+            dots: false,
+            arrows: false,
+            infinite: false,
+        })
+    }
 };
 const featuresSliderInit = () => {
-    $('.features__slider').slick({
-        slidesToScroll: 1,
-        dots: false,
-        arrows: false,
-        infinite: false,
-        variableWidth: true,
-        adaptiveHeight: true,
-        responsive: [
-            {
-                breakpoint: 577,
-                settings: {
-                    slidesToShow: 1,
-                },
-            },
-            // {
-            //     breakpoint: 1400,
-            //     settings: "unslick"
-            // }
-        ]
-    });
+    if (isSet($('.features__slider'))) {
+        $('.features__slider').slick({
+            slidesToScroll: 1,
+            dots: false,
+            arrows: false,
+            infinite: false,
+            variableWidth: true,
+            adaptiveHeight: true,
+            responsive: [
+                {
+                    breakpoint: 577,
+                    settings: {
+                        slidesToShow: 1,
+                    },
+                }
+            ]
+        });
+    }
 };
 const unitsMenuSliderInit = () => {
-    $('.units__menu > ul').slick({
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        dots: false,
-        arrows: false,
-        infinite: false,
-        variableWidth: true,
-        adaptiveHeight: true
-    });
+    if (isSet($('.units__menu > ul'))) {
+        $('.units__menu > ul').slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            dots: false,
+            arrows: false,
+            infinite: false,
+            variableWidth: true,
+            adaptiveHeight: true
+        });
+    }
 };
 const unitsMenuSliderChangeTab = () => {
     $('.units__menu > ul').on('afterChange', function (event, slick, currentSlide) {
@@ -204,24 +213,41 @@ $(window).on('resize', function () {
     }
 
     if ($(window).width() > 576) {
-        $('.features__slider').filter('.slick-initialized').slick("unslick");
+        if (isSet($('.features__slider'))) {
+            $('.features__slider').filter('.slick-initialized').slick("unslick");
+            $('.features__slider').children().removeAttr('tabindex');
+        }
     } else if (!$('.features__slider').hasClass('slick-initialized')) {
-        featuresSliderInit();
-        $('.features__slider').slick('setPosition');
+        if (isSet($('.features__slider'))) {
+            featuresSliderInit();
+            $('.features__slider').slick('setPosition');
+        }
     }
 
     if ($(window).width() > 1399) {
-        $('.about__slider').filter('.slick-initialized').slick("unslick");
+        if (isSet($('.about__slider'))) {
+            $('.about__slider').filter('.slick-initialized').slick("unslick");
+            $('.about__slider').children().removeAttr('tabindex');
+        }
     } else if (!$('.about__slider').hasClass('slick-initialized')) {
-        aboutSliderInit();
-        $('.about__slider').slick('setPosition');
+        if (isSet($('.about__slider'))) {
+            selectButtons.detach();
+            aboutSliderInit();
+            $('.about__slider').slick('setPosition');
+            selectButtons.appendTo('.about__slider');
+        }
     }
 
     if ($(window).width() > 1130) {
-        $('.units__menu > ul').filter('.slick-initialized').slick("unslick");
+        if (isSet($('.units__menu > ul'))) {
+            $('.units__menu > ul').filter('.slick-initialized').slick("unslick");
+            $('.units__menu > ul').children().removeAttr('tabindex');
+        }
     } else if (!$('.units__menu > ul').hasClass('slick-initialized')) {
-        unitsMenuSliderInit();
-        $('.units__menu > ul').slick('setPosition');
+        if (isSet($('.units__menu > ul'))) {
+            unitsMenuSliderInit();
+            $('.units__menu > ul').slick('setPosition');
+        }
     }
 
 });
@@ -231,120 +257,125 @@ $(window).on('resize', function () {
 window.onload = function () {
 
     //Слайдер специалистов и кнопки слайдера специалистов
-    const specSlick = $('.specialists__slider');
-    specSlick.slick({
-        infinite: true,
-        arrows: false,
-        dots: false,
-        variableWidth: true,
-        responsive: [
-            {
-                breakpoint: 576,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-                    infinite: true
+    if ($('.specialists__slider').length !== 0) {
+        const specSlick = $('.specialists__slider');
+        specSlick.slick({
+            infinite: true,
+            arrows: false,
+            dots: false,
+            variableWidth: true,
+            responsive: [
+                {
+                    breakpoint: 576,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
+                        infinite: true
+                    },
                 },
-            },
-            {
-                breakpoint: 768,
-                settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 1,
-                    infinite: true
+                {
+                    breakpoint: 768,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 1,
+                        infinite: true
+                    },
                 },
-            },
-            {
-                breakpoint: 960,
-                settings: {
-                    slidesToShow: 3,
-                    slidesToScroll: 1,
-                    infinite: true
+                {
+                    breakpoint: 960,
+                    settings: {
+                        slidesToShow: 3,
+                        slidesToScroll: 1,
+                        infinite: true
+                    },
                 },
-            },
-            {
-                breakpoint: 1400,
-                settings: {
-                    slidesToShow: 4,
-                    slidesToScroll: 1,
-                    infinite: true,
+                {
+                    breakpoint: 1400,
+                    settings: {
+                        slidesToShow: 4,
+                        slidesToScroll: 1,
+                        infinite: true,
+                    },
                 },
-            },
 
-        ]
-    });
-    $('.specialists__control-panel .arrows .arrows__arrow-left').on('click', function () {
-        specSlick.slick('slickPrev');
-    });
-    $('.specialists__control-panel .arrows .arrows__arrow-right').on('click', function () {
-        specSlick.slick('slickNext');
-    });
+            ]
+        });
+        $('.specialists__control-panel .arrows .arrows__arrow-left').on('click', function () {
+            specSlick.slick('slickPrev');
+        });
+        $('.specialists__control-panel .arrows .arrows__arrow-right').on('click', function () {
+            specSlick.slick('slickNext');
+        });
+    }
 
     //Сладер отзывов и кнопки сладера отзывов
-    const feedSlick = $('.feedback__slider');
-    feedSlick.slick({
-        slidesToShow: 2,
-        slidesToScroll: 1,
-        infinite: true,
-        arrows: false,
-        dots: false,
-        responsive: [
-            {
-                breakpoint: 769,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-                    infinite: false
+    if ($('.feedback__slider').length !== 0) {
+        const feedSlick = $('.feedback__slider');
+        feedSlick.slick({
+            slidesToShow: 2,
+            slidesToScroll: 1,
+            infinite: true,
+            arrows: false,
+            dots: false,
+            responsive: [
+                {
+                    breakpoint: 769,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
+                        infinite: false
+                    },
                 },
-            },
-            {
-                breakpoint: 961,
-                settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 1,
-                    infinite: false
-                },
-            }
-        ]
-    });
-    $('.feedback__control-panel .arrows .arrows__arrow-left').on('click', function () {
-        feedSlick.slick('slickPrev');
-    });
-    $('.feedback__control-panel .arrows .arrows__arrow-right').on('click', function () {
-        feedSlick.slick('slickNext');
-    });
-
+                {
+                    breakpoint: 961,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 1,
+                        infinite: false
+                    },
+                }
+            ]
+        });
+        $('.feedback__control-panel .arrows .arrows__arrow-left').on('click', function () {
+            feedSlick.slick('slickPrev');
+        });
+        $('.feedback__control-panel .arrows .arrows__arrow-right').on('click', function () {
+            feedSlick.slick('slickNext');
+        });
+    }
 
     //Основной слайдер (анимации и тд)
-    const aboutSliderCurrentSlide = $('.about__item').index($('.about__item_active'));
-    const sliderButtons = $('.select-buttons__button');
-    sliderButtons[aboutSliderCurrentSlide].classList.add('select-buttons__button_active');
-    let sliderFlag = 0;
-    sliderButtons.on('click', function (event) {
-        const index = sliderButtons.index(event.currentTarget);
-        if ($(window).width() >= 1400) {
-            if (sliderFlag == 0) {
-                sliderButtons.removeClass('select-buttons__button_active');
-                const prevItem = $('.about__item_active');
-                const sliderItems = $('.about__item');
-                const sliderItem = sliderItems[index];
+    if ($('.about__slider').length !== 0) {
+        const aboutSliderCurrentSlide = $('.about__item').index($('.about__item_active'));
+        const sliderButtons = $('.select-buttons__button');
+        sliderButtons[aboutSliderCurrentSlide].classList.add('select-buttons__button_active');
+        let sliderFlag = 0;
+        sliderButtons.on('click', function (event) {
+            const index = sliderButtons.index(event.currentTarget);
+            if ($(window).width() >= 1400) {
+                if (sliderFlag == 0) {
+                    sliderButtons.removeClass('select-buttons__button_active');
+                    const prevItem = $('.about__item_active');
+                    const sliderItems = $('.about__item');
+                    const sliderItem = sliderItems[index];
+                    sliderButtons.removeClass('select-buttons__button_active');
+                    event.currentTarget.classList.add('select-buttons__button_active');
+                    prevItem.addClass('about__item_deactivate');
+                    sliderFlag = 1;
+                    setTimeout(function () {
+                        prevItem.removeClass('about__item_deactivate');
+                        prevItem.removeClass('about__item_active');
+                        sliderItem.classList.add('about__item_active');
+                        sliderFlag = 0
+                    }, 900);
+                }
+            } else {
+                $('.about__slider').slick('slickGoTo', index, false);
                 sliderButtons.removeClass('select-buttons__button_active');
                 event.currentTarget.classList.add('select-buttons__button_active');
-                prevItem.addClass('about__item_deactivate');
-                sliderFlag = 1;
-                setTimeout(function () {
-                    prevItem.removeClass('about__item_deactivate');
-                    prevItem.removeClass('about__item_active');
-                    sliderItem.classList.add('about__item_active');
-                    sliderFlag = 0
-                }, 900);
             }
-        } else {
-            $('.about__slider').slick('slickGoTo', index, false);
-            sliderButtons.removeClass('select-buttons__button_active');
-            event.currentTarget.classList.add('select-buttons__button_active');
-        }
-    });
+        });
+    }
 
     //Изменение поля поиска
     const headerSearchField = $('.header__search-form-field');
@@ -366,206 +397,198 @@ window.onload = function () {
         $('.units__content-services')[index].classList.add('units__content-services_active');
     });
 
+
     //Действия со слайдерами в момент загрузки экрана маленького размера или большого размера
-    if (window.matchMedia('screen and (max-width: 1400px)').matches) {
-        selectButtons.detach();
-        aboutSliderInit();
-        featuresSliderInit();
-        unitsMenuSliderInit();
-        const specSliderWidth = $('.specialists__slider > .slick-list').width();
-        if (specSliderWidth < 325) {
-            $('.specialists__doctor').css({
-                maxWidth: specSliderWidth + 'px'
+
+    if (isSlickLoaded) {
+        if (window.matchMedia('screen and (max-width: 1400px)').matches) {
+            selectButtons.detach();
+            aboutSliderInit();
+            featuresSliderInit();
+            unitsMenuSliderInit();
+            const specSliderWidth = $('.specialists__slider > .slick-list').width();
+            if (specSliderWidth < 325) {
+                $('.specialists__doctor').css({
+                    maxWidth: specSliderWidth + 'px'
+                });
+            }
+            $('.feedback__position').html('<span class="feedback__position_current">1</span>/' + $('.feedback__item').length);
+        } else {
+            $('.about__slider').filter('.slick-initialized').slick("unslick");
+            $('.units__menu > ul').filter('.slick-initialized').slick("unslick");
+        }
+
+        if (window.matchMedia('screen and (min-width: 577px)').matches) {
+            $('.features__slider').filter('.slick-initialized').slick("unslick");
+        }
+
+        if ($('.units__menu > .slick-initialized')) {
+            unitsMenuSliderChangeTab()
+        }
+
+        if ($('.feedback__slider.slick-initialized')) {
+            $('.feedback__slider').on('afterChange', function (event, slick, currentSlide) {
+                $('.feedback__position_current').html($('.feedback__slider').slick('slickCurrentSlide') + 1);
             });
         }
-        $('.feedback__position').html('<span class="feedback__position_current">1</span>/' + $('.feedback__item').length);
-    } else {
-        $('.about__slider').filter('.slick-initialized').slick("unslick");
-        $('.units__menu > ul').filter('.slick-initialized').slick("unslick");
-    }
 
-    if (window.matchMedia('screen and (min-width: 577px)').matches) {
-        $('.features__slider').filter('.slick-initialized').slick("unslick");
-    }
 
-    if ($('.units__menu > .slick-initialized')) {
-        unitsMenuSliderChangeTab()
-    }
-
-    if ($('.feedback__slider.slick-initialized')) {
-        $('.feedback__slider').on('afterChange', function (event, slick, currentSlide) {
-            $('.feedback__position_current').html($('.feedback__slider').slick('slickCurrentSlide') + 1);
-        });
-    }
-
-    if (window.matchMedia('screen and (min-width: 960px)').matches) {
-        selectButtons.appendTo('.about__slider')
-    } else {
-        selectButtons.detach();
+        if (window.matchMedia('screen and (min-width: 960px)').matches) {
+            selectButtons.appendTo('.about__slider')
+        } else {
+            selectButtons.detach();
+        }
     }
 };
 
 
 //Обработка событий после загрузки страницы
 $(document).ready(function () {
-    //Переменные для работы с формой
-    const appointmentPhoneInput = $('.appointment__phone');
-    const appointmentNameInput = $('.appointment__customerName');
-    const appointmentConfident = $('.appointment__confident');
-    const appointmentSubmitButton = $('.appointment__form .btn[type="submit"]');
-    const popUpClose = $('.popup-close-button');
-    const popUp = $('.popup');
+    if (isSet($('.appointment'))) {
 
-    //ПОП АП ОКНО
-    popUpClose.on('click', function () {
-        popUp.hide();
-        $('body').css({
-            overflow: 'visible'
-        });
-        $('.appointment__form').unbind('submit').submit();
-    });
+        //Переменные для работы с формой
+        const appointmentPhoneInput = $('.appointment__phone');
+        const appointmentNameInput = $('.appointment__customerName');
+        const appointmentConfident = $('.appointment__confident');
+        const appointmentSubmitButton = $('.appointment__form .btn[type="submit"]');
+        const popUpClose = $('.popup-close-button');
+        const popUp = $('.popup');
 
-    //ОБРАБОТКА ФОРМЫ ЗАПИСИ
-    appointmentSubmitButton.on('click', function (event) {
-        if (appointmentNameInput.val() == '') {
-            appointmentNameInput.css({
-                borderColor: '#E84E2C',
-                color: '#E84E2C'
-            });
-            $('label[for="customerName"], label[for="popup-customerName"]').css({
-                color: '#E84E2C'
-            }).html('Введите имя');
-            event.preventDefault();
-        }
-
-        if (!Inputmask.isValid(appointmentPhoneInput.val(), "+7-(999)-999-9999")) {
-            appointmentPhoneInput.css({
-                borderColor: '#E84E2C',
-                color: '#E84E2C'
-            });
-            $('label[for="phone"]').css({
-                color: '#E84E2C'
-            }).html('Введите телефон');
-            event.preventDefault();
-        }
-        if (!appointmentConfident.prop("checked")) {
-            event.preventDefault();
-            appointmentConfident.css({
-                borderColor: '#E84E2C'
-            });
-            $('.confident-label small').css({
-                color: '#E84E2C'
-            })
-        }
-        if (appointmentConfident.prop('checked') && Inputmask.isValid(appointmentPhoneInput.val(), "+7-(999)-999-9999") && appointmentNameInput.val() !== '') {
-            event.preventDefault();
-            popUp.show();
-            popUp.css({
-                display: 'flex'
-            });
+        //ПОП АП ОКНО
+        popUpClose.on('click', function () {
+            popUp.hide();
             $('body').css({
-                overflow: 'hidden'
-            })
-        }
-    });
-
-    $('.appointment__form .appointment__input-wrapper > input').on('input', function (event) {
-        if ($(event.target).val() !== '') {
-            $(event.target).attr('style', '');
-            $(event.target).siblings('label').attr('style', '');
-            $('.appointment__form').bind('submit')
-        } else {
-            $(event.target).css({
-                borderColor: '#E84E2C',
-                color: '#E84E2C'
+                overflow: 'visible'
             });
-            $(event.target).siblings('label').css({
-                color: '#E84E2C'
-            });
+            $('.appointment__form').unbind('submit').submit();
+        });
 
-        }
-        if (!Inputmask.isValid(appointmentPhoneInput.val(), "+7-(999)-999-9999")) {
-            appointmentPhoneInput.css({
-                borderColor: '#E84E2C',
-                color: '#E84E2C'
-            });
-            appointmentPhoneInput.siblings('label').css({
-                color: '#E84E2C'
-            });
-            $('.appointment__form').unbind('submit');
-        } else {
-        }
-    });
+        //ОБРАБОТКА ФОРМЫ ЗАПИСИ
+        appointmentSubmitButton.on('click', function (event) {
+            if (appointmentNameInput.val() == '') {
+                appointmentNameInput.css({
+                    borderColor: '#E84E2C',
+                    color: '#E84E2C'
+                });
+                $('label[for="customerName"], label[for="popup-customerName"]').css({
+                    color: '#E84E2C'
+                }).html('Введите имя');
+                event.preventDefault();
+            }
 
-    appointmentPhoneInput.on('keyup', function (event) {
-        if (typeof (event.originalEvent) != 'undefined') {
-            appointmentPhoneInput.each(function (index) {
-                if (index == appointmentPhoneInput.index(event.target)) {
-                } else {
-                    // $(this).val($(this).val() + event.originalEvent.key);
-                    $(this).val($(event.currentTarget).val());
-                }
-            });
-        }
+            if (!Inputmask.isValid(appointmentPhoneInput.val(), "+7-(999)-999-9999")) {
+                appointmentPhoneInput.css({
+                    borderColor: '#E84E2C',
+                    color: '#E84E2C'
+                });
+                $('label[for="phone"]').css({
+                    color: '#E84E2C'
+                }).html('Введите телефон');
+                event.preventDefault();
+            }
+            if (!appointmentConfident.prop("checked")) {
+                event.preventDefault();
+                appointmentConfident.css({
+                    borderColor: '#E84E2C'
+                });
+                $('.confident-label small').css({
+                    color: '#E84E2C'
+                })
+            }
+            if (appointmentConfident.prop('checked') && Inputmask.isValid(appointmentPhoneInput.val(), "+7-(999)-999-9999") && appointmentNameInput.val() !== '') {
+                event.preventDefault();
+                popUp.show();
+                popUp.css({
+                    display: 'flex'
+                });
+                $('body').css({
+                    overflow: 'hidden'
+                })
+            }
+        });
 
-    });
+        $('.appointment__form .appointment__input-wrapper > input').on('input', function (event) {
+            if ($(event.target).val() !== '') {
+                $(event.target).attr('style', '');
+                $(event.target).siblings('label').attr('style', '');
+                $('.appointment__form').bind('submit')
+            } else {
+                $(event.target).css({
+                    borderColor: '#E84E2C',
+                    color: '#E84E2C'
+                });
+                $(event.target).siblings('label').css({
+                    color: '#E84E2C'
+                });
 
-    appointmentNameInput.on('input', function (event) {
-        $(appointmentNameInput[0]).val($(event.currentTarget).val().replace(/[^А-Яа-я]/, ''));
-        $(appointmentNameInput[1]).val($(event.currentTarget).val().replace(/[^А-Яа-я]/, ''));
+            }
+            if (!Inputmask.isValid(appointmentPhoneInput.val(), "+7-(999)-999-9999")) {
+                appointmentPhoneInput.css({
+                    borderColor: '#E84E2C',
+                    color: '#E84E2C'
+                });
+                appointmentPhoneInput.siblings('label').css({
+                    color: '#E84E2C'
+                });
+                $('.appointment__form').unbind('submit');
+            } else {
+            }
+        });
 
-    });
+        appointmentPhoneInput.on('keyup', function (event) {
+            if (typeof (event.originalEvent) != 'undefined') {
+                appointmentPhoneInput.each(function (index) {
+                    if (index == appointmentPhoneInput.index(event.target)) {
+                    } else {
+                        // $(this).val($(this).val() + event.originalEvent.key);
+                        $(this).val($(event.currentTarget).val());
+                    }
+                });
+            }
 
-    appointmentConfident.change(function (event) {
-        $(appointmentConfident[0]).prop('checked', $(event.currentTarget).prop('checked'));
-        $(appointmentConfident[1]).prop('checked', $(event.currentTarget).prop('checked'));
-        $(event.currentTarget).prop('checked');
-        if (!this.checked) {
-            $(this).css({
-                borderColor: '#E84E2C',
-            });
-            $('.confident-label small').css({
-                color: '#E84E2C',
-            })
-        } else {
-            $(this).attr('style', '');
-            $('.confident-label small').attr('style', '');
-        }
-    });
+        });
 
-    appointmentPhoneInput.on('focus', function () {
-        setTimeout(function () {
-            appointmentPhoneInput.inputmask({
-                "mask": "+7-(999)-999-9999",
-                showMaskOnHover: false,
-                showMaskOnFocus: true,
-                'onincomplete': function () {
-                    appointmentPhoneInput.inputmask("remove")
-                },
-                "oncomplete": function () {
-                    appointmentPhoneInput.attr('style', '');
-                    appointmentPhoneInput.siblings('label').attr('style', '');
-                }
-            });
-        }, 300)
-    });
+        appointmentNameInput.on('input', function (event) {
+            $(appointmentNameInput[0]).val($(event.currentTarget).val().replace(/[^А-Яа-я]/, ''));
+            $(appointmentNameInput[1]).val($(event.currentTarget).val().replace(/[^А-Яа-я]/, ''));
 
+        });
 
-    //Кнопка назад
-    // $('body').on('click', '.arrow-back', function () {
-    //     if (dropdownTabsBlock.attr('style') == 'display: none;' && dropdownContentBlock.attr('style') == '') {
-    //         dropdownContentBlock.css({
-    //             display: 'none'
-    //         });
-    //         dropdownTabsBlock.attr('style', '');
-    //         $('.dropdown-menu > .title').html('Услуги');
-    //     } else if (dropdownMenuContainer.hasClass('dropdown-menu__container_active') && headerBottom.attr('style') == 'display: none;') {
-    //         dropdownMenuContainer.removeClass('dropdown-menu__container_active').addClass('hide').attr('style', '');
-    //         headerBottom.attr('style', '');
-    //     } else if (dropdownMenuContainer.hasClass('dropdown-menu__container_active') && $(serviceTapButton).hasClass('tap-menu__button_active')) {
-    //         closeServicesDropdownFromTapMenu();
-    //     }
-    // });
+        appointmentConfident.change(function (event) {
+            $(appointmentConfident[0]).prop('checked', $(event.currentTarget).prop('checked'));
+            $(appointmentConfident[1]).prop('checked', $(event.currentTarget).prop('checked'));
+            $(event.currentTarget).prop('checked');
+            if (!this.checked) {
+                $(this).css({
+                    borderColor: '#E84E2C',
+                });
+                $('.confident-label small').css({
+                    color: '#E84E2C',
+                })
+            } else {
+                $(this).attr('style', '');
+                $('.confident-label small').attr('style', '');
+            }
+        });
+
+        appointmentPhoneInput.on('focus', function () {
+            setTimeout(function () {
+                appointmentPhoneInput.inputmask({
+                    "mask": "+7-(999)-999-9999",
+                    showMaskOnHover: false,
+                    showMaskOnFocus: true,
+                    'onincomplete': function () {
+                        appointmentPhoneInput.inputmask("remove")
+                    },
+                    "oncomplete": function () {
+                        appointmentPhoneInput.attr('style', '');
+                        appointmentPhoneInput.siblings('label').attr('style', '');
+                    }
+                });
+            }, 300)
+        });
+    }
+
 
     //Вкладки на выпадающем меню хэдера
     $('.dropdown-menu__tabs_item').on('click', '.with-arrow', function (event) {
@@ -598,17 +621,20 @@ $(document).ready(function () {
     });
 
     //Блоки с отзывами
-    const feedbackContent = $('.feedback__item-content');
-    $(document).on('click', '.feedback__item-content', function (event) {
-        if ($(this).hasClass('feedback__item-content_unhide')) {
+    if (isSet($('.feedback__slider'))) {
+
+        const feedbackContent = $('.feedback__item-content');
+        $(document).on('click', '.feedback__item-content', function (event) {
+            if ($(this).hasClass('feedback__item-content_unhide')) {
+                $(this).removeClass('feedback__item-content_unhide');
+            } else {
+                $(this).addClass('feedback__item-content_unhide');
+            }
+        });
+        feedbackContent.on('blur', function () {
             $(this).removeClass('feedback__item-content_unhide');
-        } else {
-            $(this).addClass('feedback__item-content_unhide');
-        }
-    });
-    feedbackContent.on('blur', function () {
-        $(this).removeClass('feedback__item-content_unhide');
-    });
+        });
+    }
 
     //Кнопка для раскрытия меню в мобайле
     const hamburger = $('.hamburger');
@@ -700,7 +726,6 @@ $(document).ready(function () {
                 overflow: 'visible'
             })
         }
-
     });
 
     //Обработка медиа запроса
