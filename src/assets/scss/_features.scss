@@ -1,0 +1,100 @@
+.features {
+  background: white;
+  padding: 18px 0 18px 15px;
+  margin-bottom: 30px;
+  box-sizing: border-box;
+  @media screen and (min-width: 577px) {
+    padding: 18px 0;
+  }
+  @media screen and (min-width: 961px) {
+    padding-top: 60px;
+    padding-bottom: 90px;
+    margin-bottom: 0;
+  }
+
+  &__title {
+    //font-size: 20px;
+    line-height: 120%;
+    margin-bottom: 18px;
+    //@media screen and (min-width: 577px) {
+    //  font-size: 24px;
+    //}
+    @media screen and (min-width: 961px) {
+      margin-bottom: 60px;
+    }
+  }
+
+  &__slider {
+    width: 100%;
+    box-sizing: border-box;
+    @media screen and (min-width: 577px) {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      align-content: space-between;
+    }
+  }
+
+  &__block {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    background: $bg-gray;
+    color: $main-color;
+    text-align: center;
+    position: relative;
+    margin-top: 17px;
+    max-width: 286px;
+    padding: 0 15px;
+    margin-right: 10px;
+    height: 137px;
+    @media screen and (min-width: 577px) {
+      flex-basis: calc(100% / 2 - 10px);
+      margin-bottom: 17px;
+      margin-right: 0;
+      max-width: none;
+    }
+    @media screen and (min-width: 769px) {
+      flex-basis: calc(100% / 2 - 20px);
+    }
+
+    @media screen and (min-width: 1200px) {
+      flex-basis: calc(100% / 4 - 20px);
+      margin-bottom: 0;
+      padding: 0 50px;
+      height: 167px;
+    }
+
+  }
+
+  &__icon {
+    //@media screen and (min-width: 1400px) {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%) skewX(-15deg);
+    top: -10%;
+    width: 65px;
+    height: 50px;
+    background-color: $main-color;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      transform: skewX(15deg);
+    }
+
+    //}
+  }
+
+  &__desc {
+    font-size: 16px;
+    line-height: 140%;
+    width: 100%;
+    @media screen and (min-width: 961px) {
+      font-size: 18px;
+      line-height: 120%;
+      width: 100%;
+    }
+  }
+}

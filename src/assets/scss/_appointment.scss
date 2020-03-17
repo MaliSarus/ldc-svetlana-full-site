@@ -1,0 +1,284 @@
+.appointment {
+  background-color: $bg-gray;
+  padding: 0 15px;
+  margin-bottom: 30px;
+  .container{
+    padding: 0;
+  }
+  @media screen and (min-width: 961px){
+    background-color: white;
+    padding: 0;
+    margin-bottom: auto;
+    .container{
+      padding: 0 15px;
+    }
+  }
+
+  &_popup{
+    background: transparent;
+    display: none;
+    position: absolute;
+    height: 90vh;
+    justify-content: center;
+    align-items: center;
+    z-index: 10002;
+    margin-bottom: 0;
+    &_active{
+      display: flex;
+      animation: fadeIn;
+      animation-duration: 500ms;
+      animation-fill-mode: both;
+    }
+    .appointment {
+      &__block{
+        margin-top: 10vh;
+      }
+      &__title {
+        flex-direction: column;
+        align-items: flex-start;
+
+        .title {
+          margin-bottom: 12px;
+        }
+      }
+    }
+  }
+
+  &__block {
+    flex-basis: 100%;
+    position: relative;
+    z-index: 10;
+    background-color: white;
+    box-sizing: border-box;
+    padding: 18px;
+    box-shadow: 0px 6px 15px rgba(6, 14, 29, 0.08);
+
+    @media screen and (min-width: 961px) {
+      padding: 45px 0;
+      box-shadow: 0 10px 30px rgba(12, 28, 56, 0.08);
+      margin-top: 60px;
+      margin-bottom: 90px;
+      background: url("../../img/appointment/appointment-block-bg.svg") center no-repeat;
+      background-size: contain;
+
+      &::before {
+        display: block;
+        content: '';
+        position: absolute;
+        width: 50%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: url("../../img/appointment/bg-figure-gray.svg") top left no-repeat;
+        background-size: contain;
+      }
+
+      &::after {
+        display: block;
+        content: '';
+        position: absolute;
+        width: 50%;
+        height: 100%;
+        top: 0;
+        right: 0;
+        background: url("../../img/appointment/bg-figure-red.svg") bottom right no-repeat;
+        background-size: contain;
+      }
+      .content {
+        padding: 0 15px;
+        flex-wrap: wrap;
+      }
+    }
+
+    @media screen and (min-width: 1400px) {
+      .content {
+        padding: 0;
+      }
+      padding: 55px 0;
+    }
+
+    .content {
+      position: relative;
+      z-index: 10;
+    }
+  }
+
+  &__title {
+    display: flex;
+    margin-bottom: 18px;
+    @media screen and (min-width: 961px) {
+      display: block;
+      flex-grow: 1;
+      margin-bottom: 20px;
+      flex-basis: 100%;
+    }
+    @media screen and (min-width: 1400px) {
+      margin-bottom: 0;
+      flex-basis: auto;
+    }
+
+    .title {
+      font-size: 16px;
+      flex-basis: 50%;
+      @media screen and (min-width: 577px) {
+        font-size: 18px;
+      }
+      @media screen and (min-width: 961px) {
+        margin-top: -5px;
+        margin-bottom: 12px;
+        flex-basis: auto;
+        font-size: 20px;
+      }
+      @media screen and (min-width: 1400px) {
+        font-size: 24px;
+      }
+
+    }
+
+    a {
+      color: $accent-color;
+      @media screen and (max-width: 960px) {
+        font-size: 16px;
+        display: block;
+        flex-basis: 50%;
+        text-align: right;
+      }
+    }
+  }
+
+
+  &__form {
+    display: flex;
+    vertical-align: center;
+    position: relative;
+    flex-grow: 3;
+    flex-wrap: wrap;
+    justify-content: stretch;
+    @media screen and (min-width: 961px) {
+      justify-content: space-between;
+      padding: 0;
+    }
+    @media screen and (min-width: 1400px) {
+      padding-left: 20px;
+    }
+
+    .appointment__input-wrapper {
+      position: relative;
+      flex-basis: 100%;
+      margin-bottom: 12px;
+      @media screen and (min-width: 961px) {
+        flex-basis: calc(100% / 3 - 20px);
+        margin-bottom: 0;
+      }
+
+      label {
+        position: absolute;
+        top: 45%;
+        left: 18px;
+        transform: translateY(-50%);
+        pointer-events: none;
+        transition: all .3s;
+        color: $main-color
+      }
+
+      input {
+        width: 100%;
+
+        &:focus {
+          outline: none;
+        }
+
+        &:focus ~ label {
+          top: 20%;
+          font-size: 10px;
+        }
+
+        &:valid ~ label {
+          top: 20%;
+          font-size: 10px;
+          color: $main-color;
+        }
+      }
+    }
+
+    input, button {
+      box-sizing: border-box;
+      height: 50px;
+      padding: 0 18px;
+      font-size: 16px;
+      background: #FFFFFF;
+      border: 1px solid rgba(42, 68, 114, 0.2);
+      border-radius: 1px;
+      color: $main-color;
+
+    }
+
+    button {
+      border: 1px solid $main-color;
+      @media screen and (min-width: 961px) {
+        flex-basis: calc(100% / 3 - 20px);
+      }
+
+      &:hover {
+        img {
+          filter: grayscale(1) invert(1) brightness(1.5);
+        }
+      }
+
+      img {
+        vertical-align: middle;
+        margin-left: 10px;
+        filter: none;
+      }
+    }
+
+    .confident-label {
+
+      @media screen and (min-width: 961px) {
+        position: absolute;
+        bottom: -22px;
+      }
+      @media screen and (max-width: 960px) {
+        display: flex;
+        align-items: center;
+        margin-bottom: 12px;
+      }
+
+      small {
+        font-size: 12px;
+        color: $main-color;
+      }
+
+      .appointment__confident{
+        margin: 0;
+        height: 16px;
+        width: 16px;
+        vertical-align: middle;
+        margin-right: 8px;
+        background: white;
+        border: 1px solid $main-color;
+        outline: none;
+        appearance: none;
+        padding: 0;
+
+        &:checked {
+          background-color: $main-color;
+
+          &::before {
+            display: block;
+            content: '';
+            width: 98%;
+            height: 98%;
+            background-image: url("../../img/appointment/checkmark.svg");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            filter: grayscale(1) contrast(50);
+          }
+        }
+      }
+    }
+
+    //}
+  }
+}

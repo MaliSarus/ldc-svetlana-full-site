@@ -1,0 +1,131 @@
+.layer1, .layer2, .layer3, .layer4 {
+  position: fixed;
+  width: 100%;
+  @media screen and (max-width: 1400px) {
+    display: none;
+  }
+
+}
+
+.layer1 {
+  z-index: 1;
+}
+
+.layer2 {
+  z-index: 11;
+}
+
+.layer3 {
+  z-index: 11;
+}
+
+.layer4 {
+  z-index: 1;
+}
+
+#fig11 {
+  height: 100px;
+  width: 200px;
+  background: $accent-color;
+  position: absolute;
+  top: 1030px;
+  left: 3%;
+}
+
+#fig12 {
+  height: 110px;
+  width: 110px;
+  background: $main-color-dark;
+  position: absolute;
+  top: 1080px;
+  left: 5%;
+}
+
+#fig13 {
+  width: 282px;
+  height: 150px;
+  background: $main-color;
+  position: absolute;
+  top: 1455px;
+  right: 3%;
+}
+
+#fig14 {
+  width: 242px;
+  height: 129px;
+  background: $main-color;
+  position: absolute;
+  top: 1870px;
+  left: 3%;
+}
+
+#fig21 {
+  width: 242px;
+  height: 129px;
+  background: $main-color-dark;
+  position: absolute;
+  top: 2345px;
+  left: 3%;
+}
+
+#fig22 {
+  width: 242px;
+  height: 129px;
+  background: $main-color-dark;
+  position: absolute;
+  top: 2345px;
+  right: 3%;
+}
+
+#fig23 {
+  width: 133px;
+  height: 71px;
+  background: $accent-color;
+  position: absolute;
+  top: 805px;
+  left: 5%;
+  opacity: .5;
+}
+
+#fig24 {
+  width: 82px;
+  height: 44px;
+  background: $main-color-dark;
+  position: absolute;
+  top: 1245px;
+  left: 5%;
+  opacity: .25;
+}
+
+#fig31 {
+  width: 107px;
+  height: 57px;
+  background: $accent-color;
+  position: absolute;
+  top: 950px;
+  right: 4%;
+  margin-bottom: 50px;
+}
+
+#fig32 {
+  width: 133px;
+  height: 71px;
+  background: $main-color-dark;
+  position: absolute;
+  top: 1290px;
+  right: 3%;
+}
+
+#fig33 {
+  width: 122px;
+  height: 65px;
+  background: $accent-color;
+  position: absolute;
+  top: 2070px;
+  right: 3%;
+}
+
+.fig {
+  transform: skewX(-15deg);
+  opacity: .2;
+}
