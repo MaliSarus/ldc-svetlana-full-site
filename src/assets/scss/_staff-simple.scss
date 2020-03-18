@@ -1,4 +1,4 @@
-.about {
+.staff {
   background-color: $bg-gray;
   position: relative;
   margin-bottom: 30px;
@@ -24,20 +24,6 @@
     }
     .container {
       z-index: 2;
-      padding: 0 15px;
-    }
-  }
-
-
-  &__slider {
-    width: 100%;
-    @media screen and (min-width: 1400px) {
-      background-size: auto 100%;
-    }
-    .slick-list,.slick-track{
-      @media screen and (min-width: 577px){
-        display: flex;
-      }
     }
   }
 
@@ -56,6 +42,7 @@
       width: 100%;
     }
     @media screen and (min-width: 1400px) {
+      background: url("../../img/about/bg-h-figure.svg") top right no-repeat;
       width: 100%;
       display: none;
       &_active {
@@ -211,6 +198,7 @@
       flex-basis: calc(100vw / 2);
       height: auto;
       background: none;
+      padding-top: 0;
     }
 
 

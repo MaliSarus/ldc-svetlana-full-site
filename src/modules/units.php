@@ -1,7 +1,7 @@
 <section class="units"><!--Секция об отделениях-->
     <div class="container container_size_1667">
         <div class="row">
-            <div class="units__block"><!--Верх-->
+            <div class="units__block upside__block"><!--Верх-->
                 <div class="units__head">
                     <div class="content">
                         <h2 class="title">
