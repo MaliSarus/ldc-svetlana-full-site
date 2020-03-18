@@ -11,7 +11,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="staff__content">
+                <div class="staff__content staff__content_tab staff__content_tab_active">
                     <div class="content">
                         <div class="staff__content-top">
                             <div class="staff__search-form-wrapper">
@@ -30,27 +30,40 @@
                             </div>
                         </div>
                         <div class="staff__content-bottom">
-                            <div class="staff__content_tab staff__content_tab_active">
-                                <div class="staff__ordinary">
-                                    <div class="title">Неврологи</div>
-                                    <?php
-                                    require "specialists__slider.php"
-                                    ?>
-                                </div>
-                                <div class="staff__ordinary">
-                                    <div class="title">Онкологи</div>
-                                    <?php
-                                    require "specialists__slider.php"
-                                    ?>
-                                </div>
+                            <div class="staff__ordinary">
+                                <div class="title">Неврологи</div>
+                                <?php
+                                require "specialists__slider.php"
+                                ?>
                             </div>
-                            <div class="staff__content_tab">
-                                <div class="staff__ordinary">
-                                    <div class="title">Неврологи</div>
-                                    <?php
-                                    require "specialists__slider.php"
-                                    ?>
+                            <div class="staff__ordinary">
+                                <div class="title">Онкологи</div>
+                                <?php
+                                require "specialists__slider.php"
+                                ?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="staff__content staff__content_tab">
+                    <div class="content">
+                        <div class="staff__content-top">
+                            <div class="staff__info">
+                                <div class="staff__info_icon">
+                                    <img src="../assets/img/staff/info-icon.svg" alt="иконка информации">
                                 </div>
+                                <p class="staff__info_text">
+                                    Кураторы направлений - врачи, которые обязательно помогут. Данные специалисты обладают
+                                    исключительным опытом в своей специальности. Вы всегда можете расчитывать на
+                                    качественную и своевременную помощь от данного персонала.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="staff__content-bottom">
+                            <div class="staff__ordinary">
+                                <?php
+                                require "specialists__slider.php"
+                                ?>
                             </div>
                         </div>
                     </div>
