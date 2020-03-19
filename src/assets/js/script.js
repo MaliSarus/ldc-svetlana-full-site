@@ -1,3 +1,5 @@
+import ScrollBooster from "scrollbooster";
+
 const selectButtons = $('.select-buttons');
 const dropdownMenuContainer = $('.dropdown-menu__container');
 const dropdownTabs = $('.dropdown-menu__tabs_item');
@@ -771,6 +773,53 @@ $(document).ready(function () {
         }, 1);
     });
 
+    if(isSet($('.price__list'))){
+
+
+
+        // // const docWidth = $('.price__list').width() - 30,
+        // //     slidesWidth = $('.price__list_wrapper').width() - ($('.price__list_wrapper').width() - $('.price__list').width()) - 30,
+        // //     rangeX = slidesWidth - docWidth,
+        // //     $images = $('.price__list_wrapper');
+        // //
+        // // $('.price__list').on('mousemove', function(e) {
+        // //     let mouseX = e.pageX,
+        // //         offset = mouseX / docWidth * slidesWidth - mouseX / 2;
+        // //
+        // //     $images.css({
+        // //         '-webkit-transform': 'translate3d(' + -offset + 'px,0,0)',
+        // //         'transform': 'translate3d(' + -offset + 'px,0,0)'
+        // //     });
+        // // });
+        // const slider = document.querySelector('.price__list_wrapper');
+        // let isDown = false;
+        // let startX;
+        // let scrollLeft;
+        //
+        // slider.addEventListener('mousedown', (e) => {
+        //     isDown = true;
+        //     slider.classList.add('active');
+        //     startX = e.pageX - slider.offsetLeft;
+        //     scrollLeft = slider.scrollLeft;
+        // });
+        // slider.addEventListener('mouseleave', () => {
+        //     isDown = false;
+        //     slider.classList.remove('active');
+        // });
+        // slider.addEventListener('mouseup', () => {
+        //     isDown = false;
+        //     slider.classList.remove('active');
+        // });
+        // slider.addEventListener('mousemove', (e) => {
+        //     if(!isDown) return;
+        //     e.preventDefault();
+        //     const x = e.pageX - slider.offsetLeft;
+        //     const walk = (x - startX) * 3; //scroll-fast
+        //     slider.scrollLeft = scrollLeft - walk;
+        //     console.log(walk);
+        // });
+    }
+
 });
 
 
@@ -785,3 +834,13 @@ function parallaxScrolling() {
     $('.layer4').css('top', (0 - (scrolled * .9)) + 'px');
 
 }
+
+
+import ScrollBooster from 'scrollbooster';
+new ScrollBooster({
+    viewport: document.querySelector('.price__list_wrapper'),
+    content: document.querySelector('.price__list_item'),
+    scrollMode: 'transform', // use CSS 'transform' property
+    direction: 'horizontal', // allow only horizontal scrolling
+    emulateScroll: true, // scroll on wheel events
+});

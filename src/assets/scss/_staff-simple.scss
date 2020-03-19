@@ -90,6 +90,19 @@
       }
     }
 
+    &_details{
+      &_text{
+        color: $main-color;
+        margin: 0;
+        padding-top: 18px;
+        max-width: 325px;
+        &:first-child{
+          border-width: calc(100% - 50px);
+          border-top: 1px solid rgba($main-color, .3);
+        }
+      }
+    }
+
     button {
       padding: 15px 0;
       width: 100%;
@@ -117,7 +130,7 @@
   }
 
   &__title {
-    color: $main-color-dark;
+    color: $main-color;
     margin: 0;
     margin-bottom: 6px;
     font-size: 16px;
@@ -139,51 +152,11 @@
       line-height: 24px;
       margin-bottom: 30px;
     }
-
-  }
-
-  .select-buttons {
-    display: none;
-    @media screen and (min-width: 961px) {
-      display: inline-block;
-      position: absolute;
-      bottom: 0px;
-      float: none;
-      height: auto;
-      min-height: auto;
-      padding-left: 15px;
-      margin-right: 0;
-      z-index: 100;
-    }
-    @media screen and (min-width: 1400px){
-      bottom: 88px;
-      padding-left: 0;
-    }
-
-    &__button {
-      @media screen and (min-width: 961px) {
-        display: inline-block;
-        height: 18px;
-        width: 18px;
-        margin-right: 20px;
-        background-color: rgba($main-color, .4);
-        transition: background-color .5s;
-        -webkit-border-radius: 2px;
-        -moz-border-radius: 2px;
-        border-radius: 2px;
-        cursor: pointer;
-
-        &:hover {
-          background-color: $main-color
-        }
-      }
-    }
   }
 
   &__doctor {
     flex-grow: 1;
     position: relative;
-    min-height: 100%;
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
@@ -200,6 +173,38 @@
       background: none;
       padding-top: 0;
     }
+    &_details{
+      background: $main-color;
+      position: absolute;
+      padding: 7px 20px;
+      box-sizing: border-box;
+      text-align: center;
+      color: white;
+      font-size: 12px;
+      max-width: 345px;
+      right: 10px;
+      transform:skewX(-15deg);
+      @media screen and (min-width: 769px){
+        font-size: 14px;
+      }
+      @media screen and (min-width: 961px){
+        font-size: 16px;
+        right: 15px;
+      }
+      @media screen and (min-width: 1400px){
+        width: auto;
+        max-width: 405px;
+        right: 20px;
+        bottom: 45px;
+        padding: 33px 45px;
+      }
+
+
+      &_text{
+        margin: 0;
+        transform: skewX(15deg);
+      }
+    }
 
 
     img {
@@ -213,6 +218,7 @@
         right: 0;
         height: auto;
         width: auto;
+        filter: drop-shadow(0 0 5px rgba(black, .1));
       }
     }
   }

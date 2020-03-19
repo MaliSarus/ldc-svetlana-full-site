@@ -1,18 +1,27 @@
 @import "../fonts";
 @import "../common";
 @import "../interface";
+@import "../submit-popup";
 @import "../parallax-squares";
 
 @import "../header";
 @import "../dropdown-menu";
 @import "../staff-simple";
 @import "../appointment";
-
-
-
+@import "../pricing";
 @import "../footer";
 
 @import "../animations";
+
+.flex{
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.appointment{
+  flex-basis: 100%;
+}
+
 
 
 
