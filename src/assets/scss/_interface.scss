@@ -81,7 +81,6 @@
   outline: 0;
   padding: 15px 0;
   text-align: center;
-  font-size: 16px;
   background: none;
   border: none;
   transition: background-color .5s, color .3s;
@@ -89,9 +88,17 @@
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
   border-radius: 2px;
-  font-size: 16px;
+  font-size: 14px;
+
   @media screen and (min-width: 961px) {
     padding: 20px 0;
+    font-size: 16px;
+  }
+
+  &_size_18{
+    @media screen and (min-width: 1400px) {
+      font-size: 18px;
+    }
   }
 
   &_white {
@@ -388,18 +395,19 @@
     width: 100%;
     max-width: 360px;
     background-color: transparent;
-    position: absolute;
+    position: fixed;
     left: 50%;
     bottom: 0;
     margin-bottom: 15px;
-    animation: slideInUp;
+    animation: popupSlideInUp;
     animation-duration: 500ms;
-    animation-fill-mode: forwards;
+    animation-fill-mode: both;
     color: #1074E9;
     z-index: 10003;
 
     a {
       color: #1074E9;
+      display: block;
     }
   }
 

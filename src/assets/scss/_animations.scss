@@ -42,11 +42,28 @@
   }
 }
 
-@keyframes slideInUp {
+@-webkit-keyframes popupSlideInUp {
   from {
-    transform: translateX(-50%) translateY(100%);
+    -webkit-transform: translate3d(-50%, 100%, 0) ;
+    transform: translate3d(-50%, 100%, 0) ;
+    visibility: visible;
   }
+
   to {
-    transform: translateX(-50%) translateY(0);
+    -webkit-transform: translate3d(-50%, 0, 0) ;
+    transform: translate3d(-50%, 0, 0) ;
+  }
+}
+
+@keyframes popupSlideInUp {
+  from {
+    -webkit-transform: translate3d(-50%, 100%, 0) ;
+    transform: translate3d(-50%, 100%, 0) ;
+    visibility: visible;
+  }
+
+  to {
+    -webkit-transform: translate3d(-50%, 0, 0) ;
+    transform: translate3d(-50%, 0, 0) ;
   }
 }

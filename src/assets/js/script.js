@@ -1,5 +1,3 @@
-import ScrollBooster from "scrollbooster";
-
 const selectButtons = $('.select-buttons');
 const dropdownMenuContainer = $('.dropdown-menu__container');
 const dropdownTabs = $('.dropdown-menu__tabs_item');
@@ -34,6 +32,7 @@ const aboutSliderInit = () => {
         })
     }
 };
+
 const featuresSliderInit = () => {
     if (isSet($('.features__slider'))) {
         $('.features__slider').slick({
@@ -67,6 +66,38 @@ const unitsMenuSliderInit = () => {
         });
     }
 };
+
+const diplomasSliderInit = () => {
+    if (isSet($('.diplomas__slider'))) {
+        $('.diplomas__slider').slick({
+            slidesToShow: 5,
+            dots: false,
+            arrows: false,
+            infinite: false,
+            responsive:[
+                {
+                    breakpoint: 577,
+                    settings: {
+                        slidesToShow: 2,
+                    },
+                },
+                {
+                    breakpoint: 768,
+                    settings: {
+                        slidesToShow: 3,
+                    },
+                },
+                {
+                    breakpoint: 1400,
+                    settings: {
+                        slidesToShow: 5,
+                    },
+                }
+            ]
+        })
+    }
+};
+
 const unitsMenuSliderChangeTab = () => {
     $('.units__menu > ul').on('afterChange', function (event, slick, currentSlide) {
         const index = $('.units__menu > ul').slick('slickCurrentSlide');
@@ -259,7 +290,7 @@ $(window).on('resize', function () {
 window.onload = function () {
 
     //Слайдер специалистов и кнопки слайдера специалистов
-    if ($('.specialists__slider').length !== 0) {
+    if (isSet($('.specialists__slider'))) {
         const specSlick = $('.specialists__slider');
         specSlick.slick({
             infinite: true,
@@ -311,7 +342,7 @@ window.onload = function () {
     }
 
     //Сладер отзывов и кнопки сладера отзывов
-    if ($('.feedback__slider').length !== 0) {
+    if (isSet($('.feedback__slider'))) {
         const feedSlick = $('.feedback__slider');
         feedSlick.slick({
             slidesToShow: 2,
@@ -347,7 +378,7 @@ window.onload = function () {
     }
 
     //Основной слайдер (анимации и тд)
-    if ($('.about__slider').length !== 0) {
+    if (isSet($('.about__slider'))) {
         const aboutSliderCurrentSlide = $('.about__item').index($('.about__item_active'));
         const sliderButtons = $('.select-buttons__button');
         sliderButtons[aboutSliderCurrentSlide].classList.add('select-buttons__button_active');
@@ -440,6 +471,17 @@ window.onload = function () {
         } else {
             selectButtons.detach();
         }
+    }
+
+    if(isSet($('.diplomas__slider'))){
+        $('.diplomas__slider').magnificPopup({
+            delegate: 'a', // child items selector, by clicking on it popup will open
+            type: 'image',
+            gallery: {
+                enabled: true
+            },
+        });
+        diplomasSliderInit();
     }
 };
 
@@ -773,51 +815,15 @@ $(document).ready(function () {
         }, 1);
     });
 
-    if(isSet($('.price__list'))){
-
-
-
-        // // const docWidth = $('.price__list').width() - 30,
-        // //     slidesWidth = $('.price__list_wrapper').width() - ($('.price__list_wrapper').width() - $('.price__list').width()) - 30,
-        // //     rangeX = slidesWidth - docWidth,
-        // //     $images = $('.price__list_wrapper');
-        // //
-        // // $('.price__list').on('mousemove', function(e) {
-        // //     let mouseX = e.pageX,
-        // //         offset = mouseX / docWidth * slidesWidth - mouseX / 2;
-        // //
-        // //     $images.css({
-        // //         '-webkit-transform': 'translate3d(' + -offset + 'px,0,0)',
-        // //         'transform': 'translate3d(' + -offset + 'px,0,0)'
-        // //     });
-        // // });
-        // const slider = document.querySelector('.price__list_wrapper');
-        // let isDown = false;
-        // let startX;
-        // let scrollLeft;
-        //
-        // slider.addEventListener('mousedown', (e) => {
-        //     isDown = true;
-        //     slider.classList.add('active');
-        //     startX = e.pageX - slider.offsetLeft;
-        //     scrollLeft = slider.scrollLeft;
-        // });
-        // slider.addEventListener('mouseleave', () => {
-        //     isDown = false;
-        //     slider.classList.remove('active');
-        // });
-        // slider.addEventListener('mouseup', () => {
-        //     isDown = false;
-        //     slider.classList.remove('active');
-        // });
-        // slider.addEventListener('mousemove', (e) => {
-        //     if(!isDown) return;
-        //     e.preventDefault();
-        //     const x = e.pageX - slider.offsetLeft;
-        //     const walk = (x - startX) * 3; //scroll-fast
-        //     slider.scrollLeft = scrollLeft - walk;
-        //     console.log(walk);
-        // });
+    if(isSet($('.price__list'))) {
+        if ($(window).width() < 677)
+            new ScrollBooster({
+                viewport: document.querySelector('.price__list'),
+                content: document.querySelector('.price__list_wrapper'),
+                scrollMode: "transform", // use CSS 'transform' property
+                direction: "horizontal", // allow only horizontal scrolling
+                // emulateScroll: true, // scroll on wheel events
+            });
     }
 
 });
@@ -835,12 +841,3 @@ function parallaxScrolling() {
 
 }
 
-
-import ScrollBooster from 'scrollbooster';
-new ScrollBooster({
-    viewport: document.querySelector('.price__list_wrapper'),
-    content: document.querySelector('.price__list_item'),
-    scrollMode: 'transform', // use CSS 'transform' property
-    direction: 'horizontal', // allow only horizontal scrolling
-    emulateScroll: true, // scroll on wheel events
-});

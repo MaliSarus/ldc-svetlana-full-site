@@ -1,0 +1,93 @@
+.diplomas {
+  margin-bottom: 30px;
+  background: white;
+  @media screen and (min-width: 961px){
+    background: white url("../../img/diplomas/bg-rect-left.svg") top left no-repeat;
+    background-size: contain;
+    margin-bottom: 0;
+  }
+  &__block{
+    flex-grow: 1;
+    max-width: 100%;
+    padding: 15px 18px;
+    box-sizing: border-box;
+    @media screen and (min-width: 961px){
+      padding: 50px 0;
+    }
+  }
+  &__head{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+    .arrows{
+      display: none;
+      @media screen and (min-width: 961px){
+        display: flex;
+        position: static;
+      }
+    }
+  }
+  &__slider{
+    max-width: 100%;
+    &_item{
+      display: block;
+      margin-right: 10px;
+      //max-width: 168px;
+      max-height: 110px;
+      overflow: hidden;
+      position: relative;
+      &:hover::before{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        content: url("../../img/diplomas/popup-zoom-icon.svg");
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(0deg, rgba(42, 68, 114, 0.51), rgba(42, 68, 114, 0.51));
+      }
+      img{
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+  &__position {
+    font-size: 14px;
+    color: #2A4472;
+    @media screen and (min-width: 577px) {
+      font-size: 18px;
+    }
+    @media screen and (min-width: 769px) {
+      font-size: 22px;
+    }
+    @media screen and (min-width: 961px) {
+      flex-grow: 1;
+      text-align: right;
+      margin-right: 65px;
+    }
+
+    &_current {
+      font-size: 20px;
+      font-weight: bold;
+      @media screen and (min-width: 577px) {
+        font-size: 24px;
+      }
+      @media screen and (min-width: 769px) {
+        font-size: 28px;
+      }
+      @media screen and (min-width: 961px) {
+        font-size: 30px;
+      }
+    }
+  }
+}
+
+.mfp-close{
+  cursor: pointer!important;
+}

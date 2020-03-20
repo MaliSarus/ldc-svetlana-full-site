@@ -35,6 +35,7 @@ require "./modules/headlings.php";
 
 <!--Шапка-->
 <?php
+require "./modules/popups.php";
 require "./modules/header.php";
 require "./modules/dropdown-menu.php";
 require "./modules/staff.php";
