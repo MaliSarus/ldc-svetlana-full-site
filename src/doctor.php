@@ -15,19 +15,16 @@ require "./modules/headlings.php";
 require "./modules/popups.php";
 require "./modules/header.php";
 require "./modules/dropdown-menu.php";
-require "./modules/staff-simple.php";
-?>
 
-<?php
+require "./modules/staff-simple.php";
 require "./modules/price.php";
 require "./modules/education.php";
 require "./modules/diplomas.php";
 require "./modules/feedback.php";
-require "./modules/science-articles.php"
-?>
-
-<?php
+require "./modules/science-articles.php";
 require "./modules/appointment.php";
+require "./modules/specialists.php";
+
 require "./modules/footer.php";
 ?>
 

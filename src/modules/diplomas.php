@@ -12,12 +12,12 @@
                 </div>
                 <div class="diplomas__content">
                     <div class="diplomas__slider">
-                        <a class="diplomas__slider_item" href="./assets/img/diplomas/1.jpg"><img src="./assets/img/diplomas/1.jpg" alt=""></a>
-                        <a class="diplomas__slider_item" href="./assets/img/diplomas/2.png"><img src="./assets/img/diplomas/2.png" alt=""></a>
-                        <a class="diplomas__slider_item" href="./assets/img/diplomas/3.jpg"><img src="./assets/img/diplomas/3.jpg" alt=""></a>
-                        <a class="diplomas__slider_item" href="./assets/img/diplomas/4.jpg"><img src="./assets/img/diplomas/4.jpg" alt=""></a>
-                        <a class="diplomas__slider_item" href="./assets/img/diplomas/1.jpg"><img src="./assets/img/diplomas/1.jpg" alt=""></a>
-                        <a class="diplomas__slider_item" href="./assets/img/diplomas/2.png"><img src="./assets/img/diplomas/2.png" alt=""></a>
+                        <a class="diplomas__slider_item" href="./assets/img/diplomas/1.jpg"><img src="./assets/img/diplomas/1.jpg" alt="Изображение диплома"></a>
+                        <a class="diplomas__slider_item" href="./assets/img/diplomas/2.png"><img src="./assets/img/diplomas/2.png" alt="Изображение диплома"></a>
+                        <a class="diplomas__slider_item" href="./assets/img/diplomas/3.jpg"><img src="./assets/img/diplomas/3.jpg" alt="Изображение диплома"></a>
+                        <a class="diplomas__slider_item" href="./assets/img/diplomas/4.jpg"><img src="./assets/img/diplomas/4.jpg" alt="Изображение диплома"></a>
+                        <a class="diplomas__slider_item" href="./assets/img/diplomas/1.jpg"><img src="./assets/img/diplomas/1.jpg" alt="Изображение диплома"></a>
+                        <a class="diplomas__slider_item" href="./assets/img/diplomas/2.png"><img src="./assets/img/diplomas/2.png" alt="Изображение диплома"></a>
                     </div>
                 <diplomas
             </div>

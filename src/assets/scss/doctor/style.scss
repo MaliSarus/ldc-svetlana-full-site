@@ -7,13 +7,15 @@
 @import "../header";
 @import "../dropdown-menu";
 @import "../staff-simple";
-@import "../appointment";
 @import "../pricing";
 @import "../education";
 @import "../diplomas";
 @import "../feedback";
-@import "../footer";
+@import "../science-articles";
+@import "../appointment";
+@import "../specialists";
 
+@import "../footer";
 @import "../animations";
 
 .flex{
@@ -23,6 +25,28 @@
 }
 .appointment{
   flex-basis: 100%;
+  &__block{
+    margin-top: 0;
+    margin-bottom: 30px;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+    @media screen and (min-width: 961px) {
+      box-shadow: 0 10px 30px rgba(12, 28, 56, 0.08);
+      left: 0;
+      top: -30px;
+    }
+  }
+}
+
+.specialists {
+  background: white;
+   &__block {
+    @media screen and (min-width: 961px) {
+      position: static;
+      margin-bottom: 60px;
+    }
+  }
 }
 
 

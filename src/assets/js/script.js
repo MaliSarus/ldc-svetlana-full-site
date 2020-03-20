@@ -14,6 +14,7 @@ let dropdownFlag = 0;
 let appendFlag = 0;
 let resizeFlag = 0;
 let prependFlag = 0;
+let sb = 1;
 
 const isSlickLoaded = (typeof $.fn.slick !== 'undefined');
 
@@ -32,7 +33,6 @@ const aboutSliderInit = () => {
         })
     }
 };
-
 const featuresSliderInit = () => {
     if (isSet($('.features__slider'))) {
         $('.features__slider').slick({
@@ -66,7 +66,6 @@ const unitsMenuSliderInit = () => {
         });
     }
 };
-
 const diplomasSliderInit = () => {
     if (isSet($('.diplomas__slider'))) {
         $('.diplomas__slider').slick({
@@ -74,7 +73,7 @@ const diplomasSliderInit = () => {
             dots: false,
             arrows: false,
             infinite: false,
-            responsive:[
+            responsive: [
                 {
                     breakpoint: 577,
                     settings: {
@@ -108,6 +107,7 @@ const unitsMenuSliderChangeTab = () => {
         $('.units__content-services')[index].classList.add('units__content-services_active');
     });
 };
+
 const windowDesktopSizeChange = () => {
     $('.units__head .title').html('Отделения &lt;лечебно – диагностического центра&gt;');
     $('.units__emergency-room .title').html(' Взрослый и детский травмпункт &lt;ЛДЦ Завода “Светлана”&gt;');
@@ -115,8 +115,8 @@ const windowDesktopSizeChange = () => {
     $('.specialists__head .title').html('Специалисты &lt;лечебно – диагностического центра&gt;');
     $('.feedback__head > .title').html('Отзывы &lt;наших клиентов&gt;');
     $('.feedback__position').html('<span class="feedback__position_current">1</span>/' + $('.feedback__item').length);
+    $('.science-articles__head .title').html('Научные статьи &lt;и публикации&gt;');
 };
-
 const windowMobileSizeChange = () => {
     $('.units__head .title').html('Отделения ЛДЦ');
     $('.units__emergency-room .title').html('Взрослый и детский травмпункт');
@@ -124,6 +124,7 @@ const windowMobileSizeChange = () => {
     $('.appointment__block > .content').removeClass(['content_flex', 'content_between']);
     $('.specialists__head .title').html('Специалисты ЛДЦ');
     $('.feedback__head > .title').html('Отзывы');
+    $('.science-articles__head .title').html('Научные статьи');
 };
 
 const DropdownOpenButtonHandler = () => {
@@ -165,7 +166,6 @@ const DropdownOpenButtonHandler = () => {
         }
     })
 };
-
 const mobileDropdownOpenButtonHandler = () => {
     $('.dropdown-menu__open-button').on('click', '.with-arrow', function (event) {
         dropdownMenuContainer.removeClass('hide');
@@ -189,6 +189,7 @@ const onReadyMobileMediaChange = () => {
     $('.dropdown-menu__open-button').append('<div class="with-arrow"></div>');
     dropdownTabs.append('<div class="with-arrow"></div>');
     $('.dropdown-menu__open-button').off('click');
+    $('.science-articles__head .title').html('Научные статьи');
 };
 
 const closeServicesDropdownFromTapMenu = () => {
@@ -282,6 +283,24 @@ $(window).on('resize', function () {
             $('.units__menu > ul').slick('setPosition');
         }
     }
+
+    if ($(window).width() > 677 && typeof (sb) !== 'undefined') {
+        if (isSet($('.price__list'))) {
+            sb.destroy();
+            sb = undefined;
+        }
+    } else {
+        if (typeof (sb) === 'undefined') {
+            sb = new ScrollBooster({
+                viewport: document.querySelector('.price__list'),
+                content: document.querySelector('.price__list_wrapper'),
+                scrollMode: "transform", // use CSS 'transform' property
+                direction: "horizontal", // allow only horizontal scrolling
+                // emulateScroll: true, // scroll on wheel events
+            });
+        }
+    }
+
 
 });
 
@@ -473,7 +492,7 @@ window.onload = function () {
         }
     }
 
-    if(isSet($('.diplomas__slider'))){
+    if (isSet($('.diplomas__slider'))) {
         $('.diplomas__slider').magnificPopup({
             delegate: 'a', // child items selector, by clicking on it popup will open
             type: 'image',
@@ -645,12 +664,11 @@ $(document).ready(function () {
 
         const staffFilters = $('.staff__filters_item');
         staffFilters.on('click', function (event) {
-            if($('.staff__filters_item').is(event.target)) {
+            if ($('.staff__filters_item').is(event.target)) {
                 if (!$(event.target).hasClass('staff__filters_item_active')) {
                     $(event.target).addClass('staff__filters_item_active').append('<span class="staff__filters_item_cancel">&#10006;</span>');
                 }
-            }
-            else if ($('.staff__filters_item_cancel').is(event.target)){
+            } else if ($('.staff__filters_item_cancel').is(event.target)) {
                 $(event.target).parent().removeClass('staff__filters_item_active');
                 $(event.target).detach();
             }
@@ -815,15 +833,30 @@ $(document).ready(function () {
         }, 1);
     });
 
-    if(isSet($('.price__list'))) {
-        if ($(window).width() < 677)
-            new ScrollBooster({
+    if (isSet($('.price__list'))) {
+        if ($(window).width() < 677) {
+            sb = new ScrollBooster({
                 viewport: document.querySelector('.price__list'),
                 content: document.querySelector('.price__list_wrapper'),
                 scrollMode: "transform", // use CSS 'transform' property
                 direction: "horizontal", // allow only horizontal scrolling
                 // emulateScroll: true, // scroll on wheel events
             });
+        }
+    }
+
+    if (isSet($('.science-articles'))) {
+        const scienceArticlesText = $('.science-articles__content_item_text');
+        $(document).on('click', '.science-articles__content_item_text', function (event) {
+            if ($(this).hasClass('science-articles__content_item_text_unhide')) {
+                $(this).removeClass('science-articles__content_item_text_unhide');
+            } else {
+                $(this).addClass('science-articles__content_item_text_unhide');
+            }
+        });
+        scienceArticlesText.on('blur', function () {
+            $(this).removeClass('science-articles__content_item_text_unhide');
+        });
     }
 
 });
