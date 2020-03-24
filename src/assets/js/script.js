@@ -14,7 +14,7 @@ let dropdownFlag = 0;
 let appendFlag = 0;
 let resizeFlag = 0;
 let prependFlag = 0;
-let sb = 1;
+let sb;
 
 const isSlickLoaded = (typeof $.fn.slick !== 'undefined');
 
@@ -73,6 +73,8 @@ const diplomasSliderInit = () => {
             dots: false,
             arrows: false,
             infinite: false,
+            // adaptiveHeight: true,
+            // variableWidth: true
             responsive: [
                 {
                     breakpoint: 577,
@@ -108,6 +110,8 @@ const unitsMenuSliderChangeTab = () => {
     });
 };
 
+
+
 const windowDesktopSizeChange = () => {
     $('.units__head .title').html('Отделения &lt;лечебно – диагностического центра&gt;');
     $('.units__emergency-room .title').html(' Взрослый и детский травмпункт &lt;ЛДЦ Завода “Светлана”&gt;');
@@ -116,6 +120,10 @@ const windowDesktopSizeChange = () => {
     $('.feedback__head > .title').html('Отзывы &lt;наших клиентов&gt;');
     $('.feedback__position').html('<span class="feedback__position_current">1</span>/' + $('.feedback__item').length);
     $('.science-articles__head .title').html('Научные статьи &lt;и публикации&gt;');
+    $($('.staff__tabs_item')[0]).html('Врачи клиники');
+    $('.price__pricing').each(function () {
+        $(this).children().prependTo($(this));
+    });
 };
 const windowMobileSizeChange = () => {
     $('.units__head .title').html('Отделения ЛДЦ');
@@ -125,6 +133,10 @@ const windowMobileSizeChange = () => {
     $('.specialists__head .title').html('Специалисты ЛДЦ');
     $('.feedback__head > .title').html('Отзывы');
     $('.science-articles__head .title').html('Научные статьи');
+    $($('.staff__tabs_item')[0]).html('Врачи');
+    $('.price__pricing').each(function () {
+        $(this).children().appendTo($(this));
+    });
 };
 
 const DropdownOpenButtonHandler = () => {
@@ -190,6 +202,7 @@ const onReadyMobileMediaChange = () => {
     dropdownTabs.append('<div class="with-arrow"></div>');
     $('.dropdown-menu__open-button').off('click');
     $('.science-articles__head .title').html('Научные статьи');
+    $($('.staff__tabs_item')[0]).html('Врачи');
 };
 
 const closeServicesDropdownFromTapMenu = () => {
@@ -205,7 +218,7 @@ const closeServicesDropdownFromTapMenu = () => {
 //Действия при изменении размеров окна
 
 $(window).on('resize', function () {
-    if ($(window).width() > 1399) {
+    if ($(window).width() > 960) {
         if (resizeFlag == 0) {
             windowDesktopSizeChange();
             //ВЫПАДАЮЩЕЕ МЕНЮ В ХЭДЕРЕ
@@ -284,7 +297,7 @@ $(window).on('resize', function () {
         }
     }
 
-    if ($(window).width() > 677 && typeof (sb) !== 'undefined') {
+    if ($(window).width() > 677 && typeof (sb) != 'undefined') {
         if (isSet($('.price__list'))) {
             sb.destroy();
             sb = undefined;
@@ -307,7 +320,6 @@ $(window).on('resize', function () {
 
 // Обработка событий при полной загрузки страницы
 window.onload = function () {
-
     //Слайдер специалистов и кнопки слайдера специалистов
     if (isSet($('.specialists__slider'))) {
         const specSlick = $('.specialists__slider');
@@ -484,7 +496,6 @@ window.onload = function () {
             });
         }
 
-
         if (window.matchMedia('screen and (min-width: 960px)').matches) {
             selectButtons.appendTo('.about__slider')
         } else {
@@ -493,7 +504,8 @@ window.onload = function () {
     }
 
     if (isSet($('.diplomas__slider'))) {
-        $('.diplomas__slider').magnificPopup({
+        const diplomasSlick = $('.diplomas__slider');
+        diplomasSlick.magnificPopup({
             delegate: 'a', // child items selector, by clicking on it popup will open
             type: 'image',
             gallery: {
@@ -501,6 +513,50 @@ window.onload = function () {
             },
         });
         diplomasSliderInit();
+
+        $('.diplomas__head .arrows .arrows__arrow-left').on('click', function () {
+            diplomasSlick.slick('slickPrev');
+        });
+        $('.diplomas__head .arrows .arrows__arrow-right').on('click', function () {
+            diplomasSlick.slick('slickNext');
+        });
+
+        $('.diplomas__slider_item img').each(function(){
+            // удаляем атрибуты width и height
+            $(this).removeAttr("width")
+                .removeAttr("height")
+                .css({ width: "auto", height: "auto" });
+
+            // получаем заветные цифры
+            const width  = $(this).width();
+            const height = $(this).height();
+            if (width > height){
+                $(this).css({
+                    width: '100%',
+                    height: 'auto'
+                });
+                $(this).parent().css({
+                    width: '100%',
+                    height: $(this).height()
+                });
+            }else{
+                $(this).css({
+                    width: '100%',
+                    height: '100%'
+                })
+            }
+        });
+
+        $('.diplomas__position').html('<span class="diplomas__position_current">'+ diplomasSlick.slick('slickGetOption','slidesToShow') +'</span>/' + $('.diplomas__slider_item').length);
+
+        if ($('.diplomas__slider.slick-initialized')) {
+            diplomasSlick.on('afterChange', function (event, slick, currentSlide) {
+                $('.diplomas__position_current').html(diplomasSlick.slick('slickCurrentSlide') + diplomasSlick.slick('slickGetOption','slidesToShow'));
+                console.log(currentSlide)
+            });
+
+        }
+
     }
 };
 
@@ -660,6 +716,7 @@ $(document).ready(function () {
             $(event.currentTarget).addClass('staff__tabs_item_active');
             staffContentTabs.removeClass('staff__content_tab_active');
             $(staffContentTabs[index]).addClass('staff__content_tab_active');
+            $('title').html('ЛДЦ Светлана - ' + $('.staff__tabs_item_active').html());
         });
 
         const staffFilters = $('.staff__filters_item');
@@ -673,6 +730,19 @@ $(document).ready(function () {
                 $(event.target).detach();
             }
         });
+
+        const staffSearch = $('.staff__search-form-field');
+        const staffDropdown = $('.staff__search-dropdown');
+        staffSearch.on('input', function () {
+            staffDropdown.css({
+                display: 'block',
+                width: $('.staff__search-form-wrapper').width()
+            });
+            staffSearch.val(staffSearch.val().replace(/[^А-Яа-я]/, ''));
+        });
+        staffSearch.on('blur', function () {
+            staffDropdown.attr('style', '');
+        })
     }
 
 
@@ -814,6 +884,17 @@ $(document).ready(function () {
         }
     });
 
+    $('.appointment__close').on('click', function () {
+        $('.appointment_popup').removeClass('appointment_popup_active');
+        if($('.popup-iphone__actions').attr('style') == 'display: none;'){
+            $('.popup-iphone__actions').fadeIn();
+        }
+        else{
+            $('.appointment_popup').removeClass('appointment_popup_active').attr('style', '');
+            $('body').attr('style', '');
+        }
+    });
+
     //Обработка медиа запроса
     if (window.matchMedia('screen and (max-width: 960px)').matches) {
         onReadyMobileMediaChange();
@@ -824,6 +905,9 @@ $(document).ready(function () {
         selectButtons.appendTo('.about__slider');
         // $('body').off('click');
         $('.units__features > a.btn.btn_red_fill').remove();
+        $('.price__pricing').each(function () {
+            $(this).children().prependTo($(this));
+        });
         appendFlag = 1;
     }
 
@@ -833,16 +917,25 @@ $(document).ready(function () {
         }, 1);
     });
 
-    if (isSet($('.price__list'))) {
+    if (isSet($('.price'))) {
         if ($(window).width() < 677) {
             sb = new ScrollBooster({
                 viewport: document.querySelector('.price__list'),
                 content: document.querySelector('.price__list_wrapper'),
                 scrollMode: "transform", // use CSS 'transform' property
-                direction: "horizontal", // allow only horizontal scrolling
-                // emulateScroll: true, // scroll on wheel events
+                direction: "horizontal", // allow only horizontal scrollin
             });
         }
+
+        $('.price__list_item button.btn_size_18').on('click', function () {
+            $('.appointment_popup').addClass('appointment_popup_active').css({
+                height: '100vh',
+                background:'rgba(63,90,138,0.4)',
+            });
+            $('body').css({
+                overflow: 'hidden'
+            })
+        })
     }
 
     if (isSet($('.science-articles'))) {

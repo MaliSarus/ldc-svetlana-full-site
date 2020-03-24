@@ -35,3 +35,28 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
 .hide {
   display: none;
 }
+
+.current-page{
+  color: rgba($main-color-dark,.8);
+  display: none;
+  @media screen and (min-width: 961px){
+    font-size: 14px;
+    display: block;
+  }
+  @media screen and (min-width: 1400px) {
+    font-size: 18px;
+  }
+
+  a{
+    color: rgba($main-color-dark,.8);
+    @media screen and (min-width: 961px){
+      font-size: 14px;
+    }
+    @media screen and (min-width: 1400px) {
+      font-size: 18px;
+    }
+    &:hover{
+      color: $main-color
+    }
+  }
+}

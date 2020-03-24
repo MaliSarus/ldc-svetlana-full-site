@@ -25,6 +25,7 @@
                     <div class="appointment__title">
                         <h2 class="title">Запись на прием</h2>
                         <a href="tel:+78126270203">+7 (812) 627 02 03</a>
+                        <div class="appointment__close"><img src="./assets/img/appointment/close-cross.svg" alt="Кнопка закрыть"></div>
                     </div>
                     <form action="#" class="appointment__form" id="popup-form-for-date">
                         <div class="appointment__input-wrapper">

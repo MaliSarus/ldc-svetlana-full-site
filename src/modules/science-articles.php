@@ -4,7 +4,7 @@
             <div class="science-articles__block">
                 <div class="science-articles__head">
                     <div class="title">Научные статьи &lt;и публикации&gt;</div>
-                    <a href="#">Читать все</a>
+                    <a href="#" class="link">Читать все</a>
                 </div>
                 <div class="science-articles__content">
                     <div class="science-articles__content_item">
@@ -34,7 +34,7 @@
 
                 </div>
                 <div class="science-articles__footer">
-                    <a href="#">Показать еще&nbsp;&nbsp;&nbsp;&nbsp;<img src="./assets/img/science-articles/arrow.svg" alt="Стрелка"></a>
+                    <a href="#" class="link">Показать еще&nbsp;&nbsp;&nbsp;&nbsp;<img src="./assets/img/science-articles/arrow.svg" alt="Стрелка"></a>
                 </div>
             </div>
         </div>

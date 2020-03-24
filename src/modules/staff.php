@@ -6,7 +6,7 @@
                     <div class="content">
                         <div class="title">Врачи ЛДЦ</div>
                         <div class="staff__tabs">
-                            <div class="staff__tabs_item staff__tabs_item_active">Врачи</div>
+                            <div class="staff__tabs_item staff__tabs_item_active">Врачи клиники</div>
                             <div class="staff__tabs_item">Кураторы направлений</div>
                         </div>
                     </div>
@@ -23,6 +23,18 @@
                                     </button>
                                 </form>
                             </div>
+
+                            <div class="staff__search-dropdown">
+                                <div class="staff__search-dropdown_item">
+                                    <div class="staff__search-dropdown_title">Врачи</div>
+                                    <div class="staff__search-dropdown_subtitle">Невозвратный Петр Андреевич</div>
+                                </div>
+                                <div class="staff__search-dropdown_item">
+                                    <div class="staff__search-dropdown_title">Специализации</div>
+                                    <div class="staff__search-dropdown_subtitle">Невозвратный Петр Андреевич</div>
+                                </div>
+                            </div>
+
                             <div class="staff__filters">
                                 <div class="staff__filters_item">Доктора медицинских наук</div>
                                 <div class="staff__filters_item">Профессора</div>

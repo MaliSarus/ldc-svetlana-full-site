@@ -18,7 +18,7 @@
                             Холтеровское мониторирование ЭКГ артериального давления (ЭКГ)
                         </div>
                         <div class="price__pricing">
-                            8 000 ₽ <span class="price__pricing_del">12 000 ₽</span>
+                            8 000 ₽ <span class="price__pricing_del">13 000 ₽</span>
                         </div>
                         <button class="btn btn_size_18 btn_red">Записаться</button>
                     </div>

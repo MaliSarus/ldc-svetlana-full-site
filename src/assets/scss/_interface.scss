@@ -271,6 +271,16 @@
   background-color: $accent-color !important;
 }
 
+.link{
+  color: $main-color;
+  &:hover {
+    color: $accent-color;
+  }
+  &:active {
+    color: $accent-color-light;
+  }
+}
+
 .hamburger {
   position: relative;
   right: 0;

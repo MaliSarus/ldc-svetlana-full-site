@@ -32,13 +32,18 @@
   }
   &__slider{
     max-width: 100%;
+    .slick-list {
+      display: flex;
+      .slick-track {
+        display: flex;
+      }
+    }
     &_item{
-      display: block;
+      display: block !important;
       margin-right: 10px;
-      //max-width: 168px;
-      max-height: 110px;
-      overflow: hidden;
+      //max-height: 300px;
       position: relative;
+      height: 100%;
       &:hover::before{
         display: flex;
         justify-content: center;

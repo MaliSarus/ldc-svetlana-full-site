@@ -34,9 +34,24 @@
       animation-fill-mode: both;
     }
     .appointment {
+      &__close{
+        width: 16px;
+        height: 16px;
+        position: absolute;
+        right: 0;
+        top: 4px;
+        img{
+          width: 100%;
+          height: 100%;
+        }
+      }
+      &__block{
+        max-width: 345px;
+      }
       &__title {
         flex-direction: column;
         align-items: flex-start;
+        position: relative;
 
         .title {
           margin-bottom: 12px;

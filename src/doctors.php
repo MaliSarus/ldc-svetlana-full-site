@@ -1,7 +1,7 @@
 <?php
 require "./modules/headlings.php";
 ?>
-<title>ЛДЦ Светлана - Врачи</title>
+<title>ЛДЦ Светлана - Врачи клиники</title>
 <link rel="stylesheet" href="./assets/css/slick.css"/>
 <link rel="stylesheet" href="./assets/css/slick-theme.css"/>
 <link rel="stylesheet" href="./assets/css/doctors/style.css">
