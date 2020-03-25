@@ -323,20 +323,9 @@
 
         li {
           color: rgba(#0A1831, .8);
-
-          &:before {
-            display: inline-block;
-            content: '';
-            width: 14px;
-            height: 6px;
-            margin-right: 10px;
-            background-color: $accent-color;
-            transform: translateY(-50%) skewX(-15deg);
-            @media screen and (max-width: 960px) {
-              font-size: 16px;
-            }
+          @media screen and (max-width: 960px) {
+            font-size: 16px;
           }
-
           span {
             color: $accent-color;
             font-weight: bold;

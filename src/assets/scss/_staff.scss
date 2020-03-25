@@ -222,11 +222,19 @@
       font-size: 12px;
       color: rgba($main-color, .6);
       margin-bottom: 8px;
+      @media screen and (min-width: 769px){
+        font-size: 14px;
+      }
     }
 
-    &_subtitle {
+    &_link {
+      display: block;
+      color: $main-color-dark;
       font-size: 12px;
       margin-bottom: 8px;
+      @media screen and (min-width: 769px){
+        font-size: 14px;
+      }
 
       &:last-child {
         margin-bottom: 0;
@@ -273,7 +281,7 @@
         border-bottom: none;
         color: white;
         background-color: $main-color;
-        padding: 5px;
+        padding: 5px 7px 7px 9px;
       }
 
       &_cancel {

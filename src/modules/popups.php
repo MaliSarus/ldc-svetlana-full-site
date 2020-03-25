@@ -9,7 +9,9 @@
     <div class="popup-iphone__block">
         <div class="popup-iphone__item popup-iphone__actions">
             <div class="popup-iphone__action"></div>
-            <a href="tel:+78126270203"><div class="popup-iphone__action"></div></a>
+            <a href="tel:+78126270203">
+                <div class="popup-iphone__action"></div>
+            </a>
         </div>
         <div class="popup-iphone__item popup-iphone__cancel">
             Отменить
@@ -17,7 +19,7 @@
     </div>
 </div>
 
-<section class="appointment appointment_popup">
+<section class="appointment_popup">
     <div class="container container_size_1667">
         <div class="row">
             <div class="appointment__block">
@@ -25,24 +27,27 @@
                     <div class="appointment__title">
                         <h2 class="title">Запись на прием</h2>
                         <a href="tel:+78126270203">+7 (812) 627 02 03</a>
-                        <div class="appointment__close"><img src="./assets/img/appointment/close-cross.svg" alt="Кнопка закрыть"></div>
+                        <div class="appointment__close"><img src="./assets/img/appointment/close-cross.svg"
+                                                             alt="Кнопка закрыть"></div>
                     </div>
                     <form action="#" class="appointment__form" id="popup-form-for-date">
                         <div class="appointment__input-wrapper">
-                            <input type="text" class="appointment__customerName" id="popup-customerName" name="customerName" required>
+                            <input type="text" class="appointment__customerName" id="popup-customerName"
+                                   name="customerName" required>
                             <label for="popup-customerName">Имя</label>
                         </div>
                         <div class="appointment__input-wrapper">
-                            <input type="tel" class = "appointment__phone" id="popup-phone" name="phone" required>
+                            <input type="tel" class="appointment__phone" id="popup-phone" name="phone" required>
                             <label for="popup-phone">Телефон</label>
                         </div>
-                        <label class="confident-label"><input class="appointment__confident" name="confident" type="checkbox" value="yes"
+                        <label class="confident-label"><input class="appointment__confident" name="confident"
+                                                              type="checkbox" value="yes"
                                                               required>
                             <small>Даю согласие на обработку <u>персональных данных</u></small>
                         </label>
                         <button type="submit" class="btn btn_white">Записаться на приём <img
-                                src="./assets/img/appointment/submit-icon.svg"
-                                alt="Иконка кнопки"></button>
+                                    src="./assets/img/appointment/submit-icon.svg"
+                                    alt="Иконка кнопки"></button>
                     </form>
                 </div>
             </div>

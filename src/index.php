@@ -9,7 +9,6 @@
     <script src="./assets/js/jquery-3.4.1.min.js"></script>
 </head>
 <body>
-
 <div class="layer1">
     <div class="fig" id="fig11"></div>
     <div class="fig" id="fig12"></div>

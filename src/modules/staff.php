@@ -4,7 +4,7 @@
             <div class="staff__block">
                 <div class="staff__head">
                     <div class="content">
-                        <div class="title">Врачи ЛДЦ</div>
+                        <div class="title">Врачи &lt;лечебно – диагностического центра&gt;</div>
                         <div class="staff__tabs">
                             <div class="staff__tabs_item staff__tabs_item_active">Врачи клиники</div>
                             <div class="staff__tabs_item">Кураторы направлений</div>
@@ -27,11 +27,11 @@
                             <div class="staff__search-dropdown">
                                 <div class="staff__search-dropdown_item">
                                     <div class="staff__search-dropdown_title">Врачи</div>
-                                    <div class="staff__search-dropdown_subtitle">Невозвратный Петр Андреевич</div>
+                                    <a href="#" class="staff__search-dropdown_link">Невозвратный Петр Андреевич</a>
                                 </div>
                                 <div class="staff__search-dropdown_item">
                                     <div class="staff__search-dropdown_title">Специализации</div>
-                                    <div class="staff__search-dropdown_subtitle">Невозвратный Петр Андреевич</div>
+                                    <a href="#" class="staff__search-dropdown_link">Невозвратный Петр Андреевич</a>
                                 </div>
                             </div>
 

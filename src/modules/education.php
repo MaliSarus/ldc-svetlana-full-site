@@ -4,25 +4,24 @@
             <div class="education__block">
                 <article class="education__article">
                     <h2 class="title">Образование</h2>
-                    <div class="education__text">Теория — это когда все известно, но ничего не работает. Практика — это
-                        когда все работает, но никто не знает почему. Мы же объединяем теорию и практику: ничего не
-                        работает... и никто не знает почему!
+                    <div class="education__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet
+                        architecto atque consequuntur corporis eligendi esse est expedita hic, laudantium minima nam
+                        nihil nisi numquam odit omnis qui quibusdam quis quisquam recusandae repellat rerum, sequi
+                        similique tempore ullam velit voluptatem voluptates! Alias aliquam ea fugiat nesciunt odit quam
+                        quos tempore voluptas. Commodi dolorem dolorum earum eligendi eum expedita, explicabo harum
+                        illo, laboriosam nemo nisi nulla officia veniam. Accusamus aut, dicta magni perspiciatis porro
+                        sit? Accusantium asperiores aspernatur blanditiis commodi dolor dolore dolorum ea eaque error
+                        exercitationem explicabo harum incidunt officiis possimus quae qui quibusdam repellendus, sequi
+                        similique ullam ut vitae voluptatum?
                     </div>
                 </article>
                 <article class="education__article">
                     <h2 class="title">Курсы повышения квалификации</h2>
                     <div class="education__text">
-                        — А вот расстался ты с ней, бросила она тебя, и пишешь ей: «Это последнее sms, я больше не буду
-                        тебе писать. Ты стала мне чужой. Прощай». Она не отвечает. Тогда второе «последнее sms»: «Могла
-                        бы и ответить. Нас, между прочим, что-то связывало». А-а. Третье: «Спешу поделиться радостью: я
-                        перестал о тебе думать. Вообще! Так что не звони».<br>
-                        — А она и не звонит.<br>
-                        — Тогда какой-нибудь запрещённый приём, там: «Ты знаешь, оказывается, в Москве есть ещё красивые
-                        женщины кроме тебя».<br>
-                        — И всё равно ничего, да?<br>
-                        — И так ещё сто «последних sms» и самое последнее: «Неужели нельзя быть нормальным человеком и
-                        один раз ответить?!» И всё. Перестал писать, год прошёл. Отмучился. От неё приходит: «Снег идёт.
-                        С первым днём зимы». Ну не суки?!<br>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur cum dolorum esse fugit
+                        itaque magnam quaerat! Deserunt facere id iure nobis qui reiciendis repellat tempore? Amet aut
+                        facere itaque maxime, obcaecati perferendis quaerat quos velit! At ea earum illum ipsa officia,
+                        omnis optio reiciendis rerum sunt unde. Doloribus fugiat, quibusdam.
                     </div>
                 </article>
             </div>

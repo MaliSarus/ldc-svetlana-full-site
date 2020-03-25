@@ -1,11 +1,14 @@
 <section class="staff"> <!--Секция о докторах-->
     <div class="container">
         <div class="row">
+            <ul class="breadcrumbs">
+                <li><a href="#">Главная</a> </li>
+                <li><a href="#">Врачи лечебно – диагностического центра</a></li>
+            </ul>
             <div class="staff__item staff__item_active">
-                <div class="current-page"><a href="#">Главная</a> / <a href="#">Врачи лечебно – диагностического центра</a></div>
                 <div class="staff__info"><!--Левая часть-->
                     <h1 class="staff__doctor-name title">Вишневский Аркадий <br>Анатольевич </h1>
-                    <h4 class="staff__title">Хирург, онколог</h4>
+                    <h2 class="staff__title">Хирург, онколог</h2>
                     <p class="staff__desc">Заведующий кафедрой травматологии и ортопедии СЗГМУ им И.И. Мечникова.
                         Руководитель Федерального центра эндопротезирования детей и подростков. Президент Ассоциации
                         Травматологов - ортопедов Санкт - Петербурга и Ленинградской области, доктор медицинских наук,

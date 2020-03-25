@@ -31,6 +31,8 @@
       background: #F6F7F8;
       padding: 12px 8px;
       margin-bottom: 18px;
+      display: flex;
+      flex-direction: column;
       @media screen and (min-width: 961px) {
         flex-basis: calc(100% / 2);
         margin-bottom: 0;
@@ -43,7 +45,7 @@
       }
 
       &_text {
-        height: 100%;
+        flex-grow: 1;
         max-height: 85px;
         overflow: hidden;
         font-size: 16px;
@@ -71,6 +73,7 @@
         &_unhide {
           outline: none;
           overflow: visible;
+          height: auto;
           max-height: none;
 
           &::before {

@@ -424,11 +424,11 @@
                     </h2>
                     <div class="units__features">
                         <ul>
-                            <li><span>Круглосуточное</span> рентген-обследование без очередей;</li>
-                            <li>Приём врача травмотолога;</li>
-                            <li>Рентген снимок и заключение рентгенолога за <span>30 минут</span>;</li>
-                            <li>Оказание травматологической экстренной помощи <span>на месте</span>;</li>
-                            <li>Мы принимаем пациентов в возрасте <span>от 3х лет!</span></li>
+                            <li class="list-item_red-square"><span>Круглосуточное</span> рентген-обследование без очередей;</li>
+                            <li class="list-item_red-square">Приём врача травмотолога;</li>
+                            <li class="list-item_red-square">Рентген снимок и заключение рентгенолога за <span>30 минут</span>;</li>
+                            <li class="list-item_red-square">Оказание травматологической экстренной помощи <span>на месте</span>;</li>
+                            <li class="list-item_red-square">Мы принимаем пациентов в возрасте <span>от 3х лет!</span></li>
                         </ul>
                         <ul class="units__features_hurt-list">
                             <li class="units__features_hurt-item"><a class="units__features_hurt-link" href="#">Травма

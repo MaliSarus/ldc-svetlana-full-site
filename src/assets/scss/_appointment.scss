@@ -14,53 +14,8 @@
     }
   }
 
-  &_popup{
-    background: transparent;
-    display: none;
-    position: absolute;
-    justify-content: center;
-    align-items: center;
-    z-index: 10004;
-    margin-bottom: 0;
-    top: 50%;
-    left: 50%;
-    transform: translate3d(-50%,-50%,0);
-    box-sizing: border-box;
-    &_active{
-      display: flex;
-      animation: fadeIn;
-      width: 100%;
-      animation-duration: 500ms;
-      animation-fill-mode: both;
-    }
-    .appointment {
-      &__close{
-        width: 16px;
-        height: 16px;
-        position: absolute;
-        right: 0;
-        top: 4px;
-        img{
-          width: 100%;
-          height: 100%;
-        }
-      }
-      &__block{
-        max-width: 345px;
-      }
-      &__title {
-        flex-direction: column;
-        align-items: flex-start;
-        position: relative;
 
-        .title {
-          margin-bottom: 12px;
-        }
-      }
-    }
-  }
-
-  &__block {
+  .appointment__block {
     flex-basis: 100%;
     position: relative;
     z-index: 10;
@@ -163,7 +118,7 @@
   }
 
 
-  &__form {
+  .appointment__form {
     display: flex;
     vertical-align: center;
     position: relative;
@@ -294,7 +249,178 @@
         }
       }
     }
+  }
+  &_popup{
+    @media screen and (max-width: 100vw){
+      background: transparent;
+      display: none;
+      position: absolute;
+      justify-content: center;
+      align-items: center;
+      z-index: 10004;
+      margin-bottom: 0;
+      top: 50%;
+      left: 50%;
+      transform: translate3d(-50%,-50%,0);
+      box-sizing: border-box;
+      &_active{
+        display: flex;
+        animation: fadeIn;
+        width: 100%;
+        animation-duration: 500ms;
+        animation-fill-mode: both;
+      }
+      .appointment {
+        &__close{
+          width: 16px;
+          height: 16px;
+          position: absolute;
+          right: 0;
+          top: 4px;
+          img{
+            width: 100%;
+            height: 100%;
+          }
+        }
+        &__block{
+          max-width: 345px;
+          position: relative;
+          z-index: 10;
+          background-color: white;
+          box-sizing: border-box;
+          padding: 18px;
+          box-shadow: 0px 6px 15px rgba(6, 14, 29, 0.08);
+          margin-bottom: 0;
+          .content{
+            width: 100% !important;
+            box-sizing: border-box!important;
+            display: block!important;
+          }
+        }
+        &__title {
+          flex-direction: column;
+          align-items: flex-start;
+          position: relative;
 
-    //}
+          .title {
+            margin-bottom: 12px;
+          }
+        }
+        a {
+          color: $accent-color;
+        }
+        &__form {
+          display: flex;
+          vertical-align: center;
+          position: relative;
+          flex-grow: 3;
+          flex-wrap: wrap;
+          justify-content: stretch;
+
+          .appointment__input-wrapper {
+            position: relative;
+            flex-basis: 100%;
+            margin-bottom: 12px;
+
+            label {
+              position: absolute;
+              top: 45%;
+              left: 18px;
+              transform: translateY(-50%);
+              pointer-events: none;
+              transition: all .3s;
+              color: $main-color
+            }
+
+            input {
+              width: 100%;
+
+              &:focus {
+                outline: none;
+              }
+
+              &:focus ~ label {
+                top: 20%;
+                font-size: 10px;
+              }
+
+              &:valid ~ label {
+                top: 20%;
+                font-size: 10px;
+                color: $main-color;
+              }
+            }
+          }
+
+          input, button {
+            box-sizing: border-box;
+            height: 50px;
+            padding: 0 18px;
+            font-size: 16px;
+            background: #FFFFFF;
+            border: 1px solid rgba(42, 68, 114, 0.2);
+            border-radius: 1px;
+            color: $main-color;
+
+          }
+
+          button {
+            border: 1px solid $main-color;
+
+            &:hover {
+              img {
+                filter: grayscale(1) invert(1) brightness(1.5);
+              }
+            }
+
+            img {
+              vertical-align: middle;
+              margin-left: 10px;
+              filter: none;
+            }
+          }
+
+          .confident-label {
+            display: flex;
+            align-items: center;
+            margin-bottom: 18px;
+            small {
+              font-size: 12px;
+              color: $main-color;
+            }
+
+            .appointment__confident{
+              margin: 0;
+              height: 16px;
+              width: 16px;
+              vertical-align: middle;
+              margin-right: 8px;
+              background: white;
+              border: 1px solid $main-color;
+              outline: none;
+              appearance: none;
+              padding: 0;
+
+              &:checked {
+                background-color: $main-color;
+
+                &::before {
+                  display: block;
+                  content: '';
+                  width: 98%;
+                  height: 98%;
+                  background-image: url("../../img/appointment/checkmark.svg");
+                  background-position: center;
+                  background-repeat: no-repeat;
+                  background-size: contain;
+                  filter: grayscale(1) contrast(50);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
   }
 }

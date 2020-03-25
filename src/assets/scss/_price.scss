@@ -12,7 +12,10 @@
   &__block {
     padding: 18px 15px;
     @media screen and (min-width: 577px) {
-      padding:0;
+      padding:18px 0;
+    }
+    @media screen and (min-width: 961px){
+      padding: 0;
     }
     .title{
       margin-bottom: 18px;

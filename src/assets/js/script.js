@@ -121,6 +121,15 @@ const windowDesktopSizeChange = () => {
     $('.feedback__position').html('<span class="feedback__position_current">1</span>/' + $('.feedback__item').length);
     $('.science-articles__head .title').html('Научные статьи &lt;и публикации&gt;');
     $($('.staff__tabs_item')[0]).html('Врачи клиники');
+    const staffTabIndex = $('.staff__tabs_item').index($('.staff__tabs_item_active'))
+    switch (staffTabIndex) {
+        case 0:
+            $('.staff__head .title').html('Врачи &lt;лечебно – диагностического центра&gt;');
+            break;
+        case 1:
+            $('.staff__head .title').html('Кураторы направлений &lt;лечебно – диагностического центра&gt;');
+            break;
+    }
     $('.price__pricing').each(function () {
         $(this).children().prependTo($(this));
     });
@@ -134,33 +143,24 @@ const windowMobileSizeChange = () => {
     $('.feedback__head > .title').html('Отзывы');
     $('.science-articles__head .title').html('Научные статьи');
     $($('.staff__tabs_item')[0]).html('Врачи');
+    const staffTabIndex = $('.staff__tabs_item').index($('.staff__tabs_item_active'))
+    switch (staffTabIndex) {
+        case 0:
+            $('.staff__head .title').html('Врачи ЛДЦ');
+            break;
+        case 1:
+            $('.staff__head .title').html('Кураторы направлений ЛДЦ');
+            break;
+    }
+
     $('.price__pricing').each(function () {
         $(this).children().appendTo($(this));
     });
 };
 
 const DropdownOpenButtonHandler = () => {
-    $('body').on('click', function (event) {
-        if ($(window).width() >= 961) {
-            if ($('.dropdown-menu__open-button').is(event.target) || $('.dropdown-menu__open-button').has(event.target).length !== 0) {
-                if (!dropdownMenuContainer.hasClass('dropdown-menu__container_active')) {
-                    dropdownMenuContainer.fadeIn(400).addClass('dropdown-menu__container_active');
-                    $('body').css({overflow: 'hidden'});
-                    $('li.dropdown-menu__open-button').css({
-                        height: 'calc(100% - 2px)',
-                        borderBottom: '2px solid white'
-                    });
-                } else {
-                    dropdownMenuContainer.fadeOut(400).removeClass('dropdown-menu__container_active');
-                    $('body').css({overflow: 'visible'});
-                    $('li.dropdown-menu__open-button').attr('style', '');
-                }
-            } else if (!$('.dropdown-menu').is(event.target) && $('.dropdown-menu').has(event.target).length === 0) { // и не по его дочерним элементам
-                dropdownMenuContainer.fadeOut(400).removeClass('dropdown-menu__container_active');
-                $('body').css({overflow: 'visible'});
-                $('li.dropdown-menu__open-button').attr('style', '');
-            }
-        } else {
+    $(document).on('click', function (event) {
+        if ($(window).width() < 961) {
             if ($('.arrow-back').is(event.target)) {
                 if (dropdownTabsBlock.attr('style') == 'display: none;' && dropdownContentBlock.attr('style') == '') {
                     dropdownContentBlock.css({
@@ -203,6 +203,7 @@ const onReadyMobileMediaChange = () => {
     $('.dropdown-menu__open-button').off('click');
     $('.science-articles__head .title').html('Научные статьи');
     $($('.staff__tabs_item')[0]).html('Врачи');
+    $('.staff__head .title').html('Врачи ЛДЦ');
 };
 
 const closeServicesDropdownFromTapMenu = () => {
@@ -297,20 +298,22 @@ $(window).on('resize', function () {
         }
     }
 
-    if ($(window).width() > 677 && typeof (sb) != 'undefined') {
-        if (isSet($('.price__list'))) {
-            sb.destroy();
-            sb = undefined;
-        }
-    } else {
-        if (typeof (sb) === 'undefined') {
-            sb = new ScrollBooster({
-                viewport: document.querySelector('.price__list'),
-                content: document.querySelector('.price__list_wrapper'),
-                scrollMode: "transform", // use CSS 'transform' property
-                direction: "horizontal", // allow only horizontal scrolling
-                // emulateScroll: true, // scroll on wheel events
-            });
+    if(isSet($('.price'))) {
+        if ($(window).width() > 677 && typeof (sb) != 'undefined') {
+            if (isSet($('.price__list'))) {
+                sb.destroy();
+                sb = undefined;
+            }
+        } else {
+            if (typeof (sb) === 'undefined') {
+                sb = new ScrollBooster({
+                    viewport: document.querySelector('.price__list'),
+                    content: document.querySelector('.price__list_wrapper'),
+                    scrollMode: "transform", // use CSS 'transform' property
+                    direction: "horizontal", // allow only horizontal scrolling
+                    // emulateScroll: true, // scroll on wheel events
+                });
+            }
         }
     }
 
@@ -492,7 +495,7 @@ window.onload = function () {
 
         if ($('.feedback__slider.slick-initialized')) {
             $('.feedback__slider').on('afterChange', function (event, slick, currentSlide) {
-                $('.feedback__position_current').html($('.feedback__slider').slick('slickCurrentSlide') + 1);
+                $('.feedback__position_current').html($('.feedback__slider').slick('slickCurrentSlide') + $('.feedback__slider').slick('slickGetOption','slidesToScroll'));
             });
         }
 
@@ -563,6 +566,38 @@ window.onload = function () {
 
 //Обработка событий после загрузки страницы
 $(document).ready(function () {
+    if($(window).width() >= 961){
+        $('.dropdown-menu__open-button').on('click',function (event) {
+            if (!dropdownMenuContainer.hasClass('dropdown-menu__container_active')) {
+                dropdownMenuContainer.fadeIn(400).addClass('dropdown-menu__container_active');
+                $('body').css({overflow: 'hidden'});
+                $('li.dropdown-menu__open-button').css({
+                    height: 'calc(100% - 2px)',
+                    borderBottom: '2px solid white'
+                });
+            } else if(dropdownMenuContainer.hasClass('dropdown-menu__container_active')){
+                dropdownMenuContainer.fadeOut(400).removeClass('dropdown-menu__container_active');
+                $('body').css({overflow: 'visible'});
+                $('li.dropdown-menu__open-button').attr('style', '');
+            }
+        });
+        $(document).mouseup(function (e) {
+            if(dropdownMenuContainer.hasClass('dropdown-menu__container_active')) {
+                const block = $('.dropdown-menu');
+                if (block.has(e.target).length === 0) {
+                    dropdownMenuContainer.fadeOut(400).removeClass('dropdown-menu__container_active');
+                    $('body').css({overflow: 'visible'});
+                    $('li.dropdown-menu__open-button').attr('style', '');
+                }
+            }
+        });
+
+        // } else if (!$('.dropdown-menu').is(event.target) && $('.dropdown-menu').has(event.target).length === 0) { // и не по его дочерним элементам
+        //     dropdownMenuContainer.fadeOut(400).removeClass('dropdown-menu__container_active');
+        //     $('body').css({overflow: 'visible'});
+        //     $('li.dropdown-menu__open-button').attr('style', '');
+        // }
+    }
     if (isSet($('.appointment'))) {
 
         //Переменные для работы с формой
@@ -659,7 +694,6 @@ $(document).ready(function () {
                 appointmentPhoneInput.each(function (index) {
                     if (index == appointmentPhoneInput.index(event.target)) {
                     } else {
-                        // $(this).val($(this).val() + event.originalEvent.key);
                         $(this).val($(event.currentTarget).val());
                     }
                 });
@@ -668,9 +702,9 @@ $(document).ready(function () {
         });
 
         appointmentNameInput.on('input', function (event) {
-            $(appointmentNameInput[0]).val($(event.currentTarget).val().replace(/[^А-Яа-я]/, ''));
-            $(appointmentNameInput[1]).val($(event.currentTarget).val().replace(/[^А-Яа-я]/, ''));
-
+            $(appointmentNameInput).each(function () {
+                $(this).val($(event.currentTarget).val().replace(/[^А-Яа-я]/, ''));
+            });
         });
 
         appointmentConfident.change(function (event) {
@@ -717,6 +751,27 @@ $(document).ready(function () {
             staffContentTabs.removeClass('staff__content_tab_active');
             $(staffContentTabs[index]).addClass('staff__content_tab_active');
             $('title').html('ЛДЦ Светлана - ' + $('.staff__tabs_item_active').html());
+            const staffTabIndex = $('.staff__tabs_item').index($('.staff__tabs_item_active'))
+            if ($(window).width() < 961) {
+                switch (staffTabIndex) {
+                    case 0:
+                        $('.staff__head .title').html('Врачи ЛДЦ');
+                        break;
+                    case 1:
+                        $('.staff__head .title').html('Кураторы направлений ЛДЦ');
+                        break;
+                }
+            } else{
+                switch (staffTabIndex) {
+                    case 0:
+                        $('.staff__head .title').html('Врачи &lt;лечебно – диагностического центра&gt;');
+                        break;
+                    case 1:
+                        $('.staff__head .title').html('Кураторы направлений &lt;лечебно – диагностического центра&gt;');
+                        break;
+                }
+            }
+
         });
 
         const staffFilters = $('.staff__filters_item');
@@ -893,6 +948,7 @@ $(document).ready(function () {
             $('.appointment_popup').removeClass('appointment_popup_active').attr('style', '');
             $('body').attr('style', '');
         }
+        $('body').on('click');
     });
 
     //Обработка медиа запроса
@@ -927,14 +983,15 @@ $(document).ready(function () {
             });
         }
 
-        $('.price__list_item button.btn_size_18').on('click', function () {
+        $('.price__button').on('click', function () {
+
             $('.appointment_popup').addClass('appointment_popup_active').css({
                 height: '100vh',
                 background:'rgba(63,90,138,0.4)',
             });
             $('body').css({
                 overflow: 'hidden'
-            })
+            });
         })
     }
 
