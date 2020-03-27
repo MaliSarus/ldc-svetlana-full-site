@@ -43,7 +43,7 @@
                         <li><a href="#">Телемедицина</a></li>
                         <li><a href="#">Check-up программы</a></li>
                         <li><a href="#">Цены</a></li>
-                        <li><a href="#">Для пациентов</a></li>
+                        <li><a href="unit.php">Для пациентов</a></li>
                     </ul>
                 </div>
                 <div class="header__search-form-wrapper">
@@ -72,7 +72,7 @@
                     <div class="header__primary-menu-title">Информация</div>
                     <ul>
                         <li><a href="#">О центре</a></li>
-                        <li><a href="#">Для пациентов</a></li>
+                        <li><a href="unit.php">Для пациентов</a></li>
                         <li><a href="#">Контакты</a></li>
                     </ul>
                     <div class="header__license-text">

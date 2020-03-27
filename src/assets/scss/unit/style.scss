@@ -1,0 +1,44 @@
+@import "../fonts";
+@import "../common";
+@import "../interface";
+@import "../submit-popup";
+@import "../parallax-squares";
+
+@import "../header";
+@import "../dropdown-menu";
+@import "../about-unit";
+@import "../nav-links";
+@import "../services";
+@import "../unit-simple";
+@import "../cost";
+@import "../specialists";
+@import "../tools";
+@import "../appointment";
+@import "../feedback";
+@import "../for-patient";
+@import "../footer";
+
+@import "../animations";
+
+
+.feedback{
+  background: none;
+}
+.appointment{
+  background: none;
+  .appointment__block {
+    @media screen and (min-width: 961px){
+      margin-bottom: 60px;
+    }
+  }
+}
+
+.appointment.second-block{
+  background: white;
+  .appointment__block{
+    position: relative;
+    top: -30px;
+    margin-top: 0;
+    margin-bottom: 30px;
+  }
+}

@@ -16,11 +16,27 @@ require "./modules/popups.php";
 require "./modules/header.php";
 require "./modules/dropdown-menu.php";
 
-require "./modules/feedback.php";
-
+require "./modules/about-unit.php";
+require "./modules/nav-links.php";
+require "./modules/services.php";
 require "./modules/appointment.php";
+require "./modules/unit-simple.php";
+require "./modules/cost.php";
 require "./modules/specialists.php";
-
+require "./modules/tools.php";
+require "./modules/feedback.php";
+?>
+<section class="appointment second-block">
+    <div class="container">
+        <div class="row">
+            <?php
+            require "./modules/appointment__block.php";
+            ?>
+        </div>
+    </div>
+</section>
+<?php
+require "./modules/for-patient.php";
 require "./modules/footer.php";
 ?>
 

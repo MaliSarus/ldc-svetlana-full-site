@@ -2,7 +2,7 @@
     <div class="dropdown-menu">
         <nav class="dropdown-menu__tabs">
             <ul>
-                <li class="dropdown-menu__tabs_item dropdown-menu__tabs_item_active "><a href="#"
+                <li class="dropdown-menu__tabs_item dropdown-menu__tabs_item_active "><a href="unit.php"
                                                                                          class="dropdown-menu__tabs_link">Лечебное
                         отделение</a></li>
                 <li class="dropdown-menu__tabs_item"><a href="#" class="dropdown-menu__tabs_link">Диагностическое

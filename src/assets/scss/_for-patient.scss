@@ -1,0 +1,38 @@
+.for-patient{
+  margin-bottom: 30px;
+  @media screen and (min-width: 961px){
+    background: white;
+    margin-bottom: 0;
+  }
+  &__block{
+    background: white;
+    padding: 18px 15px;
+    @media screen and (min-width: 961px){
+      padding: 0;
+      padding-bottom: 60px;
+    }
+    .title{
+      margin-bottom: 18px;
+      @media screen and (min-width: 961px){
+        margin-bottom: 36px;
+      }
+    }
+  }
+  &__text{
+    display: flex;
+    flex-wrap: wrap;
+    @media screen and (min-width: 961px){
+      justify-content: space-between;
+    }
+  }
+  &__paragraph{
+    margin: 0;
+    margin-bottom: 18px;
+    @media screen and (min-width: 961px){
+      flex-basis: calc(100% / 2 - 10px);
+    }
+    &:last-child{
+      margin-bottom: 0;
+    }
+  }
+}

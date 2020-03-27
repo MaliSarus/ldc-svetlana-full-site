@@ -1,5 +1,6 @@
+
 <footer class="footer">
-    <div class="tap-menu">
+    <div class="tap-menu" id="tm">
         <div class="container">
             <div class="row row_start">
                 <div class="tap-menu__block">

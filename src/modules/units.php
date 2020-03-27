@@ -10,13 +10,13 @@
                         <div class="units__menu">
                             <ul>
                                 <li class="units__menu-item"><a href="#"
-                                                                class="units__menu-link units__menu-link_active">Лечебное
+                                                                class="units__menu-link tab-link_red tab-link_red_active">Лечебное
                                         отделение</a></li>
-                                <li class="units__menu-item"><a href="#" class="units__menu-link">Диагностическое
+                                <li class="units__menu-item"><a href="#" class="units__menu-link tab-link_red">Диагностическое
                                         отделение</a></li>
-                                <li class="units__menu-item"><a href="#" class="units__menu-link">Операционный блок</a>
+                                <li class="units__menu-item"><a href="#" class="units__menu-link tab-link_red">Операционный блок</a>
                                 </li>
-                                <li class="units__menu-item"><a href="#" class="units__menu-link">Реабилитационное
+                                <li class="units__menu-item"><a href="#" class="units__menu-link tab-link_red">Реабилитационное
                                         отделение</a></li>
                             </ul>
                         </div>

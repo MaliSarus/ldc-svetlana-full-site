@@ -1,0 +1,148 @@
+.cost{
+  margin-bottom: 30px;
+  background: white;
+  @media screen and (min-width: 961px){
+    margin-bottom: 0;
+  }
+  &__wrapper{
+    width: 623px;
+    @media screen and (min-width: 653px){
+      width: 100%;
+    }
+    @media screen and (min-width: 1400){
+      width: 1360px;
+    }
+  }
+  &__block{
+    flex-grow: 1;
+    overflow: hidden;
+    padding: 18px 15px;
+    @media screen and (min-width: 961px){
+      padding: 60px 0 90px 0;
+    }
+    .title{
+      margin-bottom: 18px;
+      @media screen and (min-width: 961px){
+        margin-bottom: 36px;
+      }
+    }
+    ul{
+      li{
+        background: $main-color;
+        color: white;
+        &::before{
+          width: 21px;
+          height: 17px;
+          content: url("../../img/cost/arrow.svg");
+          display: block;
+          position: absolute;
+          left: 18px;
+          top: 13px;
+          filter: invert(1) grayscale(1) brightness(5.5);
+          transform: rotate(180deg);
+          transition: transform .5s;
+          @media screen and (min-width: 769px){
+            left: unset;
+            right: 36px;
+          }
+        }
+        span{
+          padding: 10px 56px;
+          @media screen and (min-width: 768px){
+            padding: 10px 36px;
+          }
+        }
+        ul{
+          display: none;
+          li{
+            background: #F1F1F1;
+            color: $main-color;
+            &::before{
+              filter:none;
+            }
+            span{
+              padding: 10px 56px;
+              @media screen and (min-width: 768px){
+                padding: 10px 36px;
+              }
+            }
+            ul{
+              display: none;
+              li{
+                background: white;
+                color:$main-color;
+                &::before{
+                  display: none;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  &__list{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    &_item{
+      position: relative;
+      width: 100%;
+      padding: 0;
+      &_active{
+        &::before{
+          transform: rotate(0deg) !important;
+        }
+      }
+      span{
+        display: flex;
+        box-sizing: border-box;
+        &:hover{
+          text-decoration: underline;
+        }
+      }
+    }
+    &_content{
+      display: flex;
+      padding: 10px 18px;
+      @media screen and (min-width: 769px){
+        padding: 10px 36px;
+      }
+      &_price{
+        flex-basis: 50%;
+        justify-content: center;
+        color: $main-color-dark;
+        display: flex;
+        align-items: center;
+        &:hover{
+          text-decoration: none;
+        }
+      }
+      &_del{
+        display: block;
+        color: #858C98;
+        position: relative;
+        margin-left: 23px;
+        margin-right: 30px;
+        padding: 0!important;
+        &:hover{
+          text-decoration: none !important;
+        }
+
+        &::before {
+          position: absolute;
+          width: 100%;
+          height: 2px;
+          content: '';
+          display: block;
+          background-color: $accent-color;
+          left: 0;
+          top: 50%;
+          transform: translateY(-50%);
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
