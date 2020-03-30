@@ -18,6 +18,59 @@
     @media screen and (min-width: 961px){
       max-width: 50%;
     }
+
+    .arrows{
+      &__arrow-left{
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 10;
+        padding: 20px 18px;
+        margin-right: 0;
+        background: white;
+        @media screen and (min-width: 961px){
+          bottom: 0;
+          top: unset;
+          left: unset;
+          right: 119px;
+          transform: unset;
+          padding:{
+            top: 20px;
+            left: 50px;
+            right: 9px;
+            bottom: 20px;
+          }
+          &::before{
+            position: static;
+          }
+        }
+      }
+      &__arrow-right{
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 10;
+        padding: 20px 18px;
+        margin-right: 0;
+        background: white;
+        @media screen and (min-width: 961px){
+          bottom: 0;
+          top: unset;
+          transform: unset;
+          padding:{
+            top: 20px;
+            left: 9px;
+            right: 50px;
+            bottom: 20px;
+          }
+          &::before{
+            position: static;
+          }
+        }
+      }
+    }
     &_item{
       min-height: 215px;
       @media screen and (min-width: 961px) {

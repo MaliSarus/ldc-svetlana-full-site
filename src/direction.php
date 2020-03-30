@@ -1,7 +1,7 @@
 <?php
 require "./modules/headlings.php";
 ?>
-<title>ЛДЦ Светлана - Отделение</title>
+<title>ЛДЦ Светлана - Направление</title>
 <link rel="stylesheet" href="./assets/css/slick.css"/>
 <link rel="stylesheet" href="./assets/css/slick-theme.css"/>
 <link rel="stylesheet" href="./assets/css/magnific-popup.css">

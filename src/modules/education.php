@@ -3,7 +3,7 @@
         <div class="row">
             <div class="education__block">
                 <article class="education__article">
-                    <h2 class="title">Образование</h2>
+                    <h3 class="title">Образование</h3>
                     <div class="education__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet
                         architecto atque consequuntur corporis eligendi esse est expedita hic, laudantium minima nam
                         nihil nisi numquam odit omnis qui quibusdam quis quisquam recusandae repellat rerum, sequi

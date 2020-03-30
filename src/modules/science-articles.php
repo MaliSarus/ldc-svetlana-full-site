@@ -3,7 +3,7 @@
         <div class="row">
             <div class="science-articles__block">
                 <div class="science-articles__head">
-                    <div class="title">Научные статьи &lt;и публикации&gt;</div>
+                    <h3 class="title">Научные статьи &lt;и публикации&gt;</h3>
                     <a href="#" class="link">Читать все</a>
                 </div>
                 <div class="science-articles__content">

@@ -12,6 +12,8 @@
                     <div class="unit-simple__slider_item"><img src="./assets/img/unit-simple/4.jpg"
                                                                alt="Изображение диплома"></div>
                 </div>
+<!--                    <div class="arrow arrows__arrow-left"></div>-->
+<!--                    <div class="arrow arrows__arrow-right"></div>-->
                 <div class="unit-simple__desc">
                     <h2 class="title">Заголовок про отделение</h2>
                     <div class="unit-simple__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur, culpa

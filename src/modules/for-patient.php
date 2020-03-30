@@ -1,4 +1,4 @@
-<section class="for-patient">
+<section class="for-patient" id="for-patient-id">
     <div class="container">
         <div class="row">
             <div class="for-patient__block">

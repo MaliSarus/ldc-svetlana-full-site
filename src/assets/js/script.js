@@ -105,7 +105,9 @@ const unitSimpleSliderInit = () => {
     $('.unit-simple__slider').slick({
         slidesToShow: 1,
         dots: false,
-        arrows: false,
+        arrows: true,
+        prevArrow: '<div class="arrow arrows__arrow-left"></div>',
+        nextArrow: '<div class="arrow arrows__arrow-right"></div>',
         infinite: true,
         variableWidth: true
     })
@@ -253,6 +255,21 @@ const closeServicesDropdownFromTapMenu = () => {
     dropdownContentBlock.attr('style', '');
 };
 
+const navLinkScroll = (navLinkTop) => {
+    if (($(this).scrollTop() + 129) >= navLinkTop) {
+        $('.nav-links').css({
+            position: 'fixed',
+            top: '129px',
+            left: 0,
+            zIndex: 10000,
+            width: '100%',
+            background: '#F1F1F1'
+        })
+    } else {
+        $('.nav-links').attr('style', '');
+    }
+};
+
 //Действия при изменении размеров окна
 
 $(window).on('resize', function () {
@@ -364,11 +381,12 @@ $(window).on('resize', function () {
     }
     if (isSet($('.nav-links'))) {
         if ($(window).width() > 960 && typeof (sbNavLinks) != 'undefined') {
-            if (isSet($('.nav-links'))) {
-                sbNavLinks.destroy();
-                sbNavLinks = undefined;
-            }
+            sbNavLinks.destroy();
+            sbNavLinks = undefined;
+            const navLinkTop = $('.nav-links').position().top;
+            $(document).on('scroll', navLinkScroll(navLinkTop));
         } else if ($(window).width() <= 960 && typeof (sbNavLinks) === 'undefined') {
+            $(document).on('scroll', navLinkScroll);
             sbNavLinks = new ScrollBooster({
                 viewport: document.querySelector('.nav-links__block'),
                 content: document.querySelector('.nav-links__list'),
@@ -403,15 +421,6 @@ $(window).on('resize', function () {
         }
     }
 
-    // if(isSet($('tools'))){
-    //     $('.tools__slider_item').each(function () {
-    //         const imageSrc = $(this).children().attr('src');
-    //         $(this).css({
-    //             background: 'url("' + imageSrc + '") center no-repeat',
-    //             backgroundSize: 'cover'
-    //         })
-    //     })
-    // }
 });
 
 
@@ -663,7 +672,7 @@ window.onload = function () {
             })
         })
     }
-    if(isSet($('.tools'))){
+    if (isSet($('.tools'))) {
         const toolsSlick = $('.tools__slider');
         toolsSliderInit();
 
@@ -705,6 +714,7 @@ window.onload = function () {
 
 //Обработка событий после загрузки страницы
 $(document).ready(function () {
+
 
     if ($(window).width() >= 961) {
         $('.dropdown-menu__open-button').on('mouseup', function (event) {
@@ -1147,6 +1157,7 @@ $(document).ready(function () {
     }
 
     if (isSet($('.nav-links'))) {
+
         if ($(window).width() < 961) {
             sbNavLinks = new ScrollBooster({
                 viewport: document.querySelector('.nav-links__block'),
@@ -1156,7 +1167,6 @@ $(document).ready(function () {
                 pointerMode: 'all',
                 pointerDownPreventDefault: false,
                 onClick: (state, event) => {
-                    console.log(event.target);
                     $('.nav-links__link').removeClass('tab-link_red_active');
                     const index = $('.nav-links__link').index(event.target);
                     $($('.nav-links__link')[index]).addClass('tab-link_red_active');
@@ -1169,11 +1179,18 @@ $(document).ready(function () {
             $('.nav-links__list').css({
                 minWidth: blockWidth
             });
-        }
-        else{
+            $('.nav-links__link').off('click');
+            $('.nav-links__link').on('click', function (event) {
+                console.log('click');
+                const elementClick = $(this).attr("href");
+                const destination = $(elementClick).position().top;
+                $('html').animate({scrollTop: destination - $('.header').height()}, 500);
+                return false;
+            });
+        } else {
             const navLinkTop = $('.nav-links').position().top;
-            $(document).on('scroll', function() {
-                if($(window).width() > 960) {
+            $(document).on('scroll', function () {
+                if ($(window).width() > 960) {
                     if (($(this).scrollTop() + 129) >= navLinkTop) {
                         $('.nav-links').css({
                             position: 'fixed',
@@ -1187,6 +1204,16 @@ $(document).ready(function () {
                         $('.nav-links').attr('style', '');
                     }
                 }
+            });
+            $('.nav-links__link').off('click');
+            $('.nav-links__link').on('click', function (event) {
+                const elementClick = $(this).attr("href");
+                const destination = $(elementClick).position().top;
+                $('html').animate({scrollTop: destination - ($('.header').height() + $('.nav-links').height())}, 500);
+                $('.nav-links__link').removeClass('tab-link_red_active');
+                const index = $('.nav-links__link').index(event.target);
+                $($('.nav-links__link')[index]).addClass('tab-link_red_active');
+                return false;
             });
         }
 
