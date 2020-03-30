@@ -1,12 +1,12 @@
-<section class="specialists">
+<section class="specialists" id="specialists-id">
     <div class="container container_size_1667">
         <div class="row">
             <div class="specialists__block">
                 <div class="specialists__head">
                     <div class="content">
-                        <h2 class="title">
+                        <h3 class="title">
                             Специалисты &lt;лечебно – диагностического центра&gt;
-                        </h2>
+                        </h3>
                         <div class="specialists__control-panel mobile">
                             <div class="arrows">
                                 <div class="arrow arrows__arrow-left"></div>

@@ -1,7 +1,7 @@
 <div class="appointment__block">
     <div class="content content_flex content_between">
         <div class="appointment__title">
-            <h2 class="title">Запись на прием</h2>
+            <h3 class="title">Запись на прием</h3>
             <a href="tel:+78126270203">+7 (812) 627 02 03</a>
         </div>
         <form action="#" class="appointment__form" id="form-for-date">

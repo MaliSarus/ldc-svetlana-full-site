@@ -1,7 +1,7 @@
 <div class="price">
     <div class="container">
         <div class="price__block">
-            <div class="title">Консультации врача</div>
+            <h3 class="title">Консультации врача</h3>
             <div class="price__list">
                 <div class="price__list_wrapper">
                     <div class="price__list_item">

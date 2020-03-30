@@ -1,10 +1,10 @@
-<section class="feedback">
+<section class="feedback" id="feedback-id">
     <div class="quote">
     </div>
     <div class="container">
         <div class="row">
             <div class="feedback__head">
-                <h2 class="title">Отзывы &lt;наших клиентов&gt;</h2>
+                <h3 class="title">Отзывы &lt;наших клиентов&gt;</h3>
                 <div class="feedback__position"><span class="feedback__position_current">1</span>/35</div>
                 <div class="feedback__control-panel">
                     <a href="#" class="link">Читать все</a>

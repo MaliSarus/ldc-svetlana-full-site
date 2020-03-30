@@ -1,4 +1,4 @@
-<section class="tools">
+<section class="tools" id="tools-id">
     <div class="container">
         <div class="row">
             <div class="tools__block">

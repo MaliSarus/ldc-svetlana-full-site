@@ -1,4 +1,4 @@
-<section class="cost">
+<section class="cost" id="cost-id">
     <div class="container">
         <div class="row">
             <div class="cost__block">
