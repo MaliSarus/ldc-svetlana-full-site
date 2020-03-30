@@ -151,13 +151,13 @@
 .tap-menu {
   height: 77px;
   width: 100%;
-  background-color: rgba(#3E557F, .8);
+  background-color: rgba(#3E557F, .9);
   position: fixed;
   bottom: 0;
   left: 0;
   z-index: 10000;
   display: block;
-  backdrop-filter: blur(2px);
+  backdrop-filter: blur(4px);
 
   .container {
     height: 100%;

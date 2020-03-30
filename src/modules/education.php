@@ -16,7 +16,7 @@
                     </div>
                 </article>
                 <article class="education__article">
-                    <h2 class="title">Курсы повышения квалификации</h2>
+                    <h3 class="title">Курсы повышения квалификации</h3>
                     <div class="education__text">
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur cum dolorum esse fugit
                         itaque magnam quaerat! Deserunt facere id iure nobis qui reiciendis repellat tempore? Amet aut
