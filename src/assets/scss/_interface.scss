@@ -358,11 +358,17 @@
 
 .breadcrumbs{
   position: absolute;
+  display: none;
   z-index: 10;
   padding: 0;
   margin: 0;
+  font-size: 14px;
+  left: 15px;
+  top: 3px;
+  @media screen and (min-width: 768px){
+    display: block;
+  }
   @media screen and (min-width: 961px){
-    font-size: 14px;
     top: 10px;
     left: 0px;
   }
