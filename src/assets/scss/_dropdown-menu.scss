@@ -163,7 +163,10 @@
 
     &_active {
       display: flex;
-      flex-wrap:nowrap;
+      flex-wrap:wrap;
+      @media screen and (min-width: 961px){
+        flex-wrap: nowrap;
+      }
     }
   }
 

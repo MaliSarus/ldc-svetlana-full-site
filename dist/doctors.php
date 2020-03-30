@@ -1,10 +1,10 @@
 <?php
 require "./modules/headlings.php";
 ?>
-<title>ЛДЦ Светлана - Врачи</title>
+<title>ЛДЦ Светлана - Врачи клиники</title>
 <link rel="stylesheet" href="./assets/css/slick.css"/>
 <link rel="stylesheet" href="./assets/css/slick-theme.css"/>
-<link rel="stylesheet" href="./assets/css/doctors/style.css">
+<link rel="stylesheet" href="./assets/css/<?php echo basename(__FILE__, '.php');?>/style.css">
 <script src="./assets/js/jquery-3.4.1.min.js"></script>
 </head>
 <body>
@@ -35,6 +35,7 @@ require "./modules/headlings.php";
 
 <!--Шапка-->
 <?php
+require "./modules/popups.php";
 require "./modules/header.php";
 require "./modules/dropdown-menu.php";
 require "./modules/staff.php";

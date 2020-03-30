@@ -101,13 +101,14 @@
   }
 
   &__footer {
-    display: none;
-    @media screen and (min-width: 961px) {
+    display: flex;
+    justify-content: center;
+    @media screen and (min-width: 961px){
       display: block;
-      a {
-        display: inline-block;
-        padding: 25px 0;
-      }
+    }
+    a {
+      display: inline-block;
+      padding: 25px 0;
     }
   }
 }

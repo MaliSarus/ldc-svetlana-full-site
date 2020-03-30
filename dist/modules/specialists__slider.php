@@ -29,7 +29,7 @@
                     стабильно-функционального остеосинтеза в травматологии и ортопедии ЛДЦ
                     Завода
                     “Светлана”</p>
-                <a href="#" class=" btn btn_white">Подробнее о враче</a>
+                <a href="doctor.php" class=" btn btn_white">Подробнее о враче</a>
             </article>
         </article>
     </div>
@@ -63,7 +63,7 @@
                     стабильно-функционального остеосинтеза в травматологии и ортопедии ЛДЦ
                     Завода
                     “Светлана”</p>
-                <a href="#" class="btn btn_white">Подробнее о враче</a>
+                <a href="doctor.php" class="btn btn_white">Подробнее о враче</a>
             </article>
         </article>
     </div>
@@ -99,7 +99,7 @@
                     стабильно-функционального остеосинтеза в травматологии и ортопедии ЛДЦ
                     Завода
                     “Светлана”</p>
-                <a href="#" class="btn btn_white">Подробнее о враче</a>
+                <a href="doctor.php" class="btn btn_white">Подробнее о враче</a>
             </article>
         </article>
     </div>
@@ -133,7 +133,7 @@
                     стабильно-функционального остеосинтеза в травматологии и ортопедии ЛДЦ
                     Завода
                     “Светлана”</p>
-                <a href="#" class="btn btn_white">Подробнее о враче</a>
+                <a href="doctor.php" class="btn btn_white">Подробнее о враче</a>
             </article>
         </article>
     </div>
@@ -167,7 +167,7 @@
                     стабильно-функционального остеосинтеза в травматологии и ортопедии ЛДЦ
                     Завода
                     “Светлана”</p>
-                <a href="#" class="btn btn_white">Подробнее о враче</a>
+                <a href="doctor.php" class="btn btn_white">Подробнее о враче</a>
             </article>
         </article>
     </div>
