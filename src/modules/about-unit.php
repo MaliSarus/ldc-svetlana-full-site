@@ -1,4 +1,4 @@
-<section class="about-unit">
+<section class="about-unit" style=" background-image:url(./assets/img/about-unit/bg-image.png)">
 <!--    <div class="bg-picture"><img src="./assets/img/about-unit/bg-image.png" alt=""></div>-->
     <div class="bg-bottom-right"></div>
     <div class="bg-top-right"></div>

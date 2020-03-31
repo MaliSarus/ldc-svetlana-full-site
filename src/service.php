@@ -5,7 +5,7 @@ require "./modules/headlings.php";
 <link rel="stylesheet" href="./assets/css/slick.css"/>
 <link rel="stylesheet" href="./assets/css/slick-theme.css"/>
 <link rel="stylesheet" href="./assets/css/magnific-popup.css">
-<link rel="stylesheet" href="./assets/css/<?php echo basename(__FILE__, '.php');?>/style.css?ver=<?php echo  date("His")?>">">
+<link rel="stylesheet" href="./assets/css/<?php echo basename(__FILE__, '.php');?>/style.css?ver=<?php echo  date("His")?>">
 <script src="./assets/js/jquery-3.4.1.min.js"></script>
 </head>
 <body>
@@ -15,6 +15,14 @@ require "./modules/headlings.php";
 require "./modules/popups.php";
 require "./modules/header.php";
 require "./modules/dropdown-menu.php";
+require "./modules/about-service.php";
+require "./modules/nav-links.php";
+
+require "./modules/cost.php";
+
+require "./modules/appointment.php";
+require "./modules/feedback.php";
+require "./modules/for-patient.php";
 
 require "./modules/footer.php";
 ?>

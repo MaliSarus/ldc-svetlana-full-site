@@ -1028,10 +1028,21 @@ $(document).ready(function () {
             $(this).removeClass('feedback__item-content_unhide');
         });
     }
-
+    let posTop = 0;
     //Кнопка для раскрытия меню в мобайле
     const hamburger = $('.hamburger');
     hamburger.on("click", function () {
+        if (!hamburger.hasClass('is-active')){
+            posTop = ($(window).scrollTop() !== undefined) ? $(window).scrollTop() : $('body').scrollTop();
+            $('body, html').animate({
+                scrollTop: 0
+            }, 1);
+        }
+        else{
+            $('body, html').animate({
+                scrollTop: posTop
+            }, 1);
+        }
         hamburger.toggleClass("is-active");
         $('.header__bottom').toggleClass('header__bottom_active');
         $('body').children().toggleClass('hide');
@@ -1043,6 +1054,7 @@ $(document).ready(function () {
             headerBottom.attr('style', '');
             $('.dropdown-menu').find('.title').detach();
             $('.dropdown-menu').find('.arrow-back').detach();
+            prependFlag = 0;
         }
     });
 
@@ -1294,6 +1306,10 @@ function parallaxScrolling() {
 
 }
 
+$(window).scroll(function () {
+    const posTop = ($(window).scrollTop() !== undefined) ? $(window).scrollTop() : $('body').scrollTop();
+
+})
 
 
 

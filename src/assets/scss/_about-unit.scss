@@ -2,7 +2,7 @@
   position: relative;
   overflow: hidden;
   margin-bottom: 30px;
-  background-image: url("../../img/about-unit/bg-image.png") ;
+  //background-image: url("../../img/about-unit/bg-image.png") ;
   background-position: top right;
   background-repeat: no-repeat;
   background-size: auto 100%;
@@ -35,27 +35,8 @@
       padding: 0 15px;
     }
   }
-  .bg-picture{
-    position: absolute;
-    right: 0;
-    top: 0;
-    height: 100%;
-    width: 100%;
-    @media screen and (min-width: 961px){
-      width: unset;
-      height: unset;
-    }
-    img{
-      height: 100%;
-      @media screen and (min-width: 577px){
-        width: 100%;
-        height: auto;
-      }
-      @media screen and (min-width: 961px){
-        width: auto;
-        height: auto;
-      }
-    }
+  @media screen and (min-width: 1980px){
+    background-size: 60% auto;
   }
   .bg-bottom-right, .bg-top-right{
     position: absolute;
