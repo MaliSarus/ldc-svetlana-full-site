@@ -733,6 +733,22 @@ window.onload = function () {
             });
         })
     }
+    if(isSet($('.direction-services'))){
+        if ($(window).width() <= ($('.direction-services__tabs').width() + 30)) {
+            dirServSliderInit();
+        }
+        const dirServTabsLinks = $('.direction-services__tabs_link');
+
+        dirServTabsLinks.on('click', function (event) {
+            event.preventDefault();
+            dirServTabsLinks.removeClass('tab-link_red_active');
+            const index = dirServTabsLinks.index(event.currentTarget);
+            $(dirServTabsLinks[index]).addClass('tab-link_red_active');
+            const dirServContentItems = $('.direction-services__content_item');
+            dirServContentItems.removeClass('direction-services__content_item_active');
+            $(dirServContentItems[index]).addClass('direction-services__content_item_active');
+        })
+    }
 };
 
 
@@ -1263,11 +1279,6 @@ $(document).ready(function () {
         })
     }
 
-    if(isSet($('.direction-services'))){
-        if ($(window).width() <= ($('.direction-services__tabs').width() + 30)) {
-            dirServSliderInit();
-        }
-    }
 });
 
 

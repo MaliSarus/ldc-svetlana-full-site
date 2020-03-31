@@ -1,10 +1,14 @@
 <section class="about-unit">
-    <div class="bg-picture"><img src="./assets/img/about-unit/bg-image.png" alt=""></div>
+<!--    <div class="bg-picture"><img src="./assets/img/about-unit/bg-image.png" alt=""></div>-->
     <div class="bg-bottom-right"></div>
     <div class="bg-top-right"></div>
     <div class="skew-bg"></div>
     <div class="container">
         <div class="row">
+            <ul class="breadcrumbs">
+                <li><a href="#">Главная</a> </li>
+                <li><a href="#">Врачи лечебно – диагностического центра</a></li>
+            </ul>
             <div class="about-unit__block">
                 <div class="about-unit__desc">
                     <h1 class="title">Лечебное отделение</h1>

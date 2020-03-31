@@ -2,13 +2,21 @@
   position: relative;
   overflow: hidden;
   margin-bottom: 30px;
+  background-image: url("../../img/about-unit/bg-image.png") ;
+  background-position: top right;
+  background-repeat: no-repeat;
+  background-size: auto 100%;
   .container {
     padding: 0;
   }
+  @media screen and (min-width: 577px){
+    background-size: 100% auto ;
+  }
   @media screen and (min-width: 961px){
+    background-size: auto 100%;
     margin-bottom: 0;
     filter: none;
-    background-size: auto 100%;
+
     &::before{
       position: absolute;
       display: block;
@@ -121,9 +129,11 @@
     box-sizing: border-box;
     padding: 18px 15px;
     width: 100%;
+    backdrop-filter: blur(4px);
     @media screen and (min-width: 961px){
       padding: 0;
       margin-bottom: 42px;
+      backdrop-filter: none;
     }
     .title{
       margin-bottom: 18px;

@@ -5,7 +5,7 @@ require "./modules/headlings.php";
 <link rel="stylesheet" href="./assets/css/slick.css"/>
 <link rel="stylesheet" href="./assets/css/slick-theme.css"/>
 <link rel="stylesheet" href="./assets/css/magnific-popup.css">
-<link rel="stylesheet" href="./assets/css/<?php echo basename(__FILE__, '.php');?>/style.css?ver=<?php echo  date("His")?>">">
+<link rel="stylesheet" href="./assets/css/<?php echo basename(__FILE__, '.php');?>/style.css?ver=<?php echo  date("His")?>">
 <script src="./assets/js/jquery-3.4.1.min.js"></script>
 </head>
 <body>

@@ -22,8 +22,11 @@
     }
     .title{
       margin-bottom: 18px;
+      padding: 0 15px;
       @media screen and (min-width: 961px){
         margin-bottom: 42px;
+        padding: 0;
+
       }
     }
   }
