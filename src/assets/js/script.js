@@ -280,17 +280,23 @@ const closeServicesDropdownFromTapMenu = () => {
 };
 
 const navLinkScroll = (navLinkTop) => {
-    if (($(this).scrollTop() + 129) >= navLinkTop) {
-        $('.nav-links').css({
-            position: 'fixed',
-            top: '129px',
-            left: 0,
-            zIndex: 10000,
-            width: '100%',
-            background: '#F1F1F1'
-        })
-    } else {
-        $('.nav-links').attr('style', '');
+
+
+    if ($(window).width() > 960) {
+        if (($(this).scrollTop() + 129) >= navLinkTop) {
+            $('.nav-links').css({
+                position: 'fixed',
+                top: '129px',
+                left: 0,
+                zIndex: 10000,
+                width: '100%',
+                background: '#F1F1F1'
+            })
+        } else {
+            $('.nav-links').attr('style', '');
+        }
+    }else{
+        $(document).off('scroll', navLinkScroll());
     }
 };
 
@@ -332,7 +338,7 @@ $(window).on('resize', function () {
     if ($(window).width() > 960 && dropdownFlag == 0) {
         $('.dropdown-menu__open-button').off('click');
         $('.dropdown-menu__open-button').on('mouseup', function (event) {
-            console.log('drop');
+
             if (!dropdownMenuContainer.hasClass('dropdown-menu__container_active')) {
                 dropdownMenuContainer.fadeIn(400).addClass('dropdown-menu__container_active');
                 $('body').css({overflow: 'hidden'});
@@ -407,16 +413,16 @@ $(window).on('resize', function () {
         if ($(window).width() > 960 && typeof (sbNavLinks) != 'undefined') {
             sbNavLinks.destroy();
             sbNavLinks = undefined;
-            const navLinkTop = $('.nav-links').position().top;
-            $(document).on('scroll', navLinkScroll(navLinkTop));
         } else if ($(window).width() <= 960 && typeof (sbNavLinks) === 'undefined') {
-            $(document).off('scroll', navLinkScroll);
             sbNavLinks = new ScrollBooster({
                 viewport: document.querySelector('.nav-links__block'),
                 content: document.querySelector('.nav-links__list'),
                 scrollMode: "transform", // use CSS 'transform' property
                 direction: "horizontal", // allow only horizontal scrollin
             });
+            if($('.nav-links').attr('style') != ''){
+                $('.nav-links').attr('style', '');
+            }
         }
     }
     if (isSet($('.unit-simple'))) {
@@ -448,8 +454,10 @@ $(window).on('resize', function () {
 });
 
 
+
 // Обработка событий при полной загрузки страницы
 window.onload = function () {
+
     //Слайдер специалистов и кнопки слайдера специалистов
     if (isSet($('.specialists__slider'))) {
         const specSlick = $('.specialists__slider');
@@ -758,7 +766,7 @@ $(document).ready(function () {
 
     if ($(window).width() >= 961) {
         $('.dropdown-menu__open-button').on('mouseup', function (event) {
-            console.log('drop');
+
             if (!dropdownMenuContainer.hasClass('dropdown-menu__container_active')) {
                 dropdownMenuContainer.fadeIn(400).addClass('dropdown-menu__container_active');
                 $('body').css({overflow: 'hidden'});
@@ -770,7 +778,7 @@ $(document).ready(function () {
         });
         $(document).mousedown(function (e) {
             if (dropdownMenuContainer.hasClass('dropdown-menu__container_active')) {
-                console.log('drop_2');
+
                 const block = $('.dropdown-menu');
                 if (block.has(e.target).length === 0 && !$('.dropdown-menu__open-button').is(e.target)) {
                     dropdownMenuContainer.fadeOut(400).removeClass('dropdown-menu__container_active');
@@ -1233,30 +1241,13 @@ $(document).ready(function () {
             });
             $('.nav-links__link').off('click');
             $('.nav-links__link').on('click', function (event) {
-                console.log('click');
+
                 const elementClick = $(this).attr("href");
                 const destination = $(elementClick).position().top;
                 $('html').animate({scrollTop: destination - $('.header').height()}, 500);
                 return false;
             });
         } else {
-            const navLinkTop = $('.nav-links').position().top;
-            $(document).on('scroll', function () {
-                if ($(window).width() > 960) {
-                    if (($(this).scrollTop() + 129) >= navLinkTop) {
-                        $('.nav-links').css({
-                            position: 'fixed',
-                            top: '129px',
-                            left: 0,
-                            zIndex: 10000,
-                            width: '100%',
-                            background: '#F1F1F1'
-                        })
-                    } else {
-                        $('.nav-links').attr('style', '');
-                    }
-                }
-            });
             $('.nav-links__link').off('click');
             $('.nav-links__link').on('click', function (event) {
                 const elementClick = $(this).attr("href");
@@ -1282,12 +1273,25 @@ $(document).ready(function () {
             });
         }
         $('.cost__list_item').on('click', function (event) {
-            console.log(event.target);
+
             if ($('span').is(event.target)) {
                 $(event.target).parent('li').children('ul').slideToggle();
                 $(event.target).toggleClass('active');
                 return false;
             }
+        });
+        $('.cost__list_content button').on('click', function () {
+            $('.appointment_popup').addClass('appointment_popup_active').css({
+                position: 'fixed',
+                height: '100vh',
+                background: 'rgba(63,90,138,0.4)',
+                top: 0,
+                left: 0,
+                transform: 'none'
+            });
+            $('body').css({
+                overflow: 'hidden'
+            });
         })
     }
 
@@ -1308,8 +1312,29 @@ function parallaxScrolling() {
 
 $(window).scroll(function () {
     const posTop = ($(window).scrollTop() !== undefined) ? $(window).scrollTop() : $('body').scrollTop();
+});
+let navLinkTop = 0;
+$(document).scroll(function () {
+    if (isSet($('.nav-links'))) {
+        if ($(window).width() > 960) {
+            if ((($(this).scrollTop() + 129) >= $('.nav-links').position().top) && navLinkTop == 0) {
+                navLinkTop = $('.nav-links').position().top;
+                $('.nav-links').css({
+                    position: 'fixed',
+                    top: '129px',
+                    left: 0,
+                    zIndex: 10000,
+                    width: '100%',
+                    background: '#F1F1F1'
+                })
+            } else if (($(this).scrollTop() + 129) < navLinkTop) {
+                $('.nav-links').attr('style', '');
+                navLinkTop = 0;
+            }
+        }
+    }
+});
 
-})
 
 
 
