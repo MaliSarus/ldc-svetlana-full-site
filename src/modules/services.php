@@ -2,6 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="services__block">
+                <h2 class="title">Направление лечения</h2>
                 <div class="services__content"><!--Низ-->
                     <div class="content content_flex">
                         <div class="services__content-services services__content-services_active">
@@ -101,7 +102,7 @@
                                         сочетании с самым на сегодняшний день современным оснащением.
                                     </p>
                                 </div>
-                                <button class="btn btn_dark">Записаться на прием</button>
+                                <a class="btn btn_dark">Записаться на прием</a>
                             </div>
                         </div>
                     </div>

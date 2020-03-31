@@ -2,6 +2,8 @@
   margin-bottom: 30px;
   background: white;
   @media screen and (min-width: 961px){
+    position: relative;
+    margin-top: -30px;
     background-size: contain;
     margin-bottom: 0;
   }
@@ -54,6 +56,14 @@
         height: 100%;
         background: linear-gradient(179.96deg, rgba(42, 68, 114, 0) 18.76%, rgba(42, 68, 114, 0.55) 49.37%);
       }
+      &:hover{
+        .tools__slider_title{
+          display: none;
+        }
+        .tools__slider_title_hover{
+          display: block;
+        }
+      }
       img{
        display: none;
       }
@@ -67,6 +77,17 @@
       font-size: 18px;
       color: white;
       font-weight: bold;
+      &_hover{
+        font-weight: normal;
+        display: none;
+        margin: 0;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        padding: 22px 18px;
+        font-size: 18px;
+        color: white;
+      }
     }
   }
   &__position {

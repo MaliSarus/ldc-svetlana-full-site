@@ -1,4 +1,5 @@
 <section class="about-unit">
+    <div class="bg-picture"><img src="./assets/img/about-unit/bg-image.png" alt=""></div>
     <div class="bg-bottom-right"></div>
     <div class="bg-top-right"></div>
     <div class="skew-bg"></div>
@@ -6,7 +7,7 @@
         <div class="row">
             <div class="about-unit__block">
                 <div class="about-unit__desc">
-                    <h2 class="title">Лечебное отделение</h2>
+                    <h1 class="title">Лечебное отделение</h1>
                     <div class="about-unit__text">
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur itaque iusto laudantium
                         nam pariatur praesentium voluptatibus. Animi deleniti deserunt dignissimos eaque maxime officia

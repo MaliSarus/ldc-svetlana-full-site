@@ -119,7 +119,7 @@ const toolsSliderInit = () => {
         dots: false,
         arrows: false,
         infinite: false,
-        variableWidth: true,
+        variableWidth: false,
         responsive: [
             {
                 breakpoint: 577,
@@ -128,7 +128,13 @@ const toolsSliderInit = () => {
                 },
             },
             {
-                breakpoint: 768,
+                breakpoint: 961,
+                settings: {
+                    slidesToShow: 2,
+                },
+            },
+            {
+                breakpoint: 1200,
                 settings: {
                     slidesToShow: 3,
                 },
@@ -137,6 +143,24 @@ const toolsSliderInit = () => {
     })
 };
 
+const dirServSliderInit = () => {
+    $('.direction-services__tabs').slick({
+        slidesToShow: 1,
+        dots: false,
+        arrows: false,
+        infinite: false,
+        variableWidth: true
+    });
+    $('.direction-services__tabs').on('afterChange',function (event, slick, currentSlide) {
+        const dirServTabs = $('.direction-services__tabs_link');
+        const dirServItems = $('.direction-services__content_item');
+        dirServTabs.removeClass('tab-link_red_active');
+        $(dirServTabs[currentSlide]).addClass('tab-link_red_active');
+        dirServItems.removeClass('direction-services__content_item_active');
+        $(dirServItems[currentSlide]).addClass('direction-services__content_item_active');
+
+    })
+};
 const unitsMenuSliderChangeTab = () => {
     $('.units__menu > ul').on('afterChange', function (event, slick, currentSlide) {
         const index = $('.units__menu > ul').slick('slickCurrentSlide');
@@ -1233,10 +1257,16 @@ $(document).ready(function () {
             console.log(event.target);
             if ($('span').is(event.target)) {
                 $(event.target).parent('li').children('ul').slideToggle();
-                $(event.target).parent('li').toggleClass('cost__list_item_active');
+                $(event.target).toggleClass('active');
                 return false;
             }
         })
+    }
+
+    if(isSet($('.direction-services'))){
+        if ($(window).width() <= ($('.direction-services__tabs').width() + 30)) {
+            dirServSliderInit();
+        }
     }
 });
 

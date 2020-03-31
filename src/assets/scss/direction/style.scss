@@ -8,7 +8,8 @@
 @import "../dropdown-menu";
 @import "../about-unit";
 @import "../nav-links";
-@import "../services";
+@import "../direction-master";
+@import "../direction-services";
 @import "../unit-simple";
 @import "../cost";
 @import "../specialists";
@@ -25,20 +26,31 @@
   background: none;
 }
 .appointment{
-  background: none;
+
+  @media screen and (min-width: 961px){
+    margin-top: -60px;
+  }
   .appointment__block {
     @media screen and (min-width: 961px){
+      margin-top: 90px;
       margin-bottom: 60px;
     }
   }
 }
 
 .appointment.second-block{
+  margin-top: 0;
   background: white;
   .appointment__block{
     position: relative;
     top: -30px;
     margin-top: 0;
     margin-bottom: 30px;
+  }
+}
+
+.direction-master{
+  &__block{
+    padding-bottom: 90px;
   }
 }

@@ -5,7 +5,7 @@ require "./modules/headlings.php";
 <link rel="stylesheet" href="./assets/css/slick.css"/>
 <link rel="stylesheet" href="./assets/css/slick-theme.css"/>
 <link rel="stylesheet" href="./assets/css/magnific-popup.css">
-<link rel="stylesheet" href="./assets/css/<?php echo basename(__FILE__, '.php');?>/style.css">
+<link rel="stylesheet" href="./assets/css/<?php echo basename(__FILE__, '.php');?>/style.css?ver=<?php echo  date("His")?>">
 <script src="./assets/js/jquery-3.4.1.min.js"></script>
 </head>
 <body>
@@ -27,7 +27,7 @@ require "./modules/tools.php";
 require "./modules/feedback.php";
 ?>
 <section class="appointment second-block">
-    <div class="container">
+    <div class="container container_size_1667">
         <div class="row">
             <?php
             require "./modules/appointment__block.php";
@@ -44,6 +44,6 @@ require "./modules/footer.php";
 <script src="./assets/js/jquery.inputmask.min.js"></script>
 <script src="./assets/js/scrollbooster/scrollbooster.min.js"></script>
 <script src="./assets/js/popup/jquery.magnific-popup.min.js"></script>
-<script src="./assets/js/script.js"></script>
+<script src="./assets/js/script.js?ver=<?php echo  date("His")?>"></script>
 </body>
 </html>

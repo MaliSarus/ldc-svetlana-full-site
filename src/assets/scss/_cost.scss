@@ -27,29 +27,34 @@
       }
     }
     ul{
+      @media screen and (min-width: 961px){
+        border: 1px solid #E3E5E8;
+      }
       li{
         background: $main-color;
         color: white;
-        &::before{
-          width: 21px;
-          height: 17px;
-          content: url("../../img/cost/arrow.svg");
-          display: block;
-          position: absolute;
-          left: 18px;
-          top: 13px;
-          filter: invert(1) grayscale(1) brightness(5.5);
-          transform: rotate(180deg);
-          transition: transform .5s;
-          @media screen and (min-width: 769px){
-            left: unset;
-            right: 36px;
-          }
-        }
         span{
           padding: 10px 56px;
+          cursor: pointer;
+          position: relative;
+          &::before{
+            width: 21px;
+            height: 17px;
+            content: url("../../img/cost/arrow.svg");
+            display: block;
+            position: absolute;
+            left: 18px;
+            top: 50%;
+            filter: invert(1) grayscale(1) brightness(5.5);
+            transform: translateY(-50%) rotate(180deg);
+            transition: transform .5s;
+            @media screen and (min-width: 769px){
+              left: unset;
+              right: 36px;
+            }
+          }
           @media screen and (min-width: 768px){
-            padding: 10px 36px;
+            padding: 16px 36px;
           }
         }
         ul{
@@ -57,13 +62,13 @@
           li{
             background: #F1F1F1;
             color: $main-color;
-            &::before{
-              filter:none;
-            }
             span{
               padding: 10px 56px;
               @media screen and (min-width: 768px){
-                padding: 10px 36px;
+                padding: 16px 36px;
+              }
+              &::before{
+                filter:none;
               }
             }
             ul{
@@ -71,8 +76,29 @@
               li{
                 background: white;
                 color:$main-color;
-                &::before{
-                  display: none;
+                box-sizing: border-box;
+                padding: 0 18px;
+                @media screen and (min-width: 961px){
+                  padding: 0 36px;
+                }
+                span{
+                  &::before{
+                    display: none;
+                  }
+                }
+                span.cost__list_content_del{
+                  &::before {
+                    position: absolute;
+                    width: 100%;
+                    height: 2px;
+                    content: '';
+                    display: block !important;
+                    background-color: $accent-color;
+                    left: 0;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    opacity: 1;
+                  }
                 }
               }
             }
@@ -90,9 +116,9 @@
       position: relative;
       width: 100%;
       padding: 0;
-      &_active{
-        &::before{
-          transform: rotate(0deg) !important;
+      &:last-child{
+        .cost__list_content{
+          border: none;
         }
       }
       span{
@@ -101,13 +127,29 @@
         &:hover{
           text-decoration: underline;
         }
+        &.active{
+          &::before{
+            transform: translateY(-50%) rotate(0deg) !important;
+          }
+        }
       }
     }
     &_content{
+      cursor: pointer;
       display: flex;
-      padding: 10px 18px;
-      @media screen and (min-width: 769px){
-        padding: 10px 36px;
+      padding: 10px 0;
+      align-items: center;
+      border-bottom: 1px solid rgba($main-color-dark,.15);
+      @media screen and (min-width: 961px){
+        border: none;
+      }
+      &:hover{
+        .cost__list_content_title {
+          text-decoration: underline;
+        }
+      }
+      &_title{
+        flex-basis: 65%;
       }
       &_price{
         flex-basis: 50%;
@@ -115,6 +157,7 @@
         color: $main-color-dark;
         display: flex;
         align-items: center;
+        margin-right: 30px;
         &:hover{
           text-decoration: none;
         }
@@ -129,18 +172,12 @@
         &:hover{
           text-decoration: none !important;
         }
-
-        &::before {
-          position: absolute;
-          width: 100%;
-          height: 2px;
-          content: '';
-          display: block;
-          background-color: $accent-color;
-          left: 0;
-          top: 50%;
-          transform: translateY(-50%);
-          opacity: 1;
+      }
+      button{
+        max-width: 115px;
+        @media screen and (min-width: 961px){
+          padding: 5px 0;
+          max-width: 235px;
         }
       }
     }

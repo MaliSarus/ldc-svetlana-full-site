@@ -74,7 +74,7 @@
     &_item{
       min-height: 215px;
       @media screen and (min-width: 961px) {
-        height: 584px;
+        min-height: 584px;
       }
       img{
         display: none;

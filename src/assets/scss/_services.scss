@@ -17,16 +17,27 @@
 
   &__block {
     width: 100%;
+    @media screen and (min-width: 961px){
+      padding: 60px 0;
+    }
+    .title{
+      margin-bottom: 18px;
+      @media screen and (min-width: 961px){
+        margin-bottom: 42px;
+      }
+    }
   }
 
   &__content {
     background-color: white;
     padding: 15px;
     @media screen and (min-width: 961px) {
-      padding: 40px 15px;
+      //padding: 40px 15px;
+      padding: 0;
+      background: none;
     }
     @media screen and (min-width: 1400px) {
-      padding: 40px 0;
+      padding: 0;
     }
 
 
@@ -81,7 +92,7 @@
           flex-basis: calc(100% / 4);
           order: -1;
         }
-        button{
+        a{
           @media screen and (min-width: 961px){
             width: calc(100% - 20px);
           }
