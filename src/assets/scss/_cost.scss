@@ -29,6 +29,7 @@
     ul{
       @media screen and (min-width: 961px){
         border: 1px solid #E3E5E8;
+        box-sizing: border-box;
       }
       li{
         background: $main-color;
@@ -59,6 +60,7 @@
         }
         ul{
           display: none;
+          border: none;
           li{
             background: #F1F1F1;
             color: $main-color;
@@ -73,6 +75,7 @@
             }
             ul{
               display: none;
+              border: none;
               li{
                 background: white;
                 color:$main-color;
@@ -140,12 +143,16 @@
       padding: 10px 0;
       align-items: center;
       border-bottom: 1px solid rgba($main-color-dark,.15);
+
       @media screen and (min-width: 961px){
         border: none;
       }
       &:hover{
         .cost__list_content_title {
           text-decoration: underline;
+        }
+        button{
+          visibility: visible;
         }
       }
       &_title{
@@ -174,6 +181,7 @@
         }
       }
       button{
+        visibility: hidden;
         max-width: 115px;
         @media screen and (min-width: 961px){
           padding: 5px 0;

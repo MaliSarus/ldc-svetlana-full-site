@@ -15,8 +15,9 @@ require "./modules/headlings.php";
 require "./modules/popups.php";
 require "./modules/header.php";
 require "./modules/dropdown-menu.php";
-require "./modules/about-service.php";
+require "./modules/service-header.php";
 require "./modules/nav-links.php";
+require "./modules/about-service.php";
 
 require "./modules/cost.php";
 

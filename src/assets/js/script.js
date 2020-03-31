@@ -410,7 +410,7 @@ $(window).on('resize', function () {
             const navLinkTop = $('.nav-links').position().top;
             $(document).on('scroll', navLinkScroll(navLinkTop));
         } else if ($(window).width() <= 960 && typeof (sbNavLinks) === 'undefined') {
-            $(document).on('scroll', navLinkScroll);
+            $(document).off('scroll', navLinkScroll);
             sbNavLinks = new ScrollBooster({
                 viewport: document.querySelector('.nav-links__block'),
                 content: document.querySelector('.nav-links__list'),
