@@ -8,17 +8,77 @@
 @import "../service-header";
 @import "../nav-links";
 @import "../about-service";
+@import "../tools-details";
 @import "../cost";
+@import "../specialists-details";
+@import "../direction-master";
 @import "../appointment";
 @import "../feedback";
 @import "../for-patient";
+@import "../analogs";
 @import "../footer";
 @import "../animations";
 
 
-.breadcrumbs{
+.breadcrumbs {
   display: block;
   top: 18px;
 }
 
+.cost {
+  @media screen and (min-width: 961px) {
+    margin-top: -30px;
+  }
+}
+
+.direction-master {
+  @media screen and (min-width: 961px){
+    position: relative;
+    margin-top: -60px;
+  }
+  &__block {
+    @media screen and (min-width: 961px) {
+      padding: 90px 0;
+    }
+  }
+}
+
+.appointment {
+  @media screen and (min-width: 961px) {
+    background: none;
+    margin-top: -30px;
+  }
+  &__block{
+    @media screen and (min-width: 1400px) {
+      margin: 0 !important;
+    }
+  }
+}
+
+.specialists-details {
+  .doctor-card {
+    &__doctor {
+      max-width: none;
+      @media screen and (min-width: 961px) {
+        flex-basis: unset;
+        width: 100%;
+      }
+      &:hover {
+        .doctor-card__full-info {
+          opacity: 1;
+          box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+          @media screen and (max-width: 960px) {
+            box-shadow: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+.feedback{
+  @media screen and (min-width: 961px){
+    margin-top: -30px;
+  }
+}
 

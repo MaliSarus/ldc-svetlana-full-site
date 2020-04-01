@@ -34,12 +34,14 @@
 }
 
 .appointment.second-block{
-  background: white;
-  .appointment__block{
-    position: relative;
-    top: -30px;
-    margin-top: 0;
-    margin-bottom: 30px;
+  @media screen and (min-width: 961px){
+    background: white;
+    .appointment__block{
+      position: relative;
+      top: -30px;
+      margin-top: 0;
+      margin-bottom: 30px;
+    }
   }
 }
 

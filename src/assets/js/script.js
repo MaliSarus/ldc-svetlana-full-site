@@ -161,6 +161,43 @@ const dirServSliderInit = () => {
 
     })
 };
+
+const specDetailsSliderInit = () => {
+    const specDetailsSlick =  $('.specialists-details__slider');
+    specDetailsSlick.slick({
+        slidesToShow: 2,
+        dots: false,
+        arrows: false,
+        infinite: false,
+        variableWidth: false,
+        responsive: [
+            {
+                breakpoint: 577,
+                settings: {
+                    slidesToShow: 1,
+                },
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 2,
+                },
+            },
+            {
+                breakpoint: 1200,
+                settings: {
+                    slidesToShow: 1,
+                },
+            }
+        ]
+    });
+    $('.specialists-details__control-panel .arrows .arrows__arrow-left').on('click', function () {
+        specDetailsSlick.slick('slickPrev');
+    });
+    $('.specialists-details__control-panel .arrows .arrows__arrow-right').on('click', function () {
+        specDetailsSlick.slick('slickNext');
+    });
+};
 const unitsMenuSliderChangeTab = () => {
     $('.units__menu > ul').on('afterChange', function (event, slick, currentSlide) {
         const index = $('.units__menu > ul').slick('slickCurrentSlide');
@@ -194,6 +231,7 @@ const windowDesktopSizeChange = () => {
     $('.price__pricing').each(function () {
         $(this).children().prependTo($(this));
     });
+    $('.specialists-details__head .title').html('Специалисты &lt;неврологи&gt;');
 };
 const windowMobileSizeChange = () => {
     $('.units__head .title').html('Отделения ЛДЦ');
@@ -217,6 +255,7 @@ const windowMobileSizeChange = () => {
     $('.price__pricing').each(function () {
         $(this).children().appendTo($(this));
     });
+    $('.specialists-details__head .title').html('Специалисты');
 };
 
 const DropdownOpenButtonHandler = () => {
@@ -265,6 +304,7 @@ const onReadyMobileMediaChange = () => {
     $('.science-articles__head .title').html('Научные статьи');
     $($('.staff__tabs_item')[0]).html('Врачи');
     $('.staff__head .title').html('Врачи ЛДЦ');
+    $('.specialists-details__head .title').html('Специалисты');
 };
 
 const closeServicesDropdownFromTapMenu = () => {
@@ -756,6 +796,10 @@ window.onload = function () {
             dirServContentItems.removeClass('direction-services__content_item_active');
             $(dirServContentItems[index]).addClass('direction-services__content_item_active');
         })
+    }
+
+    if (isSet($('.specialists-details'))){
+        specDetailsSliderInit();
     }
 };
 

@@ -4,7 +4,7 @@
   position: relative;
   padding: 0;
   box-sizing: border-box;
-  @media screen and (min-width: 577px) {
+  @media screen and (min-width: 961px) {
     padding: 0 15px;
   }
   @media screen and (min-width: 1400px) {
@@ -57,7 +57,7 @@
   width: 100%;
   box-sizing: border-box;
   @media screen and (min-width: 1400px) {
-    max-width: 1360px;
+    max-width: 1350px;
     margin: 0 auto;
   }
 
@@ -85,6 +85,7 @@
 }
 
 .btn {
+  box-sizing: border-box;
   display: block;
   outline: 0;
   padding: 15px 0;
@@ -564,5 +565,158 @@
   &__cancel {
     padding: 20px 0;
     font-weight: bold;
+  }
+}
+
+.doctor-card{
+  &__doctor{
+    max-width: 345px;
+    background-color: #fcfcfc;
+    color: $main-color;
+    position: relative;
+    font-size: 14px;
+    height: 100%;
+    padding: 6px;
+    box-sizing: border-box;
+    @media screen and (min-width: 769px){
+      max-width: none;
+      display: flex;
+      padding: 20px;
+    }
+    @media screen and (min-width: 1200px){
+      max-width: 670px;
+      flex-basis: 50%;
+    }
+    a{
+      position: absolute;
+      width: calc(100% - 12px);
+      bottom: 6px;
+      left: 6px;
+      display: none;
+      font-size: 16px;
+      @media screen and (min-width: 769px){
+        max-width: 325px;
+      }
+      @media screen and (min-width: 961px){
+        display: block;
+        left: 0;
+        bottom: 0;
+      }
+    }
+    &_content{
+      position: relative;
+    }
+    &_image{
+      width: 100%;
+      margin-bottom: 12px;
+      @media screen and (min-width: 769px){
+        max-width: 200px;
+        background: url("../../img/direction-master/doctor.png") center / cover no-repeat;
+        margin-bottom: 0;
+        margin-right: 20px;
+      }
+      img{
+        width: 100%;
+        @media screen and (min-width: 769px){
+          display: none;
+        }
+      }
+    }
+    &_head{
+      margin-bottom: 12px;
+      @media screen and (min-width: 769px){
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 20px;
+      }
+    }
+    &_exp{
+      color: rgba($main-color-dark,.5);
+      font-size: 14px;
+      margin-bottom: 12px;
+      @media screen and (min-width: 769px){
+        order: 1;
+        flex-basis: 30%;
+        margin-bottom: 0;
+        text-align: right;
+      }
+    }
+    &_name {
+      font-size: 18px;
+      font-weight: bold;
+      margin-top: 0;
+      @media screen and (min-width: 769px){
+        flex-basis: calc(70% - 15px);
+        font-size: 20px;
+      }
+
+      span {
+        font-weight: normal;
+      }
+    }
+
+    &_work {
+      margin: 0;
+      font-size: 16px;
+      margin-bottom: 17px;
+      @media screen and (min-width: 769px){
+        font-size: 18px;
+      }
+    }
+
+    &_features {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      margin-bottom: 12px;
+      @media screen and (min-width: 769px){
+        margin-bottom: 20px;
+      }
+
+      li::before {
+        content: "-";
+        margin-right: 5px;
+      }
+    }
+    &_desc{
+      font-size: 14px;
+      line-height: 120%;
+      color: #444444;
+      @media screen and (min-width: 961px){
+        margin-bottom: 60px + 18px;
+      }
+    }
+    :hover {
+      .doctor__full-info {
+        opacity: 1;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        @media screen and (max-width: 960px) {
+          box-shadow: none;
+        }
+      }
+    }
+  }
+  &__full-info {
+    opacity: 0;
+
+    height: 100%;
+    width: 100%;
+    background-color: rgba(white, .95);
+    position: absolute;
+    left: -12px;
+    top: -12px;
+    padding: 12px;
+    transition: opacity .5s;
+    @media screen and (min-width: 961px){
+      display: none;
+    }
+    a{
+      display: block;
+      left: 12px;
+      bottom: 12px;
+      width: calc(100% - 25px);
+      font-size: 14px;
+    }
   }
 }

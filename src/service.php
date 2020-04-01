@@ -18,12 +18,14 @@ require "./modules/dropdown-menu.php";
 require "./modules/service-header.php";
 require "./modules/nav-links.php";
 require "./modules/about-service.php";
-
+require "./modules/tools-details.php";
 require "./modules/cost.php";
-
+require "./modules/specialists-details.php";
+require "./modules/direction-master.php";
 require "./modules/appointment.php";
 require "./modules/feedback.php";
 require "./modules/for-patient.php";
+require "./modules/analogs.php";
 
 require "./modules/footer.php";
 ?>

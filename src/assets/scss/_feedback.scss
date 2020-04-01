@@ -1,7 +1,10 @@
 .feedback {
   background: white;
-  padding: 18px 16px 30px 16px;
+  padding: 18px 15px 30px 15px;
   margin-bottom: 30px;
+  .container{
+    padding: 0;
+  }
   @media screen and (min-width: 961px) {
     position: relative;
     background-image: url("../../img/feedback/bg-figure-gray.svg");
@@ -10,6 +13,9 @@
     background-size: contain;
     padding: 60px 0;
     margin: auto;
+    .container{
+      padding: 0 15px;
+    }
 
     .quote {
       box-sizing: border-box;

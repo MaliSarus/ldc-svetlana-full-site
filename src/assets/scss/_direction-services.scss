@@ -97,7 +97,13 @@
         display: flex;
         font-size: 16px;
         line-height: 140%;
-        color: #2A4472;
+        color: $main-color-dark;
+        @media screen and (min-width: 961px){
+          margin-bottom: 18px;
+          &:last-child{
+            margin-bottom: 0;
+          }
+        }
       }
 
     }
