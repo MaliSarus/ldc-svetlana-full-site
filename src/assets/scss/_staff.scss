@@ -1,5 +1,4 @@
 .staff {
-  padding-top: 18px;
   margin-bottom: 30px;
   @media screen and (min-width: 961px) {
     background-color: white;
@@ -12,6 +11,7 @@
   &__block {
     flex-grow: 1;
     width: 100%;
+    margin-top: 18px;
     @media screen and (min-width: 961px) {
       margin-top: 48px;
       box-shadow: 0px 10px 30px rgba(12, 28, 56, 0.08);

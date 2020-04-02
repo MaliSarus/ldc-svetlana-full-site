@@ -448,7 +448,7 @@
                                 рентгенологии
                             </p>
                         </div>
-                        <a class="btn btn_red_fill form-call-button">Записаться на прием</a>
+                        <button class="btn btn_red_fill form-call-button">Записаться на прием</button>
                     </div>
                 </div>
             </div>

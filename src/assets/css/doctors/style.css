@@ -1574,7 +1574,7 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
   .appointment_popup {
     background: transparent;
     display: none;
-    position: absolute;
+    position: fixed;
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
@@ -1700,27 +1700,60 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
   .appointment_popup .appointment__form input, .appointment_popup .appointment__form button {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
-    height: 50px;
     padding: 0 18px;
     font-size: 16px;
-    background: #FFFFFF;
     border: 1px solid rgba(42, 68, 114, 0.2);
     border-radius: 1px;
+    height: 42px;
+  }
+}
+
+@media screen and (max-width: 100vw) and (min-width: 961px) {
+  .appointment_popup .appointment__form input, .appointment_popup .appointment__form button {
+    height: 50px;
+  }
+}
+
+@media screen and (max-width: 100vw) {
+  .appointment_popup .appointment__form input {
+    background: #FFFFFF;
     color: #2A4472;
   }
   .appointment_popup .appointment__form button {
     border: 1px solid #2A4472;
   }
+}
+
+@media screen and (max-width: 100vw) and (min-width: 961px) {
+  .appointment_popup .appointment__form button {
+    -ms-flex-preferred-size: calc(100% / 3 - 20px);
+    flex-basis: calc(100% / 3 - 20px);
+  }
+}
+
+@media screen and (max-width: 100vw) {
   .appointment_popup .appointment__form button:hover img {
     -webkit-filter: grayscale(1) invert(1) brightness(1.5);
     filter: grayscale(1) invert(1) brightness(1.5);
   }
   .appointment_popup .appointment__form button img {
-    vertical-align: middle;
     margin-left: 10px;
     -webkit-filter: none;
     filter: none;
+    width: 17px;
+    height: 12px;
   }
+}
+
+@media screen and (max-width: 100vw) and (min-width: 961px) {
+  .appointment_popup .appointment__form button img {
+    width: 21px;
+    height: 17px;
+    vertical-align: middle;
+  }
+}
+
+@media screen and (max-width: 100vw) {
   .appointment_popup .appointment__form .confident-label {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -2730,7 +2763,6 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
 }
 
 .staff {
-  padding-top: 18px;
   margin-bottom: 30px;
 }
 
@@ -2749,6 +2781,7 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
   -ms-flex-positive: 1;
   flex-grow: 1;
   width: 100%;
+  margin-top: 18px;
 }
 
 @media screen and (min-width: 961px) {

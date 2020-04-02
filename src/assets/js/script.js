@@ -1222,11 +1222,11 @@ $(document).ready(function () {
         appendFlag = 1;
     }
 
-    $(".btn_red_fill").click(function () {
-        $('body, html').animate({
-            scrollTop: $(".appointment__block").offset().top - 54
-        }, 1);
-    });
+    // $(".btn_red_fill").click(function () {
+    //     $('body, html').animate({
+    //         scrollTop: $(".appointment__block").offset().top - 54
+    //     }, 1);
+    // });
 
     if (isSet($('.price'))) {
         if ($(window).width() < 677) {
