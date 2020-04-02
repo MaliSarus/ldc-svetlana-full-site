@@ -17,6 +17,7 @@ let prependFlag = 0;
 let sbPrice;
 let sbNavLinks;
 let sbCost;
+let posTop = 0;
 
 const isSlickLoaded = (typeof $.fn.slick !== 'undefined');
 
@@ -361,6 +362,9 @@ const closeServicesDropdownFromTapMenu = () => {
     dropdownMenuContainer.attr('style', '');
     dropdownContentBlock.attr('style', '');
     prependFlag = 0;
+    $('body, html').animate({
+        scrollTop: posTop
+    }, 1);
 };
 
 const popupFormHandler = () => {
@@ -829,7 +833,9 @@ window.onload = function () {
 $(document).ready(function () {
 
     $('.tap-menu__button').on('click', function (event) {
-        event.preventDefault();
+        if ($('.tap-menu__button').index($(this)) != 1) {
+            event.preventDefault();
+        }
     });
 
     if ($(window).width() >= 961) {
@@ -1109,40 +1115,15 @@ $(document).ready(function () {
             $(this).removeClass('feedback__item-content_unhide');
         });
     }
-    let posTop = 0;
     //Кнопка для раскрытия меню в мобайле
-    const hamburger = $('.hamburger');
-    hamburger.on("click", function () {
-        if (!hamburger.hasClass('is-active')) {
-            posTop =  $(window).scrollTop();
-            $('body, html').animate({
-                scrollTop: 0
-            }, 1);
-        } else {
-            $('body, html').animate({
-                scrollTop: posTop
-            }, 1);
-        }
-        hamburger.toggleClass("is-active");
-        $('.header__bottom').toggleClass('header__bottom_active');
-        $('body').children().toggleClass('hide');
-        $('.header').removeClass('hide');
-        if (dropdownMenuContainer.attr('style') != 'display: none;') {
-            dropdownMenuContainer.css({display: 'none'});
-            dropdownContentBlock.attr('style', '');
-            dropdownTabsBlock.attr('style', '');
-            headerBottom.attr('style', '');
-            $('.dropdown-menu').find('.title').detach();
-            $('.dropdown-menu').find('.arrow-back').detach();
-            prependFlag = 0;
-        }
-    });
+
 
     DropdownOpenButtonHandler();
 
     //Обработка кнопки услуги в нижнем меню
     $(serviceTapButton).on('click', function () {
         if (!dropdownMenuContainer.hasClass('dropdown-menu__container_active')) {
+            posTop = $(window).scrollTop();
             $(serviceTapButton).addClass('tap-menu__button_active');
             $('body').children().addClass('hide');
             $('.header').removeClass('hide');
@@ -1155,6 +1136,7 @@ $(document).ready(function () {
             dropdownContentBlock.css({
                 display: 'none'
             });
+
 
             if (prependFlag == 0) {
                 $('.dropdown-menu').prepend('<h2 class="title">Услуги</h2>');
@@ -1353,6 +1335,34 @@ $(document).ready(function () {
 });
 
 
+const hamburger = $('.hamburger');
+hamburger.on("click", function () {
+    console.log(window.pageYOffset !== undefined)
+    if (!hamburger.hasClass('is-active')) {
+        posTop = (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;
+        console.log(posTop);
+        $('body, html').scrollTop = 0
+    }
+    hamburger.toggleClass("is-active");
+    $('.header__bottom').toggleClass('header__bottom_active');
+    $('body').children().toggleClass('hide');
+    $('.header').removeClass('hide');
+    if (dropdownMenuContainer.attr('style') != 'display: none;') {
+        dropdownMenuContainer.css({display: 'none'});
+        dropdownContentBlock.attr('style', '');
+        dropdownTabsBlock.attr('style', '');
+        headerBottom.attr('style', '');
+        $('.dropdown-menu').find('.title').detach();
+        $('.dropdown-menu').find('.arrow-back').detach();
+        prependFlag = 0;
+    }
+    if (!hamburger.hasClass('is-active')){
+        window.scrollTo(0,posTop);
+        console.log('to ', posTop );
+    }
+});
+
+
 //Паралакс квадратиков
 $(window).scroll(parallaxScrolling);
 
@@ -1365,9 +1375,6 @@ function parallaxScrolling() {
 
 }
 
-$(window).scroll(function () {
-    const posTop = ($(window).scrollTop() !== undefined) ? $(window).scrollTop() : $('body').scrollTop();
-});
 let navLinkTop = 0;
 $(document).scroll(function () {
     if (isSet($('.nav-links'))) {

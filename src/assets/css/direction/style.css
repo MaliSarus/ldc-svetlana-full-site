@@ -4706,6 +4706,13 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
 .footer__menu-link {
   color: rgba(255, 255, 255, 0.8);
   text-decoration: none;
+  -webkit-transition: color .25s;
+  -o-transition: color .25s;
+  transition: color .25s;
+}
+
+.footer__menu-link:hover {
+  color: white;
 }
 
 .footer__contacts {

@@ -71,6 +71,10 @@
     &-link {
       color: rgba(white, .8);
       text-decoration: none;
+      transition: color .25s;
+      &:hover{
+        color: white;
+      }
     }
   }
 
