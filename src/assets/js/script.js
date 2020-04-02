@@ -38,47 +38,79 @@ const aboutSliderInit = () => {
 };
 const specSliderInit = () => {
     const specSlick = $('.specialists__slider');
-    specSlick.slick({
-        slidesToShow: 4,
-        slidesToScroll: 1,
-        infinite: true,
-        arrows: false,
-        dots: false,
-        variableWidth: true,
-        responsive: [
-            {
-                breakpoint: 325,
-                settings: {
-                    slidesToShow: 1,
-                    variableWidth: false
+    const specSlickInStaff = $('.staff__content .specialists__slider');
+    if (isSet($('.staff'))) {
+        specSlickInStaff.slick({
+            mobileFirst: true,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            infinite: true,
+            arrows: false,
+            dots: false,
+            variableWidth: false,
+            responsive: [
+                {
+                    breakpoint: 326,
+                    settings: {
+                        variableWidth: true
+                    },
                 },
-            },
-            {
-                breakpoint: 577,
-                settings: {
-                    slidesToShow: 1
+                {
+                    breakpoint: 769,
+                    settings: {
+                        slidesToShow: 2,
+                        variableWidth: true,
+                    },
                 },
-            },
-            {
-                breakpoint: 768,
-                settings: {
-                    slidesToShow: 2
+                {
+                    breakpoint: 961,
+                    settings: "unslick"
                 },
-            },
-            {
-                breakpoint: 960,
-                settings: {
-                    slidesToShow: 3
+            ]
+        })
+    } else {
+        specSlick.slick({
+            slidesToShow: 4,
+            slidesToScroll: 1,
+            infinite: true,
+            arrows: false,
+            dots: false,
+            variableWidth: true,
+            responsive: [
+                {
+                    breakpoint: 325,
+                    settings: {
+                        slidesToShow: 1,
+                        variableWidth: false
+                    },
                 },
-            }
-        ]
-    });
-    $('.specialists__control-panel .arrows .arrows__arrow-left').on('click', function () {
-        specSlick.slick('slickPrev');
-    });
-    $('.specialists__control-panel .arrows .arrows__arrow-right').on('click', function () {
-        specSlick.slick('slickNext');
-    });
+                {
+                    breakpoint: 577,
+                    settings: {
+                        slidesToShow: 1
+                    },
+                },
+                {
+                    breakpoint: 768,
+                    settings: {
+                        slidesToShow: 2
+                    },
+                },
+                {
+                    breakpoint: 960,
+                    settings: {
+                        slidesToShow: 3
+                    },
+                }
+            ]
+        });
+        $('.specialists__control-panel .arrows .arrows__arrow-left').on('click', function () {
+            specSlick.slick('slickPrev');
+        });
+        $('.specialists__control-panel .arrows .arrows__arrow-right').on('click', function () {
+            specSlick.slick('slickNext');
+        });
+    }
 };
 const featuresSliderInit = () => {
     if (isSet($('.features__slider'))) {
@@ -277,6 +309,7 @@ const windowDesktopSizeChange = () => {
         $(this).children().prependTo($(this));
     });
     $('.specialists-details__head .title').html('Специалисты &lt;неврологи&gt;');
+
 };
 const windowMobileSizeChange = () => {
     $('.units__head .title').html('Отделения ЛДЦ');
@@ -300,6 +333,9 @@ const windowMobileSizeChange = () => {
         $(this).children().appendTo($(this));
     });
     $('.specialists-details__head .title').html('Специалисты');
+    if (isSet($('.staff'))) {
+        specSliderInit();
+    }
 };
 
 const DropdownOpenButtonHandler = () => {
@@ -405,19 +441,13 @@ const navLinkScroll = (navLinkTop) => {
 //Действия при изменении размеров окна
 
 $(window).on('resize', function () {
-    if ($(window).width() > 960) {
+    if ($(window).width() >= 961) {
         if (resizeFlag == 0) {
             windowDesktopSizeChange();
             //ВЫПАДАЮЩЕЕ МЕНЮ В ХЭДЕРЕ
             resizeFlag = 1;
         }
     } else {
-        // const specSliderWidth = $('.specialists__slider > .slick-list').width();
-        // if (specSliderWidth < 325) {
-        //     $('.specialists__doctor').css({
-        //         width: specSliderWidth + 'px'
-        //     });
-        // }
         if (resizeFlag == 1) {
             windowMobileSizeChange();
             resizeFlag = 0;
@@ -571,7 +601,7 @@ window.onload = function () {
 
 
     //Слайдер специалистов и кнопки слайдера специалистов
-    if (isSet($('.specialists__slider'))) {
+    if (isSet($('.specialists__slider')) || isSet($('.staff'))) {
         specSliderInit();
     }
 
@@ -673,12 +703,6 @@ window.onload = function () {
             aboutSliderInit();
             featuresSliderInit();
             unitsMenuSliderInit();
-            const specSliderWidth = $('.specialists__slider > .slick-list').width();
-            if (specSliderWidth < 325) {
-                $('.specialists__doctor').css({
-                    maxWidth: specSliderWidth + 'px'
-                });
-            }
             $('.feedback__position').html('<span class="feedback__position_current">1</span>/' + $('.feedback__item').length);
         } else {
             $('.about__slider').filter('.slick-initialized').slick("unslick");
@@ -954,7 +978,6 @@ $(document).ready(function () {
                     color: '#E84E2C'
                 });
                 $('.appointment__form').unbind('submit');
-            } else {
             }
         });
 
@@ -1064,8 +1087,28 @@ $(document).ready(function () {
             });
             staffSearch.val(staffSearch.val().replace(/[^А-Яа-я]/, ''));
         });
+        staffSearch.on('focus', function () {
+            $('.staff__content .staff__ordinary').animate({
+                opacity: 0
+            }, 400)
+        });
+        $('.staff__search-form').on('submit',function (event) {
+            event.preventDefault();
+            console.log('submit');
+            $('.staff__content .staff__ordinary').fadeOut();
+            $('.staff__content .staff__find .words').text(staffSearch.val());
+            staffSearch.val('');
+            $('.staff__content .staff__find').fadeIn();
+        });
         staffSearch.on('blur', function () {
             staffDropdown.attr('style', '');
+            if($('.staff__find').attr('style') != 'display: block;') {
+                $('.staff__content .staff__ordinary').animate({
+                    opacity: 1
+                }, 400, function () {
+                    $('.staff__content .staff__ordinary').attr('style', '').removeAttr('style');
+                })
+            }
         })
     }
 
@@ -1341,7 +1384,7 @@ hamburger.on("click", function () {
     if (!hamburger.hasClass('is-active')) {
         posTop = (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;
         console.log(posTop);
-        window.scrollTo(0,0);
+        window.scrollTo(0, 0);
     }
     hamburger.toggleClass("is-active");
     $('.header__bottom').toggleClass('header__bottom_active');
@@ -1356,9 +1399,9 @@ hamburger.on("click", function () {
         $('.dropdown-menu').find('.arrow-back').detach();
         prependFlag = 0;
     }
-    if (!hamburger.hasClass('is-active')){
-        window.scrollTo(0,posTop);
-        console.log('to ', posTop );
+    if (!hamburger.hasClass('is-active')) {
+        window.scrollTo(0, posTop);
+        console.log('to ', posTop);
     }
 });
 

@@ -79,6 +79,11 @@
         margin-bottom: 48px;
       }
     }
+    &-bottom{
+      .title {
+        margin-bottom: 18px;
+      }
+    }
 
     &_tab {
       display: none;
@@ -162,7 +167,8 @@
 
     &-button {
       position: absolute;
-      top: 14px;
+      top: 50%;
+      transform: translateY(-50%);
       right: 12px;
       width: 12px;
       height: 12px;
@@ -181,7 +187,8 @@
       color: $main-color;
       font-size: 14px;
       position: absolute;
-      top: 12px;
+      top: 50%;
+      transform: translateY(-50%);
       left: 12px;
       background: none;
       padding: 0;
@@ -297,12 +304,9 @@
       margin-bottom: 0;
     }
 
-    .specialists__slider {
-      margin-bottom: 0;
-    }
+  }
 
-    .title {
-      margin-bottom: 18px;
-    }
+  &__find{
+    display: none;
   }
 }

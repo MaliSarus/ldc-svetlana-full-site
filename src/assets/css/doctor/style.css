@@ -881,6 +881,15 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
 
 .doctor-card__doctor_content {
   position: relative;
+  background-image: url("../../img/doctor-card/bg-invisible-icon.svg");
+  background-position: 100% 0;
+  background-repeat: no-repeat;
+}
+
+@media screen and (min-width: 769px) {
+  .doctor-card__doctor_content {
+    background-position: 100% 30px;
+  }
 }
 
 .doctor-card__doctor_image {

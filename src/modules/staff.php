@@ -54,6 +54,12 @@
                                 require "specialists__slider.php"
                                 ?>
                             </div>
+                            <div class="staff__find">
+                                <div class="title">Результат поиска - <span class="words"></span></div>
+                                <?php
+                                require "specialists__slider.php"
+                                ?>
+                            </div>
                         </div>
                     </div>
                 </div>

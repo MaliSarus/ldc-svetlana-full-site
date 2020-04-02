@@ -881,6 +881,15 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
 
 .doctor-card__doctor_content {
   position: relative;
+  background-image: url("../../img/doctor-card/bg-invisible-icon.svg");
+  background-position: 100% 0;
+  background-repeat: no-repeat;
+}
+
+@media screen and (min-width: 769px) {
+  .doctor-card__doctor_content {
+    background-position: 100% 30px;
+  }
 }
 
 .doctor-card__doctor_image {
@@ -2874,6 +2883,10 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
   }
 }
 
+.staff__content-bottom .title {
+  margin-bottom: 18px;
+}
+
 .staff__content_tab {
   display: none;
 }
@@ -2980,7 +2993,10 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
 
 .staff__search-form-button {
   position: absolute;
-  top: 14px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
   right: 12px;
   width: 12px;
   height: 12px;
@@ -2999,7 +3015,10 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
   color: #2A4472;
   font-size: 14px;
   position: absolute;
-  top: 12px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
   left: 12px;
   background: none;
   padding: 0;
@@ -3156,12 +3175,8 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
   margin-bottom: 0;
 }
 
-.staff__ordinary .specialists__slider {
-  margin-bottom: 0;
-}
-
-.staff__ordinary .title {
-  margin-bottom: 18px;
+.staff__find {
+  display: none;
 }
 
 .specialists {
@@ -3868,5 +3883,32 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
   to {
     -webkit-transform: translate3d(-50%, 0, 0);
     transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.specialists__slider {
+  margin-bottom: 0;
+}
+
+@media screen and (min-width: 961px) {
+  .specialists__slider {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-top: -20px;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 961px) {
+  .specialists__doctor {
+    height: auto;
+    margin-top: 20px;
+    margin-right: 10px;
   }
 }
