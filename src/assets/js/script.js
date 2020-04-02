@@ -35,6 +35,50 @@ const aboutSliderInit = () => {
         })
     }
 };
+const specSliderInit = () => {
+    const specSlick = $('.specialists__slider');
+    specSlick.slick({
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        infinite: true,
+        arrows: false,
+        dots: false,
+        variableWidth: true,
+        responsive: [
+            {
+                breakpoint: 325,
+                settings: {
+                    slidesToShow: 1,
+                    variableWidth: false
+                },
+            },
+            {
+                breakpoint: 577,
+                settings: {
+                    slidesToShow: 1
+                },
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 2
+                },
+            },
+            {
+                breakpoint: 960,
+                settings: {
+                    slidesToShow: 3
+                },
+            }
+        ]
+    });
+    $('.specialists__control-panel .arrows .arrows__arrow-left').on('click', function () {
+        specSlick.slick('slickPrev');
+    });
+    $('.specialists__control-panel .arrows .arrows__arrow-right').on('click', function () {
+        specSlick.slick('slickNext');
+    });
+};
 const featuresSliderInit = () => {
     if (isSet($('.features__slider'))) {
         $('.features__slider').slick({
@@ -151,7 +195,7 @@ const dirServSliderInit = () => {
         infinite: false,
         variableWidth: true
     });
-    $('.direction-services__tabs').on('afterChange',function (event, slick, currentSlide) {
+    $('.direction-services__tabs').on('afterChange', function (event, slick, currentSlide) {
         const dirServTabs = $('.direction-services__tabs_link');
         const dirServItems = $('.direction-services__content_item');
         dirServTabs.removeClass('tab-link_red_active');
@@ -163,7 +207,7 @@ const dirServSliderInit = () => {
 };
 
 const specDetailsSliderInit = () => {
-    const specDetailsSlick =  $('.specialists-details__slider');
+    const specDetailsSlick = $('.specialists-details__slider');
     specDetailsSlick.slick({
         slidesToShow: 2,
         dots: false,
@@ -316,6 +360,21 @@ const closeServicesDropdownFromTapMenu = () => {
     dropdownMenuContainer.removeClass('dropdown-menu__container_active');
     dropdownMenuContainer.attr('style', '');
     dropdownContentBlock.attr('style', '');
+    prependFlag = 0;
+};
+
+const popupFormHandler = () => {
+    $('.appointment_popup').addClass('appointment_popup_active').css({
+        position: 'fixed',
+        height: '100vh',
+        background: 'rgba(63,90,138,0.4)',
+        top: 0,
+        left: 0,
+        transform: 'none'
+    });
+    $('body').css({
+        overflow: 'hidden'
+    });
 };
 
 const navLinkScroll = (navLinkTop) => {
@@ -334,7 +393,7 @@ const navLinkScroll = (navLinkTop) => {
         } else {
             $('.nav-links').attr('style', '');
         }
-    }else{
+    } else {
         $(document).off('scroll', navLinkScroll());
     }
 };
@@ -349,12 +408,12 @@ $(window).on('resize', function () {
             resizeFlag = 1;
         }
     } else {
-        const specSliderWidth = $('.specialists__slider > .slick-list').width();
-        if (specSliderWidth < 325) {
-            $('.specialists__doctor').css({
-                width: specSliderWidth + 'px'
-            });
-        }
+        // const specSliderWidth = $('.specialists__slider > .slick-list').width();
+        // if (specSliderWidth < 325) {
+        //     $('.specialists__doctor').css({
+        //         width: specSliderWidth + 'px'
+        //     });
+        // }
         if (resizeFlag == 1) {
             windowMobileSizeChange();
             resizeFlag = 0;
@@ -446,6 +505,13 @@ $(window).on('resize', function () {
                 content: document.querySelector('.price__list_wrapper'),
                 scrollMode: "transform", // use CSS 'transform' property
                 direction: "horizontal", // allow only horizontal scrolling
+                pointerMode: 'all',
+                pointerDownPreventDefault: false,
+                onClick: (state, event) => {
+                    if ($('.form-call-button').is(event.target)) {
+                        popupFormHandler();
+                    }
+                }
                 // emulateScroll: true, // scroll on wheel events
             });
         }
@@ -461,7 +527,7 @@ $(window).on('resize', function () {
                 scrollMode: "transform", // use CSS 'transform' property
                 direction: "horizontal", // allow only horizontal scrollin
             });
-            if($('.nav-links').attr('style') != ''){
+            if ($('.nav-links').attr('style') != '') {
                 $('.nav-links').attr('style', '');
             }
         }
@@ -495,60 +561,14 @@ $(window).on('resize', function () {
 });
 
 
-
 // Обработка событий при полной загрузки страницы
 window.onload = function () {
+    $('.form-call-button').on('click', popupFormHandler);
+
 
     //Слайдер специалистов и кнопки слайдера специалистов
     if (isSet($('.specialists__slider'))) {
-        const specSlick = $('.specialists__slider');
-        specSlick.slick({
-            infinite: true,
-            arrows: false,
-            dots: false,
-            variableWidth: true,
-            responsive: [
-                {
-                    breakpoint: 576,
-                    settings: {
-                        slidesToShow: 1,
-                        slidesToScroll: 1,
-                        infinite: true
-                    },
-                },
-                {
-                    breakpoint: 768,
-                    settings: {
-                        slidesToShow: 2,
-                        slidesToScroll: 1,
-                        infinite: true
-                    },
-                },
-                {
-                    breakpoint: 960,
-                    settings: {
-                        slidesToShow: 3,
-                        slidesToScroll: 1,
-                        infinite: true
-                    },
-                },
-                {
-                    breakpoint: 1400,
-                    settings: {
-                        slidesToShow: 4,
-                        slidesToScroll: 1,
-                        infinite: true,
-                    },
-                },
-
-            ]
-        });
-        $('.specialists__control-panel .arrows .arrows__arrow-left').on('click', function () {
-            specSlick.slick('slickPrev');
-        });
-        $('.specialists__control-panel .arrows .arrows__arrow-right').on('click', function () {
-            specSlick.slick('slickNext');
-        });
+        specSliderInit();
     }
 
     //Сладер отзывов и кнопки сладера отзывов
@@ -782,7 +802,7 @@ window.onload = function () {
             });
         })
     }
-    if(isSet($('.direction-services'))){
+    if (isSet($('.direction-services'))) {
         if ($(window).width() <= ($('.direction-services__tabs').width() + 30)) {
             dirServSliderInit();
         }
@@ -799,7 +819,7 @@ window.onload = function () {
         })
     }
 
-    if (isSet($('.specialists-details'))){
+    if (isSet($('.specialists-details'))) {
         specDetailsSliderInit();
     }
 };
@@ -807,20 +827,10 @@ window.onload = function () {
 
 //Обработка событий после загрузки страницы
 $(document).ready(function () {
-    $('.form-call-button').on('click', function () {
-        $('.appointment_popup').addClass('appointment_popup_active').css({
-            position: 'fixed',
-            height: '100vh',
-            background: 'rgba(63,90,138,0.4)',
-            top: 0,
-            left: 0,
-            transform: 'none'
-        });
-        $('body').css({
-            overflow: 'hidden'
-        });
-    })
 
+    $('.tap-menu__button').on('click', function (event) {
+        event.preventDefault();
+    });
 
     if ($(window).width() >= 961) {
         $('.dropdown-menu__open-button').on('mouseup', function (event) {
@@ -1103,13 +1113,12 @@ $(document).ready(function () {
     //Кнопка для раскрытия меню в мобайле
     const hamburger = $('.hamburger');
     hamburger.on("click", function () {
-        if (!hamburger.hasClass('is-active')){
-            posTop = ($(window).scrollTop() !== undefined) ? $(window).scrollTop() : $('body').scrollTop();
+        if (!hamburger.hasClass('is-active')) {
+            posTop =  $(window).scrollTop();
             $('body, html').animate({
                 scrollTop: 0
             }, 1);
-        }
-        else{
+        } else {
             $('body, html').animate({
                 scrollTop: posTop
             }, 1);
@@ -1226,7 +1235,7 @@ $(document).ready(function () {
         selectButtons.appendTo('.about__slider');
         // $('body').off('click');
         $('.price__pricing').each(function () {
-            $(this).children().prependTo($(this));
+            // $(this).children().prependTo($(this));
         });
         appendFlag = 1;
     }
@@ -1244,6 +1253,13 @@ $(document).ready(function () {
                 content: document.querySelector('.price__list_wrapper'),
                 scrollMode: "transform", // use CSS 'transform' property
                 direction: "horizontal", // allow only horizontal scrollin
+                pointerMode: 'all',
+                pointerDownPreventDefault: false,
+                onClick: (state, event) => {
+                    if ($('.form-call-button').is(event.target)) {
+                        popupFormHandler();
+                    }
+                }
             });
         }
     }
@@ -1315,7 +1331,13 @@ $(document).ready(function () {
                 scrollMode: "transform", // use CSS 'transform' property
                 direction: "horizontal", // allow only horizontal scrollin
                 pointerMode: 'all',
-                pointerDownPreventDefault: false
+                pointerDownPreventDefault: false,
+                onClick: (state, event) => {
+                    if ($('.form-call-button').is(event.target)) {
+
+                    }
+
+                }
             });
         }
         $('.cost__list_item').on('click', function (event) {

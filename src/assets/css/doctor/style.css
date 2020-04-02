@@ -763,17 +763,17 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
 
 .popup-iphone {
   background-color: rgba(63, 90, 138, 0.4);
-  height: 100vh;
   width: 100%;
-  position: absolute;
+  position: fixed;
   z-index: 10001;
   left: 0;
-  top: 0;
+  bottom: 0;
   display: none;
 }
 
 .popup-iphone_active {
   display: block;
+  height: 100vh;
 }
 
 .popup-iphone__block {
@@ -2339,7 +2339,7 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
 }
 
 .staff-simple__info_details_text:first-child {
-  padding-top: 18px;
+  padding-top: 12px;
   border-width: calc(100% - 50px);
   border-top: 1px solid rgba(42, 68, 114, 0.3);
 }
@@ -2407,8 +2407,7 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
 @media screen and (min-width: 1400px) {
   .staff-simple__desc {
     font-size: 18px;
-    line-height: 24px;
-    margin-bottom: 30px;
+    margin-bottom: 24px;
   }
 }
 
@@ -2713,6 +2712,7 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
 
 .education__text {
   line-height: 140%;
+  color: rgba(10, 24, 49, 0.8);
 }
 
 .diplomas {
@@ -2758,6 +2758,12 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
   -ms-flex-align: center;
   align-items: center;
   margin-bottom: 18px;
+}
+
+@media screen and (min-width: 961px) {
+  .diplomas__head {
+    margin-bottom: 36px;
+  }
 }
 
 .diplomas__head .arrows {
@@ -3025,6 +3031,9 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
   padding: 12px;
   margin-right: 0;
   max-width: 670px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  min-height: 276px;
 }
 
 @media screen and (min-width: 769px) {
@@ -3037,6 +3046,7 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
   .feedback__item {
     padding: 20px 37px;
     margin-right: 20px;
+    min-height: 251px;
   }
 }
 
@@ -3079,6 +3089,7 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  border-radius: 50%;
 }
 
 .feedback__item-head-user-info {
@@ -3256,6 +3267,12 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
 }
 
 @media screen and (min-width: 961px) {
+  .science-articles__head {
+    margin-bottom: 36px;
+  }
+}
+
+@media screen and (min-width: 961px) {
   .science-articles__content {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -3371,7 +3388,18 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
 
 .science-articles__footer a {
   display: inline-block;
-  padding: 25px 0;
+  padding-top: 25px;
+}
+
+@media screen and (min-width: 961px) {
+  .science-articles__footer a {
+    padding: 25px 0;
+  }
+}
+
+.science-articles__footer a:hover img {
+  -webkit-filter: hue-rotate(-182deg) saturate(7.5);
+  filter: hue-rotate(-182deg) saturate(7.5);
 }
 
 .appointment {
@@ -4026,11 +4054,16 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
   padding: 12px;
   width: 325px;
   max-width: 325px;
-  margin-right: 20px;
   position: relative;
   height: 100%;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
+}
+
+@media screen and (min-width: 577px) {
+  .specialists__doctor {
+    margin-right: 20px;
+  }
 }
 
 .specialists__doctor:last-child {
@@ -4617,10 +4650,10 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
 
 .appointment__block {
   margin-top: 0;
-  margin-bottom: 30px;
   width: 100%;
   position: relative;
   z-index: 2;
+  margin-bottom: 0;
 }
 
 @media screen and (min-width: 961px) {
@@ -4628,7 +4661,8 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
     -webkit-box-shadow: 0 10px 30px rgba(12, 28, 56, 0.08);
     box-shadow: 0 10px 30px rgba(12, 28, 56, 0.08);
     left: 0;
-    top: -30px;
+    margin-top: -30px !important;
+    margin-bottom: 60px !important;
   }
 }
 

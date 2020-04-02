@@ -20,6 +20,9 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 18px;
+    @media screen and (min-width: 961px){
+      margin-bottom: 36px;
+    }
   }
 
   &__content {
@@ -108,7 +111,15 @@
     }
     a {
       display: inline-block;
-      padding: 25px 0;
+      padding-top: 25px;
+      @media screen and (min-width: 961px){
+        padding: 25px 0;
+      }
+      &:hover{
+        img{
+          filter: hue-rotate(-182deg) saturate(7.5);;
+        }
+      }
     }
   }
 }

@@ -763,17 +763,17 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
 
 .popup-iphone {
   background-color: rgba(63, 90, 138, 0.4);
-  height: 100vh;
   width: 100%;
-  position: absolute;
+  position: fixed;
   z-index: 10001;
   left: 0;
-  top: 0;
+  bottom: 0;
   display: none;
 }
 
 .popup-iphone_active {
   display: block;
+  height: 100vh;
 }
 
 .popup-iphone__block {
@@ -2387,7 +2387,7 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
 
 @media screen and (min-width: 1400px) {
   .about__title {
-    font-size: 18px;
+    font-size: 20px;
     margin-bottom: 12px;
   }
 }
@@ -2404,7 +2404,7 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
 
 @media screen and (min-width: 1400px) {
   .about__desc {
-    font-size: 18px;
+    font-size: 20px;
     line-height: 24px;
     margin-bottom: 30px;
   }
@@ -3040,7 +3040,6 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
 
 .units__features_hurt-item {
   color: #2A4472;
-  text-decoration: underline;
   font-weight: bold;
 }
 
@@ -3049,10 +3048,12 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
   -webkit-transition: color .2s;
   -o-transition: color .2s;
   transition: color .2s;
+  text-decoration: underline;
 }
 
 .units__features_hurt-link:hover {
   color: #E84E2C;
+  text-decoration: none;
 }
 
 .units__features-image {
@@ -3142,9 +3143,9 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
   flex-basis: calc(100% / 2 - 9px);
   padding: 15px 0;
   margin-bottom: 18px;
-  -webkit-transition: padding-top .5s, background-color .5s;
-  -o-transition: padding-top .5s, background-color .5s;
-  transition: padding-top .5s, background-color .5s;
+  -webkit-transition: padding-top .25s, background-color .25s;
+  -o-transition: padding-top .25s, background-color .25s;
+  transition: padding-top .25s, background-color .25s;
 }
 
 .units__country::before {
@@ -3855,11 +3856,16 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
   padding: 12px;
   width: 325px;
   max-width: 325px;
-  margin-right: 20px;
   position: relative;
   height: 100%;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
+}
+
+@media screen and (min-width: 577px) {
+  .specialists__doctor {
+    margin-right: 20px;
+  }
 }
 
 .specialists__doctor:last-child {
@@ -4324,6 +4330,9 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
   padding: 12px;
   margin-right: 0;
   max-width: 670px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  min-height: 276px;
 }
 
 @media screen and (min-width: 769px) {
@@ -4336,6 +4345,7 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
   .feedback__item {
     padding: 20px 37px;
     margin-right: 20px;
+    min-height: 251px;
   }
 }
 
@@ -4378,6 +4388,7 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  border-radius: 50%;
 }
 
 .feedback__item-head-user-info {

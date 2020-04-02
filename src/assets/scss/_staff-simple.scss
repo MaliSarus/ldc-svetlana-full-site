@@ -104,7 +104,7 @@
         margin-bottom: 8px;
         max-width: 325px;
         &:first-child{
-          padding-top: 18px;
+          padding-top: 12px;
           border-width: calc(100% - 50px);
           border-top: 1px solid rgba($main-color, .3);
         }
@@ -161,8 +161,7 @@
     margin-bottom: 18px;
     @media screen and (min-width: 1400px) {
       font-size: 18px;
-      line-height: 24px;
-      margin-bottom: 30px;
+      margin-bottom: 24px;
     }
   }
 

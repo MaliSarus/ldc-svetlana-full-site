@@ -111,12 +111,15 @@
     padding: 12px;
     margin-right: 0;
     max-width: 670px;
+    box-sizing: border-box;
+    min-height: 276px;
     @media screen and (min-width: 769px){
       margin-right: 10px;
     }
     @media screen and (min-width: 961px) {
       padding: 20px 37px;
       margin-right: 20px;
+      min-height: 251px;
     }
 
     &-head {
@@ -144,6 +147,7 @@
           background-repeat: no-repeat;
           background-position: center;
           background-size: cover;
+          border-radius: 50%;
         }
 
         &-info {
