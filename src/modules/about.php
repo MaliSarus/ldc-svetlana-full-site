@@ -8,7 +8,7 @@
                         <h4 class="about__title">Эксперты становятся ближе </h4>
                         <p class="about__desc">Невролог, вертеброневролог, нейрохирург, травмотолог-ортопед<br>Доктор
                             медицинских наук, профессор. </p>
-                        <a href="doctors.php"><button class="btn btn_dark">Подробнее</button></a>
+                        <a href="doctor.php" class="btn btn_dark">Подробнее</a>
                     </div>
                     <div class="about__doctor">
                         <img src="./assets/img/about/sale-pic.png" alt="Картинка скидок">
@@ -20,7 +20,7 @@
                         <h4 class="about__title">Эксперты становятся ближе </h4>
                         <p class="about__desc">Невролог, вертеброневролог, нейрохирург, травмотолог-ортопед<br>Доктор
                             медицинских наук, профессор. </p>
-                        <a href="doctors.php"><button class="btn btn_dark">Подробнее</button></a>
+                        <a href="doctor.php" class="btn btn_dark">Подробнее</a>
                     </div>
                     <div class="about__doctor">
                         <img src="./assets/img/about/sale-pic.png" alt="Картинка скидок">
@@ -44,7 +44,7 @@
                         <h4 class="about__title">Эксперты становятся ближе </h4>
                         <p class="about__desc">Невролог, вертеброневролог, нейрохирург, травмотолог-ортопед<br>Доктор
                             медицинских наук, профессор. </p>
-                        <a href="doctors.php"><button class="btn btn_dark">Подробнее</button></a>
+                        <a href="doctor.php" class="btn btn_dark">Подробнее</a>
                     </div>
                     <div class="about__doctor">
                         <img src="./assets/img/about/sale-pic.png" alt="Картинка скидок">
