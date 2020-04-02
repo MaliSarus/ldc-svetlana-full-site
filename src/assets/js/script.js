@@ -1337,11 +1337,11 @@ $(document).ready(function () {
 
 const hamburger = $('.hamburger');
 hamburger.on("click", function () {
-    console.log(window.pageYOffset !== undefined)
+    console.log(window.pageYOffset !== undefined);
     if (!hamburger.hasClass('is-active')) {
         posTop = (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;
         console.log(posTop);
-        $('body, html').scrollTop = 0
+        window.scrollTo(0,0);
     }
     hamburger.toggleClass("is-active");
     $('.header__bottom').toggleClass('header__bottom_active');

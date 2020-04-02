@@ -52,7 +52,8 @@
     width: 100%;
     @media screen and (max-width: 960px) {
       padding: 0;
-      background: #3E557F;
+      background: rgba(42, 68, 114, 0.9);
+      backdrop-filter: blur(4px);
       position: fixed;
       left: 0;
       top: 0;

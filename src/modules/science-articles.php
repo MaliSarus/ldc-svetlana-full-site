@@ -13,8 +13,8 @@
                             новые возможностиварикоз ной новые возмо жностиварикозной новые возможности в лазерном...
                         </div>
                         <div class="science-articles__content_item_authors">
-                            <div class="science-articles__content_item_author">Черноиван А.Г.</div>
-                            <div class="science-articles__content_item_author">Вишневский А.А.</div>
+                            <a class="science-articles__content_item_author link">Черноиван А.Г.</a>
+                            <a class="science-articles__content_item_author link">Вишневский А.А.</a>
                         </div>
                     </div>
                     <div class="science-articles__content_item">
@@ -27,8 +27,8 @@
                             жностиварикозной новые возможности в лазерном...
                         </div>
                         <div class="science-articles__content_item_authors">
-                            <div class="science-articles__content_item_author">Черноиван А.Г.</div>
-                            <div class="science-articles__content_item_author">Вишневский А.А.</div>
+                            <a class="science-articles__content_item_author link">Черноиван А.Г.</a>
+                            <a class="science-articles__content_item_author link">Вишневский А.А.</a>
                         </div>
                     </div>
 

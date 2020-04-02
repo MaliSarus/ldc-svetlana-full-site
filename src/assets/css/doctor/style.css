@@ -1297,7 +1297,9 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
 @media screen and (max-width: 960px) {
   .header__top {
     padding: 0;
-    background: #3E557F;
+    background: rgba(42, 68, 114, 0.9);
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
     position: fixed;
     left: 0;
     top: 0;
@@ -2419,16 +2421,15 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: end;
-  -ms-flex-pack: end;
-  justify-content: flex-end;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: end;
   -ms-flex-align: end;
   align-items: flex-end;
   height: 231px;
   background: url("../../img/about/bg-h-figure.svg") bottom no-repeat;
   background-size: auto 100%;
-  padding-top: 20px;
   background-clip: border-box;
   -webkit-box-ordinal-group: 0;
   -ms-flex-order: -1;
@@ -2445,6 +2446,9 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
     height: auto;
     background: none;
     padding-top: 0;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
   }
 }
 
@@ -2457,11 +2461,21 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
   text-align: center;
   color: white;
   font-size: 12px;
+  width: 100%;
   max-width: 345px;
-  right: 10px;
-  -webkit-transform: skewX(-15deg);
-  -ms-transform: skewX(-15deg);
-  transform: skewX(-15deg);
+  right: 50%;
+  -webkit-transform: skewX(-15deg) translateX(50%);
+  -ms-transform: skewX(-15deg) translateX(50%);
+  transform: skewX(-15deg) translateX(50%);
+}
+
+@media screen and (min-width: 577px) {
+  .staff-simple__doctor_details {
+    right: 10px;
+    -webkit-transform: skewX(-15deg) translateX(0);
+    -ms-transform: skewX(-15deg) translateX(0);
+    transform: skewX(-15deg) translateX(0);
+  }
 }
 
 @media screen and (min-width: 769px) {
@@ -2472,18 +2486,20 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
 
 @media screen and (min-width: 961px) {
   .staff-simple__doctor_details {
+    max-width: 320px;
+    right: 20px;
+    bottom: 15px;
+    padding: 33px 25px;
     font-size: 16px;
-    right: 15px;
+    -webkit-transform: skewX(-15deg) translateX(0);
+    -ms-transform: skewX(-15deg) translateX(0);
+    transform: skewX(-15deg) translateX(0);
   }
 }
 
 @media screen and (min-width: 1400px) {
   .staff-simple__doctor_details {
-    width: auto;
-    max-width: 320px;
-    right: 20px;
     bottom: 45px;
-    padding: 33px 25px;
   }
 }
 
@@ -4297,6 +4313,13 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
 .footer__license-text p a {
   color: rgba(255, 255, 255, 0.8);
   text-decoration: underline;
+  -webkit-transition: color .25s;
+  -o-transition: color .25s;
+  transition: color .25s;
+}
+
+.footer__license-text p a:hover {
+  color: white;
 }
 
 .footer__license-text-copy {
@@ -4449,7 +4472,7 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
 .tap-menu {
   height: 77px;
   width: 100%;
-  background-color: rgba(62, 85, 127, 0.9);
+  background-color: rgba(42, 68, 114, 0.9);
   position: fixed;
   bottom: 0;
   left: 0;

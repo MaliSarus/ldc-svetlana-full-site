@@ -1297,7 +1297,9 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
 @media screen and (max-width: 960px) {
   .header__top {
     padding: 0;
-    background: #3E557F;
+    background: rgba(42, 68, 114, 0.9);
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
     position: fixed;
     left: 0;
     top: 0;
@@ -4663,6 +4665,13 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
 .footer__license-text p a {
   color: rgba(255, 255, 255, 0.8);
   text-decoration: underline;
+  -webkit-transition: color .25s;
+  -o-transition: color .25s;
+  transition: color .25s;
+}
+
+.footer__license-text p a:hover {
+  color: white;
 }
 
 .footer__license-text-copy {
@@ -4815,7 +4824,7 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
 .tap-menu {
   height: 77px;
   width: 100%;
-  background-color: rgba(62, 85, 127, 0.9);
+  background-color: rgba(42, 68, 114, 0.9);
   position: fixed;
   bottom: 0;
   left: 0;

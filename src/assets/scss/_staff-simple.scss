@@ -169,12 +169,12 @@
     flex-grow: 1;
     position: relative;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: flex-end;
     height: 231px;
     background: url("../../img/about/bg-h-figure.svg") bottom no-repeat;
     background-size: auto 100%;
-    padding-top: 20px;
+    //padding-top: 20px;
     background-clip: border-box;
     order: -1;
     @media screen and (min-width: 577px){
@@ -183,6 +183,7 @@
       height: auto;
       background: none;
       padding-top: 0;
+      justify-content: flex-end;
     }
     &_details{
       background: $main-color;
@@ -192,22 +193,27 @@
       text-align: center;
       color: white;
       font-size: 12px;
+      width: 100%;
       max-width: 345px;
-      right: 10px;
-      transform:skewX(-15deg);
+      right: 50%;
+      transform:skewX(-15deg) translateX(50%);
+      @media screen and (min-width: 577px){
+        right: 10px;
+        transform:skewX(-15deg) translateX(0);
+      }
       @media screen and (min-width: 769px){
         font-size: 14px;
       }
       @media screen and (min-width: 961px){
-        font-size: 16px;
-        right: 15px;
-      }
-      @media screen and (min-width: 1400px){
-        width: auto;
         max-width: 320px;
         right: 20px;
-        bottom: 45px;
+        bottom: 15px;
         padding: 33px 25px;
+        font-size: 16px;
+        transform:skewX(-15deg) translateX(0);
+      }
+      @media screen and (min-width: 1400px){
+        bottom: 45px;
       }
 
 
