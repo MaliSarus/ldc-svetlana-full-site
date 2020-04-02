@@ -4,11 +4,10 @@
   margin-bottom: 30px;
   box-sizing: border-box;
   @media screen and (min-width: 577px) {
-    padding: 18px 0;
+    padding: 18px 15px;
   }
   @media screen and (min-width: 961px) {
-    padding-top: 60px;
-    padding-bottom: 90px;
+    padding: 60px 0 90px 0;
     margin-bottom: 0;
   }
 
@@ -20,7 +19,7 @@
     //  font-size: 24px;
     //}
     @media screen and (min-width: 961px) {
-      margin-bottom: 60px;
+      margin-bottom: 46px;
     }
   }
 

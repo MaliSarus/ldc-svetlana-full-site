@@ -138,7 +138,12 @@
 
         &-image {
           display: inline-block;
-          margin-right: 18px;
+          margin-right: 12px;
+          width: 30px;
+          height: 30px;
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: cover;
         }
 
         &-info {
@@ -149,9 +154,6 @@
           }
         }
 
-        &-image {
-          max-width: 24px;
-        }
 
         &-username {
           font-size: 14px;

@@ -102,7 +102,7 @@
                                         сочетании с самым на сегодняшний день современным оснащением.
                                     </p>
                                 </div>
-                                <a class="btn btn_dark">Записаться на прием</a>
+                                <a class="btn btn_dark form-call-button">Записаться на прием</a>
                             </div>
                         </div>
                     </div>

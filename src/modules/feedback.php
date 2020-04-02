@@ -20,8 +20,7 @@
                 <div class="feedback__item">
                     <div class="feedback__item-head">
                         <div class="feedback__item-head-user">
-                            <div class="feedback__item-head-user-image">
-                                <img src="./assets/img/feedback/userpic.png" alt="Изображение пользователя">
+                            <div class="feedback__item-head-user-image" style="background-image: url(./assets/img/feedback/example-man.jpg)">
                             </div>
                             <div class="feedback__item-head-user-info">
                                 <p class="feedback__item-head-user-username">Ольга Ивановна</p>
@@ -42,6 +41,26 @@
                             Accusamus animi atque blanditiis doloribus minima minus pariatur quidem tempora voluptate
                             voluptates. Debitis dicta minima optio quam. Dolorum inventore neque numquam quae quos saepe
                             vero. Quidem repudiandae, suscipit.
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus amet assumenda commodi
+                            consectetur corporis eum exercitationem facere, fuga itaque nobis pariatur sapiente.
+                            Accusamus animi atque blanditiis doloribus minima minus pariatur quidem tempora voluptate
+                            voluptates. Debitis dicta minima optio quam. Dolorum inventore neque numquam quae quos saepe
+                            vero. Quidem repudiandae, suscipit.
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus amet assumenda commodi
+                            consectetur corporis eum exercitationem facere, fuga itaque nobis pariatur sapiente.
+                            Accusamus animi atque blanditiis doloribus minima minus pariatur quidem tempora voluptate
+                            voluptates. Debitis dicta minima optio quam. Dolorum inventore neque numquam quae quos saepe
+                            vero. Quidem repudiandae, suscipit.
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus amet assumenda commodi
+                            consectetur corporis eum exercitationem facere, fuga itaque nobis pariatur sapiente.
+                            Accusamus animi atque blanditiis doloribus minima minus pariatur quidem tempora voluptate
+                            voluptates. Debitis dicta minima optio quam. Dolorum inventore neque numquam quae quos saepe
+                            vero. Quidem repudiandae, suscipit.
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus amet assumenda commodi
+                            consectetur corporis eum exercitationem facere, fuga itaque nobis pariatur sapiente.
+                            Accusamus animi atque blanditiis doloribus minima minus pariatur quidem tempora voluptate
+                            voluptates. Debitis dicta minima optio quam. Dolorum inventore neque numquam quae quos saepe
+                            vero. Quidem repudiandae, suscipit.
                         </p>
                     </div>
                     <div class="feedback__item-about">
@@ -52,8 +71,7 @@
                 <div class="feedback__item">
                     <div class="feedback__item-head">
                         <div class="feedback__item-head-user">
-                            <div class="feedback__item-head-user-image">
-                                <img src="./assets/img/feedback/userpic.png" alt="Изображение пользователя">
+                            <div class="feedback__item-head-user-image" style="background-image: url(./assets/img/feedback/example-man.jpg)">
                             </div>
                             <div class="feedback__item-head-user-info">
                                 <p class="feedback__item-head-user-username">Ольга Ивановна</p>
@@ -74,18 +92,17 @@
                             Accusamus animi atque blanditiis doloribus minima minus pariatur quidem tempora voluptate
                             voluptates. Debitis dicta minima optio quam. Dolorum inventore neque numquam quae quos saepe
                             vero. Quidem repudiandae, suscipit.
+
                         </p>
                     </div>
                     <div class="feedback__item-about">
                         <p class="feedback__item-about-doctor"><b>Врач:</b> Баиндурашвили А. Г.</p>
-                        <p class="feedback__item-about-ordinary"><b>Направление:</b> Оториноларингология</p>
                     </div>
                 </div>
                 <div class="feedback__item">
                     <div class="feedback__item-head">
                         <div class="feedback__item-head-user">
-                            <div class="feedback__item-head-user-image">
-                                <img src="./assets/img/feedback/userpic.png" alt="Изображение пользователя">
+                            <div class="feedback__item-head-user-image" style="background-image: url(./assets/img/feedback/example-man.jpg)">
                             </div>
                             <div class="feedback__item-head-user-info">
                                 <p class="feedback__item-head-user-username">Ольга Ивановна</p>

@@ -236,7 +236,6 @@ const windowDesktopSizeChange = () => {
 const windowMobileSizeChange = () => {
     $('.units__head .title').html('Отделения ЛДЦ');
     $('.units__emergency-room .title').html('Взрослый и детский травмпункт');
-    $('.units__features').append('<a class="btn btn_red_fill">Записаться на прием</a>');
     $('.appointment__block > .content').removeClass(['content_flex', 'content_between']);
     $('.specialists__head .title').html('Специалисты ЛДЦ');
     $('.feedback__head > .title').html('Отзывы');
@@ -366,12 +365,10 @@ $(window).on('resize', function () {
     if ($(window).width() >= 961 && appendFlag == 0) {
         selectButtons.appendTo('.about__slider');
         $('.with-arrow').detach();
-        $('.units__features > a.btn.btn_red_fill').remove();
         appendFlag = 1;
     } else if ($(window).width() < 961 && appendFlag == 1) {
         $('.dropdown-menu__open-button').append('<div class="with-arrow"></div>');
         dropdownTabs.append('<div class="with-arrow"></div>');
-        $('.units__features').append('<a class="btn btn_red_fill">Записаться на прием</a>');
         appendFlag = 0;
     }
 
@@ -386,6 +383,10 @@ $(window).on('resize', function () {
                     height: 'calc(100% - 2px)',
                     borderBottom: '2px solid white'
                 });
+                $('li.dropdown-menu__open-button > a').css({
+                    color: 'white',
+                    transform: 'translateY(1px)'
+                })
             }
         });
         dropdownFlag = 1;
@@ -806,6 +807,19 @@ window.onload = function () {
 
 //Обработка событий после загрузки страницы
 $(document).ready(function () {
+    $('.form-call-button').on('click', function () {
+        $('.appointment_popup').addClass('appointment_popup_active').css({
+            position: 'fixed',
+            height: '100vh',
+            background: 'rgba(63,90,138,0.4)',
+            top: 0,
+            left: 0,
+            transform: 'none'
+        });
+        $('body').css({
+            overflow: 'hidden'
+        });
+    })
 
 
     if ($(window).width() >= 961) {
@@ -818,6 +832,10 @@ $(document).ready(function () {
                     height: 'calc(100% - 2px)',
                     borderBottom: '2px solid white'
                 });
+                $('li.dropdown-menu__open-button > a').css({
+                    color: 'white',
+                    transform: 'translateY(1px)'
+                });
             }
         });
         $(document).mousedown(function (e) {
@@ -828,6 +846,7 @@ $(document).ready(function () {
                     dropdownMenuContainer.fadeOut(400).removeClass('dropdown-menu__container_active');
                     $('body').css({overflow: 'visible'});
                     $('li.dropdown-menu__open-button').attr('style', '');
+                    $('li.dropdown-menu__open-button > a').attr('style', '');
                 }
             }
         });
@@ -1202,12 +1221,10 @@ $(document).ready(function () {
     if (window.matchMedia('screen and (max-width: 960px)').matches) {
         onReadyMobileMediaChange();
         mobileDropdownOpenButtonHandler();
-        $('.units__features').append('<a class="btn btn_red_fill">Записаться на прием</a>');
         appendFlag = 0;
     } else {
         selectButtons.appendTo('.about__slider');
         // $('body').off('click');
-        $('.units__features > a.btn.btn_red_fill').remove();
         $('.price__pricing').each(function () {
             $(this).children().prependTo($(this));
         });
@@ -1229,21 +1246,6 @@ $(document).ready(function () {
                 direction: "horizontal", // allow only horizontal scrollin
             });
         }
-
-        $('.price__button').on('click', function () {
-
-            $('.appointment_popup').addClass('appointment_popup_active').css({
-                position: 'fixed',
-                height: '100vh',
-                background: 'rgba(63,90,138,0.4)',
-                top: 0,
-                left: 0,
-                transform: 'none'
-            });
-            $('body').css({
-                overflow: 'hidden'
-            });
-        })
     }
 
     if (isSet($('.science-articles'))) {
@@ -1324,19 +1326,6 @@ $(document).ready(function () {
                 return false;
             }
         });
-        $('.cost__list_content button').on('click', function () {
-            $('.appointment_popup').addClass('appointment_popup_active').css({
-                position: 'fixed',
-                height: '100vh',
-                background: 'rgba(63,90,138,0.4)',
-                top: 0,
-                left: 0,
-                transform: 'none'
-            });
-            $('body').css({
-                overflow: 'hidden'
-            });
-        })
     }
 
 });

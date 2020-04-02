@@ -246,7 +246,7 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
   box-sizing: border-box;
   display: block;
   outline: 0;
-  padding: 15px 0;
+  padding: 10px 0;
   text-align: center;
   background: none;
   border: none;
@@ -260,7 +260,7 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
 
 @media screen and (min-width: 961px) {
   .btn {
-    padding: 20px 0;
+    padding: 15px 0;
     font-size: 16px;
   }
 }
@@ -333,7 +333,6 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
 .btn_dark {
   background-color: #2A4472;
   border: 0;
-  padding: 15px 0;
   color: white;
 }
 
@@ -468,6 +467,9 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
 
 .link {
   color: #2A4472;
+  -webkit-transition: color .3s;
+  -o-transition: color .3s;
+  transition: color .3s;
 }
 
 .link:hover {
@@ -1380,12 +1382,21 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
     text-decoration: none;
     color: #2A4472;
     font-size: 14px;
+    -webkit-transition: color .5s;
+    -o-transition: color .5s;
+    transition: color .5s;
   }
 }
 
 @media screen and (min-width: 961px) and (min-width: 1400px) {
   .header__main-menu ul li a {
     font-size: 16px;
+  }
+}
+
+@media screen and (min-width: 961px) {
+  .header__main-menu ul li a:hover {
+    color: #E84E2C;
   }
 }
 
@@ -1572,12 +1583,16 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
     align-items: center;
     height: 100%;
     cursor: pointer;
+    -webkit-transition: border-bottom-color .5s;
+    -o-transition: border-bottom-color .5s;
+    transition: border-bottom-color .5s;
   }
   .header__primary-menu ul li:hover {
     height: calc(100% - 2px);
     border-bottom: 2px solid white;
   }
   .header__primary-menu ul li:hover a {
+    color: white;
     -webkit-transform: translateY(1px);
     -ms-transform: translateY(1px);
     transform: translateY(1px);
@@ -1587,6 +1602,9 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
   }
   .header__primary-menu ul li a {
     color: rgba(255, 255, 255, 0.8);
+    -webkit-transition: color .5s;
+    -o-transition: color .5s;
+    transition: color .5s;
   }
 }
 
@@ -1702,6 +1720,9 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
     background: -webkit-gradient(linear, left bottom, left top, from(rgba(255, 255, 255, 0.05)), to(rgba(255, 255, 255, 0.05)));
     background: -o-linear-gradient(bottom, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05));
     background: linear-gradient(0deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05));
+    -webkit-transition: background-color 1s;
+    -o-transition: background-color 1s;
+    transition: background-color 1s;
   }
 }
 
@@ -1717,7 +1738,6 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
 }
 
 .header__search-form_focus .header__search-form-field {
-  background-color: white;
   color: #2A4472;
 }
 
@@ -1728,7 +1748,10 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
 
 .header__search-form-button {
   position: absolute;
-  top: 14px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
   left: 12px;
   width: 12px;
   height: 12px;
@@ -1744,7 +1767,17 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
   .header__search-form-button {
     -webkit-filter: invert(1);
     filter: invert(1);
+    width: 14px;
+    height: 14px;
   }
+}
+
+.header__search-form-button img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
 }
 
 .header__search-form-field {
@@ -1752,7 +1785,10 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
   color: rgba(255, 255, 255, 0.5);
   font-size: 14px;
   position: absolute;
-  top: 12px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
   left: 38px;
   background: none;
   padding: 0;
@@ -1892,7 +1928,6 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
   height: 100%;
   background-color: transparent;
   position: relative;
-  top: 54px;
   left: 0;
 }
 
@@ -2303,20 +2338,20 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
   }
 }
 
-.about__info button {
+.about__info a {
   padding: 15px 0;
   width: 100%;
   max-width: none;
 }
 
 @media screen and (min-width: 577px) {
-  .about__info button {
+  .about__info a {
     max-width: 325px;
   }
 }
 
 @media screen and (min-width: 1400px) {
-  .about__info button {
+  .about__info a {
     margin-bottom: 55px;
   }
 }
@@ -2326,6 +2361,14 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
   color: #0A1831;
   margin: 0;
   margin-bottom: 18px;
+}
+
+@media screen and (min-width: 1200px) {
+  .about__doctor-name {
+    line-height: 48px;
+    margin-bottom: 35px;
+    font-size: 36px;
+  }
 }
 
 @media screen and (min-width: 1400px) {
@@ -2350,6 +2393,7 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
 }
 
 .about__desc {
+  margin-top: 0;
   color: #0A1831;
   font-weight: 500;
   font-style: normal;
@@ -2473,14 +2517,13 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
 
 @media screen and (min-width: 577px) {
   .features {
-    padding: 18px 0;
+    padding: 18px 15px;
   }
 }
 
 @media screen and (min-width: 961px) {
   .features {
-    padding-top: 60px;
-    padding-bottom: 90px;
+    padding: 60px 0 90px 0;
     margin-bottom: 0;
   }
 }
@@ -2492,7 +2535,7 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
 
 @media screen and (min-width: 961px) {
   .features__title {
-    margin-bottom: 60px;
+    margin-bottom: 46px;
   }
 }
 
@@ -2698,7 +2741,8 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
   .units__content-image {
     -ms-flex-preferred-size: calc(100% / 4);
     flex-basis: calc(100% / 4);
-    background: url("../../img/units/content-image.png") center no-repeat;
+    background-position: center;
+    background-repeat: no-repeat;
     background-size: cover;
     position: relative;
     display: inline-block;
@@ -2721,6 +2765,12 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
     padding: 40px 25px;
     font-size: 16px;
     margin: 0;
+  }
+}
+
+@media screen and (min-width: 961px) and (min-width: 961px) {
+  .units__content-image p {
+    line-height: 24px;
   }
 }
 
@@ -2996,12 +3046,20 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
 
 .units__features_hurt-link {
   color: #2A4472;
+  -webkit-transition: color .2s;
+  -o-transition: color .2s;
+  transition: color .2s;
+}
+
+.units__features_hurt-link:hover {
+  color: #E84E2C;
 }
 
 .units__features-image {
   max-width: 325px;
   height: 190px;
-  background: url("../../img/units/features-image.png") center no-repeat;
+  background-position: center;
+  background-repeat: no-repeat;
   position: relative;
   display: none;
 }
@@ -3013,13 +3071,7 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
     flex-basis: calc(100% / 3 - 20px);
     height: auto;
     background-size: cover;
-    min-height: 250px;
-  }
-}
-
-@media screen and (min-width: 1400px) {
-  .units__features-image {
-    height: 190px;
+    min-height: 190px;
   }
 }
 
@@ -3039,6 +3091,17 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
   line-height: 140%;
   bottom: 0;
   color: white;
+}
+
+.units__features .form-call-button {
+  display: block;
+  font-size: 16px;
+}
+
+@media screen and (min-width: 961px) {
+  .units__features .form-call-button {
+    display: none;
+  }
 }
 
 .units__countries {
@@ -3079,6 +3142,15 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
   flex-basis: calc(100% / 2 - 9px);
   padding: 15px 0;
   margin-bottom: 18px;
+  -webkit-transition: padding-top .5s, background-color .5s;
+  -o-transition: padding-top .5s, background-color .5s;
+  transition: padding-top .5s, background-color .5s;
+}
+
+.units__country::before {
+  -webkit-transition-delay: .5s;
+  -o-transition-delay: .5s;
+  transition-delay: .5s;
 }
 
 .units__country:nth-child(3) {
@@ -3089,18 +3161,15 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
   margin: 0;
 }
 
-@media screen and (min-width: 961px) {
-  .units__country {
-    -ms-flex-preferred-size: calc(100% / 4 - 20px);
-    flex-basis: calc(100% / 4 - 20px);
-    padding: 27px 0;
-    font-size: 20px;
-    margin-bottom: 0;
-  }
-}
-
 .units__country:hover {
   background-color: #F1F1F1;
+  padding-top: 11px;
+}
+
+@media screen and (min-width: 961px) {
+  .units__country:hover {
+    padding-top: 23px;
+  }
 }
 
 .units__country:hover::before {
@@ -3111,11 +3180,17 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
   background-color: white;
   position: absolute;
   left: 0;
-  bottom: 0;
+  bottom: -4px;
 }
 
-.units__country:hover .units__country-image {
-  margin-top: -4px;
+@media screen and (min-width: 961px) {
+  .units__country {
+    -ms-flex-preferred-size: calc(100% / 4 - 20px);
+    flex-basis: calc(100% / 4 - 20px);
+    padding: 27px 0;
+    font-size: 20px;
+    margin-bottom: 0;
+  }
 }
 
 .units__country-image {
@@ -3366,12 +3441,21 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
 .appointment .appointment__form input, .appointment .appointment__form button {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  height: 50px;
   padding: 0 18px;
   font-size: 16px;
-  background: #FFFFFF;
   border: 1px solid rgba(42, 68, 114, 0.2);
   border-radius: 1px;
+  height: 42px;
+}
+
+@media screen and (min-width: 961px) {
+  .appointment .appointment__form input, .appointment .appointment__form button {
+    height: 50px;
+  }
+}
+
+.appointment .appointment__form input {
+  background: #FFFFFF;
   color: #2A4472;
 }
 
@@ -3392,10 +3476,19 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
 }
 
 .appointment .appointment__form button img {
-  vertical-align: middle;
   margin-left: 10px;
   -webkit-filter: none;
   filter: none;
+  width: 17px;
+  height: 12px;
+}
+
+@media screen and (min-width: 961px) {
+  .appointment .appointment__form button img {
+    width: 21px;
+    height: 17px;
+    vertical-align: middle;
+  }
 }
 
 @media screen and (min-width: 961px) {
@@ -3804,6 +3897,7 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
   color: #0A1831;
   margin-bottom: 22px;
   margin-top: 0;
+  line-height: 120%;
 }
 
 .specialists__doctor .doctor__info .doctor__name span {
@@ -3821,6 +3915,7 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
   margin: 0;
   padding: 0;
   list-style: none;
+  line-height: 150%;
 }
 
 .specialists__doctor .doctor__info .doctor__features li::before {
@@ -3862,7 +3957,7 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
 
 .specialists__doctor .doctor__full-info a {
   display: block;
-  width: calc(100% - 40px);
+  width: calc(100% - 30px);
   text-align: center;
   color: #2A4472;
   border: 1px solid #2A4472;
@@ -3871,11 +3966,10 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
   -webkit-transform: translateX(-50%);
   -ms-transform: translateX(-50%);
   transform: translateX(-50%);
-  bottom: 12px;
+  bottom: 15px;
   -webkit-transition: background-color .5s, color .5s;
   -o-transition: background-color .5s, color .5s;
   transition: background-color .5s, color .5s;
-  padding: 15px 0;
 }
 
 .specialists__doctor .doctor__full-info a:hover {
@@ -4027,30 +4121,26 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
 .care__content p {
   color: rgba(10, 24, 49, 0.7);
   font-size: 16px;
-  line-height: 22.4px;
-  margin-bottom: 35px;
+  line-height: 140%;
+  margin-bottom: 18px;
 }
 
-@media screen and (max-width: 960px) {
+@media screen and (min-width: 961px) {
   .care__content p {
-    margin-bottom: 18px;
+    margin-bottom: 35px;
+    line-height: 22.4px;
   }
 }
 
 .care__content a {
-  display: block;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
   background-color: transparent;
   width: 100%;
   margin-bottom: 30px;
-  padding: 15px 0;
 }
 
 @media screen and (min-width: 961px) {
   .care__content a {
     width: 325px;
-    padding: 20px 0;
   }
 }
 
@@ -4282,7 +4372,12 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
 
 .feedback__item-head-user-image {
   display: inline-block;
-  margin-right: 18px;
+  margin-right: 12px;
+  width: 30px;
+  height: 30px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 .feedback__item-head-user-info {
@@ -4291,10 +4386,6 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
 
 .feedback__item-head-user-info p, .feedback__item-head-user-info small {
   margin: 0;
-}
-
-.feedback__item-head-user-image {
-  max-width: 24px;
 }
 
 .feedback__item-head-user-username {
@@ -4474,7 +4565,7 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
 }
 
 .footer__license-text-copy {
-  margin-bottom: 20px;
+  margin-bottom: 20px !important;
 }
 
 .footer__menu {
@@ -4490,14 +4581,24 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
   margin: 0;
   padding: 0;
   list-style: none;
-  display: block;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   -webkit-box-flex: 1;
   -ms-flex-positive: 1;
   flex-grow: 1;
 }
 
 .footer__menu-item {
-  margin-bottom: 12px;
+  font-size: 16px;
+  line-height: 140%;
 }
 
 .footer__menu-item:last-child {
@@ -4511,11 +4612,20 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
 
 .footer__contacts {
   justify-self: flex-end;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
 }
 
 .footer__contacts p {
   margin: 0;
-  margin-bottom: 20px;
 }
 
 .footer__phone {
@@ -4523,7 +4633,6 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
   color: white;
   font-weight: bold;
   display: block;
-  margin-bottom: 35px;
 }
 
 @media screen and (min-width: 960px) {

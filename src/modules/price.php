@@ -20,7 +20,7 @@
                         <div class="price__pricing">
                             8 000 ₽ <span class="price__pricing_del">13 000 ₽</span>
                         </div>
-                        <button class="btn btn_size_18 btn_red price__button">Записаться</button>
+                        <button class="btn btn_size_18 btn_red price__button form-call-button">Записаться</button>
                     </div>
                 </div>
             </div>

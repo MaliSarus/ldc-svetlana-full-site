@@ -25,7 +25,7 @@
                 <div class="units__content"><!--Низ-->
                     <div class="content content_flex">
                         <div class="units__content-services units__content-services_active">
-                            <div class="units__content-image">
+                            <div class="units__content-image" style="background-image: url(./assets/img/units/content-image.png)">
                                 <p>
                                     Лечебно-Диагностический Центр завода «Светлана» это возвращение к добрым традициям в
                                     сочетании с самым на сегодняшний день современным оснащением.
@@ -34,31 +34,31 @@
                             <div class="units__column">
                                 <ul>
                                     <li class="units__list-item"><span class="main-letter">А</span><a
-                                            class="units__item-link"
+                                            class="units__item-link link"
                                             href="#">Аллергология</a>
                                     </li>
-                                    <li class="units__list-item"><a class="units__item-link" href="#">Артроскопия</a>
+                                    <li class="units__list-item"><a class="units__item-link link" href="#">Артроскопия</a>
                                     </li>
-                                    <li class="units__list-item"><a class="units__item-link" href="#">Анестезиология</a>
+                                    <li class="units__list-item"><a class="units__item-link link" href="#">Анестезиология</a>
                                     </li>
                                 </ul>
                                 <ul>
                                     <li class="units__list-item"><span class="main-letter">В</span><a
-                                            class="units__item-link"
+                                            class="units__item-link link"
                                             href="#">Вертебрология</a>
                                     </li>
-                                    <li class="units__list-item"><a class="units__item-link" href="#">Второе мнение</a>
+                                    <li class="units__list-item"><a class="units__item-link link" href="#">Второе мнение</a>
                                     </li>
                                 </ul>
                                 <ul>
                                     <li class="units__list-item"><span class="main-letter">Г</span><a
-                                            class="units__item-link"
+                                            class="units__item-link link"
                                             href="#">Гастроэнтерология</a>
                                     </li>
                                 </ul>
                                 <ul>
                                     <li class="units__list-item"><span class="main-letter">И</span><a
-                                            class="units__item-link"
+                                            class="units__item-link link"
                                             href="#">Иммунлогия</a>
                                     </li>
                                 </ul>
@@ -66,31 +66,31 @@
                             <div class="units__column">
                                 <ul>
                                     <li class="units__list-item"><span class="main-letter">К</span><a
-                                            class="units__item-link"
+                                            class="units__item-link link"
                                             href="#">Кардиология</a>
                                     </li>
-                                    <li class="units__list-item"><a class="units__item-link"
+                                    <li class="units__list-item"><a class="units__item-link link"
                                                                     href="#">Колопроктология</a></li>
                                 </ul>
                                 <ul>
                                     <li class="units__list-item"><span class="main-letter">Н</span><a
-                                            class="units__item-link"
+                                            class="units__item-link link"
                                             href="#">Неврология</a>
                                     </li>
                                 </ul>
                                 <ul>
                                     <li class="units__list-item"><span class="main-letter">О</span><a
-                                            class="units__item-link"
+                                            class="units__item-link link"
                                             href="#">Онкология</a>
                                     </li>
-                                    <li class="units__list-item"><a class="units__item-link" href="#">Оториноларингология</a>
+                                    <li class="units__list-item"><a class="units__item-link link" href="#">Оториноларингология</a>
                                     </li>
-                                    <li class="units__list-item"><a class="units__item-link" href="#">Офтальмология</a>
+                                    <li class="units__list-item"><a class="units__item-link link" href="#">Офтальмология</a>
                                     </li>
                                 </ul>
                                 <ul>
                                     <li class="units__list-item"><span class="main-letter">П</span><a
-                                            class="units__item-link"
+                                            class="units__item-link link"
                                             href="#">Психотерапия</a>
                                     </li>
                                 </ul>
@@ -98,31 +98,31 @@
                             <div class="units__column">
                                 <ul>
                                     <li class="units__list-item"><span class="main-letter">Т</span><a
-                                            class="units__item-link"
+                                            class="units__item-link link"
                                             href="#">Терапия</a></li>
                                 </ul>
                                 <ul>
                                     <li class="units__list-item"><span class="main-letter">Ф</span><a
-                                            class="units__item-link"
+                                            class="units__item-link link"
                                             href="#">Флебология</a>
                                     </li>
                                 </ul>
                                 <ul>
                                     <li class="units__list-item"><span class="main-letter">Х</span><a
-                                            class="units__item-link"
+                                            class="units__item-link link"
                                             href="#">Хирургия</a>
                                     </li>
                                 </ul>
                                 <ul>
                                     <li class="units__list-item"><span class="main-letter">Э</span><a
-                                            class="units__item-link"
+                                            class="units__item-link link"
                                             href="#">Эндокринология</a>
                                     </li>
                                 </ul>
                             </div>
                         </div>
                         <div class="units__content-services">
-                            <div class="units__content-image">
+                            <div class="units__content-image" style="background-image: url(./assets/img/units/content-image.png)">
                                 <p>
                                     Лечебно-Диагностический Центр завода «Светлана» это возвращение к добрым традициям в
                                     сочетании с самым на сегодняшний день современным оснащением.
@@ -131,31 +131,31 @@
                             <div class="units__column">
                                 <ul>
                                     <li class="units__list-item"><span class="main-letter">А</span><a
-                                            class="units__item-link"
+                                            class="units__item-link link"
                                             href="#">2</a>
                                     </li>
-                                    <li class="units__list-item"><a class="units__item-link" href="#">Артроскопия</a>
+                                    <li class="units__list-item"><a class="units__item-link link" href="#">Артроскопия</a>
                                     </li>
-                                    <li class="units__list-item"><a class="units__item-link" href="#">Анестезиология</a>
+                                    <li class="units__list-item"><a class="units__item-link link" href="#">Анестезиология</a>
                                     </li>
                                 </ul>
                                 <ul>
                                     <li class="units__list-item"><span class="main-letter">В</span><a
-                                            class="units__item-link"
+                                            class="units__item-link link"
                                             href="#">Вертебрология</a>
                                     </li>
-                                    <li class="units__list-item"><a class="units__item-link" href="#">Второе мнение</a>
+                                    <li class="units__list-item"><a class="units__item-link link" href="#">Второе мнение</a>
                                     </li>
                                 </ul>
                                 <ul>
                                     <li class="units__list-item"><span class="main-letter">Г</span><a
-                                            class="units__item-link"
+                                            class="units__item-link link"
                                             href="#">Гастроэнтерология</a>
                                     </li>
                                 </ul>
                                 <ul>
                                     <li class="units__list-item"><span class="main-letter">И</span><a
-                                            class="units__item-link"
+                                            class="units__item-link link"
                                             href="#">Иммунлогия</a>
                                     </li>
                                 </ul>
@@ -163,31 +163,31 @@
                             <div class="units__column">
                                 <ul>
                                     <li class="units__list-item"><span class="main-letter">К</span><a
-                                            class="units__item-link"
+                                            class="units__item-link link"
                                             href="#">Кардиология</a>
                                     </li>
-                                    <li class="units__list-item"><a class="units__item-link"
+                                    <li class="units__list-item"><a class="units__item-link link"
                                                                     href="#">Колопроктология</a></li>
                                 </ul>
                                 <ul>
                                     <li class="units__list-item"><span class="main-letter">Н</span><a
-                                            class="units__item-link"
+                                            class="units__item-link link"
                                             href="#">Неврология</a>
                                     </li>
                                 </ul>
                                 <ul>
                                     <li class="units__list-item"><span class="main-letter">О</span><a
-                                            class="units__item-link"
+                                            class="units__item-link link"
                                             href="#">Онкология</a>
                                     </li>
-                                    <li class="units__list-item"><a class="units__item-link" href="#">Оториноларингология</a>
+                                    <li class="units__list-item"><a class="units__item-link link" href="#">Оториноларингология</a>
                                     </li>
-                                    <li class="units__list-item"><a class="units__item-link" href="#">Офтальмология</a>
+                                    <li class="units__list-item"><a class="units__item-link link" href="#">Офтальмология</a>
                                     </li>
                                 </ul>
                                 <ul>
                                     <li class="units__list-item"><span class="main-letter">П</span><a
-                                            class="units__item-link"
+                                            class="units__item-link link"
                                             href="#">Психотерапия</a>
                                     </li>
                                 </ul>
@@ -195,31 +195,31 @@
                             <div class="units__column">
                                 <ul>
                                     <li class="units__list-item"><span class="main-letter">Т</span><a
-                                            class="units__item-link"
+                                            class="units__item-link link"
                                             href="#">Кок</a></li>
                                 </ul>
                                 <ul>
                                     <li class="units__list-item"><span class="main-letter">Ф</span><a
-                                            class="units__item-link"
+                                            class="units__item-link link"
                                             href="#">Флебология</a>
                                     </li>
                                 </ul>
                                 <ul>
                                     <li class="units__list-item"><span class="main-letter">Х</span><a
-                                            class="units__item-link"
+                                            class="units__item-link link"
                                             href="#">Хирургия</a>
                                     </li>
                                 </ul>
                                 <ul>
                                     <li class="units__list-item"><span class="main-letter">Э</span><a
-                                            class="units__item-link"
+                                            class="units__item-link link"
                                             href="#">Эндокринология</a>
                                     </li>
                                 </ul>
                             </div>
                         </div>
                         <div class="units__content-services">
-                            <div class="units__content-image">
+                            <div class="units__content-image" style="background-image: url(./assets/img/units/content-image.png)">
                                 <p>
                                     Лечебно-Диагностический Центр завода «Светлана» это возвращение к добрым традициям в
                                     сочетании с самым на сегодняшний день современным оснащением.
@@ -228,31 +228,31 @@
                             <div class="units__column">
                                 <ul>
                                     <li class="units__list-item"><span class="main-letter">А</span><a
-                                            class="units__item-link"
+                                            class="units__item-link link"
                                             href="#">3</a>
                                     </li>
-                                    <li class="units__list-item"><a class="units__item-link" href="#">Артроскопия</a>
+                                    <li class="units__list-item"><a class="units__item-link link" href="#">Артроскопия</a>
                                     </li>
-                                    <li class="units__list-item"><a class="units__item-link" href="#">Анестезиология</a>
+                                    <li class="units__list-item"><a class="units__item-link link" href="#">Анестезиология</a>
                                     </li>
                                 </ul>
                                 <ul>
                                     <li class="units__list-item"><span class="main-letter">В</span><a
-                                            class="units__item-link"
+                                            class="units__item-link link"
                                             href="#">Вертебрология</a>
                                     </li>
-                                    <li class="units__list-item"><a class="units__item-link" href="#">Второе мнение</a>
+                                    <li class="units__list-item"><a class="units__item-link link" href="#">Второе мнение</a>
                                     </li>
                                 </ul>
                                 <ul>
                                     <li class="units__list-item"><span class="main-letter">Г</span><a
-                                            class="units__item-link"
+                                            class="units__item-link link"
                                             href="#">Гастроэнтерология</a>
                                     </li>
                                 </ul>
                                 <ul>
                                     <li class="units__list-item"><span class="main-letter">И</span><a
-                                            class="units__item-link"
+                                            class="units__item-link link"
                                             href="#">Иммунлогия</a>
                                     </li>
                                 </ul>
@@ -260,31 +260,31 @@
                             <div class="units__column">
                                 <ul>
                                     <li class="units__list-item"><span class="main-letter">К</span><a
-                                            class="units__item-link"
+                                            class="units__item-link link"
                                             href="#">Кардиология</a>
                                     </li>
-                                    <li class="units__list-item"><a class="units__item-link"
+                                    <li class="units__list-item"><a class="units__item-link link"
                                                                     href="#">Колопроктология</a></li>
                                 </ul>
                                 <ul>
                                     <li class="units__list-item"><span class="main-letter">Н</span><a
-                                            class="units__item-link"
+                                            class="units__item-link link"
                                             href="#">Неврология</a>
                                     </li>
                                 </ul>
                                 <ul>
                                     <li class="units__list-item"><span class="main-letter">О</span><a
-                                            class="units__item-link"
+                                            class="units__item-link link"
                                             href="#">Онкология</a>
                                     </li>
-                                    <li class="units__list-item"><a class="units__item-link" href="#">Оториноларингология</a>
+                                    <li class="units__list-item"><a class="units__item-link link" href="#">Оториноларингология</a>
                                     </li>
-                                    <li class="units__list-item"><a class="units__item-link" href="#">Офтальмология</a>
+                                    <li class="units__list-item"><a class="units__item-link link" href="#">Офтальмология</a>
                                     </li>
                                 </ul>
                                 <ul>
                                     <li class="units__list-item"><span class="main-letter">П</span><a
-                                            class="units__item-link"
+                                            class="units__item-link link"
                                             href="#">Психотерапия</a>
                                     </li>
                                 </ul>
@@ -292,31 +292,31 @@
                             <div class="units__column">
                                 <ul>
                                     <li class="units__list-item"><span class="main-letter">Т</span><a
-                                            class="units__item-link"
+                                            class="units__item-link link"
                                             href="#">Кок</a></li>
                                 </ul>
                                 <ul>
                                     <li class="units__list-item"><span class="main-letter">Ф</span><a
-                                            class="units__item-link"
+                                            class="units__item-link link"
                                             href="#">Флебология</a>
                                     </li>
                                 </ul>
                                 <ul>
                                     <li class="units__list-item"><span class="main-letter">Х</span><a
-                                            class="units__item-link"
+                                            class="units__item-link link"
                                             href="#">Хирургия</a>
                                     </li>
                                 </ul>
                                 <ul>
                                     <li class="units__list-item"><span class="main-letter">Э</span><a
-                                            class="units__item-link"
+                                            class="units__item-link link"
                                             href="#">Эндокринология</a>
                                     </li>
                                 </ul>
                             </div>
                         </div>
                         <div class="units__content-services">
-                            <div class="units__content-image">
+                            <div class="units__content-image" style="background-image: url(./assets/img/units/content-image.png)">
                                 <p>
                                     Лечебно-Диагностический Центр завода «Светлана» это возвращение к добрым традициям в
                                     сочетании с самым на сегодняшний день современным оснащением.
@@ -325,31 +325,31 @@
                             <div class="units__column">
                                 <ul>
                                     <li class="units__list-item"><span class="main-letter">А</span><a
-                                            class="units__item-link"
+                                            class="units__item-link link"
                                             href="#">4</a>
                                     </li>
-                                    <li class="units__list-item"><a class="units__item-link" href="#">Артроскопия</a>
+                                    <li class="units__list-item"><a class="units__item-link link" href="#">Артроскопия</a>
                                     </li>
-                                    <li class="units__list-item"><a class="units__item-link" href="#">Анестезиология</a>
+                                    <li class="units__list-item"><a class="units__item-link link" href="#">Анестезиология</a>
                                     </li>
                                 </ul>
                                 <ul>
                                     <li class="units__list-item"><span class="main-letter">В</span><a
-                                            class="units__item-link"
+                                            class="units__item-link link"
                                             href="#">Вертебрология</a>
                                     </li>
-                                    <li class="units__list-item"><a class="units__item-link" href="#">Второе мнение</a>
+                                    <li class="units__list-item"><a class="units__item-link link" href="#">Второе мнение</a>
                                     </li>
                                 </ul>
                                 <ul>
                                     <li class="units__list-item"><span class="main-letter">Г</span><a
-                                            class="units__item-link"
+                                            class="units__item-link link"
                                             href="#">Гастроэнтерология</a>
                                     </li>
                                 </ul>
                                 <ul>
                                     <li class="units__list-item"><span class="main-letter">И</span><a
-                                            class="units__item-link"
+                                            class="units__item-link link"
                                             href="#">Иммунлогия</a>
                                     </li>
                                 </ul>
@@ -357,31 +357,31 @@
                             <div class="units__column">
                                 <ul>
                                     <li class="units__list-item"><span class="main-letter">К</span><a
-                                            class="units__item-link"
+                                            class="units__item-link link"
                                             href="#">Кардиология</a>
                                     </li>
-                                    <li class="units__list-item"><a class="units__item-link"
+                                    <li class="units__list-item"><a class="units__item-link link"
                                                                     href="#">Колопроктология</a></li>
                                 </ul>
                                 <ul>
                                     <li class="units__list-item"><span class="main-letter">Н</span><a
-                                            class="units__item-link"
+                                            class="units__item-link link"
                                             href="#">Неврология</a>
                                     </li>
                                 </ul>
                                 <ul>
                                     <li class="units__list-item"><span class="main-letter">О</span><a
-                                            class="units__item-link"
+                                            class="units__item-link link"
                                             href="#">Онкология</a>
                                     </li>
-                                    <li class="units__list-item"><a class="units__item-link" href="#">Оториноларингология</a>
+                                    <li class="units__list-item"><a class="units__item-link link" href="#">Оториноларингология</a>
                                     </li>
-                                    <li class="units__list-item"><a class="units__item-link" href="#">Офтальмология</a>
+                                    <li class="units__list-item"><a class="units__item-link link" href="#">Офтальмология</a>
                                     </li>
                                 </ul>
                                 <ul>
                                     <li class="units__list-item"><span class="main-letter">П</span><a
-                                            class="units__item-link"
+                                            class="units__item-link link"
                                             href="#">Психотерапия</a>
                                     </li>
                                 </ul>
@@ -389,24 +389,24 @@
                             <div class="units__column">
                                 <ul>
                                     <li class="units__list-item"><span class="main-letter">Т</span><a
-                                            class="units__item-link"
+                                            class="units__item-link link"
                                             href="#">Кок</a></li>
                                 </ul>
                                 <ul>
                                     <li class="units__list-item"><span class="main-letter">Ф</span><a
-                                            class="units__item-link"
+                                            class="units__item-link link"
                                             href="#">Флебология</a>
                                     </li>
                                 </ul>
                                 <ul>
                                     <li class="units__list-item"><span class="main-letter">Х</span><a
-                                            class="units__item-link"
+                                            class="units__item-link link"
                                             href="#">Хирургия</a>
                                     </li>
                                 </ul>
                                 <ul>
                                     <li class="units__list-item"><span class="main-letter">Э</span><a
-                                            class="units__item-link"
+                                            class="units__item-link link"
                                             href="#">Эндокринология</a>
                                     </li>
                                 </ul>
@@ -431,23 +431,24 @@
                             <li class="list-item_red-square">Мы принимаем пациентов в возрасте <span>от 3х лет!</span></li>
                         </ul>
                         <ul class="units__features_hurt-list">
-                            <li class="units__features_hurt-item"><a class="units__features_hurt-link" href="#">Травма
+                            <li class="units__features_hurt-item"><a class="units__features_hurt-link link" href="#">Травма
                                     глаза</a></li>
-                            <li class="units__features_hurt-item"><a class="units__features_hurt-link" href="#">Травма
+                            <li class="units__features_hurt-item"><a class="units__features_hurt-link link" href="#">Травма
                                     осевого скелета</a></li>
-                            <li class="units__features_hurt-item"><a class="units__features_hurt-link" href="#">Травма
+                            <li class="units__features_hurt-item"><a class="units__features_hurt-link link" href="#">Травма
                                     ЛОР-органов</a></li>
-                            <li class="units__features_hurt-item"><a class="units__features_hurt-link" href="#">Травма
+                            <li class="units__features_hurt-item"><a class="units__features_hurt-link link" href="#">Травма
                                     лица и органов зрения</a></li>
-                            <li class="units__features_hurt-item"><a class="units__features_hurt-link" href="#">Травма
+                            <li class="units__features_hurt-item"><a class="units__features_hurt-link link" href="#">Травма
                                     кисти</a></li>
                         </ul>
-                        <div class="units__features-image">
+                        <div class="units__features-image" style="background-image: url(./assets/img/units/features-image.png)">
                             <p>
                                 Круглосуточный травматологический пункт экспертного класса с&nbsp;отделением цифровой
                                 рентгенологии
                             </p>
                         </div>
+                        <a class="btn btn_red_fill form-call-button">Записаться на прием</a>
                     </div>
                 </div>
             </div>

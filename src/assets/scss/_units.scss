@@ -74,7 +74,8 @@
         flex-basis: calc(100% / 4);
         //min-width: 325px;
         //height: 330px;
-        background: url("../../img/units/content-image.png") center no-repeat;
+        background-position:center;
+        background-repeat: no-repeat;
         background-size: cover;
         position: relative;
         display: inline-block;
@@ -97,6 +98,9 @@
           padding: 40px 25px;
           font-size: 16px;
           margin: 0;
+          @media screen and (min-width: 961px){
+            line-height: 24px;
+          }
           @media screen and (min-width: 1400px) {
             font-size: 18px;
           }
@@ -302,14 +306,17 @@
 
     &_hurt-link {
       color: $main-color;
-
-
+      transition: color .2s;
+      &:hover{
+        color: $accent-color;
+      }
     }
 
     &-image {
       max-width: 325px;
       height: 190px;
-      background: url("../../img/units/features-image.png") center no-repeat;
+      background-position: center;
+      background-repeat: no-repeat;
       position: relative;
       display: none;
       @media screen and (min-width: 961px) {
@@ -317,10 +324,7 @@
         flex-basis: calc(100% / 3 - 20px);
         height: auto;
         background-size: cover;
-        min-height: 250px;
-      }
-      @media screen and (min-width: 1400px) {
-        height: 190px;
+        min-height: 190px;
       }
 
       &::after {
@@ -338,6 +342,13 @@
         line-height: 140%;
         bottom: 0;
         color: white;
+      }
+    }
+    .form-call-button{
+      display: block;
+      font-size: 16px;
+      @media screen and (min-width: 961px){
+        display: none;
       }
     }
   }
@@ -367,6 +378,10 @@
     flex-basis: calc(100% / 2 - 9px);
     padding: 15px 0;
     margin-bottom: 18px;
+    transition: padding-top .5s, background-color .5s;
+    &::before{
+      transition-delay: .5s;
+    }
 
     &:nth-child(3) {
       margin: 0;
@@ -376,15 +391,12 @@
       margin: 0;
     }
 
-    @media screen and (min-width: 961px) {
-      flex-basis: calc(100% / 4 - 20px);
-      padding: 27px 0;
-      font-size: 20px;
-      margin-bottom: 0;
-    }
-
     &:hover {
       background-color: $bg-gray;
+      padding-top: 11px;
+      @media screen and (min-width: 961px){
+        padding-top: 23px;
+      }
 
       &::before {
         display: block;
@@ -394,18 +406,24 @@
         background-color: white;
         position: absolute;
         left: 0;
-        bottom: 0;
+        bottom: -4px;
       }
 
-      .units__country-image {
-        margin-top: -4px;
-      }
     }
+
+    @media screen and (min-width: 961px) {
+      flex-basis: calc(100% / 4 - 20px);
+      padding: 27px 0;
+      font-size: 20px;
+      margin-bottom: 0;
+    }
+
 
     &-image {
       width: 54px;
       height: 36px;
       margin: 0 auto 15px auto;
+      //transition: margin-top .5s;
 
       img {
         height: 100%;

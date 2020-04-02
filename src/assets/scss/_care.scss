@@ -55,25 +55,22 @@
 
 
     p {
-      color: rgba(#0a1831, .7);
+      color: rgba($main-color-dark, .7);
       font-size: 16px;
-      line-height: 22.4px;
-      margin-bottom: 35px;
-      @media screen and (max-width: 960px) {
-        margin-bottom: 18px;
+      line-height: 140%;
+      margin-bottom: 18px;
+      @media screen and (min-width: 961px) {
+        margin-bottom: 35px;
+        line-height: 22.4px;
       }
     }
 
     a {
-      display: block;
-      box-sizing: border-box;
       background-color: transparent;
       width: 100%;
       margin-bottom: 30px;
-      padding: 15px 0;
       @media screen and (min-width: 961px) {
         width: 325px;
-        padding: 20px 0;
       }
     }
   }

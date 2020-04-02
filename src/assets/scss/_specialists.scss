@@ -125,6 +125,7 @@
           color: $main-color-dark;
           margin-bottom: 22px;
           margin-top: 0;
+          line-height: 120%;
 
           span {
             font-weight: normal;
@@ -142,6 +143,7 @@
           margin: 0;
           padding: 0;
           list-style: none;
+          line-height: 150%;
 
           li::before {
             content: "-";
@@ -179,16 +181,15 @@
 
         a {
           display: block;
-          width: calc(100% - 40px);
+          width: calc(100% - 30px);
           text-align: center;
           color: $main-color;
           border: 1px solid $main-color;
           position: absolute;
           left: 50%;
           transform: translateX(-50%);
-          bottom: 12px;
+          bottom: 15px;
           transition: background-color .5s, color .5s;
-          padding: 15px 0;
 
           &:hover {
             color: white;

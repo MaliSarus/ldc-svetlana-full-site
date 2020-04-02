@@ -103,7 +103,7 @@
       }
     }
 
-    button {
+    a {
       padding: 15px 0;
       width: 100%;
       max-width: none;
@@ -123,6 +123,11 @@
     color: $main-color-dark;
     margin: 0;
     margin-bottom: 18px;
+    @media screen and (min-width: 1200px) {
+      line-height: 48px;
+      margin-bottom: 35px;
+      font-size: 36px;
+    }
     @media screen and (min-width: 1400px) {
       line-height: 48px;
       margin-bottom: 35px;
@@ -141,6 +146,7 @@
   }
 
   &__desc {
+    margin-top: 0;
     color: $main-color-dark;
     font-weight: 500;
     font-style: normal;
