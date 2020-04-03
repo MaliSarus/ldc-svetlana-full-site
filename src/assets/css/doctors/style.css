@@ -470,6 +470,7 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
   -webkit-transition: color .3s;
   -o-transition: color .3s;
   transition: color .3s;
+  cursor: pointer;
 }
 
 .link:hover {
@@ -3177,6 +3178,51 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
 
 .staff__find {
   display: none;
+}
+
+.staff__find-head {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.staff__find-head .title {
+  margin-bottom: 0;
+  margin-right: 15px;
+}
+
+.staff__find-head .back {
+  font-size: 14px;
+  -ms-flex-preferred-size: 30%;
+  flex-basis: 30%;
+}
+
+@media screen and (min-width: 577px) {
+  .staff__find-head .back {
+    -ms-flex-preferred-size: unset;
+    flex-basis: unset;
+    font-size: 16px;
+  }
+}
+
+.staff__find .btn.btn_white {
+  margin-top: 18px;
+}
+
+@media screen and (min-width: 961px) {
+  .staff__find .btn.btn_white {
+    margin-top: 36px;
+    max-width: 325px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 .specialists {

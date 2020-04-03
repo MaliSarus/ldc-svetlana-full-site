@@ -1094,14 +1094,13 @@ $(document).ready(function () {
         });
         $('.staff__search-form').on('submit',function (event) {
             event.preventDefault();
-            console.log('submit');
             $('.staff__content .staff__ordinary').fadeOut();
             $('.staff__content .staff__find .words').text(staffSearch.val());
             staffSearch.val('');
             $('.staff__content .staff__find').fadeIn();
         });
         staffSearch.on('blur', function () {
-            staffDropdown.attr('style', '');
+            staffDropdown.removeAttr('style');
             if($('.staff__find').attr('style') != 'display: block;') {
                 $('.staff__content .staff__ordinary').animate({
                     opacity: 1
@@ -1109,6 +1108,17 @@ $(document).ready(function () {
                     $('.staff__content .staff__ordinary').attr('style', '').removeAttr('style');
                 })
             }
+        });
+
+        $('.staff__find-head').on('click','.back', function () {
+            $('.staff__content .staff__find').fadeOut(400, function () {
+                $(this).removeAttr('style');
+                $('.staff__content .staff__ordinary').fadeIn().animate({
+                    opacity: 1
+                }, 400, function () {
+                    $('.staff__content .staff__ordinary').attr('style', '').removeAttr('style');
+                });
+            });
         })
     }
 

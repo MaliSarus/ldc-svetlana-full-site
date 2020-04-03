@@ -282,6 +282,7 @@
 .link{
   color: $main-color;
   transition: color .3s;
+  cursor: pointer;
   &:hover {
     color: $accent-color;
   }

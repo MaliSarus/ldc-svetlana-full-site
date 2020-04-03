@@ -470,6 +470,7 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
   -webkit-transition: color .3s;
   -o-transition: color .3s;
   transition: color .3s;
+  cursor: pointer;
 }
 
 .link:hover {

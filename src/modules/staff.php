@@ -55,10 +55,15 @@
                                 ?>
                             </div>
                             <div class="staff__find">
-                                <div class="title">Результат поиска - <span class="words"></span></div>
+                                <div class="staff__find-head">
+                                    <div class="title">Результат поиска - <span class="words"></span></div>
+                                    <div class="back link">Все врачи</div>
+                                </div>
+
                                 <?php
                                 require "specialists__slider.php"
                                 ?>
+                                <button class="btn btn_white">Показать еще</button>
                             </div>
                         </div>
                     </div>
