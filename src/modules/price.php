@@ -1,4 +1,4 @@
-<div class="price">
+<div class="price"><!--    Секция о расценках-->
     <div class="container">
         <div class="price__block">
             <h3 class="title">Консультации врача</h3>

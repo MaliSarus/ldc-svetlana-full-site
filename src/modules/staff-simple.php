@@ -1,4 +1,4 @@
-<section class="staff-simple"> <!--Секция о докторах-->
+<section class="staff-simple"> <!--Секция о Докторе-->
     <div class="container">
         <div class="row">
             <ul class="breadcrumbs">

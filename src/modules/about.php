@@ -51,10 +51,10 @@
                     </div>
                 </div>
                 <div class="select-buttons">
-                    <div class="select-buttons__button"></div>
-                    <div class="select-buttons__button"></div>
-                    <div class="select-buttons__button"></div>
-                    <div class="select-buttons__button"></div>
+<!--                    <div class="select-buttons__button"></div>-->
+<!--                    <div class="select-buttons__button"></div>-->
+<!--                    <div class="select-buttons__button"></div>-->
+<!--                    <div class="select-buttons__button"></div>-->
                 </div>
             </div>
         </div>

@@ -199,8 +199,8 @@
       right: 50%;
       transform:skewX(-17deg) translateX(50%);
       @media screen and (min-width: 577px){
-        right: 10px;
-        transform:skewX(-15deg) translateX(0);
+        right: 15px;
+        transform:skewX(-17deg) translateX(0);
       }
       @media screen and (min-width: 769px){
         font-size: 14px;
@@ -211,7 +211,7 @@
         bottom: 15px;
         padding: 33px 30px;
         font-size: 16px;
-        transform:skewX(-15deg) translateX(0);
+        transform:skewX(-17deg) translateX(0);
       }
       @media screen and (min-width: 1400px){
         bottom: 45px;

@@ -17,6 +17,7 @@ let prependFlag = 0;
 let sbPrice;
 let sbNavLinks;
 let sbCost;
+let posTop = 0;
 
 const isSlickLoaded = (typeof $.fn.slick !== 'undefined');
 
@@ -35,10 +36,122 @@ const aboutSliderInit = () => {
         })
     }
 };
+const specSliderInit = () => {
+    const specSlick = $('.specialists__slider');
+    const specSlickInStaff = $('.staff__content .staff__ordinary .specialists__slider');
+    if (isSet($('.staff'))) {
+        specSlickInStaff.slick({
+            mobileFirst: true,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            infinite: true,
+            arrows: false,
+            dots: false,
+            variableWidth: false,
+            responsive: [
+                {
+                    breakpoint: 326,
+                    settings: {
+                        variableWidth: true
+                    },
+                },
+                {
+                    breakpoint: 769,
+                    settings: {
+                        slidesToShow: 2,
+                        variableWidth: true,
+                    },
+                },
+                {
+                    breakpoint: 961,
+                    settings: "unslick"
+                },
+            ]
+        })
+    } else {
+        specSlick.slick({
+            slidesToShow: 4,
+            slidesToScroll: 1,
+            infinite: true,
+            arrows: false,
+            dots: false,
+            variableWidth: true,
+            responsive: [
+                {
+                    breakpoint: 325,
+                    settings: {
+                        slidesToShow: 1,
+                        variableWidth: false
+                    },
+                },
+                {
+                    breakpoint: 577,
+                    settings: {
+                        slidesToShow: 1
+                    },
+                },
+                {
+                    breakpoint: 768,
+                    settings: {
+                        slidesToShow: 2
+                    },
+                },
+                {
+                    breakpoint: 960,
+                    settings: {
+                        slidesToShow: 3
+                    },
+                }
+            ]
+        });
+        $('.specialists__control-panel .arrows .arrows__arrow-left').on('click', function () {
+            specSlick.slick('slickPrev');
+        });
+        $('.specialists__control-panel .arrows .arrows__arrow-right').on('click', function () {
+            specSlick.slick('slickNext');
+        });
+    }
+};
+
+const feedSliderInit = () => {
+    const feedSlick = $('.feedback__slider');
+    feedSlick.slick({
+        slidesToShow: 2,
+        slidesToScroll: 1,
+        infinite: true,
+        arrows: false,
+        dots: false,
+        responsive: [
+            {
+                breakpoint: 769,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    infinite: false
+                },
+            },
+            {
+                breakpoint: 961,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                    infinite: false
+                },
+            }
+        ]
+    });
+    $('.feedback__control-panel .arrows .arrows__arrow-left').on('click', function () {
+        feedSlick.slick('slickPrev');
+    });
+    $('.feedback__control-panel .arrows .arrows__arrow-right').on('click', function () {
+        feedSlick.slick('slickNext');
+    });
+};
+
 const featuresSliderInit = () => {
-    if (isSet($('.features__slider'))) {
         $('.features__slider').slick({
             slidesToScroll: 1,
+            mobileFirst: true,
             dots: false,
             arrows: false,
             infinite: false,
@@ -47,13 +160,10 @@ const featuresSliderInit = () => {
             responsive: [
                 {
                     breakpoint: 577,
-                    settings: {
-                        slidesToShow: 1,
-                    },
+                    settings: 'unslick'
                 }
             ]
         });
-    }
 };
 const unitsMenuSliderInit = () => {
     if (isSet($('.units__menu > ul'))) {
@@ -119,7 +229,57 @@ const toolsSliderInit = () => {
         dots: false,
         arrows: false,
         infinite: false,
-        variableWidth: true,
+        variableWidth: false,
+        responsive: [
+            {
+                breakpoint: 577,
+                settings: {
+                    slidesToShow: 1,
+                },
+            },
+            {
+                breakpoint: 961,
+                settings: {
+                    slidesToShow: 2,
+                },
+            },
+            {
+                breakpoint: 1200,
+                settings: {
+                    slidesToShow: 3,
+                },
+            }
+        ]
+    })
+};
+
+const dirServSliderInit = () => {
+    $('.direction-services__tabs').slick({
+        slidesToShow: 1,
+        dots: false,
+        arrows: false,
+        infinite: false,
+        variableWidth: true
+    });
+    $('.direction-services__tabs').on('afterChange', function (event, slick, currentSlide) {
+        const dirServTabs = $('.direction-services__tabs_link');
+        const dirServItems = $('.direction-services__content_item');
+        dirServTabs.removeClass('tab-link_red_active');
+        $(dirServTabs[currentSlide]).addClass('tab-link_red_active');
+        dirServItems.removeClass('direction-services__content_item_active');
+        $(dirServItems[currentSlide]).addClass('direction-services__content_item_active');
+
+    })
+};
+
+const specDetailsSliderInit = () => {
+    const specDetailsSlick = $('.specialists-details__slider');
+    specDetailsSlick.slick({
+        slidesToShow: 2,
+        dots: false,
+        arrows: false,
+        infinite: false,
+        variableWidth: false,
         responsive: [
             {
                 breakpoint: 577,
@@ -130,13 +290,24 @@ const toolsSliderInit = () => {
             {
                 breakpoint: 768,
                 settings: {
-                    slidesToShow: 3,
+                    slidesToShow: 2,
+                },
+            },
+            {
+                breakpoint: 1200,
+                settings: {
+                    slidesToShow: 1,
                 },
             }
         ]
-    })
+    });
+    $('.specialists-details__control-panel .arrows .arrows__arrow-left').on('click', function () {
+        specDetailsSlick.slick('slickPrev');
+    });
+    $('.specialists-details__control-panel .arrows .arrows__arrow-right').on('click', function () {
+        specDetailsSlick.slick('slickNext');
+    });
 };
-
 const unitsMenuSliderChangeTab = () => {
     $('.units__menu > ul').on('afterChange', function (event, slick, currentSlide) {
         const index = $('.units__menu > ul').slick('slickCurrentSlide');
@@ -170,11 +341,12 @@ const windowDesktopSizeChange = () => {
     $('.price__pricing').each(function () {
         $(this).children().prependTo($(this));
     });
+    $('.specialists-details__head .title').html('Специалисты &lt;неврологи&gt;');
+
 };
 const windowMobileSizeChange = () => {
     $('.units__head .title').html('Отделения ЛДЦ');
     $('.units__emergency-room .title').html('Взрослый и детский травмпункт');
-    $('.units__features').append('<a class="btn btn_red_fill">Записаться на прием</a>');
     $('.appointment__block > .content').removeClass(['content_flex', 'content_between']);
     $('.specialists__head .title').html('Специалисты ЛДЦ');
     $('.feedback__head > .title').html('Отзывы');
@@ -193,6 +365,10 @@ const windowMobileSizeChange = () => {
     $('.price__pricing').each(function () {
         $(this).children().appendTo($(this));
     });
+    $('.specialists-details__head .title').html('Специалисты');
+    if (isSet($('.staff'))) {
+        specSliderInit();
+    }
 };
 
 const DropdownOpenButtonHandler = () => {
@@ -222,7 +398,7 @@ const mobileDropdownOpenButtonHandler = () => {
         $('.dropdown-menu__content').css({display: 'none'});
         if (prependFlag == 0) {
             $('.dropdown-menu').prepend('<h2 class="title">Услуги</h2>');
-            $('.dropdown-menu').prepend('<img class="arrow-back" width="20px" height="15px" src="./assets/img/dropdown-menu/arrow-back.svg">');
+            $('.dropdown-menu').prepend('<img class="arrow-back" width="20px" height="15px" src="' + st_tmpl_patch +'./assets/img/dropdown-menu/arrow-back.svg">');
             prependFlag = 1;
         }
         dropdownMenuContainer.fadeIn(400).addClass('dropdown-menu__container_active');
@@ -241,6 +417,7 @@ const onReadyMobileMediaChange = () => {
     $('.science-articles__head .title').html('Научные статьи');
     $($('.staff__tabs_item')[0]).html('Врачи');
     $('.staff__head .title').html('Врачи ЛДЦ');
+    $('.specialists-details__head .title').html('Специалисты');
 };
 
 const closeServicesDropdownFromTapMenu = () => {
@@ -253,39 +430,57 @@ const closeServicesDropdownFromTapMenu = () => {
     dropdownMenuContainer.removeClass('dropdown-menu__container_active');
     dropdownMenuContainer.attr('style', '');
     dropdownContentBlock.attr('style', '');
+    prependFlag = 0;
+    $('body, html').animate({
+        scrollTop: posTop
+    }, 1);
+};
+
+const popupFormHandler = () => {
+    $('.appointment_popup').addClass('appointment_popup_active').css({
+        position: 'fixed',
+        height: '100vh',
+        background: 'rgba(63,90,138,0.4)',
+        top: 0,
+        left: 0,
+        transform: 'none'
+    });
+    $('body').css({
+        overflow: 'hidden'
+    });
 };
 
 const navLinkScroll = (navLinkTop) => {
-    if (($(this).scrollTop() + 129) >= navLinkTop) {
-        $('.nav-links').css({
-            position: 'fixed',
-            top: '129px',
-            left: 0,
-            zIndex: 10000,
-            width: '100%',
-            background: '#F1F1F1'
-        })
+
+
+    if ($(window).width() > 960) {
+        if (($(this).scrollTop() + 129) >= navLinkTop) {
+            $('.nav-links').css({
+                position: 'fixed',
+                top: '129px',
+                left: 0,
+                zIndex: 10000,
+                width: '100%',
+                background: '#F1F1F1'
+            })
+        } else {
+            $('.nav-links').attr('style', '');
+        }
     } else {
-        $('.nav-links').attr('style', '');
+        $(document).off('scroll', navLinkScroll());
     }
 };
 
 //Действия при изменении размеров окна
 
 $(window).on('resize', function () {
-    if ($(window).width() > 960) {
+    if ($(window).width() >= 961) {
         if (resizeFlag == 0) {
             windowDesktopSizeChange();
             //ВЫПАДАЮЩЕЕ МЕНЮ В ХЭДЕРЕ
             resizeFlag = 1;
         }
     } else {
-        const specSliderWidth = $('.specialists__slider > .slick-list').width();
-        if (specSliderWidth < 325) {
-            $('.specialists__doctor').css({
-                width: specSliderWidth + 'px'
-            });
-        }
         if (resizeFlag == 1) {
             windowMobileSizeChange();
             resizeFlag = 0;
@@ -296,19 +491,17 @@ $(window).on('resize', function () {
     if ($(window).width() >= 961 && appendFlag == 0) {
         selectButtons.appendTo('.about__slider');
         $('.with-arrow').detach();
-        $('.units__features > a.btn.btn_red_fill').remove();
         appendFlag = 1;
     } else if ($(window).width() < 961 && appendFlag == 1) {
         $('.dropdown-menu__open-button').append('<div class="with-arrow"></div>');
         dropdownTabs.append('<div class="with-arrow"></div>');
-        $('.units__features').append('<a class="btn btn_red_fill">Записаться на прием</a>');
         appendFlag = 0;
     }
 
     if ($(window).width() > 960 && dropdownFlag == 0) {
         $('.dropdown-menu__open-button').off('click');
         $('.dropdown-menu__open-button').on('mouseup', function (event) {
-            console.log('drop');
+
             if (!dropdownMenuContainer.hasClass('dropdown-menu__container_active')) {
                 dropdownMenuContainer.fadeIn(400).addClass('dropdown-menu__container_active');
                 $('body').css({overflow: 'hidden'});
@@ -316,6 +509,10 @@ $(window).on('resize', function () {
                     height: 'calc(100% - 2px)',
                     borderBottom: '2px solid white'
                 });
+                $('li.dropdown-menu__open-button > a').css({
+                    color: 'white',
+                    transform: 'translateY(1px)'
+                })
             }
         });
         dropdownFlag = 1;
@@ -375,6 +572,13 @@ $(window).on('resize', function () {
                 content: document.querySelector('.price__list_wrapper'),
                 scrollMode: "transform", // use CSS 'transform' property
                 direction: "horizontal", // allow only horizontal scrolling
+                pointerMode: 'all',
+                pointerDownPreventDefault: false,
+                onClick: (state, event) => {
+                    if ($('.form-call-button').is(event.target)) {
+                        popupFormHandler();
+                    }
+                }
                 // emulateScroll: true, // scroll on wheel events
             });
         }
@@ -383,16 +587,16 @@ $(window).on('resize', function () {
         if ($(window).width() > 960 && typeof (sbNavLinks) != 'undefined') {
             sbNavLinks.destroy();
             sbNavLinks = undefined;
-            const navLinkTop = $('.nav-links').position().top;
-            $(document).on('scroll', navLinkScroll(navLinkTop));
         } else if ($(window).width() <= 960 && typeof (sbNavLinks) === 'undefined') {
-            $(document).on('scroll', navLinkScroll);
             sbNavLinks = new ScrollBooster({
                 viewport: document.querySelector('.nav-links__block'),
                 content: document.querySelector('.nav-links__list'),
                 scrollMode: "transform", // use CSS 'transform' property
                 direction: "horizontal", // allow only horizontal scrollin
             });
+            if ($('.nav-links').attr('style') != '') {
+                $('.nav-links').attr('style', '');
+            }
         }
     }
     if (isSet($('.unit-simple'))) {
@@ -426,92 +630,17 @@ $(window).on('resize', function () {
 
 // Обработка событий при полной загрузки страницы
 window.onload = function () {
-    //Слайдер специалистов и кнопки слайдера специалистов
-    if (isSet($('.specialists__slider'))) {
-        const specSlick = $('.specialists__slider');
-        specSlick.slick({
-            infinite: true,
-            arrows: false,
-            dots: false,
-            variableWidth: true,
-            responsive: [
-                {
-                    breakpoint: 576,
-                    settings: {
-                        slidesToShow: 1,
-                        slidesToScroll: 1,
-                        infinite: true
-                    },
-                },
-                {
-                    breakpoint: 768,
-                    settings: {
-                        slidesToShow: 2,
-                        slidesToScroll: 1,
-                        infinite: true
-                    },
-                },
-                {
-                    breakpoint: 960,
-                    settings: {
-                        slidesToShow: 3,
-                        slidesToScroll: 1,
-                        infinite: true
-                    },
-                },
-                {
-                    breakpoint: 1400,
-                    settings: {
-                        slidesToShow: 4,
-                        slidesToScroll: 1,
-                        infinite: true,
-                    },
-                },
+    $('.form-call-button').on('click', popupFormHandler);
 
-            ]
-        });
-        $('.specialists__control-panel .arrows .arrows__arrow-left').on('click', function () {
-            specSlick.slick('slickPrev');
-        });
-        $('.specialists__control-panel .arrows .arrows__arrow-right').on('click', function () {
-            specSlick.slick('slickNext');
-        });
+
+    //Слайдер специалистов и кнопки слайдера специалистов
+    if (isSet($('.specialists__slider')) || isSet($('.staff'))) {
+        specSliderInit();
     }
 
     //Сладер отзывов и кнопки сладера отзывов
     if (isSet($('.feedback__slider'))) {
-        const feedSlick = $('.feedback__slider');
-        feedSlick.slick({
-            slidesToShow: 2,
-            slidesToScroll: 1,
-            infinite: true,
-            arrows: false,
-            dots: false,
-            responsive: [
-                {
-                    breakpoint: 769,
-                    settings: {
-                        slidesToShow: 1,
-                        slidesToScroll: 1,
-                        infinite: false
-                    },
-                },
-                {
-                    breakpoint: 961,
-                    settings: {
-                        slidesToShow: 2,
-                        slidesToScroll: 1,
-                        infinite: false
-                    },
-                }
-            ]
-        });
-        $('.feedback__control-panel .arrows .arrows__arrow-left').on('click', function () {
-            feedSlick.slick('slickPrev');
-        });
-        $('.feedback__control-panel .arrows .arrows__arrow-right').on('click', function () {
-            feedSlick.slick('slickNext');
-        });
+        feedSliderInit();
     }
 
     //Основной слайдер (анимации и тд)
@@ -569,27 +698,20 @@ window.onload = function () {
 
 
     //Действия со слайдерами в момент загрузки экрана маленького размера или большого размера
-
+    if(isSet($('.features'))){
+        if ($(window).width() < 577) {
+            featuresSliderInit();
+        }
+    }
     if (isSlickLoaded) {
         if (window.matchMedia('screen and (max-width: 1400px)').matches) {
             selectButtons.detach();
             aboutSliderInit();
-            featuresSliderInit();
             unitsMenuSliderInit();
-            const specSliderWidth = $('.specialists__slider > .slick-list').width();
-            if (specSliderWidth < 325) {
-                $('.specialists__doctor').css({
-                    maxWidth: specSliderWidth + 'px'
-                });
-            }
             $('.feedback__position').html('<span class="feedback__position_current">1</span>/' + $('.feedback__item').length);
         } else {
             $('.about__slider').filter('.slick-initialized').slick("unslick");
             $('.units__menu > ul').filter('.slick-initialized').slick("unslick");
-        }
-
-        if (window.matchMedia('screen and (min-width: 577px)').matches) {
-            $('.features__slider').filter('.slick-initialized').slick("unslick");
         }
 
         if ($('.units__menu > .slick-initialized')) {
@@ -709,16 +831,41 @@ window.onload = function () {
             });
         })
     }
+    if (isSet($('.direction-services'))) {
+        if ($(window).width() <= ($('.direction-services__tabs').width() + 30)) {
+            dirServSliderInit();
+        }
+        const dirServTabsLinks = $('.direction-services__tabs_link');
+
+        dirServTabsLinks.on('click', function (event) {
+            event.preventDefault();
+            dirServTabsLinks.removeClass('tab-link_red_active');
+            const index = dirServTabsLinks.index(event.currentTarget);
+            $(dirServTabsLinks[index]).addClass('tab-link_red_active');
+            const dirServContentItems = $('.direction-services__content_item');
+            dirServContentItems.removeClass('direction-services__content_item_active');
+            $(dirServContentItems[index]).addClass('direction-services__content_item_active');
+        })
+    }
+
+    if (isSet($('.specialists-details'))) {
+        specDetailsSliderInit();
+    }
 };
 
 
 //Обработка событий после загрузки страницы
 $(document).ready(function () {
 
+    $('.tap-menu__button').on('click', function (event) {
+        if ($('.tap-menu__button').index($(this)) != 1) {
+            event.preventDefault();
+        }
+    });
 
     if ($(window).width() >= 961) {
         $('.dropdown-menu__open-button').on('mouseup', function (event) {
-            console.log('drop');
+
             if (!dropdownMenuContainer.hasClass('dropdown-menu__container_active')) {
                 dropdownMenuContainer.fadeIn(400).addClass('dropdown-menu__container_active');
                 $('body').css({overflow: 'hidden'});
@@ -726,16 +873,21 @@ $(document).ready(function () {
                     height: 'calc(100% - 2px)',
                     borderBottom: '2px solid white'
                 });
+                $('li.dropdown-menu__open-button > a').css({
+                    color: 'white',
+                    transform: 'translateY(1px)'
+                });
             }
         });
         $(document).mousedown(function (e) {
             if (dropdownMenuContainer.hasClass('dropdown-menu__container_active')) {
-                console.log('drop_2');
+
                 const block = $('.dropdown-menu');
                 if (block.has(e.target).length === 0 && !$('.dropdown-menu__open-button').is(e.target)) {
                     dropdownMenuContainer.fadeOut(400).removeClass('dropdown-menu__container_active');
                     $('body').css({overflow: 'visible'});
                     $('li.dropdown-menu__open-button').attr('style', '');
+                    $('li.dropdown-menu__open-button > a').attr('style', '');
                 }
             }
         });
@@ -827,7 +979,6 @@ $(document).ready(function () {
                     color: '#E84E2C'
                 });
                 $('.appointment__form').unbind('submit');
-            } else {
             }
         });
 
@@ -930,15 +1081,64 @@ $(document).ready(function () {
 
         const staffSearch = $('.staff__search-form-field');
         const staffDropdown = $('.staff__search-dropdown');
+        const staffDropdownLink = $('.staff__search-dropdown_link');
         staffSearch.on('input', function () {
             staffDropdown.css({
                 display: 'block',
                 width: $('.staff__search-form-wrapper').width()
             });
+            $('.staff__content .staff__ordinary').animate({
+                opacity: 0
+            }, 400);
             staffSearch.val(staffSearch.val().replace(/[^А-Яа-я]/, ''));
         });
-        staffSearch.on('blur', function () {
-            staffDropdown.attr('style', '');
+        $('.staff__search-form').on('submit', function (event) {
+            event.preventDefault();
+            $('.staff__content .staff__ordinary').fadeOut();
+            $('.staff__content .staff__find .words').text(staffSearch.val());
+            staffSearch.val('');
+            $('.staff__content .staff__find').fadeIn();
+            staffDropdown.removeAttr('style');
+        });
+        // staffSearch.on('blur', function () {
+        //     staffDropdown.removeAttr('style');
+        //     if($('.staff__find').attr('style') != 'display: block;') {
+        //         $('.staff__content .staff__ordinary').animate({
+        //             opacity: 1
+        //         }, 400, function () {
+        //             $('.staff__content .staff__ordinary').attr('style', '').removeAttr('style');
+        //         })
+        //     }
+        // });
+
+        $(document).on('click', function (event) {
+            if (!$('.staff__search-form').is(event.target) && $('.staff__search-form').has(event.target).length === 0 && !$('.staff__search-dropdown').is(event.target) && $('.staff__search-dropdown').has(event.target).length === 0) { // и не по его дочерним элементам
+                staffDropdown.removeAttr('style');
+                if ($('.staff__find').attr('style') != 'display: block;') {
+                    $('.staff__content .staff__ordinary').animate({
+                        opacity: 1
+                    }, 400, function () {
+                        $('.staff__content .staff__ordinary').attr('style', '').removeAttr('style');
+                    })
+                }
+            }
+        });
+
+        staffDropdownLink.on('click', function (event) {
+            event.preventDefault();
+            staffSearch.val($(this).text());
+            $('.staff__search-form').trigger('submit');
+        });
+
+        $('.staff__find-head').on('click', '.back', function () {
+            $('.staff__content .staff__find').fadeOut(400, function () {
+                $(this).removeAttr('style');
+                $('.staff__content .staff__ordinary').fadeIn().animate({
+                    opacity: 1
+                }, 400, function () {
+                    $('.staff__content .staff__ordinary').attr('style', '').removeAttr('style');
+                });
+            });
         })
     }
 
@@ -988,29 +1188,15 @@ $(document).ready(function () {
             $(this).removeClass('feedback__item-content_unhide');
         });
     }
-
     //Кнопка для раскрытия меню в мобайле
-    const hamburger = $('.hamburger');
-    hamburger.on("click", function () {
-        hamburger.toggleClass("is-active");
-        $('.header__bottom').toggleClass('header__bottom_active');
-        $('body').children().toggleClass('hide');
-        $('.header').removeClass('hide');
-        if (dropdownMenuContainer.attr('style') != 'display: none;') {
-            dropdownMenuContainer.css({display: 'none'});
-            dropdownContentBlock.attr('style', '');
-            dropdownTabsBlock.attr('style', '');
-            headerBottom.attr('style', '');
-            $('.dropdown-menu').find('.title').detach();
-            $('.dropdown-menu').find('.arrow-back').detach();
-        }
-    });
+
 
     DropdownOpenButtonHandler();
 
     //Обработка кнопки услуги в нижнем меню
     $(serviceTapButton).on('click', function () {
         if (!dropdownMenuContainer.hasClass('dropdown-menu__container_active')) {
+            posTop = $(window).scrollTop();
             $(serviceTapButton).addClass('tap-menu__button_active');
             $('body').children().addClass('hide');
             $('.header').removeClass('hide');
@@ -1024,9 +1210,10 @@ $(document).ready(function () {
                 display: 'none'
             });
 
+
             if (prependFlag == 0) {
                 $('.dropdown-menu').prepend('<h2 class="title">Услуги</h2>');
-                $('.dropdown-menu').prepend('<img class="arrow-back" width="20px" height="15px" src="./assets/img/dropdown-menu/arrow-back.svg">');
+                $('.dropdown-menu').prepend('<img class="arrow-back" width="20px" height="15px" src="' + st_tmpl_patch +'./assets/img/dropdown-menu/arrow-back.svg">');
                 prependFlag = 1;
             }
         } else {
@@ -1098,23 +1285,21 @@ $(document).ready(function () {
     if (window.matchMedia('screen and (max-width: 960px)').matches) {
         onReadyMobileMediaChange();
         mobileDropdownOpenButtonHandler();
-        $('.units__features').append('<a class="btn btn_red_fill">Записаться на прием</a>');
         appendFlag = 0;
     } else {
         selectButtons.appendTo('.about__slider');
         // $('body').off('click');
-        $('.units__features > a.btn.btn_red_fill').remove();
         $('.price__pricing').each(function () {
-            $(this).children().prependTo($(this));
+            // $(this).children().prependTo($(this));
         });
         appendFlag = 1;
     }
 
-    $(".btn_red_fill").click(function () {
-        $('body, html').animate({
-            scrollTop: $(".appointment__block").offset().top - 54
-        }, 1);
-    });
+    // $(".btn_red_fill").click(function () {
+    //     $('body, html').animate({
+    //         scrollTop: $(".appointment__block").offset().top - 54
+    //     }, 1);
+    // });
 
     if (isSet($('.price'))) {
         if ($(window).width() < 677) {
@@ -1123,23 +1308,15 @@ $(document).ready(function () {
                 content: document.querySelector('.price__list_wrapper'),
                 scrollMode: "transform", // use CSS 'transform' property
                 direction: "horizontal", // allow only horizontal scrollin
+                pointerMode: 'all',
+                pointerDownPreventDefault: false,
+                onClick: (state, event) => {
+                    if ($('.form-call-button').is(event.target)) {
+                        popupFormHandler();
+                    }
+                }
             });
         }
-
-        $('.price__button').on('click', function () {
-
-            $('.appointment_popup').addClass('appointment_popup_active').css({
-                position: 'fixed',
-                height: '100vh',
-                background: 'rgba(63,90,138,0.4)',
-                top: 0,
-                left: 0,
-                transform: 'none'
-            });
-            $('body').css({
-                overflow: 'hidden'
-            });
-        })
     }
 
     if (isSet($('.science-articles'))) {
@@ -1181,30 +1358,13 @@ $(document).ready(function () {
             });
             $('.nav-links__link').off('click');
             $('.nav-links__link').on('click', function (event) {
-                console.log('click');
+
                 const elementClick = $(this).attr("href");
                 const destination = $(elementClick).position().top;
                 $('html').animate({scrollTop: destination - $('.header').height()}, 500);
                 return false;
             });
         } else {
-            const navLinkTop = $('.nav-links').position().top;
-            $(document).on('scroll', function () {
-                if ($(window).width() > 960) {
-                    if (($(this).scrollTop() + 129) >= navLinkTop) {
-                        $('.nav-links').css({
-                            position: 'fixed',
-                            top: '129px',
-                            left: 0,
-                            zIndex: 10000,
-                            width: '100%',
-                            background: '#F1F1F1'
-                        })
-                    } else {
-                        $('.nav-links').attr('style', '');
-                    }
-                }
-            });
             $('.nav-links__link').off('click');
             $('.nav-links__link').on('click', function (event) {
                 const elementClick = $(this).attr("href");
@@ -1226,17 +1386,52 @@ $(document).ready(function () {
                 scrollMode: "transform", // use CSS 'transform' property
                 direction: "horizontal", // allow only horizontal scrollin
                 pointerMode: 'all',
-                pointerDownPreventDefault: false
+                pointerDownPreventDefault: false,
+                onClick: (state, event) => {
+                    if ($('.form-call-button').is(event.target)) {
+
+                    }
+
+                }
             });
         }
         $('.cost__list_item').on('click', function (event) {
-            console.log(event.target);
+
             if ($('span').is(event.target)) {
                 $(event.target).parent('li').children('ul').slideToggle();
-                $(event.target).parent('li').toggleClass('cost__list_item_active');
+                $(event.target).toggleClass('active');
                 return false;
             }
-        })
+        });
+    }
+
+});
+
+
+const hamburger = $('.hamburger');
+hamburger.on("click", function () {
+    console.log(window.pageYOffset !== undefined);
+    if (!hamburger.hasClass('is-active')) {
+        posTop = (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;
+        console.log(posTop);
+        window.scrollTo(0, 0);
+    }
+    hamburger.toggleClass("is-active");
+    $('.header__bottom').toggleClass('header__bottom_active');
+    $('body').children().toggleClass('hide');
+    $('.header').removeClass('hide');
+    if (dropdownMenuContainer.attr('style') != 'display: none;') {
+        dropdownMenuContainer.css({display: 'none'});
+        dropdownContentBlock.attr('style', '');
+        dropdownTabsBlock.attr('style', '');
+        headerBottom.attr('style', '');
+        $('.dropdown-menu').find('.title').detach();
+        $('.dropdown-menu').find('.arrow-back').detach();
+        prependFlag = 0;
+    }
+    if (!hamburger.hasClass('is-active')) {
+        window.scrollTo(0, posTop);
+        console.log('to ', posTop);
     }
 });
 
@@ -1252,6 +1447,28 @@ function parallaxScrolling() {
     $('.layer4').css('top', (0 - (scrolled * .9)) + 'px');
 
 }
+
+let navLinkTop = 0;
+$(document).scroll(function () {
+    if (isSet($('.nav-links'))) {
+        if ($(window).width() > 960) {
+            if ((($(this).scrollTop() + 129) >= $('.nav-links').position().top) && navLinkTop == 0) {
+                navLinkTop = $('.nav-links').position().top;
+                $('.nav-links').css({
+                    position: 'fixed',
+                    top: '129px',
+                    left: 0,
+                    zIndex: 10000,
+                    width: '100%',
+                    background: '#F1F1F1'
+                })
+            } else if (($(this).scrollTop() + 129) < navLinkTop) {
+                $('.nav-links').attr('style', '');
+                navLinkTop = 0;
+            }
+        }
+    }
+});
 
 
 

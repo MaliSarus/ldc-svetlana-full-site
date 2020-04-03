@@ -32,10 +32,13 @@
 
     &_item {
       background: #F6F7F8;
+      position: relative;
+      z-index: 12;
       padding: 12px 8px;
       margin-bottom: 18px;
       display: flex;
       flex-direction: column;
+      transition: background-color .35s;
       @media screen and (min-width: 961px) {
         flex-basis: calc(100% / 2);
         margin-bottom: 0;
@@ -45,6 +48,14 @@
 
       &:last-child {
         margin: 0;
+      }
+      &:hover{
+        background-color: white;
+        .science-articles__content_item_text{
+          &::before{
+            background: linear-gradient(0deg, white, rgba(white, .0));
+          }
+        }
       }
 
       &_text {
@@ -66,7 +77,8 @@
           top: 0;
           display: block;
           content: '';
-          background: linear-gradient(0deg, #F6F7F8, transparent);
+          background: linear-gradient(0deg, #F6F7F8, rgba(white, .0));
+          transition: background-color .35s;
           z-index: 10;
           width: 100%;
           height: 100%;

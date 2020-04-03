@@ -1,4 +1,4 @@
-<section class="science-articles">
+<section class="science-articles"> <!--    Секция о научных статьях-->
     <div class="container">
         <div class="row">
             <div class="science-articles__block">

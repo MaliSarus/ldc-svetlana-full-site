@@ -1,4 +1,4 @@
-<section class="education">
+<section class="education"> <!--    Секция об образовании-->
     <div class="container">
         <div class="row">
             <div class="education__block">

@@ -1,4 +1,4 @@
-<section class="diplomas">
+<section class="diplomas"> <!--    Секция о дипломах врача-->
     <div class="container">
         <div class="row">
             <div class="diplomas__block">

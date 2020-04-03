@@ -122,7 +122,7 @@
 
       .feedback__item-content {
         &::before {
-          background: linear-gradient(0deg, white, transparent);
+          background: linear-gradient(0deg, white, rgba(255,255,255,0));
         }
       }
     }
@@ -149,6 +149,8 @@
 
       &-user {
         position: relative;
+        display: flex;
+        align-items: center;
         @media screen and (max-width: 960px) {
           padding-top: 13px;
         }
@@ -233,7 +235,7 @@
         top: 0;
         display: block;
         content: '';
-        background: linear-gradient(0deg, #F6F7F8, transparent);
+        background: linear-gradient(0deg, #F6F7F8,rgba(255,255,255,0));
         z-index: 10;
         width: 100%;
         height: 100%;
