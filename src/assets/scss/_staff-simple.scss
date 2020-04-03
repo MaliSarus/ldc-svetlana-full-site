@@ -19,7 +19,7 @@
       top: 245px;
       left: -50px;
       transform: skewX(-20deg);
-      z-index: 1000;
+      z-index: 2;
     }
   }
 
@@ -197,10 +197,10 @@
       width: 100%;
       max-width: 345px;
       right: 50%;
-      transform:skewX(-17deg) translateX(50%);
+      transform:skewX(-19deg) translateX(50%);
       @media screen and (min-width: 577px){
         right: 15px;
-        transform:skewX(-17deg) translateX(0);
+        transform:skewX(-19deg) translateX(0);
       }
       @media screen and (min-width: 769px){
         font-size: 14px;
@@ -211,7 +211,7 @@
         bottom: 15px;
         padding: 33px 30px;
         font-size: 16px;
-        transform:skewX(-17deg) translateX(0);
+        transform:skewX(-19deg) translateX(0);
       }
       @media screen and (min-width: 1400px){
         bottom: 45px;
@@ -220,7 +220,7 @@
 
       &_text{
         margin: 0;
-        transform: skewX(15deg);
+        transform: skewX(19deg);
       }
     }
 

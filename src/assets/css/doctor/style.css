@@ -2249,7 +2249,7 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
     -webkit-transform: skewX(-20deg);
     -ms-transform: skewX(-20deg);
     transform: skewX(-20deg);
-    z-index: 1000;
+    z-index: 2;
   }
 }
 
@@ -2499,17 +2499,17 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
   width: 100%;
   max-width: 345px;
   right: 50%;
-  -webkit-transform: skewX(-17deg) translateX(50%);
-  -ms-transform: skewX(-17deg) translateX(50%);
-  transform: skewX(-17deg) translateX(50%);
+  -webkit-transform: skewX(-19deg) translateX(50%);
+  -ms-transform: skewX(-19deg) translateX(50%);
+  transform: skewX(-19deg) translateX(50%);
 }
 
 @media screen and (min-width: 577px) {
   .staff-simple__doctor_details {
     right: 15px;
-    -webkit-transform: skewX(-17deg) translateX(0);
-    -ms-transform: skewX(-17deg) translateX(0);
-    transform: skewX(-17deg) translateX(0);
+    -webkit-transform: skewX(-19deg) translateX(0);
+    -ms-transform: skewX(-19deg) translateX(0);
+    transform: skewX(-19deg) translateX(0);
   }
 }
 
@@ -2526,9 +2526,9 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
     bottom: 15px;
     padding: 33px 30px;
     font-size: 16px;
-    -webkit-transform: skewX(-17deg) translateX(0);
-    -ms-transform: skewX(-17deg) translateX(0);
-    transform: skewX(-17deg) translateX(0);
+    -webkit-transform: skewX(-19deg) translateX(0);
+    -ms-transform: skewX(-19deg) translateX(0);
+    transform: skewX(-19deg) translateX(0);
   }
 }
 
@@ -2540,9 +2540,9 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
 
 .staff-simple__doctor_details_text {
   margin: 0;
-  -webkit-transform: skewX(15deg);
-  -ms-transform: skewX(15deg);
-  transform: skewX(15deg);
+  -webkit-transform: skewX(19deg);
+  -ms-transform: skewX(19deg);
+  transform: skewX(19deg);
 }
 
 .staff-simple__doctor img {
