@@ -17,9 +17,9 @@
                             <div class="staff__search-form-wrapper">
                                 <form action="#" class="staff__search-form">
                                     <input name="search" type="search" class="staff__search-form-field"
-                                           placeholder="Поиск по сайту">
+                                           placeholder="Начните вводить фамилию или специализацию" autocomplete="off">
                                     <button type="submit" class="staff__search-form-button">
-                                        <img src="./assets/img/header/search.svg" alt="Поиск">
+                                        <img src="./assets/img/staff/search-icon.svg" alt="Поиск">
                                     </button>
                                 </form>
                             </div>

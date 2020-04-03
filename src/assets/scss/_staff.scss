@@ -27,6 +27,9 @@
 
     .title {
       margin-bottom: 18px;
+      @media screen and (min-width: 961px) {
+        margin-bottom: 36px;
+      }
     }
   }
 
@@ -69,6 +72,9 @@
   &__content {
     background: white;
     padding: 20px 15px;
+    @media screen and (min-width: 961px) {
+      padding: 0 15px;
+    }
     &-top {
       position: relative;
       @media screen and (min-width: 1025px) {
@@ -92,6 +98,14 @@
         display: block;
       }
     }
+    &:last-child{
+      .staff__content-top {
+        @media screen and (min-width: 1180px) {
+          padding-top: 18px;
+          margin-bottom: 18px;
+        }
+      }
+    }
   }
 
   &__info {
@@ -100,6 +114,7 @@
     @media screen and (min-width: 961px) {
       display: flex;
       align-items: center;
+      padding: 20px 18px;
     }
 
     &_icon {
@@ -146,7 +161,7 @@
 
   &__search-form {
     box-sizing: border-box;
-    height: 40px;
+    height: 50px;
     width: 100%;
     position: relative;
     background: #FCFCFC;
@@ -169,7 +184,7 @@
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
-      right: 12px;
+      right: 14px;
       width: 12px;
       height: 12px;
       padding: 0;
@@ -178,7 +193,18 @@
       background: none;
       cursor: pointer;
       z-index: 3;
-      filter: invert(1);
+      @media screen and (min-width: 961px){
+        right: 30px;
+        width: 16px;
+        height: 16px;
+      }
+      img{
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+      }
     }
 
     &-field {
@@ -189,12 +215,15 @@
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
-      left: 12px;
+      left: 13px;
       background: none;
       padding: 0;
       border: none;
       z-index: 3;
       width: calc(100% - 50px);
+      @media screen and (min-width: 961px){
+        left: 16px;
+      }
 
       &::placeholder {
         color: gray;
@@ -259,6 +288,7 @@
       flex-basis: 50%;
       margin-bottom: 0;
       align-items: center;
+      justify-content: flex-start;
     }
 
     &_item {
@@ -271,7 +301,7 @@
       margin-bottom: 12px;
       cursor: pointer;
       @media screen and (min-width: 1025px) {
-        margin-right: 20px;
+        margin-right: 40px;
         line-height: unset;
         padding-bottom: 0;
         font-size: 16px;
@@ -280,7 +310,6 @@
         }
       }
       @media screen and (min-width: 1180px) {
-        margin-right: 0;
         margin-bottom: 0;
       }
 
@@ -308,6 +337,7 @@
 
   &__find{
     display: none;
+    margin-bottom: 30px;
     &-head{
       display: flex;
       justify-content: space-between;
@@ -325,7 +355,41 @@
           font-size: 16px;
         }
       }
-
+    }
+    .specialists__slider{
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      @media screen and (min-width: 961px) {
+        margin-top: -20px;
+        justify-content: flex-start;
+      }
+      @media screen and (min-width: 1326px) {
+        justify-content: space-between;
+      }
+      .specialists__doctor{
+        flex-basis: 100%;
+        max-width: none;
+        width: auto;
+        display: flex;
+        justify-content: center;
+        margin-right: 0;
+        @media screen and (min-width: 769px){
+          flex-basis: calc(100% / 2 - 5px);
+        }
+        @media screen and (min-width: 961px) {
+          height: auto;
+          margin-top: 20px;
+          margin-right: 5px;
+        }
+        @media screen and (min-width: 1017px) {
+          flex-basis: calc(100% / 3 - 5px);
+        }
+        @media screen and (min-width: 1326px) {
+          flex-basis: calc(100% / 4 - 5px);
+          margin-right: 0;
+        }
+      }
     }
     .btn.btn_white{
       margin-top: 18px;

@@ -166,6 +166,25 @@
       &:active {
         background-color: $main-color-light;
       }
+
+      &_skew{
+        transform: skewX(-17deg);
+        border: 1px solid $accent-color;
+        background-color: $accent-color;
+        color: white;
+
+        &:hover {
+          background-color: $main-color;
+          border-color: transparent;
+        }
+
+        &:active {
+          background-color: $main-color-light;
+        }
+        .text{
+          transform: skewX(17deg);
+        }
+      }
     }
   }
 

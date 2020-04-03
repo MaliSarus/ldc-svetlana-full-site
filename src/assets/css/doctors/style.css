@@ -330,6 +330,30 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
   background-color: #3F5A8A;
 }
 
+.btn_red_fill_skew {
+  -webkit-transform: skewX(-17deg);
+  -ms-transform: skewX(-17deg);
+  transform: skewX(-17deg);
+  border: 1px solid #E84E2C;
+  background-color: #E84E2C;
+  color: white;
+}
+
+.btn_red_fill_skew:hover {
+  background-color: #2A4472;
+  border-color: transparent;
+}
+
+.btn_red_fill_skew:active {
+  background-color: #3F5A8A;
+}
+
+.btn_red_fill_skew .text {
+  -webkit-transform: skewX(17deg);
+  -ms-transform: skewX(17deg);
+  transform: skewX(17deg);
+}
+
 .btn_dark {
   background-color: #2A4472;
   border: 0;
@@ -2817,6 +2841,12 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
   margin-bottom: 18px;
 }
 
+@media screen and (min-width: 961px) {
+  .staff__head .title {
+    margin-bottom: 36px;
+  }
+}
+
 .staff__tabs {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2865,6 +2895,12 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
   padding: 20px 15px;
 }
 
+@media screen and (min-width: 961px) {
+  .staff__content {
+    padding: 0 15px;
+  }
+}
+
 .staff__content-top {
   position: relative;
 }
@@ -2896,6 +2932,13 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
   display: block;
 }
 
+@media screen and (min-width: 1180px) {
+  .staff__content:last-child .staff__content-top {
+    padding-top: 18px;
+    margin-bottom: 18px;
+  }
+}
+
 .staff__info {
   padding: 8px;
   border: 1px solid #E84E2C;
@@ -2909,6 +2952,7 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
+    padding: 20px 18px;
   }
 }
 
@@ -2971,7 +3015,7 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
 .staff__search-form {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  height: 40px;
+  height: 50px;
   width: 100%;
   position: relative;
   background: #FCFCFC;
@@ -2998,7 +3042,7 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
-  right: 12px;
+  right: 14px;
   width: 12px;
   height: 12px;
   padding: 0;
@@ -3007,8 +3051,22 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
   background: none;
   cursor: pointer;
   z-index: 3;
-  -webkit-filter: invert(1);
-  filter: invert(1);
+}
+
+@media screen and (min-width: 961px) {
+  .staff__search-form-button {
+    right: 30px;
+    width: 16px;
+    height: 16px;
+  }
+}
+
+.staff__search-form-button img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .staff__search-form-field {
@@ -3020,12 +3078,18 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
-  left: 12px;
+  left: 13px;
   background: none;
   padding: 0;
   border: none;
   z-index: 3;
   width: calc(100% - 50px);
+}
+
+@media screen and (min-width: 961px) {
+  .staff__search-form-field {
+    left: 16px;
+  }
 }
 
 .staff__search-form-field::-webkit-input-placeholder {
@@ -3124,6 +3188,9 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
   }
 }
 
@@ -3140,7 +3207,7 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
 
 @media screen and (min-width: 1025px) {
   .staff__filters_item {
-    margin-right: 20px;
+    margin-right: 40px;
     line-height: unset;
     padding-bottom: 0;
     font-size: 16px;
@@ -3152,7 +3219,6 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
 
 @media screen and (min-width: 1180px) {
   .staff__filters_item {
-    margin-right: 0;
     margin-bottom: 0;
   }
 }
@@ -3178,6 +3244,7 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
 
 .staff__find {
   display: none;
+  margin-bottom: 30px;
 }
 
 .staff__find-head {
@@ -3209,6 +3276,78 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
     -ms-flex-preferred-size: unset;
     flex-basis: unset;
     font-size: 16px;
+  }
+}
+
+.staff__find .specialists__slider {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+@media screen and (min-width: 961px) {
+  .staff__find .specialists__slider {
+    margin-top: -20px;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+  }
+}
+
+@media screen and (min-width: 1326px) {
+  .staff__find .specialists__slider {
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+  }
+}
+
+.staff__find .specialists__slider .specialists__doctor {
+  -ms-flex-preferred-size: 100%;
+  flex-basis: 100%;
+  max-width: none;
+  width: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-right: 0;
+}
+
+@media screen and (min-width: 769px) {
+  .staff__find .specialists__slider .specialists__doctor {
+    -ms-flex-preferred-size: calc(100% / 2 - 5px);
+    flex-basis: calc(100% / 2 - 5px);
+  }
+}
+
+@media screen and (min-width: 961px) {
+  .staff__find .specialists__slider .specialists__doctor {
+    height: auto;
+    margin-top: 20px;
+    margin-right: 5px;
+  }
+}
+
+@media screen and (min-width: 1017px) {
+  .staff__find .specialists__slider .specialists__doctor {
+    -ms-flex-preferred-size: calc(100% / 3 - 5px);
+    flex-basis: calc(100% / 3 - 5px);
+  }
+}
+
+@media screen and (min-width: 1326px) {
+  .staff__find .specialists__slider .specialists__doctor {
+    -ms-flex-preferred-size: calc(100% / 4 - 5px);
+    flex-basis: calc(100% / 4 - 5px);
+    margin-right: 0;
   }
 }
 
@@ -3944,6 +4083,9 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
     margin-top: -20px;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
     -webkit-transform: none;
     -ms-transform: none;
     transform: none;
@@ -3951,10 +4093,50 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
   }
 }
 
+@media screen and (min-width: 1326px) {
+  .specialists__slider {
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+  }
+}
+
+.specialists__doctor {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.specialists__doctor:last-child {
+  margin-right: 0;
+}
+
 @media screen and (min-width: 961px) {
   .specialists__doctor {
     height: auto;
     margin-top: 20px;
-    margin-right: 10px;
+    -ms-flex-preferred-size: calc(100% / 2 - 5px);
+    flex-basis: calc(100% / 2 - 5px);
+    margin-right: 5px;
+    max-width: none;
+    width: auto;
+  }
+}
+
+@media screen and (min-width: 1017px) {
+  .specialists__doctor {
+    -ms-flex-preferred-size: calc(100% / 3 - 5px);
+    flex-basis: calc(100% / 3 - 5px);
+  }
+}
+
+@media screen and (min-width: 1326px) {
+  .specialists__doctor {
+    -ms-flex-preferred-size: calc(100% / 4 - 5px);
+    flex-basis: calc(100% / 4 - 5px);
+    margin-right: 0;
   }
 }

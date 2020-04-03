@@ -20,7 +20,8 @@
                                                 <div class="cost__list_content_price"><span
                                                             class="cost__list_content_del">12 000 ₽</span>8 000 ₽
                                                 </div>
-                                                <button class="btn btn_red form-call-button">Записаться</button>
+                                                <button class="btn btn_red_fill_skew form-call-button"><div
+                                                            class="text">Записаться</div></button>
                                             </div>
                                         </li>
                                         <li class="cost__list_item">
@@ -32,7 +33,8 @@
                                                 <div class="cost__list_content_price"><span
                                                             class="cost__list_content_del">13 000 ₽</span>8 000 ₽
                                                 </div>
-                                                <button class="btn btn_red form-call-button">Записаться</button>
+                                                <button class="btn btn_red_fill_skew form-call-button"><div
+                                                            class="text">Записаться</div></button>
                                             </div>
                                         </li>
                                     </ul>

@@ -10,7 +10,7 @@
       width: 100%;
     }
     @media screen and (min-width: 1400px){
-      width: 1360px;
+      max-width: 1360px;
     }
   }
   &__block{
@@ -32,18 +32,27 @@
     ul{
       @media screen and (min-width: 961px){
         box-sizing: border-box;
+        max-width: 100%;
       }
       li{
         background: $main-color;
         color: white;
         span{
-          padding: 10px 56px;
+          box-sizing: border-box;
+          padding: 16px 56px;
           cursor: pointer;
           position: relative;
+          @media screen and (min-width: 768px){
+            padding: 16px 36px;
+          }
+
           &::before{
-            width: 21px;
-            height: 17px;
-            content: url("../../img/cost/arrow.svg");
+            width: 17px;
+            height: 10px;
+            content: '';
+            background-image: url("../../img/cost/arrow.svg");
+            background-repeat: no-repeat;
+            background-size: contain;
             display: block;
             position: absolute;
             left: 18px;
@@ -55,18 +64,22 @@
               left: unset;
               right: 36px;
             }
-          }
-          @media screen and (min-width: 768px){
-            padding: 16px 36px;
+            @media screen and (min-width: 961px){
+              width: 21px;
+              height: 17px;
+            }
           }
         }
         ul{
           display: none;
+          border: 1px solid #E3E5E8;
+          box-sizing: border-box;
           li{
             background: #F1F1F1;
             color: $main-color;
             span{
-              padding: 10px 56px;
+              box-sizing: border-box;
+              padding: 16px 56px;
               @media screen and (min-width: 768px){
                 padding: 16px 36px;
               }
@@ -76,6 +89,7 @@
             }
             ul{
               display: none;
+              border: none;
               li{
                 background: white;
                 color:$main-color;
@@ -121,12 +135,16 @@
       padding: 0;
       &:last-child{
         .cost__list_content{
-          //border: none;
+          border: none;
         }
       }
       span{
         display: flex;
         box-sizing: border-box;
+        font-size: 14px;
+        @media screen and (min-width: 961px){
+          font-size: 17px;
+        }
         &:hover{
           text-decoration: underline;
         }
@@ -140,12 +158,13 @@
     &_content{
       cursor: pointer;
       display: flex;
-      padding: 10px 0;
+      padding: 16px 0;
       align-items: center;
-      //border-bottom: 1px solid rgba($main-color-dark,.15);
+      border-bottom: 1px solid rgba($main-color-dark,.15);
+
 
       @media screen and (min-width: 961px){
-        //border: none;
+        border: none;
       }
       &:hover{
         .cost__list_content_title {

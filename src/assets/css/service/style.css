@@ -330,6 +330,30 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
   background-color: #3F5A8A;
 }
 
+.btn_red_fill_skew {
+  -webkit-transform: skewX(-17deg);
+  -ms-transform: skewX(-17deg);
+  transform: skewX(-17deg);
+  border: 1px solid #E84E2C;
+  background-color: #E84E2C;
+  color: white;
+}
+
+.btn_red_fill_skew:hover {
+  background-color: #2A4472;
+  border-color: transparent;
+}
+
+.btn_red_fill_skew:active {
+  background-color: #3F5A8A;
+}
+
+.btn_red_fill_skew .text {
+  -webkit-transform: skewX(17deg);
+  -ms-transform: skewX(17deg);
+  transform: skewX(17deg);
+}
+
 .btn_dark {
   background-color: #2A4472;
   border: 0;
@@ -2690,7 +2714,7 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
 
 @media screen and (min-width: 1400px) {
   .cost__wrapper {
-    width: 1360px;
+    max-width: 1360px;
   }
 }
 
@@ -2722,6 +2746,7 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
   .cost__block ul {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
+    max-width: 100%;
   }
 }
 
@@ -2731,15 +2756,26 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
 }
 
 .cost__block ul li span {
-  padding: 10px 56px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 16px 56px;
   cursor: pointer;
   position: relative;
 }
 
+@media screen and (min-width: 768px) {
+  .cost__block ul li span {
+    padding: 16px 36px;
+  }
+}
+
 .cost__block ul li span::before {
-  width: 21px;
-  height: 17px;
-  content: url("../../img/cost/arrow.svg");
+  width: 17px;
+  height: 10px;
+  content: '';
+  background-image: url("../../img/cost/arrow.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
   display: block;
   position: absolute;
   left: 18px;
@@ -2763,14 +2799,18 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
   }
 }
 
-@media screen and (min-width: 768px) {
-  .cost__block ul li span {
-    padding: 16px 36px;
+@media screen and (min-width: 961px) {
+  .cost__block ul li span::before {
+    width: 21px;
+    height: 17px;
   }
 }
 
 .cost__block ul li ul {
   display: none;
+  border: 1px solid #E3E5E8;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .cost__block ul li ul li {
@@ -2779,7 +2819,9 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
 }
 
 .cost__block ul li ul li span {
-  padding: 10px 56px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 16px 56px;
 }
 
 @media screen and (min-width: 768px) {
@@ -2795,6 +2837,7 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
 
 .cost__block ul li ul li ul {
   display: none;
+  border: none;
 }
 
 .cost__block ul li ul li ul li {
@@ -2843,12 +2886,23 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
   padding: 0;
 }
 
+.cost__list_item:last-child .cost__list_content {
+  border: none;
+}
+
 .cost__list_item span {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
+  font-size: 14px;
+}
+
+@media screen and (min-width: 961px) {
+  .cost__list_item span {
+    font-size: 17px;
+  }
 }
 
 .cost__list_item span:hover {
@@ -2866,10 +2920,17 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding: 10px 0;
+  padding: 16px 0;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  border-bottom: 1px solid rgba(10, 24, 49, 0.15);
+}
+
+@media screen and (min-width: 961px) {
+  .cost__list_content {
+    border: none;
+  }
 }
 
 .cost__list_content:hover .cost__list_content_title {
