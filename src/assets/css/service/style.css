@@ -3730,8 +3730,7 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
 
 @media screen and (max-width: 100vw) and (min-width: 961px) {
   .appointment_popup .appointment__form button {
-    -ms-flex-preferred-size: calc(100% / 3 - 20px);
-    flex-basis: calc(100% / 3 - 20px);
+    width: 100%;
   }
 }
 

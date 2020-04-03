@@ -93,7 +93,7 @@
       &_author {
         font-size: 14px;
         line-height: 120%;
-        color: $main-color;
+        color: rgba($main-color, .6);
         margin-bottom: 5px;
 
         &:last-child {

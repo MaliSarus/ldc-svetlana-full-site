@@ -9,6 +9,18 @@
     .container{
       padding: 0 15px;
     }
+    &::after {
+      position: absolute;
+      display: block;
+      content: '';
+      width: 176px;
+      height: 92px;
+      background-color: rgba($accent-color, .2);
+      top: 245px;
+      left: -50px;
+      transform: skewX(-20deg);
+      z-index: 1000;
+    }
   }
 
   @media screen and (min-width: 1400px) {
@@ -84,17 +96,6 @@
       background: transparent;
       padding: 90px 0;
       max-width: 666px;
-      &::before {
-        position: absolute;
-        display: block;
-        content: '';
-        width: 176px;
-        height: 92px;
-        background-color: rgba($accent-color, .2);
-        top: 245px;
-        left: -310px;
-        transform: skewX(-20deg);
-      }
     }
 
     &_details{
@@ -196,7 +197,7 @@
       width: 100%;
       max-width: 345px;
       right: 50%;
-      transform:skewX(-15deg) translateX(50%);
+      transform:skewX(-17deg) translateX(50%);
       @media screen and (min-width: 577px){
         right: 10px;
         transform:skewX(-15deg) translateX(0);
@@ -208,7 +209,7 @@
         max-width: 320px;
         right: 20px;
         bottom: 15px;
-        padding: 33px 25px;
+        padding: 33px 30px;
         font-size: 16px;
         transform:skewX(-15deg) translateX(0);
       }
@@ -229,6 +230,10 @@
       width: auto;
       max-width: 100%;
       max-height: 100%;
+      margin-right: -75px;
+      @media screen and (min-width: 577px) {
+        margin-right: unset;
+      }
       @media screen and (min-width: 1400px) {
         position: absolute;
         bottom: 0;
