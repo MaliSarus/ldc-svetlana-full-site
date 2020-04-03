@@ -2905,12 +2905,17 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
   position: relative;
 }
 
+@media screen and (min-width: 961px) {
+  .staff__content-top {
+    padding-top: 30px;
+  }
+}
+
 @media screen and (min-width: 1025px) {
   .staff__content-top {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    padding-top: 30px;
   }
 }
 
