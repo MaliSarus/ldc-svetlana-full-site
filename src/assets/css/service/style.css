@@ -484,9 +484,9 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
 .tab-link_red {
   font-weight: 600;
   color: #2A4472;
-  -webkit-transition: color .5s;
-  -o-transition: color .5s;
-  transition: color .5s;
+  -webkit-transition: color .5s, border-color .5s;
+  -o-transition: color .5s, border-color .5s;
+  transition: color .5s, border-color .5s;
   font-size: 16px;
   padding-bottom: 16px;
   display: block;
@@ -2272,11 +2272,13 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
 
 @media screen and (min-width: 961px) {
   .nav-links__list {
+    padding: 0 85px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -ms-flex-pack: distribute;
-    justify-content: space-around;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
   }
 }
 
@@ -2301,6 +2303,11 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
   font-weight: normal;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
+  height: 100%;
+}
+
+.nav-links__link:hover {
+  height: 100%;
 }
 
 .about-service {
@@ -2681,7 +2688,7 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
   }
 }
 
-@media screen and (min-width: 1400) {
+@media screen and (min-width: 1400px) {
   .cost__wrapper {
     width: 1360px;
   }
@@ -2713,7 +2720,6 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
 
 @media screen and (min-width: 961px) {
   .cost__block ul {
-    border: 1px solid #E3E5E8;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
   }
@@ -2765,7 +2771,6 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
 
 .cost__block ul li ul {
   display: none;
-  border: none;
 }
 
 .cost__block ul li ul li {
@@ -2790,7 +2795,6 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
 
 .cost__block ul li ul li ul {
   display: none;
-  border: none;
 }
 
 .cost__block ul li ul li ul li {
@@ -2839,10 +2843,6 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
   padding: 0;
 }
 
-.cost__list_item:last-child .cost__list_content {
-  border: none;
-}
-
 .cost__list_item span {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2870,13 +2870,6 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  border-bottom: 1px solid rgba(10, 24, 49, 0.15);
-}
-
-@media screen and (min-width: 961px) {
-  .cost__list_content {
-    border: none;
-  }
 }
 
 .cost__list_content:hover .cost__list_content_title {

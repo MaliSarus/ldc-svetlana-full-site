@@ -25,7 +25,7 @@
       height: 92px;
       background-color: rgba($accent-color,.3);
       top: 245px;
-      left: -65px;
+      left: -15px;
       -webkit-transform: skewX(-17deg);
       -ms-transform: skewX(-17deg);
       transform: skewX(-17deg);
@@ -98,12 +98,13 @@
   &__block{
     box-sizing: border-box;
     @media screen and (min-width: 961px){
-      flex-basis: 50%;
-      max-width: 670px;
+      flex-basis: 100%;
+      max-width: 685px;
       min-height: 625px;
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      justify-content: flex-start;
+      padding-top: 90px;
     }
   }
   &__desc{
@@ -142,7 +143,10 @@
       padding: 0;
     }
     &_item{
-      flex-basis: calc(100% / 2 - 9px);
+      flex-basis: calc(100% / 2 - 4.5px);
+      @media screen and (min-width: 961px){
+        flex-basis: calc(100% / 2 - 11px);
+      }
     }
     &_icon{
       width: 30px;

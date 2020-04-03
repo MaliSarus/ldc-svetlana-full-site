@@ -294,7 +294,7 @@
 .tab-link_red{
   font-weight: 600;
   color: $main-color;
-  transition: color .5s;
+  transition: color .5s, border-color .5s;
 
   font-size: 16px;
   padding-bottom: 16px;
@@ -302,6 +302,7 @@
   @media screen and (min-width: 961px) {
     font-size: 18px;
     padding-bottom: 20px;
+
     &:hover {
       color: $accent-color;
       border-bottom: 2px solid $accent-color;

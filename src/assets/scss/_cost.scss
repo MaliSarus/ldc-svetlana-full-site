@@ -9,7 +9,7 @@
     @media screen and (min-width: 653px){
       width: 100%;
     }
-    @media screen and (min-width: 1400){
+    @media screen and (min-width: 1400px){
       width: 1360px;
     }
   }
@@ -31,7 +31,6 @@
     }
     ul{
       @media screen and (min-width: 961px){
-        border: 1px solid #E3E5E8;
         box-sizing: border-box;
       }
       li{
@@ -63,7 +62,6 @@
         }
         ul{
           display: none;
-          border: none;
           li{
             background: #F1F1F1;
             color: $main-color;
@@ -78,7 +76,6 @@
             }
             ul{
               display: none;
-              border: none;
               li{
                 background: white;
                 color:$main-color;
@@ -124,7 +121,7 @@
       padding: 0;
       &:last-child{
         .cost__list_content{
-          border: none;
+          //border: none;
         }
       }
       span{
@@ -145,10 +142,10 @@
       display: flex;
       padding: 10px 0;
       align-items: center;
-      border-bottom: 1px solid rgba($main-color-dark,.15);
+      //border-bottom: 1px solid rgba($main-color-dark,.15);
 
       @media screen and (min-width: 961px){
-        border: none;
+        //border: none;
       }
       &:hover{
         .cost__list_content_title {

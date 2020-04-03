@@ -484,9 +484,9 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
 .tab-link_red {
   font-weight: 600;
   color: #2A4472;
-  -webkit-transition: color .5s;
-  -o-transition: color .5s;
-  transition: color .5s;
+  -webkit-transition: color .5s, border-color .5s;
+  -o-transition: color .5s, border-color .5s;
+  transition: color .5s, border-color .5s;
   font-size: 16px;
   padding-bottom: 16px;
   display: block;
@@ -2234,7 +2234,7 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
     height: 92px;
     background-color: rgba(232, 78, 44, 0.3);
     top: 245px;
-    left: -65px;
+    left: -15px;
     -webkit-transform: skewX(-17deg);
     -ms-transform: skewX(-17deg);
     transform: skewX(-17deg);
@@ -2327,9 +2327,9 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
 
 @media screen and (min-width: 961px) {
   .about-unit__block {
-    -ms-flex-preferred-size: 50%;
-    flex-basis: 50%;
-    max-width: 670px;
+    -ms-flex-preferred-size: 100%;
+    flex-basis: 100%;
+    max-width: 685px;
     min-height: 625px;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -2338,9 +2338,10 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    padding-top: 90px;
   }
 }
 
@@ -2400,8 +2401,15 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
 }
 
 .about-unit__features_item {
-  -ms-flex-preferred-size: calc(100% / 2 - 9px);
-  flex-basis: calc(100% / 2 - 9px);
+  -ms-flex-preferred-size: calc(100% / 2 - 4.5px);
+  flex-basis: calc(100% / 2 - 4.5px);
+}
+
+@media screen and (min-width: 961px) {
+  .about-unit__features_item {
+    -ms-flex-preferred-size: calc(100% / 2 - 11px);
+    flex-basis: calc(100% / 2 - 11px);
+  }
 }
 
 .about-unit__features_icon {
@@ -2470,11 +2478,13 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
 
 @media screen and (min-width: 961px) {
   .nav-links__list {
+    padding: 0 85px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -ms-flex-pack: distribute;
-    justify-content: space-around;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
   }
 }
 
@@ -2499,6 +2509,11 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
   font-weight: normal;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
+  height: 100%;
+}
+
+.nav-links__link:hover {
+  height: 100%;
 }
 
 .direction-master {
@@ -2925,7 +2940,7 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
   }
 }
 
-@media screen and (min-width: 1400) {
+@media screen and (min-width: 1400px) {
   .cost__wrapper {
     width: 1360px;
   }
@@ -2957,7 +2972,6 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
 
 @media screen and (min-width: 961px) {
   .cost__block ul {
-    border: 1px solid #E3E5E8;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
   }
@@ -3009,7 +3023,6 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
 
 .cost__block ul li ul {
   display: none;
-  border: none;
 }
 
 .cost__block ul li ul li {
@@ -3034,7 +3047,6 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
 
 .cost__block ul li ul li ul {
   display: none;
-  border: none;
 }
 
 .cost__block ul li ul li ul li {
@@ -3083,10 +3095,6 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
   padding: 0;
 }
 
-.cost__list_item:last-child .cost__list_content {
-  border: none;
-}
-
 .cost__list_item span {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -3114,13 +3122,6 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  border-bottom: 1px solid rgba(10, 24, 49, 0.15);
-}
-
-@media screen and (min-width: 961px) {
-  .cost__list_content {
-    border: none;
-  }
 }
 
 .cost__list_content:hover .cost__list_content_title {

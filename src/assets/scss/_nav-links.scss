@@ -27,8 +27,9 @@
     min-width: 915px;
     padding: 0;
     @media screen and (min-width: 961px){
+      padding: 0 85px;
       display: flex;
-      justify-content: space-around;
+      justify-content: space-between;
     }
   }
   &__item{
@@ -47,5 +48,9 @@
     padding-top: 18px;
     font-weight: normal;
     box-sizing: border-box;
+    height: 100%;
+    &:hover {
+      height: 100%
+    }
   }
 }
