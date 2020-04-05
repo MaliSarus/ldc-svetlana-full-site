@@ -2477,6 +2477,7 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
 
 .tools-details__head {
   padding-left: 15px;
+  background: white;
 }
 
 @media screen and (min-width: 961px) {
@@ -2521,6 +2522,14 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
 
 .tools-details__position {
   display: none;
+  color: #2A4472;
+  font-size: 12px;
+}
+
+@media screen and (min-width: 577px) {
+  .tools-details__position {
+    font-size: 16px;
+  }
 }
 
 @media screen and (min-width: 961px) {
@@ -2545,12 +2554,6 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
   }
 }
 
-@media screen and (min-width: 769px) {
-  .tools-details__position_current {
-    font-size: 28px;
-  }
-}
-
 @media screen and (min-width: 961px) {
   .tools-details__position_current {
     font-size: 30px;
@@ -2568,9 +2571,10 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
 }
 
 .tools-details__slider_item {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  margin-right: 0 !important;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
@@ -3876,13 +3880,13 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
   -webkit-box-flex: 1;
   -ms-flex-positive: 1;
   flex-grow: 1;
-  font-size: 14px;
+  font-size: 12px;
   color: #2A4472;
 }
 
 @media screen and (min-width: 577px) {
   .feedback__position {
-    font-size: 18px;
+    font-size: 16px;
   }
 }
 
@@ -4719,6 +4723,12 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
 }
 
 @media screen and (min-width: 961px) {
+  .breadcrumbs {
+    top: 36px;
+  }
+}
+
+@media screen and (min-width: 961px) {
   .cost {
     margin-top: -30px;
   }
@@ -4778,5 +4788,12 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
 @media screen and (min-width: 961px) {
   .feedback {
     margin-top: -30px;
+    padding-top: 90px;
+  }
+}
+
+@media screen and (min-width: 961px) {
+  .feedback .quote {
+    z-index: 9;
   }
 }

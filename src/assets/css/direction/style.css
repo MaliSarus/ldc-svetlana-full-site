@@ -2713,7 +2713,7 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
 }
 
 .direction-services__tabs_link {
-  font-weight: normal;
+  font-weight: 600;
 }
 
 .direction-services__content {
@@ -2772,7 +2772,7 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
   display: flex;
   font-size: 16px;
   line-height: 140%;
-  color: #0A1831;
+  color: #2A4472;
 }
 
 @media screen and (min-width: 961px) {
@@ -2857,11 +2857,13 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
     bottom: 0;
     top: unset;
     left: unset;
-    right: 119px;
+    right: 137px;
     -webkit-transform: unset;
     -ms-transform: unset;
     transform: unset;
-    padding-left: 50px;
+    padding-top: 38px;
+    padding-bottom: 38px;
+    padding-left: 67.5px;
     padding-right: 9px;
   }
 }
@@ -2886,8 +2888,10 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
     -webkit-transform: unset;
     -ms-transform: unset;
     transform: unset;
+    padding-top: 38px;
+    padding-bottom: 38px;
     padding-left: 9px;
-    padding-right: 50px;
+    padding-right: 67.5px;
   }
 }
 
@@ -3637,7 +3641,7 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
 
 .tools__slider_item {
   display: block !important;
-  margin-right: 10px;
+  margin: 0 10px;
   position: relative;
   width: 345px;
   height: 275px;
@@ -3691,19 +3695,13 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
 }
 
 .tools__position {
-  font-size: 14px;
+  font-size: 12px;
   color: #2A4472;
 }
 
 @media screen and (min-width: 577px) {
   .tools__position {
-    font-size: 18px;
-  }
-}
-
-@media screen and (min-width: 769px) {
-  .tools__position {
-    font-size: 22px;
+    font-size: 16px;
   }
 }
 
@@ -3728,13 +3726,7 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
   }
 }
 
-@media screen and (min-width: 769px) {
-  .tools__position_current {
-    font-size: 28px;
-  }
-}
-
-@media screen and (min-width: 961px) {
+@media screen and (min-width: 1400px) {
   .tools__position_current {
     font-size: 30px;
   }
@@ -4386,13 +4378,13 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
   -webkit-box-flex: 1;
   -ms-flex-positive: 1;
   flex-grow: 1;
-  font-size: 14px;
+  font-size: 12px;
   color: #2A4472;
 }
 
 @media screen and (min-width: 577px) {
   .feedback__position {
-    font-size: 18px;
+    font-size: 16px;
   }
 }
 
@@ -5177,6 +5169,12 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
 .breadcrumbs {
   display: block;
   top: 18px;
+}
+
+@media screen and (min-width: 961px) {
+  .breadcrumbs {
+    top: 36px;
+  }
 }
 
 .about-unit__desc {

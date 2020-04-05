@@ -2900,12 +2900,6 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
   }
 }
 
-@media screen and (min-width: 769px) {
-  .diplomas__position {
-    font-size: 20px;
-  }
-}
-
 @media screen and (min-width: 961px) {
   .diplomas__position {
     -webkit-box-flex: 1;
@@ -2927,13 +2921,7 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
   }
 }
 
-@media screen and (min-width: 769px) {
-  .diplomas__position_current {
-    font-size: 28px;
-  }
-}
-
-@media screen and (min-width: 961px) {
+@media screen and (min-width: 1400px) {
   .diplomas__position_current {
     font-size: 30px;
   }
@@ -3026,13 +3014,13 @@ button.mfp-arrow {
   -webkit-box-flex: 1;
   -ms-flex-positive: 1;
   flex-grow: 1;
-  font-size: 14px;
+  font-size: 12px;
   color: #2A4472;
 }
 
 @media screen and (min-width: 577px) {
   .feedback__position {
-    font-size: 18px;
+    font-size: 16px;
   }
 }
 

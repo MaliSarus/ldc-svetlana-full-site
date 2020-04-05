@@ -308,6 +308,28 @@ const specDetailsSliderInit = () => {
         specDetailsSlick.slick('slickNext');
     });
 };
+
+const toolsDetailsSliderInit = () => {
+    const toolsDetailsSlick = $('.tools-details__slider');
+    toolsDetailsSlick.slick({
+        slidesToShow: 1,
+        dots: false,
+        arrows: false,
+        infinite: false,
+        variableWidth: false,
+    });
+    $('.tools-details__position').html('<span class="tools-details__position_current">' + toolsDetailsSlick.slick('slickGetOption', 'slidesToShow') + '</span>/' + $('.tools-details__slider_item').length);
+    toolsDetailsSlick.on('afterChange', function (event, slick, currentSlide) {
+        $('.tools-details__position_current').html(toolsDetailsSlick.slick('slickCurrentSlide') + toolsDetailsSlick.slick('slickGetOption', 'slidesToScroll'));
+    });
+    $('.tools-details__head .arrows .arrows__arrow-left').on('click', function () {
+        toolsDetailsSlick.slick('slickPrev');
+    });
+    $('.tools-details__head .arrows .arrows__arrow-right').on('click', function () {
+        toolsDetailsSlick.slick('slickNext');
+    });
+};
+
 const unitsMenuSliderChangeTab = () => {
     $('.units__menu > ul').on('afterChange', function (event, slick, currentSlide) {
         const index = $('.units__menu > ul').slick('slickCurrentSlide');
@@ -342,6 +364,7 @@ const windowDesktopSizeChange = () => {
         $(this).children().prependTo($(this));
     });
     $('.specialists-details__head .title').html('Специалисты &lt;неврологи&gt;');
+    $('.tools-details__head .title').html('&lt;Используемое&gt; оборудование');
 
 };
 const windowMobileSizeChange = () => {
@@ -369,6 +392,7 @@ const windowMobileSizeChange = () => {
     if (isSet($('.staff'))) {
         specSliderInit();
     }
+    $('.tools-details__head .title').html('Оборудование');
 };
 
 const DropdownOpenButtonHandler = () => {
@@ -418,6 +442,7 @@ const onReadyMobileMediaChange = () => {
     $($('.staff__tabs_item')[0]).html('Врачи');
     $('.staff__head .title').html('Врачи ЛДЦ');
     $('.specialists-details__head .title').html('Специалисты');
+    $('.tools-details__head .title').html('Оборудование');
 };
 
 const closeServicesDropdownFromTapMenu = () => {
@@ -850,6 +875,12 @@ window.onload = function () {
 
     if (isSet($('.specialists-details'))) {
         specDetailsSliderInit();
+        $('.specialists-details__slider_item .doctor-card__doctor a').text('Подробнее о враче')
+    }
+
+    if(isSet($('.tools-details'))){
+        toolsDetailsSliderInit();
+
     }
 };
 

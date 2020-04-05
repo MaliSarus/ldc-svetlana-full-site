@@ -7,7 +7,8 @@
         <div class="row">
             <ul class="breadcrumbs">
                 <li><a href="#">Главная</a> </li>
-                <li><a href="#">Врачи лечебно – диагностического центра</a></li>
+                <li><a href="#">Услуги</a></li>
+                <li><a href="#">Лечебное отделение</a></li>
             </ul>
             <div class="about-unit__block">
                 <div class="about-unit__desc">

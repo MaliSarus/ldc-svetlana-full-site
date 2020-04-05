@@ -59,7 +59,7 @@
       }
     }
     &_link{
-      font-weight: normal;
+      font-weight: 600;
     }
   }
   &__content{
@@ -97,7 +97,7 @@
         display: flex;
         font-size: 16px;
         line-height: 140%;
-        color: $main-color-dark;
+        color: $main-color;
         @media screen and (min-width: 961px){
           margin-bottom: 18px;
           &:last-child{

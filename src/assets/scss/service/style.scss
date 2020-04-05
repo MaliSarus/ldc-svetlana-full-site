@@ -23,6 +23,9 @@
 .breadcrumbs {
   display: block;
   top: 18px;
+  @media screen and (min-width: 961px){
+    top: 36px;
+  }
 }
 
 .cost {
@@ -79,6 +82,12 @@
 .feedback{
   @media screen and (min-width: 961px){
     margin-top: -30px;
+    padding-top: 90px;
+  }
+  .quote{
+    @media screen and (min-width: 961px){
+      z-index: 9;
+    }
   }
 }
 
