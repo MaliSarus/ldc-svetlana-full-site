@@ -40,6 +40,8 @@
                             <input type="tel" class="appointment__phone" id="popup-phone" name="phone" required>
                             <label for="popup-phone">Телефон</label>
                         </div>
+                        <input name="name-of-service" type="hidden" value=""><!--            Здесь хранится название страницы (Фио врача или название услуги-->
+                        <input name="id-of-service" type="hidden" value=""><!--            Если нажата кнопка записи на элемент из прайса, то прокидываем ID-->
                         <label class="confident-label"><input class="appointment__confident" name="confident"
                                                               type="checkbox" value="yes"
                                                               required>

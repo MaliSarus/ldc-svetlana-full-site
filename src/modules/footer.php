@@ -87,3 +87,11 @@
         </div>
     </div>
 </footer>
+
+<script src="./assets/js/slick-slider/slick.min.js"></script>
+<script src="./assets/js/jquery.inputmask.min.js"></script>
+<script src="./assets/js/scrollbooster/scrollbooster.min.js"></script>
+<script src="./assets/js/popup/jquery.magnific-popup.min.js"></script>
+<script src="./assets/js/script.js?ver=<?php echo  date("His")?>"></script>
+</body>
+</html>

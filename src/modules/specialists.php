@@ -21,7 +21,7 @@
                             require "specialists__slider.php"
                         ?>
                         <div class="specialists__control-panel">
-                            <a class="btn btn_white">Все специалисты клиники</a>
+                            <a href="doctors.php" class="btn btn_white">Все специалисты клиники</a>
                             <div class="arrows">
                                 <div class="arrow arrows__arrow-left"></div>
                                 <div class="arrow arrows__arrow-right"></div>

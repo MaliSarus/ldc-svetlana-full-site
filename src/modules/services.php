@@ -96,7 +96,7 @@
                                 </ul>
                             </div>
                             <div class="services__column column-one">
-                                <div class="services__content-image">
+                                <div class="services__content-image" style="background-image: url(./assets/img/units/content-image.png)">
                                     <p>
                                         Лечебно-Диагностический Центр завода «Светлана» это возвращение к добрым традициям в
                                         сочетании с самым на сегодняшний день современным оснащением.

@@ -50,7 +50,8 @@
         width: calc(100% - 20px);
         max-width: 325px;
         min-height: 230px;
-        background: url("../../img/units/content-image.png") center no-repeat;
+        background-position: center;
+        background-repeat: no-repeat;
         background-size: cover;
         position: relative;
         display: inline-block;

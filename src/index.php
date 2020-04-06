@@ -1,3 +1,5 @@
+
+<!--НЕ ТРОГАТЬ-->
 <?php
  require "./modules/headlings.php";
  ?>
@@ -5,7 +7,6 @@
     <title>ЛДЦ Светлана - Главная</title>
     <link rel="stylesheet" href="./assets/css/slick.css"/>
     <link rel="stylesheet" href="./assets/css/slick-theme.css"/>
-    <link rel="stylesheet" href="./assets/css/main-page/style.css">
     <script src="./assets/js/jquery-3.4.1.min.js"></script>
 </head>
 <body>
@@ -33,11 +34,16 @@
 </div>
 
 
-<!--Шапка-->
 <?php
  require "./modules/popups.php";
  require "./modules/header.php";
  require "./modules/dropdown-menu.php";
+?>
+
+<!-------------------------------------------------------------------------------------------------------------------->
+
+ <link rel="stylesheet" href="./assets/css/main-page/style.css">
+<?php
  require "./modules/about.php";
  require "./modules/features.php";
  require "./modules/units.php";
@@ -45,11 +51,14 @@
  require "./modules/specialists.php";
  require "./modules/care.php";
  require "./modules/feedback.php";
- require "./modules/footer.php";
 ?>
 
-<script src="./assets/js/slick-slider/slick.min.js"></script>
-<script src="./assets/js/jquery.inputmask.min.js"></script>
-<script src="./assets/js/script.js"></script>
-</body>
-</html>
+
+
+
+<!----------------------------НЕ ТРОГАТЬ---------------------------------->
+<?
+require "./modules/footer.php";
+?>
+<!-------------------------------------------------------------------------------------------------------------------->
+
