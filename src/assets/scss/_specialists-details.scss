@@ -13,6 +13,7 @@
   }
 
   &__block {
+    background: white;
     width: 100%;
     position: relative;
     z-index: 2;
@@ -27,6 +28,7 @@
     width: 100%;
 
     @media screen and (max-width: 960px) {
+      margin-bottom: 3px;
       background: white;
       .content {
         display: flex;

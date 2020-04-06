@@ -853,7 +853,6 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
 
 .doctor-card__doctor {
   min-width: 345px;
-  max-width: 345px;
   background-color: #fcfcfc;
   color: #2A4472;
   position: relative;
@@ -866,12 +865,13 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
 
 @media screen and (min-width: 480px) {
   .doctor-card__doctor {
-    max-width: none;
+    max-width: 345px;
   }
 }
 
 @media screen and (min-width: 769px) {
   .doctor-card__doctor {
+    max-width: none;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1083,6 +1083,15 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
   bottom: 12px;
   width: calc(100% - 25px);
   font-size: 14px;
+}
+
+.text {
+  color: #0A1831;
+}
+
+.text_accent {
+  color: #E84E2C;
+  font-weight: 600;
 }
 
 .popup {

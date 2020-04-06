@@ -857,15 +857,22 @@ window.onload = function () {
                 })
             });
         });
-        $('.tools__slider_item').on('mouseenter',function (event) {
-            $(this).find('.tools__slider_title').fadeOut(250,function () {
-                $(this).parent().find('.tools__slider_title_hover').fadeIn(250);
-            });
-        })
-        $('.tools__slider_item').on('mouseleave',function (event) {
-            $(this).find('.tools__slider_title_hover').fadeOut(250,function () {
-                $(this).parent().find('.tools__slider_title').fadeIn(250);
-            });
+        let hoverFlag = 0;
+        $('.tools__slider_item').on('mouseenter', function (event) {
+            if (hoverFlag == 0) {
+                $(this).find('.tools__slider_title').fadeOut(250, function () {
+                    $(this).parent().find('.tools__slider_title_hover').fadeIn(250);
+                    hoverFlag = 1;
+                });
+            }
+        });
+        $('.tools__slider_item').on('mouseleave', function (event) {
+            if (hoverFlag == 1) {
+                $(this).find('.tools__slider_title_hover').fadeOut(250, function () {
+                    $(this).parent().find('.tools__slider_title').fadeIn(250);
+                    hoverFlag = 0;
+                });
+            }
         })
     }
     if (isSet($('.direction-services'))) {
@@ -890,7 +897,7 @@ window.onload = function () {
         $('.specialists-details__slider_item .doctor-card__doctor a').text('Подробнее о враче')
     }
 
-    if(isSet($('.tools-details'))){
+    if (isSet($('.tools-details'))) {
         toolsDetailsSliderInit();
 
     }
@@ -1509,17 +1516,63 @@ $(document).scroll(function () {
 
 ymaps.ready(function () {
     var myMap = new ymaps.Map('map', {
-            center: [60.005324, 30.328022],
-            zoom: 17
-        }, {
-            searchControlProvider: 'yandex#search'
-        }),
+        center: [60.005324, 30.328022],
+        zoom: 17,
+        controls: ['zoomControl']
+    }, {
+        searchControlProvider: 'yandex#search'
+    });
+    var secondButton = new ymaps.control.Button({
+        data: {
+            // Зададим текст и иконку для кнопки.
+            title: 'Button Text',
+            // Иконка имеет размер 16х16 пикселей.
+            image: 'assets/img/about-emergency-room/route-icon.svg'
+        },
+        options: {
+            // Поскольку кнопка будет менять вид в зависимости от размера карты,
+            // зададим ей три разных значения maxWidth в массиве.
+            layout: 'round#buttonLayout',
+            maxWidth: 42
+        }
+    });
+    secondButton.events.add('click', function (event) {
+        if (myMap.controls.indexOf('routePanelControl') <= 0) {
+            myMap.controls.add('routePanelControl');
+            var control = myMap.controls.get('routePanelControl');
 
-        // Создаём макет содержимого.
-        MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
-            '<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
-        ),
+            // Зададим состояние панели для построения машрутов.
+            control.routePanel.state.set({
+                // Тип маршрутизации.
+                type: 'masstransit',
+                // Выключим возможность задавать пункт отправления в поле ввода.
+                fromEnabled: true,
+                // Адрес или координаты пункта отправления.
+                // from: 'Москва, Льва Толстого 16',
+                // Включим возможность задавать пункт назначения в поле ввода.
+                toEnabled: false,
+                // Адрес или координаты пункта назначения.
+                to: 'Россия, Санкт-Петербург, проспект Энгельса, 27Т'
+            });
 
+            // Зададим опции панели для построения машрутов.
+            control.routePanel.options.set({
+                // Запрещаем показ кнопки, позволяющей менять местами начальную и конечную точки маршрута.
+                allowSwitch: false,
+                // Включим определение адреса по координатам клика.
+                // Адрес будет автоматически подставляться в поле ввода на панели, а также в подпись метки маршрута.
+                reverseGeocoding: true,
+                // Зададим виды маршрутизации, которые будут доступны пользователям для выбора.
+                types: {masstransit: true, pedestrian: true, taxi: true}
+            });
+        } else {
+            myMap.controls.remove('routePanelControl')
+        }
+    });
+    myMap.controls.add(secondButton, {position: {bottom: '26px', right: '15px'}});
+    myMap.behaviors.disable('scrollZoom');
+    // Создаём макет содержимого.
+    MyIconContentLayout = ymaps.templateLayoutFactory.createClass('<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'),
         myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
             hintContent: 'ЛДЦ Завода "Светлана"',
             balloonContent: 'ЛДЦ Завода "Светлана"</br>Россия, Санкт-Петербург, проспект Энгельса, 27Т</br>+7 (812) 627-02-03'
@@ -1530,14 +1583,14 @@ ymaps.ready(function () {
             // Своё изображение иконки метки.
             iconImageHref: 'favicon/android-chrome-192x192.png',
             // Размеры метки.
-            iconImageSize: [64,64],
+            iconImageSize: [64, 64],
             // Смещение левого верхнего угла иконки относительно
             // её "ножки" (точки привязки).
-            iconImageOffset: [-30,-10]
+            iconImageOffset: [-30, -10]
         });
-
     myMap.geoObjects
         .add(myPlacemark);
+
 });
 
 

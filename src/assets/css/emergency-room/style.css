@@ -853,7 +853,6 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
 
 .doctor-card__doctor {
   min-width: 345px;
-  max-width: 345px;
   background-color: #fcfcfc;
   color: #2A4472;
   position: relative;
@@ -866,12 +865,13 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
 
 @media screen and (min-width: 480px) {
   .doctor-card__doctor {
-    max-width: none;
+    max-width: 345px;
   }
 }
 
 @media screen and (min-width: 769px) {
   .doctor-card__doctor {
+    max-width: none;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1083,6 +1083,15 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
   bottom: 12px;
   width: calc(100% - 25px);
   font-size: 14px;
+}
+
+.text {
+  color: #0A1831;
+}
+
+.text_accent {
+  color: #E84E2C;
+  font-weight: 600;
 }
 
 .popup {
@@ -2234,14 +2243,119 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
   position: relative;
 }
 
+@media screen and (min-width: 961px) {
+  .about-emergency-room {
+    background: white;
+  }
+}
+
+.about-emergency-room__block {
+  width: 100%;
+  background: white;
+  padding: 18px 15px;
+}
+
+@media screen and (min-width: 961px) {
+  .about-emergency-room__block {
+    width: 50%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    min-height: 587px;
+    padding-top: 90px;
+    padding-bottom: 64px;
+    padding-left: 0;
+    padding-right: 15px;
+  }
+}
+
+.about-emergency-room__block .title {
+  margin-bottom: 18px;
+}
+
+@media screen and (min-width: 961px) {
+  .about-emergency-room__block .title {
+    margin-bottom: 42px;
+  }
+}
+
+.about-emergency-room__content .text_accent {
+  margin-bottom: 12px;
+}
+
+.about-emergency-room__content_address {
+  margin-bottom: 18px;
+  line-height: 140%;
+}
+
+@media screen and (min-width: 961px) {
+  .about-emergency-room__content_address {
+    margin-bottom: 14px;
+  }
+}
+
+.about-emergency-room__content_list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  margin-bottom: 18px;
+}
+
+@media screen and (min-width: 961px) {
+  .about-emergency-room__content_list {
+    margin-bottom: 42px;
+  }
+}
+
+.about-emergency-room__content_list-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 12px;
+}
+
+@media screen and (min-width: 961px) {
+  .about-emergency-room__content_list-item {
+    line-height: 38px;
+    margin-bottom: 6px;
+  }
+}
+
+.about-emergency-room__content_list-item:last-child {
+  margin-bottom: 0;
+}
+
+.about-emergency-room__content_list-text span {
+  color: #E84E2C;
+  font-weight: 600;
+}
+
+.about-emergency-room__content button {
+  font-size: 14px;
+}
+
+@media screen and (min-width: 961px) {
+  .about-emergency-room__content button {
+    max-width: 325px;
+    font-size: 18px;
+  }
+}
+
 .about-emergency-room .map {
-  display: none;
-  position: absolute;
+  display: block;
+  position: relative;
   right: 0;
   top: 0;
-  width: 50%;
-  min-height: 587px;
-  height: 100%;
+  width: 100%;
+  height: 236px;
+}
+
+@media screen and (min-width: 961px) {
+  .about-emergency-room .map {
+    position: absolute;
+    min-height: 587px;
+    height: 100%;
+    width: 50%;
+  }
 }
 
 .about-emergency-room .map .ymaps-2-1-76-ground-pane {
@@ -2249,6 +2363,12 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
   /* Firefox 3.5+ */
   -webkit-filter: grayscale(100%);
   /* Chrome 19+ & Safari 6+ */
+}
+
+.about-emergency-room .map .ymaps_maps-button {
+  position: relative;
+  z-index: 10;
+  background: url("../../img/about-emergency-room/route-icon.svg") center no-repeat;
 }
 
 .nav-links {
