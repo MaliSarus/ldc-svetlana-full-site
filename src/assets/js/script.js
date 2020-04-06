@@ -646,6 +646,8 @@ $(window).on('resize', function () {
                 content: document.querySelector('.cost__wrapper'),
                 scrollMode: "transform", // use CSS 'transform' property
                 direction: "horizontal", // allow only horizontal scrollin
+                pointerMode: 'all',
+                pointerDownPreventDefault: false
             });
         }
     }
@@ -853,6 +855,16 @@ window.onload = function () {
                     background: 'url("' + imageSrc + '") center no-repeat',
                     backgroundSize: 'cover'
                 })
+            });
+        });
+        $('.tools__slider_item').on('mouseenter',function (event) {
+            $(this).find('.tools__slider_title').fadeOut(250,function () {
+                $(this).parent().find('.tools__slider_title_hover').fadeIn(250);
+            });
+        })
+        $('.tools__slider_item').on('mouseleave',function (event) {
+            $(this).find('.tools__slider_title_hover').fadeOut(250,function () {
+                $(this).parent().find('.tools__slider_title').fadeIn(250);
             });
         })
     }
@@ -1417,13 +1429,7 @@ $(document).ready(function () {
                 scrollMode: "transform", // use CSS 'transform' property
                 direction: "horizontal", // allow only horizontal scrollin
                 pointerMode: 'all',
-                pointerDownPreventDefault: false,
-                onClick: (state, event) => {
-                    if ($('.form-call-button').is(event.target)) {
-
-                    }
-
-                }
+                pointerDownPreventDefault: false
             });
         }
         $('.cost__list_item').on('click', function (event) {

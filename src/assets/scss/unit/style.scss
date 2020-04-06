@@ -22,7 +22,9 @@
 
 
 .feedback{
-  background: none;
+  @media screen and (min-width: 961px) {
+    background: none;
+  }
 }
 .appointment{
   background: none;

@@ -591,6 +591,7 @@
 
 .doctor-card{
   &__doctor{
+    min-width: 345px;
     max-width: 345px;
     background-color: #fcfcfc;
     color: $main-color;
@@ -599,8 +600,10 @@
     height: 100%;
     padding: 6px;
     box-sizing: border-box;
-    @media screen and (min-width: 769px){
+    @media screen and (min-width: 480px){
       max-width: none;
+    }
+    @media screen and (min-width: 769px){
       display: flex;
       padding: 20px;
     }

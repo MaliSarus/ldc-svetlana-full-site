@@ -23,7 +23,9 @@
 
 
 .feedback{
-  background: none;
+  @media screen and (min-width: 961px) {
+    background: none;
+  }
 }
 .appointment{
 
@@ -39,19 +41,25 @@
 }
 
 .appointment.second-block{
-  margin-top: 0;
-  background: white;
-  .appointment__block{
-    position: relative;
-    top: -30px;
+  @media screen and (min-width: 961px){
     margin-top: 0;
-    margin-bottom: 30px;
+    background: white;
+  }
+  .appointment__block{
+    @media screen and (min-width: 961px) {
+      position: relative;
+      top: -30px;
+      margin-top: 0;
+      margin-bottom: 30px;
+    }
   }
 }
 
 .direction-master{
   &__block{
-    padding-bottom: 90px;
+    @media screen and (min-width:961px){
+      padding-bottom: 90px;
+    }
   }
 }
 
