@@ -54,7 +54,7 @@ require "./modules/tools.php";
 require "./modules/feedback.php";
 ?>
 <section class="appointment second-block">
-    <div class="container">
+    <div class="container container_size_1667">
         <div class="row">
             <?php
             require "./modules/appointment__block.php";

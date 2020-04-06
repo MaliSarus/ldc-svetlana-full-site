@@ -1501,6 +1501,39 @@ $(document).scroll(function () {
     }
 });
 
+ymaps.ready(function () {
+    var myMap = new ymaps.Map('map', {
+            center: [60.005324, 30.328022],
+            zoom: 17
+        }, {
+            searchControlProvider: 'yandex#search'
+        }),
+
+        // Создаём макет содержимого.
+        MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
+            '<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
+        ),
+
+        myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
+            hintContent: 'ЛДЦ Завода "Светлана"',
+            balloonContent: 'ЛДЦ Завода "Светлана"</br>Россия, Санкт-Петербург, проспект Энгельса, 27Т</br>+7 (812) 627-02-03'
+        }, {
+            // Опции.
+            // Необходимо указать данный тип макета.
+            iconLayout: 'default#image',
+            // Своё изображение иконки метки.
+            iconImageHref: 'favicon/android-chrome-192x192.png',
+            // Размеры метки.
+            iconImageSize: [64,64],
+            // Смещение левого верхнего угла иконки относительно
+            // её "ножки" (точки привязки).
+            iconImageOffset: [-30,-10]
+        });
+
+    myMap.geoObjects
+        .add(myPlacemark);
+});
+
 
 
 

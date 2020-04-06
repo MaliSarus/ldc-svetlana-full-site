@@ -2,7 +2,7 @@
 <?php
 require "./modules/headlings.php";
 ?>
-<title>ЛДЦ Светлана - Услуга</title>
+<title>ЛДЦ Светлана - Отделение</title>
 <link rel="stylesheet" href="./assets/css/slick.css"/>
 <link rel="stylesheet" href="./assets/css/slick-theme.css"/>
 <link rel="stylesheet" href="./assets/css/magnific-popup.css">
@@ -42,27 +42,34 @@ require "./modules/dropdown-menu.php";
 <!-------------------------------------------------------------------------------------------------------------------->
 <link rel="stylesheet" href="./assets/css/<?php echo basename(__FILE__, '.php');?>/style.css?ver=<?php echo  date("His")?>">
 
-<!--Шапка-->
 <?php
-require "./modules/service-header.php";
+require "./modules/about-emergency-room.php";
 require "./modules/nav-links.php";
-require "./modules/about-service.php";
-require "./modules/tools-details.php";
-require "./modules/cost.php";
-require "./modules/specialists-details.php";
-require "./modules/direction-master.php";
 require "./modules/appointment.php";
-require "./modules/feedback.php";
+require "./modules/cost.php";
+require "./modules/direction-master.php";
+require "./modules/specialists.php";
+?>
+<section class="appointment second-block">
+    <div class="container container_size_1667">
+        <div class="row">
+            <?php
+            require "./modules/appointment__block.php";
+            ?>
+        </div>
+    </div>
+</section>
+<?php
+require "./modules/unit-simple.php";
+require "./modules/tools.php";
 require "./modules/for-patient.php";
-require "./modules/analogs.php";
 ?>
 
-
-
-
+<script src="https://api-maps.yandex.ru/2.1/?apikey=d37e0946-ea4c-40d6-abe8-a0dba0b96a11&lang=ru_RU" type="text/javascript"></script>
 <!----------------------------НЕ ТРОГАТЬ---------------------------------->
 <?
 require "./modules/footer.php";
 ?>
 <!-------------------------------------------------------------------------------------------------------------------->
+
 

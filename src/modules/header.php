@@ -91,7 +91,7 @@
                     </div>
                 </div>
                 <div class="header__emergency-call">
-                    <a href="tel:+781262702">
+                    <a href="../emergency-room.php">
                         <img src="./assets/img/header/emergency-call-24-7.svg" alt="Срочный звонок">
                         Травмпункт
                     </a>
