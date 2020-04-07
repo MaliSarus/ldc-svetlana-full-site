@@ -892,7 +892,7 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
   width: calc(100% - 12px);
   bottom: 6px;
   left: 6px;
-  display: none;
+  display: block;
   font-size: 16px;
 }
 
@@ -926,12 +926,15 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
 .doctor-card__doctor_image {
   width: 100%;
   margin-bottom: 12px;
+  min-height: 280px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 @media screen and (min-width: 769px) {
   .doctor-card__doctor_image {
     max-width: 200px;
-    background: url("../../img/direction-master/doctor.png") center/cover no-repeat;
     margin-bottom: 0;
     margin-right: 20px;
   }
@@ -1036,10 +1039,12 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
   font-size: 14px;
   line-height: 120%;
   color: #444444;
+  padding-bottom: 64px;
 }
 
 @media screen and (min-width: 961px) {
   .doctor-card__doctor_desc {
+    padding: 0;
     margin-bottom: 78px;
   }
 }
@@ -1071,7 +1076,7 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
   transition: opacity .5s;
 }
 
-@media screen and (min-width: 961px) {
+@media screen and (min-width: 769px) {
   .doctor-card__full-info {
     display: none;
   }
@@ -4218,16 +4223,19 @@ button.mfp-arrow {
 
 .specialists__doctor .doctor__image {
   width: 300px;
-  max-height: 300px;
+  min-height: 300px;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 22px;
   overflow: hidden;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 @media screen and (max-width: 576px) {
   .specialists__doctor .doctor__image {
-    width: auto;
+    width: 100%;
   }
 }
 

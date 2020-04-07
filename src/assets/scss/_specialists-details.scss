@@ -67,6 +67,17 @@
         display: flex;
       }
     }
+    .doctor-card__doctor{
+      min-width: unset;
+    }
+    .doctor-card__doctor_content{
+      a{
+        display: none;
+        @media screen and (min-width: 769px){
+          display: block;
+        }
+      }
+    }
   }
 
   &__content {

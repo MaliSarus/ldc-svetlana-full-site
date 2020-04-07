@@ -1,6 +1,5 @@
 <div class="doctor-card__doctor">
-    <div class="doctor-card__doctor_image">
-        <img src="./assets/img/direction-master/doctor.png" alt="Картинка врача">
+    <div class="doctor-card__doctor_image" style="background-image: url(./assets/img/direction-master/doctor.png)">
     </div>
     <div class="doctor-card__doctor_content">
         <div class="doctor-card__doctor_head">

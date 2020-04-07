@@ -104,13 +104,16 @@
     .doctor {
       &__image {
         width: 300px;
-        max-height: 300px;
+        min-height: 300px;
         margin-left: auto;
         margin-right: auto;
         margin-bottom: 22px;
         overflow: hidden;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
         @media screen and (max-width: 576px) {
-          width: auto;
+          width: 100%;
         }
 
         img {

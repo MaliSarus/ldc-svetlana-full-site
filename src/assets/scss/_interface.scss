@@ -616,7 +616,7 @@
       width: calc(100% - 12px);
       bottom: 6px;
       left: 6px;
-      display: none;
+      display: block;
       font-size: 16px;
       @media screen and (min-width: 769px){
         max-width: 325px;
@@ -639,9 +639,12 @@
     &_image{
       width: 100%;
       margin-bottom: 12px;
+      min-height: 280px;
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
       @media screen and (min-width: 769px){
         max-width: 200px;
-        background: url("../../img/direction-master/doctor.png") center / cover no-repeat;
         margin-bottom: 0;
         margin-right: 20px;
       }
@@ -713,7 +716,9 @@
       font-size: 14px;
       line-height: 120%;
       color: #444444;
+      padding-bottom: 64px;
       @media screen and (min-width: 961px){
+        padding: 0;
         margin-bottom: 60px + 18px;
       }
     }
@@ -738,7 +743,7 @@
     top: -12px;
     padding: 12px;
     transition: opacity .5s;
-    @media screen and (min-width: 961px){
+    @media screen and (min-width: 769px){
       display: none;
     }
     a{
