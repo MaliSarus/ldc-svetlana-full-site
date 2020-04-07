@@ -506,6 +506,23 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
   color: #FF785A;
 }
 
+.link_underline {
+  font-weight: 600;
+  text-decoration: underline;
+  color: #2A4472;
+  -webkit-transition: color .2s;
+  -o-transition: color .2s;
+  transition: color .2s;
+}
+
+.link_underline:hover {
+  color: #E84E2C;
+}
+
+.link_underline:active {
+  color: #FF785A;
+}
+
 .tab-link_red {
   font-weight: 600;
   color: #2A4472;
@@ -2885,7 +2902,7 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
     bottom: 0;
     top: unset;
     left: unset;
-    right: 137px;
+    right: 136px;
     -webkit-transform: unset;
     -ms-transform: unset;
     transform: unset;

@@ -309,6 +309,18 @@
   &:active {
     color: $accent-color-light;
   }
+  &_underline{
+    font-weight: 600;
+    text-decoration: underline;
+    color: $main-color;
+    transition: color .2s;
+    &:hover {
+      color: $accent-color;
+    }
+    &:active {
+      color: $accent-color-light;
+    }
+  }
 }
 
 .tab-link_red{

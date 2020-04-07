@@ -651,6 +651,12 @@ $(window).on('resize', function () {
             });
         }
     }
+    if ($(window).width() <= ($('.direction-services__tabs').width() + 30) && !($('.direction-services__tabs').hasClass('slick-initialized'))) {
+        dirServSliderInit();
+    }
+    else if ($(window).width() > ($('.direction-services__tabs').width() + 30) && $('.direction-services__tabs').hasClass('slick-initialized')){
+        $('.direction-services__tabs').slick('unslick');
+    }
 
 });
 

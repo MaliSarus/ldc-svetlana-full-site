@@ -1,0 +1,44 @@
+.hurts {
+  margin-bottom: 30px;
+  @media screen and (min-width: 961px) {
+    margin-bottom: 0;
+    background: white;
+  }
+  &__block{
+    padding: 18px 15px;
+    background: white;
+    width: 100%;
+    @media screen and (min-width: 961px){
+      padding: 60px 0;
+      background: none;
+    }
+    .title{
+      margin-bottom: 18px;
+      @media screen and (min-width: 961px){
+        margin-bottom: 42px;
+      }
+    }
+  }
+  &__list{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    @media screen and (min-width: 961px){
+      flex-direction: row;
+    }
+    &-item{
+      display: flex;
+      margin-bottom: 18px;
+      @media screen and (min-width: 961px){
+        margin-bottom: 0;
+        margin-right: 34px;
+      }
+      &:last-child{
+        margin-bottom: 0;
+        margin-right: 0;
+      }
+    }
+  }
+}

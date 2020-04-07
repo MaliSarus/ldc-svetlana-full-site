@@ -506,6 +506,23 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
   color: #FF785A;
 }
 
+.link_underline {
+  font-weight: 600;
+  text-decoration: underline;
+  color: #2A4472;
+  -webkit-transition: color .2s;
+  -o-transition: color .2s;
+  transition: color .2s;
+}
+
+.link_underline:hover {
+  color: #E84E2C;
+}
+
+.link_underline:active {
+  color: #FF785A;
+}
+
 .tab-link_red {
   font-weight: 600;
   color: #2A4472;
@@ -2246,12 +2263,14 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
 }
 
 .about-emergency-room {
+  margin-bottom: 30px;
   position: relative;
 }
 
 @media screen and (min-width: 961px) {
   .about-emergency-room {
     background: white;
+    margin-bottom: 0;
   }
 }
 
@@ -2280,15 +2299,18 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
 
 @media screen and (min-width: 961px) {
   .about-emergency-room__block .title {
+    font-size: 36px;
     margin-bottom: 42px;
   }
 }
 
 .about-emergency-room__content .text_accent {
+  margin: 0;
   margin-bottom: 12px;
 }
 
 .about-emergency-room__content_address {
+  margin: 0;
   margin-bottom: 18px;
   line-height: 140%;
 }
@@ -2304,12 +2326,6 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
   padding: 0;
   list-style: none;
   margin-bottom: 18px;
-}
-
-@media screen and (min-width: 961px) {
-  .about-emergency-room__content_list {
-    margin-bottom: 42px;
-  }
 }
 
 .about-emergency-room__content_list-item {
@@ -2343,6 +2359,7 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
   .about-emergency-room__content button {
     max-width: 325px;
     font-size: 18px;
+    margin-top: 48px;
   }
 }
 
@@ -2375,6 +2392,81 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
   position: relative;
   z-index: 10;
   background: url("../../img/about-emergency-room/route-icon.svg") center no-repeat;
+}
+
+.hurts {
+  margin-bottom: 30px;
+}
+
+@media screen and (min-width: 961px) {
+  .hurts {
+    margin-bottom: 0;
+    background: white;
+  }
+}
+
+.hurts__block {
+  padding: 18px 15px;
+  background: white;
+  width: 100%;
+}
+
+@media screen and (min-width: 961px) {
+  .hurts__block {
+    padding: 60px 0;
+    background: none;
+  }
+}
+
+.hurts__block .title {
+  margin-bottom: 18px;
+}
+
+@media screen and (min-width: 961px) {
+  .hurts__block .title {
+    margin-bottom: 42px;
+  }
+}
+
+.hurts__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+@media screen and (min-width: 961px) {
+  .hurts__list {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+  }
+}
+
+.hurts__list-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 18px;
+}
+
+@media screen and (min-width: 961px) {
+  .hurts__list-item {
+    margin-bottom: 0;
+    margin-right: 34px;
+  }
+}
+
+.hurts__list-item:last-child {
+  margin-bottom: 0;
+  margin-right: 0;
 }
 
 .nav-links {
@@ -2531,7 +2623,7 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
     bottom: 0;
     top: unset;
     left: unset;
-    right: 137px;
+    right: 136px;
     -webkit-transform: unset;
     -ms-transform: unset;
     transform: unset;
@@ -4532,13 +4624,30 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
   background: none;
 }
 
+.hurts__block {
+  padding-bottom: 90px;
+}
+
 .appointment {
   background: none;
 }
 
 @media screen and (min-width: 961px) {
   .appointment .appointment__block {
-    margin-bottom: 60px;
+    margin-bottom: 0;
+    margin-top: -30px;
+  }
+}
+
+@media screen and (min-width: 961px) {
+  .cost {
+    background: none;
+  }
+}
+
+@media screen and (min-width: 961px) {
+  .specialists__block {
+    margin-bottom: -60px;
   }
 }
 
@@ -4548,9 +4657,34 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
   }
   .appointment.second-block .appointment__block {
     position: relative;
-    top: -30px;
+    top: 0;
+    margin-top: 90px;
+    margin-bottom: 60px;
+  }
+}
+
+@media screen and (min-width: 961px) {
+  .tools {
     margin-top: 0;
-    margin-bottom: 30px;
+  }
+}
+
+@media screen and (min-width: 961px) {
+  .tools__block {
+    padding-top: 60px;
+  }
+}
+
+@media screen and (min-width: 961px) {
+  .for-patient {
+    background: none;
+  }
+}
+
+@media screen and (min-width: 961px) {
+  .for-patient__block {
+    background: none;
+    padding-top: 60px;
   }
 }
 

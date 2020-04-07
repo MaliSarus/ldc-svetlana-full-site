@@ -3,7 +3,7 @@
         <div class="row">
             <div class="about-emergency-room__block">
                 <h1 class="title">
-                    Травмпункт
+                    Заголовок блока
                 </h1>
                 <div class="about-emergency-room__content">
                     <p class="text_accent">Круглосуточно</p>

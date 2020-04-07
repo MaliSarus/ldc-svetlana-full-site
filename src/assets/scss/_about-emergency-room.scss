@@ -1,7 +1,9 @@
 .about-emergency-room{
+  margin-bottom: 30px;
   position: relative;
   @media screen and (min-width: 961px){
     background: white;
+    margin-bottom: 0;
   }
   &__block{
     width: 100%;
@@ -21,15 +23,18 @@
     .title{
       margin-bottom: 18px;
       @media screen and (min-width: 961px){
+        font-size: 36px;
         margin-bottom: 42px;
       }
     }
   }
   &__content{
     .text_accent{
+      margin: 0;
       margin-bottom: 12px;
     }
     &_address{
+      margin: 0;
       margin-bottom: 18px;
       line-height: 140%;
       @media screen and (min-width:961px){
@@ -41,9 +46,6 @@
       padding: 0;
       list-style: none;
       margin-bottom: 18px;
-      @media screen and (min-width: 961px){
-        margin-bottom: 42px;
-      }
       &-item{
         display: flex;
         margin-bottom: 12px;
@@ -67,6 +69,7 @@
       @media screen and (min-width: 961px){
         max-width: 325px;
         font-size: 18px;
+        margin-top: 48px;
       }
     }
   }

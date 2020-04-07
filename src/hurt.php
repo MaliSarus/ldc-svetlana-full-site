@@ -45,25 +45,14 @@ require "./modules/dropdown-menu.php";
 <?php
 require "./modules/about-emergency-room.php";
 require "./modules/nav-links.php";
-require "./modules/hurts.php";
-require "./modules/appointment.php";
 require "./modules/cost.php";
 require "./modules/direction-master.php";
 require "./modules/specialists.php";
-?>
-<section class="appointment second-block">
-    <div class="container container_size_1667">
-        <div class="row">
-            <?php
-            require "./modules/appointment__block.php";
-            ?>
-        </div>
-    </div>
-</section>
-<?php
+require "./modules/appointment.php";
 require "./modules/unit-simple.php";
 require "./modules/tools.php";
 require "./modules/for-patient.php";
+require "./modules/hurts.php";
 ?>
 <script src="https://api-maps.yandex.ru/2.1/?apikey=d37e0946-ea4c-40d6-abe8-a0dba0b96a11&lang=ru_RU" type="text/javascript"></script>
 <script src="./assets/js/rounded-yandex/all.js" type="text/javascript"></script>

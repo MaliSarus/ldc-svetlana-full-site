@@ -20,49 +20,35 @@
 @import "../animations";
 
 
-.feedback{
-  background: none;
+.about-emergency-room__content_list {
+  display: none;
 }
 
-.hurts{
-  &__block{
-    padding-bottom: 90px;
-  }
-}
-
-.appointment{
-  background: none;
-  .appointment__block {
-    @media screen and (min-width: 961px){
-      margin-bottom: 0;
-      margin-top: -30px;
+.cost {
+  &__block {
+    @media screen and (min-width: 961px) {
+      padding-bottom: 0;
     }
   }
 }
 
-.cost{
-  @media screen and (min-width: 961px){
-    background: none;
+.specialists {
+  &__block {
+    @media screen and (min-width: 961px) {
+      margin-bottom: -60px;
+    }
   }
 }
 
-.specialists__block{
-  @media screen and (min-width: 961px){
-    margin-bottom: -60px;
-  }
-}
-
-.appointment.second-block{
-  @media screen and (min-width: 961px){
-    background: white;
-    .appointment__block{
-      position: relative;
-      top: 0;
+.appointment {
+  .appointment__block {
+    @media screen and (min-width: 961px) {
       margin-top: 90px;
       margin-bottom: 60px;
     }
   }
 }
+
 .tools {
   @media screen and (min-width: 961px) {
     margin-top: 0;
@@ -73,19 +59,15 @@
     }
   }
 }
+
 .for-patient{
-  @media screen and (min-width: 961px){
+  @media screen and (min-width: 961px) {
     background: none;
   }
   &__block{
-    @media screen and (min-width: 961px){
-      background: none;
+    @media screen and (min-width: 961px) {
       padding-top: 60px;
+      background: none;
     }
-
   }
-}
-
-.breadcrumbs{
-  display: none;
 }
