@@ -15,7 +15,7 @@
             <b>Куратор направления</b> экстренной травматологической помощи и стабильно-функционального
             остеосинтеза в травматологии и ортопедии ЛДЦ Завода “Светлана”
         </div>
-        <a href="doctor.php" class="btn btn_white">Подробнее о кураторе</a>
+        <a href="doctor.php" class="btn btn_tr">Подробнее о кураторе</a>
     </div>
     <article class="doctor-card__full-info">
         <div class="doctor-card__doctor_name">

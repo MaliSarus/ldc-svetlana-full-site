@@ -127,6 +127,9 @@
         position: relative;
         font-size: 14px;
         height: 100%;
+        background-image: url("../../img/doctor-card/bg-invisible-icon.svg");
+        background-repeat: no-repeat;
+        background-position: calc(100% - 10px) calc(100% - 7px);
 
         .doctor__name {
           font-size: 18px;

@@ -19,10 +19,26 @@
 
 @import "../animations";
 
+.about-emergency-room {
+  &__content {
+    .text_accent {
+      @media screen and (min-width: 961px) {
+        font-size: 18px;
+      }
+    }
 
-.about-emergency-room__content_list {
-  display: none;
+    &_address {
+      @media screen and (min-width: 961px) {
+        font-size: 18px;
+      }
+    }
+
+    &_list {
+      display: none;
+    }
+  }
 }
+
 
 .cost {
   &__block {
@@ -52,6 +68,7 @@
 .tools {
   @media screen and (min-width: 961px) {
     margin-top: 0;
+    background:  white url("../../img/tools/bg-top-right.svg") top right no-repeat;
   }
   &__block{
     @media screen and (min-width: 961px) {

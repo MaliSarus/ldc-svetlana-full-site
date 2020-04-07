@@ -66,6 +66,7 @@
 .tools {
   @media screen and (min-width: 961px) {
     margin-top: 0;
+    background:  white url("../../img/tools/bg-top-right.svg") top right no-repeat;
   }
   &__block{
     @media screen and (min-width: 961px) {
