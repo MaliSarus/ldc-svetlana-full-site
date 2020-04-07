@@ -3,7 +3,7 @@
         <div class="row">
             <div class="diplomas__block">
                 <div class="diplomas__head">
-                    <h3 class="title">Дипломы и сертификаты</h3>
+                    <h2 class="title">Дипломы и сертификаты</h2>
                     <div class="diplomas__position"><span class="diplomas__position_current">1</span>/35</div>
                     <div class="arrows">
                         <div class="arrow arrows__arrow-left"></div>

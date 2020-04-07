@@ -4,7 +4,7 @@
             <div class="tools-details__block">
                 <div class="tools-details__head">
                     <div class="content">
-                        <div class="title">&lt;Используемое&gt; оборудование</div>
+                        <h2 class="title">&lt;Используемое&gt; оборудование</h2>
                         <div class="tools-details__position"><span class="tools-details__position_current">1</span>/35
                         </div>
                         <div class="arrows">

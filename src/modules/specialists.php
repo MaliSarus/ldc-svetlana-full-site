@@ -4,9 +4,9 @@
             <div class="specialists__block">
                 <div class="specialists__head">
                     <div class="content">
-                        <h3 class="title">
+                        <h2 class="title">
                             Специалисты &lt;лечебно – диагностического центра&gt;
-                        </h3>
+                        </h2>
                         <div class="specialists__control-panel mobile">
                             <div class="arrows">
                                 <div class="arrow arrows__arrow-left"></div>
