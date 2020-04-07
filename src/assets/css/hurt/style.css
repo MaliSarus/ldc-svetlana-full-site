@@ -2269,8 +2269,25 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
 
 @media screen and (min-width: 961px) {
   .about-emergency-room {
-    background: white;
+    background: white url("../../img/about-emergency-room/bg-top-left.svg");
+    background-position: -30px 0px;
+    background-size: auto 100%;
+    background-repeat: no-repeat;
     margin-bottom: 0;
+  }
+  .about-emergency-room::before {
+    position: absolute;
+    display: block;
+    content: '';
+    width: 176px;
+    height: 92px;
+    background-color: rgba(232, 78, 44, 0.3);
+    top: 245px;
+    left: -15px;
+    -webkit-transform: skewX(-17deg);
+    -ms-transform: skewX(-17deg);
+    transform: skewX(-17deg);
+    z-index: 10;
   }
 }
 
