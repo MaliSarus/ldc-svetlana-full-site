@@ -26,7 +26,9 @@
 
 .hurts{
   &__block{
-    padding-bottom: 90px;
+    @media screen and (min-width: 961px){
+      padding-bottom: 90px;
+    }
   }
 }
 
