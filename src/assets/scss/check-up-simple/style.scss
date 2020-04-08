@@ -1,0 +1,69 @@
+@import "../fonts";
+@import "../common";
+@import "../interface";
+@import "../submit-popup";
+@import "../parallax-squares";
+
+@import "../header";
+@import "../dropdown-menu";
+@import "../about-checkup";
+@import "../about-unit";
+@import "../checkup";
+@import "../checkup-features";
+@import "../appointment";
+@import "../infoblock";
+@import "../specialists";
+@import "../feedback";
+@import "../footer";
+
+@import "../animations";
+
+.breadcrumbs{
+  display: none;
+}
+
+.about-unit{
+  &__features{
+    display: none;
+  }
+}
+
+.appointment{
+  .appointment__block {
+    @media screen and (min-width: 961px){
+      margin-bottom: 0;
+      margin-top: -30px;
+    }
+  }
+}
+
+
+.specialists{
+  &__block{
+    @media screen and (min-width: 961px){
+      margin-bottom: -60px;
+    }
+  }
+}
+.feedback {
+  @media screen and (min-width: 961px) {
+    padding-top: 90px;
+  }
+  .quote {
+    @media screen and (min-width: 961px) {
+      z-index: 1;
+    }
+    @media screen and (min-width: 1400px) {
+      top: 0px;
+    }
+  }
+}
+
+.checkup-features{
+  &__block{
+    @media screen and (min-width: 961px){
+      padding-top: 0;
+    }
+  }
+}
+
