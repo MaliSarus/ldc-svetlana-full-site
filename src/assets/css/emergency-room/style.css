@@ -870,7 +870,6 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
 }
 
 .doctor-card__doctor {
-  min-width: 345px;
   background-color: #fcfcfc;
   color: #2A4472;
   position: relative;

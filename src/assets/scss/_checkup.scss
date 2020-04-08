@@ -23,8 +23,16 @@
     background: white;
     margin-top: 25px;
     position: relative;
+    display: flex;
+    flex-direction: column;
     &:first-child{
       margin-top: 0;
+    }
+    &:hover{
+      .checkup__item_info{
+        background-image: url("../../img/checkup/check_hover-icon.svg")
+      }
+      //.checkup__item_inf
     }
     @media screen and (min-width: 961px){
       flex-basis: calc(100% / 4 - 20px);
@@ -36,13 +44,15 @@
     &_title{
       font-weight: 600;
       line-height: 21px;
+      flex-grow: 6;
     }
     &_info{
       display: flex;
-      position: absolute;
-      bottom: 25px;
-      left: 25px;
       width: 100%;
+      flex-grow: 1;
+      max-height: 20px;
+      background: url("../../img/checkup/check-icon.svg") top right / contain no-repeat;
+      transition: background-image .5s;
     }
     &_price{
       margin-right: 20px;
