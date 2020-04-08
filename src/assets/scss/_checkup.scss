@@ -32,6 +32,12 @@
       .checkup__item_info{
         background-image: url("../../img/checkup/check_hover-icon.svg")
       }
+      .checkup__item_info > span{
+        opacity: 0;
+      }
+      .checkup__item_info_hover {
+        opacity: 1;
+      }
     }
     @media screen and (min-width: 961px){
       flex-basis: calc(100% / 4 - 20px);
@@ -46,14 +52,23 @@
       flex-grow: 6;
     }
     &_info{
+      position: relative;
       display: flex;
       width: 100%;
       flex-grow: 1;
       max-height: 20px;
       background: url("../../img/checkup/check-icon.svg") top right / contain no-repeat;
       transition: background-image .5s;
-      a{
-        display: none;
+      span{
+        opacity: 1;
+        transition: opacity .2s;
+      }
+      &_hover{
+        position: absolute;
+        left: 0;
+        top: 0;
+        opacity: 0;
+        transition: opacity .4s;
       }
     }
     &_price{

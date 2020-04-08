@@ -44,6 +44,9 @@ require "./modules/dropdown-menu.php";
 <?php
 require "./modules/about-unit.php";
 require "./modules/checkup.php";
+require "./modules/checkup-features.php";
+require "./modules/specialists.php";
+require "./modules/feedback.php";
 ?>
 
 

@@ -127,7 +127,8 @@ const feedSliderInit = () => {
                 settings: {
                     slidesToShow: 1,
                     slidesToScroll: 1,
-                    infinite: false
+                    infinite: false,
+                    adaptiveHeight: true
                 },
             },
             {
@@ -306,6 +307,24 @@ const specDetailsSliderInit = () => {
     });
     $('.specialists-details__control-panel .arrows .arrows__arrow-right').on('click', function () {
         specDetailsSlick.slick('slickNext');
+    });
+};
+
+const checkupFeaturesSliderInit = () => {
+    $('.checkup-features__slider').slick({
+        slidesToScroll: 1,
+        mobileFirst: true,
+        dots: false,
+        arrows: false,
+        infinite: false,
+        variableWidth: true,
+        adaptiveHeight: true,
+        responsive: [
+            {
+                breakpoint: 577,
+                settings: 'unslick'
+            }
+        ]
     });
 };
 
@@ -552,9 +571,17 @@ $(window).on('resize', function () {
             $('.features__slider').filter('.slick-initialized').slick("unslick");
             $('.features__slider').children().removeAttr('tabindex');
         }
+        if (isSet($('.checkup-features'))){
+            $('.features__slider').filter('.slick-initialized').slick("unslick");
+            $('.features__slider').children().removeAttr('tabindex');
+        }
     } else if (!$('.features__slider').hasClass('slick-initialized')) {
         if (isSet($('.features__slider'))) {
             featuresSliderInit();
+            $('.features__slider').slick('setPosition');
+        }
+        if (isSet($('.checkup-features'))){
+            checkupFeaturesSliderInit();
             $('.features__slider').slick('setPosition');
         }
     }
@@ -1428,36 +1455,9 @@ $(document).ready(function () {
         });
     }
 
-    if(isSet($('.checkup'))){
-        const checkUpItem = $('.checkup__item');
-        checkUpItem.on('mouseenter', function () {
-            const that = $(this);
-            const itemText =  that.find('.checkup__item_info').children('span');
-            const itemLink = that.find('.checkup__item_info').children('a');
-            if(!(itemLink.hasClass('hover'))) {
-                itemText.fadeOut(200, function () {
-                    itemLink.fadeIn(200,function () {
-                        itemLink.addClass('hover');
-                    });
-                })
-            }
-        });
-        checkUpItem.on('mouseleave', function () {
-            const that = $(this);
-            const itemText =  that.find('.checkup__item_info').children('span');
-            const itemLink = that.find('.checkup__item_info').children('a');
-            if(itemLink.hasClass('hover')) {
-                itemLink.fadeOut(200, function () {
-                    itemText.fadeIn(200, function () {
-                        $(this).removeAttr('style');
-                    });
-                    $(this).removeAttr('style');
-                    $(this).removeClass('hover');
-                })
-            }
-        })
+    if(isSet($('.checkup-features'))){
+        checkupFeaturesSliderInit();
     }
-
 });
 
 
