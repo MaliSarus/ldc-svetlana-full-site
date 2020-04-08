@@ -17,6 +17,16 @@
 
 @import "../animations";
 
+.breadcrumbs{
+  display: none;
+}
+
+.about-unit{
+  &__features{
+    display: none;
+  }
+}
+
 .specialists{
   &__block{
     @media screen and (min-width: 961px){

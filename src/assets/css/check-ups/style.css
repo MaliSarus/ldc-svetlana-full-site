@@ -4496,6 +4496,14 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
   }
 }
 
+.breadcrumbs {
+  display: none;
+}
+
+.about-unit__features {
+  display: none;
+}
+
 @media screen and (min-width: 961px) {
   .specialists__block {
     margin-bottom: -60px;
