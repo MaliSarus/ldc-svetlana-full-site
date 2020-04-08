@@ -4665,58 +4665,6 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
   }
 }
 
-@-webkit-keyframes fadeInDisplay {
-  0% {
-    display: block;
-    opacity: 0;
-    visibility: hidden;
-  }
-  100% {
-    display: block;
-    opacity: 1;
-    visibility: visible;
-  }
-}
-
-@keyframes fadeInDisplay {
-  0% {
-    display: block;
-    opacity: 0;
-    visibility: hidden;
-  }
-  100% {
-    display: block;
-    opacity: 1;
-    visibility: visible;
-  }
-}
-
-@-webkit-keyframes fadeOutDisplay {
-  0% {
-    display: block;
-    opacity: 1;
-    visibility: visible;
-  }
-  100% {
-    display: block;
-    opacity: 0;
-    visibility: hidden;
-  }
-}
-
-@keyframes fadeOutDisplay {
-  0% {
-    display: block;
-    opacity: 1;
-    visibility: visible;
-  }
-  100% {
-    display: block;
-    opacity: 0;
-    visibility: hidden;
-  }
-}
-
 .feedback {
   background: none;
 }

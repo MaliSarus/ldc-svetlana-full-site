@@ -4496,54 +4496,26 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
   }
 }
 
-@-webkit-keyframes fadeInDisplay {
-  0% {
-    display: block;
-    opacity: 0;
-    visibility: hidden;
-  }
-  100% {
-    display: block;
-    opacity: 1;
-    visibility: visible;
+@media screen and (min-width: 961px) {
+  .specialists__block {
+    margin-bottom: -60px;
   }
 }
 
-@keyframes fadeInDisplay {
-  0% {
-    display: block;
-    opacity: 0;
-    visibility: hidden;
-  }
-  100% {
-    display: block;
-    opacity: 1;
-    visibility: visible;
+@media screen and (min-width: 961px) {
+  .feedback {
+    padding-top: 90px;
   }
 }
 
-@-webkit-keyframes fadeOutDisplay {
-  0% {
-    display: block;
-    opacity: 1;
-    visibility: visible;
-  }
-  100% {
-    display: block;
-    opacity: 0;
-    visibility: hidden;
+@media screen and (min-width: 961px) {
+  .feedback .quote {
+    z-index: 1;
   }
 }
 
-@keyframes fadeOutDisplay {
-  0% {
-    display: block;
-    opacity: 1;
-    visibility: visible;
-  }
-  100% {
-    display: block;
-    opacity: 0;
-    visibility: hidden;
+@media screen and (min-width: 1400px) {
+  .feedback .quote {
+    top: 0px;
   }
 }

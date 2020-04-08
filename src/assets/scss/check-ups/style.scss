@@ -17,3 +17,24 @@
 
 @import "../animations";
 
+.specialists{
+  &__block{
+    @media screen and (min-width: 961px){
+      margin-bottom: -60px;
+    }
+  }
+}
+.feedback {
+  @media screen and (min-width: 961px) {
+    padding-top: 90px;
+  }
+  .quote {
+    @media screen and (min-width: 961px) {
+      z-index: 1;
+    }
+    @media screen and (min-width: 1400px) {
+      top: 0px;
+    }
+  }
+}
+
