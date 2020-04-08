@@ -55,6 +55,7 @@
     margin-right: 10px;
     height: 137px;
     transition: background-color .4s;
+    flex-direction: column;
     @media screen and (min-width: 577px) {
       flex-basis: calc(100% / 2 - 10px);
       margin-bottom: 17px;
@@ -63,6 +64,9 @@
     }
     @media screen and (min-width: 769px) {
       flex-basis: calc(100% / 2 - 20px);
+    }
+    @media screen and (min-width: 961px){
+      flex-direction: row;
     }
 
     @media screen and (min-width: 1200px) {
@@ -73,11 +77,11 @@
     }
     &:hover{
       background: white;
-      .checkup-features__desc{
+      .checkup-features__desc_text{
         opacity: 0;
         transition: opacity .2s;
       }
-      .checkup-features__desc_hover{
+      .checkup-features__desc_text_hover{
         opacity: 1;
         transition: opacity .2s;
         transition-delay: .2s;
@@ -87,16 +91,21 @@
 
   &__icon {
     //@media screen and (min-width: 1400px) {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%) skewX(-15deg);
-    top: -10%;
+    transform: skewX(-15deg);
     width: 65px;
     height: 50px;
     background-color: $main-color;
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-top: -13px;
+    @media screen and (min-width: 961px){
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%) skewX(-15deg);
+      top: -10%;
+      margin-top: 0;
+    }
 
     &-text{
       color: white;
@@ -114,22 +123,51 @@
     font-size: 16px;
     line-height: 140%;
     width: 100%;
-    opacity: 1;
-    transition: opacity .2s;
-    transition-delay: .2s;
+    flex-grow: 1;
+    box-sizing: border-box;
+    padding-bottom: 13px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     @media screen and (min-width: 961px) {
+      padding-bottom: 0;
+      display: block;
       font-size: 18px;
       line-height: 120%;
       width: 100%;
+      position: relative;
     }
-    &_hover{
-      display: block;
-      opacity: 0;
-      font-size: 14px;
-      color: rgba($main-color-dark, .7);
-      position: absolute;
-      width: calc(100% - 30px);
+    &_text{
+      opacity: 1;
       transition: opacity .2s;
+      transition-delay: .2s;
+      &_hover{
+        position: absolute;
+        width: calc(100% - 30px);
+        opacity: 0;
+        font-size: 14px;
+        transition: opacity .2s;
+        color: rgba($main-color-dark, .7);
+        @media screen and (min-width: 961px){
+          left: 0;
+          width: 100%;
+          top: calc(-50% - 13px);
+        }
+      }
     }
+    //&_hover{
+    //  display: block;
+    //  opacity: 0;
+    //  font-size: 14px;
+    //  color: rgba($main-color-dark, .7);
+    //  position: absolute;
+    //  width: calc(100% - 30px);
+    //  transition: opacity .2s;
+    //  top: calc(50% - 13px);
+    //  transform: translateY(-50%);
+    //  @media screen and (min-width: 961px){
+    //    width: calc(100% - 100px);
+    //  }
+    //}
   }
 }

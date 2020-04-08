@@ -25,10 +25,12 @@
     position: relative;
     display: flex;
     flex-direction: column;
+    transition: background-color .4s;
     &:first-child{
       margin-top: 0;
     }
     &:hover{
+      background: #F1F1F1;
       .checkup__item_info{
         background-image: url("../../img/checkup/check_hover-icon.svg")
       }
@@ -47,9 +49,10 @@
       }
     }
     &_title{
-      font-weight: 600;
+      font-weight: bold;
       line-height: 21px;
       flex-grow: 6;
+      color: $main-color-dark;
     }
     &_info{
       position: relative;
@@ -69,6 +72,9 @@
         top: 0;
         opacity: 0;
         transition: opacity .4s;
+        .link{
+          color: $accent-color;
+        }
       }
     }
     &_price{
