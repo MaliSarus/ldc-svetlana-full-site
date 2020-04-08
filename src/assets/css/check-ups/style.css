@@ -2612,6 +2612,10 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
   transition: background-image .5s;
 }
 
+.checkup__item_info a {
+  display: none;
+}
+
 .checkup__item_price {
   margin-right: 20px;
 }

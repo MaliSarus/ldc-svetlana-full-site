@@ -1162,13 +1162,6 @@ $(document).ready(function () {
         $(document).on('click', function (event) {
             if (!$('.staff__search-form').is(event.target) && $('.staff__search-form').has(event.target).length === 0 && !$('.staff__search-dropdown').is(event.target) && $('.staff__search-dropdown').has(event.target).length === 0) { // и не по его дочерним элементам
                 staffDropdown.removeAttr('style');
-                // if ($('.staff__find').attr('style') != 'display: block;') {
-                //     $('.staff__content .staff__ordinary').animate({
-                //         opacity: 1
-                //     }, 400, function () {
-                //         $('.staff__content .staff__ordinary').attr('style', '').removeAttr('style');
-                //     })
-                // }
             }
         });
 
@@ -1331,18 +1324,11 @@ $(document).ready(function () {
         appendFlag = 0;
     } else {
         selectButtons.appendTo('.about__slider');
-        // $('body').off('click');
         $('.price__pricing').each(function () {
             // $(this).children().prependTo($(this));
         });
         appendFlag = 1;
     }
-
-    // $(".btn_red_fill").click(function () {
-    //     $('body, html').animate({
-    //         scrollTop: $(".appointment__block").offset().top - 54
-    //     }, 1);
-    // });
 
     if (isSet($('.price'))) {
         if ($(window).width() < 677) {
@@ -1440,6 +1426,36 @@ $(document).ready(function () {
                 return false;
             }
         });
+    }
+
+    if(isSet($('.checkup'))){
+        const checkUpItem = $('.checkup__item');
+        checkUpItem.on('mouseenter', function () {
+            const that = $(this);
+            const itemText =  that.find('.checkup__item_info').children('span');
+            const itemLink = that.find('.checkup__item_info').children('a');
+            if(!(itemLink.hasClass('hover'))) {
+                itemText.fadeOut(200, function () {
+                    itemLink.fadeIn(200,function () {
+                        itemLink.addClass('hover');
+                    });
+                })
+            }
+        });
+        checkUpItem.on('mouseleave', function () {
+            const that = $(this);
+            const itemText =  that.find('.checkup__item_info').children('span');
+            const itemLink = that.find('.checkup__item_info').children('a');
+            if(itemLink.hasClass('hover')) {
+                itemLink.fadeOut(200, function () {
+                    itemText.fadeIn(200, function () {
+                        $(this).removeAttr('style');
+                    });
+                    $(this).removeAttr('style');
+                    $(this).removeClass('hover');
+                })
+            }
+        })
     }
 
 });

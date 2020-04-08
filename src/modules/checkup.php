@@ -7,16 +7,16 @@
                     <div class="checkup__item_info">
                         <span class="checkup__item_price text_price">5 699 ₽</span>
                         <span class="text_price_del">15 699 ₽</span>
+                        <a href="check-up-simple.php" class="link">Узнать больше →</a>
                     </div>
-                    <div class="checkup__item_info checkup__item_info_hover">
-                        <a href="check-up-simple.php" class="link"></a>
-                    </div>
+
                 </div>
                 <div class="checkup__item">
                     <div class="checkup__item_title">Чек-Ап "Профилактика щитовидной железы"</div>
                     <div class="checkup__item_info">
                         <span class="checkup__item_price text_price">5 699 ₽</span>
                         <span class="text_price_del">15 699 ₽</span>
+                        <a href="check-up-simple.php" class="link">Узнать больше →</a>
                     </div>
                 </div>
                 <div class="checkup__item">
@@ -24,6 +24,7 @@
                     <div class="checkup__item_info">
                         <span class="checkup__item_price text_price">5 699 ₽</span>
                         <span class="text_price_del">15 699 ₽</span>
+                        <a href="check-up-simple.php" class="link">Узнать больше →</a>
                     </div>
                 </div>
                 <div class="checkup__item">
@@ -31,6 +32,7 @@
                     <div class="checkup__item_info">
                          <span class="checkup__item_price text_price">5 699 ₽</span>
                         <span class="text_price_del">15 699 ₽</span>
+                        <a href="check-up-simple.php" class="link">Узнать больше →</a>
                     </div>
                 </div>
                 <div class="checkup__item">
@@ -38,6 +40,7 @@
                     <div class="checkup__item_info">
                          <span class="checkup__item_price text_price">5 699 ₽</span>
                         <span class="text_price_del">15 699 ₽</span>
+                        <a href="check-up-simple.php" class="link">Узнать больше →</a>
                     </div>
                 </div>
                 <div class="checkup__item">
@@ -45,6 +48,7 @@
                     <div class="checkup__item_info">
                          <span class="checkup__item_price text_price">5 699 ₽</span>
                         <span class="text_price_del">15 699 ₽</span>
+                        <a href="check-up-simple.php" class="link">Узнать больше →</a>
                     </div>
                 </div>
                 <div class="checkup__item">
@@ -52,6 +56,7 @@
                     <div class="checkup__item_info">
                          <span class="checkup__item_price text_price">5 699 ₽</span>
                         <span class="text_price_del">15 699 ₽</span>
+                        <a href="check-up-simple.php" class="link">Узнать больше →</a>
                     </div>
                 </div>
                 <div class="checkup__item">
@@ -59,6 +64,7 @@
                     <div class="checkup__item_info">
                          <span class="checkup__item_price text_price">5 699 ₽</span>
                         <span class="text_price_del">15 699 ₽</span>
+                        <a href="check-up-simple.php" class="link">Узнать больше →</a>
                     </div>
                 </div>
                 <div class="checkup__item">
@@ -66,6 +72,7 @@
                     <div class="checkup__item_info">
                          <span class="checkup__item_price text_price">5 699 ₽</span>
                         <span class="text_price_del">15 699 ₽</span>
+                        <a href="check-up-simple.php" class="link">Узнать больше →</a>
                     </div>
                 </div>
                 <div class="checkup__item">
@@ -73,6 +80,7 @@
                     <div class="checkup__item_info">
                          <span class="checkup__item_price text_price">5 699 ₽</span>
                         <span class="text_price_del">15 699 ₽</span>
+                        <a href="check-up-simple.php" class="link">Узнать больше →</a>
                     </div>
                 </div>
                 <div class="checkup__item">
@@ -80,6 +88,7 @@
                     <div class="checkup__item_info">
                          <span class="checkup__item_price text_price">5 699 ₽</span>
                         <span class="text_price_del">15 699 ₽</span>
+                        <a href="check-up-simple.php" class="link">Узнать больше →</a>
                     </div>
                 </div>
                 <div class="checkup__item">
@@ -87,6 +96,7 @@
                     <div class="checkup__item_info">
                          <span class="checkup__item_price text_price">5 699 ₽</span>
                         <span class="text_price_del">15 699 ₽</span>
+                        <a href="check-up-simple.php" class="link">Узнать больше →</a>
                     </div>
                 </div>
             </div>

@@ -32,7 +32,6 @@
       .checkup__item_info{
         background-image: url("../../img/checkup/check_hover-icon.svg")
       }
-      //.checkup__item_inf
     }
     @media screen and (min-width: 961px){
       flex-basis: calc(100% / 4 - 20px);
@@ -53,6 +52,9 @@
       max-height: 20px;
       background: url("../../img/checkup/check-icon.svg") top right / contain no-repeat;
       transition: background-image .5s;
+      a{
+        display: none;
+      }
     }
     &_price{
       margin-right: 20px;
