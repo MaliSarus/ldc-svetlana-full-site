@@ -3,7 +3,7 @@
         <div class="row">
             <div class="tools__block">
                 <div class="tools__head">
-                    <h2 class="title">Оборудование</div>
+                    <h2 class="title">Оборудование</h2>
                     <div class="tools__position"><span class="tools__position_current">1</span>/35</div>
                     <div class="arrows">
                         <div class="arrow arrows__arrow-left"></div>

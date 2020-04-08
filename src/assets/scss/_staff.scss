@@ -75,6 +75,7 @@
     @media screen and (min-width: 961px) {
       padding: 0 15px;
     }
+
     &-top {
       position: relative;
       @media screen and (min-width: 961px) {
@@ -87,7 +88,8 @@
         margin-bottom: 48px;
       }
     }
-    &-bottom{
+
+    &-bottom {
       .title {
         margin-bottom: 18px;
       }
@@ -100,7 +102,8 @@
         display: block;
       }
     }
-    &:last-child{
+
+    &:last-child {
       .staff__content-top {
         @media screen and (min-width: 1180px) {
           padding-top: 18px;
@@ -195,12 +198,13 @@
       background: none;
       cursor: pointer;
       z-index: 3;
-      @media screen and (min-width: 961px){
+      @media screen and (min-width: 961px) {
         right: 30px;
         width: 16px;
         height: 16px;
       }
-      img{
+
+      img {
         position: absolute;
         left: 0;
         top: 0;
@@ -223,13 +227,19 @@
       border: none;
       z-index: 3;
       width: calc(100% - 50px);
-      @media screen and (min-width: 961px){
+      @media screen and (min-width: 961px) {
         left: 16px;
       }
 
       &::placeholder {
         color: gray;
       }
+      &::-ms-clear {  display: none; width : 0; height: 0; }
+      &::-ms-reveal {  display: none; width : 0; height: 0; }
+      &::-webkit-search-decoration,
+      &::-webkit-search-cancel-button,
+      &::-webkit-search-results-button,
+      &::-webkit-search-results-decoration { display: none; }
     }
   }
 
@@ -239,12 +249,12 @@
     border: 1px solid #D2D2D2;
     position: absolute;
     left: 0;
-    top: 39px;
+    top: 49px;
     z-index: 100;
     background: white;
     display: none;
-    @media screen and (min-width: 1025px){
-      top: 69px;
+    @media screen and (min-width: 1025px) {
+      top: 79px;
     }
 
 
@@ -260,7 +270,7 @@
       font-size: 12px;
       color: rgba($main-color, .6);
       margin-bottom: 8px;
-      @media screen and (min-width: 769px){
+      @media screen and (min-width: 769px) {
         font-size: 14px;
       }
     }
@@ -270,7 +280,7 @@
       color: $main-color-dark;
       font-size: 12px;
       margin-bottom: 8px;
-      @media screen and (min-width: 769px){
+      @media screen and (min-width: 769px) {
         font-size: 14px;
       }
 
@@ -337,29 +347,33 @@
 
   }
 
-  &__find{
+  &__find {
     display: none;
     margin-bottom: 30px;
-    &-head{
+
+    &-head {
       display: flex;
       justify-content: space-between;
       align-items: baseline;
       margin-bottom: 18px;
-      .title{
+
+      .title {
         margin-bottom: 0;
         margin-right: 15px;
       }
-      .back{
+
+      .back {
         text-align: right;
         font-size: 14px;
         flex-basis: 30%;
-        @media screen and (min-width: 577px){
+        @media screen and (min-width: 577px) {
           flex-basis: unset;
           font-size: 16px;
         }
       }
     }
-    .specialists__slider{
+
+    .specialists__slider {
       display: flex;
       justify-content: space-between;
       flex-wrap: wrap;
@@ -370,14 +384,15 @@
       @media screen and (min-width: 1326px) {
         justify-content: space-between;
       }
-      .specialists__doctor{
+
+      .specialists__doctor {
         flex-basis: 100%;
         max-width: none;
         width: auto;
         display: flex;
         justify-content: center;
         margin-right: 0;
-        @media screen and (min-width: 769px){
+        @media screen and (min-width: 769px) {
           flex-basis: calc(100% / 2 - 5px);
         }
         @media screen and (min-width: 961px) {
@@ -394,9 +409,10 @@
         }
       }
     }
-    .btn.btn_white{
+
+    .btn.btn_white {
       margin-top: 18px;
-      @media screen and (min-width: 961px){
+      @media screen and (min-width: 961px) {
         margin-top: 36px;
         max-width: 325px;
         margin-left: auto;

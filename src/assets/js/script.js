@@ -653,8 +653,7 @@ $(window).on('resize', function () {
     }
     if ($(window).width() <= ($('.direction-services__tabs').width() + 30) && !($('.direction-services__tabs').hasClass('slick-initialized'))) {
         dirServSliderInit();
-    }
-    else if ($(window).width() > ($('.direction-services__tabs').width() + 30) && $('.direction-services__tabs').hasClass('slick-initialized')){
+    } else if ($(window).width() > ($('.direction-services__tabs').width() + 30) && $('.direction-services__tabs').hasClass('slick-initialized')) {
         $('.direction-services__tabs').slick('unslick');
     }
 
@@ -1143,40 +1142,31 @@ $(document).ready(function () {
                 display: 'block',
                 width: $('.staff__search-form-wrapper').width()
             });
-            $('.staff__content .staff__ordinary').animate({
-                opacity: 0
-            }, 400);
+            // $('.staff__content .staff__ordinary').animate({
+            //     opacity: 0
+            // }, 400);
             staffSearch.val(staffSearch.val().replace(/[^А-Яа-я]/, ''));
         });
         $('.staff__search-form').on('submit', function (event) {
             event.preventDefault();
-            $('.staff__content .staff__ordinary').fadeOut();
             $('.staff__content .staff__find .words').text(staffSearch.val());
             staffSearch.val('');
-            $('.staff__content .staff__find').fadeIn();
+            $('.staff__content .staff__ordinary').fadeOut(400, function () {
+                $('.staff__content .staff__find').fadeIn();
+            });
             staffDropdown.removeAttr('style');
         });
-        // staffSearch.on('blur', function () {
-        //     staffDropdown.removeAttr('style');
-        //     if($('.staff__find').attr('style') != 'display: block;') {
-        //         $('.staff__content .staff__ordinary').animate({
-        //             opacity: 1
-        //         }, 400, function () {
-        //             $('.staff__content .staff__ordinary').attr('style', '').removeAttr('style');
-        //         })
-        //     }
-        // });
 
         $(document).on('click', function (event) {
             if (!$('.staff__search-form').is(event.target) && $('.staff__search-form').has(event.target).length === 0 && !$('.staff__search-dropdown').is(event.target) && $('.staff__search-dropdown').has(event.target).length === 0) { // и не по его дочерним элементам
                 staffDropdown.removeAttr('style');
-                if ($('.staff__find').attr('style') != 'display: block;') {
-                    $('.staff__content .staff__ordinary').animate({
-                        opacity: 1
-                    }, 400, function () {
-                        $('.staff__content .staff__ordinary').attr('style', '').removeAttr('style');
-                    })
-                }
+                // if ($('.staff__find').attr('style') != 'display: block;') {
+                //     $('.staff__content .staff__ordinary').animate({
+                //         opacity: 1
+                //     }, 400, function () {
+                //         $('.staff__content .staff__ordinary').attr('style', '').removeAttr('style');
+                //     })
+                // }
             }
         });
 
@@ -1188,15 +1178,10 @@ $(document).ready(function () {
 
         $('.staff__find-head').on('click', '.back', function () {
             $('.staff__content .staff__find').fadeOut(400, function () {
-                $(this).removeAttr('style');
-                $('.staff__content .staff__ordinary').fadeIn().animate({
-                    opacity: 1
-                }, 400, function () {
-                    $('.staff__content .staff__ordinary').attr('style', '').removeAttr('style');
-                });
+                $('.staff__content .staff__ordinary').fadeIn();
             });
         })
-    }
+    };
 
 
     //Вкладки на выпадающем меню хэдера
@@ -1517,7 +1502,7 @@ $(document).scroll(function () {
     }
 });
 
-if(isSet($('#map'))){
+if (isSet($('#map'))) {
     ymaps.ready(function () {
         var myMap = new ymaps.Map('map', {
             center: [60.005324, 30.328022],

@@ -3154,6 +3154,22 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
   color: gray;
 }
 
+.staff__search-form-field::-ms-clear {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+.staff__search-form-field::-ms-reveal {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+.staff__search-form-field::-webkit-search-decoration, .staff__search-form-field::-webkit-search-cancel-button, .staff__search-form-field::-webkit-search-results-button, .staff__search-form-field::-webkit-search-results-decoration {
+  display: none;
+}
+
 .staff__search-dropdown {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
@@ -3161,7 +3177,7 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
   border: 1px solid #D2D2D2;
   position: absolute;
   left: 0;
-  top: 39px;
+  top: 49px;
   z-index: 100;
   background: white;
   display: none;
@@ -3169,7 +3185,7 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
 
 @media screen and (min-width: 1025px) {
   .staff__search-dropdown {
-    top: 69px;
+    top: 79px;
   }
 }
 
