@@ -41,7 +41,7 @@
                         <li><a href="doctors.php">Врачи</a></li>
                         <li class="dropdown-menu__open-button"><a href="#">Услуги</a></li>
                         <li><a href="#">Телемедицина</a></li>
-                        <li><a href="#">Check-up программы</a></li>
+                        <li><a href="check-ups.php">Check-up программы</a></li>
                         <li><a href="#">Цены</a></li>
                         <li><a href="unit.php">Для пациентов</a></li>
                     </ul>
@@ -61,7 +61,7 @@
                         <li class="dropdown-menu__open-button"><a href="#">Услуги</a></li>
                         <li><a href="#">Цены</a></li>
                         <li><a href="#">Телемедицина</a></li>
-                        <li><a href="#">Check-up программы</a></li>
+                        <li><a href="check-ups.php">Check-up программы</a></li>
                         <li><a href="#">Травмпункт</a></li>
                     </ul>
                     <div class="header__primary-menu-title">Специалисты</div>

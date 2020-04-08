@@ -1138,14 +1138,16 @@ $(document).ready(function () {
         const staffDropdown = $('.staff__search-dropdown');
         const staffDropdownLink = $('.staff__search-dropdown_link');
         staffSearch.on('input', function () {
-            staffDropdown.css({
-                display: 'block',
-                width: $('.staff__search-form-wrapper').width()
-            });
-            // $('.staff__content .staff__ordinary').animate({
-            //     opacity: 0
-            // }, 400);
             staffSearch.val(staffSearch.val().replace(/[^А-Яа-я]/, ''));
+            if(staffSearch.val() != '') {
+                staffDropdown.css({
+                    display: 'block',
+                    width: $('.staff__search-form-wrapper').width()
+                });
+            }
+            if(staffSearch.val() == '' && staffDropdown.attr('style') != ''){
+                staffDropdown.removeAttr('style');
+            }
         });
         $('.staff__search-form').on('submit', function (event) {
             event.preventDefault();

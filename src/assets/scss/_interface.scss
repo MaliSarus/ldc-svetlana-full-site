@@ -774,4 +774,23 @@
     color: $accent-color;
     font-weight: 600;
   }
+  &_price{
+    color: $main-color-dark;
+    &_del{
+      color: #858C98;
+      position: relative;
+      &::before {
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        content: '';
+        display: block !important;
+        background-color: $accent-color;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        opacity: 1;
+      }
+    }
+  }
 }

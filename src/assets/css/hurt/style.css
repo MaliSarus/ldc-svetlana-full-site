@@ -1117,6 +1117,30 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
   font-weight: 600;
 }
 
+.text_price {
+  color: #0A1831;
+}
+
+.text_price_del {
+  color: #858C98;
+  position: relative;
+}
+
+.text_price_del::before {
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  content: '';
+  display: block !important;
+  background-color: #E84E2C;
+  left: 0;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  opacity: 1;
+}
+
 .popup {
   position: fixed;
   left: 0;
@@ -2299,6 +2323,7 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
 
 @media screen and (min-width: 961px) {
   .about-emergency-room__block {
+    background: none;
     width: 50%;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
