@@ -1151,10 +1151,10 @@ $(document).ready(function () {
         });
         $('.staff__search-form').on('submit', function (event) {
             event.preventDefault();
-            $('.staff__content .staff__find .words').text(staffSearch.val());
+            $('.staff__content_tab_active .staff__find .words').text(staffSearch.val());
             staffSearch.val('');
-            $('.staff__content .staff__ordinary').fadeOut(400, function () {
-                $('.staff__content .staff__find').fadeIn();
+            $('.staff__content_tab_active .staff__ordinary').fadeOut(400, function () {
+                $('.staff__content_tab_active .staff__find').fadeIn();
             });
             staffDropdown.removeAttr('style');
         });
@@ -1179,8 +1179,8 @@ $(document).ready(function () {
         });
 
         $('.staff__find-head').on('click', '.back', function () {
-            $('.staff__content .staff__find').fadeOut(400, function () {
-                $('.staff__content .staff__ordinary').fadeIn();
+            $('.staff__content_tab_active .staff__find').fadeOut(400, function () {
+                $('.staff__content_tab_active .staff__ordinary').fadeIn();
             });
         })
     };
