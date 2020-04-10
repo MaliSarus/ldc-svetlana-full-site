@@ -422,7 +422,7 @@
       color: rgba(255, 255, 255, 0.5);
       font-size: 14px;
       position: absolute;
-      top: 50%;
+      top: calc(50% - 1px);
       transform: translateY(-50%);
       left: 38px;
       background: none;
