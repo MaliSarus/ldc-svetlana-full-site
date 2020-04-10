@@ -39,6 +39,11 @@ const aboutSliderInit = () => {
 const specSliderInit = () => {
     const specSlick = $('.specialists__slider');
     const specSlickInStaff = $('.staff__content .staff__ordinary .specialists__slider');
+    const hoverLinkHandler = function () {
+        const url = $('.doctor__full-info a').attr('href');
+        $(location).attr('href',url);
+    };
+
     if (isSet($('.staff'))) {
         specSlickInStaff.slick({
             mobileFirst: true,
@@ -48,6 +53,12 @@ const specSliderInit = () => {
             arrows: false,
             dots: false,
             variableWidth: false,
+            swipe: function(){
+                $('.doctor__full-info').off('click', hoverLinkHandler)
+            },
+            afterChange: function(){
+                $('.doctor__full-info').on('click', hoverLinkHandler)
+            },
             responsive: [
                 {
                     breakpoint: 326,
@@ -67,7 +78,13 @@ const specSliderInit = () => {
                     settings: "unslick"
                 },
             ]
-        })
+        });
+        specSlickInStaff.on('swipe',function(){
+            $('.doctor__full-info').off('click', hoverLinkHandler)
+        });
+        specSlickInStaff.on('afterChange',function(){
+            $('.doctor__full-info').on('click', hoverLinkHandler)
+        });
     } else {
         specSlick.slick({
             slidesToShow: 4,
@@ -76,6 +93,12 @@ const specSliderInit = () => {
             arrows: false,
             dots: false,
             variableWidth: true,
+            swipe: function(){
+                $('.doctor__full-info').off('click', hoverLinkHandler)
+            },
+            afterChange: function(){
+                $('.doctor__full-info').on('click', hoverLinkHandler)
+            },
             responsive: [
                 {
                     breakpoint: 325,
@@ -110,11 +133,13 @@ const specSliderInit = () => {
         $('.specialists__control-panel .arrows .arrows__arrow-right').on('click', function () {
             specSlick.slick('slickNext');
         });
+        specSlick.on('swipe',function(){
+            $('.doctor__full-info').off('click', hoverLinkHandler)
+        });
+        specSlick.on('afterChange',function(){
+            $('.doctor__full-info').on('click', hoverLinkHandler)
+        });
     }
-    $('.doctor__full-info').on('click', function () {
-        const url = $('.doctor__full-info a').attr('href');
-        $(location).attr('href',url);
-    })
 };
 
 const feedSliderInit = () => {
