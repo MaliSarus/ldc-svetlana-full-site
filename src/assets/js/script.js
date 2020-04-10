@@ -112,7 +112,8 @@ const specSliderInit = () => {
         });
     }
     $('.doctor__full-info').on('click', function () {
-        $(location).attr('href','doctor.php');
+        const url = $('.doctor__full-info a').attr('href');
+        $(location).attr('href',url);
     })
 };
 

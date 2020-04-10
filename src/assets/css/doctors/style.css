@@ -2457,7 +2457,7 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
   color: rgba(255, 255, 255, 0.5);
   font-size: 14px;
   position: absolute;
-  top: 50%;
+  top: calc(50% - 1px);
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
@@ -3143,7 +3143,7 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
   color: #2A4472;
   font-size: 14px;
   position: absolute;
-  top: calc(50% - 1px);
+  top: 50%;
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
