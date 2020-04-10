@@ -79,6 +79,11 @@
     }
     &_price{
       margin-right: 20px;
+      color:$main-color;
     }
   }
+}
+
+.text_price_del{
+  color: rgba($main-color,.8) !important;
 }

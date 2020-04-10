@@ -40,16 +40,17 @@ require "./modules/dropdown-menu.php";
 <!-------------------------------------------------------------------------------------------------------------------->
 <link rel="stylesheet" href="./assets/css/<?php echo basename(__FILE__, '.php');?>/style.css?ver=<?php echo  date("His")?>">
 
-<section class="about-block about-block_with-features" style=" background-image:url(./assets/img/about-unit/bg-image.png)">
-<?php
-require "./modules/about-block.php";
-?>
+<section class="about-block" style=" background-image:url(./assets/img/about-unit/bg-image.png)">
+    <?php
+    require "./modules/about-block.php";
+    ?>
 </section>
 <?php
-require "./modules/appointment.php";
-require "./modules/infoblock.php";
-require "./modules/checkup-features.php";
+require "./modules/history.php";
 require "./modules/specialists.php";
+require "./modules/diplomas.php";
+require "./modules/social-media.php";
+require "./modules/tools.php";
 require "./modules/feedback.php";
 ?>
 
@@ -60,6 +61,7 @@ require "./modules/feedback.php";
 require "./modules/footer.php";
 ?>
 <!-------------------------------------------------------------------------------------------------------------------->
+
 
 
 

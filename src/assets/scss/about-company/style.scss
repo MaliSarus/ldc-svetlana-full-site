@@ -8,15 +8,19 @@
 @import "../dropdown-menu";
 @import "../about-block";
 @import "../about-unit";
-@import "../checkup";
-@import "../checkup-features";
 @import "../appointment";
 @import "../infoblock";
+@import "../history";
 @import "../specialists";
+@import "../diplomas";
+@import "../social-media";
+@import "../tools";
 @import "../feedback";
 @import "../footer";
 
 @import "../animations";
+
+
 
 .breadcrumbs{
   display: none;
@@ -44,6 +48,23 @@
       margin-bottom: -60px;
     }
   }
+}
+
+.diplomas{
+  &__block{
+    @media screen and (min-width: 961px){
+      padding-top: 90px;
+    }
+  }
+}
+
+.tools{
+  @media screen and (min-width: 961px){
+    background: white url("../../img/tools/bg-top-right.svg") top right no-repeat;
+    background-size: auto 100%;
+    margin-top: 0px;
+  }
+
 }
 .feedback {
   @media screen and (min-width: 961px) {

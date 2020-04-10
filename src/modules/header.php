@@ -15,7 +15,7 @@
 
                 <div class="header__main-menu">
                     <ul>
-                        <li><a href="#">О центре</a></li>
+                        <li><a href="about-company.php">О центре</a></li>
                         <li><a href="#">Кураторы направлений</a></li>
                         <li><a href="#">Контакты</a></li>
                     </ul>
@@ -71,7 +71,7 @@
                     </ul>
                     <div class="header__primary-menu-title">Информация</div>
                     <ul>
-                        <li><a href="#">О центре</a></li>
+                        <li><a href="about-company.php">О центре</a></li>
                         <li><a href="unit.php">Для пациентов</a></li>
                         <li><a href="#">Контакты</a></li>
                     </ul>

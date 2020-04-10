@@ -1,4 +1,4 @@
-.about-checkup{
+.about-block{
   position: relative;
   overflow: hidden;
   margin-bottom: 30px;
@@ -37,6 +37,11 @@
   }
   @media screen and (min-width: 1980px){
     background-size: 60% auto;
+  }
+  &_with-features{
+    .about-block__features{
+      display: flex;
+    }
   }
   .bg-bottom-right, .bg-top-right{
     position: absolute;
@@ -136,7 +141,7 @@
     background: white;
     box-sizing: border-box;
     padding: 13px 15px;
-    display: flex;
+    display: none;
     justify-content: space-between;
     flex-wrap: wrap;
     @media screen and (min-width: 961px){

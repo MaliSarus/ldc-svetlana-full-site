@@ -48,14 +48,16 @@
               margin-right: 20px;
             }
           }
-          &_text{
+
+          &_text {
             margin-bottom: 18px;
-            @media screen and (min-width: 961px){
+            @media screen and (min-width: 961px) {
               margin-bottom: 0;
             }
           }
 
           &_image {
+            display: block;
             position: relative;
             overflow: hidden;
             box-sizing: border-box;
@@ -67,14 +69,15 @@
               flex-basis: 50%;
               max-height: none;
             }
-            img{
+
+            img {
               position: absolute;
               left: 0;
               top: 50%;
               transform: translateY(-50%);
               width: 100%;
               max-width: 100%;
-              @media screen and (min-width: 961px){
+              @media screen and (min-width: 961px) {
                 top: 0;
                 left: 50%;
                 transform: translateX(-50%) translateY(0);
@@ -89,11 +92,55 @@
       }
     }
 
+    &_image-left {
+      .infoblock {
+        &__item {
+          &_image {
+            order: -1;
+            @media screen and (min-width: 961px){
+              margin-right: 20px;
+            }
+          }
+
+          &_content {
+            margin-right: 0;
+          }
+        }
+      }
+    }
+
+    &_image-mobile_first {
+      .infoblock {
+        &__item {
+          &_content {
+            .infoblock__item_image{
+              display: block;
+              margin-bottom: 18px;
+              @media screen and (min-width: 961px){
+                display: none;
+                margin-bottom: 0;
+              }
+            }
+          }
+          &_image{
+            display: none;
+            @media screen and (min-width: 961px){
+              display: block;
+            }
+          }
+        }
+      }
+    }
+
     &_text {
       margin: 0;
       line-height: 150%;
       color: rgba($main-color-dark, .8);
       flex-grow: 1;
+    }
+
+    &_image {
+      display: none;
     }
   }
 }

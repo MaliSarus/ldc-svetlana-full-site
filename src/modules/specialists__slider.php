@@ -1,7 +1,7 @@
 <div class="specialists__slider ">
     <div class="specialists__doctor">
         <article class="doctor__info">
-            <div class="doctor__image" style="background-image: url(./assets/img/specialists/doctor.png)" >
+            <div class="doctor__image" style="background-image: url(./assets/img/specialists/default.jpg)" >
             </div>
             <h4 class="doctor__name">
                 Вишневский <br>
@@ -34,7 +34,7 @@
     </div>
     <div class="specialists__doctor">
         <article class="doctor__info">
-            <div class="doctor__image" style="background-image: url(./assets/img/specialists/doctor.png)" >
+            <div class="doctor__image" style="background-image: url(./assets/img/specialists/default.jpg)" >
             </div>
             <h4 class="doctor__name">
                 Вишневский <br>
@@ -67,7 +67,7 @@
     </div>
     <div class="specialists__doctor">
         <article class="doctor__info">
-            <div class="doctor__image" style="background-image: url(./assets/img/specialists/doctor.png)">
+            <div class="doctor__image" style="background-image: url(./assets/img/specialists/default.jpg)">
             </div>
             <h4 class="doctor__name">
                 Вишневский <br>
@@ -102,7 +102,7 @@
     </div>
     <div class="specialists__doctor">
         <article class="doctor__info">
-            <div class="doctor__image" style="background-image: url(./assets/img/specialists/doctor.png)">
+            <div class="doctor__image" style="background-image: url(./assets/img/specialists/default.jpg)">
             </div>
             <h4 class="doctor__name">
                 Вишневский <br>
@@ -135,7 +135,7 @@
     </div>
     <div class="specialists__doctor">
         <article class="doctor__info">
-            <div class="doctor__image" style="background-image: url(./assets/img/specialists/doctor.png)">
+            <div class="doctor__image" style="background-image: url(./assets/img/specialists/default.jpg)">
             </div>
             <h4 class="doctor__name">
                 Вишневский <br>

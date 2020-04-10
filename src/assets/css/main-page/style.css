@@ -1128,7 +1128,7 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
 .text_price_del::before {
   position: absolute;
   width: 100%;
-  height: 2px;
+  height: 1px;
   content: '';
   display: block !important;
   background-color: #E84E2C;
