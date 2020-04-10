@@ -1,6 +1,5 @@
 <div class="infoblock__item_content">
-    <h2 class="infoblock__item_title title">Заголовок блока с изображением</h2>
-    <div class="infoblock__item_image" ><img src="./assets/img/tools/1.jpg" alt="Картинка"></div>
+    <h2 class="infoblock__item_title title">Заголовок блока</h2>
     <p class="infoblock__item_text">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam beatae, blanditiis deleniti
         dicta error hic, id ipsa ipsam itaque non quisquam quod voluptatibus. Aut consequatur deserunt
@@ -13,4 +12,6 @@
         quaerat quisquam quos repellat repudiandae, tempora unde vel.
     </p>
 </div>
-<div class="infoblock__item_image" ><img src="./assets/img/tools/1.jpg" alt="Картинка"></div>
+<div class="infoblock__item_content">
+    <img src="./assets/img/tools/1.jpg" alt="Картинка">
+</div>
