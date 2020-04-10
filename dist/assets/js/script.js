@@ -127,7 +127,8 @@ const feedSliderInit = () => {
                 settings: {
                     slidesToShow: 1,
                     slidesToScroll: 1,
-                    infinite: false
+                    infinite: false,
+                    // adaptiveHeight: true
                 },
             },
             {
@@ -146,24 +147,27 @@ const feedSliderInit = () => {
     $('.feedback__control-panel .arrows .arrows__arrow-right').on('click', function () {
         feedSlick.slick('slickNext');
     });
+    feedSlick.on('beforeChange', function(event, slick, currentSlide, nextSlide){
+        console.log('change');
+    });
 };
 
 const featuresSliderInit = () => {
-        $('.features__slider').slick({
-            slidesToScroll: 1,
-            mobileFirst: true,
-            dots: false,
-            arrows: false,
-            infinite: false,
-            variableWidth: true,
-            adaptiveHeight: true,
-            responsive: [
-                {
-                    breakpoint: 577,
-                    settings: 'unslick'
-                }
-            ]
-        });
+    $('.features__slider').slick({
+        slidesToScroll: 1,
+        mobileFirst: true,
+        dots: false,
+        arrows: false,
+        infinite: false,
+        variableWidth: true,
+        adaptiveHeight: true,
+        responsive: [
+            {
+                breakpoint: 577,
+                settings: 'unslick'
+            }
+        ]
+    });
 };
 const unitsMenuSliderInit = () => {
     if (isSet($('.units__menu > ul'))) {
@@ -308,6 +312,46 @@ const specDetailsSliderInit = () => {
         specDetailsSlick.slick('slickNext');
     });
 };
+
+const checkupFeaturesSliderInit = () => {
+    $('.checkup-features__slider').slick({
+        slidesToScroll: 1,
+        mobileFirst: true,
+        dots: false,
+        arrows: false,
+        infinite: false,
+        variableWidth: true,
+        adaptiveHeight: true,
+        responsive: [
+            {
+                breakpoint: 577,
+                settings: 'unslick'
+            }
+        ]
+    });
+};
+
+const toolsDetailsSliderInit = () => {
+    const toolsDetailsSlick = $('.tools-details__slider');
+    toolsDetailsSlick.slick({
+        slidesToShow: 1,
+        dots: false,
+        arrows: false,
+        infinite: false,
+        variableWidth: false,
+    });
+    $('.tools-details__position').html('<span class="tools-details__position_current">' + toolsDetailsSlick.slick('slickGetOption', 'slidesToShow') + '</span>/' + $('.tools-details__slider_item').length);
+    toolsDetailsSlick.on('afterChange', function (event, slick, currentSlide) {
+        $('.tools-details__position_current').html(toolsDetailsSlick.slick('slickCurrentSlide') + toolsDetailsSlick.slick('slickGetOption', 'slidesToScroll'));
+    });
+    $('.tools-details__head .arrows .arrows__arrow-left').on('click', function () {
+        toolsDetailsSlick.slick('slickPrev');
+    });
+    $('.tools-details__head .arrows .arrows__arrow-right').on('click', function () {
+        toolsDetailsSlick.slick('slickNext');
+    });
+};
+
 const unitsMenuSliderChangeTab = () => {
     $('.units__menu > ul').on('afterChange', function (event, slick, currentSlide) {
         const index = $('.units__menu > ul').slick('slickCurrentSlide');
@@ -342,6 +386,7 @@ const windowDesktopSizeChange = () => {
         $(this).children().prependTo($(this));
     });
     $('.specialists-details__head .title').html('Специалисты &lt;неврологи&gt;');
+    $('.tools-details__head .title').html('&lt;Используемое&gt; оборудование');
 
 };
 const windowMobileSizeChange = () => {
@@ -369,6 +414,7 @@ const windowMobileSizeChange = () => {
     if (isSet($('.staff'))) {
         specSliderInit();
     }
+    $('.tools-details__head .title').html('Оборудование');
 };
 
 const DropdownOpenButtonHandler = () => {
@@ -398,7 +444,9 @@ const mobileDropdownOpenButtonHandler = () => {
         $('.dropdown-menu__content').css({display: 'none'});
         if (prependFlag == 0) {
             $('.dropdown-menu').prepend('<h2 class="title">Услуги</h2>');
-            $('.dropdown-menu').prepend('<img class="arrow-back" width="20px" height="15px" src="' + st_tmpl_patch +'./assets/img/dropdown-menu/arrow-back.svg">');
+            /*---ВСТАВКА---*/
+            $('.dropdown-menu').prepend('<img class="arrow-back" width="20px" height="15px" src="' + st_tmpl_patch + '/assets/img/dropdown-menu/arrow-back.svg">');
+            /*---ВСТАВКА---*/
             prependFlag = 1;
         }
         dropdownMenuContainer.fadeIn(400).addClass('dropdown-menu__container_active');
@@ -418,6 +466,7 @@ const onReadyMobileMediaChange = () => {
     $($('.staff__tabs_item')[0]).html('Врачи');
     $('.staff__head .title').html('Врачи ЛДЦ');
     $('.specialists-details__head .title').html('Специалисты');
+    $('.tools-details__head .title').html('Оборудование');
 };
 
 const closeServicesDropdownFromTapMenu = () => {
@@ -527,9 +576,17 @@ $(window).on('resize', function () {
             $('.features__slider').filter('.slick-initialized').slick("unslick");
             $('.features__slider').children().removeAttr('tabindex');
         }
+        if (isSet($('.checkup-features'))){
+            $('.features__slider').filter('.slick-initialized').slick("unslick");
+            $('.features__slider').children().removeAttr('tabindex');
+        }
     } else if (!$('.features__slider').hasClass('slick-initialized')) {
         if (isSet($('.features__slider'))) {
             featuresSliderInit();
+            $('.features__slider').slick('setPosition');
+        }
+        if (isSet($('.checkup-features'))){
+            checkupFeaturesSliderInit();
             $('.features__slider').slick('setPosition');
         }
     }
@@ -621,8 +678,15 @@ $(window).on('resize', function () {
                 content: document.querySelector('.cost__wrapper'),
                 scrollMode: "transform", // use CSS 'transform' property
                 direction: "horizontal", // allow only horizontal scrollin
+                pointerMode: 'all',
+                pointerDownPreventDefault: false
             });
         }
+    }
+    if ($(window).width() <= ($('.direction-services__tabs').width() + 30) && !($('.direction-services__tabs').hasClass('slick-initialized'))) {
+        dirServSliderInit();
+    } else if ($(window).width() > ($('.direction-services__tabs').width() + 30) && $('.direction-services__tabs').hasClass('slick-initialized')) {
+        $('.direction-services__tabs').slick('unslick');
     }
 
 });
@@ -644,7 +708,7 @@ window.onload = function () {
     }
 
     //Основной слайдер (анимации и тд)
-    if (isSet($('.about__slider'))) {
+    if (isSet($('.about__slider')) && isSet($('.select-buttons__button'))) {
         const aboutSliderCurrentSlide = $('.about__item').index($('.about__item_active'));
         const sliderButtons = $('.select-buttons__button');
         sliderButtons[aboutSliderCurrentSlide].classList.add('select-buttons__button_active');
@@ -698,7 +762,7 @@ window.onload = function () {
 
 
     //Действия со слайдерами в момент загрузки экрана маленького размера или большого размера
-    if(isSet($('.features'))){
+    if (isSet($('.features'))) {
         if ($(window).width() < 577) {
             featuresSliderInit();
         }
@@ -829,6 +893,23 @@ window.onload = function () {
                     backgroundSize: 'cover'
                 })
             });
+        });
+        let hoverFlag = 0;
+        $('.tools__slider_item').on('mouseenter', function (event) {
+            if (hoverFlag == 0) {
+                $(this).find('.tools__slider_title').fadeOut(250, function () {
+                    $(this).parent().find('.tools__slider_title_hover').fadeIn(250);
+                    hoverFlag = 1;
+                });
+            }
+        });
+        $('.tools__slider_item').on('mouseleave', function (event) {
+            if (hoverFlag == 1) {
+                $(this).find('.tools__slider_title_hover').fadeOut(250, function () {
+                    $(this).parent().find('.tools__slider_title').fadeIn(250);
+                    hoverFlag = 0;
+                });
+            }
         })
     }
     if (isSet($('.direction-services'))) {
@@ -850,6 +931,12 @@ window.onload = function () {
 
     if (isSet($('.specialists-details'))) {
         specDetailsSliderInit();
+        $('.specialists-details__slider_item .doctor-card__doctor a').text('Подробнее о враче')
+    }
+
+    if (isSet($('.tools-details'))) {
+        toolsDetailsSliderInit();
+
     }
 };
 
@@ -945,13 +1032,53 @@ $(document).ready(function () {
             }
             if (appointmentConfident.prop('checked') && Inputmask.isValid(appointmentPhoneInput.val(), "+7-(999)-999-9999") && appointmentNameInput.val() !== '') {
                 event.preventDefault();
-                popUp.show();
-                popUp.css({
-                    display: 'flex'
+                /*---ВСТАВКА06042020---*/
+                var appointmentNameOfServiceInput = '';
+                var appointmentIdOfServiceInput = '';
+                if ($('.appointment input[name="name-of-service"]').val() != '') {
+                    appointmentNameOfServiceInput = $('.appointment input[name="name-of-service"]');
+                    appointmentIdOfServiceInput = $('.appointment input[name="id-of-service"]');
+                }else{
+                    appointmentNameOfServiceInput = $('.appointment_popup input[name="name-of-service"]');
+                    appointmentIdOfServiceInput = $('.appointment_popup input[name="id-of-service"]');
+                }
+                $.ajax({
+                    type: 'POST',
+                    cache       : false,
+                    dataType    : 'html',
+                    url: '/local/mailsnd/mailsnd.php', // Обработчик собственно
+                    data: {
+                        name: appointmentNameInput.val(),
+                        tel: appointmentPhoneInput.val(),
+                        namefservice: appointmentNameOfServiceInput.val(),
+                        idofservice: appointmentIdOfServiceInput.val(),
+                        appointment: appointmentConfident.val()
+                    },
+                    success: function(data) {
+                        // запустится при успешном выполнении запроса и в data будет ответ скрипта
+                        if($('.appointment_popup').hasClass('appointment_popup_active')){
+                            $('.appointment_popup').removeClass('appointment_popup_active');
+                        }
+                        popUp.show();
+                        popUp.css({
+                            display: 'flex'
+                        });
+                        $('body').css({
+                            overflow: 'hidden'
+                        });
+                    },
+                    error:  function(){
+                        alert('Ошибка!');
+                    }
                 });
-                $('body').css({
-                    overflow: 'hidden'
-                })
+                /*---/ВСТАВКА06042020---*/
+                // popUp.show();
+                // popUp.css({
+                //     display: 'flex'
+                // });
+                // $('body').css({
+                //     overflow: 'hidden'
+                // })
             }
         });
 
@@ -1083,44 +1210,30 @@ $(document).ready(function () {
         const staffDropdown = $('.staff__search-dropdown');
         const staffDropdownLink = $('.staff__search-dropdown_link');
         staffSearch.on('input', function () {
-            staffDropdown.css({
-                display: 'block',
-                width: $('.staff__search-form-wrapper').width()
-            });
-            $('.staff__content .staff__ordinary').animate({
-                opacity: 0
-            }, 400);
             staffSearch.val(staffSearch.val().replace(/[^А-Яа-я]/, ''));
+            if(staffSearch.val() != '') {
+                staffDropdown.css({
+                    display: 'block',
+                    width: $('.staff__search-form-wrapper').width()
+                });
+            }
+            if(staffSearch.val() == '' && staffDropdown.attr('style') != ''){
+                staffDropdown.removeAttr('style');
+            }
         });
         $('.staff__search-form').on('submit', function (event) {
             event.preventDefault();
-            $('.staff__content .staff__ordinary').fadeOut();
-            $('.staff__content .staff__find .words').text(staffSearch.val());
+            $('.staff__content_tab_active .staff__find .words').text(staffSearch.val());
             staffSearch.val('');
-            $('.staff__content .staff__find').fadeIn();
+            $('.staff__content_tab_active .staff__ordinary').fadeOut(400, function () {
+                $('.staff__content_tab_active .staff__find').fadeIn();
+            });
             staffDropdown.removeAttr('style');
         });
-        // staffSearch.on('blur', function () {
-        //     staffDropdown.removeAttr('style');
-        //     if($('.staff__find').attr('style') != 'display: block;') {
-        //         $('.staff__content .staff__ordinary').animate({
-        //             opacity: 1
-        //         }, 400, function () {
-        //             $('.staff__content .staff__ordinary').attr('style', '').removeAttr('style');
-        //         })
-        //     }
-        // });
 
         $(document).on('click', function (event) {
             if (!$('.staff__search-form').is(event.target) && $('.staff__search-form').has(event.target).length === 0 && !$('.staff__search-dropdown').is(event.target) && $('.staff__search-dropdown').has(event.target).length === 0) { // и не по его дочерним элементам
                 staffDropdown.removeAttr('style');
-                if ($('.staff__find').attr('style') != 'display: block;') {
-                    $('.staff__content .staff__ordinary').animate({
-                        opacity: 1
-                    }, 400, function () {
-                        $('.staff__content .staff__ordinary').attr('style', '').removeAttr('style');
-                    })
-                }
             }
         });
 
@@ -1131,16 +1244,11 @@ $(document).ready(function () {
         });
 
         $('.staff__find-head').on('click', '.back', function () {
-            $('.staff__content .staff__find').fadeOut(400, function () {
-                $(this).removeAttr('style');
-                $('.staff__content .staff__ordinary').fadeIn().animate({
-                    opacity: 1
-                }, 400, function () {
-                    $('.staff__content .staff__ordinary').attr('style', '').removeAttr('style');
-                });
+            $('.staff__content_tab_active .staff__find').fadeOut(400, function () {
+                $('.staff__content_tab_active .staff__ordinary').fadeIn();
             });
         })
-    }
+    };
 
 
     //Вкладки на выпадающем меню хэдера
@@ -1213,7 +1321,9 @@ $(document).ready(function () {
 
             if (prependFlag == 0) {
                 $('.dropdown-menu').prepend('<h2 class="title">Услуги</h2>');
-                $('.dropdown-menu').prepend('<img class="arrow-back" width="20px" height="15px" src="' + st_tmpl_patch +'./assets/img/dropdown-menu/arrow-back.svg">');
+                /*---ВСТАВКА---*/
+                $('.dropdown-menu').prepend('<img class="arrow-back" width="20px" height="15px" src="' + st_tmpl_patch + '/assets/img/dropdown-menu/arrow-back.svg">');
+                /*---ВСТАВКА---*/
                 prependFlag = 1;
             }
         } else {
@@ -1288,18 +1398,11 @@ $(document).ready(function () {
         appendFlag = 0;
     } else {
         selectButtons.appendTo('.about__slider');
-        // $('body').off('click');
         $('.price__pricing').each(function () {
             // $(this).children().prependTo($(this));
         });
         appendFlag = 1;
     }
-
-    // $(".btn_red_fill").click(function () {
-    //     $('body, html').animate({
-    //         scrollTop: $(".appointment__block").offset().top - 54
-    //     }, 1);
-    // });
 
     if (isSet($('.price'))) {
         if ($(window).width() < 677) {
@@ -1386,13 +1489,7 @@ $(document).ready(function () {
                 scrollMode: "transform", // use CSS 'transform' property
                 direction: "horizontal", // allow only horizontal scrollin
                 pointerMode: 'all',
-                pointerDownPreventDefault: false,
-                onClick: (state, event) => {
-                    if ($('.form-call-button').is(event.target)) {
-
-                    }
-
-                }
+                pointerDownPreventDefault: false
             });
         }
         $('.cost__list_item').on('click', function (event) {
@@ -1405,15 +1502,16 @@ $(document).ready(function () {
         });
     }
 
+    if(isSet($('.checkup-features'))){
+        checkupFeaturesSliderInit();
+    }
 });
 
 
 const hamburger = $('.hamburger');
 hamburger.on("click", function () {
-    console.log(window.pageYOffset !== undefined);
     if (!hamburger.hasClass('is-active')) {
         posTop = (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;
-        console.log(posTop);
         window.scrollTo(0, 0);
     }
     hamburger.toggleClass("is-active");
@@ -1431,7 +1529,6 @@ hamburger.on("click", function () {
     }
     if (!hamburger.hasClass('is-active')) {
         window.scrollTo(0, posTop);
-        console.log('to ', posTop);
     }
 });
 
@@ -1469,6 +1566,87 @@ $(document).scroll(function () {
         }
     }
 });
+
+if (isSet($('#map'))) {
+    ymaps.ready(function () {
+        var myMap = new ymaps.Map('map', {
+            center: [60.005324, 30.328022],
+            zoom: 17,
+            controls: ['zoomControl']
+        }, {
+            searchControlProvider: 'yandex#search'
+        });
+        var secondButton = new ymaps.control.Button({
+            data: {
+                // Зададим текст и иконку для кнопки.
+                title: 'Button Text',
+                // Иконка имеет размер 16х16 пикселей.
+                image: 'assets/img/about-emergency-room/route-icon.svg'
+            },
+            options: {
+                // Поскольку кнопка будет менять вид в зависимости от размера карты,
+                // зададим ей три разных значения maxWidth в массиве.
+                layout: 'round#buttonLayout',
+                maxWidth: 42
+            }
+        });
+        secondButton.events.add('click', function (event) {
+            if (myMap.controls.indexOf('routePanelControl') <= 0) {
+                myMap.controls.add('routePanelControl');
+                var control = myMap.controls.get('routePanelControl');
+
+                // Зададим состояние панели для построения машрутов.
+                control.routePanel.state.set({
+                    // Тип маршрутизации.
+                    type: 'masstransit',
+                    // Выключим возможность задавать пункт отправления в поле ввода.
+                    fromEnabled: true,
+                    // Адрес или координаты пункта отправления.
+                    // from: 'Москва, Льва Толстого 16',
+                    // Включим возможность задавать пункт назначения в поле ввода.
+                    toEnabled: false,
+                    // Адрес или координаты пункта назначения.
+                    to: 'Россия, Санкт-Петербург, проспект Энгельса, 27Т'
+                });
+
+                // Зададим опции панели для построения машрутов.
+                control.routePanel.options.set({
+                    // Запрещаем показ кнопки, позволяющей менять местами начальную и конечную точки маршрута.
+                    allowSwitch: false,
+                    // Включим определение адреса по координатам клика.
+                    // Адрес будет автоматически подставляться в поле ввода на панели, а также в подпись метки маршрута.
+                    reverseGeocoding: true,
+                    // Зададим виды маршрутизации, которые будут доступны пользователям для выбора.
+                    types: {masstransit: true, pedestrian: true, taxi: true}
+                });
+            } else {
+                myMap.controls.remove('routePanelControl')
+            }
+        });
+        myMap.controls.add(secondButton, {position: {bottom: '26px', right: '15px'}});
+        myMap.behaviors.disable('scrollZoom');
+        // Создаём макет содержимого.
+        MyIconContentLayout = ymaps.templateLayoutFactory.createClass('<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'),
+            myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
+                hintContent: 'ЛДЦ Завода "Светлана"',
+                balloonContent: 'ЛДЦ Завода "Светлана"</br>Россия, Санкт-Петербург, проспект Энгельса, 27Т</br>+7 (812) 627-02-03'
+            }, {
+                // Опции.
+                // Необходимо указать данный тип макета.
+                iconLayout: 'default#image',
+                // Своё изображение иконки метки.
+                iconImageHref: 'favicon/android-chrome-192x192.png',
+                // Размеры метки.
+                iconImageSize: [64, 64],
+                // Смещение левого верхнего угла иконки относительно
+                // её "ножки" (точки привязки).
+                iconImageOffset: [-30, -10]
+            });
+        myMap.geoObjects
+            .add(myPlacemark);
+
+    });
+}
 
 
 

@@ -3285,26 +3285,38 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
   margin-right: 20px;
   color: #2A4472;
   line-height: 120%;
-  padding-bottom: 6px;
+  padding: 9px 25px 7px 9px;
   margin-bottom: 12px;
   cursor: pointer;
 }
 
 @media screen and (min-width: 1025px) {
   .staff__filters_item {
-    margin-right: 40px;
+    position: relative;
+    border: none;
+    margin-right: 15px;
     line-height: unset;
-    padding-bottom: 0;
     font-size: 16px;
   }
   .staff__filters_item:last-child {
     margin-right: 0;
+  }
+  .staff__filters_item::after {
+    position: absolute;
+    display: block;
+    content: '';
+    width: calc(100% - 9px - 25px);
+    height: calc(100% - 7px);
+    left: 9px;
+    top: 0;
+    border-bottom: 1px dashed #2A4472;
   }
 }
 
 @media screen and (min-width: 1180px) {
   .staff__filters_item {
     margin-bottom: 0;
+    margin-top: -7px;
   }
 }
 

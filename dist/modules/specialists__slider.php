@@ -13,7 +13,7 @@
                 <li>Доктор медицинских наук</li>
                 <li>Профессор</li>
             </ul>
-            <article class="doctor__full-info">
+            <article class="doctor__full-info" >
                 <h4 class="doctor__name">
                     Вишневский <br>
                     <span>Аркадий Анатольевич</span>

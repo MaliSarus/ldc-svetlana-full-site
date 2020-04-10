@@ -309,20 +309,32 @@
       margin-right: 20px;
       color: $main-color;
       line-height: 120%;
-      padding-bottom: 6px;
+      padding: 9px 25px 7px 9px;
       margin-bottom: 12px;
       cursor: pointer;
       @media screen and (min-width: 1025px) {
-        margin-right: 40px;
+        position: relative;
+        border: none;
+        margin-right: 15px;
         line-height: unset;
-        padding-bottom: 0;
         font-size: 16px;
         &:last-child {
           margin-right: 0;
         }
+        &::after{
+          position: absolute;
+          display: block;
+          content: '';
+          width: calc(100% - 9px - 25px);
+          height: calc(100% - 7px);
+          left: 9px;
+          top: 0;
+          border-bottom: 1px dashed $main-color;
+        }
       }
       @media screen and (min-width: 1180px) {
         margin-bottom: 0;
+        margin-top: -7px;
       }
 
       &_active {

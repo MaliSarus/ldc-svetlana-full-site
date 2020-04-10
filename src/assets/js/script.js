@@ -111,6 +111,9 @@ const specSliderInit = () => {
             specSlick.slick('slickNext');
         });
     }
+    $('.doctor__full-info').on('click', function () {
+        $(location).attr('href','doctor.php');
+    })
 };
 
 const feedSliderInit = () => {
