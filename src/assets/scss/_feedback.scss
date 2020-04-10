@@ -260,7 +260,7 @@
     &-about {
       padding-top: 12px;
       border-top: 1px solid rgba($main-color, .2);
-      color: rgba(black, .7);
+      color: rgba($main-color-dark, .7);
 
       &-doctor {
         margin-top: 0;
@@ -268,12 +268,34 @@
         @media screen and (max-width: 960px) {
           font-size: 14px;
         }
+        a{
+          color:rgba($main-color-dark, .7);
+          transition: color .25s;
+          outline: none;
+          &:hover{
+            color: $main-color-dark;
+          }
+          &:active{
+            color: $main-color;
+          }
+        }
       }
 
       &-ordinary {
         margin: 0;
         @media screen and (max-width: 960px) {
           font-size: 14px;
+        }
+        a{
+          color:rgba($main-color-dark, .7);
+          transition: color .25s;
+          outline: none;
+          &:hover{
+            color: $main-color-dark;
+          }
+          &:active{
+            color: $main-color;
+          }
         }
       }
     }

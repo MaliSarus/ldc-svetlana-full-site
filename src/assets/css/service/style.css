@@ -4225,7 +4225,7 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
 .feedback__item-about {
   padding-top: 12px;
   border-top: 1px solid rgba(42, 68, 114, 0.2);
-  color: rgba(0, 0, 0, 0.7);
+  color: rgba(10, 24, 49, 0.7);
 }
 
 .feedback__item-about-doctor {
@@ -4239,6 +4239,22 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
   }
 }
 
+.feedback__item-about-doctor a {
+  color: rgba(10, 24, 49, 0.7);
+  -webkit-transition: color .25s;
+  -o-transition: color .25s;
+  transition: color .25s;
+  outline: none;
+}
+
+.feedback__item-about-doctor a:hover {
+  color: #0A1831;
+}
+
+.feedback__item-about-doctor a:active {
+  color: #2A4472;
+}
+
 .feedback__item-about-ordinary {
   margin: 0;
 }
@@ -4247,6 +4263,22 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
   .feedback__item-about-ordinary {
     font-size: 14px;
   }
+}
+
+.feedback__item-about-ordinary a {
+  color: rgba(10, 24, 49, 0.7);
+  -webkit-transition: color .25s;
+  -o-transition: color .25s;
+  transition: color .25s;
+  outline: none;
+}
+
+.feedback__item-about-ordinary a:hover {
+  color: #0A1831;
+}
+
+.feedback__item-about-ordinary a:active {
+  color: #2A4472;
 }
 
 .for-patient {

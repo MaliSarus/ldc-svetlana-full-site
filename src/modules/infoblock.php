@@ -17,7 +17,7 @@
                             quaerat quisquam quos repellat repudiandae, tempora unde vel.
                         </p>
                     </div>
-                    <div class="infoblock__item_image" style="background-image: url(./assets/img/tools/1.jpg)"></div>
+                    <div class="infoblock__item_image" ><img src="./assets/img/tools/1.jpg" alt="Картинка"></div>
                 </div>
                 <div class="infoblock__item">
                     <div class="infoblock__item_content">
