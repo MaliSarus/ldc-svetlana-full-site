@@ -128,7 +128,7 @@ const feedSliderInit = () => {
                     slidesToShow: 1,
                     slidesToScroll: 1,
                     infinite: false,
-                    adaptiveHeight: true
+                    // adaptiveHeight: true
                 },
             },
             {
@@ -146,6 +146,9 @@ const feedSliderInit = () => {
     });
     $('.feedback__control-panel .arrows .arrows__arrow-right').on('click', function () {
         feedSlick.slick('slickNext');
+    });
+    feedSlick.on('beforeChange', function(event, slick, currentSlide, nextSlide){
+        console.log('change');
     });
 };
 

@@ -129,14 +129,13 @@
         font-size: 36px;
       }
     }
+    p{
+      font-size: 16px;
+      line-height: 140%;
+      color: rgba($main-color-dark,.8);
+    }
   }
-  &__text{
-    font-size: 16px;
-    line-height: 140%;
-    color: rgba($main-color-dark,.8);
 
-
-  }
   &__features{
     background: white;
     box-sizing: border-box;
@@ -176,8 +175,7 @@
     }
     &_title{
       font-weight: 600;
-      line-height: 140%;
-      margin-bottom: 18px;
+      margin-bottom: 10px;
       @media screen and (min-width: 961px){
         font-size: 17px;
       }
@@ -187,7 +185,7 @@
       margin: 0;
       padding: 0;
       &-item{
-        margin-bottom: 13px;
+        margin-bottom: 10px;
         &:last-child{
           margin-bottom: 0;
         }

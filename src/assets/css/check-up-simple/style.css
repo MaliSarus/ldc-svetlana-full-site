@@ -60,6 +60,10 @@ body, html {
   background: #F1F1F1;
 }
 
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+}
+
 @media screen and (min-width: 961px) {
   body {
     padding-top: 130px;
@@ -2465,7 +2469,7 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
   }
 }
 
-.about-block__text {
+.about-block__desc p {
   font-size: 16px;
   line-height: 140%;
   color: rgba(10, 24, 49, 0.8);
@@ -2532,8 +2536,7 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
 
 .about-block__features_title {
   font-weight: 600;
-  line-height: 140%;
-  margin-bottom: 18px;
+  margin-bottom: 10px;
 }
 
 @media screen and (min-width: 961px) {
@@ -2549,7 +2552,7 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
 }
 
 .about-block__features_list-item {
-  margin-bottom: 13px;
+  margin-bottom: 10px;
 }
 
 .about-block__features_list-item:last-child {
@@ -3799,12 +3802,12 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
   margin-bottom: 0;
 }
 
-.infoblock__item_title {
+.infoblock__item h2 {
   margin-bottom: 18px;
 }
 
 @media screen and (min-width: 961px) {
-  .infoblock__item_title {
+  .infoblock__item h2 {
     margin-bottom: 36px;
   }
 }
@@ -3825,23 +3828,33 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
   margin-bottom: 18px;
 }
 
-@media screen and (max-width: 961px) {
+@media screen and (min-width: 961px) {
   .infoblock__item_content {
-    margin-bottom: 18px;
+    margin-bottom: 0px;
   }
 }
 
 .infoblock__item_content:last-child {
-  margin-bottom: 18px;
+  margin-bottom: 0;
+}
+
+.infoblock__item_content:nth-child(2) {
+  overflow: hidden;
 }
 
 .infoblock__item_content img {
   width: 100%;
   max-width: 100%;
+  margin-bottom: 18px;
+}
+
+.infoblock__item_content img:last-child {
+  margin-bottom: 0;
 }
 
 @media screen and (min-width: 961px) {
   .infoblock__item_content img {
+    margin-left: 20px;
     height: 100%;
     max-height: 350px;
     max-width: 100%;
@@ -3849,7 +3862,7 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
   }
 }
 
-.infoblock__item_text {
+.infoblock__item p {
   margin: 0;
   line-height: 150%;
   color: rgba(10, 24, 49, 0.8);
@@ -4325,7 +4338,6 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
   background-color: #F6F7F8;
   padding: 12px;
   margin-right: 0;
-  max-width: 670px;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   min-height: 276px;
@@ -4507,6 +4519,7 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
   outline: none;
   overflow: visible;
   max-height: none;
+  height: auto;
 }
 
 .feedback__item-content_unhide::before {

@@ -11,11 +11,10 @@
             </ul>
             <div class="about-block__block">
                 <div class="about-block__desc">
-                    <h1 class="title">Check – up “Женское здоровье. Скрининг”</h1>
-                    <div class="about-block__text">
-                        Это обследование человека с целью раннего выявления факторов риска заболеваний и бессимптомно
-                        протекающих болезней.
-                    </div>
+                    <h1 class="title">Заголовок Блока</h1>
+                    <p>
+                        Некоторый текст, который вы можете разместить здесь, чтобы описать какую то проблему поиска смысла жизни
+                    </p>
                 </div>
                 <div class="about-block__features">
                     <div class="about-block__features_item about-checkup__features_price">

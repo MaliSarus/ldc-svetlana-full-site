@@ -60,6 +60,10 @@ body, html {
   background: #F1F1F1;
 }
 
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+}
+
 @media screen and (min-width: 961px) {
   body {
     padding-top: 130px;
@@ -3139,7 +3143,7 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
   color: #2A4472;
   font-size: 14px;
   position: absolute;
-  top: 50%;
+  top: calc(50% - 1px);
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);

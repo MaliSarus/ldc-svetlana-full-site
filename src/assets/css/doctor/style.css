@@ -60,6 +60,10 @@ body, html {
   background: #F1F1F1;
 }
 
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+}
+
 @media screen and (min-width: 961px) {
   body {
     padding-top: 130px;
@@ -3148,7 +3152,6 @@ button.mfp-arrow {
   background-color: #F6F7F8;
   padding: 12px;
   margin-right: 0;
-  max-width: 670px;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   min-height: 276px;
@@ -3330,6 +3333,7 @@ button.mfp-arrow {
   outline: none;
   overflow: visible;
   max-height: none;
+  height: auto;
 }
 
 .feedback__item-content_unhide::before {

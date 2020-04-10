@@ -219,7 +219,7 @@
       color: $main-color;
       font-size: 14px;
       position: absolute;
-      top: 50%;
+      top: calc(50% - 1px);
       transform: translateY(-50%);
       left: 13px;
       background: none;

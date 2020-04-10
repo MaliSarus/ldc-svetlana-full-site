@@ -112,7 +112,7 @@
     background-color: #F6F7F8;
     padding: 12px;
     margin-right: 0;
-    max-width: 670px;
+    //max-width: 670px;
     box-sizing: border-box;
     min-height: 276px;
     transition: background-color .35s;
@@ -246,6 +246,7 @@
         outline: none;
         overflow: visible;
         max-height: none;
+        height: auto;
 
         &::before {
           display: none;

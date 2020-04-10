@@ -60,6 +60,10 @@ body, html {
   background: #F1F1F1;
 }
 
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+}
+
 @media screen and (min-width: 961px) {
   body {
     padding-top: 130px;
