@@ -51,6 +51,7 @@ require "./modules/specialists.php";
 require "./modules/diplomas.php";
 require "./modules/social-media.php";
 require "./modules/tools.php";
+require "./modules/news.php";
 require "./modules/feedback.php";
 ?>
 

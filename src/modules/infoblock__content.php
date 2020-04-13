@@ -1,5 +1,7 @@
 <div class="infoblock__item_content">
     <h2 class="title">Заголовок блока</h2>
+    <img src="./assets/img/tools/1.jpg" alt="Картинка">
+    <img src="./assets/img/tools/1.jpg" alt="Картинка">
     <p>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam beatae, blanditiis deleniti
         dicta error hic, id ipsa ipsam itaque non quisquam quod voluptatibus. Aut consequatur deserunt
