@@ -44,6 +44,7 @@ const specSliderInit = () => {
         const url = $('.doctor__full-info a').attr('href');
         $(location).attr('href',url);
     };
+    $('.doctor__full-info').on('click', hoverLinkHandler);
 
     if (isSet($('.staff'))) {
         specSlickInStaff.slick({
@@ -134,6 +135,7 @@ const specSliderInit = () => {
         $('.specialists__control-panel .arrows .arrows__arrow-right').on('click', function () {
             specSlick.slick('slickNext');
         });
+
         specSlick.on('swipe',function(){
             $('.doctor__full-info').off('click', hoverLinkHandler)
         });
