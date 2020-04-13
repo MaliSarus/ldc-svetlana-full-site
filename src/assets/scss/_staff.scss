@@ -352,7 +352,7 @@
       &_cancel {
         position: absolute;
         margin-left: 5px;
-        top: 50%;
+        top: calc(50% - 2px);
         transform: translateY(-50%);
       }
     }

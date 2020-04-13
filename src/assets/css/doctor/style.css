@@ -4429,6 +4429,7 @@ button.mfp-arrow {
 
 .specialists__doctor .doctor__desc {
   line-height: 120%;
+  margin-bottom: 24px;
 }
 
 .specialists__slider {
