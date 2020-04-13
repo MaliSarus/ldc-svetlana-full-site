@@ -3335,7 +3335,7 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
 .staff__filters_item_cancel {
   position: absolute;
   margin-left: 5px;
-  top: calc(50% - 2px);
+  top: calc(50% - 1px);
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);

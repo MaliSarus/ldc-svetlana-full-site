@@ -3493,61 +3493,27 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
   }
 }
 
-.history__block {
-  padding: 18px 15px;
-}
-
 @media screen and (min-width: 961px) {
-  .history__block {
-    padding: 0;
-    padding-top: 60px;
-    padding-bottom: 90px;
+  .history .infoblock__item_content {
+    padding-right: 0;
+  }
+  .history .infoblock__item_content:nth-child(2) {
+    padding-right: 0;
+    padding-left: 100px;
   }
 }
 
-.history__block .infoblock__item .infoblock__item_content img {
-  display: block;
+.history .infoblock__item_content_image {
+  -webkit-box-ordinal-group: 2;
+  -ms-flex-order: 1;
+  order: 1;
 }
 
 @media screen and (min-width: 961px) {
-  .history__block .infoblock__item .infoblock__item_content img {
-    display: none;
-  }
-}
-
-.history__block .infoblock__item .infoblock__item_content:nth-child(2n) {
-  display: none;
-}
-
-@media screen and (min-width: 961px) {
-  .history__block .infoblock__item .infoblock__item_content:nth-child(2n) {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-  }
-}
-
-@media screen and (min-width: 961px) {
-  .history__block .infoblock__item .infoblock__item_content:nth-child(2n) img {
-    display: block;
-  }
-}
-
-@media screen and (min-width: 961px) {
-  .history__block .infoblock__item:nth-child(2n) .infoblock__item_content {
-    margin-left: 20px;
-  }
-}
-
-.history__block .infoblock__item:nth-child(2n) .infoblock__item_content:nth-child(2) {
-  -webkit-box-ordinal-group: 0;
-  -ms-flex-order: -1;
-  order: -1;
-}
-
-@media screen and (min-width: 961px) {
-  .history__block .infoblock__item:nth-child(2n) .infoblock__item_content:nth-child(2) img {
-    margin-left: 0;
+  .history .infoblock__item_content_image {
+    -webkit-box-ordinal-group: unset;
+    -ms-flex-order: unset;
+    order: unset;
   }
 }
 
