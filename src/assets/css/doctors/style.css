@@ -3282,7 +3282,7 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
   font-size: 14px;
   color: #2A4472;
   line-height: 120%;
-  padding: 9px 32px 7px 9px;
+  padding: 5px 32px 7px 9px;
   margin-right: 1px;
   margin-bottom: 12px;
   cursor: pointer;
@@ -3292,7 +3292,7 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
   position: absolute;
   display: block;
   content: '';
-  width: calc(100% - 9px - 32px);
+  width: calc(100% - 5px - 32px);
   height: calc(100%);
   left: 9px;
   top: 0;
@@ -3325,7 +3325,11 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
   border-bottom: none;
   color: white;
   background-color: #2A4472;
-  padding: 9px 32px 7px 9px;
+  padding: 5px 32px 7px 9px;
+}
+
+.staff__filters_item_active::after {
+  display: none;
 }
 
 .staff__filters_item_cancel {
@@ -3658,6 +3662,10 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
 .specialists__doctor .doctor__info .doctor__features li::before {
   content: "-";
   margin-right: 5px;
+}
+
+.specialists__doctor .doctor__info:hover {
+  cursor: pointer;
 }
 
 .specialists__doctor .doctor__info:hover .doctor__full-info {

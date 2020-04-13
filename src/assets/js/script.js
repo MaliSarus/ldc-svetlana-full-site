@@ -1218,7 +1218,7 @@ $(document).ready(function () {
         const staffDropdown = $('.staff__search-dropdown');
         const staffDropdownLink = $('.staff__search-dropdown_link');
         staffSearch.on('input', function () {
-            staffSearch.val(staffSearch.val().replace(/[^А-Яа-я]/, ''));
+            staffSearch.val(staffSearch.val().replace(/[^А-Яа-я\s]/, ''));
             if(staffSearch.val() != '') {
                 staffDropdown.css({
                     display: 'block',

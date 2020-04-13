@@ -4363,6 +4363,10 @@ button.mfp-arrow {
   margin-right: 5px;
 }
 
+.specialists__doctor .doctor__info:hover {
+  cursor: pointer;
+}
+
 .specialists__doctor .doctor__info:hover .doctor__full-info {
   opacity: 1;
   -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);

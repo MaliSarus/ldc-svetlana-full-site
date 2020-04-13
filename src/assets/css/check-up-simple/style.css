@@ -3780,12 +3780,12 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin-bottom: 24px;
   width: 100%;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
+  margin-bottom: 24px;
 }
 
 @media screen and (min-width: 961px) {
@@ -3802,16 +3802,6 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
   margin-bottom: 0;
 }
 
-.infoblock__item h2 {
-  margin-bottom: 18px;
-}
-
-@media screen and (min-width: 961px) {
-  .infoblock__item h2 {
-    margin-bottom: 36px;
-  }
-}
-
 .infoblock__item_content {
   -webkit-box-flex: 1;
   -ms-flex-positive: 1;
@@ -3825,12 +3815,17 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
   flex-direction: column;
   -ms-flex-preferred-size: 100%;
   flex-basis: 100%;
-  margin-bottom: 18px;
+  margin-bottom: 24px;
 }
 
 @media screen and (min-width: 961px) {
   .infoblock__item_content {
     margin-bottom: 0px;
+    padding-right: 10px;
+  }
+  .infoblock__item_content:nth-child(2) {
+    padding-left: 10px;
+    padding-right: 0;
   }
 }
 
@@ -3838,59 +3833,42 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
   margin-bottom: 0;
 }
 
-.infoblock__item_content:nth-child(2) {
-  overflow: hidden;
-}
-
-.infoblock__item_content:nth-child(2) img {
-  display: block;
-  width: 100%;
-  max-width: 100%;
+.infoblock__item_content * {
   margin-bottom: 18px;
 }
 
-.infoblock__item_content:nth-child(2) img:last-child {
+@media screen and (min-width: 961px) {
+  .infoblock__item_content * {
+    margin-bottom: 36px;
+  }
+}
+
+.infoblock__item_content *:last-child {
   margin-bottom: 0;
 }
 
+.infoblock__item_content p {
+  font-size: 16px;
+  line-height: 150%;
+  color: rgba(10, 24, 49, 0.8);
+}
+
 @media screen and (min-width: 961px) {
-  .infoblock__item_content:nth-child(2) img {
-    margin-left: 20px;
-    height: 100%;
-    max-height: 350px;
-    max-width: 100%;
-    width: auto;
+  .infoblock__item_content p {
+    font-size: 16px;
+    line-height: 150%;
+    color: #0A1831;
   }
 }
 
 .infoblock__item_content img {
-  display: none;
   width: 100%;
-  max-width: 100%;
-  margin-bottom: 18px;
-}
-
-.infoblock__item_content img:last-child {
-  margin-bottom: 0;
 }
 
 @media screen and (min-width: 961px) {
   .infoblock__item_content img {
-    margin-left: 20px;
-    height: 100%;
-    max-height: 350px;
-    max-width: 100%;
-    width: auto;
+    max-width: 669px;
   }
-}
-
-.infoblock__item p {
-  margin: 0;
-  line-height: 150%;
-  color: rgba(10, 24, 49, 0.8);
-  -webkit-box-flex: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
 }
 
 .specialists {
@@ -4087,6 +4065,10 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
 .specialists__doctor .doctor__info .doctor__features li::before {
   content: "-";
   margin-right: 5px;
+}
+
+.specialists__doctor .doctor__info:hover {
+  cursor: pointer;
 }
 
 .specialists__doctor .doctor__info:hover .doctor__full-info {
