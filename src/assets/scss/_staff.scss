@@ -327,7 +327,6 @@
         border: none;
         margin-right: 1px;
         line-height: unset;
-        font-size: 16px;
         &:last-child {
           margin-right: 0;
         }
@@ -337,6 +336,7 @@
       }
       @media screen and (min-width: 1400px){
         margin-bottom: 0;
+        font-size: 16px;
       }
 
       &_active {
@@ -352,6 +352,8 @@
       &_cancel {
         position: absolute;
         margin-left: 5px;
+        top: 50%;
+        transform: translateY(-50%);
       }
     }
   }

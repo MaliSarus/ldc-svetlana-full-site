@@ -3305,7 +3305,6 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
     border: none;
     margin-right: 1px;
     line-height: unset;
-    font-size: 16px;
   }
   .staff__filters_item:last-child {
     margin-right: 0;
@@ -3318,6 +3317,7 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
 @media screen and (min-width: 1400px) {
   .staff__filters_item {
     margin-bottom: 0;
+    font-size: 16px;
   }
 }
 
@@ -3335,6 +3335,10 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
 .staff__filters_item_cancel {
   position: absolute;
   margin-left: 5px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
 }
 
 .staff__ordinary {
