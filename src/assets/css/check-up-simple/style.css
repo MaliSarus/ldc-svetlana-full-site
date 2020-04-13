@@ -3790,7 +3790,7 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
 
 @media screen and (min-width: 961px) {
   .infoblock__row {
-    margin: 0;
+    margin: 0 -10px;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
     -ms-flex-direction: row;
@@ -3832,13 +3832,10 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
 @media screen and (min-width: 961px) {
   .infoblock__item_content {
     margin-bottom: 0px;
-    padding-top: 0;
-    padding-bottom: 0;
-    padding-right: 10px;
+    padding: 0 10px;
   }
   .infoblock__item_content:nth-child(2) {
     padding-left: 10px;
-    padding-right: 0;
   }
 }
 

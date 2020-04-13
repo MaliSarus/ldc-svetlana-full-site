@@ -148,11 +148,13 @@ const specSliderInit = () => {
 const feedSliderInit = () => {
     const feedSlick = $('.feedback__slider');
     feedSlick.slick({
-        slidesToShow: 2,
+        slidesToShow: 1,
         slidesToScroll: 1,
-        infinite: true,
+        infinite: false,
         arrows: false,
         dots: false,
+        mobileFirst:true,
+        adaptiveHeight: true,
         responsive: [
             {
                 breakpoint: 769,
@@ -160,7 +162,6 @@ const feedSliderInit = () => {
                     slidesToShow: 1,
                     slidesToScroll: 1,
                     infinite: false,
-                    // adaptiveHeight: true
                 },
             },
             {
@@ -168,7 +169,8 @@ const feedSliderInit = () => {
                 settings: {
                     slidesToShow: 2,
                     slidesToScroll: 1,
-                    infinite: false
+                    infinite: true,
+                    adaptiveHeight:false
                 },
             }
         ]
@@ -179,8 +181,8 @@ const feedSliderInit = () => {
     $('.feedback__control-panel .arrows .arrows__arrow-right').on('click', function () {
         feedSlick.slick('slickNext');
     });
-    feedSlick.on('beforeChange', function(event, slick, currentSlide, nextSlide){
-        console.log('change');
+    $('.feedback__item-content').on('focus click', function(){
+        $('.feedback__slider').children().removeAttr('style');
     });
 };
 
