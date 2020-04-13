@@ -3776,25 +3776,36 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
   }
 }
 
-.infoblock__item {
+.infoblock__row {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 100%;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
+  margin-top: -12px;
+  margin-bottom: -12px;
+}
+
+@media screen and (min-width: 961px) {
+  .infoblock__row {
+    margin: 0;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+  }
+}
+
+.infoblock__item {
+  width: 100%;
   margin-bottom: 24px;
 }
 
 @media screen and (min-width: 961px) {
   .infoblock__item {
     margin-bottom: 50px;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: row;
-    flex-direction: row;
   }
 }
 
@@ -3815,12 +3826,14 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
   flex-direction: column;
   -ms-flex-preferred-size: 100%;
   flex-basis: 100%;
-  margin-bottom: 24px;
+  padding: 12px 0;
 }
 
 @media screen and (min-width: 961px) {
   .infoblock__item_content {
     margin-bottom: 0px;
+    padding-top: 0;
+    padding-bottom: 0;
     padding-right: 10px;
   }
   .infoblock__item_content:nth-child(2) {
