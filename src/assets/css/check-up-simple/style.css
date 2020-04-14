@@ -3861,6 +3861,24 @@ input[type="search"] {
   margin-bottom: 0;
 }
 
+.infoblock__item_content h2 {
+  font-size: 20px;
+  color: #0A1831;
+  font-weight: bold;
+}
+
+@media screen and (min-width: 577px) {
+  .infoblock__item_content h2 {
+    font-size: 24px;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .infoblock__item_content h2 {
+    font-size: 30px;
+  }
+}
+
 .infoblock__item_content p {
   font-size: 16px;
   line-height: 150%;

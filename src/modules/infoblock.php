@@ -5,8 +5,7 @@
                 <div class="infoblock__item ">
                     <div class="infoblock__row">
                         <div class="infoblock__item_content">
-                            <h2 class="title">Заголовок блока</h2>
-                            <img src="./assets/img/tools/1.jpg" alt="Картинка">
+                            <h2>Заголовок блока</h2                <img src="./assets/img/tools/1.jpg" alt="Картинка">
                             <p>
                                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam beatae, blanditiis
                                 deleniti
@@ -34,8 +33,7 @@
                 <div class="infoblock__item ">
                     <div class="infoblock__row">
                         <div class="infoblock__item_content">
-                            <h2 class="title">Заголовок блока</h2>
-                            <p>
+                            <h2>Заголовок блока</h2                <p>
                                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam beatae, blanditiis
                                 deleniti
                                 dicta error hic, id ipsa ipsam itaque non quisquam quod voluptatibus. Aut consequatur
@@ -59,8 +57,7 @@
                 <div class="infoblock__item ">
                     <div class="infoblock__row">
                         <div class="infoblock__item_content">
-                            <h2 class="title">Заголовок блока</h2>
-                            <p>
+                            <h2>Заголовок блока</h2                <p>
                                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam beatae, blanditiis
                                 deleniti
                                 dicta error hic, id ipsa ipsam itaque non quisquam quod voluptatibus. Aut consequatur
@@ -84,8 +81,7 @@
                 <div class="infoblock__item ">
                     <div class="infoblock__row">
                         <div class="infoblock__item_content">
-                            <h2 class="title">Заголовок блока</h2>
-                            <p>
+                            <h2>Заголовок блока</h2                <p>
                                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam beatae, blanditiis
                                 deleniti
                                 dicta error hic, id ipsa ipsam itaque non quisquam quod voluptatibus. Aut consequatur
