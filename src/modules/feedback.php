@@ -72,7 +72,7 @@
                 <div class="feedback__item">
                     <div class="feedback__item-head">
                         <div class="feedback__item-head-user">
-                            <a href="./assets/img/feedback/propusk.pdf" class="feedback__item-head-user-image"
+                            <a href="./assets/img/tools/1.jpg" class="feedback__item-head-user-image"
                                style="background-image: url(./assets/img/feedback/doc.png)">
                             </a>
                             <div class="feedback__item-head-user-info">

@@ -11,6 +11,7 @@
 @import "../appointment";
 @import "../infoblock";
 @import "../history";
+@import "../control";
 @import "../specialists";
 @import "../diplomas";
 @import "../social-media";
@@ -61,13 +62,23 @@
   }
 }
 
+.diplomas{
+  @media screen and (min-width: 961px){
+    background: white;
+  }
+}
+
 .tools{
   @media screen and (min-width: 961px){
     background: white url("../../img/tools/bg-top-right.svg") top right no-repeat;
     background-size: auto 100%;
     margin-top: 0px;
   }
-
+&__block{
+  @media screen and (min-width: 961px){
+    padding: 60px 0;
+  }
+}
 }
 .feedback {
   @media screen and (min-width: 961px) {

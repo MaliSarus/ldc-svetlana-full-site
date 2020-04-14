@@ -5,6 +5,7 @@
     padding: 0 15px;
     padding-top: 18px;
     @media screen and (min-width: 961px){
+      padding: 0;
       padding-top: 60px;
       padding-bottom: (60px - 18px);
       background: none;
@@ -20,29 +21,32 @@
     display: flex;
     justify-content: flex-start;
     flex-wrap: wrap;
-    width: 100%;
     //margin-bottom: 18px;
     &:last-child{
       margin-bottom: 0;
     }
+    @media screen and (min-width: 577px){
+      margin: 0 -5px;
+    }
+    @media screen and (min-width: 961px){
+      margin: 0 -10px;
+    }
+
   }
   &__item{
     flex-basis: 100%;
     margin-bottom: 18px;
+    flex-grow: 1;
     @media screen and (min-width: 577px){
       flex-basis: calc(100% / 2 - 10px);
-      margin-right: 10px;
-      &:last-child{
-        margin-right: 0;
-      }
+      padding: 0 5px;
     }
     @media screen and (min-width: 769px){
       flex-basis: calc(100% / 4 - 10px);
-      margin-right: 10px;
     }
     @media screen and (min-width: 961px){
       flex-basis: calc(100% / 4 - 20px);
-      margin-right: 20px;
+      padding: 0 10px;
       max-width: 365px;
       height: 165px;
     }

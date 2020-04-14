@@ -47,7 +47,7 @@ require "./modules/dropdown-menu.php";
 </section>
 <?php
 require "./modules/history.php";
-require "./modules/specialists.php";
+require "./modules/control.php";
 require "./modules/diplomas.php";
 require "./modules/social-media.php";
 require "./modules/tools.php";

@@ -3463,7 +3463,7 @@ input[type="search"]:focus {
 }
 
 .tools__slider {
-  max-width: 100%;
+  margin: 0 -10px;
 }
 
 .tools__slider .slick-list {

@@ -41,9 +41,10 @@ const aboutSliderInit = () => {
 const specSliderInit = () => {
     const specSlick = $('.specialists__slider');
     const specSlickInStaff = $('.staff__content .staff__ordinary .specialists__slider');
+    const specSlickInControl = $('.control__content .specialists__slider');
     const hoverLinkHandler = function () {
         const url = $('.doctor__full-info a').attr('href');
-        $(location).attr('href',url);
+        $(location).attr('href', url);
     };
     $('.doctor__full-info').on('click', hoverLinkHandler);
 
@@ -56,10 +57,10 @@ const specSliderInit = () => {
             arrows: false,
             dots: false,
             variableWidth: false,
-            swipe: function(){
+            swipe: function () {
                 $('.doctor__full-info').off('click', hoverLinkHandler)
             },
-            afterChange: function(){
+            afterChange: function () {
                 $('.doctor__full-info').on('click', hoverLinkHandler)
             },
             responsive: [
@@ -82,13 +83,14 @@ const specSliderInit = () => {
                 },
             ]
         });
-        specSlickInStaff.on('swipe',function(){
+        specSlickInStaff.on('swipe', function () {
             $('.doctor__full-info').off('click', hoverLinkHandler)
         });
-        specSlickInStaff.on('afterChange',function(){
+        specSlickInStaff.on('afterChange', function () {
             $('.doctor__full-info').on('click', hoverLinkHandler)
         });
-    } else {
+    }
+    if(isSet($('.specialists'))){
         specSlick.slick({
             slidesToShow: 4,
             slidesToScroll: 1,
@@ -96,10 +98,10 @@ const specSliderInit = () => {
             arrows: false,
             dots: false,
             variableWidth: true,
-            swipe: function(){
+            swipe: function () {
                 $('.doctor__full-info').off('click', hoverLinkHandler)
             },
-            afterChange: function(){
+            afterChange: function () {
                 $('.doctor__full-info').on('click', hoverLinkHandler)
             },
             responsive: [
@@ -137,10 +139,59 @@ const specSliderInit = () => {
             specSlick.slick('slickNext');
         });
 
-        specSlick.on('swipe',function(){
+        specSlick.on('swipe', function () {
             $('.doctor__full-info').off('click', hoverLinkHandler)
         });
-        specSlick.on('afterChange',function(){
+        specSlick.on('afterChange', function () {
+            $('.doctor__full-info').on('click', hoverLinkHandler)
+        });
+    }
+    if(isSet($('.control'))){
+        specSlickInControl.slick({
+            mobileFirst: true,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            infinite: true,
+            arrows: false,
+            dots: false,
+            variableWidth: false,
+            swipe: function () {
+                $('.doctor__full-info').off('click', hoverLinkHandler)
+            },
+            afterChange: function () {
+                $('.doctor__full-info').on('click', hoverLinkHandler)
+            },
+            responsive: [
+                {
+                    breakpoint: 326,
+                    settings: {
+                        variableWidth: true
+                    },
+                },
+                {
+                    breakpoint: 769,
+                    settings: {
+                        slidesToShow: 2,
+                        variableWidth: true,
+                    },
+                },
+                {
+                    breakpoint: 961,
+                    settings: "unslick"
+                },
+            ]
+        });
+        $('.control__control-panel .arrows .arrows__arrow-left').on('click', function () {
+            specSlickInControl.slick('slickPrev');
+        });
+        $('.control__control-panel .arrows .arrows__arrow-right').on('click', function () {
+            specSlickInControl.slick('slickNext');
+        });
+
+        specSlickInStaff.on('swipe', function () {
+            $('.doctor__full-info').off('click', hoverLinkHandler)
+        });
+        specSlickInStaff.on('afterChange', function () {
             $('.doctor__full-info').on('click', hoverLinkHandler)
         });
     }
@@ -154,7 +205,7 @@ const feedSliderInit = () => {
         infinite: false,
         arrows: false,
         dots: false,
-        mobileFirst:true,
+        mobileFirst: true,
         adaptiveHeight: true,
         responsive: [
             {
@@ -171,7 +222,7 @@ const feedSliderInit = () => {
                     slidesToShow: 2,
                     slidesToScroll: 1,
                     infinite: true,
-                    adaptiveHeight:false
+                    adaptiveHeight: false
                 },
             }
         ]
@@ -182,7 +233,7 @@ const feedSliderInit = () => {
     $('.feedback__control-panel .arrows .arrows__arrow-right').on('click', function () {
         feedSlick.slick('slickNext');
     });
-    $('.feedback__item-content').on('focus click', function(){
+    $('.feedback__item-content').on('focus click', function () {
         $('.feedback__slider').children().removeAttr('style');
     });
 };
@@ -422,6 +473,10 @@ const windowDesktopSizeChange = () => {
     });
     $('.specialists-details__head .title').html('Специалисты &lt;неврологи&gt;');
     $('.tools-details__head .title').html('&lt;Используемое&gt; оборудование');
+    $('.news__head .title').html('Новости &lt;лечебно – диагностического центра&gt;');
+    $('.partners__head .title').html('&lt;Медицинская поддержка и&gt; партнёры ЛДЦ &lt;завода "Светлана"&gt;');
+    $('.control__head .title').html('Управление &lt;лечебно – диагностического центра&gt;');
+
 
 };
 const windowMobileSizeChange = () => {
@@ -450,6 +505,12 @@ const windowMobileSizeChange = () => {
         specSliderInit();
     }
     $('.tools-details__head .title').html('Оборудование');
+    $('.news__head .title').html('Новости ЛДЦ');
+    $('.partners__head .title').html('Партнеры ЛДЦ');
+    $('.control__head .title').html('Управление ЛДЦ');
+    if (isSet($('.control'))) {
+        specSliderInit();
+    }
 };
 
 const DropdownOpenButtonHandler = () => {
@@ -500,6 +561,9 @@ const onReadyMobileMediaChange = () => {
     $('.staff__head .title').html('Врачи ЛДЦ');
     $('.specialists-details__head .title').html('Специалисты');
     $('.tools-details__head .title').html('Оборудование');
+    $('.news__head .title').html('Новости ЛДЦ');
+    $('.partners__head .title').html('Партнеры ЛДЦ');
+    $('.control__head .title').html('Управление ЛДЦ');
 };
 
 const closeServicesDropdownFromTapMenu = () => {
@@ -609,7 +673,7 @@ $(window).on('resize', function () {
             $('.features__slider').filter('.slick-initialized').slick("unslick");
             $('.features__slider').children().removeAttr('tabindex');
         }
-        if (isSet($('.checkup-features'))){
+        if (isSet($('.checkup-features'))) {
             $('.features__slider').filter('.slick-initialized').slick("unslick");
             $('.features__slider').children().removeAttr('tabindex');
         }
@@ -618,7 +682,7 @@ $(window).on('resize', function () {
             featuresSliderInit();
             $('.features__slider').slick('setPosition');
         }
-        if (isSet($('.checkup-features'))){
+        if (isSet($('.checkup-features'))) {
             checkupFeaturesSliderInit();
             $('.features__slider').slick('setPosition');
         }
@@ -722,7 +786,7 @@ $(window).on('resize', function () {
         $('.direction-services__tabs').slick('unslick');
     }
 
-    if (isSet($('.news'))){
+    if (isSet($('.news'))) {
         if ($(window).width() > 960 && typeof (sbNews) != 'undefined') {
             if (isSet($('.news'))) {
                 sbNews.destroy();
@@ -739,9 +803,9 @@ $(window).on('resize', function () {
             });
         }
     }
-    if (isSet($('.partners'))){
+    if (isSet($('.partners'))) {
         if ($(window).width() > 960 && typeof (sbPartners) != 'undefined') {
-            if (isSet($('.partners'))){
+            if (isSet($('.partners'))) {
                 sbPartners.destroy();
                 sbPartners = undefined;
             }
@@ -1239,26 +1303,41 @@ $(document).ready(function () {
         const staffDropdownLink = $('.staff__search-dropdown_link');
         staffSearch.on('input', function () {
             staffSearch.val(staffSearch.val().replace(/[^А-Яа-я\s]/, ''));
-            if(staffSearch.val() != '') {
+            if (staffSearch.val() != '') {
                 staffDropdown.css({
                     display: 'block',
                     width: $('.staff__search-form-wrapper').width()
                 });
             }
-            if(staffSearch.val() == '' && staffDropdown.attr('style') != ''){
+            if (staffSearch.val() == '' && staffDropdown.attr('style') != '') {
                 staffDropdown.removeAttr('style');
+            }
+        });
+
+        let sumbitFailTrigger = 0;
+        staffSearch.on('keyup', function (e) {
+            if (e.keyCode === 13 && staffSearch.val() == '') {
+                sumbitFailTrigger = 1
+            }
+        });
+        $('.staff__search-form-button').on('click', function () {
+            if (staffSearch.val() == '') {
+                sumbitFailTrigger = 1
             }
         });
         $('.staff__search-form').on('submit', function (event) {
             event.preventDefault();
-            if (staffSearch.val() != ''){
+            console.log(sumbitFailTrigger);
+            if (sumbitFailTrigger != 1) {
                 $('.staff__content_tab_active .staff__find .words').text(staffSearch.val());
                 $('.staff__content_tab_active .staff__ordinary').fadeOut(400, function () {
                     $('.staff__content_tab_active .staff__find').fadeIn();
                 });
             }
+            sumbitFailTrigger = 0;
             staffSearch.val('');
             staffDropdown.removeAttr('style');
+
         });
 
         $(document).on('click', function (event) {
@@ -1278,7 +1357,8 @@ $(document).ready(function () {
                 $('.staff__content_tab_active .staff__ordinary').fadeIn();
             });
         })
-    };
+    }
+    ;
 
 
     //Вкладки на выпадающем меню хэдера
@@ -1327,9 +1407,20 @@ $(document).ready(function () {
         });
 
         //ОБРАБОТЧИК ОТКРЫТИЯ ДОКУМЕНТА ПРИ КЛИКЕ НА ИКОНКУ
-        $('.feedback__item-head-user-image').magnificPopup({
-            type: 'iframe' // iframe - Для доков, image - для изображений
-        });
+        $('.feedback__item-head-user-image').on('click', function (event) {
+            event.preventDefault();
+            if ($(this).attr('href').indexOf('.pdf') < 0) {
+                $(this).magnificPopup({
+                    type: 'image'
+                    // (optionally) other options
+                }).magnificPopup('open');
+            } else {
+                $(this).magnificPopup({
+                    type: 'iframe'
+                }).magnificPopup('open');
+            }
+        })
+
         //ОБРАБОТЧИК ОТКРЫТИЯ ДОКУМЕНТА ПРИ КЛИКЕ НА ИКОНКУ
     }
     //Кнопка для раскрытия меню в мобайле
@@ -1536,12 +1627,12 @@ $(document).ready(function () {
         });
     }
 
-    if(isSet($('.checkup-features'))){
+    if (isSet($('.checkup-features'))) {
         checkupFeaturesSliderInit();
     }
 
-    if(isSet($('.news'))){
-        if ($(window).width() <= 960){
+    if (isSet($('.news'))) {
+        if ($(window).width() <= 960) {
             sbNews = new ScrollBooster({
                 viewport: document.querySelector('.news__content'),
                 content: document.querySelector('.news__wrapper'),
@@ -1553,8 +1644,8 @@ $(document).ready(function () {
         }
     }
 
-    if(isSet($('.partners'))){
-        if ($(window).width() <= 960){
+    if (isSet($('.partners'))) {
+        if ($(window).width() <= 960) {
             sbPartners = new ScrollBooster({
                 viewport: document.querySelector('.partners__content'),
                 content: document.querySelector('.partners__content > .content'),

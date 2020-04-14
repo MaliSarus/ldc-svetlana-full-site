@@ -26,6 +26,11 @@
 
     &:hover{
       background: #F6F7F8;
+      .site-map__icon{
+        img{
+          opacity: 1;
+        }
+      }
     }
     @media screen and (min-width: 961px){
       margin-top: 0;
@@ -52,5 +57,9 @@
     display: flex;
     align-items: center;
     margin-bottom: 14px;
+    img{
+      opacity: .4;
+      transition: opacity .5s;
+    }
   }
 }

@@ -18,9 +18,11 @@
     display: flex;
     justify-content: space-between;
     box-sizing: border-box;
+    align-items: baseline;
     margin-bottom: 17px;
     @media screen and (min-width: 961px){
       padding: 0;
+      margin-bottom: 32px;
     }
   }
   &__content{
