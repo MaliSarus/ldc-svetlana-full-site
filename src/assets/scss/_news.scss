@@ -1,22 +1,22 @@
 .news {
   background: white;
+  margin-bottom: 30px;
   @media screen and (min-width: 961px){
     background: none;
+    margin-bottom: 0;
   }
   &__block{
     width: 100%;
-    padding: 18px 0;
+    padding: 18px 15px;
     box-sizing: border-box;
     @media screen and (min-width: 961px){
-      padding-top: 60px;
-      padding-bottom: 90px;
+      padding: 60px 0 90px 0;
     }
   }
   &__head {
     width: 100%;
     display: flex;
     justify-content: space-between;
-    padding: 0 15px;
     box-sizing: border-box;
     margin-bottom: 17px;
     @media screen and (min-width: 961px){
@@ -29,10 +29,11 @@
     overflow: hidden;
     @media screen and (min-width: 961px){
       overflow: visible;
+
     }
   }
   &__wrapper{
-    padding: 0 15px;
+    width: 100%;
     display: flex;
     @media screen and (min-width: 961px){
       flex-wrap: wrap;

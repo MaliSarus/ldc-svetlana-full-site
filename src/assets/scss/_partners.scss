@@ -1,0 +1,125 @@
+.partners {
+  background: white;
+  margin-bottom: 30px;
+  @media screen and (min-width: 961px) {
+    margin-bottom: 0;
+    background: none;
+  }
+
+  &__block {
+    width: 100%;
+    padding: 18px 15px;
+    box-sizing: border-box;
+    @media screen and (min-width: 961px) {
+      background: white;
+      padding: 0;
+      box-shadow: 0px 10px 30px rgba(12, 28, 56, 0.08);
+      margin-top: -30px;
+      margin-bottom: -30px;
+      position: relative;
+      z-index: 2;
+    }
+  }
+
+  &__head {
+    padding-bottom: 18px;
+    @media screen and (min-width: 961px) {
+      background: $bg-gray;
+      padding: 40px 0;
+    }
+  }
+
+  &__content {
+    width: 100%;
+    overflow: hidden;
+    @media screen and (min-width: 961px){
+      padding: 40px 0;
+    }
+  }
+
+  &__row {
+    box-sizing: border-box;
+    display: flex;
+    margin: 0 -5px;
+    @media screen and (min-width: 961px) {
+      flex-wrap: wrap;
+      margin: -18px -10px 0 -10px;
+    }
+  }
+  &__col{
+    box-sizing: border-box;
+    padding: 0 5px;
+
+    &:first-child{
+      padding-left: 0;
+    }
+    &:last-child{
+      padding-right: 0;
+    }
+    @media screen and (min-width: 961px){
+      flex-grow: 1;
+      flex-basis: 50%;
+      padding: 0 10px;
+      margin-top: 18px;
+      &:last-child, &:first-child{
+        padding: 0 10px;
+      }
+    }
+  }
+  &__item {
+    display: block;
+    background: #F6F7F8;
+    padding: 10px;
+    min-width: 286px;
+    max-width: 286px;
+    box-sizing: border-box;
+    transition: background-color .25s;
+    height: 100%;
+    &:hover{
+      background: white;
+    }
+    @media screen and (min-width: 961px) {
+      min-width: unset;
+      max-width: unset;
+      display: flex;
+      padding: 10px;
+      align-items: center;
+    }
+  }
+
+  &__image {
+    height: 60px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #F1F1F1;
+    @media screen and (min-width: 961px){
+      height: 100%;
+      min-width: 140px;
+      max-width: 140px;
+      padding: 0;
+      border: none;
+      display: flex;
+      align-items: center;
+      margin-right: 20px;
+    }
+
+    img {
+      height: 100%;
+      @media screen and (min-width: 961px){
+        height: auto;
+        width: 100%
+      }
+    }
+  }
+
+  &__text {
+    padding: 8px 0;
+    font-size: 14px;
+    line-height: 120%;
+    color: $main-color-dark;
+    @media screen and (min-width: 961px){
+      font-size: 16px;
+      line-height: 140%;
+      padding: 0;
+    }
+  }
+}

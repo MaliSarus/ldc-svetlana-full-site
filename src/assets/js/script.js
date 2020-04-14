@@ -18,6 +18,7 @@ let sbPrice;
 let sbNavLinks;
 let sbCost;
 let sbNews;
+let sbPartners;
 let posTop = 0;
 
 const isSlickLoaded = (typeof $.fn.slick !== 'undefined');
@@ -723,7 +724,7 @@ $(window).on('resize', function () {
 
     if (isSet($('.news'))){
         if ($(window).width() > 960 && typeof (sbNews) != 'undefined') {
-            if (isSet($('.cost'))) {
+            if (isSet($('.news'))) {
                 sbNews.destroy();
                 sbNews = undefined;
             }
@@ -731,6 +732,23 @@ $(window).on('resize', function () {
             sbNews = new ScrollBooster({
                 viewport: document.querySelector('.news__content'),
                 content: document.querySelector('.news__wrapper'),
+                scrollMode: "transform", // use CSS 'transform' property
+                direction: "horizontal", // allow only horizontal scrollin
+                pointerMode: 'all',
+                pointerDownPreventDefault: false
+            });
+        }
+    }
+    if (isSet($('.partners'))){
+        if ($(window).width() > 960 && typeof (sbPartners) != 'undefined') {
+            if (isSet($('.partners'))){
+                sbPartners.destroy();
+                sbPartners = undefined;
+            }
+        } else if ($(window).width() <= 960 && typeof (sbPartners) === 'undefined') {
+            sbPartners = new ScrollBooster({
+                viewport: document.querySelector('.partners__content'),
+                content: document.querySelector('.partners__content > .content'),
                 scrollMode: "transform", // use CSS 'transform' property
                 direction: "horizontal", // allow only horizontal scrollin
                 pointerMode: 'all',
@@ -1247,7 +1265,7 @@ $(document).ready(function () {
             }
         });
 
-        staffDropdownLink.on('click', function (event) {
+        staffDropdown.on('click', '.staff__search-dropdown_link', function (event) {
             event.preventDefault();
             staffSearch.val($(this).text());
             $('.staff__search-form').trigger('submit');
@@ -1519,6 +1537,19 @@ $(document).ready(function () {
             sbNews = new ScrollBooster({
                 viewport: document.querySelector('.news__content'),
                 content: document.querySelector('.news__wrapper'),
+                scrollMode: "transform", // use CSS 'transform' property
+                direction: "horizontal", // allow only horizontal scrollin
+                pointerMode: 'all',
+                pointerDownPreventDefault: false
+            });
+        }
+    }
+
+    if(isSet($('.partners'))){
+        if ($(window).width() <= 960){
+            sbPartners = new ScrollBooster({
+                viewport: document.querySelector('.partners__content'),
+                content: document.querySelector('.partners__content > .content'),
                 scrollMode: "transform", // use CSS 'transform' property
                 direction: "horizontal", // allow only horizontal scrollin
                 pointerMode: 'all',
