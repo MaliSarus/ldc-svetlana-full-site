@@ -20,8 +20,9 @@
                 <div class="feedback__item">
                     <div class="feedback__item-head">
                         <div class="feedback__item-head-user">
-                            <div class="feedback__item-head-user-image" style="background-image: url(./assets/img/feedback/example-man.jpg)">
-                            </div>
+                            <a href="./assets/img/tools/1.jpg" class="feedback__item-head-user-image"
+                               style="background-image: url(./assets/img/feedback/doc.png)">
+                            </a>
                             <div class="feedback__item-head-user-info">
                                 <p class="feedback__item-head-user-username">Ольга Ивановна</p>
                                 <small class="feedback__item-head-user-date">16 декабря 2019</small>
@@ -71,8 +72,9 @@
                 <div class="feedback__item">
                     <div class="feedback__item-head">
                         <div class="feedback__item-head-user">
-                            <div class="feedback__item-head-user-image" style="background-image: url(./assets/img/feedback/example-man.jpg)">
-                            </div>
+                            <a href="./assets/img/tools/1.jpg" class="feedback__item-head-user-image"
+                               style="background-image: url(./assets/img/feedback/doc.png)">
+                            </a>
                             <div class="feedback__item-head-user-info">
                                 <p class="feedback__item-head-user-username">Ольга Ивановна</p>
                                 <small class="feedback__item-head-user-date">16 декабря 2019</small>
@@ -102,8 +104,9 @@
                 <div class="feedback__item">
                     <div class="feedback__item-head">
                         <div class="feedback__item-head-user">
-                            <div class="feedback__item-head-user-image" style="background-image: url(./assets/img/feedback/example-man.jpg)">
-                            </div>
+                            <a href="./assets/img/tools/1.jpg" class="feedback__item-head-user-image"
+                               style="background-image: url(./assets/img/feedback/doc.png)">
+                            </a>
                             <div class="feedback__item-head-user-info">
                                 <p class="feedback__item-head-user-username">Ольга Ивановна</p>
                                 <small class="feedback__item-head-user-date">16 декабря 2019</small>

@@ -83,6 +83,10 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
   cursor: text;
 }
 
+input[type="search"] {
+  border: none !important;
+}
+
 .hide {
   display: none;
 }
@@ -4553,8 +4557,7 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
   height: 30px;
   background-repeat: no-repeat;
   background-position: center;
-  background-size: cover;
-  border-radius: 50%;
+  outline: none;
 }
 
 .feedback__item-head-user-info {

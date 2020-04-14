@@ -36,6 +36,10 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
   cursor: text;
 }
 
+input[type="search"]{
+  border: none !important;
+}
+
 .hide {
   display: none;
 }

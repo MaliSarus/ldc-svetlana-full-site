@@ -1323,6 +1323,10 @@ $(document).ready(function () {
         feedbackContent.on('blur', function () {
             $(this).removeClass('feedback__item-content_unhide');
         });
+        $('.feedback__item-head-user-image').magnificPopup({
+            type: 'image'
+            // other options
+        });
     }
     //Кнопка для раскрытия меню в мобайле
 
