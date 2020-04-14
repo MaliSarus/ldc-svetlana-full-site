@@ -85,6 +85,16 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
 
 input[type="search"] {
   border: none !important;
+  -webkit-appearance: none;
+  border-radius: 0;
+  outline: none;
+}
+
+input[type="search"]:focus {
+  border: none !important;
+  -webkit-appearance: none;
+  border-radius: 0;
+  outline: none;
 }
 
 .hide {
@@ -3546,6 +3556,18 @@ input[type="search"] {
     -webkit-box-ordinal-group: unset;
     -ms-flex-order: unset;
     order: unset;
+  }
+}
+
+.history .infoblock__item_content p {
+  line-height: 140%;
+  font-size: 16px;
+}
+
+@media screen and (min-width: 961px) {
+  .history .infoblock__item_content p {
+    font-size: 16px;
+    line-height: 140%;
   }
 }
 

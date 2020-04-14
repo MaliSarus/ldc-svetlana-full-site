@@ -5,6 +5,7 @@ require "./modules/headlings.php";
 <title>ЛДЦ Светлана - Врачи клиники</title>
 <link rel="stylesheet" href="./assets/css/slick.css"/>
 <link rel="stylesheet" href="./assets/css/slick-theme.css"/>
+<link rel="stylesheet" href="./assets/css/magnific-popup.css">
 <script src="./assets/js/jquery-3.4.1.min.js"></script>
 </head>
 <body>

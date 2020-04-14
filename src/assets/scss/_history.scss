@@ -20,6 +20,14 @@
             order: unset;
           }
         }
+        p{
+          line-height: 140%;
+          font-size: 16px;
+          @media screen and (min-width: 961px){
+            font-size: 16px;
+            line-height: 140%;
+          }
+        }
       }
     }
   }

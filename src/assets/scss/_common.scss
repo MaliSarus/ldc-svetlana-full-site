@@ -38,6 +38,15 @@ input[type="text"], input[type="search"], input[type="tel"], input[type="email"]
 
 input[type="search"]{
   border: none !important;
+  -webkit-appearance: none;
+  border-radius: 0;
+  outline: none;
+  &:focus{
+    border: none !important;
+    -webkit-appearance: none;
+    border-radius: 0;
+    outline: none;
+  }
 }
 
 .hide {

@@ -1251,11 +1251,13 @@ $(document).ready(function () {
         });
         $('.staff__search-form').on('submit', function (event) {
             event.preventDefault();
-            $('.staff__content_tab_active .staff__find .words').text(staffSearch.val());
+            if (staffSearch.val() != ''){
+                $('.staff__content_tab_active .staff__find .words').text(staffSearch.val());
+                $('.staff__content_tab_active .staff__ordinary').fadeOut(400, function () {
+                    $('.staff__content_tab_active .staff__find').fadeIn();
+                });
+            }
             staffSearch.val('');
-            $('.staff__content_tab_active .staff__ordinary').fadeOut(400, function () {
-                $('.staff__content_tab_active .staff__find').fadeIn();
-            });
             staffDropdown.removeAttr('style');
         });
 
@@ -1323,10 +1325,12 @@ $(document).ready(function () {
         feedbackContent.on('blur', function () {
             $(this).removeClass('feedback__item-content_unhide');
         });
+
+        //ОБРАБОТЧИК ОТКРЫТИЯ ДОКУМЕНТА ПРИ КЛИКЕ НА ИКОНКУ
         $('.feedback__item-head-user-image').magnificPopup({
-            type: 'image'
-            // other options
+            type: 'iframe' // iframe - Для доков, image - для изображений
         });
+        //ОБРАБОТЧИК ОТКРЫТИЯ ДОКУМЕНТА ПРИ КЛИКЕ НА ИКОНКУ
     }
     //Кнопка для раскрытия меню в мобайле
 
