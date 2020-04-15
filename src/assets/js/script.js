@@ -90,7 +90,7 @@ const specSliderInit = () => {
             $('.doctor__full-info').on('click', hoverLinkHandler)
         });
     }
-    if(isSet($('.specialists'))){
+    if (isSet($('.specialists'))) {
         specSlick.slick({
             slidesToShow: 4,
             slidesToScroll: 1,
@@ -146,7 +146,7 @@ const specSliderInit = () => {
             $('.doctor__full-info').on('click', hoverLinkHandler)
         });
     }
-    if(isSet($('.control'))){
+    if (isSet($('.control'))) {
         specSlickInControl.slick({
             mobileFirst: true,
             slidesToShow: 1,
@@ -234,7 +234,7 @@ const feedSliderInit = () => {
         feedSlick.slick('slickNext');
     });
     $('.feedback__item-content').on('focus click', function () {
-        $('.feedback__slider').children().removeAttr('style');
+        feedSlick.children().removeAttr('style');
     });
 };
 
@@ -314,7 +314,10 @@ const unitSimpleSliderInit = () => {
 };
 
 const toolsSliderInit = () => {
-    $('.tools__slider').slick({
+    const toolsSlick = $('.tools__slider');
+    $('.tools__head .tools__position').removeAttr('style');
+    $('.tools__head .arrows').removeAttr('style');
+    toolsSlick.slick({
         slidesToShow: 4,
         dots: false,
         arrows: false,
@@ -340,7 +343,34 @@ const toolsSliderInit = () => {
                 },
             }
         ]
-    })
+    });
+    $('.tools__head .arrows .arrows__arrow-left').on('click', function () {
+        toolsSlick.slick('slickPrev');
+    });
+    $('.tools__head .arrows .arrows__arrow-right').on('click', function () {
+        toolsSlick.slick('slickNext');
+    });
+
+    $('.tools__position').html('<span class="tools__position_current">' + toolsSlick.slick('slickGetOption', 'slidesToShow') + '</span>/' + $('.tools__slider_item').length);
+
+    toolsSlick.on('afterChange', function (event, slick, currentSlide) {
+        $('.tools__position_current').html(toolsSlick.slick('slickCurrentSlide') + toolsSlick.slick('slickGetOption', 'slidesToShow'));
+    });
+
+    toolsSlick.on('breakpoint', function (event, slick, breakpoint) {
+        if ($('.tools__slider_item').length < slick.options.slidesToShow) {
+            toolsSlick.slick('unslick');
+            $('.tools__head .tools__position').css('display', 'none');
+            $('.tools__head .arrows').css('display', 'none');
+        }
+        $('.tools__slider_item').each(function () {
+            const imageSrc = $(this).children('img').attr('src');
+            $(this).css({
+                background: 'url("' + imageSrc + '") center no-repeat',
+                backgroundSize: 'cover'
+            })
+        });
+    });
 };
 
 const dirServSliderInit = () => {
@@ -762,6 +792,42 @@ $(window).on('resize', function () {
             })
         })
     }
+    if(isSet($('.tools')) && !($('.tools__slider').hasClass('slick-initialized'))){
+        const toolsSlickItem = $('.tools__slider_item');
+        if( $(window).width() >= 1200){
+            if(toolsSlickItem.length >= 4){
+                toolsSliderInit();
+            }
+            else{
+                $('.tools__head .tools__position').css('display', 'none');
+                $('.tools__head .arrows').css('display', 'none');
+            }
+        }
+        if( $(window).width() >= 961 && $(window).width() < 1200){
+            if(toolsSlickItem.length >= 3){
+                toolsSliderInit();
+            }else{
+                $('.tools__head .tools__position').css('display', 'none');
+                $('.tools__head .arrows').css('display', 'none');
+            }
+        }
+        if( $(window).width() >= 577 && $(window).width() < 961){
+            if(toolsSlickItem.length >= 2){
+                toolsSliderInit();
+            }else{
+                $('.tools__head .tools__position').css('display', 'none');
+                $('.tools__head .arrows').css('display', 'none');
+            }
+        }
+        if( $(window).width() < 577){
+            if(toolsSlickItem.length >= 1){
+                toolsSliderInit();
+            }else{
+                $('.tools__head .tools__position').css('display', 'none');
+                $('.tools__head .arrows').css('display', 'none');
+            }
+        }
+    }
 
     if (isSet($('.cost'))) {
         if ($(window).width() > 768 && typeof (sbCost) != 'undefined') {
@@ -991,58 +1057,50 @@ window.onload = function () {
         })
     }
     if (isSet($('.tools'))) {
-        const toolsSlick = $('.tools__slider');
-        toolsSliderInit();
-
-        $('.tools__head .arrows .arrows__arrow-left').on('click', function () {
-            toolsSlick.slick('slickPrev');
-        });
-        $('.tools__head .arrows .arrows__arrow-right').on('click', function () {
-            toolsSlick.slick('slickNext');
-        });
-
-        $('.tools__position').html('<span class="tools__position_current">' + toolsSlick.slick('slickGetOption', 'slidesToShow') + '</span>/' + $('.tools__slider_item').length);
-
-        if ($('.tools__slider.slick-initialized')) {
-            toolsSlick.on('afterChange', function (event, slick, currentSlide) {
-                $('.tools__position_current').html(toolsSlick.slick('slickCurrentSlide') + toolsSlick.slick('slickGetOption', 'slidesToShow'));
-            });
-
+        const toolsSlickItem = $('.tools__slider_item');
+        if( $(window).width() >= 1200){
+            if(toolsSlickItem.length >= 4){
+                toolsSliderInit();
+            }else{
+                $('.tools__head .tools__position').css('display', 'none');
+                $('.tools__head .arrows').css('display', 'none');
+            }
+        }
+        if( $(window).width() >= 961 && $(window).width() < 1200){
+            if(toolsSlickItem.length >= 3){
+                toolsSliderInit();
+            }else{
+                $('.tools__head .tools__position').css('display', 'none');
+                $('.tools__head .arrows').css('display', 'none');
+            }
+        }
+        if( $(window).width() >= 577 && $(window).width() < 961){
+            if(toolsSlickItem.length >= 2){
+                toolsSliderInit();
+            }else{
+                $('.tools__head .tools__position').css('display', 'none');
+                $('.tools__head .arrows').css('display', 'none');
+            }
+        }
+        if( $(window).width() < 577){
+            if(toolsSlickItem.length >= 1){
+                toolsSliderInit();
+            }else{
+                $('.tools__head .tools__position').css('display', 'none');
+                $('.tools__head .arrows').css('display', 'none');
+            }
         }
 
-        $('.tools__slider_item').each(function () {
+
+
+
+        toolsSlickItem.each(function () {
             const imageSrc = $(this).children('img').attr('src');
             $(this).css({
                 background: 'url("' + imageSrc + '") center no-repeat',
                 backgroundSize: 'cover'
             })
         });
-        toolsSlick.on('breakpoint', function () {
-            $('.tools__slider_item').each(function () {
-                const imageSrc = $(this).children('img').attr('src');
-                $(this).css({
-                    background: 'url("' + imageSrc + '") center no-repeat',
-                    backgroundSize: 'cover'
-                })
-            });
-        });
-        let hoverFlag = 0;
-        $('.tools__slider_item').on('mouseenter', function (event) {
-            if (hoverFlag == 0) {
-                $(this).find('.tools__slider_title').fadeOut(250, function () {
-                    $(this).parent().find('.tools__slider_title_hover').fadeIn(250);
-                    hoverFlag = 1;
-                });
-            }
-        });
-        $('.tools__slider_item').on('mouseleave', function (event) {
-            if (hoverFlag == 1) {
-                $(this).find('.tools__slider_title_hover').fadeOut(250, function () {
-                    $(this).parent().find('.tools__slider_title').fadeIn(250);
-                    hoverFlag = 0;
-                });
-            }
-        })
     }
     if (isSet($('.direction-services'))) {
         if ($(window).width() <= ($('.direction-services__tabs').width() + 30)) {

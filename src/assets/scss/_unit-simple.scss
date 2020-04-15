@@ -96,10 +96,24 @@
       flex-direction: column;
       justify-content: center;
     }
-    .title{
+
+    h2{
       margin-bottom: 18px;
       @media screen and (min-width: 961px){
         margin-bottom: 36px;
+      }
+    }
+
+    ul {
+      margin: 0;
+      margin-bottom: 18px;
+      padding-left: 21px;
+
+      li {
+        list-style-image: url("../../img/for-patient/red-square.svg");
+        font-size: 16px;
+        line-height: 140%;
+        color: rgba($main-color-dark, .8);
       }
     }
   }

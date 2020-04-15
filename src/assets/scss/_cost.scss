@@ -34,16 +34,21 @@
         box-sizing: border-box;
         max-width: 100%;
       }
-      li{
+      > li{
         background: $main-color;
         color: white;
-        span{
+        margin-bottom: 1px;
+        > span{
           box-sizing: border-box;
           padding: 16px 56px;
           cursor: pointer;
           position: relative;
+          transition: color .25s;
           @media screen and (min-width: 768px){
             padding: 16px 36px;
+          }
+          &:hover{
+            color: $accent-color-light;
           }
 
           &::before{
@@ -77,11 +82,15 @@
           li{
             background: #F1F1F1;
             color: $main-color;
+            margin-bottom: 0;
             span{
               box-sizing: border-box;
               padding: 16px 56px;
               @media screen and (min-width: 768px){
                 padding: 16px 36px;
+              }
+              &:hover{
+                color: $main-color;
               }
               &::before{
                 filter:none;
@@ -145,9 +154,6 @@
         @media screen and (min-width: 961px){
           font-size: 17px;
         }
-        &:hover{
-          text-decoration: underline;
-        }
         &.active{
           &::before{
             transform: translateY(-50%) rotate(0deg) !important;
@@ -162,14 +168,7 @@
       align-items: center;
       border-bottom: 1px solid rgba($main-color-dark,.15);
 
-
-      @media screen and (min-width: 961px){
-        border: none;
-      }
       &:hover{
-        .cost__list_content_title {
-          text-decoration: underline;
-        }
         button{
           visibility: visible;
         }

@@ -17,22 +17,32 @@
         margin-bottom: 36px;
       }
     }
-  }
-  &__text{
-    display: flex;
-    flex-wrap: wrap;
-    @media screen and (min-width: 961px){
-      justify-content: space-between;
+    *{
+      color: rgba($main-color-dark,.8);
     }
-  }
-  &__paragraph{
-    margin: 0;
-    margin-bottom: 18px;
-    @media screen and (min-width: 961px){
-      flex-basis: calc(100% / 2 - 10px);
+    h2{
+      color: $main-color-dark;
+      margin-bottom: 18px;
+      @media screen and (min-width: 961px){
+        margin-bottom: 36px;
+      }
     }
-    &:last-child{
-      margin-bottom: 0;
+
+    p{
+      margin-bottom: 18px;
+    }
+
+    ul{
+      margin: 0;
+      margin-bottom: 18px;
+      li{
+        list-style-image: url("../../img/for-patient/red-square.svg");
+        font-size: 16px;
+        line-height: 140%;
+      }
+      p{
+        margin-bottom: 0;
+      }
     }
   }
 }

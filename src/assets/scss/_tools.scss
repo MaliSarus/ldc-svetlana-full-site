@@ -37,6 +37,9 @@
   }
   &__slider{
     margin: 0 -10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
     .slick-list {
       display: flex;
       .slick-track {
@@ -66,6 +69,14 @@
       img{
        display: none;
       }
+      &:hover{
+        .tools__slider_title{
+          opacity: 0;
+        }
+        .tools__slider_title_hover{
+          opacity: 1;
+        }
+      }
     }
     &_title{
       margin: 0;
@@ -76,9 +87,11 @@
       font-size: 18px;
       color: white;
       font-weight: bold;
+      opacity: 1;
+      transition: opacity .25s;
       &_hover{
         font-weight: normal;
-        display: none;
+        display: block;
         margin: 0;
         position: absolute;
         left: 0;
@@ -86,6 +99,8 @@
         padding: 22px 18px;
         font-size: 18px;
         color: white;
+        opacity: 0;
+        transition: opacity .25s;
       }
     }
   }
