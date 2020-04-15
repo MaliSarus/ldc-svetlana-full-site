@@ -793,3 +793,10 @@
     }
   }
 }
+
+.image_blur{
+  overflow: hidden;
+  img{
+    filter:blur(4px);
+  }
+}

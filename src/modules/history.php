@@ -22,14 +22,14 @@
                                 Доктора не прекращали своею профессиональную деятельность.
                             </p>
                         </div>
-                        <div class="infoblock__item_content infoblock__item_content_image">
+                        <div class="infoblock__item_content">
                             <img src="./assets/img/history/1.jpg" alt="Картинка">
                         </div>
                     </div>
                 </div>
                 <div class="infoblock__item ">
                     <div class="infoblock__row">
-                        <div class="infoblock__item_content infoblock__item_content_image">
+                        <div class="infoblock__item_content">
                             <img src="./assets/img/history/1.jpg" alt="Картинка">
                         </div>
                         <div class="infoblock__item_content">

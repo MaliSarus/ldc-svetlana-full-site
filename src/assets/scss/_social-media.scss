@@ -1,4 +1,8 @@
 .social-media{
+  margin-bottom: 30px;
+  @media screen and (min-width: 961px){
+    margin-bottom: 0;
+  }
   &__block{
     background: white;
     width: 100%;

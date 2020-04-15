@@ -45,12 +45,9 @@
   }
 }
 
-
-.specialists{
-  &__block{
-    @media screen and (min-width: 961px){
-      margin-bottom: -60px;
-    }
+.infoblock__block{
+  @media screen and (min-width: 961px){
+    padding-bottom: 90px;
   }
 }
 
