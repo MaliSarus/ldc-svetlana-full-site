@@ -387,7 +387,6 @@
         font-size: 14px;
         flex-basis: 30%;
         @media screen and (min-width: 577px) {
-          flex-basis: unset;
           font-size: 16px;
         }
       }
@@ -395,16 +394,11 @@
 
     .specialists__slider {
       display: flex;
-      justify-content: space-between;
+      justify-content: flex-start;
       flex-wrap: wrap;
       @media screen and (min-width: 961px) {
         margin-top: -20px;
-        justify-content: flex-start;
       }
-      @media screen and (min-width: 1326px) {
-        justify-content: space-between;
-      }
-
       .specialists__doctor {
         flex-basis: 100%;
         max-width: none;

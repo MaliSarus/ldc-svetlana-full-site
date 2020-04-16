@@ -3404,8 +3404,6 @@ input[type="search"]:focus {
 
 @media screen and (min-width: 577px) {
   .staff__find-head .back {
-    -ms-flex-preferred-size: unset;
-    flex-basis: unset;
     font-size: 16px;
   }
 }
@@ -3414,9 +3412,9 @@ input[type="search"]:focus {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
 }
@@ -3424,17 +3422,6 @@ input[type="search"]:focus {
 @media screen and (min-width: 961px) {
   .staff__find .specialists__slider {
     margin-top: -20px;
-    -webkit-box-pack: start;
-    -ms-flex-pack: start;
-    justify-content: flex-start;
-  }
-}
-
-@media screen and (min-width: 1326px) {
-  .staff__find .specialists__slider {
-    -webkit-box-pack: justify;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
   }
 }
 
