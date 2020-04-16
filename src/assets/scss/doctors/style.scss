@@ -27,9 +27,11 @@
 
   &__doctor {
     outline: none;
-    &:last-child{
+
+    &:last-child {
       margin-right: 0;
     }
+
     display: flex;
     justify-content: center;
     @media screen and (min-width: 961px) {
@@ -48,6 +50,11 @@
       margin-right: 0;
     }
   }
+}
+
+
+.nonresult_container {
+  margin: 40px 0;
 }
 
 

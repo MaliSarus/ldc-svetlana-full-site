@@ -176,7 +176,7 @@ const specSliderInit = () => {
                     },
                 },
                 {
-                    breakpoint: 961,
+                    breakpoint: 960,
                     settings: "unslick"
                 },
             ]

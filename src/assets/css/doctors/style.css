@@ -4266,3 +4266,7 @@ input[type="search"]:focus {
     margin-right: 0;
   }
 }
+
+.nonresult_container {
+  margin: 40px 0;
+}
