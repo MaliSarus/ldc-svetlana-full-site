@@ -3544,16 +3544,6 @@ input[type="search"]:focus {
   }
 }
 
-@media screen and (min-width: 961px) {
-  .history .infoblock__item_content {
-    padding-right: 0;
-  }
-  .history .infoblock__item_content:nth-child(2) {
-    padding-right: 0;
-    padding-left: 100px;
-  }
-}
-
 .history .infoblock__item_content_image {
   -webkit-box-ordinal-group: 2;
   -ms-flex-order: 1;

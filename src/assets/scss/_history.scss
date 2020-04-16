@@ -7,13 +7,6 @@
   .infoblock{
     &__item{
       &_content{
-        @media screen and (min-width: 961px){
-          padding-right: 0;
-          &:nth-child(2){
-            padding-right: 0;
-            padding-left: 100px;
-          }
-        }
         &_image{
           order: 1;
           @media screen and (min-width: 961px){
