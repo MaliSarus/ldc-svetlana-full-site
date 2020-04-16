@@ -1,0 +1,21 @@
+@import "../fonts";
+@import "../common";
+@import "../interface";
+@import "../submit-popup";
+@import "../parallax-squares";
+@import "../header";
+@import "../dropdown-menu";
+@import "../appointment";
+@import "../about-emergency-room";
+@import "../all-contacts";
+@import "../footer";
+
+@import "../animations";
+
+.about-emergency-room{
+  &__block{
+    @media screen and (min-width: 961px){
+      padding-bottom: 153px;
+    }
+  }
+}

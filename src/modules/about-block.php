@@ -1,4 +1,4 @@
-
+<section class="about-block" style="background-image:url(./assets/img/about-unit/bg-image.png)">
     <div class="bg-bottom-right"></div>
     <div class="bg-top-right"></div>
     <div class="skew-bg"></div>
@@ -66,3 +66,4 @@
             </div>
         </div>
     </div>
+</section>

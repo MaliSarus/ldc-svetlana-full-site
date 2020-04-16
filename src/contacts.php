@@ -42,10 +42,12 @@ require "./modules/dropdown-menu.php";
 
 <?php
 require "./modules/about-emergency-room.php";
+require "./modules/all-contacts.php";
 ?>
 
 
-
+<script src="https://api-maps.yandex.ru/2.1/?apikey=d37e0946-ea4c-40d6-abe8-a0dba0b96a11&lang=ru_RU" type="text/javascript"></script>
+<script src="./assets/js/rounded-yandex/all.js" type="text/javascript"></script>
 <!----------------------------НЕ ТРОГАТЬ---------------------------------->
 <?
 require "./modules/footer.php";

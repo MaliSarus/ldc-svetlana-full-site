@@ -246,6 +246,10 @@ input[type="search"]:focus {
   justify-content: space-between;
 }
 
+.content-row {
+  margin: 0 -15px;
+}
+
 @media screen and (min-width: 961px) {
   .upside__block {
     position: relative;

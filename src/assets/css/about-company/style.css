@@ -246,6 +246,10 @@ input[type="search"]:focus {
   justify-content: space-between;
 }
 
+.content-row {
+  margin: 0 -15px;
+}
+
 @media screen and (min-width: 961px) {
   .upside__block {
     position: relative;
@@ -2333,7 +2337,7 @@ input[type="search"]:focus {
 
 @media screen and (min-width: 961px) {
   .about-block {
-    background-size: auto 100%;
+    background-size: cover;
     margin-bottom: 0;
     -webkit-filter: none;
     filter: none;
@@ -5957,6 +5961,7 @@ button.mfp-arrow {
 
 @media screen and (min-width: 961px) {
   .diplomas__block {
+    padding: 60px 0;
     padding-top: 90px;
   }
 }

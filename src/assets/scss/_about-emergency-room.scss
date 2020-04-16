@@ -47,6 +47,27 @@
     }
   }
   &__content{
+    >h2{
+      font-weight: bold;
+      font-size: 16px;
+      line-height: 140%;
+      color: rgba($main-color-dark,.8);
+      margin-bottom: 12px;
+      @media screen and (min-width: 961px){
+        font-size: 20px;
+        line-height: 120%;
+        margin-bottom: 18px;
+      }
+    }
+    >p{
+      font-size: 16px;
+      line-height: 140%;
+      color: rgba($main-color-dark,.8);
+      margin-bottom: 18px;
+      @media screen and (min-width: 961px){
+        margin-bottom: 22px;
+      }
+    }
     .text_accent{
       margin: 0;
       margin-bottom: 12px;

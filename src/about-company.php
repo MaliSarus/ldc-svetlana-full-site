@@ -38,13 +38,12 @@ require "./modules/header.php";
 require "./modules/dropdown-menu.php";
 ?>
 <!-------------------------------------------------------------------------------------------------------------------->
-<link rel="stylesheet" href="./assets/css/<?php echo basename(__FILE__, '.php');?>/style.css?ver=<?php echo  date("His")?>">
+<link rel="stylesheet"
+      href="./assets/css/<?php echo basename(__FILE__, '.php'); ?>/style.css?ver=<?php echo date("His") ?>">
 
-<section class="about-block" style=" background-image:url(./assets/img/about-unit/bg-image.png)">
-    <?php
-    require "./modules/about-block.php";
-    ?>
-</section>
+<?php
+require "./modules/about-block.php";
+?>
 <?php
 require "./modules/history.php";
 require "./modules/control.php";
@@ -56,7 +55,6 @@ require "./modules/partners.php";
 require "./modules/feedback.php";
 require "./modules/site-map.php";
 ?>
-
 
 
 <!----------------------------НЕ ТРОГАТЬ---------------------------------->
