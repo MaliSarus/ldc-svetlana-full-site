@@ -5,7 +5,8 @@
     margin-bottom: 0;
   }
   &__wrapper{
-    width: 623px;
+    width: 100%;
+    overflow: hidden;
     @media screen and (min-width: 653px){
       width: 100%;
     }
@@ -30,7 +31,9 @@
       }
     }
     ul{
-      @media screen and (min-width: 961px){
+      width: 623px;
+      @media screen and (min-width: 769px){
+        width: 100%;
         box-sizing: border-box;
         max-width: 100%;
       }
@@ -83,6 +86,11 @@
             background: #F1F1F1;
             color: $main-color;
             margin-bottom: 0;
+            &:last-child{
+              .cost__list_content{
+                border: none;
+              }
+            }
             span{
               box-sizing: border-box;
               padding: 16px 56px;
@@ -103,32 +111,14 @@
                 background: white;
                 color:$main-color;
                 box-sizing: border-box;
-                padding: 0 18px;
                 &:last-child{
                   .cost__list_content{
                     border: none;
                   }
                 }
-                @media screen and (min-width: 961px){
-                  padding: 0 36px;
-                }
                 span{
                   &::before{
                     display: none;
-                  }
-                }
-                span.cost__list_content_del{
-                  &::before {
-                    position: absolute;
-                    width: 100%;
-                    height: 2px;
-                    content: '';
-                    display: block !important;
-                    background-color: $accent-color;
-                    left: 0;
-                    top: 50%;
-                    transform: translateY(-50%);
-                    opacity: 1;
                   }
                 }
               }
@@ -162,6 +152,10 @@
       }
     }
     &_content{
+      margin: 0 18px;
+      @media screen and (min-width: 961px){
+        margin: 0 36px;
+      }
       cursor: pointer;
       display: flex;
       padding: 16px 0;
@@ -196,6 +190,19 @@
         padding: 0!important;
         &:hover{
           text-decoration: none !important;
+        }
+
+        &::before {
+          position: absolute;
+          width: 100%;
+          height: 2px;
+          content: '';
+          display: block !important;
+          background-color: $accent-color;
+          left: 0;
+          top: 50%;
+          transform: translateY(-50%);
+          opacity: 1;
         }
       }
       button{

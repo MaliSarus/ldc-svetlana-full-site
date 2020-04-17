@@ -1171,6 +1171,21 @@ input[type="search"]:focus {
   filter: blur(4px);
 }
 
+.direction-master--empty {
+  display: none;
+}
+
+@media screen and (min-width: 961px) {
+  .direction-master--empty {
+    display: block;
+    padding: 30px 0;
+  }
+}
+
+.direction-master--empty .direction-master__block {
+  display: none;
+}
+
 .popup {
   position: fixed;
   left: 0;
@@ -3624,17 +3639,33 @@ input[type="search"]:focus {
 .specialists__doctor {
   background-color: #fcfcfc;
   padding: 12px;
-  width: 325px;
-  max-width: 325px;
+  height: auto;
   position: relative;
-  height: 100%;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
 @media screen and (min-width: 577px) {
   .specialists__doctor {
-    margin-right: 20px;
+    margin: 0 10px;
+    -ms-flex-preferred-size: calc(100% / 2 - 20px);
+    flex-basis: calc(100% / 2 - 20px);
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .specialists__doctor {
+    margin: 0 10px;
+    -ms-flex-preferred-size: calc(100% / 3 - 20px);
+    flex-basis: calc(100% / 3 - 20px);
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .specialists__doctor {
+    margin: 0 10px;
+    -ms-flex-preferred-size: calc(100% / 4 - 20px);
+    flex-basis: calc(100% / 4 - 20px);
   }
 }
 
@@ -3643,7 +3674,7 @@ input[type="search"]:focus {
 }
 
 .specialists__doctor .doctor__image {
-  width: 300px;
+  width: 100%;
   min-height: 300px;
   max-height: 300px;
   margin-left: auto;
@@ -3778,6 +3809,8 @@ input[type="search"]:focus {
 
 .specialists__slider {
   margin-bottom: 18px;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 
 .specialists__slider .slick-list {
@@ -3967,6 +4000,9 @@ input[type="search"]:focus {
 
 .feedback__slider {
   width: 100%;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
 }
 
 @media screen and (min-width: 961px) {
@@ -3989,6 +4025,8 @@ input[type="search"]:focus {
   -webkit-transition: background-color .35s;
   -o-transition: background-color .35s;
   transition: background-color .35s;
+  -ms-flex-preferred-size: 100%;
+  flex-basis: 100%;
 }
 
 .feedback__item:hover {
@@ -4001,17 +4039,16 @@ input[type="search"]:focus {
   background: linear-gradient(0deg, white, rgba(255, 255, 255, 0));
 }
 
-@media screen and (min-width: 769px) {
-  .feedback__item {
-    margin-right: 10px;
-  }
-}
-
 @media screen and (min-width: 961px) {
   .feedback__item {
     padding: 20px 37px;
-    margin-right: 20px;
+    margin: 0 10px;
     min-height: 251px;
+    -ms-flex-preferred-size: calc(100% / 2 - 20px);
+    flex-basis: calc(100% / 2 - 20px);
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
   }
 }
 

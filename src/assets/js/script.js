@@ -129,8 +129,18 @@ const specSliderInit = () => {
                     settings: {
                         slidesToShow: 3
                     },
+                },
+                {
+                    breakpoint: 1399,
+                    settings: {
+                        slidesToShow: 3
+                    },
                 }
             ]
+        });
+        $('.specialists__doctor').css({
+            width: 325 + 'px',
+            maxWidth: 325 + 'px',
         });
         $('.specialists__control-panel .arrows .arrows__arrow-left').on('click', function () {
             specSlick.slick('slickPrev');
@@ -144,6 +154,23 @@ const specSliderInit = () => {
         });
         specSlick.on('afterChange', function () {
             $('.doctor__full-info').on('click', hoverLinkHandler)
+        });
+        specSlick.on('breakpoint', function (event, slick, breakpoint) {
+            if ($('.specialists__doctor').length <= slick.options.slidesToShow) {
+                specSlick.slick('unslick');
+                specSlick.css({
+                    display: 'flex',
+                    marginLeft: '-10px',
+                    marginRight: '-10px',
+                });
+                $('.specialists__block .arrows').css('display', 'none');
+                $('.specialists__control-panel .mobile').css('display', 'none');
+            } else {
+                $('.specialists__doctor').css({
+                    width: 325 + 'px',
+                    maxWidth: 325 + 'px',
+                });
+            }
         });
     }
     if (isSet($('.control'))) {
@@ -209,14 +236,6 @@ const feedSliderInit = () => {
         adaptiveHeight: true,
         responsive: [
             {
-                breakpoint: 769,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-                    infinite: false,
-                },
-            },
-            {
                 breakpoint: 961,
                 settings: {
                     slidesToShow: 2,
@@ -235,6 +254,18 @@ const feedSliderInit = () => {
     });
     $('.feedback__item-content').on('focus click', function () {
         feedSlick.children().removeAttr('style');
+    });
+    feedSlick.on('breakpoint', function (event, slick, breakpoint) {
+        if ($('.feedback__item').length <= slick.options.slidesToShow) {
+            feedSlick.slick('unslick').css({
+                display: 'flex',
+                width: '100%',
+            });
+            feedSlick.parent().css({
+                margin:'0 -10px'
+            });
+            $('.feedback__head .arrows').css('display','none');
+        }
     });
 };
 
@@ -792,6 +823,117 @@ $(window).on('resize', function () {
             })
         })
     }
+
+    if (isSet($('.specialists__slider'))) {
+        const specSlickItem = $('.specialists__slider .specialists__doctor');
+        if ($(window).width() >= 1400) {
+            if (specSlickItem.length >= 5) {
+                $('.specialists__slider').removeAttr('style');
+                $('.specialists__block .arrows').removeAttr('style');
+                if (!($('.specialists__slider').hasClass('slick-initialized'))) {
+                    specSliderInit();
+                }
+            } else {
+                $('.specialists__block .arrows').css('display', 'none');
+
+                $('.specialists__control-panel .mobile').css('display', 'none');
+            }
+        }
+        if ($(window).width() >= 961 && $(window).width() < 1400) {
+            if (specSlickItem.length >= 4) {
+                $('.specialists__slider').removeAttr('style');
+                $('.specialists__block .arrows').removeAttr('style');
+                if (!($('.specialists__slider').hasClass('slick-initialized'))) {
+                    specSliderInit();
+                }
+
+            } else {
+                $('.specialists__block .arrows').css('display', 'none');
+
+                $('.specialists__control-panel .mobile').css('display', 'none');
+            }
+        }
+        if ($(window).width() >= 769 && $(window).width() < 961) {
+            if (specSlickItem.length > 3) {
+                $('.specialists__slider').removeAttr('style');
+                $('.specialists__block .arrows').removeAttr('style');
+                if (!($('.specialists__slider').hasClass('slick-initialized'))) {
+                    specSliderInit();
+                }
+
+            } else {
+                $('.specialists__block .arrows').css('display', 'none');
+
+                $('.specialists__control-panel .mobile').css('display', 'none');
+            }
+        }
+        if ($(window).width() >= 577 && $(window).width() < 769) {
+            if (specSlickItem.length > 2) {
+                $('.specialists__slider').removeAttr('style');
+                $('.specialists__block .arrows').removeAttr('style');
+                if (!($('.specialists__slider').hasClass('slick-initialized'))) {
+                    specSliderInit();
+                }
+
+            } else {
+                $('.specialists__block .arrows').css('display', 'none');
+
+                $('.specialists__control-panel .mobile').css('display', 'none');
+            }
+        }
+        if ($(window).width() < 577) {
+            if (specSlickItem.length > 1) {
+                $('.specialists__slider').removeAttr('style');
+                $('.specialists__block .arrows').removeAttr('style');
+                if (!($('.specialists__slider').hasClass('slick-initialized'))) {
+                    specSliderInit();
+                }
+            } else {
+                $('.specialists__block .arrows').css('display', 'none');
+
+                $('.specialists__control-panel .mobile').css('display', 'none');
+            }
+        }
+
+    }
+
+    if (isSet($('.feedback__slider'))) {
+        const feedSlickItem = $('.feedback__item');
+        const feedSlick = $('.feedback__slider');
+        if ($(window).width() >= 961) {
+            if (feedSlickItem.length > 2) {
+                if (!(feedSlick.hasClass('slick-initialized'))) {
+                    feedSliderInit();
+                }
+            } else {
+                feedSlick.css({
+                    display: 'flex',
+                    width: '100%',
+                });
+                feedSlick.parent().css({
+                    margin:'0 -10px'
+                });
+                $('.feedback__head .arrows').css('display','none');
+            }
+        }
+        if ($(window).width() < 960) {
+            if (feedSlickItem.length > 1) {
+                if (!(feedSlick.hasClass('slick-initialized'))) {
+                    feedSliderInit();
+                }
+            } else {
+                feedSlick.css({
+                    display: 'flex',
+                    width: '100%',
+                });
+                feedSlick.parent().css({
+                    margin:'0 -10px'
+                });
+                $('.feedback__head .arrows').css('display','none');
+            }
+        }
+    }
+
     if (isSet($('.tools')) && !($('.tools__slider').hasClass('slick-initialized'))) {
         const toolsSlickItem = $('.tools__slider_item');
         if ($(window).width() >= 1200) {
@@ -836,8 +978,8 @@ $(window).on('resize', function () {
             }
         } else if ($(window).width() <= 768 && typeof (sbCost) === 'undefined') {
             sbCost = new ScrollBooster({
-                viewport: document.querySelector('.cost__block'),
-                content: document.querySelector('.cost__wrapper'),
+                viewport: document.querySelector('.cost__wrapper'),
+                content: document.querySelector('.cost__wrapper > ul.cost__list'),
                 scrollMode: "transform", // use CSS 'transform' property
                 direction: "horizontal", // allow only horizontal scrollin
                 pointerMode: 'all',
@@ -895,13 +1037,86 @@ window.onload = function () {
 
 
     //Слайдер специалистов и кнопки слайдера специалистов
-    if (isSet($('.specialists__slider')) || isSet($('.staff'))) {
-        specSliderInit();
+    if (isSet($('.specialists__slider'))) {
+        const specSlickItem = $('.specialists__slider .specialists__doctor');
+        if ($(window).width() >= 1400) {
+            if (specSlickItem.length >= 5) {
+                $('.specialists__slider').removeAttr('style');
+                $('.specialists__block .arrows').removeAttr('style');
+                specSliderInit();
+
+            } else {
+                $('.specialists__slider').css('display', 'flex');
+                $('.specialists__block .arrows').css('display', 'none');
+            }
+        }
+        if ($(window).width() >= 961 && $(window).width() < 1400) {
+            if (specSlickItem.length >= 4) {
+                specSliderInit();
+            } else {
+                $('.specialists__slider').css('display', 'flex');
+                $('.specialists__block .arrows').css('display', 'none');
+            }
+        }
+        if ($(window).width() >= 769 && $(window).width() < 961) {
+            if (specSlickItem.length > 3) {
+                specSliderInit();
+            } else {
+                $('.specialists__slider').css('display', 'flex');
+                $('.specialists__block .arrows').css('display', 'none');
+            }
+        }
+        if ($(window).width() >= 577 && $(window).width() < 769) {
+            if (specSlickItem.length > 2) {
+                specSliderInit();
+            } else {
+                $('.specialists__slider').css('display', 'flex');
+                $('.specialists__block .arrows').css('display', 'none');
+            }
+        }
+        if ($(window).width() < 577) {
+            if (specSlickItem.length > 1) {
+                specSliderInit();
+            } else {
+                $('.specialists__slider').css('display', 'flex');
+                $('.specialists__block .arrows').css('display', 'none');
+            }
+        }
+
     }
 
     //Сладер отзывов и кнопки сладера отзывов
     if (isSet($('.feedback__slider'))) {
-        feedSliderInit();
+        const feedSlickItem = $('.feedback__item');
+        const feedSlick = $('.feedback__slider');
+        if ($(window).width() >= 961) {
+            if (feedSlickItem.length > 2) {
+                feedSliderInit();
+            } else {
+                feedSlick.css({
+                    display: 'flex',
+                    width: '100%',
+                });
+                feedSlick.parent().css({
+                    margin:'0 -10px'
+                });
+                $('.feedback__head .arrows').css('display','none');
+            }
+        }
+        if ($(window).width() < 960) {
+            if (feedSlickItem.length > 1) {
+                feedSliderInit();
+            } else {
+                feedSlick.css({
+                    display: 'flex',
+                    width: '100%',
+                });
+                feedSlick.parent().css({
+                    margin:'0 -10px'
+                });
+                $('.feedback__head .arrows').css('display','none');
+            }
+        }
     }
 
     //Основной слайдер (анимации и тд)
@@ -1672,8 +1887,8 @@ $(document).ready(function () {
     if (isSet($('.cost'))) {
         if ($(window).width() <= 768) {
             sbCost = new ScrollBooster({
-                viewport: document.querySelector('.cost__block'),
-                content: document.querySelector('.cost__wrapper'),
+                viewport: document.querySelector('.cost__wrapper'),
+                content: document.querySelector('.cost__wrapper > ul.cost__list'),
                 scrollMode: "transform", // use CSS 'transform' property
                 direction: "horizontal", // allow only horizontal scrollin
                 pointerMode: 'all',

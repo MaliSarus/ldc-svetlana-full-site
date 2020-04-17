@@ -88,13 +88,20 @@
   &__doctor {
     background-color: #fcfcfc;
     padding: 12px;
-    width: 325px;
-    max-width: 325px;
+    height: auto;
     position: relative;
-    height: 100%;
     box-sizing: border-box;
     @media screen and (min-width: 577px){
-      margin-right: 20px;
+      margin: 0 10px;
+      flex-basis: calc(100% / 2 - 20px);
+    }
+    @media screen and (min-width: 769px){
+      margin: 0 10px;
+      flex-basis: calc(100% / 3 - 20px);
+    }
+    @media screen and (min-width: 1400px){
+      margin: 0 10px;
+      flex-basis: calc(100% / 4 - 20px);
     }
 
     &:last-child {
@@ -103,7 +110,7 @@
 
     .doctor {
       &__image {
-        width: 300px;
+        width: 100%;
         min-height: 300px;
         max-height: 300px;
         margin-left: auto;
@@ -227,6 +234,7 @@
 
   &__slider {
     margin-bottom: 18px;
+    flex-wrap: wrap;
 
     .slick-list {
       display: flex;

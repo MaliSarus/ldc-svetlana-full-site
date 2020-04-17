@@ -43,6 +43,7 @@ require "./modules/dropdown-menu.php";
 <?php
 require "./modules/about-emergency-room.php";
 require "./modules/all-contacts.php";
+require "./modules/props.php";
 ?>
 
 
