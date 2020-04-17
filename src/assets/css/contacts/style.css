@@ -3278,6 +3278,9 @@ input[type="search"]:focus {
   .props__column {
     -ms-flex-preferred-size: 50%;
     flex-basis: 50%;
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
     padding: 0 10px;
   }
   .props__column:last-child {
