@@ -27,7 +27,7 @@
                         </div>
                     </div>
                     <div class="all-contacts__item">
-                        <div class="all-contacts__item_image"><img src="./assets/img/all-contacts/" alt="Иконка блока"></div>
+<!--                        <div class="all-contacts__item_image"><img src="./assets/img/all-contacts/" alt="Иконка блока"></div>-->
                         <div class="all-contacts__item_title">Социальные сети</div>
                         <div class="all-contacts__item_content">
                             <div class="all-contacts__social">
