@@ -4,7 +4,7 @@
             <div class="control__block">
                 <div class="control__head">
                     <div class="content">
-                        <h2 class="title">
+                        <h2 class="title" data-mobile="Управление ЛДЦ">
                             Управление &lt;лечебно – диагностического центра&gt;
                         </h2>
                         <div class="control__control-panel mobile">

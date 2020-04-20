@@ -103,13 +103,14 @@
   &__block{
     box-sizing: border-box;
     @media screen and (min-width: 961px){
-      flex-basis: 100%;
+      flex-basis: 50%;
       max-width: 685px;
       min-height: 625px;
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
       padding-top: 90px;
+      padding-bottom: 90px;
     }
   }
   &__desc{

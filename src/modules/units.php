@@ -4,7 +4,7 @@
             <div class="units__block upside__block"><!--Верх-->
                 <div class="units__head">
                     <div class="content">
-                        <h2 class="title">
+                        <h2 class="title" data-mobile="Отделения ЛДЦ">
                             Отделения &lt;лечебно – диагностического центра&gt;
                         </h2>
                         <div class="units__menu">
@@ -419,7 +419,7 @@
         <div class="row">
             <div class="units__emergency-room">
                 <div class="content">
-                    <h2 class="title">
+                    <h2 class="title" data-mobile="Взрослый и детский травмпункт">
                         Взрослый и детский травмпункт &lt;ЛДЦ Завода “Светлана”&gt;
                     </h2>
                     <div class="units__features">

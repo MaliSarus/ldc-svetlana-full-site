@@ -2480,8 +2480,8 @@ button.mfp-arrow {
 
 @media screen and (min-width: 961px) {
   .about-block__block {
-    -ms-flex-preferred-size: 100%;
-    flex-basis: 100%;
+    -ms-flex-preferred-size: 50%;
+    flex-basis: 50%;
     max-width: 685px;
     min-height: 625px;
     display: -webkit-box;
@@ -2495,6 +2495,7 @@ button.mfp-arrow {
     -ms-flex-pack: start;
     justify-content: flex-start;
     padding-top: 90px;
+    padding-bottom: 90px;
   }
 }
 
@@ -2744,8 +2745,8 @@ button.mfp-arrow {
 
 @media screen and (min-width: 961px) {
   .about-unit__block {
-    -ms-flex-preferred-size: 100%;
-    flex-basis: 100%;
+    -ms-flex-preferred-size: 50%;
+    flex-basis: 50%;
     max-width: 685px;
     min-height: 625px;
     display: -webkit-box;
@@ -4456,8 +4457,6 @@ button.mfp-arrow {
   -webkit-transition: background-color .35s;
   -o-transition: background-color .35s;
   transition: background-color .35s;
-  -ms-flex-preferred-size: 100%;
-  flex-basis: 100%;
 }
 
 .feedback__item:hover {
@@ -4477,9 +4476,7 @@ button.mfp-arrow {
     min-height: 251px;
     -ms-flex-preferred-size: calc(100% / 2 - 20px);
     flex-basis: calc(100% / 2 - 20px);
-    -webkit-box-flex: 1;
-    -ms-flex-positive: 1;
-    flex-grow: 1;
+    max-width: 50%;
   }
 }
 

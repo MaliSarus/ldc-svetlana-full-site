@@ -2867,78 +2867,54 @@ button.mfp-arrow {
   }
 }
 
-.education__block .title {
+.education__block > *:last-child {
+  margin-bottom: 0;
+}
+
+.education__block h2, .education__block h3, .education__block h4, .education__block h5, .education__block h6 {
+  color: #0A1831;
   margin-bottom: 12px;
+  font-size: 20px;
 }
 
 @media screen and (min-width: 961px) {
-  .education__block .title {
+  .education__block h2, .education__block h3, .education__block h4, .education__block h5, .education__block h6 {
+    font-size: 22px;
     margin-bottom: 36px;
   }
 }
 
-.education__article {
-  margin-bottom: 18px;
-}
-
-@media screen and (min-width: 961px) {
-  .education__article {
-    margin-bottom: 55px;
-  }
-}
-
-.education__article:last-child {
-  margin-bottom: 0;
-}
-
-.education__article > *:last-child {
-  margin-bottom: 0;
-}
-
-.education__article h3, .education__article h4, .education__article h5, .education__article h6 {
-  color: #0A1831;
-  margin-bottom: 12px;
-  font-size: 18px;
-}
-
-@media screen and (min-width: 961px) {
-  .education__article h3, .education__article h4, .education__article h5, .education__article h6 {
-    font-size: 22px;
-    margin-bottom: 28px;
-  }
-}
-
 @media screen and (min-width: 1400px) {
-  .education__article h3, .education__article h4, .education__article h5, .education__article h6 {
+  .education__block h2, .education__block h3, .education__block h4, .education__block h5, .education__block h6 {
     font-size: 28px;
   }
 }
 
-.education__article > p {
+.education__block > p {
   line-height: 140%;
   color: rgba(10, 24, 49, 0.8);
-  margin-bottom: 12px;
+  margin-bottom: 18px;
 }
 
 @media screen and (min-width: 961px) {
-  .education__article > p {
-    margin-bottom: 24px;
+  .education__block > p {
+    margin-bottom: 54px;
   }
 }
 
-.education__article > ul {
+.education__block > ul {
   margin: 0;
   margin-bottom: 12px;
   padding-left: 21px;
 }
 
 @media screen and (min-width: 961px) {
-  .education__article > ul {
+  .education__block > ul {
     margin-bottom: 24px;
   }
 }
 
-.education__article > ul li {
+.education__block > ul li {
   list-style-image: url("../../img/for-patient/red-square.svg");
   font-size: 16px;
   line-height: 140%;
@@ -3273,8 +3249,6 @@ button.mfp-arrow {
   -webkit-transition: background-color .35s;
   -o-transition: background-color .35s;
   transition: background-color .35s;
-  -ms-flex-preferred-size: 100%;
-  flex-basis: 100%;
 }
 
 .feedback__item:hover {
@@ -3294,9 +3268,7 @@ button.mfp-arrow {
     min-height: 251px;
     -ms-flex-preferred-size: calc(100% / 2 - 20px);
     flex-basis: calc(100% / 2 - 20px);
-    -webkit-box-flex: 1;
-    -ms-flex-positive: 1;
-    flex-grow: 1;
+    max-width: 50%;
   }
 }
 
@@ -3541,6 +3513,7 @@ button.mfp-arrow {
 @media screen and (min-width: 961px) {
   .science-articles__block {
     padding: 60px 0;
+    padding-bottom: 90px;
   }
 }
 
@@ -3563,16 +3536,26 @@ button.mfp-arrow {
   }
 }
 
+.science-articles__content {
+  margin-bottom: -18px;
+}
+
 @media screen and (min-width: 961px) {
   .science-articles__content {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin: 0 -10px;
+    margin-top: -20px;
   }
 }
 
 .science-articles__content_item {
   background: #F6F7F8;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
   position: relative;
   z-index: 12;
   padding: 12px 8px;
@@ -3591,16 +3574,12 @@ button.mfp-arrow {
 
 @media screen and (min-width: 961px) {
   .science-articles__content_item {
-    -ms-flex-preferred-size: calc(100% / 2);
-    flex-basis: calc(100% / 2);
-    margin-bottom: 0;
-    margin-right: 20px;
+    -ms-flex-preferred-size: calc(100% / 2 - 20px);
+    flex-basis: calc(100% / 2 - 20px);
+    margin: 0 10px;
+    margin-top: 20px;
     padding: 20px 37px;
   }
-}
-
-.science-articles__content_item:last-child {
-  margin: 0;
 }
 
 .science-articles__content_item:hover {
@@ -3698,12 +3677,6 @@ button.mfp-arrow {
 .science-articles__footer a {
   display: inline-block;
   padding-top: 25px;
-}
-
-@media screen and (min-width: 961px) {
-  .science-articles__footer a {
-    padding: 25px 0;
-  }
 }
 
 .science-articles__footer a:hover img {

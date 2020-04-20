@@ -2969,61 +2969,67 @@ button.mfp-arrow {
   }
 }
 
-.cost__block ul > li ul {
+.cost__block ul > li > ul {
   display: none;
   border: 1px solid #E3E5E8;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
-.cost__block ul > li ul li {
+.cost__block ul > li > ul > li {
+  border-bottom: 1px solid rgba(10, 24, 49, 0.15);
   background: #F1F1F1;
   color: #2A4472;
   margin-bottom: 0;
 }
 
-.cost__block ul > li ul li:last-child .cost__list_content {
+.cost__block ul > li > ul > li:last-child > .cost__list_content {
   border: none;
 }
 
-.cost__block ul > li ul li span {
+.cost__block ul > li > ul > li > span {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   padding: 16px 56px;
 }
 
 @media screen and (min-width: 768px) {
-  .cost__block ul > li ul li span {
+  .cost__block ul > li > ul > li > span {
     padding: 16px 36px;
   }
 }
 
-.cost__block ul > li ul li span:hover {
+.cost__block ul > li > ul > li > span:hover {
   color: #2A4472;
 }
 
-.cost__block ul > li ul li span::before {
+.cost__block ul > li > ul > li > span::before {
   -webkit-filter: none;
   filter: none;
 }
 
-.cost__block ul > li ul li ul {
+.cost__block ul > li > ul > li > span.active {
+  border-bottom: 1px solid rgba(10, 24, 49, 0.15);
+}
+
+.cost__block ul > li > ul > li > ul {
   display: none;
   border: none;
 }
 
-.cost__block ul > li ul li ul li {
+.cost__block ul > li > ul > li > ul > li {
+  border: none;
   background: white;
   color: #2A4472;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
-.cost__block ul > li ul li ul li:last-child .cost__list_content {
+.cost__block ul > li > ul > li > ul > li:last-child > .cost__list_content {
   border: none;
 }
 
-.cost__block ul > li ul li ul li span::before {
+.cost__block ul > li > ul > li > ul > li span::before {
   display: none;
 }
 
@@ -4132,8 +4138,6 @@ button.mfp-arrow {
   -webkit-transition: background-color .35s;
   -o-transition: background-color .35s;
   transition: background-color .35s;
-  -ms-flex-preferred-size: 100%;
-  flex-basis: 100%;
 }
 
 .feedback__item:hover {
@@ -4153,9 +4157,7 @@ button.mfp-arrow {
     min-height: 251px;
     -ms-flex-preferred-size: calc(100% / 2 - 20px);
     flex-basis: calc(100% / 2 - 20px);
-    -webkit-box-flex: 1;
-    -ms-flex-positive: 1;
-    flex-grow: 1;
+    max-width: 50%;
   }
 }
 

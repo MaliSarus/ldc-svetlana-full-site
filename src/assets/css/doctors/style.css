@@ -3403,6 +3403,15 @@ button.mfp-arrow {
   margin-bottom: 30px;
 }
 
+@media screen and (min-width: 961px) {
+  .staff__ordinary .specialists__slider {
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+    width: 100%;
+  }
+}
+
 .staff__ordinary:last-child {
   margin-bottom: 0;
 }
@@ -3410,6 +3419,31 @@ button.mfp-arrow {
 .staff__find {
   display: none;
   margin-bottom: 30px;
+}
+
+.staff__find .specialists__slider {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-top: -12px;
+}
+
+@media screen and (min-width: 961px) {
+  .staff__find .specialists__slider {
+    margin-top: -18px;
+  }
+}
+
+.staff__find .specialists__slider .specialists__doctor {
+  margin-top: 12px;
+}
+
+@media screen and (min-width: 961px) {
+  .staff__find .specialists__slider .specialists__doctor {
+    margin-top: 18px;
+  }
 }
 
 .staff__find-head {
@@ -3440,67 +3474,6 @@ button.mfp-arrow {
 @media screen and (min-width: 577px) {
   .staff__find-head .back {
     font-size: 16px;
-  }
-}
-
-.staff__find .specialists__slider {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-}
-
-@media screen and (min-width: 961px) {
-  .staff__find .specialists__slider {
-    margin-top: -20px;
-  }
-}
-
-.staff__find .specialists__slider .specialists__doctor {
-  -ms-flex-preferred-size: 100%;
-  flex-basis: 100%;
-  max-width: none;
-  width: auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  margin-right: 0;
-}
-
-@media screen and (min-width: 769px) {
-  .staff__find .specialists__slider .specialists__doctor {
-    -ms-flex-preferred-size: calc(100% / 2 - 5px);
-    flex-basis: calc(100% / 2 - 5px);
-  }
-}
-
-@media screen and (min-width: 961px) {
-  .staff__find .specialists__slider .specialists__doctor {
-    height: auto;
-    margin-top: 20px;
-    margin-right: 5px;
-  }
-}
-
-@media screen and (min-width: 1017px) {
-  .staff__find .specialists__slider .specialists__doctor {
-    -ms-flex-preferred-size: calc(100% / 3 - 5px);
-    flex-basis: calc(100% / 3 - 5px);
-  }
-}
-
-@media screen and (min-width: 1326px) {
-  .staff__find .specialists__slider .specialists__doctor {
-    -ms-flex-preferred-size: calc(100% / 4 - 5px);
-    flex-basis: calc(100% / 4 - 5px);
-    margin-right: 0;
   }
 }
 
@@ -4254,69 +4227,6 @@ button.mfp-arrow {
   to {
     -webkit-transform: translate3d(-50%, 0, 0);
     transform: translate3d(-50%, 0, 0);
-  }
-}
-
-.specialists__slider {
-  margin-bottom: 0;
-}
-
-@media screen and (min-width: 961px) {
-  .specialists__slider {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    margin-top: -20px;
-    -webkit-box-pack: start;
-    -ms-flex-pack: start;
-    justify-content: flex-start;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    width: 100%;
-  }
-}
-
-.specialists__doctor {
-  outline: none;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-}
-
-.specialists__doctor:last-child {
-  margin-right: 0;
-}
-
-@media screen and (min-width: 961px) {
-  .specialists__doctor {
-    height: auto;
-    margin-top: 20px;
-    -ms-flex-preferred-size: calc(100% / 2 - 5px);
-    flex-basis: calc(100% / 2 - 5px);
-    margin-right: 5px;
-    max-width: none;
-    width: auto;
-  }
-}
-
-@media screen and (min-width: 1017px) {
-  .specialists__doctor {
-    -ms-flex-preferred-size: calc(100% / 3 - 5px);
-    flex-basis: calc(100% / 3 - 5px);
-  }
-}
-
-@media screen and (min-width: 1326px) {
-  .specialists__doctor {
-    -ms-flex-preferred-size: calc(100% / 4 - 5px);
-    flex-basis: calc(100% / 4 - 5px);
-    margin-right: 0;
   }
 }
 

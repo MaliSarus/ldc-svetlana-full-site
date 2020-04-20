@@ -360,6 +360,12 @@
 
   &__ordinary {
     margin-bottom: 30px;
+    .specialists__slider{
+      @media screen and (min-width: 961px){
+        transform: none;
+        width: 100%;
+      }
+    }
 
     &:last-child {
       margin-bottom: 0;
@@ -370,6 +376,21 @@
   &__find {
     display: none;
     margin-bottom: 30px;
+
+    .specialists__slider{
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: -12px;
+      @media screen and (min-width: 961px){
+        margin-top: -18px;
+      }
+      .specialists__doctor{
+        margin-top: 12px;
+        @media screen and (min-width: 961px){
+          margin-top: 18px;
+        }
+      }
+    }
 
     &-head {
       display: flex;
@@ -392,37 +413,37 @@
       }
     }
 
-    .specialists__slider {
-      display: flex;
-      justify-content: flex-start;
-      flex-wrap: wrap;
-      @media screen and (min-width: 961px) {
-        margin-top: -20px;
-      }
-      .specialists__doctor {
-        flex-basis: 100%;
-        max-width: none;
-        width: auto;
-        display: flex;
-        justify-content: center;
-        margin-right: 0;
-        @media screen and (min-width: 769px) {
-          flex-basis: calc(100% / 2 - 5px);
-        }
-        @media screen and (min-width: 961px) {
-          height: auto;
-          margin-top: 20px;
-          margin-right: 5px;
-        }
-        @media screen and (min-width: 1017px) {
-          flex-basis: calc(100% / 3 - 5px);
-        }
-        @media screen and (min-width: 1326px) {
-          flex-basis: calc(100% / 4 - 5px);
-          margin-right: 0;
-        }
-      }
-    }
+    //.specialists__slider {
+    //  display: flex;
+    //  justify-content: flex-start;
+    //  flex-wrap: wrap;
+    //  @media screen and (min-width: 961px) {
+    //    margin-top: -20px;
+    //  }
+    //  .specialists__doctor {
+    //    flex-basis: 100%;
+    //    max-width: none;
+    //    width: auto;
+    //    display: flex;
+    //    justify-content: center;
+    //    margin-right: 0;
+    //    @media screen and (min-width: 769px) {
+    //      flex-basis: calc(100% / 2 - 5px);
+    //    }
+    //    @media screen and (min-width: 961px) {
+    //      height: auto;
+    //      margin-top: 20px;
+    //      margin-right: 5px;
+    //    }
+    //    @media screen and (min-width: 1017px) {
+    //      flex-basis: calc(100% / 3 - 5px);
+    //    }
+    //    @media screen and (min-width: 1326px) {
+    //      flex-basis: calc(100% / 4 - 5px);
+    //      margin-right: 0;
+    //    }
+    //  }
+    //}
 
     .btn.btn_white {
       margin-top: 18px;

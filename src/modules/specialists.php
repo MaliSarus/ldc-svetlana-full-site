@@ -4,7 +4,7 @@
             <div class="specialists__block">
                 <div class="specialists__head">
                     <div class="content">
-                        <h2 class="title">
+                        <h2 class="title" data-mobile="Специалисты ЛДЦ">
                             Специалисты &lt;лечебно – диагностического центра&gt;
                         </h2>
                         <div class="specialists__control-panel mobile">

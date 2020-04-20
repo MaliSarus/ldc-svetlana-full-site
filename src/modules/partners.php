@@ -4,7 +4,7 @@
             <div class="partners__block">
                 <div class="partners__head">
                     <div class="content">
-                        <h2 class="title">&lt;Медицинская поддержка и&gt; партнёры ЛДЦ &lt;завода "Светлана"&gt;</h2>
+                        <h2 class="title" data-mobile="Партнеры ЛДЦ">&lt;Медицинская поддержка и&gt; партнёры ЛДЦ &lt;завода "Светлана"&gt;</h2>
                     </div>
                 </div>
                 <div class="partners__content">

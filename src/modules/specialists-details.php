@@ -4,7 +4,7 @@
             <div class="specialists-details__block">
                 <div class="specialists-details__head">
                     <div class="content">
-                        <h3 class="title">
+                        <h3 class="title" data-mobile="Специалисты">
                             Специалисты &lt;неврологи&gt;
                         </h3>
                         <div class="specialists-details__control-panel mobile">

@@ -115,7 +115,7 @@
     box-sizing: border-box;
     min-height: 276px;
     transition: background-color .35s;
-    flex-basis: 100%;
+    //flex-basis: 100%;
 
     &:hover {
       background-color: white;
@@ -133,7 +133,7 @@
       margin: 0 10px;
       min-height: 251px;
       flex-basis: calc(100% / 2 - 20px);
-      flex-grow: 1;
+      max-width: 50%;
     }
 
     &-head {

@@ -4562,8 +4562,6 @@ button.mfp-arrow {
   -webkit-transition: background-color .35s;
   -o-transition: background-color .35s;
   transition: background-color .35s;
-  -ms-flex-preferred-size: 100%;
-  flex-basis: 100%;
 }
 
 .feedback__item:hover {
@@ -4583,9 +4581,7 @@ button.mfp-arrow {
     min-height: 251px;
     -ms-flex-preferred-size: calc(100% / 2 - 20px);
     flex-basis: calc(100% / 2 - 20px);
-    -webkit-box-flex: 1;
-    -ms-flex-positive: 1;
-    flex-grow: 1;
+    max-width: 50%;
   }
 }
 

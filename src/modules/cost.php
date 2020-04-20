@@ -52,6 +52,45 @@
                                                 class="text">Записаться</div></button>
                                     </div>
                                 </li>
+                                <li class="cost__list_item">
+                                    <div class="cost__list_content">
+                                        <div class="cost__list_content_title">
+                                            Холтеровское мониторирование артериального
+                                            давления (ЭКГ)
+                                        </div>
+                                        <div class="cost__list_content_price"><span
+                                                class="cost__list_content_del">13 000 ₽</span>8 000 ₽
+                                        </div>
+                                        <button class="btn btn_red_fill_skew form-call-button"><div
+                                                class="text">Записаться</div></button>
+                                    </div>
+                                </li>
+                                <li class="cost__list_item">
+                                    <div class="cost__list_content">
+                                        <div class="cost__list_content_title">
+                                            Холтеровское мониторирование артериального
+                                            давления (ЭКГ)
+                                        </div>
+                                        <div class="cost__list_content_price"><span
+                                                class="cost__list_content_del">13 000 ₽</span>8 000 ₽
+                                        </div>
+                                        <button class="btn btn_red_fill_skew form-call-button" data-id="194"><div
+                                                class="text">Записаться</div></button>
+                                    </div>
+                                </li>
+                                <li class="cost__list_item">
+                                    <div class="cost__list_content">
+                                        <div class="cost__list_content_title">
+                                            Холтеровское мониторирование артериального
+                                            давления (ЭКГ)
+                                        </div>
+                                        <div class="cost__list_content_price"><span
+                                                class="cost__list_content_del">13 000 ₽</span>8 000 ₽
+                                        </div>
+                                        <button class="btn btn_red_fill_skew form-call-button" data-id="193"><div
+                                                class="text" >Записаться</div></button>
+                                    </div>
+                                </li>
                             </ul>
                         </li>
                         <li class="cost__list_item"><span>Кардиология</span></li>

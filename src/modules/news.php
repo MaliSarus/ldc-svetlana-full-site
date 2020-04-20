@@ -3,7 +3,7 @@
         <div class="row">
             <div class="news__block">
                 <div class="news__head">
-                    <h2 class="title">Новости &lt;лечебно – диагностического центра&gt;</h2>
+                    <h2 class="title" data-mobile="Новости ЛДЦ">Новости &lt;лечебно – диагностического центра&gt;</h2>
                     <a href="#" class="link">Все новости</a>
                 </div>
                 <div class="news__content">
