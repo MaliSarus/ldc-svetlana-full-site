@@ -1186,6 +1186,22 @@ input[type="search"]:focus {
   display: none;
 }
 
+.mfp-bg {
+  background-color: rgba(42, 68, 114, 0.8);
+}
+
+button.mfp-arrow {
+  background-color: rgba(42, 68, 114, 0.3);
+}
+
+.mfp-close {
+  cursor: pointer !important;
+}
+
+.mfp-zoom-out-cur, .mfp-zoom-out-cur .mfp-image-holder .mfp-close {
+  cursor: pointer;
+}
+
 .popup {
   position: fixed;
   left: 0;
@@ -2851,6 +2867,16 @@ input[type="search"]:focus {
   }
 }
 
+.education__block .title {
+  margin-bottom: 12px;
+}
+
+@media screen and (min-width: 961px) {
+  .education__block .title {
+    margin-bottom: 36px;
+  }
+}
+
 .education__article {
   margin-bottom: 18px;
 }
@@ -2865,17 +2891,56 @@ input[type="search"]:focus {
   margin-bottom: 0;
 }
 
-.education__article .title {
+.education__article > *:last-child {
+  margin-bottom: 0;
+}
+
+.education__article h3, .education__article h4, .education__article h5, .education__article h6 {
+  color: #0A1831;
+  margin-bottom: 12px;
+  font-size: 18px;
+}
+
+@media screen and (min-width: 961px) {
+  .education__article h3, .education__article h4, .education__article h5, .education__article h6 {
+    font-size: 22px;
+    margin-bottom: 28px;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .education__article h3, .education__article h4, .education__article h5, .education__article h6 {
+    font-size: 28px;
+  }
+}
+
+.education__article > p {
+  line-height: 140%;
+  color: rgba(10, 24, 49, 0.8);
   margin-bottom: 12px;
 }
 
 @media screen and (min-width: 961px) {
-  .education__article .title {
-    margin-bottom: 36px;
+  .education__article > p {
+    margin-bottom: 24px;
   }
 }
 
-.education__text {
+.education__article > ul {
+  margin: 0;
+  margin-bottom: 12px;
+  padding-left: 21px;
+}
+
+@media screen and (min-width: 961px) {
+  .education__article > ul {
+    margin-bottom: 24px;
+  }
+}
+
+.education__article > ul li {
+  list-style-image: url("../../img/for-patient/red-square.svg");
+  font-size: 16px;
   line-height: 140%;
   color: rgba(10, 24, 49, 0.8);
 }
@@ -3049,18 +3114,6 @@ input[type="search"]:focus {
   .diplomas__position_current {
     font-size: 30px;
   }
-}
-
-.mfp-bg {
-  background-color: rgba(42, 68, 114, 0.8);
-}
-
-button.mfp-arrow {
-  background-color: rgba(42, 68, 114, 0.3);
-}
-
-.mfp-close {
-  cursor: pointer !important;
 }
 
 .feedback {

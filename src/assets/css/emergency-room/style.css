@@ -1186,6 +1186,22 @@ input[type="search"]:focus {
   display: none;
 }
 
+.mfp-bg {
+  background-color: rgba(42, 68, 114, 0.8);
+}
+
+button.mfp-arrow {
+  background-color: rgba(42, 68, 114, 0.3);
+}
+
+.mfp-close {
+  cursor: pointer !important;
+}
+
+.mfp-zoom-out-cur, .mfp-zoom-out-cur .mfp-image-holder .mfp-close {
+  cursor: pointer;
+}
+
 .popup {
   position: fixed;
   left: 0;

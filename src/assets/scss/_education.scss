@@ -10,6 +10,12 @@
     @media screen and (min-width: 961px){
       padding: 60px 0;
     }
+    .title{
+      margin-bottom: 12px;
+      @media screen and (min-width: 961px){
+        margin-bottom: 36px;
+      }
+    }
   }
   &__article{
     margin-bottom: 18px;
@@ -19,15 +25,45 @@
     &:last-child{
       margin-bottom: 0;
     }
-    .title{
-      margin-bottom: 12px;
-      @media screen and (min-width: 961px){
-        margin-bottom: 36px;
+    >*{
+      &:last-child{
+        margin-bottom: 0;
       }
     }
-  }
-  &__text{
-    line-height: 140%;
-    color: rgba($main-color-dark, .8);
+    h3,h4,h5,h6{
+      color: $main-color-dark;
+      margin-bottom: 12px;
+      font-size: 18px;
+      @media screen and (min-width: 961px){
+        font-size: 22px;
+        margin-bottom: 28px;
+      }
+      @media screen and (min-width: 1400px){
+        font-size: 28px;
+      }
+    }
+    >p{
+      line-height: 140%;
+      color: rgba($main-color-dark, .8);
+      margin-bottom: 12px;
+      @media screen and (min-width: 961px){
+        margin-bottom: 24px;
+      }
+    }
+    >ul {
+      margin: 0;
+      margin-bottom: 12px;
+      padding-left: 21px;
+      @media screen and (min-width: 961px){
+        margin-bottom: 24px;
+      }
+
+      li {
+        list-style-image: url("../../img/for-patient/red-square.svg");
+        font-size: 16px;
+        line-height: 140%;
+        color: rgba($main-color-dark, .8);
+      }
+    }
   }
 }

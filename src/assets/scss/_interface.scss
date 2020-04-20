@@ -814,3 +814,19 @@
     display: none;
   }
 }
+
+.mfp-bg {
+  background-color: rgba($main-color, .8);
+}
+
+button.mfp-arrow{
+  background-color: rgba($main-color, .3);
+}
+
+.mfp-close {
+  cursor: pointer !important;
+}
+
+.mfp-zoom-out-cur, .mfp-zoom-out-cur .mfp-image-holder .mfp-close{
+  cursor: pointer;
+}

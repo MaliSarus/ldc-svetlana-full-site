@@ -2,9 +2,10 @@
     <div class="container">
         <div class="row">
             <div class="education__block">
+                <h2 class="title">О враче</h2>
                 <article class="education__article">
-                    <h2 class="title">Образование</h2>
-                    <div class="education__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet
+                    <h3>Образование</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet
                         architecto atque consequuntur corporis eligendi esse est expedita hic, laudantium minima nam
                         nihil nisi numquam odit omnis qui quibusdam quis quisquam recusandae repellat rerum, sequi
                         similique tempore ullam velit voluptatem voluptates! Alias aliquam ea fugiat nesciunt odit quam
@@ -13,16 +14,21 @@
                         sit? Accusantium asperiores aspernatur blanditiis commodi dolor dolore dolorum ea eaque error
                         exercitationem explicabo harum incidunt officiis possimus quae qui quibusdam repellendus, sequi
                         similique ullam ut vitae voluptatum?
-                    </div>
+                    </p>
+                    <ul>
+                        <li>Раз</li>
+                        <li>Два</li>
+                        <li>Три</li>
+                    </ul>
                 </article>
                 <article class="education__article">
-                    <h3 class="title">Курсы повышения квалификации</h3>
-                    <div class="education__text">
+                    <h3>Научные статьи</h3>
+                    <p>
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur cum dolorum esse fugit
                         itaque magnam quaerat! Deserunt facere id iure nobis qui reiciendis repellat tempore? Amet aut
                         facere itaque maxime, obcaecati perferendis quaerat quos velit! At ea earum illum ipsa officia,
                         omnis optio reiciendis rerum sunt unde. Doloribus fugiat, quibusdam.
-                    </div>
+                    </p>
                 </article>
             </div>
         </div>
