@@ -3143,6 +3143,7 @@ button.mfp-arrow {
 @media screen and (min-width: 961px) {
   .all-contacts__content .content-row {
     padding: 0 15px;
+    margin: 0;
   }
 }
 
@@ -3165,6 +3166,7 @@ button.mfp-arrow {
   .all-contacts__item {
     -ms-flex-preferred-size: calc(100% / 4);
     flex-basis: calc(100% / 4);
+    padding: 0;
   }
 }
 
@@ -3219,6 +3221,10 @@ button.mfp-arrow {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+}
+
+.all-contacts__social:last-child {
+  margin-bottom: 0;
 }
 
 .all-contacts__social > a {
