@@ -264,6 +264,7 @@ input[type="search"]:focus {
 }
 
 .btn {
+  cursor: pointer;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   display: block;

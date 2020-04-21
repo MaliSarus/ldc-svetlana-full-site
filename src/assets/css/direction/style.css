@@ -264,6 +264,7 @@ input[type="search"]:focus {
 }
 
 .btn {
+  cursor: pointer;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   display: block;
@@ -3863,11 +3864,34 @@ button.mfp-arrow {
   width: 345px;
   height: 275px;
   margin: 0;
+  -ms-flex-preferred-size: 100%;
+  flex-basis: 100%;
 }
 
 @media screen and (min-width: 577px) {
   .tools__slider_item {
     margin: 0 10px;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .tools__slider_item {
+    -ms-flex-preferred-size: calc(50% - 20px);
+    flex-basis: calc(50% - 20px);
+  }
+}
+
+@media screen and (min-width: 961px) {
+  .tools__slider_item {
+    -ms-flex-preferred-size: calc(100% / 3 - 20px);
+    flex-basis: calc(100% / 3 - 20px);
+  }
+}
+
+@media screen and (min-width: 961px) {
+  .tools__slider_item {
+    -ms-flex-preferred-size: calc(100% / 4 - 20px);
+    flex-basis: calc(100% / 4 - 20px);
   }
 }
 

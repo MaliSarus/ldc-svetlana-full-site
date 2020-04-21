@@ -90,7 +90,7 @@ const specSliderInit = () => {
             $('.doctor__full-info').on('click', hoverLinkHandler)
         });
         specSlickInStaff.on('breakpoint', function (event, slick, breakpoint) {
-            if (breakpoint == 961){
+            if (breakpoint == 961) {
                 specSlickInStaff.find('.specialists__doctor').removeAttr('style');
                 specSlickInStaff.css({
                     display: 'flex',
@@ -399,7 +399,7 @@ const toolsSliderInit = () => {
     });
 
     toolsSlick.on('breakpoint', function (event, slick, breakpoint) {
-        if ($('.tools__slider_item').length < slick.options.slidesToShow) {
+        if ($('.tools__slider_item').length <= slick.options.slidesToShow) {
             toolsSlick.slick('unslick');
             $('.tools__head .tools__position').css('display', 'none');
             $('.tools__head .arrows').css('display', 'none');
@@ -944,8 +944,8 @@ $(window).on('resize', function () {
 
     if (isSet($('.tools')) && !($('.tools__slider').hasClass('slick-initialized'))) {
         const toolsSlickItem = $('.tools__slider_item');
-        if ($(window).width() >= 1200) {
-            if (toolsSlickItem.length >= 4) {
+        if ($(window).width() > 1200) {
+            if (toolsSlickItem.length > 4) {
                 toolsSliderInit();
             } else {
                 $('.tools__head .tools__position').css('display', 'none');
@@ -953,7 +953,7 @@ $(window).on('resize', function () {
             }
         }
         if ($(window).width() >= 961 && $(window).width() < 1200) {
-            if (toolsSlickItem.length >= 3) {
+            if (toolsSlickItem.length > 3) {
                 toolsSliderInit();
             } else {
                 $('.tools__head .tools__position').css('display', 'none');
@@ -961,7 +961,7 @@ $(window).on('resize', function () {
             }
         }
         if ($(window).width() >= 577 && $(window).width() < 961) {
-            if (toolsSlickItem.length >= 2) {
+            if (toolsSlickItem.length > 2) {
                 toolsSliderInit();
             } else {
                 $('.tools__head .tools__position').css('display', 'none');
@@ -969,7 +969,7 @@ $(window).on('resize', function () {
             }
         }
         if ($(window).width() < 577) {
-            if (toolsSlickItem.length >= 1) {
+            if (toolsSlickItem.length > 1) {
                 toolsSliderInit();
             } else {
                 $('.tools__head .tools__position').css('display', 'none');
@@ -980,19 +980,41 @@ $(window).on('resize', function () {
 
     if (isSet($('.cost'))) {
         if ($(window).width() > 768 && typeof (sbCost) != 'undefined') {
-            if (isSet($('.cost'))) {
+            if ($('.cost').length == 1) {
                 sbCost.destroy();
                 sbCost = undefined;
             }
+            if ($('.cost').length > 1) {
+                sbCost.forEach(function (el,i) {
+                    el.destroy();
+                });
+                sbCost = undefined;
+            }
         } else if ($(window).width() <= 768 && typeof (sbCost) === 'undefined') {
-            sbCost = new ScrollBooster({
-                viewport: document.querySelector('.cost__wrapper'),
-                content: document.querySelector('.cost__wrapper > ul.cost__list'),
-                scrollMode: "transform", // use CSS 'transform' property
-                direction: "horizontal", // allow only horizontal scrollin
-                pointerMode: 'all',
-                pointerDownPreventDefault: false
-            });
+            if ($('.cost').length == 1) {
+                sbCost = new ScrollBooster({
+                    viewport: document.querySelector('.cost__wrapper'),
+                    content: document.querySelector('.cost__wrapper > ul.cost__list'),
+                    scrollMode: "transform", // use CSS 'transform' property
+                    direction: "horizontal", // allow only horizontal scrollin
+                    pointerMode: 'all',
+                    pointerDownPreventDefault: false
+                });
+            }
+            if ($('.cost').length > 1) {
+                sbCost = Array(sbCost);
+                sbCost = [];
+                $('.cost').each(function () {
+                    sbCost.push(new ScrollBooster({
+                        viewport: $(this).find('.cost__wrapper')[0],
+                        content: $(this).find('.cost__wrapper').children()[0],
+                        scrollMode: "transform", // use CSS 'transform' property
+                        direction: "horizontal", // allow only horizontal scrollin
+                        pointerMode: 'all',
+                        pointerDownPreventDefault: false
+                    }));
+                });
+            }
         }
     }
     if ($(window).width() <= ($('.direction-services__tabs').width() + 30) && !($('.direction-services__tabs').hasClass('slick-initialized'))) {
@@ -1263,7 +1285,7 @@ window.onload = function () {
             // получаем заветные цифры
             const width = $(this).width();
             const height = $(this).height();
-            console.log(width , height);
+            console.log(width, height);
             if (width > height) {
                 $(this).css({
                     width: '100%',
@@ -1303,9 +1325,8 @@ window.onload = function () {
     if (isSet($('.tools'))) {
         const toolsSlickItem = $('.tools__slider_item');
         if (!($('.tools__slider').hasClass('slick-initialized'))) {
-
             if ($(window).width() >= 1200) {
-                if (toolsSlickItem.length >= 4) {
+                if (toolsSlickItem.length > 4) {
                     toolsSliderInit();
                 } else {
                     $('.tools__head .tools__position').css('display', 'none');
@@ -1313,7 +1334,7 @@ window.onload = function () {
                 }
             }
             if ($(window).width() >= 961 && $(window).width() < 1200) {
-                if (toolsSlickItem.length >= 3) {
+                if (toolsSlickItem.length > 3) {
                     toolsSliderInit();
                 } else {
                     $('.tools__head .tools__position').css('display', 'none');
@@ -1321,7 +1342,7 @@ window.onload = function () {
                 }
             }
             if ($(window).width() >= 577 && $(window).width() < 961) {
-                if (toolsSlickItem.length >= 2) {
+                if (toolsSlickItem.length > 2) {
                     toolsSliderInit();
                 } else {
                     $('.tools__head .tools__position').css('display', 'none');
@@ -1329,7 +1350,7 @@ window.onload = function () {
                 }
             }
             if ($(window).width() < 577) {
-                if (toolsSlickItem.length >= 1) {
+                if (toolsSlickItem.length > 1) {
                     toolsSliderInit();
                 } else {
                     $('.tools__head .tools__position').css('display', 'none');
@@ -1648,7 +1669,6 @@ $(document).ready(function () {
     }
 
 
-
     //Вкладки на выпадающем меню хэдера
     $('.dropdown-menu__tabs_item').on('click', '.with-arrow', function (event) {
         const index = dropdownTabs.index($(event.target).parent());
@@ -1836,9 +1856,9 @@ $(document).ready(function () {
     }
 
     if (isSet($('.science-articles'))) {
-        if($('.science-articles__content_item').length > 2){
+        if ($('.science-articles__content_item').length > 2) {
             $('.science-articles__footer').show();
-        }else{
+        } else {
             $('.science-articles__footer').hide();
         }
         const scienceArticlesText = $('.science-articles__content_item_text');
@@ -1900,20 +1920,36 @@ $(document).ready(function () {
 
     }
     if (isSet($('.cost'))) {
-        if (isSet($('ul.cost__list > li > ul > li > .cost__list_content'))){
+        if (isSet($('ul.cost__list > li > ul > li > .cost__list_content'))) {
             $('ul.cost__list > li > ul > li > .cost__list_content').parent().css({
                 border: 'none'
             })
         }
         if ($(window).width() <= 768) {
-            sbCost = new ScrollBooster({
-                viewport: document.querySelector('.cost__wrapper'),
-                content: document.querySelector('.cost__wrapper > ul.cost__list'),
-                scrollMode: "transform", // use CSS 'transform' property
-                direction: "horizontal", // allow only horizontal scrollin
-                pointerMode: 'all',
-                pointerDownPreventDefault: false
-            });
+            if ($('.cost').length == 1) {
+                sbCost = new ScrollBooster({
+                    viewport: document.querySelector('.cost__wrapper'),
+                    content: document.querySelector('.cost__wrapper > ul.cost__list'),
+                    scrollMode: "transform", // use CSS 'transform' property
+                    direction: "horizontal", // allow only horizontal scrollin
+                    pointerMode: 'all',
+                    pointerDownPreventDefault: false
+                });
+            }
+            if ($('.cost').length > 1) {
+                sbCost = Array(sbCost);
+                sbCost = [];
+                $('.cost').each(function () {
+                    sbCost.push(new ScrollBooster({
+                        viewport: $(this).find('.cost__wrapper')[0],
+                        content: $(this).find('.cost__wrapper').children()[0],
+                        scrollMode: "transform", // use CSS 'transform' property
+                        direction: "horizontal", // allow only horizontal scrollin
+                        pointerMode: 'all',
+                        pointerDownPreventDefault: false
+                    }));
+                });
+            }
         }
         $('.cost__list_item').on('click', function (event) {
 
@@ -1924,6 +1960,7 @@ $(document).ready(function () {
             }
         });
     }
+
 
     if (isSet($('.checkup-features'))) {
         checkupFeaturesSliderInit();
@@ -1995,6 +2032,7 @@ function parallaxScrolling() {
 }
 
 let navLinkTop = 0;
+let staffSearchTop = 0;
 $(document).scroll(function () {
     if (isSet($('.nav-links'))) {
         if ($(window).width() > 960) {
@@ -2011,6 +2049,49 @@ $(document).scroll(function () {
             } else if (($(this).scrollTop() + 129) < navLinkTop) {
                 $('.nav-links').attr('style', '');
                 navLinkTop = 0;
+            }
+        }
+    }
+    if (isSet($('.staff'))) {
+        if ($(window).width() > 960) {
+            if ((($(this).scrollTop()) >= $('.staff__content-top').position().top) && staffSearchTop == 0) {
+                staffSearchTop = $('.staff__content-top').position().top;
+                $('.staff__content-top').css({
+                    position: 'fixed',
+                    top: '129px',
+                    left: 0,
+                    zIndex: 10000,
+                    width: '100%',
+                    background: 'white',
+                    boxSizing: 'border-box',
+                    margin: '0'
+                });
+                if ($(window).width() >= 1380) {
+                    $('.staff__content-top').css({padding: '30px ' + (Math.abs($(window).width() - 1350) / 2) + 'px'});
+                } else {
+                    $('.staff__content-top').css({padding: '30px 15px'});
+                }
+            } else if (($(this).scrollTop() + 129) < staffSearchTop) {
+                $('.staff__content-top').removeAttr('style');
+                staffSearchTop = 0;
+            }
+        } else {
+            if ((($(this).scrollTop()) >= $('.staff__content-top').position().top - 20) && staffSearchTop == 0) {
+                staffSearchTop = $('.staff__content-top').position().top - 20;
+                $('.staff__content-top').css({
+                    position: 'fixed',
+                    top: '54px',
+                    left: 0,
+                    zIndex: 10000,
+                    width: '100%',
+                    background: 'white',
+                    margin: '0',
+                    padding: '30px 15px 0 15px',
+                    boxSizing: 'border-box',
+                })
+            } else if (($(this).scrollTop() + 54) < staffSearchTop) {
+                $('.staff__content-top').removeAttr('style');
+                staffSearchTop = 0;
             }
         }
     }
