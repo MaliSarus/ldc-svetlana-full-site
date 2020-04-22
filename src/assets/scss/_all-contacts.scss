@@ -5,7 +5,7 @@
     position: relative;
   }
   &__block{
-    padding: 9px 15px;
+    padding: 18px 15px;
     background: white;
     @media screen and (min-width: 961px){
       width: 100%;
@@ -29,11 +29,14 @@
         padding: 0 15px;
         margin: 0;
       }
+      @media screen and (min-width: 1400px){
+        padding: 0;
+      }
     }
   }
   &__item{
     box-sizing: border-box;
-    padding: 18px 0;
+    padding: 9px 0;
     flex-basis: 100%;
     @media screen and (min-width: 577px){
       flex-basis: 50%;

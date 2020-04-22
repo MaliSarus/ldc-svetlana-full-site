@@ -263,6 +263,24 @@ input[type="search"]:focus {
   width: 100%;
 }
 
+@media screen and (min-width: 961px) {
+  .p-60 {
+    padding: 60px 0 !important;
+  }
+}
+
+@media screen and (min-width: 961px) {
+  .pt-90 {
+    padding: 90px 0 60px 0 !important;
+  }
+}
+
+@media screen and (min-width: 961px) {
+  .pb-90 {
+    padding: 60px 0 90px 0 !important;
+  }
+}
+
 .btn {
   cursor: pointer;
   -webkit-box-sizing: border-box;

@@ -263,6 +263,24 @@ input[type="search"]:focus {
   width: 100%;
 }
 
+@media screen and (min-width: 961px) {
+  .p-60 {
+    padding: 60px 0 !important;
+  }
+}
+
+@media screen and (min-width: 961px) {
+  .pt-90 {
+    padding: 90px 0 60px 0 !important;
+  }
+}
+
+@media screen and (min-width: 961px) {
+  .pb-90 {
+    padding: 60px 0 90px 0 !important;
+  }
+}
+
 .btn {
   cursor: pointer;
   -webkit-box-sizing: border-box;
@@ -4996,12 +5014,20 @@ button.mfp-arrow {
 
 .for-patient__block h2 {
   color: #0A1831;
+  font-size: 20px;
   margin-bottom: 18px;
+}
+
+@media screen and (min-width: 577px) {
+  .for-patient__block h2 {
+    font-size: 24px;
+  }
 }
 
 @media screen and (min-width: 961px) {
   .for-patient__block h2 {
     margin-bottom: 36px;
+    font-size: 30px;
   }
 }
 
@@ -5015,9 +5041,23 @@ button.mfp-arrow {
 }
 
 .for-patient__block ul li {
-  list-style-image: url("../../img/for-patient/red-square.svg");
+  list-style: none;
+  position: relative;
   font-size: 16px;
   line-height: 140%;
+  padding-left: 24px;
+  margin-left: -24px;
+}
+
+.for-patient__block ul li::before {
+  display: block;
+  content: url("../../img/for-patient/red-square.svg");
+  -webkit-transform: translateY(-2px);
+  -ms-transform: translateY(-2px);
+  transform: translateY(-2px);
+  position: absolute;
+  left: 0;
+  top: 0;
 }
 
 .for-patient__block ul p {

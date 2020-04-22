@@ -3,7 +3,7 @@
         <div class="row">
             <div class="props__block">
                 <div class="props__head">
-                    <h2 class="title">Реквизиты</h2>
+                    <h2>Реквизиты</h2>
                 </div>
                 <div class="props__content">
                     <div class="content-row">

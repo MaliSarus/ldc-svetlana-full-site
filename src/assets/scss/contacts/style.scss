@@ -19,12 +19,36 @@
       padding-bottom: 153px;
     }
   }
+  &__content{
+    ul{
+      padding-left: 24px;
+      margin: 0;
+      margin-bottom: 18px;
+      li{
+        list-style:none;
+        position: relative;
+        font-size: 16px;
+        line-height: 140%;
+        padding-left: 24px;
+        margin-left: -24px;
+        color: rgba($main-color-dark,.8);
+        &::before{
+          display: block;
+          content: url("../../img/for-patient/red-square.svg");
+          transform: translateY(-2px);
+          position: absolute;
+          left: 0;
+          top: 0;
+        }
+      }
+      p{
+        margin-bottom: 0;
+      }
+    }
+  }
 }
 
 .about-emergency-room__block{
-  .form-call-button{
-    display: none;
-  }
   >.about-emergency-room__content{
     margin-bottom: -18px;
   }

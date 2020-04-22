@@ -263,6 +263,24 @@ input[type="search"]:focus {
   width: 100%;
 }
 
+@media screen and (min-width: 961px) {
+  .p-60 {
+    padding: 60px 0 !important;
+  }
+}
+
+@media screen and (min-width: 961px) {
+  .pt-90 {
+    padding: 90px 0 60px 0 !important;
+  }
+}
+
+@media screen and (min-width: 961px) {
+  .pb-90 {
+    padding: 60px 0 90px 0 !important;
+  }
+}
+
 .btn {
   cursor: pointer;
   -webkit-box-sizing: border-box;
@@ -3110,7 +3128,7 @@ button.mfp-arrow {
 }
 
 .all-contacts__block {
-  padding: 9px 15px;
+  padding: 18px 15px;
   background: white;
 }
 
@@ -3147,10 +3165,16 @@ button.mfp-arrow {
   }
 }
 
+@media screen and (min-width: 1400px) {
+  .all-contacts__content .content-row {
+    padding: 0;
+  }
+}
+
 .all-contacts__item {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  padding: 18px 0;
+  padding: 9px 0;
   -ms-flex-preferred-size: 100%;
   flex-basis: 100%;
 }
@@ -3275,6 +3299,25 @@ button.mfp-arrow {
   }
 }
 
+.props__head > h2 {
+  margin: 0;
+  font-size: 20px;
+  color: #0A1831;
+  font-weight: bold;
+}
+
+@media screen and (min-width: 577px) {
+  .props__head > h2 {
+    font-size: 24px;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .props__head > h2 {
+    font-size: 30px;
+  }
+}
+
 .props__content .content-row {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -3296,10 +3339,15 @@ button.mfp-arrow {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   color: #0A1831;
+  margin-bottom: 16px;
 }
 
 .props__column:last-child {
-  margin-bottom: -43px;
+  margin-bottom: 0;
+}
+
+.props__column > *:last-child {
+  margin-bottom: 0;
 }
 
 @media screen and (min-width: 961px) {
@@ -3310,28 +3358,31 @@ button.mfp-arrow {
     -ms-flex-positive: 1;
     flex-grow: 1;
     padding: 0 10px;
-  }
-  .props__column:last-child {
-    margin-bottom: auto;
+    margin-bottom: 0;
   }
 }
 
 .props__column > h3 {
-  margin-bottom: 12px;
   font-weight: bold;
   font-size: 16px;
   line-height: 140%;
 }
 
+@media screen and (min-width: 961px) {
+  .props__column > h3 {
+    margin-bottom: 12px;
+  }
+}
+
 .props__column > p {
-  margin-bottom: 43px;
+  margin-bottom: 30px;
   font-size: 16px;
   line-height: 140%;
 }
 
 @media screen and (min-width: 961px) {
-  .props__column > p:last-child {
-    margin-bottom: 0;
+  .props__column > p {
+    margin-bottom: 43px;
   }
 }
 
@@ -3739,8 +3790,35 @@ button.mfp-arrow {
   }
 }
 
-.about-emergency-room__block .form-call-button {
-  display: none;
+.about-emergency-room__content ul {
+  padding-left: 24px;
+  margin: 0;
+  margin-bottom: 18px;
+}
+
+.about-emergency-room__content ul li {
+  list-style: none;
+  position: relative;
+  font-size: 16px;
+  line-height: 140%;
+  padding-left: 24px;
+  margin-left: -24px;
+  color: rgba(10, 24, 49, 0.8);
+}
+
+.about-emergency-room__content ul li::before {
+  display: block;
+  content: url("../../img/for-patient/red-square.svg");
+  -webkit-transform: translateY(-2px);
+  -ms-transform: translateY(-2px);
+  transform: translateY(-2px);
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.about-emergency-room__content ul p {
+  margin-bottom: 0;
 }
 
 .about-emergency-room__block > .about-emergency-room__content {

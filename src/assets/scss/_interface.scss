@@ -86,7 +86,21 @@
   max-width: 290px;
   width: 100%;
 }
-
+.p-60{
+  @media screen and (min-width: 961px){
+    padding: 60px 0 !important;
+  }
+}
+.pt-90{
+  @media screen and (min-width: 961px){
+    padding: 90px 0 60px 0 !important;
+  }
+}
+.pb-90{
+  @media screen and (min-width: 961px){
+    padding: 60px 0 90px 0 !important;
+  }
+}
 .btn {
   cursor: pointer;
   box-sizing: border-box;

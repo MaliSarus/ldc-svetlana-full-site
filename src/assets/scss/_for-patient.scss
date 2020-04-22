@@ -22,9 +22,14 @@
     }
     h2{
       color: $main-color-dark;
+      font-size: 20px;
       margin-bottom: 18px;
+      @media screen and (min-width: 577px){
+        font-size: 24px;
+      }
       @media screen and (min-width: 961px){
         margin-bottom: 36px;
+        font-size: 30px;
       }
     }
 
@@ -36,9 +41,20 @@
       margin: 0;
       margin-bottom: 18px;
       li{
-        list-style-image: url("../../img/for-patient/red-square.svg");
+        list-style:none;
+        position: relative;
         font-size: 16px;
         line-height: 140%;
+        padding-left: 24px;
+        margin-left: -24px;
+        &::before{
+          display: block;
+          content: url("../../img/for-patient/red-square.svg");
+          transform: translateY(-2px);
+          position: absolute;
+          left: 0;
+          top: 0;
+        }
       }
       p{
         margin-bottom: 0;
