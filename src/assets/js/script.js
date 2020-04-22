@@ -985,7 +985,7 @@ $(window).on('resize', function () {
                 sbCost = undefined;
             }
             if ($('.cost').length > 1) {
-                sbCost.forEach(function (el,i) {
+                sbCost.forEach(function (el, i) {
                     el.destroy();
                 });
                 sbCost = undefined;
@@ -1990,6 +1990,19 @@ $(document).ready(function () {
                 pointerDownPreventDefault: false
             });
         }
+    }
+    if (isSet($('.costs'))) {
+        $('.costs-top__filters-item').on('click', function () {
+            const elementClick = '#' + $(this).data('to');
+            const destination = $(elementClick).position().top;
+            if ($(window).width() < 961) {
+                $('html').animate({scrollTop: destination - $('.header__top').height()}, 500);
+            }
+            else{
+                $('html').animate({scrollTop: destination - $('.header').height()}, 500);
+            }
+            return false;
+        })
     }
 });
 
