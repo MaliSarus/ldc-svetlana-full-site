@@ -2,8 +2,6 @@
     <div class="container">
         <div class="row">
             <div class="education__block">
-                <h2 class="title">О враче</h2>
-                <article class="education__article">
                     <h3>Образование</h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet
                         architecto atque consequuntur corporis eligendi esse est expedita hic, laudantium minima nam
@@ -20,8 +18,6 @@
                         <li>Два</li>
                         <li>Три</li>
                     </ul>
-                </article>
-                <article class="education__article">
                     <h3>Научные статьи</h3>
                     <p>
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur cum dolorum esse fugit
@@ -29,7 +25,6 @@
                         facere itaque maxime, obcaecati perferendis quaerat quos velit! At ea earum illum ipsa officia,
                         omnis optio reiciendis rerum sunt unde. Doloribus fugiat, quibusdam.
                     </p>
-                </article>
             </div>
         </div>
     </div>

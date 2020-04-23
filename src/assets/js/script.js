@@ -310,36 +310,63 @@ const unitsMenuSliderInit = () => {
     }
 };
 const diplomasSliderInit = () => {
-    if (isSet($('.diplomas__slider'))) {
-        $('.diplomas__slider').slick({
-            slidesToShow: 5,
-            dots: false,
-            arrows: false,
-            infinite: false,
-            // adaptiveHeight: true,
-            // variableWidth: true
-            responsive: [
-                {
-                    breakpoint: 577,
-                    settings: {
-                        slidesToShow: 2,
-                    },
+    const diplomasSlick = $('.diplomas__slider');
+    diplomasSlick.removeAttr('style');
+    $('.diplomas__head .arrows').removeAttr('style');
+    $('.diplomas__head .diplomas__position').removeAttr('style');
+    diplomasSlick.slick({
+        slidesToShow: 5,
+        dots: false,
+        arrows: false,
+        infinite: false,
+        // adaptiveHeight: true,
+        // variableWidth: true
+        responsive: [
+            {
+                breakpoint: 577,
+                settings: {
+                    slidesToShow: 2,
                 },
-                {
-                    breakpoint: 768,
-                    settings: {
-                        slidesToShow: 3,
-                    },
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 3,
                 },
-                {
-                    breakpoint: 1400,
-                    settings: {
-                        slidesToShow: 5,
-                    },
-                }
-            ]
-        })
-    }
+            },
+            {
+                breakpoint: 1400,
+                settings: {
+                    slidesToShow: 5,
+                },
+            }
+        ]
+    });
+    $('.diplomas__slider_item').each(function () {
+        $(this).css({
+            height: $(this).children().height(),
+        });
+    });
+    diplomasSlick.on('breakpoint', function (event, slick, breakpoint) {
+        if ($('.diplomas__slider_item').length <= slick.options.slidesToShow) {
+            diplomasSlick.slick('unslick').css({
+                display: 'flex',
+            });
+            $('.diplomas__head .arrows').css('display', 'none');
+            $('.diplomas__head .diplomas__position').css('display', 'none');
+        }
+    });
+    $('.diplomas__head .arrows .arrows__arrow-left').on('click', function () {
+        diplomasSlick.slick('slickPrev');
+    });
+    $('.diplomas__head .arrows .arrows__arrow-right').on('click', function () {
+        diplomasSlick.slick('slickNext');
+    });
+    $('.diplomas__position').html('<span class="diplomas__position_current">' + diplomasSlick.slick('slickGetOption', 'slidesToShow') + '</span>/' + $('.diplomas__slider_item').length);
+
+    diplomasSlick.on('afterChange', function (event, slick, currentSlide) {
+        $('.diplomas__position_current').html(diplomasSlick.slick('slickCurrentSlide') + diplomasSlick.slick('slickGetOption', 'slidesToShow'));
+    });
 };
 
 const unitSimpleSliderInit = () => {
@@ -1057,6 +1084,58 @@ $(window).on('resize', function () {
             });
         }
     }
+    if(isSet(($('.diplomas')))){
+        const diplomasSlick = $('.diplomas__slider');
+        const diplomasSlickItem = $('.diplomas__slider_item');
+
+        if (!(diplomasSlick.hasClass('slick-initialized'))) {
+            if ($(window).width() >= 769) {
+                if (diplomasSlickItem.length > 5) {
+                    diplomasSliderInit();
+                }
+                else {
+                    // diplomasSlick.css('display', 'flex');
+                    // $('.diplomas__head .diplomas__position').css('display', 'none');
+                    // $('.diplomas__head .arrows').css('display', 'none');
+                    $('.diplomas__slider_item').each(function () {
+                        $(this).css({
+                            height: $(this).children().height(),
+                        });
+                    });
+                }
+            }
+            if ($(window).width() >= 577 && $(window).width() < 769) {
+                if (diplomasSlickItem.length > 3) {
+                    diplomasSliderInit();
+                }
+                else {
+                    // diplomasSlick.css('display', 'flex');
+                    // $('.diplomas__head .diplomas__position').css('display', 'none');
+                    // $('.diplomas__head .arrows').css('display', 'none');
+                    $('.diplomas__slider_item').each(function () {
+                        $(this).css({
+                            height: $(this).children().height(),
+                        });
+                    });
+                }
+            }
+            if ($(window).width() < 577) {
+                if (diplomasSlickItem.length > 2) {
+                    diplomasSliderInit();
+                }
+                else {
+                    // diplomasSlick.css('display', 'flex');
+                    // $('.diplomas__head .diplomas__position').css('display', 'none');
+                    // $('.diplomas__head .arrows').css('display', 'none');
+                    $('.diplomas__slider_item').each(function () {
+                        $(this).css({
+                            height: $(this).children().height(),
+                        });
+                    });
+                }
+            }
+        }
+    }
 
 });
 
@@ -1212,12 +1291,14 @@ window.onload = function () {
     });
 
     //Изменения табов в блоках отделений
-    $('.units__menu li').on('click', function (event) {
-        event.preventDefault();
-        const index = $('.units__menu li').index(event.currentTarget);
+    $('.units__menu li > a').on('click', function (event) {
+        if($(window).width() > 961){
+            event.preventDefault();
+        }
+        const index = $('.units__menu li').index($(this).parent());
         const prevLink = $('.units__menu-link.tab-link_red_active');
         prevLink.removeClass('tab-link_red_active');
-        $('.units__menu li')[index].children[0].classList.add('tab-link_red_active');
+        $(this).addClass('tab-link_red_active');
         $('.units__content-services_active').removeClass('units__content-services_active');
         $('.units__content-services')[index].classList.add('units__content-services_active');
     });
@@ -1259,6 +1340,7 @@ window.onload = function () {
 
     if (isSet($('.diplomas__slider'))) {
         const diplomasSlick = $('.diplomas__slider');
+        const diplomasSlickItem = $('.diplomas__slider_item');
         diplomasSlick.magnificPopup({
             delegate: 'a', // child items selector, by clicking on it popup will open
             type: 'image',
@@ -1266,18 +1348,10 @@ window.onload = function () {
                 enabled: true
             },
         });
-        diplomasSliderInit();
 
-        $('.diplomas__head .arrows .arrows__arrow-left').on('click', function () {
-            diplomasSlick.slick('slickPrev');
-        });
-        $('.diplomas__head .arrows .arrows__arrow-right').on('click', function () {
-            diplomasSlick.slick('slickNext');
-        });
 
         $('.diplomas__slider_item img').each(function () {
             // удаляем атрибуты width и height
-            const that = $(this);
             $(this).removeAttr("width")
                 .removeAttr("height")
                 .css({width: "auto", height: "auto"});
@@ -1285,33 +1359,60 @@ window.onload = function () {
             // получаем заветные цифры
             const width = $(this).width();
             const height = $(this).height();
-            console.log(width, height);
-            if (width > height) {
+            $(this).removeAttr('style');
+            if (width < height) {
                 $(this).css({
-                    width: '100%',
-                    height: 'auto'
-                });
-                $(this).parent().css({
-                    width: '100%',
-                    height: $(this).children().height()
-                });
-            } else {
-                $(this).css({
-                    width: '100%',
-                    height: '100%'
+                    height: '100%',
+                    objectFit: 'fill'
                 })
             }
         });
 
-        $('.diplomas__position').html('<span class="diplomas__position_current">' + diplomasSlick.slick('slickGetOption', 'slidesToShow') + '</span>/' + $('.diplomas__slider_item').length);
-
-        if ($('.diplomas__slider.slick-initialized')) {
-            diplomasSlick.on('afterChange', function (event, slick, currentSlide) {
-                $('.diplomas__position_current').html(diplomasSlick.slick('slickCurrentSlide') + diplomasSlick.slick('slickGetOption', 'slidesToShow'));
-            });
-
+        if (!(diplomasSlick.hasClass('slick-initialized'))) {
+            if ($(window).width() >= 769) {
+                if (diplomasSlickItem.length > 5) {
+                    diplomasSliderInit();
+                } else {
+                    diplomasSlick.css('display', 'flex');
+                    $('.diplomas__head .diplomas__position').css('display', 'none');
+                    $('.diplomas__head .arrows').css('display', 'none');
+                    $('.diplomas__slider_item').each(function () {
+                        $(this).css({
+                            height: $(this).children().height(),
+                        });
+                    });                }
+            }
+            if ($(window).width() >= 577 && $(window).width() < 769) {
+                if (diplomasSlickItem.length > 3) {
+                    diplomasSliderInit();
+                } else {
+                    diplomasSlick.css('display', 'flex');
+                    $('.diplomas__head .diplomas__position').css('display', 'none');
+                    $('.diplomas__head .arrows').css('display', 'none');
+                    $('.diplomas__slider_item').each(function () {
+                        $(this).css({
+                            height: $(this).children().height(),
+                        });
+                    });
+                }
+            }
+            if ($(window).width() < 577) {
+                if (diplomasSlickItem.length > 2) {
+                    diplomasSliderInit();
+                } else {
+                    diplomasSlick.css('display', 'flex');
+                    $('.diplomas__head .diplomas__position').css('display', 'none');
+                    $('.diplomas__head .arrows').css('display', 'none');
+                    $('.diplomas__slider_item').each(function () {
+                        $(this).css({
+                            height: $(this).children().height(),
+                        });
+                    });
+                }
+            }
         }
     }
+
     if (isSet($('.unit-simple'))) {
         unitSimpleSliderInit();
         $('.unit-simple__slider_item').each(function () {
@@ -1992,13 +2093,13 @@ $(document).ready(function () {
         }
     }
     if (isSet($('.costs'))) {
-        $('.costs-top__filters-item').on('click', function () {
-            const elementClick = '#' + $(this).data('to');
+        $('.costs-top__filters-item').on('click', function (event) {
+            event.preventDefault();
+            const elementClick = $(this).attr('href');
             const destination = $(elementClick).position().top;
             if ($(window).width() < 961) {
                 $('html').animate({scrollTop: destination - $('.header__top').height()}, 500);
-            }
-            else{
+            } else {
                 $('html').animate({scrollTop: destination - $('.header').height()}, 500);
             }
             return false;

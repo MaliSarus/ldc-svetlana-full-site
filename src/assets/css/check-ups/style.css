@@ -3988,7 +3988,7 @@ button.mfp-arrow {
   }
 }
 
-@media screen and (min-width: 769px) {
+@media screen and (min-width: 961px) {
   .feedback__position {
     display: none;
   }

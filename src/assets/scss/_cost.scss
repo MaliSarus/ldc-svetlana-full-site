@@ -32,7 +32,7 @@
     }
     ul{
       width: 623px;
-      @media screen and (min-width: 769px){
+      @media screen and (min-width: 650px){
         width: 100%;
         box-sizing: border-box;
         max-width: 100%;
@@ -47,7 +47,7 @@
           cursor: pointer;
           position: relative;
           transition: color .25s;
-          @media screen and (min-width: 768px){
+          @media screen and (min-width: 769px){
             padding: 16px 36px;
           }
           &:hover{

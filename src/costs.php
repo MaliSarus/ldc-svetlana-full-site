@@ -48,13 +48,13 @@ require "./modules/dropdown-menu.php";
                 <div class="costs-top__block">
                     <h1 class="title">Цены на услуги ЛДЦ завода “Светлана”</h1>
                     <div class="costs-top__filters">
-                        <div class="costs-top__filters-item btn btn_white" data-to="reab-unit">Реабилитационное отделение</div>
-                        <div class="costs-top__filters-item btn btn_white" data-to="tv-med">Телемедицина</div>
-                        <div class="costs-top__filters-item btn btn_white" data-to="emer-unit">Травмпункт</div>
-                        <div class="costs-top__filters-item btn btn_white" data-to="oper-unit">Операционный блок</div>
-                        <div class="costs-top__filters-item btn btn_white" data-to="med-unit">Лечебное отделение</div>
-                        <div class="costs-top__filters-item btn btn_white" data-to="diag-unit">Диагностическое отделение</div>
-                        <div class="costs-top__filters-item btn btn_white" data-to="check-up">Чек-ап программы</div>
+                        <a href="#reab-unit" class="costs-top__filters-item btn btn_white" >Реабилитационное отделение</a>
+                        <a href="#tv-med" class="costs-top__filters-item btn btn_white" >Телемедицина</a>
+                        <a href="#emer-unit" class="costs-top__filters-item btn btn_white" >Травмпункт</a>
+                        <a href="#oper-unit" class="costs-top__filters-item btn btn_white" >Операционный блок</a>
+                        <a href="#med-unit" class="costs-top__filters-item btn btn_white" >Лечебное отделение</a>
+                        <a href="#diag-unit" class="costs-top__filters-item btn btn_white" >Диагностическое отделение</a>
+                        <a href="#check-up" class="costs-top__filters-item btn btn_white" >Чек-ап программы</a>
                     </div>
                 </div>
             </div>

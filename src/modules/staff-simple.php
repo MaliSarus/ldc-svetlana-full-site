@@ -24,7 +24,7 @@
                     </div>
                 </div>
                 <div class="staff-simple__doctor">
-                    <img src="./assets/img/doctor/doctor-image.png" alt="Картинка скидок">
+                    <img src="./assets/img/doctor/doctor-image-2.png" alt="Картинка скидок">
                     <div class="staff-simple__doctor_details">
                         <p class="staff-simple__doctor_details_text">
                             Куратор направления экстренной травматологической помощи и стабильно-функционального

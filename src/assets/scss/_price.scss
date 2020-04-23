@@ -47,6 +47,7 @@
       display: flex;
       width: 100%;
       padding: 11px 0;
+      align-items: center;
       justify-content: space-between;
       border: {
         top: 1px solid rgba($main-color, .15);
@@ -60,6 +61,9 @@
       }
       button {
         max-width: 115px;
+        max-height: 52px;
+        margin-right: 5px;
+
         @media screen and (min-width: 961px){
           max-width: 234px;
           padding: 15px 0;
