@@ -1050,9 +1050,9 @@ $(window).on('resize', function () {
         $('.direction-services__tabs').slick('unslick');
     }
 
-    if (isSet($('.news'))) {
+    if (isSet($('.news__content'))) {
         if ($(window).width() > 960 && typeof (sbNews) != 'undefined') {
-            if (isSet($('.news'))) {
+            if (isSet($('.news__content'))) {
                 sbNews.destroy();
                 sbNews = undefined;
             }
@@ -2067,7 +2067,7 @@ $(document).ready(function () {
         checkupFeaturesSliderInit();
     }
 
-    if (isSet($('.news'))) {
+    if (isSet($('.news__content'))) {
         if ($(window).width() <= 960) {
             sbNews = new ScrollBooster({
                 viewport: document.querySelector('.news__content'),

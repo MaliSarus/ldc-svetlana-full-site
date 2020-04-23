@@ -1,0 +1,32 @@
+@import "../fonts";
+@import "../common";
+@import "../interface";
+@import "../submit-popup";
+@import "../parallax-squares";
+@import "../header";
+@import "../dropdown-menu";
+@import "../appointment";
+@import "../all-news";
+@import "../news";
+@import "../footer";
+
+@import "../animations";
+
+
+
+.breadcrumbs{
+  display: none;
+  @media screen and (min-width: 577px){
+    display: block;
+  }
+}
+
+.footer{
+  position: absolute;
+  bottom: 0px;
+  @media screen and (min-width: 961px){
+    position: static;
+    bottom: unset;
+  }
+}
+
