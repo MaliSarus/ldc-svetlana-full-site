@@ -1268,12 +1268,6 @@ button.mfp-arrow {
   color: #E84E2C;
 }
 
-.pagination pag {
-  font-size: 16px;
-  font-weight: 600;
-  color: #E84E2C;
-}
-
 .pagination-list {
   display: inline-block;
   padding: 0;
@@ -4011,6 +4005,7 @@ button.mfp-arrow {
   -ms-flex-preferred-size: 100%;
   flex-basis: 100%;
   padding: 12px 0;
+  color: #0A1831;
 }
 
 @media screen and (min-width: 961px) {

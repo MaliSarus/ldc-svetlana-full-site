@@ -13,6 +13,17 @@
 @import "../animations";
 
 
+body{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  @media screen and (min-width: 961px ){
+    min-height: calc(100vh - 130px);
+  }
+  section{
+    flex-grow: 1;
+  }
+}
 
 .breadcrumbs{
   display: none;
@@ -30,40 +41,5 @@
         margin-bottom: 0;
       }
     }
-    //@media screen and (min-width: 577px){
-    //  margin-right: -4.5px;
-    //  margin-left: -4.5px;
-    //}
-    //@media screen and (min-width: 961px){
-    //  margin-right: -10px;
-    //  margin-left: -10px;
-    //  margin-top: -24px;
-    //}
   }
-  //&__wrapper{
-  //  flex-wrap: wrap;
-  //}
-  //&__item{
-  //  position: relative;
-  //  z-index: 11;
-  //  flex-grow: 0;
-  //  margin-top: 15px;
-  //  @media screen and (min-width: 577px){
-  //    min-width: unset;
-  //    margin-right: 4.5px;
-  //    margin-left: 4.5px;
-  //    background: #F6F7F8;
-  //    flex-basis: calc(50% - 9px);
-  //  }
-  //  @media screen and (min-width: 769px){
-  //    flex-basis: calc(100% / 3 - 9px);
-  //  }
-  //  @media screen and (min-width: 961px){
-  //    background: white;
-  //    margin-top: 24px;
-  //    margin-right: 10px;
-  //    margin-left: 10px;
-  //    flex-basis: calc(100% / 4 - 20px);
-  //  }
-  //}
 }

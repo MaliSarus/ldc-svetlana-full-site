@@ -10,6 +10,7 @@
   }
   &__block{
     padding: 18px 15px;
+    width: 100%;
     @media screen and (min-width: 961px) {
       padding: 0;
       padding-top: 153px;
@@ -39,9 +40,6 @@
       display: flex;
       flex-wrap: wrap;
       margin: 0;
-      @media screen and (min-width: 961px){
-        margin: 0 -10px;
-      }
     }
   }
   &__column{
@@ -60,8 +58,11 @@
     @media screen and (min-width: 961px){
       flex-basis: 50%;
       flex-grow: 1;
-      padding: 0 10px;
       margin-bottom: 0;
+      padding-right: 20px;
+      &:nth-child(2n){
+        padding-right: unset;
+      }
     }
     >h3{
       font-weight: bold;

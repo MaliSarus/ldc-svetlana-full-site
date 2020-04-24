@@ -2321,10 +2321,14 @@ $(document).scroll(function () {
         }
     }
     if (isSet($('.staff'))) {
-        if ($(window).width() > 960) {
-            if ((($(this).scrollTop()) >= $('.staff__content-top').position().top) && staffSearchTop == 0) {
-                staffSearchTop = $('.staff__content-top').position().top;
-                $('.staff__content-top').css({
+        const   staffSearchPanel = $('.staff__search-form-wrapper').parent();
+        console.log(staffSearchPanel.parents('.staff__content_tab').hasClass('staff__content_tab_active'));
+
+        if ($(window).width() > 960 && staffSearchPanel.parents('.staff__content_tab').hasClass('staff__content_tab_active')) {
+            if ((($(this).scrollTop()) >= staffSearchPanel.position().top) && staffSearchTop == 0) {
+                staffSearchTop = staffSearchPanel.position().top;
+
+                staffSearchPanel.css({
                     position: 'fixed',
                     top: '129px',
                     left: 0,
@@ -2335,18 +2339,19 @@ $(document).scroll(function () {
                     margin: '0'
                 });
                 if ($(window).width() >= 1380) {
-                    $('.staff__content-top').css({padding: '30px ' + (Math.abs($(window).width() - 1350) / 2) + 'px'});
+                    staffSearchPanel.css({padding: '30px ' + (Math.abs($(window).width() - 1350) / 2) + 'px'});
                 } else {
-                    $('.staff__content-top').css({padding: '30px 15px'});
+                    staffSearchPanel.css({padding: '30px 15px'});
                 }
             } else if (($(this).scrollTop() + 129) < staffSearchTop) {
-                $('.staff__content-top').removeAttr('style');
+                staffSearchPanel.removeAttr('style');
                 staffSearchTop = 0;
             }
-        } else {
-            if ((($(this).scrollTop()) >= $('.staff__content-top').position().top - 20) && staffSearchTop == 0) {
-                staffSearchTop = $('.staff__content-top').position().top - 20;
-                $('.staff__content-top').css({
+        }
+        if ($(window).width() <= 960 && staffSearchPanel.parents('.staff__content_tab').hasClass('staff__content_tab_active')){
+            if ((($(this).scrollTop()) >= staffSearchPanel.position().top - 20) && staffSearchTop == 0) {
+                staffSearchTop = staffSearchPanel.position().top - 20;
+                staffSearchPanel.css({
                     position: 'fixed',
                     top: '54px',
                     left: 0,
@@ -2358,7 +2363,7 @@ $(document).scroll(function () {
                     boxSizing: 'border-box',
                 })
             } else if (($(this).scrollTop() + 54) < staffSearchTop) {
-                $('.staff__content-top').removeAttr('style');
+                staffSearchPanel.removeAttr('style');
                 staffSearchTop = 0;
             }
         }

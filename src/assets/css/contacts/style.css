@@ -1268,12 +1268,6 @@ button.mfp-arrow {
   color: #E84E2C;
 }
 
-.pagination pag {
-  font-size: 16px;
-  font-weight: 600;
-  color: #E84E2C;
-}
-
 .pagination-list {
   display: inline-block;
   padding: 0;
@@ -3386,6 +3380,7 @@ button.mfp-arrow {
 
 .props__block {
   padding: 18px 15px;
+  width: 100%;
 }
 
 @media screen and (min-width: 961px) {
@@ -3434,12 +3429,6 @@ button.mfp-arrow {
   margin: 0;
 }
 
-@media screen and (min-width: 961px) {
-  .props__content .content-row {
-    margin: 0 -10px;
-  }
-}
-
 .props__column {
   -ms-flex-preferred-size: 100%;
   flex-basis: 100%;
@@ -3464,8 +3453,11 @@ button.mfp-arrow {
     -webkit-box-flex: 1;
     -ms-flex-positive: 1;
     flex-grow: 1;
-    padding: 0 10px;
     margin-bottom: 0;
+    padding-right: 20px;
+  }
+  .props__column:nth-child(2n) {
+    padding-right: unset;
   }
 }
 

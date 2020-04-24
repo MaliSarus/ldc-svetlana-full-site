@@ -1268,12 +1268,6 @@ button.mfp-arrow {
   color: #E84E2C;
 }
 
-.pagination pag {
-  font-size: 16px;
-  font-weight: 600;
-  color: #E84E2C;
-}
-
 .pagination-list {
   display: inline-block;
   padding: 0;
@@ -3698,6 +3692,29 @@ button.mfp-arrow {
     -webkit-transform: translate3d(-50%, 0, 0);
     transform: translate3d(-50%, 0, 0);
   }
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+@media screen and (min-width: 961px) {
+  body {
+    min-height: calc(100vh - 130px);
+  }
+}
+
+body section {
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
 }
 
 .breadcrumbs {
