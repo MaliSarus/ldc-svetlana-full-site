@@ -40,11 +40,11 @@ require "./modules/dropdown-menu.php";
 <!-------------------------------------------------------------------------------------------------------------------->
 <link rel="stylesheet" href="./assets/css/<?php echo basename(__FILE__, '.php');?>/style.css?ver=<?php echo  date("His")?>">
 
-<section class="about-block about-block_with-features" style=" background-image:url(./assets/img/about-unit/bg-image.png)">
+<div class="about-block_with-features" style=" background-image:url(./assets/img/about-unit/bg-image.png)">
 <?php
 require "./modules/about-block.php";
 ?>
-</section>
+</div>
 <?php
 require "./modules/appointment.php";
 require "./modules/infoblock.php";

@@ -622,6 +622,7 @@
 
 .doctor-card{
   &__doctor{
+    width: 100%;
     background-color: #fcfcfc;
     color: $main-color;
     position: relative;
@@ -658,6 +659,7 @@
       }
     }
     &_content{
+      width: 100%;
       position: relative;
       background-image: url("../../img/doctor-card/bg-invisible-icon.svg");
       background-position: 100% 0;
@@ -844,4 +846,89 @@ button.mfp-arrow{
 
 .mfp-zoom-out-cur, .mfp-zoom-out-cur .mfp-image-holder .mfp-close{
   cursor: pointer;
+}
+
+.m{
+  &b-30{
+    @media screen and (min-width: 961px){
+      margin-bottom: 30px !important;
+    }
+  }
+  &t-0{
+    @media screen and (min-width: 961px){
+      margin-top: 0 !important;
+    }
+  }
+}
+
+.top{
+  &-0{
+    @media screen and (min-width: 961px){
+      top: 0 !important;
+    }
+  }
+}
+
+.pagination{
+  margin-top: 18px;
+  @media screen and (min-width: 961px){
+    margin-top: 36px;
+  }
+  >a{
+    display: inline-block;
+  }
+  a{
+    color: $main-color;
+    transition: color .5s;
+    &:hover{
+      font-size: 16px;
+      font-weight: 600;
+      color: $accent-color;
+    }
+  }
+  pag{
+    font-size: 16px;
+    font-weight: 600;
+    color: $accent-color;
+  }
+  &-list{
+    display: inline-block;
+    padding: 0;
+    list-style: none;
+    margin: 0 10px;
+    @media screen and (min-width: 961px){
+      margin: 0 20px;
+    }
+    &__link{
+      &.active{
+        font-size: 16px;
+        font-weight: 600;
+        color: $accent-color;
+      }
+    }
+    &__item{
+      display: inline-block;
+      width: 10px;
+      margin: 0 3px;
+      &:first-child{
+        margin-left: 0;
+      }
+      &:last-child{
+        margin-right: 0;
+      }
+    }
+
+  }
+  &-back,&-next{
+    transform: translateY(.5px);
+    &:hover{
+      filter: hue-rotate(180deg) saturate(18.5);
+    }
+  }
+  &-next{
+    img{
+      transform-origin: center;
+      transform: rotate(180deg) translateY(.5px);
+    }
+  }
 }

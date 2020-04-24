@@ -23,21 +23,21 @@
                                     require "doctor-card.php"
                                 ?>
                             </div>
-                            <div class="specialists-details__slider_item">
-                                <?php
-                                require "doctor-card.php"
-                                ?>
-                            </div>
-                            <div class="specialists-details__slider_item">
-                                <?php
-                                require "doctor-card.php"
-                                ?>
-                            </div>
-                            <div class="specialists-details__slider_item">
-                                <?php
-                                require "doctor-card.php"
-                                ?>
-                            </div>
+<!--                            <div class="specialists-details__slider_item">-->
+<!--                                --><?php
+//                                require "doctor-card.php"
+//                                ?>
+<!--                            </div>-->
+<!--                            <div class="specialists-details__slider_item">-->
+<!--                                --><?php
+//                                require "doctor-card.php"
+//                                ?>
+<!--                            </div>-->
+<!--                            <div class="specialists-details__slider_item">-->
+<!--                                --><?php
+//                                require "doctor-card.php"
+//                                ?>
+<!--                            </div>-->
                         </div>
 
                         <div class="specialists-details__control-panel">

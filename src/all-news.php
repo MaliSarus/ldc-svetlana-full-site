@@ -121,7 +121,7 @@ require "./modules/dropdown-menu.php";
                     <ul class="pagination-list">
                         <li class="pagination-list__item"><a href="#" class="pagination-list__link">1</a></li>
                         <li class="pagination-list__item"><a href="#" class="pagination-list__link">2</a></li>
-                        <li class="pagination-list__item"><a href="#" class="pagination-list__link">3</a></li>
+                        <li class="pagination-list__item"><a href="#" class="pagination-list__link active">3</a></li>
                         <li class="pagination-list__item"><a href="#" class="pagination-list__link">4</a></li>
                         <li class="pagination-list__item"><a href="#" class="pagination-list__link">5</a></li>
                         <li class="pagination-list__item"><a href="#" class="pagination-list__link">6</a></li>

@@ -221,3 +221,14 @@
     }
   }
 }
+
+.cost__list_content_price::after {
+  content: "₽";
+  margin-left: 0.3em;
+  font-size: 0.95em;
+}
+.cost__list_content_del::after {
+  content: "₽";
+  margin-left: 0.3em;
+  font-size: 0.95em;
+}

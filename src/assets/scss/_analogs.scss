@@ -4,6 +4,7 @@
     margin-bottom: 0;
   }
   &__block{
+    width: 100%;
     background: white;
     padding: 18px 15px;
     @media screen and (min-width: 961px){
@@ -18,6 +19,7 @@
     }
   }
   &__content{
+    width: 100%;
     @media screen and (min-width: 961px){
       display: flex;
       justify-content: space-between;
@@ -45,6 +47,7 @@
     &_link{
       color: rgba($main-color, .8);
       &:hover{
+        color: $main-color;
         text-decoration: underline;
       }
     }

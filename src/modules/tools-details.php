@@ -24,7 +24,7 @@
                                         Микроскопический мегамикроскоп 2800 с супер
                                         достойным длинным огромным супер названием аж на целых 2 строки
                                     </h3>
-                                    <p class="tools-details__slider_item_text">
+                                    <p>
                                         Александритовый лазер Candela GentleLase Pro сводит к минимуму ощущения дискомфорта
                                         во время проведения процедур.
                                         Лазер покрывает большой диаметр кожи за один импульс (до 18мм), это намного больше,
@@ -32,140 +32,132 @@
                                         уникальной криогенной системе охлаждения, ещё и безболезненно.
 
                                     </p>
-                                    <div class="tools-details__slider_item_list-title">
-                                        Почему лазерная система Candela GentleLase Pro столь популярна:
-                                    </div>
-                                    <ul class="tools-details__slider_item_list">
-                                        <li class="tools-details__slider_item_list-item">
-                                            <div class="list-item_red-square"></div>
+                                    <p><b>Почему лазерная система Candela GentleLase Pro столь популярна:</b></p>
+                                    <ul >
+                                        <li>
                                             Внутрикожное
                                             введение и обязатеаа лекарственных средств (лечение халязиона введением
                                             стероидов) без стоимости лекарства
                                         </li>
-                                        <li class="tools-details__slider_item_list-item">
-                                            <div class="list-item_red-square"></div>
+                                        <li>
                                             Внутрикожное введение и обязатеаа лекарственных
                                         </li>
-                                        <li class="tools-details__slider_item_list-item">
-                                            <div class="list-item_red-square"></div>
+                                        <li>
                                             Внутрикожное введение и обязатеаа лекарственных средств (лечение халязиона
                                             введением стероидов) без стоимости лекарства
                                         </li>
-                                        <li class="tools-details__slider_item_list-item">
-                                            <div class="list-item_red-square"></div>
+                                        <li>
                                             Внутрикожное введение и обязатеаа лекарственных
                                         </li>
-                                        <li class="tools-details__slider_item_list-item">
-                                            <div class="list-item_red-square"></div>
+                                        <li>
                                             Внутрикожное введение и обязатеаа лекарственных
                                         </li>
-                                        <li class="tools-details__slider_item_list-item">
-                                            <div class="list-item_red-square"></div>
+                                        <li>
                                             Внутрикожное введение и обязатеаа лекарственных
                                         </li>
                                     </ul>
                                 </div>
                             </article>
-                            <article class="tools-details__slider_item">
-                                <div class="tools-details__slider_item_image"
-                                     style="background-image: url(./assets/img/tools/1.jpg)"></div>
-                                <div class="tools-details__slider_item_content">
-                                    <h3 class="tools-details__slider_item_title">
-                                        Микроскопический мегамикроскоп 2800 с супер
-                                        достойным длинным огромным супер названием аж на целых 2 строки
-                                    </h3>
-                                    <p class="tools-details__slider_item_text">
-                                        Александритовый лазер Candela GentleLase Pro сводит к минимуму ощущения дискомфорта
-                                        во время проведения процедур.
-                                        Лазер покрывает большой диаметр кожи за один импульс (до 18мм), это намного больше,
-                                        чем у других лазерных установок. Сеансы эпиляции проходят быстро, а благодаря
-                                        уникальной криогенной системе охлаждения, ещё и безболезненно.
-
-                                    </p>
-                                    <div class="tools-details__slider_item_list-title">
-                                        Почему лазерная система Candela GentleLase Pro столь популярна:
-                                    </div>
-                                    <ul class="tools-details__slider_item_list">
-                                        <li class="tools-details__slider_item_list-item">
-                                            <div class="list-item_red-square"></div>
-                                            Внутрикожное
-                                            введение и обязатеаа лекарственных средств (лечение халязиона введением
-                                            стероидов) без стоимости лекарства
-                                        </li>
-                                        <li class="tools-details__slider_item_list-item">
-                                            <div class="list-item_red-square"></div>
-                                            Внутрикожное введение и обязатеаа лекарственных
-                                        </li>
-                                        <li class="tools-details__slider_item_list-item">
-                                            <div class="list-item_red-square"></div>
-                                            Внутрикожное введение и обязатеаа лекарственных средств (лечение халязиона
-                                            введением стероидов) без стоимости лекарства
-                                        </li>
-                                        <li class="tools-details__slider_item_list-item">
-                                            <div class="list-item_red-square"></div>
-                                            Внутрикожное введение и обязатеаа лекарственных
-                                        </li>
-                                        <li class="tools-details__slider_item_list-item">
-                                            <div class="list-item_red-square"></div>
-                                            Внутрикожное введение и обязатеаа лекарственных
-                                        </li>
-                                        <li class="tools-details__slider_item_list-item">
-                                            <div class="list-item_red-square"></div>
-                                            Внутрикожное введение и обязатеаа лекарственных
-                                        </li>
-                                    </ul>
-                                </div>
-                            </article>
-                            <article class="tools-details__slider_item">
-                                <div class="tools-details__slider_item_image"
-                                     style="background-image: url(./assets/img/tools/1.jpg)"></div>
-                                <div class="tools-details__slider_item_content">
-                                    <h3 class="tools-details__slider_item_title">
-                                        Микроскопический мегамикроскоп 2800 с супер
-                                        достойным длинным огромным супер названием аж на целых 2 строки
-                                    </h3>
-                                    <p class="tools-details__slider_item_text">
-                                        Александритовый лазер Candela GentleLase Pro сводит к минимуму ощущения дискомфорта
-                                        во время проведения процедур.
-                                        Лазер покрывает большой диаметр кожи за один импульс (до 18мм), это намного больше,
-                                        чем у других лазерных установок. Сеансы эпиляции проходят быстро, а благодаря
-                                        уникальной криогенной системе охлаждения, ещё и безболезненно.
-
-                                    </p>
-                                    <div class="tools-details__slider_item_list-title">
-                                        Почему лазерная система Candela GentleLase Pro столь популярна:
-                                    </div>
-                                    <ul class="tools-details__slider_item_list">
-                                        <li class="tools-details__slider_item_list-item">
-                                            <div class="list-item_red-square"></div>
-                                            Внутрикожное
-                                            введение и обязатеаа лекарственных средств (лечение халязиона введением
-                                            стероидов) без стоимости лекарства
-                                        </li>
-                                        <li class="tools-details__slider_item_list-item">
-                                            <div class="list-item_red-square"></div>
-                                            Внутрикожное введение и обязатеаа лекарственных
-                                        </li>
-                                        <li class="tools-details__slider_item_list-item">
-                                            <div class="list-item_red-square"></div>
-                                            Внутрикожное введение и обязатеаа лекарственных средств (лечение халязиона
-                                            введением стероидов) без стоимости лекарства
-                                        </li>
-                                        <li class="tools-details__slider_item_list-item">
-                                            <div class="list-item_red-square"></div>
-                                            Внутрикожное введение и обязатеаа лекарственных
-                                        </li>
-                                        <li class="tools-details__slider_item_list-item">
-                                            <div class="list-item_red-square"></div>
-                                            Внутрикожное введение и обязатеаа лекарственных
-                                        </li>
-                                        <li class="tools-details__slider_item_list-item">
-                                            <div class="list-item_red-square"></div>
-                                            Внутрикожное введение и обязатеаа лекарственных
-                                        </li>
-                                    </ul>
-                                </div>
-                            </article>
+<!--                            <article class="tools-details__slider_item">-->
+<!--                                <div class="tools-details__slider_item_image"-->
+<!--                                     style="background-image: url(./assets/img/tools/1.jpg)"></div>-->
+<!--                                <div class="tools-details__slider_item_content">-->
+<!--                                    <h3 class="tools-details__slider_item_title">-->
+<!--                                        Микроскопический мегамикроскоп 2800 с супер-->
+<!--                                        достойным длинным огромным супер названием аж на целых 2 строки-->
+<!--                                    </h3>-->
+<!--                                    <p class="tools-details__slider_item_text">-->
+<!--                                        Александритовый лазер Candela GentleLase Pro сводит к минимуму ощущения дискомфорта-->
+<!--                                        во время проведения процедур.-->
+<!--                                        Лазер покрывает большой диаметр кожи за один импульс (до 18мм), это намного больше,-->
+<!--                                        чем у других лазерных установок. Сеансы эпиляции проходят быстро, а благодаря-->
+<!--                                        уникальной криогенной системе охлаждения, ещё и безболезненно.-->
+<!---->
+<!--                                    </p>-->
+<!--                                    <div class="tools-details__slider_item_list-title">-->
+<!--                                        Почему лазерная система Candela GentleLase Pro столь популярна:-->
+<!--                                    </div>-->
+<!--                                    <ul class="tools-details__slider_item_list">-->
+<!--                                        <li>-->
+<!--                                           -->
+<!--                                            Внутрикожное-->
+<!--                                            введение и обязатеаа лекарственных средств (лечение халязиона введением-->
+<!--                                            стероидов) без стоимости лекарства-->
+<!--                                        </li>-->
+<!--                                        <li>-->
+<!--                                           -->
+<!--                                            Внутрикожное введение и обязатеаа лекарственных-->
+<!--                                        </li>-->
+<!--                                        <li>-->
+<!--                                           -->
+<!--                                            Внутрикожное введение и обязатеаа лекарственных средств (лечение халязиона-->
+<!--                                            введением стероидов) без стоимости лекарства-->
+<!--                                        </li>-->
+<!--                                        <li>-->
+<!--                                           -->
+<!--                                            Внутрикожное введение и обязатеаа лекарственных-->
+<!--                                        </li>-->
+<!--                                        <li>-->
+<!--                                           -->
+<!--                                            Внутрикожное введение и обязатеаа лекарственных-->
+<!--                                        </li>-->
+<!--                                        <li>-->
+<!--                                           -->
+<!--                                            Внутрикожное введение и обязатеаа лекарственных-->
+<!--                                        </li>-->
+<!--                                    </ul>-->
+<!--                                </div>-->
+<!--                            </article>-->
+<!--                            <article class="tools-details__slider_item">-->
+<!--                                <div class="tools-details__slider_item_image"-->
+<!--                                     style="background-image: url(./assets/img/tools/1.jpg)"></div>-->
+<!--                                <div class="tools-details__slider_item_content">-->
+<!--                                    <h3 class="tools-details__slider_item_title">-->
+<!--                                        Микроскопический мегамикроскоп 2800 с супер-->
+<!--                                        достойным длинным огромным супер названием аж на целых 2 строки-->
+<!--                                    </h3>-->
+<!--                                    <p class="tools-details__slider_item_text">-->
+<!--                                        Александритовый лазер Candela GentleLase Pro сводит к минимуму ощущения дискомфорта-->
+<!--                                        во время проведения процедур.-->
+<!--                                        Лазер покрывает большой диаметр кожи за один импульс (до 18мм), это намного больше,-->
+<!--                                        чем у других лазерных установок. Сеансы эпиляции проходят быстро, а благодаря-->
+<!--                                        уникальной криогенной системе охлаждения, ещё и безболезненно.-->
+<!---->
+<!--                                    </p>-->
+<!--                                    <div class="tools-details__slider_item_list-title">-->
+<!--                                        Почему лазерная система Candela GentleLase Pro столь популярна:-->
+<!--                                    </div>-->
+<!--                                    <ul class="tools-details__slider_item_list">-->
+<!--                                        <li>-->
+<!--                                           -->
+<!--                                            Внутрикожное-->
+<!--                                            введение и обязатеаа лекарственных средств (лечение халязиона введением-->
+<!--                                            стероидов) без стоимости лекарства-->
+<!--                                        </li>-->
+<!--                                        <li>-->
+<!--                                           -->
+<!--                                            Внутрикожное введение и обязатеаа лекарственных-->
+<!--                                        </li>-->
+<!--                                        <li>-->
+<!--                                           -->
+<!--                                            Внутрикожное введение и обязатеаа лекарственных средств (лечение халязиона-->
+<!--                                            введением стероидов) без стоимости лекарства-->
+<!--                                        </li>-->
+<!--                                        <li>-->
+<!--                                           -->
+<!--                                            Внутрикожное введение и обязатеаа лекарственных-->
+<!--                                        </li>-->
+<!--                                        <li>-->
+<!--                                           -->
+<!--                                            Внутрикожное введение и обязатеаа лекарственных-->
+<!--                                        </li>-->
+<!--                                        <li>-->
+<!--                                           -->
+<!--                                            Внутрикожное введение и обязатеаа лекарственных-->
+<!--                                        </li>-->
+<!--                                    </ul>-->
+<!--                                </div>-->
+<!--                            </article>-->
                         </div>
                     </div>
                 </div>
