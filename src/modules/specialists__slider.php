@@ -28,7 +28,7 @@
                     стабильно-функционального остеосинтеза в травматологии и ортопедии ЛДЦ
                     Завода
                     “Светлана”</p>
-                <a href="doctor.php" class=" btn btn_white">Подробнее о враче</a>
+                <a href="1.php" class=" btn btn_white">Подробнее о враче</a>
             </article>
         </article>
     </div>
@@ -61,7 +61,7 @@
                     стабильно-функционального остеосинтеза в травматологии и ортопедии ЛДЦ
                     Завода
                     “Светлана”</p>
-                <a href="doctor.php" class="btn btn_white">Подробнее о враче</a>
+                <a href="2.php" class="btn btn_white">Подробнее о враче</a>
             </article>
         </article>
     </div>

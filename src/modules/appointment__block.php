@@ -17,7 +17,7 @@
             <input name="id-of-service" type="hidden" value=""><!--            Если нажата кнопка записи на элемент из прайса, то прокидываем ID-->
             <label class="confident-label"><input class="appointment__confident" name="confident" type="checkbox" value="yes"
                                                   required>
-                <small>Даю согласие на обработку <u>персональных данных</u></small>
+                <small>Даю согласие на обработку <a href="#">персональных данных</a></small>
             </label>
             <button type="submit" class="btn btn_white">Записаться на приём <img
                     src="./assets/img/appointment/submit-icon.svg"

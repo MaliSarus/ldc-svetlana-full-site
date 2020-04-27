@@ -43,10 +43,10 @@ const specSliderInit = () => {
     const specSlickInStaff = $('.staff__content .staff__ordinary .specialists__slider');
     const specSlickInControl = $('.control__content .specialists__slider');
     const hoverLinkHandler = function () {
-        const url = $('.doctor__full-info a').attr('href');
+        const url = $(this).find('a').attr('href');
         $(location).attr('href', url);
     };
-    $('.doctor__full-info').on('click', hoverLinkHandler);
+    $(document).on('click', '.doctor__full-info', hoverLinkHandler);
 
     if (isSet($('.staff'))) {
         specSlickInStaff.slick({
@@ -1740,6 +1740,9 @@ $(document).ready(function () {
                 });
                 $('.confident-label small').css({
                     color: '#E84E2C'
+                });
+                $('.confident-label small a').css({
+                    color: '#E84E2C'
                 })
             }
             if (appointmentConfident.prop('checked') && Inputmask.isValid(appointmentPhoneInput.val(), "+7-(999)-999-9999") && appointmentNameInput.val() !== '') {
@@ -1809,10 +1812,14 @@ $(document).ready(function () {
                 });
                 $('.confident-label small').css({
                     color: '#E84E2C',
+                });
+                $('.confident-label small a').css({
+                    color: '#E84E2C'
                 })
             } else {
                 $(this).attr('style', '');
                 $('.confident-label small').attr('style', '');
+                $('.confident-label small a').attr('style', '');
             }
         });
 
@@ -1862,13 +1869,29 @@ $(document).ready(function () {
         const staffDropdown = $('.staff__search-dropdown');
         const staffDropdownLink = $('.staff__search-dropdown_link');
         staffSearch.on('input', function () {
+            staffSearch.val(staffSearch.val().replace(/[^А-Яа-я\s]/, ''));
             if (staffSearch.val().length >= 3) {
-                staffSearch.val(staffSearch.val().replace(/[^А-Яа-я\s]/, ''));
                 if (staffSearch.val() != '') {
                     staffDropdown.css({
                         display: 'block',
                         width: $('.staff__search-form-wrapper').width()
                     });
+                    if ($('.staff__content-top').css('position') == 'fixed'){
+                        staffDropdown.css({
+                            left: $('.staff__content-top').css('padding-left')
+                        });
+                        if($(window).width() < 961)   {
+                            staffDropdown.css({
+                                top: '79px'
+                            });
+                        }
+                        else if($(window).width() >= 961)   {
+                            staffDropdown.css({
+                                top: '59px'
+                            });
+                        }
+
+                    }
                 }
             } else {
                 staffDropdown.removeAttr('style');
@@ -2322,8 +2345,7 @@ $(document).scroll(function () {
     }
     if (isSet($('.staff'))) {
         const   staffSearchPanel = $('.staff__search-form-wrapper').parent();
-        console.log(staffSearchPanel.parents('.staff__content_tab').hasClass('staff__content_tab_active'));
-
+        console.log("top Position = ",staffSearchPanel.offset().left);
         if ($(window).width() > 960 && staffSearchPanel.parents('.staff__content_tab').hasClass('staff__content_tab_active')) {
             if ((($(this).scrollTop()) >= staffSearchPanel.position().top) && staffSearchTop == 0) {
                 staffSearchTop = staffSearchPanel.position().top;
@@ -2339,11 +2361,11 @@ $(document).scroll(function () {
                     margin: '0'
                 });
                 if ($(window).width() >= 1380) {
-                    staffSearchPanel.css({padding: '30px ' + (Math.abs($(window).width() - 1350) / 2) + 'px'});
+                    staffSearchPanel.css({padding: '5px ' + (Math.abs($(window).width() - 1350) / 2) + 'px'});
                 } else {
-                    staffSearchPanel.css({padding: '30px 15px'});
+                    staffSearchPanel.css({padding: '5px 15px'});
                 }
-            } else if (($(this).scrollTop() + 129) < staffSearchTop) {
+            } else if (($(this).scrollTop() + 129) < staffSearchTop + 70) {
                 staffSearchPanel.removeAttr('style');
                 staffSearchTop = 0;
             }

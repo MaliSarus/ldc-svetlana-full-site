@@ -1541,7 +1541,7 @@ button.mfp-arrow {
     position: absolute;
     left: 0;
     bottom: 0;
-    background-color: #3E557F;
+    background: #2A4472;
     z-index: -1;
     content: '';
   }
@@ -3282,6 +3282,15 @@ button.mfp-arrow {
 .appointment .appointment__form .confident-label small {
   font-size: 12px;
   color: #2A4472;
+}
+
+.appointment .appointment__form .confident-label small a {
+  color: #2A4472;
+  text-decoration: underline;
+}
+
+.appointment .appointment__form .confident-label small a:hover {
+  color: #3F5A8A;
 }
 
 .appointment .appointment__form .confident-label .appointment__confident {

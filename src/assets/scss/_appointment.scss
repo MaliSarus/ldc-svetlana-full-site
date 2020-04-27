@@ -230,6 +230,13 @@
       small {
         font-size: 12px;
         color: $main-color;
+        a{
+          color: $main-color;
+          text-decoration: underline;
+          &:hover{
+            color: $main-color-light;
+          }
+        }
       }
 
       .appointment__confident{
