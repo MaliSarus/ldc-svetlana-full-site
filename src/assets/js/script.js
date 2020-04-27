@@ -2139,6 +2139,9 @@ $(document).ready(function () {
         } else {
             $('.science-articles__footer').hide();
         }
+    }
+
+    if(isSet($('.science-articles__content'))){
         const scienceArticlesText = $('.science-articles__content_item_text');
         $(document).on('click', '.science-articles__content_item_text', function (event) {
             if ($(this).hasClass('science-articles__content_item_text_unhide')) {
