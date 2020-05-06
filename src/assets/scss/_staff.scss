@@ -431,9 +431,6 @@
         margin-bottom: 0;
         margin-right: 15px;
         flex-basis: 60%;
-        @media screen and (min-width: 961px){
-          flex-basis: auto;
-        }
       }
 
       .back {

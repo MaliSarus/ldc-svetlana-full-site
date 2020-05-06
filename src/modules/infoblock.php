@@ -8,22 +8,30 @@
                             <h2>Заголовок блока</h2>
                             <ul>
                                 <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam beatae, blanditiis
-                                    deleniti</li>
+                                    deleniti
+                                </li>
                                 <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam beatae, blanditiis
-                                    delenitiLorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam beatae, blanditiis
-                                deleniti</li>
+                                    delenitiLorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam beatae,
+                                    blanditiis
+                                    deleniti
+                                </li>
                                 <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam beatae, blanditiis
-                                deleniti</li>
+                                    deleniti
+                                </li>
                                 <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam beatae, blanditiis
-                                deleniti</li>
+                                    deleniti
+                                </li>
                                 <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam beatae, blanditiis
-                                deleniti</li>
+                                    deleniti
+                                </li>
                                 <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam beatae, blanditiis
-                                deleniti</li>
+                                    deleniti
+                                </li>
                             </ul>
                         </div>
                         <div class="infoblock__item_content">
-                            <img src="./assets/img/tools/1.jpg" alt="Картинка">
+                            <div class="image_blur"><img src="./assets/img/tools/1.jpg" alt="Картинка"
+                                                         data-description="Подпись бла бла бла"></div>
                         </div>
                     </div>
                     <div class="infoblock__row">

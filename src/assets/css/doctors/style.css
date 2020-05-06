@@ -3679,13 +3679,6 @@ button.mfp-arrow {
   flex-basis: 60%;
 }
 
-@media screen and (min-width: 961px) {
-  .staff__find-head .title {
-    -ms-flex-preferred-size: auto;
-    flex-basis: auto;
-  }
-}
-
 .staff__find-head .back {
   width: auto;
   display: inline-block;

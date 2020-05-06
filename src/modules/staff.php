@@ -32,7 +32,7 @@
                                 </div>
                                 <div class="staff__search-dropdown_item">
                                     <div class="staff__search-dropdown_title">Специализации</div>
-                                    <a href="#" class="staff__search-dropdown_link">Невозвратный Петр Андреевич</a>
+                                    <a href="#" class="staff__search-dropdown_link">Кожемакин Валериан Ипалитович</a>
                                 </div>
                             </div>
 
