@@ -61,6 +61,29 @@ body, html {
   background: #F1F1F1;
 }
 
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+@media screen and (min-width: 961px) {
+  body {
+    min-height: calc(100vh - 130px);
+  }
+}
+
+body main {
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+
 h1, h2, h3, h4, h5, h6, p {
   margin: 0;
 }
@@ -1322,6 +1345,50 @@ button.mfp-arrow {
   transform: rotate(180deg) translateY(0.5px);
 }
 
+.up-button {
+  display: none;
+  position: fixed;
+  padding: 30px;
+  z-index: 1000000000;
+  right: 15px;
+  bottom: 97px;
+  background: white;
+  -webkit-box-shadow: 0 5px 15px rgba(42, 68, 114, 0.1);
+  box-shadow: 0 5px 15px rgba(42, 68, 114, 0.1);
+  -webkit-transition: -webkit-box-shadow .25s;
+  transition: -webkit-box-shadow .25s;
+  -o-transition: box-shadow .25s;
+  transition: box-shadow .25s;
+  transition: box-shadow .25s, -webkit-box-shadow .25s;
+}
+
+@media screen and (min-width: 961px) {
+  .up-button {
+    right: 20px;
+    bottom: 20px;
+  }
+}
+
+.up-button:hover {
+  -webkit-box-shadow: 0 5px 10px rgba(42, 68, 114, 0.3);
+  box-shadow: 0 5px 10px rgba(42, 68, 114, 0.3);
+}
+
+.up-button::before {
+  display: block;
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-size: contain;
+  background: url(../../img/specialists/arrow-small.svg) center no-repeat;
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
 .popup {
   position: fixed;
   left: 0;
@@ -2533,6 +2600,7 @@ button.mfp-arrow {
   line-height: 140%;
   color: rgba(10, 24, 49, 0.8);
   margin-bottom: 12px;
+  margin-top: 18px;
 }
 
 @media screen and (min-width: 961px) {
@@ -2540,6 +2608,7 @@ button.mfp-arrow {
     font-size: 20px;
     line-height: 120%;
     margin-bottom: 18px;
+    margin-top: 22px;
   }
 }
 
@@ -2552,53 +2621,61 @@ button.mfp-arrow {
 
 @media screen and (min-width: 961px) {
   .about-emergency-room__content > p {
-    margin-bottom: 22px;
-  }
-}
-
-.about-emergency-room__content .text_accent {
-  margin: 0;
-  margin-bottom: 12px;
-}
-
-.about-emergency-room__content_address {
-  margin: 0;
-  margin-bottom: 18px;
-  line-height: 140%;
-}
-
-@media screen and (min-width: 961px) {
-  .about-emergency-room__content_address {
     margin-bottom: 14px;
   }
 }
 
-.about-emergency-room__content_list {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  margin-bottom: 18px;
+.about-emergency-room__content > p span {
+  color: #E84E2C;
+  font-weight: bold;
 }
 
-.about-emergency-room__content_list-item {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+.about-emergency-room__content > ul {
+  margin: 0;
   margin-bottom: 12px;
+  padding: 0;
+  list-style: none;
+  padding-left: 24px;
 }
 
 @media screen and (min-width: 961px) {
-  .about-emergency-room__content_list-item {
-    line-height: 38px;
-    margin-bottom: 6px;
+  .about-emergency-room__content > ul {
+    -ms-flex-preferred-size: calc(50% - 10px);
+    flex-basis: calc(50% - 10px);
   }
 }
 
-.about-emergency-room__content_list-item:last-child {
-  margin-bottom: 0;
+.about-emergency-room__content > ul li {
+  font-size: 16px;
+  color: rgba(10, 24, 49, 0.8);
+  padding-left: 24px;
+  margin-left: -24px;
+  position: relative;
+  margin-bottom: 12px;
 }
 
-.about-emergency-room__content_list-text span {
+.about-emergency-room__content > ul li::before {
+  display: block;
+  content: url("../../img/for-patient/red-square.svg");
+  -webkit-transform: translateY(-2px);
+  -ms-transform: translateY(-2px);
+  transform: translateY(-2px);
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+@media screen and (min-width: 961px) {
+  .about-emergency-room__content > ul li {
+    line-height: 38px;
+    margin-bottom: 6px;
+  }
+  .about-emergency-room__content > ul li:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.about-emergency-room__content > ul li span {
   color: #E84E2C;
   font-weight: 600;
 }
@@ -2680,8 +2757,9 @@ button.mfp-arrow {
   }
 }
 
-.hurts__list {
+.hurts ul {
   margin: 0;
+  margin-bottom: 12px;
   padding: 0;
   list-style: none;
   display: -webkit-box;
@@ -2691,34 +2769,70 @@ button.mfp-arrow {
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 
 @media screen and (min-width: 961px) {
-  .hurts__list {
+  .hurts ul {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
     -ms-flex-direction: row;
     flex-direction: row;
+    margin-top: -18px;
   }
 }
 
-.hurts__list-item {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+.hurts ul li {
+  font-size: 16px;
+  padding-left: 24px;
+  position: relative;
   margin-bottom: 18px;
+  -ms-flex-preferred-size: 100%;
+  flex-basis: 100%;
 }
 
 @media screen and (min-width: 961px) {
-  .hurts__list-item {
+  .hurts ul li {
     margin-bottom: 0;
     margin-right: 34px;
+    -ms-flex-preferred-size: unset;
+    flex-basis: unset;
+    margin-top: 18px;
   }
 }
 
-.hurts__list-item:last-child {
+.hurts ul li:last-child {
   margin-bottom: 0;
   margin-right: 0;
+}
+
+.hurts ul li::before {
+  display: block;
+  content: url("../../img/for-patient/red-square.svg");
+  -webkit-transform: translateY(-2px);
+  -ms-transform: translateY(-2px);
+  transform: translateY(-2px);
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.hurts ul li a {
+  font-weight: 600;
+  text-decoration: underline;
+  color: #2A4472;
+  -webkit-transition: color .2s;
+  -o-transition: color .2s;
+  transition: color .2s;
+}
+
+.hurts ul li a:hover {
+  color: #E84E2C;
+}
+
+.hurts ul li a:active {
+  color: #FF785A;
 }
 
 .nav-links {
@@ -3077,9 +3191,9 @@ button.mfp-arrow {
   padding: 16px 56px;
   cursor: pointer;
   position: relative;
-  -webkit-transition: color .25s;
-  -o-transition: color .25s;
-  transition: color .25s;
+  -webkit-transition: background-color .25s;
+  -o-transition: background-color .25s;
+  transition: background-color .25s;
 }
 
 @media screen and (min-width: 769px) {
@@ -3089,7 +3203,7 @@ button.mfp-arrow {
 }
 
 .cost__block ul > li > span:hover {
-  color: #FF785A;
+  background: #3F5A8A;
 }
 
 .cost__block ul > li > span::before {
@@ -3161,6 +3275,7 @@ button.mfp-arrow {
 
 .cost__block ul > li > ul > li > span:hover {
   color: #2A4472;
+  background: unset;
 }
 
 .cost__block ul > li > ul > li > span::before {
@@ -3233,7 +3348,7 @@ button.mfp-arrow {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding: 16px 0;
+  padding: 8px 0;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
@@ -3258,9 +3373,9 @@ button.mfp-arrow {
 .cost__list_content_price {
   -ms-flex-preferred-size: 50%;
   flex-basis: 50%;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
   color: #0A1831;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -3268,7 +3383,7 @@ button.mfp-arrow {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  margin-right: 30px;
+  margin-right: 20px;
 }
 
 .cost__list_content_price:hover {
@@ -4571,6 +4686,7 @@ button.mfp-arrow {
 }
 
 .for-patient__block {
+  width: 100%;
   background: white;
   padding: 18px 15px;
 }

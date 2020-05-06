@@ -53,10 +53,13 @@
       line-height: 140%;
       color: rgba($main-color-dark,.8);
       margin-bottom: 12px;
+      margin-top: 18px;
+
       @media screen and (min-width: 961px){
         font-size: 20px;
         line-height: 120%;
         margin-bottom: 18px;
+        margin-top: 22px;
       }
     }
     >p{
@@ -65,38 +68,45 @@
       color: rgba($main-color-dark,.8);
       margin-bottom: 18px;
       @media screen and (min-width: 961px){
-        margin-bottom: 22px;
-      }
-    }
-    .text_accent{
-      margin: 0;
-      margin-bottom: 12px;
-    }
-    &_address{
-      margin: 0;
-      margin-bottom: 18px;
-      line-height: 140%;
-      @media screen and (min-width:961px){
         margin-bottom: 14px;
       }
+      span{
+        color: $accent-color;
+        font-weight: bold;
+      }
     }
-    &_list{
+
+    >ul{
       margin: 0;
+      margin-bottom: 12px;
       padding: 0;
       list-style: none;
-      margin-bottom: 18px;
-      &-item{
-        display: flex;
+      padding-left: 24px;
+      @media screen and (min-width: 961px){
+        flex-basis: calc(50% - 10px);
+      }
+      li{
+        font-size: 16px;
+        color: rgba($main-color-dark, .8);
+        padding-left: 24px;
+        margin-left: -24px;
+        position: relative;
         margin-bottom: 12px;
+        &::before{
+          display: block;
+          content: url("../../img/for-patient/red-square.svg");
+          transform: translateY(-2px);
+          position: absolute;
+          left: 0;
+          top: 0;
+        }
         @media screen and (min-width: 961px){
           line-height: 38px;
           margin-bottom: 6px;
+          &:last-child{
+            margin-bottom: 0;
+          }
         }
-        &:last-child{
-          margin-bottom: 0;
-        }
-      }
-      &-text{
         span{
           color: $accent-color;
           font-weight: 600;

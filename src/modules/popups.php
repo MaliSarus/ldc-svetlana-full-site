@@ -8,8 +8,10 @@
 <div class="popup-iphone">
     <div class="popup-iphone__block">
         <div class="popup-iphone__item popup-iphone__actions">
-            <div class="popup-iphone__action"></div>
-            <a href="tel:+78126270203">
+            <a href="#">
+                <div class="popup-iphone__action"></div>
+            </a>
+            <a href="#">
                 <div class="popup-iphone__action"></div>
             </a>
         </div>

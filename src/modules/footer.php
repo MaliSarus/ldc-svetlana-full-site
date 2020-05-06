@@ -1,4 +1,4 @@
-
+</main>
 <footer class="footer">
     <div class="tap-menu" id="tm">
         <div class="container">

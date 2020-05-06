@@ -35,8 +35,10 @@ require "./modules/headlings.php";
 <?php
 require "./modules/popups.php";
 require "./modules/header.php";
+
 require "./modules/dropdown-menu.php";
 ?>
+<main>
 
 
 <!-------------------------------------------------------------------------------------------------------------------->

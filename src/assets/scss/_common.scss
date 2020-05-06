@@ -12,6 +12,17 @@ body, html {
   font-family: 'Exo 2', sans-serif;
   background: $bg-gray;
 }
+body{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  @media screen and (min-width: 961px ){
+    min-height: calc(100vh - 130px);
+  }
+  main{
+    flex-grow: 1;
+  }
+}
 
 h1,h2,h3,h4,h5,h6,p{
   margin: 0;

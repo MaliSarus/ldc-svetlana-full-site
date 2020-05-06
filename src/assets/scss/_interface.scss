@@ -927,3 +927,34 @@ button.mfp-arrow{
     }
   }
 }
+
+.up-button{
+  display: none;
+  position: fixed;
+  padding: 30px;
+  z-index: 1000000000;
+  right: 15px;
+  bottom: 97px;
+  background: white;
+  box-shadow: 0 5px 15px rgba($main-color, .1);
+  transition: box-shadow .25s;
+  @media screen and (min-width: 961px){
+    right: 20px;
+    bottom: 20px;
+  }
+  &:hover{
+    box-shadow: 0 5px 10px rgba($main-color, .3);
+  }
+  &::before{
+    display: block;
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-size: contain;
+    background: url(../../img/specialists/arrow-small.svg) center no-repeat;
+    transform: rotate(90deg);
+  }
+}

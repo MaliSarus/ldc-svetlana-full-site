@@ -31,12 +31,13 @@ require "./modules/headlings.php";
     <div class="fig" id="fig21"></div>
     <div class="fig" id="fig22"></div>
 </div>
-
 <?php
 require "./modules/popups.php";
 require "./modules/header.php";
+
 require "./modules/dropdown-menu.php";
 ?>
+<main>
 <!-------------------------------------------------------------------------------------------------------------------->
 <link rel="stylesheet" href="./assets/css/<?php echo basename(__FILE__, '.php');?>/style.css?ver=<?php echo  date("His")?>">
 

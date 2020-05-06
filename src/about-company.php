@@ -9,6 +9,7 @@ require "./modules/headlings.php";
 </head>
 <body>
 
+
 <div class="layer1">
     <div class="fig" id="fig11"></div>
     <div class="fig" id="fig12"></div>
@@ -35,8 +36,10 @@ require "./modules/headlings.php";
 <?php
 require "./modules/popups.php";
 require "./modules/header.php";
+
 require "./modules/dropdown-menu.php";
 ?>
+<main>
 <!-------------------------------------------------------------------------------------------------------------------->
 <link rel="stylesheet"
       href="./assets/css/<?php echo basename(__FILE__, '.php'); ?>/style.css?ver=<?php echo date("His") ?>">

@@ -46,12 +46,12 @@
           padding: 16px 56px;
           cursor: pointer;
           position: relative;
-          transition: color .25s;
+          transition: background-color .25s;
           @media screen and (min-width: 769px){
             padding: 16px 36px;
           }
           &:hover{
-            color: $accent-color-light;
+            background: $main-color-light;
           }
 
           &::before{
@@ -100,6 +100,7 @@
               }
               &:hover{
                 color: $main-color;
+                background: unset;
               }
               &::before{
                 filter:none;
@@ -163,7 +164,7 @@
       }
       cursor: pointer;
       display: flex;
-      padding: 16px 0;
+      padding: 8px 0;
       align-items: center;
       border-bottom: 1px solid rgba($main-color-dark,.15);
 
@@ -177,11 +178,11 @@
       }
       &_price{
         flex-basis: 50%;
-        justify-content: center;
+        justify-content: flex-end;
         color: $main-color-dark;
         display: flex;
         align-items: center;
-        margin-right: 30px;
+        margin-right: 20px;
         &:hover{
           text-decoration: none;
         }

@@ -35,8 +35,10 @@ require "./modules/headlings.php";
 <?php
 require "./modules/popups.php";
 require "./modules/header.php";
+
 require "./modules/dropdown-menu.php";
 ?>
+<main>
 <!-------------------------------------------------------------------------------------------------------------------->
 <link rel="stylesheet" href="./assets/css/<?php echo basename(__FILE__, '.php');?>/style.css?ver=<?php echo  date("His")?>">
 
@@ -48,8 +50,6 @@ require "./modules/checkup-features.php";
 require "./modules/specialists.php";
 require "./modules/feedback.php";
 ?>
-
-
 
 <!----------------------------НЕ ТРОГАТЬ---------------------------------->
 <?

@@ -17,7 +17,8 @@
                             <div class="staff__search-form-wrapper">
                                 <form action="#" class="staff__search-form">
                                     <input name="search" type="search" class="staff__search-form-field"
-                                           placeholder="Начните вводить фамилию или специализацию" autocomplete="off">
+                                           autocomplete="off" id="finder_doc_val">
+                                    <label for="finder_doc_val">Начните вводить фамилию или специализацию</label>
                                     <button type="submit" class="staff__search-form-button">
                                         <img src="./assets/img/staff/search-icon.svg" alt="Поиск">
                                     </button>
@@ -57,7 +58,7 @@
                             <div class="staff__find">
                                 <div class="staff__find-head">
                                     <div class="title">Результат поиска - <span class="words"></span></div>
-                                    <div class="back link">Все врачи</div>
+                                    <div class="back btn btn_red_fill">Сбросить фильтр</div>
                                 </div>
 
                                 <?php
