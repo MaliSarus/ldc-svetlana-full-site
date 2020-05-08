@@ -958,3 +958,24 @@ button.mfp-arrow{
     transform: rotate(90deg);
   }
 }
+
+.all{
+  position: relative;
+  &::after{
+    position: absolute;
+    top: 50%;
+    margin-left: 10px;
+    display: inline-block;
+    background: url("../../img/science-articles/arrow.svg") center / contain  no-repeat;
+    content: '';
+    width: 12px;
+    height: 12px;
+    transform: translateY(-50%) rotate(-90deg);
+    transition: filter .25s;
+  }
+  &:hover{
+    &::after{
+      filter: hue-rotate(130deg) saturate(27.5);
+    }
+  }
+}

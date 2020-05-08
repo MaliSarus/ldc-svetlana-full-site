@@ -4,7 +4,7 @@
             <div class="science-articles__block">
                 <div class="science-articles__head">
                     <h2 class="title" data-mobile="Научные статьи">Научные статьи &lt;и публикации&gt;</h2>
-                    <a href="#" class="link">Читать все</a>
+                    <a href="#" class="link all">Читать все</a>
                 </div>
                 <div class="science-articles__content">
                     <div class="science-articles__content_item">

@@ -7,7 +7,7 @@
                 <h2 class="title" data-mobile="Отзывы">Отзывы &lt;наших клиентов&gt;</h2>
                 <div class="feedback__position"><span class="feedback__position_current">1</span>/35</div>
                 <div class="feedback__control-panel">
-                    <a href="#" class="link">Читать все</a>
+                    <a href="#" class="link all">Читать все</a>
                     <div class="arrows">
                         <div class="arrow arrows__arrow-left"></div>
                         <div class="arrow arrows__arrow-right"></div>

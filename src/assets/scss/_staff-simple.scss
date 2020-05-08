@@ -219,13 +219,10 @@
       @media screen and (min-width: 961px){
         max-width: 320px;
         right: 28px;
-        bottom: 15px;
+        bottom: 0;
         padding: 33px 30px;
         font-size: 16px;
         transform:skewX(-19deg) translateX(0);
-      }
-      @media screen and (min-width: 1400px){
-        bottom: 45px;
       }
 
 

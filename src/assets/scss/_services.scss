@@ -92,6 +92,7 @@
     &-services {
       display: none;
       .column-one{
+        padding: 0;
         display: flex;
         flex-wrap: wrap;
         margin-bottom: 0;
@@ -124,6 +125,7 @@
   }
 
   &__column {
+    box-sizing: border-box;
     @media screen and (max-width: 960px) {
       margin-bottom: 18px;
       &:last-child {
@@ -131,13 +133,14 @@
       }
     }
     @media screen and (min-width: 577px) {
-      flex-basis: calc(100% / 4 - 10px);
+      padding-right: 10px;
+      flex-basis: calc(100% / 4);
     }
     @media screen and (min-width: 769px) {
-      flex-basis: calc(100% / 3 - 10px);
+      flex-basis: calc(100% / 3);
     }
     @media screen and (min-width: 961px) {
-      flex-basis: calc(100% / 4 - 10px);
+      flex-basis: calc(100% / 4);
       max-width: 325px;
     }
     @media screen and (min-width: 1400px) {

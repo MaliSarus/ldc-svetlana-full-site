@@ -1389,6 +1389,34 @@ button.mfp-arrow {
   transform: rotate(90deg);
 }
 
+.all {
+  position: relative;
+}
+
+.all::after {
+  position: absolute;
+  top: 50%;
+  margin-left: 10px;
+  display: inline-block;
+  background: url("../../img/science-articles/arrow.svg") center/contain no-repeat;
+  content: '';
+  width: 12px;
+  height: 12px;
+  -webkit-transform: translateY(-50%) rotate(-90deg);
+  -ms-transform: translateY(-50%) rotate(-90deg);
+  transform: translateY(-50%) rotate(-90deg);
+  -webkit-transition: -webkit-filter .25s;
+  transition: -webkit-filter .25s;
+  -o-transition: filter .25s;
+  transition: filter .25s;
+  transition: filter .25s, -webkit-filter .25s;
+}
+
+.all:hover::after {
+  -webkit-filter: hue-rotate(130deg) saturate(27.5);
+  filter: hue-rotate(130deg) saturate(27.5);
+}
+
 .popup {
   position: fixed;
   left: 0;
@@ -2987,6 +3015,7 @@ button.mfp-arrow {
 }
 
 .services__content-services .column-one {
+  padding: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -3040,6 +3069,11 @@ button.mfp-arrow {
   }
 }
 
+.services__column {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
 @media screen and (max-width: 960px) {
   .services__column {
     margin-bottom: 18px;
@@ -3051,22 +3085,23 @@ button.mfp-arrow {
 
 @media screen and (min-width: 577px) {
   .services__column {
-    -ms-flex-preferred-size: calc(100% / 4 - 10px);
-    flex-basis: calc(100% / 4 - 10px);
+    padding-right: 10px;
+    -ms-flex-preferred-size: calc(100% / 4);
+    flex-basis: calc(100% / 4);
   }
 }
 
 @media screen and (min-width: 769px) {
   .services__column {
-    -ms-flex-preferred-size: calc(100% / 3 - 10px);
-    flex-basis: calc(100% / 3 - 10px);
+    -ms-flex-preferred-size: calc(100% / 3);
+    flex-basis: calc(100% / 3);
   }
 }
 
 @media screen and (min-width: 961px) {
   .services__column {
-    -ms-flex-preferred-size: calc(100% / 4 - 10px);
-    flex-basis: calc(100% / 4 - 10px);
+    -ms-flex-preferred-size: calc(100% / 4);
+    flex-basis: calc(100% / 4);
     max-width: 325px;
   }
 }

@@ -312,7 +312,7 @@
       &:last-child {
         margin-bottom: 0;
       }
-      &:hover, &:focus, &.selected{
+      &.selected{
         color: $accent-color;
       }
     }

@@ -1388,6 +1388,34 @@ button.mfp-arrow {
   transform: rotate(90deg);
 }
 
+.all {
+  position: relative;
+}
+
+.all::after {
+  position: absolute;
+  top: 50%;
+  margin-left: 10px;
+  display: inline-block;
+  background: url("../../img/science-articles/arrow.svg") center/contain no-repeat;
+  content: '';
+  width: 12px;
+  height: 12px;
+  -webkit-transform: translateY(-50%) rotate(-90deg);
+  -ms-transform: translateY(-50%) rotate(-90deg);
+  transform: translateY(-50%) rotate(-90deg);
+  -webkit-transition: -webkit-filter .25s;
+  transition: -webkit-filter .25s;
+  -o-transition: filter .25s;
+  transition: filter .25s;
+  transition: filter .25s, -webkit-filter .25s;
+}
+
+.all:hover::after {
+  -webkit-filter: hue-rotate(130deg) saturate(27.5);
+  filter: hue-rotate(130deg) saturate(27.5);
+}
+
 .popup {
   position: fixed;
   left: 0;
@@ -4597,6 +4625,182 @@ button.mfp-arrow {
 @media screen and (min-width: 961px) {
   .care__video-block {
     height: 324px;
+  }
+}
+
+.infoblock {
+  margin-bottom: 30px;
+  background: white;
+}
+
+@media screen and (min-width: 961px) {
+  .infoblock {
+    margin-bottom: 0;
+  }
+}
+
+.infoblock__block {
+  width: 100%;
+  padding: 18px 15px;
+}
+
+@media screen and (min-width: 961px) {
+  .infoblock__block {
+    padding: 60px 0;
+  }
+}
+
+.infoblock__row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin-top: -12px;
+  margin-bottom: -12px;
+}
+
+@media screen and (min-width: 961px) {
+  .infoblock__row {
+    margin: 0 -10px;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+  }
+}
+
+.infoblock__item {
+  width: 100%;
+  margin-bottom: 24px;
+}
+
+@media screen and (min-width: 961px) {
+  .infoblock__item {
+    margin-bottom: 50px;
+  }
+}
+
+.infoblock__item:last-child {
+  margin-bottom: 0;
+}
+
+.infoblock__item_content {
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -ms-flex-preferred-size: 100%;
+  flex-basis: 100%;
+  padding: 12px 0;
+  color: #0A1831;
+}
+
+@media screen and (min-width: 961px) {
+  .infoblock__item_content {
+    margin-bottom: 0px;
+    padding: 0 10px;
+  }
+  .infoblock__item_content:nth-child(2) {
+    padding-left: 10px;
+  }
+}
+
+.infoblock__item_content:last-child {
+  margin-bottom: 0;
+}
+
+.infoblock__item_content > * {
+  margin-bottom: 18px;
+}
+
+@media screen and (min-width: 961px) {
+  .infoblock__item_content > * {
+    margin-bottom: 36px;
+  }
+}
+
+.infoblock__item_content > *:last-child {
+  margin-bottom: 0;
+}
+
+.infoblock__item_content h2 {
+  font-size: 20px;
+  color: #0A1831;
+  font-weight: bold;
+}
+
+@media screen and (min-width: 577px) {
+  .infoblock__item_content h2 {
+    font-size: 24px;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .infoblock__item_content h2 {
+    font-size: 30px;
+  }
+}
+
+.infoblock__item_content p {
+  font-size: 16px;
+  line-height: 150%;
+  color: rgba(10, 24, 49, 0.8);
+}
+
+@media screen and (min-width: 961px) {
+  .infoblock__item_content p {
+    font-size: 16px;
+    line-height: 150%;
+    color: #0A1831;
+  }
+}
+
+.infoblock__item_content ul {
+  margin: 0;
+  margin-bottom: 18px;
+  padding-left: 24px;
+}
+
+.infoblock__item_content ul li {
+  list-style: none;
+  position: relative;
+  font-size: 16px;
+  line-height: 140%;
+  padding-left: 24px;
+  margin-left: -24px;
+}
+
+.infoblock__item_content ul li::before {
+  display: block;
+  content: url("../../img/for-patient/red-square.svg");
+  -webkit-transform: translateY(-2px);
+  -ms-transform: translateY(-2px);
+  transform: translateY(-2px);
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.infoblock__item_content ul p {
+  margin-bottom: 0;
+}
+
+.infoblock__item_content img {
+  width: 100%;
+}
+
+@media screen and (min-width: 961px) {
+  .infoblock__item_content img {
+    max-width: 669px;
   }
 }
 

@@ -17,48 +17,48 @@
                     </p>
                 </div>
                 <div class="about-block__features">
-                    <div class="about-block__features_item about-checkup__features_price">
+                    <div class="about-block__features_item">
                         <div class="about-block__features_icon"><img src="./assets/img/about-checkup/price-icon.svg"
                                                                        alt="Иконка преимуществ"></div>
                         <div class="about-block__features_text">
                             <div class="about-block__features_title text">
                                 Cтоимость
                             </div>
-                            <ul class="about-block__features_list">
-                                <li class="about-block__features_list-item text">18-30 лет: <span class="about-block__features_price-text text_accent">25 820р.</span></li>
-                                <li class="about-block__features_list-item text">30-50 лет: <span class="about-block__features_price-text text_accent">25 820р.</span></li>
-                                <li class="about-block__features_list-item text">50-60 лет: <span class="about-block__features_price-text text_accent">25 820р.</span></li>
-                                <li class="about-block__features_list-item text">60-70 лет: <span class="about-block__features_price-text text_accent">25 820р.</span></li>
+                            <ul>
+                                <li>18-30 лет: <span>25 820р.</span></li>
+                                <li>30-50 лет: <span>25 820р.</span></li>
+                                <li>50-60 лет: <span>25 820р.</span></li>
+                                <li>60-70 лет: <span>25 820р.</span></li>
                             </ul>
                         </div>
                     </div>
-                    <div class="about-block__features_item about-checkup__features_time">
+                    <div class="about-block__features_item">
                         <div class="about-block__features_icon"><img src="./assets/img/about-checkup/time-icon.svg"
                                                                        alt="Иконка преимуществ"></div>
                         <div class="about-block__features_text">
                             <div class="about-block__features_title text">
                                 Длительность
                             </div>
-                            <ul class="about-block__features_list">
-                                <li class="about-block__features_list-item text">1-2 дня: <span class="about-block__features_time-text text_accent">4 часа</span></li>
-                                <li class="about-block__features_list-item text">1-2 дня: <span class="about-block__features_time-text text_accent">4 часа</span></li>
-                                <li class="about-block__features_list-item text">1-2 дня: <span class="about-block__features_time-text text_accent">4 часа</span></li>
-                                <li class="about-block__features_list-item text">1-2 дня: <span class="about-block__features_time-text text_accent">4 часа</span></li>
+                            <ul>
+                                <li>1-2 дня: <span>4 часа</span></li>
+                                <li>1-2 дня: <span>4 часа</span></li>
+                                <li>1-2 дня: <span>4 часа</span></li>
+                                <li>1-2 дня: <span>4 часа</span></li>
                             </ul>
                         </div>
                     </div>
-                    <div class="about-block__features_item about-checkup__features_age">
+                    <div class="about-block__features_item">
                         <div class="about-block__features_icon"><img src="./assets/img/about-checkup/age-icon.svg"
                                                                        alt="Иконка преимуществ"></div>
                         <div class="about-block__features_text">
                             <div class="about-block__features_title text">
                                 Возраст пациента
                             </div>
-                            <ul class="about-block__features_list">
-                                <li class="about-block__features_list-item text">от <span class="about-block__features_age-text text_accent">18 лет</span></li>
-                                <li class="about-block__features_list-item text">от <span class="about-block__features_age-text text_accent">18 лет</span></li>
-                                <li class="about-block__features_list-item text">от <span class="about-block__features_age-text text_accent">18 лет</span></li>
-                                <li class="about-block__features_list-item text">от <span class="about-block__features_age-text text_accent">18 лет</span></li>
+                            <ul>
+                                <li>от <span>18 лет</span></li>
+                                <li>от <span>18 лет</span></li>
+                                <li>от <span>18 лет</span></li>
+                                <li>от <span>18 лет</span></li>
                             </ul>
                         </div>
                     </div>

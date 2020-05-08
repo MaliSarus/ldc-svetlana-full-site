@@ -29,11 +29,18 @@
                                 <div class="staff__search-dropdown_item">
                                     <div class="staff__search-dropdown_title">Врачи</div>
                                     <a href="#" class="staff__search-dropdown_link">Невозвратный Петр Андреевич</a>
+                                    <a href="#" class="staff__search-dropdown_link">Лол кекович</a>
+                                    <a href="#" class="staff__search-dropdown_link">Чебурек Валерьяныч</a>
+                                    <a href="#" class="staff__search-dropdown_link">Невозвратный Петр Андреевич</a>
+                                    <a href="#" class="staff__search-dropdown_link">Невозвратный Петр Андреевич</a>
+                                    <a href="#" class="staff__search-dropdown_link">Невозвратный Петр Андреевич</a>
+                                    <a href="#" class="staff__search-dropdown_link">Невозвратный Петр Андреевич</a>
+                                    <a href="#" class="staff__search-dropdown_link">Невозвратный Петр Андреевич</a>
                                 </div>
-                                <div class="staff__search-dropdown_item">
-                                    <div class="staff__search-dropdown_title">Специализации</div>
-                                    <a href="#" class="staff__search-dropdown_link">Кожемакин Валериан Ипалитович</a>
-                                </div>
+<!--                                <div class="staff__search-dropdown_item">-->
+<!--                                    <div class="staff__search-dropdown_title">Специализации</div>-->
+<!--                                    <a href="#" class="staff__search-dropdown_link">Кожемакин Валериан Ипалитович</a>-->
+<!--                                </div>-->
                             </div>
 
                             <div class="staff__filters">

@@ -1388,6 +1388,34 @@ button.mfp-arrow {
   transform: rotate(90deg);
 }
 
+.all {
+  position: relative;
+}
+
+.all::after {
+  position: absolute;
+  top: 50%;
+  margin-left: 10px;
+  display: inline-block;
+  background: url("../../img/science-articles/arrow.svg") center/contain no-repeat;
+  content: '';
+  width: 12px;
+  height: 12px;
+  -webkit-transform: translateY(-50%) rotate(-90deg);
+  -ms-transform: translateY(-50%) rotate(-90deg);
+  transform: translateY(-50%) rotate(-90deg);
+  -webkit-transition: -webkit-filter .25s;
+  transition: -webkit-filter .25s;
+  -o-transition: filter .25s;
+  transition: filter .25s;
+  transition: filter .25s, -webkit-filter .25s;
+}
+
+.all:hover::after {
+  -webkit-filter: hue-rotate(130deg) saturate(27.5);
+  filter: hue-rotate(130deg) saturate(27.5);
+}
+
 .popup {
   position: fixed;
   left: 0;
@@ -2779,6 +2807,26 @@ button.mfp-arrow {
   color: #0A1831;
 }
 
+.about-block__features_text > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.about-block__features_text > ul li {
+  margin-bottom: 10px;
+  color: #0A1831;
+}
+
+.about-block__features_text > ul li:last-child {
+  margin-bottom: 0;
+}
+
+.about-block__features_text > ul li span {
+  color: #E84E2C;
+  font-weight: 600;
+}
+
 .about-block__features_title {
   font-weight: 600;
   margin-bottom: 10px;
@@ -2788,20 +2836,6 @@ button.mfp-arrow {
   .about-block__features_title {
     font-size: 17px;
   }
-}
-
-.about-block__features_list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.about-block__features_list-item {
-  margin-bottom: 10px;
-}
-
-.about-block__features_list-item:last-child {
-  margin-bottom: 0;
 }
 
 .about-unit {
@@ -4635,7 +4669,11 @@ button.mfp-arrow {
   }
 }
 
-.diplomas__slider_item:hover::before {
+.diplomas__slider_item::before {
+  opacity: 0;
+  -webkit-transition: opacity .3s;
+  -o-transition: opacity .3s;
+  transition: opacity .3s;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -4657,7 +4695,11 @@ button.mfp-arrow {
   z-index: 3;
 }
 
-.diplomas__slider_item:hover::after {
+.diplomas__slider_item::after {
+  opacity: 0;
+  -webkit-transition: opacity .3s;
+  -o-transition: opacity .3s;
+  transition: opacity .3s;
   display: block;
   position: absolute;
   content: '';
@@ -4671,6 +4713,10 @@ button.mfp-arrow {
   background: url("../../img/diplomas/popup-zoom-icon.svg") center no-repeat;
   background-size: contain;
   z-index: 4;
+}
+
+.diplomas__slider_item:hover::before, .diplomas__slider_item:hover::after {
+  opacity: 1;
 }
 
 .diplomas__slider_item img {
