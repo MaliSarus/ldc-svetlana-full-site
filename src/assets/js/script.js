@@ -1358,6 +1358,7 @@ window.onload = function () {
             }
         }
     }
+    // if(isSet($('.all-feedback'))){}
 
     //Основной слайдер (анимации и тд)
     if (isSet($('.about__slider')) && isSet($('.select-buttons__button'))) {
@@ -1691,14 +1692,16 @@ $(document).ready(function () {
 
     if (isSet($('.image_blur'))) {
         const imageBlur = $('.image_blur');
-        imageBlur.magnificPopup({
-            delegate: 'img', // child items selector, by clicking on it popup will open
-            type: 'image',
-            callbacks: {
-                elementParse: function (item) {
-                    item.src = item.el.attr('src');
+        imageBlur.on('click',function () {
+            $(this).magnificPopup({
+                delegate: 'img',
+                type: 'image',
+                callbacks: {
+                    elementParse: function (item) {
+                        item.src = item.el.attr('src');
+                    }
                 }
-            }
+            }).magnificPopup('open');
         });
         if (imageBlur.children('img').data('description') !== undefined) {
             imageBlur.append('<small>' + imageBlur.children('img').data('description') + '</small>')
@@ -2085,7 +2088,7 @@ $(document).ready(function () {
     });
 
     //Блоки с отзывами
-    if (isSet($('.feedback__slider'))) {
+    if (isSet($('.feedback__slider')) || isSet($('.all-feedback'))) {
 
         const feedbackContent = $('.feedback__item-content');
         $(document).on('click', '.feedback__item-content', function (event) {
@@ -2125,6 +2128,7 @@ $(document).ready(function () {
     $(serviceTapButton).on('click', function () {
         if (!dropdownMenuContainer.hasClass('dropdown-menu__container_active')) {
             posTop = $(window).scrollTop();
+            window.scrollTo(0, 0);
             $(serviceTapButton).addClass('tap-menu__button_active');
             $('body').children().addClass('hide');
             $('.header').removeClass('hide');
@@ -2484,7 +2488,7 @@ $(document).scroll(function () {
                     position: 'fixed',
                     top: '129px',
                     left: 0,
-                    zIndex: 10000,
+                    zIndex: 100,
                     width: '100%',
                     background: 'white',
                     boxSizing: 'border-box',
@@ -2504,9 +2508,9 @@ $(document).scroll(function () {
             } else if (($(this).scrollTop() + 129) < staffSearchTop + 70) {
                 staffSearchPanel.removeAttr('style');
                 staffSearchTop = 0;
-                staffDropdown.removeAttr('style').css({
-                    display: 'block',
-                    width: $('.staff__search-form-wrapper').width()
+                staffDropdown.css({
+                    left: '',
+                    top: ''
                 });
             }
         }
@@ -2517,7 +2521,7 @@ $(document).scroll(function () {
                     position: 'fixed',
                     top: '54px',
                     left: 0,
-                    zIndex: 10000,
+                    zIndex: 100,
                     width: '100%',
                     background: 'white',
                     margin: '0',
@@ -2533,9 +2537,9 @@ $(document).scroll(function () {
             } else if (($(this).scrollTop() + 54) < staffSearchTop) {
                 staffSearchPanel.removeAttr('style');
                 staffSearchTop = 0;
-                staffDropdown.removeAttr('style').css({
-                    display: 'block',
-                    width: $('.staff__search-form-wrapper').width()
+                staffDropdown.css({
+                    left: '',
+                    top: ''
                 });
             }
         }

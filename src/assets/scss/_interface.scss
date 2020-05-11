@@ -816,8 +816,49 @@
 
 .image_blur{
   overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  &::before{
+    opacity: 0;
+    transition: opacity .3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    content: '';
+    left: 0;
+    top: -26px;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(0deg, rgba(42, 68, 114, 0.51), rgba(42, 68, 114, 0.51));
+    z-index: 1;
+  }
+  &::after{
+    opacity: 0;
+    transition: opacity .3s;
+    display: block;
+    position: absolute;
+    content: '';
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 44px;
+    height: 44px;
+    background: url("../../img/diplomas/popup-zoom-icon.svg") center no-repeat;
+    background-size: contain;
+    z-index: 1;
+  }
+  &:hover{
+    &::before,&::after{
+      opacity: 1;
+    }
+  }
   img{
     filter:blur(4px);
+  }
+  small{
+    display: block;
+    margin-top: 10px;
   }
 }
 
@@ -932,7 +973,7 @@ button.mfp-arrow{
   display: none;
   position: fixed;
   padding: 30px;
-  z-index: 1000000000;
+  z-index: 9999;
   right: 15px;
   bottom: 97px;
   background: white;
@@ -960,17 +1001,14 @@ button.mfp-arrow{
 }
 
 .all{
-  position: relative;
   &::after{
-    position: absolute;
-    top: 50%;
     margin-left: 10px;
     display: inline-block;
     background: url("../../img/science-articles/arrow.svg") center / contain  no-repeat;
     content: '';
     width: 12px;
     height: 12px;
-    transform: translateY(-50%) rotate(-90deg);
+    transform: translateY(1px) rotate(-90deg);
     transition: filter .25s;
   }
   &:hover{
@@ -978,4 +1016,9 @@ button.mfp-arrow{
       filter: hue-rotate(130deg) saturate(27.5);
     }
   }
+}
+
+.events_none{
+  pointer-events: none;
+  user-select: none;
 }

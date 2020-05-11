@@ -1,4 +1,4 @@
-.all-articles{
+.all-feedback{
   background: white;
   margin-bottom: 30px;
   position: relative;
@@ -30,10 +30,47 @@
       padding-bottom: 60px;
     }
     .title{
-      margin-bottom: 18px;
+      flex-grow: 1;
       @media screen and (min-width: 961px) {
-        margin-bottom: 36px;
         font-size: 36px;
+      }
+    }
+  }
+  &__head{
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 18px;
+    @media screen and (min-width: 961px){
+      margin-bottom: 30px;
+      flex-wrap: nowrap;
+    }
+    button{
+      flex-basis: 100%;
+      margin-top: 18px;
+      @media screen and (min-width: 961px){
+        margin-top: 0px;
+        flex-basis: unset;
+        margin-left: 43px;
+        max-width: 325px;
+      }
+    }
+  }
+  &__content{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    margin-top: -18px;
+    @media screen and (min-width: 961px) {
+      margin-right: -10px;
+      margin-left: -10px;
+      margin-top: -30px;
+    }
+    .feedback__item{
+      z-index: 11;
+      margin-top: 18px;
+      @media screen and (min-width: 961px){
+        margin-top: 30px;
       }
     }
   }
