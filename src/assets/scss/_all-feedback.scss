@@ -20,6 +20,206 @@
       z-index: 10;
     }
   }
+  &-modal{
+    background: rgba(white, .6);
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    &_unactive{
+      display: none;
+    }
+    &__block{
+      box-sizing: border-box;
+      box-shadow: 0 0 20px rgba($main-color, .2);
+      padding: 18px;
+      width: calc(100% - 20px);
+      height: calc(100% - 20px);
+      max-width: 345px;
+      max-height: 372px;
+      background: white;
+      @media screen and (min-width: 961px){
+        padding: 30px;
+        max-width: 670px;
+        max-height: 547px;
+      }
+    }
+    &__head{
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 18px;
+      @media screen and (min-width: 961px){
+        margin-bottom: 30px;
+      }
+      >h2{
+        color: $main-color-dark;
+        font-size: 16px;
+        line-height: 140%;
+        @media screen and (min-width: 961px){
+          font-size: 24px;
+          line-height: 32px;
+        }
+      }
+    }
+    &__close{
+      margin-left: 10px;
+    }
+    &__content{
+      form{
+        display: flex;
+        flex-wrap: wrap;
+        button {
+          border: 1px solid $main-color;
+          @media screen and (min-width: 961px) {
+            width: 100%;
+          }
+
+          &:hover {
+            img {
+              filter: grayscale(1) invert(1) brightness(1.5);
+            }
+          }
+
+          img {
+
+            margin-left: 10px;
+            filter: none;
+            width: 17px;
+            height: 12px;
+            @media screen and (min-width: 961px){
+              width: 21px;
+              height: 17px;
+              vertical-align: middle;
+            }
+          }
+        }
+        .confident-label {
+          display: flex;
+          align-items: center;
+          margin-bottom: 18px;
+          small {
+            font-size: 12px;
+            color: $main-color;
+            a{
+              color: $main-color;
+              text-decoration: underline;
+              &:hover{
+                color: $main-color-light;
+              }
+            }
+          }
+
+          .all-feedback-modal__confident{
+            margin: 0;
+            height: 16px;
+            width: 16px;
+            vertical-align: middle;
+            margin-right: 8px;
+            background: white;
+            border: 1px solid $main-color;
+            outline: none;
+            appearance: none;
+            padding: 0;
+
+            &:checked {
+              background-color: $main-color;
+
+              &::before {
+                display: block;
+                content: '';
+                width: 98%;
+                height: 98%;
+                background-image: url("../../img/appointment/checkmark.svg");
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: contain;
+                filter: grayscale(1) contrast(50);
+              }
+            }
+          }
+        }
+      }
+    }
+    &__input-wrapper {
+      position: relative;
+      flex-basis: 100%;
+      margin-bottom: 12px;
+      input,textarea {
+        background: #FFFFFF;
+        border: 1px solid rgba(42, 68, 114, 0.2);
+        color: $main-color;
+        outline: none;
+        box-sizing: border-box;
+        width: 100%;
+        padding: 13px 17px;
+        @media screen and (min-width: 961px){
+          padding: 15px 18px;
+        }
+
+        &:focus {
+          outline: none;
+        }
+
+        &:focus ~ label {
+          top: 20%;
+          font-size: 10px;
+        }
+
+        &:valid ~ label {
+          top: 20%;
+          font-size: 10px;
+          color: $main-color;
+        }
+      }
+      textarea{
+        height: 147px;
+        resize: none;
+        @media screen and (min-width: 961px){
+          height: 270px;
+        }
+        &:focus {
+          outline: none;
+        }
+
+        &:focus ~ label {
+          top: 1px;
+          font-size: 10px;
+        }
+
+        &:valid ~ label {
+          top: 1px;
+          font-size: 10px;
+          color: $main-color;
+        }
+      }
+      label {
+        position: absolute;
+        top: 45%;
+        left: 17px;
+        transform: translateY(-50%);
+        pointer-events: none;
+        transition: all .3s;
+        color: $main-color;
+        @media screen and (min-width: 961px){
+          left: 18px;
+        }
+      }
+      label[for="customerMessage"]{
+        top: 13px;
+        left: 17px;
+        transform: none;
+        @media screen and (min-width: 961px){
+          top: 15px;
+          left: 18px;
+        }
+      }
+    }
+  }
   &__block{
     box-sizing: border-box;
     width: 100%;

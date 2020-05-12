@@ -42,7 +42,37 @@ require "./modules/dropdown-menu.php";
     <!-------------------------------------------------------------------------------------------------------------------->
     <link rel="stylesheet"
           href="./assets/css/<?php echo basename(__FILE__, '.php'); ?>/style.css?ver=<?php echo date("His") ?>">
-
+    <div class="all-feedback-modal all-feedback-modal_unactive">
+        <div class="all-feedback-modal__block">
+            <div class="all-feedback-modal__head">
+                <h2>Оставьте свой отзыв о центре</h2>
+                <img class="all-feedback-modal__close" src="./assets/img/appointment/close-cross.svg"
+                     alt="Кнопка закрыть">
+            </div>
+            <div class="all-feedback-modal__content">
+                <form action="#">
+                    <div class="all-feedback-modal__input-wrapper">
+                        <input type="text" id="customerName" name="name"
+                               required>
+                        <label for="customerName">Ваше ФИО</label>
+                    </div>
+                    <div class="all-feedback-modal__input-wrapper">
+                        <textarea type="text" id="customerMessage" name="message"
+                                  required></textarea>
+                        <label for="customerMessage">Текст отзыва</label>
+                    </div>
+                    <label class="confident-label"><input class="all-feedback-modal__confident" name="confident"
+                                                          type="checkbox" value="yes"
+                                                          required>
+                        <small>Даю согласие на обработку <a href="#">персональных данных</a></small>
+                    </label>
+                    <button type="submit" class="btn btn_white">Отправить отзыв <img
+                                src="./assets/img/appointment/submit-icon.svg"
+                                alt="Иконка кнопки"></button>
+                </form>
+            </div>
+        </div>
+    </div>
     <section class="all-feedback">
         <div class="container">
             <div class="row">
@@ -53,7 +83,7 @@ require "./modules/dropdown-menu.php";
                 <div class="all-feedback__block">
                     <div class="all-feedback__head">
                         <h1 class="title">Отзывы о работе лечебно-диагностического центра</h1>
-                        <button class="btn btn_dark">Оставить отзыв</button>
+                        <button class="btn btn_dark call-modal">Оставить отзыв</button>
                     </div>
                     <div class="all-feedback__content">
                         <div class="feedback__item">
@@ -76,30 +106,45 @@ require "./modules/dropdown-menu.php";
                             </div>
                             <div class="feedback__item-content" tabindex="0">
                                 <p class="feedback__item-content-text">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus amet assumenda commodi
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus amet assumenda
+                                    commodi
                                     consectetur corporis eum exercitationem facere, fuga itaque nobis pariatur sapiente.
-                                    Accusamus animi atque blanditiis doloribus minima minus pariatur quidem tempora voluptate
-                                    voluptates. Debitis dicta minima optio quam. Dolorum inventore neque numquam quae quos saepe
+                                    Accusamus animi atque blanditiis doloribus minima minus pariatur quidem tempora
+                                    voluptate
+                                    voluptates. Debitis dicta minima optio quam. Dolorum inventore neque numquam quae
+                                    quos saepe
                                     vero. Quidem repudiandae, suscipit.
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus amet assumenda commodi
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus amet assumenda
+                                    commodi
                                     consectetur corporis eum exercitationem facere, fuga itaque nobis pariatur sapiente.
-                                    Accusamus animi atque blanditiis doloribus minima minus pariatur quidem tempora voluptate
-                                    voluptates. Debitis dicta minima optio quam. Dolorum inventore neque numquam quae quos saepe
+                                    Accusamus animi atque blanditiis doloribus minima minus pariatur quidem tempora
+                                    voluptate
+                                    voluptates. Debitis dicta minima optio quam. Dolorum inventore neque numquam quae
+                                    quos saepe
                                     vero. Quidem repudiandae, suscipit.
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus amet assumenda commodi
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus amet assumenda
+                                    commodi
                                     consectetur corporis eum exercitationem facere, fuga itaque nobis pariatur sapiente.
-                                    Accusamus animi atque blanditiis doloribus minima minus pariatur quidem tempora voluptate
-                                    voluptates. Debitis dicta minima optio quam. Dolorum inventore neque numquam quae quos saepe
+                                    Accusamus animi atque blanditiis doloribus minima minus pariatur quidem tempora
+                                    voluptate
+                                    voluptates. Debitis dicta minima optio quam. Dolorum inventore neque numquam quae
+                                    quos saepe
                                     vero. Quidem repudiandae, suscipit.
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus amet assumenda commodi
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus amet assumenda
+                                    commodi
                                     consectetur corporis eum exercitationem facere, fuga itaque nobis pariatur sapiente.
-                                    Accusamus animi atque blanditiis doloribus minima minus pariatur quidem tempora voluptate
-                                    voluptates. Debitis dicta minima optio quam. Dolorum inventore neque numquam quae quos saepe
+                                    Accusamus animi atque blanditiis doloribus minima minus pariatur quidem tempora
+                                    voluptate
+                                    voluptates. Debitis dicta minima optio quam. Dolorum inventore neque numquam quae
+                                    quos saepe
                                     vero. Quidem repudiandae, suscipit.
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus amet assumenda commodi
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus amet assumenda
+                                    commodi
                                     consectetur corporis eum exercitationem facere, fuga itaque nobis pariatur sapiente.
-                                    Accusamus animi atque blanditiis doloribus minima minus pariatur quidem tempora voluptate
-                                    voluptates. Debitis dicta minima optio quam. Dolorum inventore neque numquam quae quos saepe
+                                    Accusamus animi atque blanditiis doloribus minima minus pariatur quidem tempora
+                                    voluptate
+                                    voluptates. Debitis dicta minima optio quam. Dolorum inventore neque numquam quae
+                                    quos saepe
                                     vero. Quidem repudiandae, suscipit.
                                 </p>
                             </div>
@@ -128,10 +173,13 @@ require "./modules/dropdown-menu.php";
                             </div>
                             <div class="feedback__item-content" tabindex="0">
                                 <p class="feedback__item-content-text">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus amet assumenda commodi
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus amet assumenda
+                                    commodi
                                     consectetur corporis eum exercitationem facere, fuga itaque nobis pariatur sapiente.
-                                    Accusamus animi atque blanditiis doloribus minima minus pariatur quidem tempora voluptate
-                                    voluptates. Debitis dicta minima optio quam. Dolorum inventore neque numquam quae quos saepe
+                                    Accusamus animi atque blanditiis doloribus minima minus pariatur quidem tempora
+                                    voluptate
+                                    voluptates. Debitis dicta minima optio quam. Dolorum inventore neque numquam quae
+                                    quos saepe
                                     vero. Quidem repudiandae, suscipit.
 
                                 </p>
@@ -160,30 +208,45 @@ require "./modules/dropdown-menu.php";
                             </div>
                             <div class="feedback__item-content" tabindex="0">
                                 <p class="feedback__item-content-text">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus amet assumenda commodi
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus amet assumenda
+                                    commodi
                                     consectetur corporis eum exercitationem facere, fuga itaque nobis pariatur sapiente.
-                                    Accusamus animi atque blanditiis doloribus minima minus pariatur quidem tempora voluptate
-                                    voluptates. Debitis dicta minima optio quam. Dolorum inventore neque numquam quae quos saepe
+                                    Accusamus animi atque blanditiis doloribus minima minus pariatur quidem tempora
+                                    voluptate
+                                    voluptates. Debitis dicta minima optio quam. Dolorum inventore neque numquam quae
+                                    quos saepe
                                     vero. Quidem repudiandae, suscipit.
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus amet assumenda commodi
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus amet assumenda
+                                    commodi
                                     consectetur corporis eum exercitationem facere, fuga itaque nobis pariatur sapiente.
-                                    Accusamus animi atque blanditiis doloribus minima minus pariatur quidem tempora voluptate
-                                    voluptates. Debitis dicta minima optio quam. Dolorum inventore neque numquam quae quos saepe
+                                    Accusamus animi atque blanditiis doloribus minima minus pariatur quidem tempora
+                                    voluptate
+                                    voluptates. Debitis dicta minima optio quam. Dolorum inventore neque numquam quae
+                                    quos saepe
                                     vero. Quidem repudiandae, suscipit.
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus amet assumenda commodi
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus amet assumenda
+                                    commodi
                                     consectetur corporis eum exercitationem facere, fuga itaque nobis pariatur sapiente.
-                                    Accusamus animi atque blanditiis doloribus minima minus pariatur quidem tempora voluptate
-                                    voluptates. Debitis dicta minima optio quam. Dolorum inventore neque numquam quae quos saepe
+                                    Accusamus animi atque blanditiis doloribus minima minus pariatur quidem tempora
+                                    voluptate
+                                    voluptates. Debitis dicta minima optio quam. Dolorum inventore neque numquam quae
+                                    quos saepe
                                     vero. Quidem repudiandae, suscipit.
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus amet assumenda commodi
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus amet assumenda
+                                    commodi
                                     consectetur corporis eum exercitationem facere, fuga itaque nobis pariatur sapiente.
-                                    Accusamus animi atque blanditiis doloribus minima minus pariatur quidem tempora voluptate
-                                    voluptates. Debitis dicta minima optio quam. Dolorum inventore neque numquam quae quos saepe
+                                    Accusamus animi atque blanditiis doloribus minima minus pariatur quidem tempora
+                                    voluptate
+                                    voluptates. Debitis dicta minima optio quam. Dolorum inventore neque numquam quae
+                                    quos saepe
                                     vero. Quidem repudiandae, suscipit.
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus amet assumenda commodi
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus amet assumenda
+                                    commodi
                                     consectetur corporis eum exercitationem facere, fuga itaque nobis pariatur sapiente.
-                                    Accusamus animi atque blanditiis doloribus minima minus pariatur quidem tempora voluptate
-                                    voluptates. Debitis dicta minima optio quam. Dolorum inventore neque numquam quae quos saepe
+                                    Accusamus animi atque blanditiis doloribus minima minus pariatur quidem tempora
+                                    voluptate
+                                    voluptates. Debitis dicta minima optio quam. Dolorum inventore neque numquam quae
+                                    quos saepe
                                     vero. Quidem repudiandae, suscipit.
                                 </p>
                             </div>
@@ -212,10 +275,13 @@ require "./modules/dropdown-menu.php";
                             </div>
                             <div class="feedback__item-content" tabindex="0">
                                 <p class="feedback__item-content-text">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus amet assumenda commodi
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus amet assumenda
+                                    commodi
                                     consectetur corporis eum exercitationem facere, fuga itaque nobis pariatur sapiente.
-                                    Accusamus animi atque blanditiis doloribus minima minus pariatur quidem tempora voluptate
-                                    voluptates. Debitis dicta minima optio quam. Dolorum inventore neque numquam quae quos saepe
+                                    Accusamus animi atque blanditiis doloribus minima minus pariatur quidem tempora
+                                    voluptate
+                                    voluptates. Debitis dicta minima optio quam. Dolorum inventore neque numquam quae
+                                    quos saepe
                                     vero. Quidem repudiandae, suscipit.
 
                                 </p>
@@ -226,16 +292,19 @@ require "./modules/dropdown-menu.php";
                         </div>
                     </div>
                     <div class="pagination">
-                        <a href="#" class="pagination-back"><img src="./assets/img/pagination/arrow.svg" alt="назад"></a>
+                        <a href="#" class="pagination-back"><img src="./assets/img/pagination/arrow.svg"
+                                                                 alt="назад"></a>
                         <ul class="pagination-list">
                             <li class="pagination-list__item"><a href="#" class="pagination-list__link">1</a></li>
                             <li class="pagination-list__item"><a href="#" class="pagination-list__link">2</a></li>
-                            <li class="pagination-list__item"><a href="#" class="pagination-list__link active">3</a></li>
+                            <li class="pagination-list__item"><a href="#" class="pagination-list__link active">3</a>
+                            </li>
                             <li class="pagination-list__item"><a href="#" class="pagination-list__link">4</a></li>
                             <li class="pagination-list__item"><a href="#" class="pagination-list__link">5</a></li>
                             <li class="pagination-list__item"><a href="#" class="pagination-list__link">6</a></li>
                         </ul>
-                        <a href="#" class="pagination-next"><img src="./assets/img/pagination/arrow.svg" alt="вперед"></a>
+                        <a href="#" class="pagination-next"><img src="./assets/img/pagination/arrow.svg"
+                                                                 alt="вперед"></a>
                     </div>
                 </div>
             </div>

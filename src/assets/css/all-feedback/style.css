@@ -3403,6 +3403,278 @@ button.mfp-arrow {
   }
 }
 
+.all-feedback-modal {
+  background: rgba(255, 255, 255, 0.6);
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  z-index: 100;
+}
+
+.all-feedback-modal_unactive {
+  display: none;
+}
+
+.all-feedback-modal__block {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-box-shadow: 0 0 20px rgba(42, 68, 114, 0.2);
+  box-shadow: 0 0 20px rgba(42, 68, 114, 0.2);
+  padding: 18px;
+  width: calc(100% - 20px);
+  height: calc(100% - 20px);
+  max-width: 345px;
+  max-height: 372px;
+  background: white;
+}
+
+@media screen and (min-width: 961px) {
+  .all-feedback-modal__block {
+    padding: 30px;
+    max-width: 670px;
+    max-height: 547px;
+  }
+}
+
+.all-feedback-modal__head {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+@media screen and (min-width: 961px) {
+  .all-feedback-modal__head {
+    margin-bottom: 30px;
+  }
+}
+
+.all-feedback-modal__head > h2 {
+  color: #0A1831;
+  font-size: 16px;
+  line-height: 140%;
+}
+
+@media screen and (min-width: 961px) {
+  .all-feedback-modal__head > h2 {
+    font-size: 24px;
+    line-height: 32px;
+  }
+}
+
+.all-feedback-modal__close {
+  margin-left: 10px;
+}
+
+.all-feedback-modal__content form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.all-feedback-modal__content form button {
+  border: 1px solid #2A4472;
+}
+
+@media screen and (min-width: 961px) {
+  .all-feedback-modal__content form button {
+    width: 100%;
+  }
+}
+
+.all-feedback-modal__content form button:hover img {
+  -webkit-filter: grayscale(1) invert(1) brightness(1.5);
+  filter: grayscale(1) invert(1) brightness(1.5);
+}
+
+.all-feedback-modal__content form button img {
+  margin-left: 10px;
+  -webkit-filter: none;
+  filter: none;
+  width: 17px;
+  height: 12px;
+}
+
+@media screen and (min-width: 961px) {
+  .all-feedback-modal__content form button img {
+    width: 21px;
+    height: 17px;
+    vertical-align: middle;
+  }
+}
+
+.all-feedback-modal__content form .confident-label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.all-feedback-modal__content form .confident-label small {
+  font-size: 12px;
+  color: #2A4472;
+}
+
+.all-feedback-modal__content form .confident-label small a {
+  color: #2A4472;
+  text-decoration: underline;
+}
+
+.all-feedback-modal__content form .confident-label small a:hover {
+  color: #3F5A8A;
+}
+
+.all-feedback-modal__content form .confident-label .all-feedback-modal__confident {
+  margin: 0;
+  height: 16px;
+  width: 16px;
+  vertical-align: middle;
+  margin-right: 8px;
+  background: white;
+  border: 1px solid #2A4472;
+  outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  padding: 0;
+}
+
+.all-feedback-modal__content form .confident-label .all-feedback-modal__confident:checked {
+  background-color: #2A4472;
+}
+
+.all-feedback-modal__content form .confident-label .all-feedback-modal__confident:checked::before {
+  display: block;
+  content: '';
+  width: 98%;
+  height: 98%;
+  background-image: url("../../img/appointment/checkmark.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  -webkit-filter: grayscale(1) contrast(50);
+  filter: grayscale(1) contrast(50);
+}
+
+.all-feedback-modal__input-wrapper {
+  position: relative;
+  -ms-flex-preferred-size: 100%;
+  flex-basis: 100%;
+  margin-bottom: 12px;
+}
+
+.all-feedback-modal__input-wrapper input, .all-feedback-modal__input-wrapper textarea {
+  background: #FFFFFF;
+  border: 1px solid rgba(42, 68, 114, 0.2);
+  color: #2A4472;
+  outline: none;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 13px 17px;
+}
+
+@media screen and (min-width: 961px) {
+  .all-feedback-modal__input-wrapper input, .all-feedback-modal__input-wrapper textarea {
+    padding: 15px 18px;
+  }
+}
+
+.all-feedback-modal__input-wrapper input:focus, .all-feedback-modal__input-wrapper textarea:focus {
+  outline: none;
+}
+
+.all-feedback-modal__input-wrapper input:focus ~ label, .all-feedback-modal__input-wrapper textarea:focus ~ label {
+  top: 20%;
+  font-size: 10px;
+}
+
+.all-feedback-modal__input-wrapper input:valid ~ label, .all-feedback-modal__input-wrapper textarea:valid ~ label {
+  top: 20%;
+  font-size: 10px;
+  color: #2A4472;
+}
+
+.all-feedback-modal__input-wrapper textarea {
+  height: 147px;
+  resize: none;
+}
+
+@media screen and (min-width: 961px) {
+  .all-feedback-modal__input-wrapper textarea {
+    height: 270px;
+  }
+}
+
+.all-feedback-modal__input-wrapper textarea:focus {
+  outline: none;
+}
+
+.all-feedback-modal__input-wrapper textarea:focus ~ label {
+  top: 1px;
+  font-size: 10px;
+}
+
+.all-feedback-modal__input-wrapper textarea:valid ~ label {
+  top: 1px;
+  font-size: 10px;
+  color: #2A4472;
+}
+
+.all-feedback-modal__input-wrapper label {
+  position: absolute;
+  top: 45%;
+  left: 17px;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  pointer-events: none;
+  -webkit-transition: all .3s;
+  -o-transition: all .3s;
+  transition: all .3s;
+  color: #2A4472;
+}
+
+@media screen and (min-width: 961px) {
+  .all-feedback-modal__input-wrapper label {
+    left: 18px;
+  }
+}
+
+.all-feedback-modal__input-wrapper label[for="customerMessage"] {
+  top: 13px;
+  left: 17px;
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
+}
+
+@media screen and (min-width: 961px) {
+  .all-feedback-modal__input-wrapper label[for="customerMessage"] {
+    top: 15px;
+    left: 18px;
+  }
+}
+
 .all-feedback__block {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
