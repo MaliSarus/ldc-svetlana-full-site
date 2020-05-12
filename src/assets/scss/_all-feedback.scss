@@ -1,6 +1,5 @@
 .all-feedback{
   background: white;
-  margin-bottom: 30px;
   position: relative;
   @media screen and (min-width: 961px){
     margin-bottom: 0;
@@ -30,7 +29,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 100;
+    z-index: 10001;
     &_unactive{
       display: none;
     }
@@ -41,7 +40,7 @@
       width: calc(100% - 20px);
       height: calc(100% - 20px);
       max-width: 345px;
-      max-height: 372px;
+      max-height: 379px;
       background: white;
       @media screen and (min-width: 961px){
         padding: 30px;
@@ -177,6 +176,7 @@
         }
       }
       textarea{
+        font-size: 14px;
         height: 147px;
         resize: none;
         @media screen and (min-width: 961px){
@@ -260,18 +260,27 @@
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
-    margin-top: -18px;
+    background: #E5E5E5;
+    margin-right: -15px;
+    margin-left: -15px;
+    padding: 0 15px;
     @media screen and (min-width: 961px) {
+      padding: 0;
+      background: none;
       margin-right: -10px;
       margin-left: -10px;
       margin-top: -30px;
     }
     .feedback__item{
       z-index: 11;
-      margin-top: 18px;
-      @media screen and (min-width: 961px){
-        margin-top: 30px;
-      }
+      margin-top: 30px;
+    }
+  }
+  .pagination{
+    @media screen and (max-width: 960px){
+      margin: 0 -15px -18px;
+      background: #E5E5E5;
+      padding: 43px 15px 30px;
     }
   }
 }

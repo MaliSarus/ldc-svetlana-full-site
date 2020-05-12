@@ -2409,6 +2409,7 @@ $(document).ready(function () {
         const modalFormFields = $('.all-feedback-modal__input-wrapper');
         const confident = $('.all-feedback-modal__confident');
         const namePattern = /^[а-я]+\s[а-я]+\s[а-я]+$/i;
+        const submitButton = $('.all-feedback-modal__content form button');
         $('.all-feedback__head .call-modal').on('click', function () {
             modalFormContainer.removeClass('all-feedback-modal_unactive').css('opacity', '0').animate({
                 opacity: 1
@@ -2416,42 +2417,74 @@ $(document).ready(function () {
             $('body').css('overflow', 'hidden');
         });
         confident.on('change', function () {
-            console.log($(this).prop("checked"));
             if ($(this).prop("checked")) {
-                $(this).parent('label').removeClass('invalid').addClass('valid')
+                $(this).parent('label').removeClass('invalid').addClass('valid').find('input, small, a').removeAttr('style');
+
             } else {
-                $(this).parent('label').removeClass('valid').addClass('invalid')
+                $(this).parent('label').removeClass('valid').addClass('invalid').find('input, small, a').css({
+                    color: '#E84E2C',
+                    borderColor: '#E84E2C'
+                });
             }
         });
         modalFormFields.on('input', 'textarea', function () {
             if ($(this).val() !== '') {
-                $(this).siblings('label').removeClass('invalid').addClass('valid');
+                $(this).siblings('label').removeClass('invalid').addClass('valid').removeAttr('style');
+                $(this).removeAttr('style');
             } else {
-                $(this).siblings('label').removeClass('valid').addClass('invalid')
+                $(this).siblings('label').removeClass('valid').addClass('invalid').css({
+                    color: '#E84E2C',
+                    borderColor: '#E84E2C'
+                });
+                $(this).css({
+                    color: '#E84E2C',
+                    borderColor: '#E84E2C'
+                });
             }
         });
         modalForm.find('#customerName').on('input', function () {
             $(this).val($(this).val().replace(/[0-9A-z]/, ''));
             if ($(this).val().search(namePattern) == 0) {
-                $(this).siblings('label').removeClass('invalid').addClass('valid');
+                $(this).siblings('label').removeClass('invalid').addClass('valid').removeAttr('style');
+                $(this).removeAttr('style');
             }
             else{
-                $(this).siblings('label').removeClass('valid').addClass('invalid');
+                $(this).siblings('label').removeClass('valid').addClass('invalid').css({
+                    color: '#E84E2C',
+                    borderColor: '#E84E2C'
+                });
+                $(this).css({
+                    color: '#E84E2C',
+                    borderColor: '#E84E2C'
+                });
             }
         });
-        modalForm.on('submit', function (event) {
+        submitButton.on('click', function (event) {
             event.preventDefault();
+            var failTrigger = 0;
             $('.all-feedback-modal__content form label').each(function () {
                 if (!($(this).hasClass('valid')) || $(this).hasClass('invalid')) {
                     $(this).css({
                         color: '#E84E2C'
                     });
-                    $(this).siblings('input').css({
+                    $(this).siblings('input, textarea').css({
                         color: '#E84E2C',
                         borderColor: '#E84E2C'
-                    })
+                    });
+                    if($(this).hasClass('confident-label')){
+                        $(this).find('input, small, a').css({
+                            color: '#E84E2C',
+                            borderColor: '#E84E2C'
+                        })
+                    }
+                    failTrigger = 1;
                 }
             })
+            if (failTrigger == 0){
+                console.log('success');
+            }else{
+                console.log('fail');
+            }
         })
         $('.all-feedback-modal__close').on('click', function () {
             modalFormContainer.animate({opacity: 0} ,function () {

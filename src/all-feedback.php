@@ -305,6 +305,7 @@ require "./modules/dropdown-menu.php";
                         </ul>
                         <a href="#" class="pagination-next"><img src="./assets/img/pagination/arrow.svg"
                                                                  alt="вперед"></a>
+
                     </div>
                 </div>
             </div>
