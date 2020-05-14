@@ -54,7 +54,7 @@ require "./modules/dropdown-menu.php";
                                 <h1>Заголовок</h1>
                                 <time id="pub-date">26.05.2020</time>
                                 <p class="authors">
-                                    <a href="#">Вишневский А.А. </a><br>
+                                    <a href="#">Вишневский А.А. </a>
                                     <a href="#">Черноиван А.Г.</a>
                                 </p>
                                 <p>По своей сути рыбатекст является альтернативой традиционному lorem ipsum, который

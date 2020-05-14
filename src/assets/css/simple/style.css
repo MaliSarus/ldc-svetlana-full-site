@@ -3445,6 +3445,7 @@ button.mfp-arrow {
 }
 
 .simple .infoblock__item_content .authors a {
+  display: block;
   color: #0A1831;
 }
 

@@ -56,6 +56,7 @@
     }
     .authors{
       a{
+        display: block;
         color: $main-color-dark;
         &:hover{
           color: $main-color;
