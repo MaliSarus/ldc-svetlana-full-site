@@ -59,7 +59,8 @@ require "./modules/dropdown-menu.php";
                     <div class="all-feedback-modal__input-wrapper">
                         <textarea type="text" id="customerMessage" name="message"
                                   required></textarea>
-                        <label for="customerMessage">Текст отзыва</label>
+                        <label for="customerMessage">Текст отзыва (Вы можете написать в своем отзыве имя и фамилию
+                            врачей, которые помогли Вам, а также описать услугу)</label>
                     </div>
                     <label class="confident-label"><input class="all-feedback-modal__confident" name="confident"
                                                           type="checkbox" value="yes"
@@ -77,8 +78,8 @@ require "./modules/dropdown-menu.php";
         <div class="container">
             <div class="row">
                 <ul class="breadcrumbs">
-                    <li><a href="#">Главная</a></li>
-                    <li><a href="#">О центре</a></li>
+                    <li><a href="index.php">Главная</a></li>
+                    <li><a href="about-company.php">О центре</a></li>
                 </ul>
                 <div class="all-feedback__block">
                     <div class="all-feedback__head">
@@ -149,8 +150,13 @@ require "./modules/dropdown-menu.php";
                                 </p>
                             </div>
                             <div class="feedback__item-about">
-                                <p class="feedback__item-about-doctor"><b>Врач:</b> Баиндурашвили А. Г.</p>
-                                <p class="feedback__item-about-ordinary"><b>Направление:</b> Оториноларингология</p>
+                                <p class="feedback__item-about-doctor"><b>Врач:</b> <a href="#" tabindex="0">Тимофеева
+                                        В. С.</a></p>
+                                <p class="feedback__item-about-ordinary"><b>Направление:</b> <a href="#" tabindex="0">Диагностическое
+                                        отделение</a>, <a href="#" tabindex="0">Физиотерапия</a>, <a href="#"
+                                                                                                     tabindex="0">Ультразвуковая
+                                        диагностика (УЗИ)</a>, <a href="#" tabindex="0">ЛФК и спортивная медицина</a>
+                                </p>
                             </div>
                         </div>
                         <div class="feedback__item">
@@ -185,7 +191,13 @@ require "./modules/dropdown-menu.php";
                                 </p>
                             </div>
                             <div class="feedback__item-about">
-                                <p class="feedback__item-about-doctor"><b>Врач:</b> Баиндурашвили А. Г.</p>
+                                <p class="feedback__item-about-doctor"><b>Врач:</b> <a href="#" tabindex="0">Тимофеева
+                                        В. С.</a></p>
+                                <p class="feedback__item-about-ordinary"><b>Направление:</b> <a href="#" tabindex="0">Диагностическое
+                                        отделение</a>, <a href="#" tabindex="0">Физиотерапия</a>, <a href="#"
+                                                                                                     tabindex="0">Ультразвуковая
+                                        диагностика (УЗИ)</a>, <a href="#" tabindex="0">ЛФК и спортивная медицина</a>
+                                </p>
                             </div>
                         </div>
                         <div class="feedback__item">
@@ -251,8 +263,13 @@ require "./modules/dropdown-menu.php";
                                 </p>
                             </div>
                             <div class="feedback__item-about">
-                                <p class="feedback__item-about-doctor"><b>Врач:</b> Баиндурашвили А. Г.</p>
-                                <p class="feedback__item-about-ordinary"><b>Направление:</b> Оториноларингология</p>
+                                <p class="feedback__item-about-doctor"><b>Врач:</b> <a href="#" tabindex="0">Тимофеева
+                                        В. С.</a></p>
+                                <p class="feedback__item-about-ordinary"><b>Направление:</b> <a href="#" tabindex="0">Диагностическое
+                                        отделение</a>, <a href="#" tabindex="0">Физиотерапия</a>, <a href="#"
+                                                                                                     tabindex="0">Ультразвуковая
+                                        диагностика (УЗИ)</a>, <a href="#" tabindex="0">ЛФК и спортивная медицина</a>
+                                </p>
                             </div>
                         </div>
                         <div class="feedback__item">
@@ -287,7 +304,13 @@ require "./modules/dropdown-menu.php";
                                 </p>
                             </div>
                             <div class="feedback__item-about">
-                                <p class="feedback__item-about-doctor"><b>Врач:</b> Баиндурашвили А. Г.</p>
+                                <p class="feedback__item-about-doctor"><b>Врач:</b> <a href="#" tabindex="0">Тимофеева
+                                        В. С.</a></p>
+                                <p class="feedback__item-about-ordinary"><b>Направление:</b> <a href="#" tabindex="0">Диагностическое
+                                        отделение</a>, <a href="#" tabindex="0">Физиотерапия</a>, <a href="#"
+                                                                                                     tabindex="0">Ультразвуковая
+                                        диагностика (УЗИ)</a>, <a href="#" tabindex="0">ЛФК и спортивная медицина</a>
+                                </p>
                             </div>
                         </div>
                     </div>

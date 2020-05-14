@@ -1738,7 +1738,7 @@ $(document).ready(function () {
             }
         });
     }
-    if (isSet($('.appointment'))) {
+    if (isSet($('.appointment')) || isSet($('.appointment_popup'))) {
 
         //Переменные для работы с формой
         const appointmentPhoneInput = $('.appointment__phone');
@@ -1845,7 +1845,7 @@ $(document).ready(function () {
 
         appointmentNameInput.on('input', function (event) {
             $(appointmentNameInput).each(function () {
-                $(this).val($(event.currentTarget).val().replace(/[^А-Яа-я]/, ''));
+                $(this).val($(event.currentTarget).val().replace(/[^А-Яа-я\s]/, ''));
             });
         });
 
@@ -2408,8 +2408,8 @@ $(document).ready(function () {
         const modalForm = $('.all-feedback-modal__content form');
         const modalFormFields = $('.all-feedback-modal__input-wrapper');
         const confident = $('.all-feedback-modal__confident');
-        const namePattern = /^[а-я]+\s[а-я]+\s[а-я]+$/i;
         const submitButton = $('.all-feedback-modal__content form button');
+        let labelText = '';
         $('.all-feedback__head .call-modal').on('click', function () {
             modalFormContainer.removeClass('all-feedback-modal_unactive').css('opacity', '0').animate({
                 opacity: 1
@@ -2427,37 +2427,62 @@ $(document).ready(function () {
                 });
             }
         });
-        modalFormFields.on('input', 'textarea', function () {
-            if ($(this).val() !== '') {
-                $(this).siblings('label').removeClass('invalid').addClass('valid').removeAttr('style');
-                $(this).removeAttr('style');
-            } else {
-                $(this).siblings('label').removeClass('valid').addClass('invalid').css({
-                    color: '#E84E2C',
-                    borderColor: '#E84E2C'
-                });
-                $(this).css({
-                    color: '#E84E2C',
-                    borderColor: '#E84E2C'
-                });
+        modalFormFields.on('input', 'input, textarea', function () {
+            if ($(this).is('textarea')) {
+                if ($(this).val() !== '') {
+                    $(this).siblings('label').removeClass('invalid').addClass('valid').removeAttr('style');
+                    $(this).removeAttr('style');
+                } else {
+                    $(this).siblings('label').removeClass('valid').addClass('invalid').css({
+                        color: '#E84E2C',
+                        borderColor: '#E84E2C'
+                    });
+                    $(this).css({
+                        color: '#E84E2C',
+                        borderColor: '#E84E2C'
+                    });
+                }
+            }
+            if ($(this).is('input')){
+                if ($(this).val().length > 3) {
+                    $(this).siblings('label').removeClass('invalid').addClass('valid').removeAttr('style');
+                    $(this).removeAttr('style');
+                } else {
+                    $(this).siblings('label').removeClass('valid').addClass('invalid').css({
+                        color: '#E84E2C',
+                        borderColor: '#E84E2C'
+                    });
+                    $(this).css({
+                        color: '#E84E2C',
+                        borderColor: '#E84E2C'
+                    });
+                }
             }
         });
+        modalFormFields.on('focus','textarea', function () {
+            labelText = $(this).siblings('label').text();
+            $(this).siblings('label').html('Текст отзыва');
+        });
+        modalFormFields.on('blur','textarea', function () {
+            $(this).siblings('label').html(labelText);
+            labelText = '';
+        });
         modalForm.find('#customerName').on('input', function () {
-            $(this).val($(this).val().replace(/[0-9A-z]/, ''));
-            if ($(this).val().search(namePattern) == 0) {
-                $(this).siblings('label').removeClass('invalid').addClass('valid').removeAttr('style');
-                $(this).removeAttr('style');
-            }
-            else{
-                $(this).siblings('label').removeClass('valid').addClass('invalid').css({
-                    color: '#E84E2C',
-                    borderColor: '#E84E2C'
-                });
-                $(this).css({
-                    color: '#E84E2C',
-                    borderColor: '#E84E2C'
-                });
-            }
+            $(this).val($(this).val().replace(/[^А-Яа-я\s]/, ''));
+            // if ($(this).val().length > 3) {
+            //     $(this).siblings('label').removeClass('invalid').addClass('valid').removeAttr('style');
+            //     $(this).removeAttr('style');
+            // }
+            // else{
+            //     $(this).siblings('label').removeClass('valid').addClass('invalid').css({
+            //         color: '#E84E2C',
+            //         borderColor: '#E84E2C'
+            //     });
+            //     $(this).css({
+            //         color: '#E84E2C',
+            //         borderColor: '#E84E2C'
+            //     });
+            // }
         });
         submitButton.on('click', function (event) {
             event.preventDefault();
