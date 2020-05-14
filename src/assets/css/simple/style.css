@@ -3444,6 +3444,19 @@ button.mfp-arrow {
   }
 }
 
+.simple .infoblock__item_content .authors a {
+  color: #0A1831;
+}
+
+.simple .infoblock__item_content .authors a:hover {
+  color: #2A4472;
+  text-decoration: underline;
+}
+
+.simple .infoblock__item_content .authors a:active {
+  color: #3F5A8A;
+}
+
 .simple .infoblock__item_content p {
   margin-bottom: 12px;
 }

@@ -54,6 +54,18 @@
         font-size: 18px;
       }
     }
+    .authors{
+      a{
+        color: $main-color-dark;
+        &:hover{
+          color: $main-color;
+          text-decoration: underline;
+        }
+        &:active{
+          color: $main-color-light;
+        }
+      }
+    }
     p{
       margin-bottom: 12px;
       @media screen and (min-width: 961px){
