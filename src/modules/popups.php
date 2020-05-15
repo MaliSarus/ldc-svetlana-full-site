@@ -1,7 +1,7 @@
 <div class="popup">
     <div class="popup__block">
-        <span class="popup-close-button">&#10006;</span>
         Спасибо! Ваша заявка принята
+        <span class="popup-close-button">lol</span>
     </div>
 </div>
 

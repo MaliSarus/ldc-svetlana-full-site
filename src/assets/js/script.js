@@ -2642,9 +2642,10 @@ $(document).scroll(function () {
                     width: '100%',
                     background: 'white',
                     margin: '0',
-                    padding: '30px 15px 0 15px',
+                    padding: '15px 15px 5px 15px',
                     boxSizing: 'border-box',
-                })
+                });
+                $('.staff__filters').addClass('staff__filters_onscroll');
                 if (staffDropdown.css('display') == 'block') {
                     staffDropdown.css({
                         left: $('.staff__content-top').css('padding-left'),
@@ -2658,6 +2659,7 @@ $(document).scroll(function () {
                     left: '',
                     top: ''
                 });
+                $('.staff__filters').removeClass('staff__filters_onscroll');
             }
         }
     }
