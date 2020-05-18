@@ -2,19 +2,18 @@
   margin-bottom: 30px;
   @media screen and (min-width: 961px){
     margin-bottom: 0;
-    position: relative;
+    //position: relative;
+    background: white;
   }
   &__block{
     padding: 18px 15px;
     background: white;
     @media screen and (min-width: 961px){
+      position: relative;
       width: 100%;
       max-width: 1667px;
-      margin: 0 auto;
+      margin: -77px auto 0;
       box-shadow: 0px 10px 30px rgba(12, 28, 56, 0.08);
-      position: absolute;
-      left: 50%;
-      transform: translate(-50%,-50%);
       padding: 23px 0;
       z-index: 10;
 
@@ -43,7 +42,10 @@
     }
     @media screen and (min-width: 961px){
       flex-basis: calc(100% / 4);
-      padding: 0;
+      padding: 0 20px 0 0;
+      &:last-child{
+        padding-right: 0;
+      }
     }
     &_title{
       font-weight: 600;
@@ -89,7 +91,8 @@
       transform: translateY(-1px);
     }
     img{
-      height: 100%;
+      width: 16px;
+      height: 16px;
       margin-right: 15px;
     }
   }

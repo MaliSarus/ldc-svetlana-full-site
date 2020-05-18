@@ -42,6 +42,10 @@
                                 <img src="./assets/img/all-contacts/inst-icon.svg" alt="Иконка соцсети">
                                 <a href="instagtram.com/href_ldc">ссылка на соцсеть</a>
                             </div>
+                            <div class="all-contacts__social">
+                                <img src="./assets/img/all-contacts/youtube.svg" alt="Иконка соцсети">
+                                <a href="https://www.youtube.com/channel/UCGTc7TqrH65f69zzmozWMNQ">ссылка на соцсеть</a>
+                            </div>
                         </div>
                     </div>
                 </div>
