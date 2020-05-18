@@ -1720,9 +1720,6 @@ $(document).ready(function () {
                 }
             }).magnificPopup('open');
         });
-        if (imageBlur.children('img').data('description') !== undefined) {
-            imageBlur.append('<small>' + imageBlur.children('img').data('description') + '</small>')
-        }
     }
 
 

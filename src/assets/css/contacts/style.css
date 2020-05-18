@@ -3491,6 +3491,20 @@ button.mfp-arrow {
   }
 }
 
+.all-contacts__item a {
+  -webkit-transition: color .25s;
+  -o-transition: color .25s;
+  transition: color .25s;
+}
+
+.all-contacts__item a:hover {
+  color: #E84E2C;
+}
+
+.all-contacts__item a:active {
+  color: #FF785A;
+}
+
 .all-contacts__item_title {
   font-weight: 600;
   font-size: 16px;

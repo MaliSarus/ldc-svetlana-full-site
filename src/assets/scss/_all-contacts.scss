@@ -47,6 +47,15 @@
         padding-right: 0;
       }
     }
+    a{
+      transition: color .25s;
+      &:hover{
+        color: $accent-color;
+      }
+      &:active{
+        color: $accent-color-light;
+      }
+    }
     &_title{
       font-weight: 600;
       font-size: 16px;
