@@ -1,0 +1,27 @@
+@import "../fonts";
+@import "../common";
+@import "../interface";
+@import "../submit-popup";
+@import "../parallax-squares";
+@import "../header";
+@import "../dropdown-menu";
+@import "../appointment";
+@import "../licenses";
+@import "../infoblock";
+@import "../news";
+@import "../footer";
+
+@import "../animations";
+
+
+//body{
+//  display: flex;
+//  flex-direction: column;
+//  min-height: 100vh;
+//  @media screen and (min-width: 961px ){
+//    min-height: calc(100vh - 130px);
+//  }
+//  section{
+//    flex-grow: 1;
+//  }
+//}

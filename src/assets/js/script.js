@@ -1707,6 +1707,23 @@ $(document).ready(function () {
             imageBlur.append('<small>' + imageBlur.children('img').data('description') + '</small>')
         }
     }
+    if (isSet($('.licenses'))) {
+        const images = $('.licenses__images > li');
+        images.on('click', function () {
+            $(this).magnificPopup({
+                delegate: 'img',
+                type: 'image',
+                callbacks: {
+                    elementParse: function (item) {
+                        item.src = item.el.attr('src');
+                    }
+                }
+            }).magnificPopup('open');
+        });
+        if (imageBlur.children('img').data('description') !== undefined) {
+            imageBlur.append('<small>' + imageBlur.children('img').data('description') + '</small>')
+        }
+    }
 
 
     if ($(window).width() >= 961) {

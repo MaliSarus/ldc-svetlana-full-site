@@ -1,0 +1,124 @@
+.licenses {
+  background: white;
+  position: relative;
+  margin-bottom: 30px;
+  @media screen and (min-width: 961px) {
+    margin-bottom: 0;
+    background: url("../../img/all-articles/bg-top-left.svg") top left no-repeat, url("../../img/all-articles/bg-right-bottom.svg") right bottom no-repeat, white;
+    &::before {
+      position: absolute;
+      display: block;
+      content: '';
+      width: 176px;
+      height: 92px;
+      background-color: rgba($accent-color, .3);
+      top: 245px;
+      left: -15px;
+      -webkit-transform: skewX(-17deg);
+      -ms-transform: skewX(-17deg);
+      transform: skewX(-17deg);
+      z-index: 10;
+    }
+  }
+
+  &__block{
+    box-sizing: border-box;
+    width: 100%;
+    padding: 18px 15px;
+    @media screen and (min-width: 961px){
+      padding: 90px 0 60px;
+    }
+    .title{
+      margin-bottom: 18px;
+      @media screen and (min-width: 961px) {
+        margin-bottom: 30px;
+        font-size: 30px;
+      }
+    }
+    h2{
+      margin-bottom: 18px;
+      @media screen and (min-width: 961px) {
+        margin-bottom: 30px;
+        font-size: 30px;
+      }
+    }
+  }
+  &__row{
+    width: 100%;
+    margin-bottom: 18px;
+    @media screen and (min-width: 961px){
+      margin-bottom: 54px;
+    }
+    &:last-child{
+      margin-bottom: 0;
+    }
+  }
+  &__images{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: 0;
+    @media screen and (min-width: 577px){
+      margin: -20px -10px 0;
+    }
+    li{
+      position: relative;
+      box-sizing: border-box;
+      list-style: none;
+      flex-basis: 100%;
+      margin-bottom: 12px;
+      @media screen and (min-width: 577px){
+        flex-basis: 50%;
+        padding: 0 10px;
+        margin-top: 20px;
+      }
+      @media screen and (min-width: 769px){
+        flex-basis: calc(100% / 3);
+      }
+      @media screen and (min-width: 961px){
+        flex-basis: calc(100% / 4);
+      }
+      &:last-child{
+        margin-bottom: 0;
+      }
+      &::before{
+        opacity: 0;
+        transition: opacity .3s;
+        display: block;
+        position: absolute;
+        content: '';
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(0deg, rgba(42, 68, 114, 0.51), rgba(42, 68, 114, 0.51));
+        z-index: 1;
+      }
+      &::after{
+        opacity: 0;
+        transition: opacity .3s;
+        display: block;
+        position: absolute;
+        content: '';
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 44px;
+        height: 44px;
+        background: url("../../img/diplomas/popup-zoom-icon.svg") center no-repeat;
+        background-size: contain;
+        z-index: 1;
+      }
+      &:hover{
+        &::before,&::after{
+          opacity: 1;
+        }
+      }
+      img{
+        width: 100%;
+        max-width: 100%;
+
+      }
+    }
+  }
+}
