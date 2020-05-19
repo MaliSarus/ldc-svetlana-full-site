@@ -1703,9 +1703,14 @@ $(document).ready(function () {
                 }
             }).magnificPopup('open');
         });
-        if (imageBlur.children('img').data('description') !== undefined) {
-            imageBlur.append('<small>' + imageBlur.children('img').data('description') + '</small>')
-        }
+        imageBlur.each(function () {
+            if ($(this).children('img').data('description') !== undefined) {
+                $(this).append('<small>' + imageBlur.children('img').data('description') + '</small>')
+            }else{
+                $(this).addClass('image_blur_top_0');
+            }
+        })
+
     }
     if (isSet($('.licenses'))) {
         const images = $('.licenses__images > li');

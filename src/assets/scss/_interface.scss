@@ -819,18 +819,16 @@
   position: relative;
   cursor: pointer;
   &::before{
-    opacity: 0;
+    opacity: 1;
     transition: opacity .3s;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: block;
     position: absolute;
-    content: '';
-    left: 0;
-    top: -26px;
+    content: 'Обращаем внимание! Контент не для слабонервных';
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
     width: 100%;
-    height: 100%;
-    background: linear-gradient(0deg, rgba(42, 68, 114, 0.51), rgba(42, 68, 114, 0.51));
+    max-height: 100%;
     z-index: 1;
   }
   &::after{
@@ -851,6 +849,20 @@
   &:hover{
     &::before,&::after{
       opacity: 1;
+    }
+    &:before{
+      content: '';
+      background: linear-gradient(0deg, rgba(42, 68, 114, 0.51), rgba(42, 68, 114, 0.51));
+    }
+  }
+  &_top_0{
+    &::before{
+      top: 0;
+    }
+  }
+  &--off{
+    img{
+      filter: blur(0);
     }
   }
   img{
