@@ -38,7 +38,7 @@ require "./modules/header.php";
 
 require "./modules/dropdown-menu.php";
 ?>
-<main>
+
     <!-------------------------------------------------------------------------------------------------------------------->
     <link rel="stylesheet"
           href="./assets/css/<?php echo basename(__FILE__, '.php'); ?>/style.css?ver=<?php echo date("His") ?>">
@@ -48,15 +48,20 @@ require "./modules/dropdown-menu.php";
                 <div class="infoblock__block">
                     <div class="infoblock__item ">
                         <div class="infoblock__row">
-                        </div>
-                        <div class="infoblock__row">
                             <div class="infoblock__item_content">
                                 <h1>Заголовок</h1>
+
+                                <!--  Дата для страницы новости       -->
                                 <time id="pub-date">26.05.2020</time>
+                                <!--  /Дата для страницы новости       -->
+
+                                <!--  Авторы для страницы статьи       -->
                                 <p class="authors">
                                     <a href="#">Вишневский А.А. </a>
                                     <a href="#">Черноиван А.Г.</a>
                                 </p>
+                                <!--  /Авторы для страницы статьи       -->
+
                                 <p>По своей сути рыбатекст является альтернативой традиционному lorem ipsum, который
                                     вызывает у некторых людей недоумение при попытках прочитать рыбу текст. В отличии от
                                     lorem ipsum, текст рыба на русском языке наполнит любой макет непонятным смыслом и
@@ -76,7 +81,6 @@ require "./modules/dropdown-menu.php";
                         </div>
                         <div class="infoblock__row">
                             <div class="infoblock__item_content">
-                                <h2>Заголовок блока</h2>
                                 <p>
                                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam beatae, blanditiis
                                     deleniti

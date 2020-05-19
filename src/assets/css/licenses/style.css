@@ -3326,6 +3326,7 @@ button.mfp-arrow {
 }
 
 .licenses__images li {
+  cursor: pointer;
   position: relative;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;

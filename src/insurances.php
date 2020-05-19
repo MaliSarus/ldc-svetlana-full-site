@@ -1,7 +1,7 @@
 <?php
 require "./modules/headlings.php";
 ?>
-<title>ЛДЦ Светлана - Лицензии</title>
+<title>ЛДЦ Светлана - Страховые компании</title>
 <link rel="stylesheet" href="./assets/css/slick.css"/>
 <link rel="stylesheet" href="./assets/css/slick-theme.css"/>
 <link rel="stylesheet" href="./assets/css/magnific-popup.css">

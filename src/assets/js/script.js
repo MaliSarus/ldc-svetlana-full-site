@@ -2656,7 +2656,7 @@ $(document).scroll(function () {
                     width: '100%',
                     background: 'white',
                     margin: '0',
-                    padding: '15px 15px 5px 15px',
+                    padding: '15px 15px 15px 15px',
                     boxSizing: 'border-box',
                 });
                 $('.staff__filters').addClass('staff__filters_onscroll');
