@@ -45,7 +45,7 @@ require "./modules/dropdown-menu.php";
     <section class="simple">
         <div class="container">
             <div class="row">
-                <div class="infoblock__block">
+                <div class="simple__block">
                     <div class="infoblock__item ">
                         <div class="infoblock__row">
                             <div class="infoblock__item_content">

@@ -27,8 +27,11 @@
                             жностиварикозной новые возможности в лазерном...
                         </div>
                         <div class="science-articles__content_item_authors">
-                            <a class="science-articles__content_item_author link">Черноиван А.Г.</a>
-                            <a class="science-articles__content_item_author link">Вишневский А.А.</a>
+                            <div class="science-articles__content_item_authors-wrapper">
+                                <a class="science-articles__content_item_author link">Черноиван А.Г.</a>
+                                <a class="science-articles__content_item_author link">Вишневский А.А.</a>
+                            </div>
+                            <a href="#" class="link all">Подробнее</a>
                         </div>
                     </div>
 <!--                    <div class="science-articles__content_item">-->

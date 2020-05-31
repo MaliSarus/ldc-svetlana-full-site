@@ -1,13 +1,15 @@
 .text-content{
   margin-bottom: 30px;
-  padding: 18px 15px;
   background: white;
   @media screen and (min-width: 961px){
-    padding: 60px 0;
     margin-bottom: 0;
   }
   .row{
     >div{
+      padding: 18px 15px;
+      @media screen and (min-width: 961px){
+        padding: 60px 0;
+      }
       >*{
         &:last-child{
           margin-bottom: 0;
@@ -51,6 +53,55 @@
         margin-bottom: 10px;
         &:last-child{
           margin-bottom: 0;
+        }
+      }
+    }
+  }
+  ul.breadcrumbs{
+    position: absolute;
+    display: none;
+    z-index: 10;
+    padding: 0;
+    margin: 0;
+    font-size: 14px;
+    left: 15px;
+    top: 3px;
+    @media screen and (min-width: 768px){
+      display: block;
+    }
+    @media screen and (min-width: 961px){
+      top: 10px;
+      left: 0px;
+    }
+    @media screen and (min-width: 1400px){
+      font-size: 18px;
+      top: 35px;
+      left: 0px;
+    }
+    li{
+      display: inline-block;
+      text-decoration: none;
+      &::before{
+        display: none;
+      }
+      a{
+        font-size: 14px;
+        color: $main-color-dark;
+        text-decoration: none;
+        @media screen and (min-width: 1400px){
+          font-size: 18px;
+        }
+        &::after{
+          display: inline-block;
+          content: "\00a0/";
+          color: $main-color-dark;
+        }
+      }
+      &:last-child{
+        a{
+          &::after{
+            display: none;
+          }
         }
       }
     }

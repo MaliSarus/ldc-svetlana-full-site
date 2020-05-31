@@ -20,6 +20,7 @@ let sbCost;
 let sbNews;
 let sbPartners;
 let posTop = 0;
+let sbTable;
 
 const isSlickLoaded = (typeof $.fn.slick !== 'undefined');
 
@@ -269,10 +270,6 @@ const feedSliderInit = () => {
         if ($('.feedback__item').length <= slick.options.slidesToShow) {
             feedSlick.slick('unslick').css({
                 display: 'flex',
-                width: '100%',
-            });
-            feedSlick.parent().css({
-                margin: '0 -10px'
             });
             $('.feedback__head .arrows').css('display', 'none');
         }
@@ -599,7 +596,7 @@ const windowMobileSizeChange = () => {
     $('.price__pricing').each(function () {
         $(this).children().appendTo($(this));
     });
-    if (isSet($('.control'))) {
+    if (isSet($('.control')) && !($('.control').find('.specialists__slider').hasClass('slick-initialized'))) {
         specSliderInit();
     }
 };
@@ -646,6 +643,9 @@ const onReadyMobileMediaChange = () => {
     $('.dropdown-menu__open-button').append('<div class="with-arrow"></div>');
     dropdownTabs.append('<div class="with-arrow"></div>');
     $('.dropdown-menu__open-button').off('click');
+    if (isSet($('.control')) && !($('.control .control__content .specialists__slider').hasClass('slick-initialized'))) {
+        specSliderInit();
+    }
 };
 
 const closeServicesDropdownFromTapMenu = () => {
@@ -975,10 +975,6 @@ $(window).on('resize', function () {
                 } else {
                     feedSlick.css({
                         display: 'flex',
-                        width: '100%',
-                    });
-                    feedSlick.parent().css({
-                        margin: '0 -10px'
                     });
                     $('.feedback__head .arrows').css('display', 'none');
                 }
@@ -991,10 +987,6 @@ $(window).on('resize', function () {
                 } else {
                     feedSlick.css({
                         display: 'flex',
-                        width: '100%',
-                    });
-                    feedSlick.parent().css({
-                        margin: '0 -10px'
                     });
                     $('.feedback__head .arrows').css('display', 'none');
                 }
@@ -1247,6 +1239,31 @@ $(window).on('resize', function () {
             }
 
         }
+        // if (isSet($('.table__wrapper'))) {
+        //     console.log(sbTable)
+        //     $('.table__wrapper').each(function (index) {
+        //         if ($(this).width() > $(this).children().width() && typeof (sbTable) != 'undefined') {
+        //             var indexOf = index;
+        //             sbTable.forEach(function (el, i) {
+        //                 if (i == indexOf) {
+        //                     el.destroy();
+        //                 }
+        //             });
+        //         } else if ($(this).width() < $(this).children().width()) {
+        //             sbTable = Array(sbTable);
+        //             sbTable = [];
+        //             sbTable.push(new ScrollBooster({
+        //                 viewport: $(this)[0],
+        //                 content: $(this).children()[0],
+        //                 scrollMode: "transform", // use CSS 'transform' property
+        //                 direction: "horizontal", // allow only horizontal scrollin
+        //                 pointerMode: 'all',
+        //                 pointerDownPreventDefault: false
+        //             }));
+        //         }
+        //     })
+        //
+        // }
     }
 );
 
@@ -1335,10 +1352,6 @@ window.onload = function () {
             } else {
                 feedSlick.css({
                     display: 'flex',
-                    width: '100%',
-                });
-                feedSlick.parent().css({
-                    margin: '0 -10px'
                 });
                 $('.feedback__head .arrows').css('display', 'none');
             }
@@ -1349,10 +1362,6 @@ window.onload = function () {
             } else {
                 feedSlick.css({
                     display: 'flex',
-                    width: '100%',
-                });
-                feedSlick.parent().css({
-                    margin: '0 -10px'
                 });
                 $('.feedback__head .arrows').css('display', 'none');
             }
@@ -1705,8 +1714,8 @@ $(document).ready(function () {
         });
         imageBlur.each(function () {
             if ($(this).children('img').data('description') !== undefined) {
-                $(this).append('<small>' + imageBlur.children('img').data('description') + '</small>')
-            }else{
+                $(this).append('<small>' + $(this).children('img').data('description') + '</small>')
+            } else {
                 $(this).addClass('image_blur_top_0');
             }
         })
@@ -2119,6 +2128,7 @@ $(document).ready(function () {
         });
         feedbackContent.on('blur', function () {
             $(this).removeClass('feedback__item-content_unhide');
+
         });
 
         //ОБРАБОТЧИК ОТКРЫТИЯ ДОКУМЕНТА ПРИ КЛИКЕ НА ИКОНКУ
@@ -2282,7 +2292,10 @@ $(document).ready(function () {
             }
         });
         scienceArticlesText.on('blur', function () {
-            $(this).removeClass('science-articles__content_item_text_unhide');
+            const that = $(this);
+            setTimeout(function () {
+                that.removeClass('science-articles__content_item_text_unhide');
+            },1000)
         });
     }
 
@@ -2462,7 +2475,7 @@ $(document).ready(function () {
                     });
                 }
             }
-            if ($(this).is('input')){
+            if ($(this).is('input')) {
                 if ($(this).val().length > 3) {
                     $(this).siblings('label').removeClass('invalid').addClass('valid').removeAttr('style');
                     $(this).removeAttr('style');
@@ -2478,13 +2491,13 @@ $(document).ready(function () {
                 }
             }
         });
-        modalFormFields.on('focus','textarea', function () {
-            labelText = $(this).siblings('label').text();
+        modalFormFields.on('focus', 'textarea', function () {
             $(this).siblings('label').html('Текст отзыва');
         });
-        modalFormFields.on('blur','textarea', function () {
-            $(this).siblings('label').html(labelText);
-            labelText = '';
+        modalFormFields.on('blur', 'textarea', function () {
+            if ($(this).val() === '') {
+                $(this).siblings('label').html('Текст отзыва (Вы можете написать в своем отзыве имя и фамилию врачей, которые помогли Вам, а также описать услугу)');
+            }
         });
         modalForm.find('#customerName').on('input', function () {
             $(this).val($(this).val().replace(/[^А-Яа-я\s]/, ''));
@@ -2515,7 +2528,7 @@ $(document).ready(function () {
                         color: '#E84E2C',
                         borderColor: '#E84E2C'
                     });
-                    if($(this).hasClass('confident-label')){
+                    if ($(this).hasClass('confident-label')) {
                         $(this).find('input, small, a').css({
                             color: '#E84E2C',
                             borderColor: '#E84E2C'
@@ -2524,20 +2537,48 @@ $(document).ready(function () {
                     failTrigger = 1;
                 }
             })
-            if (failTrigger == 0){
-                console.log('success');
-            }else{
+            if (failTrigger == 0) {
+                $('.all-feedback-modal__content form label').each(function () {
+                    $(this).removeClass(['valid', 'invalid']).removeAttr('style');
+                    $(this).siblings('input, textarea').removeAttr('style');
+                    if ($(this).hasClass('confident-label')) {
+                        $(this).find('input, small, a').removeAttr('style')
+                    }
+                });
+                modalFormContainer.animate({opacity: 0}, function () {
+                    $(this).addClass('all-feedback-modal_unactive').removeAttr('style');
+                    $('.all-feedback-modal__content').find('input, textarea').val('').prop('checked', false);
+                });
+                $('body').removeAttr('style');
+            } else {
                 console.log('fail');
             }
         })
         $('.all-feedback-modal__close').on('click', function () {
-            modalFormContainer.animate({opacity: 0} ,function () {
+            modalFormContainer.animate({opacity: 0}, function () {
                 $(this).addClass('all-feedback-modal_unactive').removeAttr('style');
             });
             $('body').removeAttr('style');
         });
 
     }
+    // if (isSet($('.table__wrapper'))) {
+    //     $('.table__wrapper').each(function () {
+    //         if ($(this).width() < $(this).children().width()) {
+    //             sbTable = Array(sbTable);
+    //             sbTable = [];
+    //             sbTable.push(new ScrollBooster({
+    //                 viewport: $(this)[0],
+    //                 content: $(this).children()[0],
+    //                 scrollMode: "transform", // use CSS 'transform' property
+    //                 direction: "horizontal", // allow only horizontal scrollin
+    //                 pointerMode: 'all',
+    //                 pointerDownPreventDefault: false
+    //             }));
+    //         }
+    //     })
+    // }
+    // console.log(sbTable);
 });
 
 
@@ -2747,7 +2788,7 @@ if (isSet($('#map'))) {
         MyIconContentLayout = ymaps.templateLayoutFactory.createClass('<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'),
             myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
                 hintContent: 'ЛДЦ Завода "Светлана"',
-                balloonContent: 'ЛДЦ Завода "Светлана"</br>Россия, Санкт-Петербург, проспект Энгельса, 27Т</br>+7 (812) 627-02-03'
+                balloonContent: 'ЛДЦ Завода "Светлана"</br>Россия, Санкт-Петербург, проспект Энгельса, 27Т</br><a class="link" href="tel:+78126270203">+7 (812) 627-02-03</a>'
             }, {
                 // Опции.
                 // Необходимо указать данный тип макета.

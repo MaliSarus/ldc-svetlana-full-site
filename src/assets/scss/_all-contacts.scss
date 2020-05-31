@@ -34,6 +34,7 @@
     }
   }
   &__item{
+    flex-grow: 1;
     box-sizing: border-box;
     padding: 9px 0;
     flex-basis: 100%;

@@ -37,7 +37,11 @@
         align-items: center;
 
         .title {
-          padding-left: 18px;
+          padding-left: 15px;
+          width: 100%;
+          @media screen and (min-width: 961px){
+            padding-left: 18px;
+          }
         }
       }
       .mobile {
@@ -92,10 +96,13 @@
     position: relative;
     height: 100%;
     box-sizing: border-box;
+    flex-basis: 100%;
+    min-width: 345px;
     @media screen and (min-width: 577px){
       margin: 0 10px;
     }
     @media screen and (min-width: 961px){
+      min-width: auto;
       flex-grow: 0;
       height: auto;
       margin-top: 36px;
@@ -137,9 +144,6 @@
         position: relative;
         font-size: 14px;
         height: 100%;
-        background-image: url("../../img/doctor-card/bg-invisible-icon.svg");
-        background-repeat: no-repeat;
-        background-position: calc(100% - 10px) calc(100% - 7px);
 
         .doctor__name {
           font-size: 18px;

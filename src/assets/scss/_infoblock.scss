@@ -15,6 +15,7 @@
 
   &__row{
     display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
     margin-top: -12px;
     margin-bottom: -12px;
@@ -35,6 +36,8 @@
       margin-bottom: 0;
     }
     &_content{
+      max-width: 100%;
+      box-sizing: border-box;
       flex-grow: 1;
       display: flex;
       flex-direction: column;
@@ -42,6 +45,7 @@
       padding: 12px 0;
       color: $main-color-dark;
       @media screen and (min-width: 961px){
+        flex-basis: 50%;
         margin-bottom: 0px;
         padding: 0 10px;
         &:nth-child(2){
@@ -51,6 +55,16 @@
       &:last-child{
         margin-bottom: 0;
       }
+      &.col-3{
+         @media screen and (min-width: 961px){
+           flex-basis: calc(100% / 3);
+         }
+      }
+      &.col-4{
+        @media screen and (min-width: 961px){
+          flex-basis: calc(100% / 4);
+        }
+      }
       >*{
         margin-bottom: 18px;
         @media screen and (min-width: 961px){
@@ -58,6 +72,18 @@
         }
         &:last-child{
           margin-bottom: 0;
+        }
+      }
+      h1{
+        font-weight: bold;
+        font-size: 20px;
+        line-height: 120%;
+        color: $main-color-dark;
+        margin-bottom: 18px;
+        @media screen and (min-width: 961px) {
+          font-size: 36px;
+          line-height: 48px;
+          margin-bottom: 32px;
         }
       }
       h2{
@@ -69,6 +95,17 @@
         }
         @media screen and (min-width: 1400px) {
           font-size: 30px;
+        }
+      }
+      h3,h4,h5,h6{
+        margin-bottom: 12px;
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 120%;
+        @media screen and (min-width: 961px) {
+          margin-top: 4px;
+          margin-bottom: 18px;
+          font-size: 18px;
         }
       }
       p{
@@ -86,6 +123,7 @@
         margin-bottom: 18px;
         padding-left: 24px;
         li{
+          color: $main-color-dark;
           list-style:none;
           position: relative;
           font-size: 16px;
@@ -107,9 +145,11 @@
       }
       img{
         width: 100%;
-        @media screen and (min-width: 961px){
-          max-width: 669px;
-        }
+        max-height: 100%;
+        object-fit: cover;
+        //@media screen and (min-width: 961px){
+        //  max-width: 669px;
+        //}
       }
     }
   }

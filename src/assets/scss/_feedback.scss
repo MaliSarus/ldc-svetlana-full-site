@@ -96,15 +96,20 @@
   }
 
   &__slider {
-    width: 100%;
+    min-width: 100%;
     align-items: flex-start;
     @media screen and (min-width: 961px) {
-      width: calc(100% + 15px);
+      margin: 0 -10px;
     }
+    //.slick-list{
+    //
+    //}
   }
 
   &__item.slick-slide {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
   }
 
   &__item {
@@ -239,6 +244,11 @@
         width: 100%;
         height: 100%;
         transition: background-color .25s;
+      }
+
+      &_fill{
+        margin-bottom: 0;
+        max-height: 177px;
       }
 
       &_unhide {

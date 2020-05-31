@@ -45,6 +45,9 @@
                                             Холтеровское мониторирование артериального
                                             давления (ЭКГ)
                                         </div>
+                                        <div class="cost__list_content_additional">
+                                            1 глаз / 2 глаза
+                                        </div>
                                         <div class="cost__list_content_price"><span
                                                 class="cost__list_content_del">13 000 ₽</span>8 000 ₽
                                         </div>

@@ -273,6 +273,9 @@
           }
 
           a {
+            height: 100%;
+            display: flex;
+            align-items: center;
             color: rgba(white, .8);
             transition: color .5s;
           }

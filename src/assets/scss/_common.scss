@@ -5,7 +5,10 @@ $accent-color: #E84E2C;
 $accent-color-light: #FF785A;
 $bg-gray: #F1F1F1;
 
-
+*{
+  -webkit-font-smoothing: antialiased;
+  font-smooth: antialiased;
+}
 body, html {
   margin: 0;
   padding: 0;
