@@ -1736,6 +1736,33 @@ $(document).ready(function () {
         });
     }
 
+    if (isSet($('.social-media'))) {
+        const videos = $('.social-media__item');
+        videos.each(function () {
+            $(this).attr('href', $(this).children().attr('src'))
+        });
+        videos.on('click',function (event) {
+            event.preventDefault();
+        });
+        videos.magnificPopup({
+            type: 'iframe',
+            iframe:{
+                patterns: {
+                    youtube: {
+                        index: 'youtube.com/', // String that detects type of video (in this case YouTube). Simply via url.indexOf(index).
+
+                        id: '', // String that splits URL in a two parts, second part should be %id%
+                        // Or null - full URL will be returned
+                        // Or a function that should return %id%, for example:
+                        // id: function(url) { return 'parsed id'; }
+
+                        src: '%id%' // URL that will be set as a source for iframe.
+                    },
+                }
+            }
+        })
+    }
+
 
     if ($(window).width() >= 961) {
         $('.dropdown-menu__open-button').on('mouseup', function (event) {
@@ -2295,7 +2322,7 @@ $(document).ready(function () {
             const that = $(this);
             setTimeout(function () {
                 that.removeClass('science-articles__content_item_text_unhide');
-            },1000)
+            }, 1000)
         });
     }
 

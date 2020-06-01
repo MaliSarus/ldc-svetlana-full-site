@@ -38,6 +38,7 @@
 
   }
   &__item{
+    position: relative;
     flex-basis: 100%;
     margin-bottom: 18px;
     flex-grow: 1;
@@ -53,6 +54,39 @@
       padding: 0 10px;
       max-width: 365px;
       height: 165px;
+    }
+    &::before{
+      cursor: pointer;
+      content: '';
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(0deg, rgba(42, 68, 114, 0.51), rgba(42, 68, 114, 0.51));
+      @media screen and (min-width: 577px){
+        left: 5px;
+        width: calc(100% - 10px);
+      }
+      @media screen and (min-width: 961px){
+        left: 10px;
+        width: calc(100% - 20px);
+      }
+    }
+    &::after{
+      opacity: 1;
+      display: block;
+      position: absolute;
+      content: '';
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 44px;
+      height: 44px;
+      background: url("../../img/diplomas/popup-zoom-icon.svg") center no-repeat;
+      background-size: contain;
+      z-index: 1;
     }
 
   }
