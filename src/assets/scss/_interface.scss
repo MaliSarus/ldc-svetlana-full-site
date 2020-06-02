@@ -1309,3 +1309,59 @@ ol.features-list{
     }
   }
 }
+
+.z-2{
+  position: relative;
+  z-index: 2;
+}
+
+.preloader{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background: $main-color-light;
+  z-index: 10003;
+  &-image{
+    max-width: 100px;
+    max-height: 100px;
+    position: relative;
+    img{
+      position: relative;
+      width: 100%;
+      height: 100%;
+      z-index: 10004;
+    }
+    &::before{
+      display: block;
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(white,.32);
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      border-radius: 50%;
+      animation-name: load;
+      animation-iteration-count: infinite;
+      animation-duration: 1000ms;
+    }
+  }
+}
+
+@keyframes load {
+  from{
+    transform: scale(1);
+    opacity: 1;
+  }
+  to{
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}

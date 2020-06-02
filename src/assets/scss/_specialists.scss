@@ -178,6 +178,7 @@
           top: -12px;
           opacity: 1;
           box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+          transition: opacity .1s, top .5s;
           @media screen and (max-width: 960px) {
             box-shadow: none;
           }
@@ -189,12 +190,13 @@
 
         height: 100%;
         width: 100%;
-        background-color: rgba(white, .95);
+        //background-color: rgba(white, .95);
+        background-color: #fcfcfc;
         position: absolute;
         left: -12px;
         top: 312px;
         padding: 12px;
-        transition: opacity .5s, top .5s;
+        transition: opacity .1s .4s, top .5s;
         font-size: 14px;
 
         .doctor__features {

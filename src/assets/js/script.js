@@ -1270,6 +1270,11 @@ $(window).on('resize', function () {
 
 // Обработка событий при полной загрузки страницы
 window.onload = function () {
+
+    setTimeout(function () {
+        $('.preloader').fadeOut(500)
+    },1000)
+
     $('.form-call-button').on('click', popupFormHandler);
 
 

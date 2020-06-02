@@ -1,3 +1,8 @@
+<div class="preloader">
+    <div class="preloader-image">
+        <img src="./assets/img/footer/preloader.svg" alt="">
+    </div>
+</div>
 </main>
 <footer class="footer">
     <div class="tap-menu" id="tm">

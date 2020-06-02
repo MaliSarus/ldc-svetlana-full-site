@@ -1832,6 +1832,87 @@ ol.features-list li::before {
   background: #F1F1F1;
 }
 
+.z-2 {
+  position: relative;
+  z-index: 2;
+}
+
+.preloader {
+  width: 100%;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background: #3F5A8A;
+  z-index: 10003;
+}
+
+.preloader-image {
+  max-width: 100px;
+  max-height: 100px;
+  position: relative;
+}
+
+.preloader-image img {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 10004;
+}
+
+.preloader-image::before {
+  display: block;
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.32);
+  border-radius: 50%;
+  -webkit-animation-name: load;
+  animation-name: load;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-duration: 1000ms;
+  animation-duration: 1000ms;
+}
+
+@-webkit-keyframes load {
+  from {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+  }
+  to {
+    -webkit-transform: scale(1.5);
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+@keyframes load {
+  from {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+  }
+  to {
+    -webkit-transform: scale(1.5);
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
 .popup {
   position: fixed;
   left: 0;
@@ -4670,6 +4751,9 @@ ol.features-list li::before {
   opacity: 1;
   -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  -webkit-transition: opacity .1s, top .5s;
+  -o-transition: opacity .1s, top .5s;
+  transition: opacity .1s, top .5s;
 }
 
 @media screen and (max-width: 960px) {
@@ -4683,14 +4767,14 @@ ol.features-list li::before {
   opacity: 0;
   height: 100%;
   width: 100%;
-  background-color: rgba(255, 255, 255, 0.95);
+  background-color: #fcfcfc;
   position: absolute;
   left: -12px;
   top: 312px;
   padding: 12px;
-  -webkit-transition: opacity .5s, top .5s;
-  -o-transition: opacity .5s, top .5s;
-  transition: opacity .5s, top .5s;
+  -webkit-transition: opacity .1s .4s, top .5s;
+  -o-transition: opacity .1s .4s, top .5s;
+  transition: opacity .1s .4s, top .5s;
   font-size: 14px;
 }
 
