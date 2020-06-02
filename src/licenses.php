@@ -39,9 +39,9 @@ require "./modules/header.php";
 require "./modules/dropdown-menu.php";
 ?>
     <!-------------------------------------------------------------------------------------------------------------------->
-    <link rel="stylesheet"
-          href="./assets/css/<?php echo basename(__FILE__, '.php'); ?>/style.css?ver=<?php echo date("His") ?>">
-
+<!--    <link rel="stylesheet" -->
+<!--          href="./assets/css/--><?php //echo basename(__FILE__, '.php'); ?><!--/style.css?ver=--><?php //echo date("His") ?><!--">-->
+<link rel="preload" href="./assets/css/<?php echo basename(__FILE__, '.php'); ?>/style.css?ver=<?php echo date("His") ?>" as="style" onload="this.rel='stylesheet'">
     <section class="licenses">
         <div class="container">
             <div class="row">

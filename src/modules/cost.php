@@ -11,7 +11,7 @@
                             <ul class="cost__list">
                                 <li class="cost__list_item"><span>Консультация врача – оториноларинголога</span>
                                     <ul class="cost__list">
-                                        <li class="cost__list_item">
+                                        <li class="cost__list_item price-element">
                                             <div class="cost__list_content">
                                                 <div class="cost__list_content_title">
                                                     Холтеровское мониторирование артериального
@@ -24,7 +24,7 @@
                                                             class="text">Записаться</div></button>
                                             </div>
                                         </li>
-                                        <li class="cost__list_item">
+                                        <li class="cost__list_item price-element">
                                             <div class="cost__list_content">
                                                 <div class="cost__list_content_title">
                                                     Холтеровское мониторирование артериального
@@ -39,7 +39,7 @@
                                         </li>
                                     </ul>
                                 </li>
-                                <li class="cost__list_item">
+                                <li class="cost__list_item price-element">
                                     <div class="cost__list_content">
                                         <div class="cost__list_content_title">
                                             Холтеровское мониторирование артериального
@@ -55,7 +55,7 @@
                                                 class="text">Записаться</div></button>
                                     </div>
                                 </li>
-                                <li class="cost__list_item">
+                                <li class="cost__list_item price-element">
                                     <div class="cost__list_content">
                                         <div class="cost__list_content_title">
                                             Холтеровское мониторирование артериального
@@ -68,7 +68,7 @@
                                                 class="text">Записаться</div></button>
                                     </div>
                                 </li>
-                                <li class="cost__list_item">
+                                <li class="cost__list_item price-element">
                                     <div class="cost__list_content">
                                         <div class="cost__list_content_title">
                                             Холтеровское мониторирование артериального
@@ -81,7 +81,7 @@
                                                 class="text">Записаться</div></button>
                                     </div>
                                 </li>
-                                <li class="cost__list_item">
+                                <li class="cost__list_item price-element">
                                     <div class="cost__list_content">
                                         <div class="cost__list_content_title">
                                             Холтеровское мониторирование артериального

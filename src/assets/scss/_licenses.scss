@@ -98,7 +98,7 @@
         width: 100%;
         height: 100%;
         background: linear-gradient(0deg, rgba(42, 68, 114, 0.51), rgba(42, 68, 114, 0.51));
-        z-index: 1;
+        z-index: 0;
       }
       &::after{
         opacity: 0;
@@ -113,7 +113,7 @@
         height: 44px;
         background: url("../../img/diplomas/popup-zoom-icon.svg") center no-repeat;
         background-size: contain;
-        z-index: 1;
+        z-index: 0;
       }
       &:hover{
         &::before,&::after{

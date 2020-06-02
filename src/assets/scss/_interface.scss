@@ -870,7 +870,7 @@ ul.breadcrumbs{
     }
   }
   img{
-    filter:blur(4px);
+    filter:blur(25px);
   }
   small{
     display: block;
@@ -1004,21 +1004,21 @@ button.mfp-arrow{
 }
 
 .up-button{
+  background: $main-color;
   display: none;
   position: fixed;
   padding: 30px;
   z-index: 9999;
   right: 15px;
   bottom: 97px;
-  background: white;
-  box-shadow: 0 5px 15px rgba($main-color, .1);
+  box-shadow: 0 0 15px rgba(white, .2);
   transition: box-shadow .25s;
   @media screen and (min-width: 961px){
     right: 20px;
     bottom: 20px;
   }
   &:hover{
-    box-shadow: 0 5px 10px rgba($main-color, .3);
+    box-shadow: 0 0 10px rgba(white, .4);
   }
   &::before{
     display: block;
@@ -1028,8 +1028,8 @@ button.mfp-arrow{
     position: absolute;
     left: 0;
     top: 0;
-    background-size: contain;
     background: url(../../img/specialists/arrow-small.svg) center no-repeat;
+    filter: brightness(100);
     transform: rotate(90deg);
   }
 }

@@ -1267,13 +1267,16 @@ $(window).on('resize', function () {
     }
 );
 
+$('body').css('overflow','hidden');
 
 // Обработка событий при полной загрузки страницы
 window.onload = function () {
 
     setTimeout(function () {
-        $('.preloader').fadeOut(500)
-    },1000)
+        $('.preloader').fadeOut(500, function () {
+            $('body').removeAttr('style');
+        })
+    },1000);
 
     $('.form-call-button').on('click', popupFormHandler);
 
@@ -1728,16 +1731,20 @@ $(document).ready(function () {
     }
     if (isSet($('.licenses'))) {
         const images = $('.licenses__images > li');
-        images.on('click', function () {
-            $(this).magnificPopup({
-                delegate: 'img',
-                type: 'image',
-                callbacks: {
-                    elementParse: function (item) {
-                        item.src = item.el.attr('src');
-                    }
+        images.magnificPopup({
+            delegate: 'img',
+            type: 'image',
+            callbacks: {
+                elementParse: function (item) {
+                    item.src = item.el.attr('src');
                 }
-            }).magnificPopup('open');
+            },
+            gallery: {
+                enabled: true, // set to true to enable gallery
+            }
+        });
+        images.on('click', function () {
+            images.magnificPopup('open');
         });
     }
 
@@ -2413,6 +2420,11 @@ $(document).ready(function () {
                 });
             }
         }
+        const firstLevel = $('.cost__wrapper ul');
+        firstLevel.each(function () {
+            const secondLevel = $(this).children('li').children('ul');
+            $(secondLevel[0]).slideDown().siblings('span').addClass('active');
+        })
         $('.cost__list_item').on('click', function (event) {
 
             if ($('span').is(event.target)) {
@@ -2697,11 +2709,12 @@ $(document).scroll(function () {
                     position: 'fixed',
                     top: '129px',
                     left: 0,
-                    zIndex: 100,
+                    zIndex: 99,
                     width: '100%',
                     background: 'white',
                     boxSizing: 'border-box',
-                    margin: '0'
+                    margin: '0',
+                    boxShadow: '0 5px 60px rgba(10, 24, 49, 0.3)'
                 });
                 if ($(window).width() >= 1380) {
                     staffSearchPanel.css({padding: '5px ' + (Math.abs($(window).width() - 1350) / 2) + 'px'});
@@ -2730,12 +2743,13 @@ $(document).scroll(function () {
                     position: 'fixed',
                     top: '54px',
                     left: 0,
-                    zIndex: 100,
+                    zIndex: 99,
                     width: '100%',
                     background: 'white',
                     margin: '0',
                     padding: '15px 15px 15px 15px',
                     boxSizing: 'border-box',
+                    boxShadow: '0 5px 60px rgba(10, 24, 49, 0.3)'
                 });
                 $('.staff__filters').addClass('staff__filters_onscroll');
                 if (staffDropdown.css('display') == 'block') {

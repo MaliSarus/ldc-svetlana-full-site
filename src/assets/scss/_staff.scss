@@ -353,7 +353,7 @@
         position: absolute;
         display: block;
         content: '';
-        width: calc(100% - 5px - 32px);
+        width: calc(100% - 9px - 32px);
         height: calc(100%);
         left: 9px;
         top: 0;
@@ -435,11 +435,13 @@
       justify-content: space-between;
       align-items: center;
       margin-bottom: 18px;
+      flex-wrap: wrap;
 
       .title {
         margin-bottom: 0;
         margin-right: 15px;
         flex-basis: 60%;
+        flex-grow: 1;
       }
 
       .back {

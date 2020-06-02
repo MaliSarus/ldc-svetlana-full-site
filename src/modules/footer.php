@@ -3,6 +3,7 @@
         <img src="./assets/img/footer/preloader.svg" alt="">
     </div>
 </div>
+<div class="up-button"></div>
 </main>
 <footer class="footer">
     <div class="tap-menu" id="tm">
