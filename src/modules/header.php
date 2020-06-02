@@ -88,6 +88,9 @@
                         <a href="#" class="header__icons-item"><img src="./assets/img/header/insta-circle-icon.svg"
                                                                     alt="иконка инсты">
                         </a>
+                        <a href="#" class="header__icons-item"><img src="./assets/img/footer/youtube.svg"
+                                                                    alt="иконка ютуб">
+                        </a>
                     </div>
                 </div>
                 <div class="header__emergency-call">

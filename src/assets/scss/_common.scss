@@ -62,7 +62,12 @@ input[type="search"]{
     outline: none;
   }
 }
-
+section{
+  >*{
+    position: relative;
+    z-index: 2;
+  }
+}
 .hide {
   display: none;
 }

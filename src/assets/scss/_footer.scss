@@ -115,6 +115,10 @@
     &-item {
       display: block;
       margin-right: 22px;
+      max-height: 21px;
+      img{
+        height: 100%;
+      }
     }
   }
 

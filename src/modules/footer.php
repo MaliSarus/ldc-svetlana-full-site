@@ -68,8 +68,8 @@
                     <div class="footer__icons">
                         <a class="footer__icons-item"><img src="./assets/img/footer/vk-icon.svg" alt="иконка вк"></a>
                         <a class="footer__icons-item"><img src="./assets/img/footer/fb-icon.svg" alt="иконка фб"></a>
-                        <a class="footer__icons-item"><img src="./assets/img/footer/inst-icon.svg" alt="иконка инсты">
-                        </a>
+                        <a class="footer__icons-item"><img src="./assets/img/footer/inst-icon.svg" alt="иконка инсты"></a>
+                        <a class="footer__icons-item"><img src="./assets/img/footer/youtube.svg" alt="иконка ютуб"></a>
                     </div>
                 </div>
             </div>

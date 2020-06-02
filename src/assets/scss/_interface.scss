@@ -1149,6 +1149,7 @@ ol.features-list{
     display: flex;
     padding: 0 15px;
     flex-basis: 100%;
+    flex-grow: 1;
     color: rgba($main-color-dark,.8);
     @media screen and (min-width: 577px){
       flex-basis: 50%;
@@ -1192,6 +1193,13 @@ ol.features-list{
     .accent__info_icon{
       img{
         filter: hue-rotate(180deg) brightness(0.6);
+      }
+    }
+    ul{
+      li{
+        &::before{
+          filter: hue-rotate(180deg) brightness(0.5);
+        }
       }
     }
   }
