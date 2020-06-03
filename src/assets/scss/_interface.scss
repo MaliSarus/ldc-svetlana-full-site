@@ -96,6 +96,16 @@
     padding: 90px 0 60px 0 !important;
   }
 }
+.pt-0{
+  @media screen and (min-width: 961px){
+    padding-top: 0 !important;
+  }
+}
+.pb-0{
+  @media screen and (min-width: 961px){
+    padding-bottom: 0 !important;
+  }
+}
 .pb-90{
   @media screen and (min-width: 961px){
     padding: 60px 0 90px 0 !important;
@@ -1004,6 +1014,7 @@ button.mfp-arrow{
 }
 
 .up-button{
+  cursor: pointer;
   background: $main-color;
   display: none;
   position: fixed;
@@ -1012,13 +1023,17 @@ button.mfp-arrow{
   right: 15px;
   bottom: 97px;
   box-shadow: 0 0 15px rgba(white, .2);
-  transition: box-shadow .25s;
+  transition: background-color.25s, box-shadow .25s;
   @media screen and (min-width: 961px){
     right: 20px;
     bottom: 20px;
   }
   &:hover{
-    box-shadow: 0 0 10px rgba(white, .4);
+    background: white;
+    box-shadow: 0 0 10px rgba($main-color, .4);
+    &::before{
+      background-image: url(../../img/specialists/arrow-small.svg);
+    }
   }
   &::before{
     display: block;
@@ -1028,8 +1043,7 @@ button.mfp-arrow{
     position: absolute;
     left: 0;
     top: 0;
-    background: url(../../img/specialists/arrow-small.svg) center no-repeat;
-    filter: brightness(100);
+    background: url(../../img/specialists/arrow-small-white.svg) center no-repeat;
     transform: rotate(90deg);
   }
 }
@@ -1324,8 +1338,9 @@ ol.features-list{
   position: fixed;
   left: 0;
   top: 0;
-  background: $main-color-light;
+  background: rgba($main-color,.6);
   z-index: 10003;
+
   &-image{
     max-width: 100px;
     max-height: 100px;

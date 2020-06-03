@@ -108,6 +108,16 @@
           font-size: 16px;
           line-height: 140%;
           color: $main-color;
+          transition: color .25s;
+          &:hover{
+            color: $accent-color;
+          }
+          &:active{
+            color: $accent-color-light;
+          }
+          &.non-active{
+            color: #858C98;
+          }
         }
       }
 

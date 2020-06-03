@@ -5,35 +5,11 @@
                 <div class="infoblock__item ">
                     <div class="infoblock__row">
                         <div class="infoblock__item_content">
-                            <h2>Заголовок блока</h2>
-                            <ul>
-                                <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam beatae, blanditiis
-                                    deleniti
-                                </li>
-                                <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam beatae, blanditiis
-                                    delenitiLorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam beatae,
-                                    blanditiis
-                                    deleniti
-                                </li>
-                                <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam beatae, blanditiis
-                                    deleniti
-                                </li>
-                                <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam beatae, blanditiis
-                                    deleniti
-                                </li>
-                                <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam beatae, blanditiis
-                                    deleniti
-                                </li>
-                                <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam beatae, blanditiis
-                                    deleniti
-                                </li>
-                            </ul>
                         </div>
                         <div class="infoblock__item_content">
-                            <div class="image_blur "><img src="./assets/img/tools/1.jpg" alt="Картинка"
-                                                        data-description="Подпись к картинке" ></div>
                         </div>
                     </div>
+                </div>
                     <div class="infoblock__row">
                         <div class="infoblock__item_content">
                             <h2>Заголовок блока</h2>

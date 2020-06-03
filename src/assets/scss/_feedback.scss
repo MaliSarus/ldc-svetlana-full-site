@@ -171,7 +171,8 @@
         }
 
         &-info {
-          display: inline-block;
+          display: flex;
+          flex-direction: column;
 
           p, small {
             margin: 0;
@@ -189,8 +190,10 @@
         &-date {
           font-size: 14px;
           color: rgba(black, .5);
+          height: 17px;
           @media screen and (min-width: 961px) {
             font-size: 12px;
+            height: 14px;
           }
         }
       }
@@ -248,7 +251,7 @@
 
       &_fill{
         margin-bottom: 0;
-        max-height: 177px;
+        max-height: 162px;
       }
 
       &_unhide {

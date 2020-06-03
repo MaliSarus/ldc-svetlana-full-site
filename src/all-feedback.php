@@ -155,6 +155,9 @@ require "./modules/dropdown-menu.php";
                                 <p class="feedback__item-about-ordinary"><b>Направление:</b> <a href="#" tabindex="0">Диагностическое
                                         отделение</a>, <a href="#" tabindex="0">Физиотерапия</a>, <a href="#"
                                                                                                      tabindex="0">Ультразвуковая
+                                        диагностика (УЗИ)</a>, <a href="#" tabindex="0">ЛФК и спортивная медицина</a><a href="#" tabindex="0">Диагностическое
+                                        отделение</a>, <a href="#" tabindex="0">Физиотерапия</a>, <a href="#"
+                                                                                                     tabindex="0">Ультразвуковая
                                         диагностика (УЗИ)</a>, <a href="#" tabindex="0">ЛФК и спортивная медицина</a>
                                 </p>
                             </div>

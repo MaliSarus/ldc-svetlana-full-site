@@ -310,6 +310,18 @@ section > * {
 }
 
 @media screen and (min-width: 961px) {
+  .pt-0 {
+    padding-top: 0 !important;
+  }
+}
+
+@media screen and (min-width: 961px) {
+  .pb-0 {
+    padding-bottom: 0 !important;
+  }
+}
+
+@media screen and (min-width: 961px) {
   .pb-90 {
     padding: 60px 0 90px 0 !important;
   }
@@ -1446,6 +1458,7 @@ button.mfp-arrow {
 }
 
 .up-button {
+  cursor: pointer;
   background: #2A4472;
   display: none;
   position: fixed;
@@ -1455,11 +1468,11 @@ button.mfp-arrow {
   bottom: 97px;
   -webkit-box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
   box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
-  -webkit-transition: -webkit-box-shadow .25s;
-  transition: -webkit-box-shadow .25s;
-  -o-transition: box-shadow .25s;
-  transition: box-shadow .25s;
-  transition: box-shadow .25s, -webkit-box-shadow .25s;
+  -webkit-transition: background-color 0.25s, -webkit-box-shadow 0.25s;
+  transition: background-color 0.25s, -webkit-box-shadow 0.25s;
+  -o-transition: background-color 0.25s, box-shadow 0.25s;
+  transition: background-color 0.25s, box-shadow 0.25s;
+  transition: background-color 0.25s, box-shadow 0.25s, -webkit-box-shadow 0.25s;
 }
 
 @media screen and (min-width: 961px) {
@@ -1470,8 +1483,13 @@ button.mfp-arrow {
 }
 
 .up-button:hover {
-  -webkit-box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+  background: white;
+  -webkit-box-shadow: 0 0 10px rgba(42, 68, 114, 0.4);
+  box-shadow: 0 0 10px rgba(42, 68, 114, 0.4);
+}
+
+.up-button:hover::before {
+  background-image: url(../../img/specialists/arrow-small.svg);
 }
 
 .up-button::before {
@@ -1482,9 +1500,7 @@ button.mfp-arrow {
   position: absolute;
   left: 0;
   top: 0;
-  background: url(../../img/specialists/arrow-small.svg) center no-repeat;
-  -webkit-filter: brightness(100);
-  filter: brightness(100);
+  background: url(../../img/specialists/arrow-small-white.svg) center no-repeat;
   -webkit-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
   transform: rotate(90deg);
@@ -1853,7 +1869,7 @@ ol.features-list li::before {
   position: fixed;
   left: 0;
   top: 0;
-  background: #3F5A8A;
+  background: rgba(42, 68, 114, 0.6);
   z-index: 10003;
 }
 
@@ -2506,6 +2522,7 @@ ol.features-list li::before {
     animation-fill-mode: both;
   }
   .appointment_popup .appointment__close {
+    cursor: pointer;
     width: 16px;
     height: 16px;
     position: absolute;
@@ -3788,6 +3805,15 @@ ol.features-list li::before {
   }
 }
 
+@media screen and (min-width: 961px) {
+  .staff__content.curatory .specialists__slider {
+    margin-top: -20px;
+  }
+  .staff__content.curatory .specialists__slider .specialists__doctor {
+    margin-top: 20px;
+  }
+}
+
 .staff__content-top {
   position: relative;
 }
@@ -4004,6 +4030,7 @@ ol.features-list li::before {
 }
 
 .staff label[for="finder_doc_val"] {
+  width: calc(100% - 50px);
   color: gray;
   font-size: 14px;
   position: absolute;
@@ -4161,7 +4188,7 @@ ol.features-list li::before {
     margin-right: 0;
   }
   .staff__filters_item::after {
-    height: calc(100% - 7px);
+    height: calc(100% - 6px);
   }
 }
 
@@ -4264,13 +4291,25 @@ ol.features-list li::before {
   flex-grow: 1;
 }
 
+@media screen and (min-width: 961px) {
+  .staff__find-head .title {
+    font-size: 20px;
+  }
+}
+
 .staff__find-head .back {
   width: auto;
   display: inline-block;
   padding: 10px;
-  text-align: right;
   font-size: 14px;
   text-align: center;
+  margin-top: 18px;
+}
+
+@media screen and (min-width: 420px) {
+  .staff__find-head .back {
+    margin-top: 0;
+  }
 }
 
 @media screen and (min-width: 577px) {

@@ -44,7 +44,7 @@
                                     </li>
                                     <li class="direction-services__content_item_item">
                                         <div class="list-item_red-square"></div>
-                                        <a href="#">Внутрикожное введение и обязатеаа лекарственных средств (лечение халязиона
+                                        <a href="#" class="none-active ">Внутрикожное введение и обязатеаа лекарственных средств (лечение халязиона
                                             введением стероидов) без стоимости лекарства</a>
                                     </li>
                                     <li class="direction-services__content_item_item">

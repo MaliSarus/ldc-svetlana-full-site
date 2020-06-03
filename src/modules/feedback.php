@@ -66,7 +66,7 @@
                     </div>
                     <div class="feedback__item-about">
                         <p class="feedback__item-about-doctor"><b>Врач:</b> Баиндурашвили А. Г.</p>
-                        <p class="feedback__item-about-ordinary"><b>Направление:</b> Оториноларингология</p>
+                        <p class="feedback__item-about-ordinary"><b>Направление:</b>  Оториноларингология Оториноларингология Оториноларингология Оториноларингология</p>
                     </div>
                 </div>
                 <div class="feedback__item">

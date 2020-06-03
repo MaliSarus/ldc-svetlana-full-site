@@ -76,7 +76,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="staff__content staff__content_tab">
+                <div class="staff__content staff__content_tab curatory">
                     <div class="content">
                         <div class="staff__content-top">
                             <div class="staff__info">

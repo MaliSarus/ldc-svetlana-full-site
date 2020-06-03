@@ -46,9 +46,9 @@
     }
     &_link{
       color: rgba($main-color, .8);
+      transition: color .25s;
       &:hover{
-        color: $main-color;
-        text-decoration: underline;
+        color: $accent-color;
       }
     }
   }
