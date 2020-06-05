@@ -1946,6 +1946,14 @@ ol.features-list li::before {
   }
 }
 
+.mfp-wrap {
+  opacity: 1;
+}
+
+.bx-core-popup-menu {
+  opacity: 1;
+}
+
 .popup {
   position: fixed;
   left: 0;

@@ -66,6 +66,14 @@ require "./modules/dropdown-menu.php";
                             <li><img src="./assets/img/licenses/res2.jpg" alt="Заключение"></li>
                         </ul>
                     </div>
+                    <div class="licenses__row">
+                        <h2 data-mobile="Заключение">Санитарно-эпидемиологическое заключение</h2>
+                        <ul class="licenses__images">
+                            <li><img src="./assets/img/licenses/drug1.jpg" alt="Заключение"></li>
+                            <li><img src="./assets/img/licenses/drug2.jpg" alt="Заключение"></li>
+                            <li><img src="./assets/img/licenses/drug2.jpg" alt="Заключение"></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>

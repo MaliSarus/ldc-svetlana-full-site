@@ -46,76 +46,17 @@ require "./modules/dropdown-menu.php";
     <div class="container">
         <div class="row">
             <div class="test__block">
-                <div class="accent__info">
-                    <div class="accent__info_icon">
-                        <img alt="иконка информации" src="../assets/img/staff/info-icon.svg">
-                    </div>
-                    <p class="accent__info_text">
-                        Для безопасности Ваши личных данных мы:
-                    </p>
-                    <ul>
-                        <li>реализуем защиту конфиденциальных данных пациентов в соответствии с требованиями законодательства;</li>
-                        <li>используем защищенные каналы связи;</li>
-                        <li>надежно храним всю медицинскую документацию;</li>
-                        <li>результаты лабораторных анализов, инструментальных исследований, заключений специалистов хранятся в защищенной сертифицированной системе.</li>
-                    </ul>
-                </div>
-                <div class="table__wrapper">
-                    <table>
-                        <thead>
-                        <th>1</th>
-                        <th>2</th>
-                        <th>3</th>
-                        <th>4</th>
-                        <th>5</th>
-                        <th>6</th>
-                        <th>7</th>
-                        <th>8</th>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>1</td>
-                            <td>1</td>
-                            <td>1</td>
-                            <td>1</td>
-                            <td>1</td>
-                            <td>1</td>
-                            <td>1</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>2</td>
-                            <td>2</td>
-                            <td>2</td>
-                            <td>2</td>
-                            <td>2</td>
-                            <td>2</td>
-                            <td>2</td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>3</td>
-                            <td>3</td>
-                            <td>3</td>
-                            <td>3</td>
-                            <td>3</td>
-                            <td>3</td>
-                            <td>3</td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>3</td>
-                            <td>3</td>
-                            <td>3</td>
-                            <td>3</td>
-                            <td>3</td>
-                            <td>3</td>
-                            <td>3</td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
+                <p class="list-title">Заголовок для списка</p>
+                <ul class="list">
+                    <li>
+                        Элемент списка
+                        <ul>
+                            <li>Вложенный элемент списка</li>
+                            <li>Вложенный элемент списка</li>
+                            <li>Вложенный элемент списка</li>
+                        </ul>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>

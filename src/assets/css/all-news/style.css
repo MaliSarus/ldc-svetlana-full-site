@@ -1946,6 +1946,14 @@ ol.features-list li::before {
   }
 }
 
+.mfp-wrap {
+  opacity: 1;
+}
+
+.bx-core-popup-menu {
+  opacity: 1;
+}
+
 .popup {
   position: fixed;
   left: 0;
@@ -3780,6 +3788,14 @@ ol.features-list li::before {
   .all-news .news__item {
     margin-top: 24px;
   }
+}
+
+.all-news .news__item h3 {
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 21px;
+  color: #0A1831;
+  margin-bottom: 5px;
 }
 
 .infoblock {

@@ -1946,6 +1946,14 @@ ol.features-list li::before {
   }
 }
 
+.mfp-wrap {
+  opacity: 1;
+}
+
+.bx-core-popup-menu {
+  opacity: 1;
+}
+
 .popup {
   position: fixed;
   left: 0;
@@ -3775,13 +3783,6 @@ ol.features-list li::before {
 @media screen and (min-width: 577px) {
   .licenses__block h2 {
     font-size: 24px;
-  }
-}
-
-@media screen and (min-width: 961px) {
-  .licenses__block h2 {
-    margin-bottom: 30px;
-    font-size: 30px;
   }
 }
 

@@ -7,11 +7,11 @@ require "./modules/headlings.php";
 <link rel="stylesheet" href="./assets/css/magnific-popup.css">
 <script src="./assets/js/jquery-3.4.1.min.js"></script>
 <style>
-    body > *{
-        visibility: hidden;
+    body > header, body > main, body > footer{
+        opacity: 0;
     }
-    body > *.visible{
-        visibility: visible;
+    body > header.visible, body > main.visible, body > footer.visible{
+        opacity: 1;
     }
 
     .preloader {
@@ -171,7 +171,7 @@ require "./modules/dropdown-menu.php";
                                     <li class="cost__list_item"><span>Консультация врача – оториноларинголога</span>
                                         <ul class="cost__list">
                                             <li class="cost__list_item">
-                                                <div class="cost__list_content">
+                                                <div class="cost__list_content tv">
                                                     <div class="cost__list_content_title">
                                                         Холтеровское мониторирование артериального
                                                         давления (ЭКГ)

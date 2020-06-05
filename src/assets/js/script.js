@@ -1271,13 +1271,6 @@ $('body').css('overflow', 'hidden');
 
 // Обработка событий при полной загрузки страницы
 window.onload = function () {
-    $('body > *').addClass('visible');
-    setTimeout(function () {
-        $('.preloader').fadeOut(500, function () {
-            $('body').removeAttr('style')
-        })
-    }, 1000);
-
     $('.form-call-button').on('click', popupFormHandler);
 
 
@@ -1706,7 +1699,12 @@ window.onload = function () {
 
 //Обработка событий после загрузки страницы
 $(document).ready(function () {
-
+    $('header, footer, main').addClass('visible');
+    setTimeout(function () {
+        $('.preloader').fadeOut(500, function () {
+            $('body').removeAttr('style')
+        })
+    }, 1000);
     $('.tap-menu__button').on('click', function (event) {
         if ($('.tap-menu__button').index($(this)) !== 1 && $('.tap-menu__button').index($(this)) !== 2) {
             event.preventDefault();
@@ -1750,7 +1748,7 @@ $(document).ready(function () {
             }
         });
         images.on('click', function () {
-            images.magnificPopup('open');
+            images.magnificPopup('open', images.index($(this)));
         });
     }
 
