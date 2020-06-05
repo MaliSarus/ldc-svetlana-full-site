@@ -1295,8 +1295,10 @@ ul.breadcrumbs li:last-child a::after {
 }
 
 .image_blur small {
+  position: relative;
   display: block;
-  margin-top: 10px;
+  padding-top: 10px;
+  background-color: white;
 }
 
 .image_blur--off::before {
@@ -1869,13 +1871,22 @@ ol.features-list li::before {
   position: fixed;
   left: 0;
   top: 0;
-  background: rgba(42, 68, 114, 0.6);
+  background-color: white;
   z-index: 10003;
 }
 
+.preloader::before {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: block;
+  content: '';
+  background: rgba(42, 68, 114, 0.6);
+}
+
 .preloader-image {
-  max-width: 100px;
-  max-height: 100px;
+  width: 100px;
+  height: 100px;
   position: relative;
 }
 
@@ -1884,16 +1895,21 @@ ol.features-list li::before {
   width: 100%;
   height: 100%;
   z-index: 10004;
+  -webkit-filter: drop-shadow(0px 0px 20px white);
+  filter: drop-shadow(0px 0px 20px white);
 }
 
 .preloader-image::before {
   display: block;
   content: '';
   position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
+  left: 50%;
+  top: 50%;
+  width: 20px;
+  height: 20px;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   background: rgba(255, 255, 255, 0.32);
   border-radius: 50%;
   -webkit-animation-name: load;
@@ -1906,26 +1922,26 @@ ol.features-list li::before {
 
 @-webkit-keyframes load {
   from {
-    -webkit-transform: scale(1);
-    transform: scale(1);
+    -webkit-transform: translate(-50%, -50%) scale(1);
+    transform: translate(-50%, -50%) scale(1);
     opacity: 1;
   }
   to {
-    -webkit-transform: scale(1.5);
-    transform: scale(1.5);
+    -webkit-transform: translate(-50%, -50%) scale(10);
+    transform: translate(-50%, -50%) scale(10);
     opacity: 0;
   }
 }
 
 @keyframes load {
   from {
-    -webkit-transform: scale(1);
-    transform: scale(1);
+    -webkit-transform: translate(-50%, -50%) scale(1);
+    transform: translate(-50%, -50%) scale(1);
     opacity: 1;
   }
   to {
-    -webkit-transform: scale(1.5);
-    transform: scale(1.5);
+    -webkit-transform: translate(-50%, -50%) scale(10);
+    transform: translate(-50%, -50%) scale(10);
     opacity: 0;
   }
 }
@@ -4736,7 +4752,6 @@ ol.features-list li::before {
 
 .cost__list_content {
   margin: 0 18px;
-  cursor: pointer;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

@@ -1,6 +1,6 @@
 <div class="preloader">
     <div class="preloader-image">
-        <img src="./assets/img/footer/preloader.svg" alt="">
+        <img src="./assets/img/footer/preloader_original.svg" alt="">
     </div>
 </div>
 <div class="up-button"></div>

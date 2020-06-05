@@ -108,7 +108,10 @@
     &:last-child {
       margin-right: 0;
     }
-
+    &:hover{
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      transition: box-shadow .25s .4s;
+    }
     .doctor {
       &__image {
         width: 100%;
@@ -131,6 +134,7 @@
       }
 
       &__info {
+        box-shadow: none;
         display: block;
         color: $main-color;
         position: relative;
@@ -177,11 +181,8 @@
         .doctor__full-info {
           top: -12px;
           opacity: 1;
-          box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+
           transition: opacity .1s, top .5s;
-          @media screen and (max-width: 960px) {
-            box-shadow: none;
-          }
         }
       }
 

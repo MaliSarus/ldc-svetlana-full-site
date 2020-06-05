@@ -57,7 +57,6 @@
       content: '';
     }
     &:hover {
-      border:none;
       height: 100%;
       &::after{
         opacity: 1;
@@ -69,6 +68,22 @@
         content: '';
         background-color: $accent-color;
       }
+    }
+    &.tab-link_red_active{
+      border: none;
+      &::after{
+        opacity: 1;
+        position: absolute;
+        height: 2px;
+        width: 100%;
+        bottom: 0;
+        left: 0;
+        content: '';
+        background-color: $accent-color;
+      }
+    }
+    &.tab-link_red:hover{
+      border: none;
     }
   }
 }

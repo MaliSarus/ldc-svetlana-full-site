@@ -1271,10 +1271,10 @@ $('body').css('overflow', 'hidden');
 
 // Обработка событий при полной загрузки страницы
 window.onload = function () {
-
+    $('body > *').addClass('visible');
     setTimeout(function () {
         $('.preloader').fadeOut(500, function () {
-            $('body').removeAttr('style');
+            $('body').removeAttr('style')
         })
     }, 1000);
 
@@ -1420,18 +1420,24 @@ window.onload = function () {
     });
 
     //Изменения табов в блоках отделений
+    let menuFlag = 0;
     $('.units__menu li > a').on('click', function (event) {
         if ($(window).width() > 961) {
             event.preventDefault();
         }
-        const index = $('.units__menu li').index($(this).parent());
-        const prevLink = $('.units__menu-link.tab-link_red_active');
-        prevLink.removeClass('tab-link_red_active');
-        $(this).addClass('tab-link_red_active');
-        $('.units__content-services_active').animate({opacity: 0}, 500, function () {
-            $(this).removeClass('units__content-services_active').removeAttr('style');
-            $($('.units__content-services')[index]).addClass('units__content-services_active').css('opacity', 0).animate({opacity: 1}, 500);
-        });
+        if (menuFlag == 0) {
+            menuFlag = 1;
+            const index = $('.units__menu li').index($(this).parent());
+            const prevLink = $('.units__menu-link.tab-link_red_active');
+            prevLink.removeClass('tab-link_red_active');
+            $(this).addClass('tab-link_red_active');
+            $('.units__content-services_active').animate({opacity: 0}, 500, function () {
+                $(this).removeClass('units__content-services_active').removeAttr('style');
+                $($('.units__content-services')[index]).addClass('units__content-services_active').css('opacity', 0).animate({opacity: 1}, 500, function () {
+                    menuFlag = 0;
+                });
+            });
+        }
     });
 
 
@@ -2120,6 +2126,7 @@ $(document).ready(function () {
             $('.staff__content_tab_active .staff__find').fadeOut(400, function () {
                 $('.staff__content_tab_active .staff__ordinary').fadeIn();
             });
+            staffSearch.val('').trigger('blur');
         })
     }
 
@@ -2157,17 +2164,16 @@ $(document).ready(function () {
     //Блоки с отзывами
 
 
-
     if (isSet($('.feedback__slider')) || isSet($('.all-feedback'))) {
 
         let maxHeight = 0;
         $('.feedback__item').each(function () {
-            if(maxHeight < $(this).innerHeight()){
+            if (maxHeight < $(this).innerHeight()) {
                 maxHeight = $(this).innerHeight();
                 console.log(maxHeight);
             }
         });
-        $('.feedback__item').css('height',maxHeight+'px');
+        $('.feedback__item').css('height', maxHeight + 'px');
 
         const feedbackContent = $('.feedback__item-content');
         $(document).on('click', '.feedback__item-content', function (event) {
@@ -2432,15 +2438,23 @@ $(document).ready(function () {
                 });
             }
         }
-        const firstLevel = $('.cost__wrapper ul');
-        firstLevel.each(function () {
-            const secondLevel = $(this).children('li').children('ul');
-            $(secondLevel[0]).slideDown().siblings('span').addClass('active');
-        })
+        const firstLevel = $($('.cost__wrapper')[0]).children('ul').children('li:first-child');
+        const secondLevel = firstLevel.children('ul');
+        $(secondLevel[0]).slideDown().siblings('span').addClass('active');
+        $(secondLevel[0]).children('li:first-child').children('ul').slideDown().siblings('span').addClass('active');
         $('.cost__list_item').on('click', function (event) {
-
+            $(this).siblings('.cost__list_item').children('ul').slideUp().siblings('span').removeClass('active');
+            console.log($(this).offset().top);
             if ($('span').is(event.target)) {
-                $(event.target).parent('li').children('ul').slideToggle();
+                $(event.target).parent('li').children('ul').slideToggle(function () {
+                    if ($(this).attr('style') == 'display: block;') {
+                        if ($(window).width() >= 961) {
+                            $('html').animate({scrollTop: $(this).offset().top - 129 * 2}, 500);
+                        } else {
+                            $('html').animate({scrollTop: $(this).offset().top - 54 * 2}, 500);
+                        }
+                    }
+                });
                 $(event.target).toggleClass('active');
                 return false;
             }
@@ -2455,7 +2469,7 @@ $(document).ready(function () {
                     opacity: 0
                 }, 250, function () {
                     const text = $(this).text();
-                    $(this).css('font-weight','normal').text($(this).attr('data-hover'));
+                    $(this).css('font-weight', 'normal').text($(this).attr('data-hover'));
                     $(this).attr('data-hover', text);
                     $(this).animate({
                         opacity: 1
@@ -2737,7 +2751,8 @@ $(document).scroll(function () {
                     left: 0,
                     zIndex: 10000,
                     width: '100%',
-                    background: '#F1F1F1'
+                    background: 'white',
+                    boxShadow: '0 5px 60px rgba(10, 24, 49, 0.3)'
                 })
             } else if (($(this).scrollTop() + 129) < navLinkTop) {
                 $('.nav-links').removeAttr('style');
@@ -2827,6 +2842,7 @@ if (isSet($('#map'))) {
         }, {
             searchControlProvider: 'yandex#search'
         });
+        myMap.container.fitToViewport();
         var secondButton = new ymaps.control.Button({
             data: {
                 // Зададим текст и иконку для кнопки.
