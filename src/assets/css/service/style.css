@@ -5607,6 +5607,16 @@ ol.features-list li::before {
   }
 }
 
+.for-patient__block h3 {
+  margin-bottom: 12px;
+}
+
+@media screen and (min-width: 961px) {
+  .for-patient__block h3 {
+    margin-bottom: 18px;
+  }
+}
+
 .for-patient__block p {
   margin-bottom: 18px;
 }

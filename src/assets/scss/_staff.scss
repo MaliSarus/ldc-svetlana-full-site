@@ -180,6 +180,12 @@
     position: relative;
     background: #FCFCFC;
     border: 1px solid #D9DEE7;
+    &.invalid{
+      border-color: $accent-color;
+      label[for="finder_doc_val"]{
+        color: $accent-color;
+      }
+    }
 
     &_focus {
       background-color: white;

@@ -1696,15 +1696,16 @@ window.onload = function () {
 }
 ;
 
-
-//Обработка событий после загрузки страницы
-$(document).ready(function () {
+document.addEventListener('DOMContentLoaded', function(){
     $('header, footer, main').addClass('visible');
     setTimeout(function () {
         $('.preloader').fadeOut(500, function () {
             $('body').removeAttr('style')
         })
     }, 1000);
+});
+//Обработка событий после загрузки страницы
+$(document).ready(function () {
     $('.tap-menu__button').on('click', function (event) {
         if ($('.tap-menu__button').index($(this)) !== 1 && $('.tap-menu__button').index($(this)) !== 2) {
             event.preventDefault();
@@ -2045,7 +2046,17 @@ $(document).ready(function () {
         $(document).keydown(dropdownNav);
 
         staffSearch.on('input', function () {
-            staffSearch.val(staffSearch.val().replace(/[^А-Яа-я\s]/, ''));
+            const pattern = /[^А-Яа-я\s]/;
+            const labelOriginalText = 'Начните вводить фамилию или специализацию';
+            if ( staffSearch.val().search(pattern) != -1){
+                $('.staff__search-form').addClass('invalid');
+                $('label[for="finder_doc_val"]').text('Разрешен ввод только русских букв');
+                staffSearch.val(staffSearch.val().replace(/[^А-Яа-я\s]/, ''));
+            }else{
+                $('.staff__search-form').removeClass('invalid');
+                $('label[for="finder_doc_val"]').text(labelOriginalText);
+            }
+
             if (staffSearch.val().length >= 3) {
                 if (staffSearch.val() != '') {
                     staffDropdown.css({

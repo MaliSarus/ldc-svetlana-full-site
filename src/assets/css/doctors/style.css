@@ -3962,6 +3962,14 @@ ol.features-list li::before {
   border: 1px solid #D9DEE7;
 }
 
+.staff__search-form.invalid {
+  border-color: #E84E2C;
+}
+
+.staff__search-form.invalid label[for="finder_doc_val"] {
+  color: #E84E2C;
+}
+
 .staff__search-form_focus {
   background-color: white;
 }

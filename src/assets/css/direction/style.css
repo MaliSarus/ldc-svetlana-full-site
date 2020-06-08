@@ -3771,6 +3771,7 @@ ol.features-list li::before {
 @media screen and (min-width: 961px) {
   .unit-simple {
     margin-bottom: 0;
+    background-color: #F1F1F1;
   }
 }
 
@@ -6158,6 +6159,16 @@ ol.features-list li::before {
   .for-patient__block h2 {
     margin-bottom: 36px;
     font-size: 30px;
+  }
+}
+
+.for-patient__block h3 {
+  margin-bottom: 12px;
+}
+
+@media screen and (min-width: 961px) {
+  .for-patient__block h3 {
+    margin-bottom: 18px;
   }
 }
 
