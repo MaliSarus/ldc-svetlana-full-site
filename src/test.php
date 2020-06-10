@@ -51,9 +51,19 @@ require "./modules/dropdown-menu.php";
                         <div class="infoblock__item_content">
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur, eos explicabo
                                 incidunt laborum maiores porro totam voluptate! Accusantium, exercitationem, fuga.</p>
-                            <div class="content-image">
-                                <img src="./assets/img/tools/2.jpg" alt="">
-                            </div>
+                        </div>
+                        <div class="infoblock__item_content">
+                            <img src="./assets/img/tools/2.jpg" alt="" height="100px">
+                        </div>
+
+                    </div>
+                    <div class="infoblock__row">
+                        <div class="infoblock__item_content">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur, eos explicabo
+                                incidunt laborum maiores porro totam voluptate! Accusantium, exercitationem, fuga.</p>
+                        </div>
+                        <div class="infoblock__item_content">
+                            <img src="./assets/img/tools/2.jpg" alt="">
                         </div>
                     </div>
                 </div>
