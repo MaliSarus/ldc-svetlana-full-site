@@ -92,6 +92,7 @@
     height: auto;
     position: relative;
     box-sizing: border-box;
+    border: 1px solid transparent;
     @media screen and (min-width: 577px){
       margin: 0 10px;
       flex-basis: calc(100% / 2 - 20px);
@@ -99,6 +100,9 @@
     @media screen and (min-width: 769px){
       margin: 0 10px;
       flex-basis: calc(100% / 3 - 20px);
+    }
+    @media screen and (min-width: 961px){
+      border: none;
     }
     @media screen and (min-width: 1400px){
       margin: 0 10px;
@@ -109,8 +113,13 @@
       margin-right: 0;
     }
     &:hover{
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-      transition: box-shadow .25s .4s;
+      border-color: rgba($main-color, .15);
+      transition: border-color .25s .4s;
+      @media screen and (min-width: 961px){
+        background-color: unset;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        transition: box-shadow .25s .4s;
+      }
     }
     .doctor {
       &__image {
@@ -250,15 +259,14 @@
     }
 
     @media screen and (min-width: 961px) {
+      margin-right: -10px;
+      margin-left: -10px;
+      margin-bottom: 15px;
       .slick-track {
         padding: 20px 0;
       }
-    }
-    @media screen and (min-width: 1500px) {
-      margin-bottom: 15px;
-      width: calc(100% + 30px);
-      transform: translateX(-30px);
       .slick-list {
+        margin: 0 -10px;
         padding: 0 20px;
 
       }

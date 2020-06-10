@@ -46,17 +46,17 @@ require "./modules/dropdown-menu.php";
     <div class="container">
         <div class="row">
             <div class="test__block">
-                <p class="list-title">Заголовок для списка</p>
-                <ul class="list">
-                    <li>
-                        Элемент списка
-                        <ul>
-                            <li>Вложенный элемент списка</li>
-                            <li>Вложенный элемент списка</li>
-                            <li>Вложенный элемент списка</li>
-                        </ul>
-                    </li>
-                </ul>
+                <div class="infoblock__item">
+                    <div class="infoblock__row">
+                        <div class="infoblock__item_content">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur, eos explicabo
+                                incidunt laborum maiores porro totam voluptate! Accusantium, exercitationem, fuga.</p>
+                            <div class="content-image">
+                                <img src="./assets/img/tools/2.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
