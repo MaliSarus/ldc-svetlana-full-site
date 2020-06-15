@@ -272,6 +272,7 @@ const feedSliderInit = () => {
                 display: 'flex',
             });
             $('.feedback__head .arrows').css('display', 'none');
+            $('.feedback__position').css('display', 'none');
         }
     });
 };
@@ -571,9 +572,6 @@ const windowDesktopSizeChange = () => {
             $('.staff__head .title').html('Кураторы направлений &lt;лечебно – диагностического центра&gt;');
             break;
     }
-    $('.price__pricing').each(function () {
-        $(this).children().prependTo($(this));
-    });
 
 
 };
@@ -593,9 +591,6 @@ const windowMobileSizeChange = () => {
             break;
     }
 
-    $('.price__pricing').each(function () {
-        $(this).children().appendTo($(this));
-    });
     if (isSet($('.control')) && !($('.control').find('.specialists__slider').hasClass('slick-initialized'))) {
         specSliderInit();
     }
@@ -989,6 +984,7 @@ $(window).on('resize', function () {
                         display: 'flex',
                     });
                     $('.feedback__head .arrows').css('display', 'none');
+                    $('.feedback__position').css('display', 'none');
                 }
             }
         }
@@ -1373,6 +1369,7 @@ window.onload = function () {
                     display: 'flex',
                 });
                 $('.feedback__head .arrows').css('display', 'none');
+                $('.feedback__position').css('display', 'none');
             }
         }
     }
@@ -1831,10 +1828,14 @@ $(document).ready(function () {
         //ПОП АП ОКНО
         popUpClose.on('click', function () {
             popUp.hide();
-            $('body').css({
-                overflow: 'visible'
+            $('body').removeAttr('style');
+            $('.appointment__form').unbind('submit').each(function () {
+                $(this)[0].reset();
+                $(this).find('input [type="hidden"]').val('');
             });
-            $('.appointment__form').unbind('submit').submit();
+            if(window.popupOriginalText !== undefined){
+                $('.popup__block .text').text(window.popupOriginalText);
+            }
         });
 
         //ОБРАБОТКА ФОРМЫ ЗАПИСИ
@@ -2196,13 +2197,15 @@ $(document).ready(function () {
         $(document).on('click', '.feedback__item-content', function (event) {
             if ($(this).hasClass('feedback__item-content_unhide')) {
                 $(this).removeClass('feedback__item-content_unhide');
+                $(this).parents('.feedback__item').css('height',maxHeight + 'px');
             } else {
                 $(this).addClass('feedback__item-content_unhide');
+                $(this).parents('.feedback__item').css('height','auto');
             }
         });
         feedbackContent.on('blur', function () {
             $(this).removeClass('feedback__item-content_unhide');
-
+            $(this).parents('.feedback__item').css('height',maxHeight + 'px');
         });
 
         //ОБРАБОТЧИК ОТКРЫТИЯ ДОКУМЕНТА ПРИ КЛИКЕ НА ИКОНКУ
@@ -2324,9 +2327,6 @@ $(document).ready(function () {
         appendFlag = 0;
     } else {
         selectButtons.appendTo('.about__slider');
-        $('.price__pricing').each(function () {
-            // $(this).children().prependTo($(this));
-        });
         appendFlag = 1;
     }
 
@@ -2670,7 +2670,10 @@ $(document).ready(function () {
                     $(this).addClass('all-feedback-modal_unactive').removeAttr('style');
                     $('.all-feedback-modal__content').find('input, textarea').val('').prop('checked', false);
                 });
-                $('body').removeAttr('style');
+                $('.popup').css('display','flex');
+                window.popupOriginalText = $('.popup__block .text').text();
+                $('.popup__block .text').text('Спасибо за Ваш отзыв!')
+                // $('body').removeAttr('style');
             } else {
                 console.log('fail');
             }

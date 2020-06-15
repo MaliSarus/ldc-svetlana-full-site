@@ -17,6 +17,11 @@
 
 .dropdown-menu__open-button {
   position: relative;
+  .with-arrow{
+    right: 0;
+    width: 100% ;
+    background-position: calc(100% - 15px) center;
+  }
 }
 
 .dropdown-menu {

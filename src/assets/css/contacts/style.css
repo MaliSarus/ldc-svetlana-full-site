@@ -57,12 +57,12 @@
 * {
   -webkit-font-smoothing: antialiased;
   font-smooth: antialiased;
+  font-family: 'Exo 2', sans-serif;
 }
 
 body, html {
   margin: 0;
   padding: 0;
-  font-family: 'Exo 2', sans-serif;
   background: #F1F1F1;
 }
 
@@ -555,10 +555,10 @@ section > * {
   width: 30%;
   height: 100%;
   display: block;
-  background: url("../../img/header/arrow.svg") right no-repeat;
+  background: url("../../img/header/arrow.svg") calc(100% - 15px) no-repeat;
   position: absolute;
   z-index: 10;
-  right: 15px;
+  right: 0;
   top: 50%;
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
@@ -1883,27 +1883,22 @@ ol.features-list li::before {
 }
 
 .categories-top__block h2 {
-  font-size: 20px;
+  font-size: 18px;
   color: #0A1831;
-  font-weight: bold;
+  font-weight: 600;
   margin-bottom: 12px;
 }
 
 @media screen and (min-width: 577px) {
   .categories-top__block h2 {
-    font-size: 24px;
+    font-size: 20px;
   }
 }
 
 @media screen and (min-width: 961px) {
   .categories-top__block h2 {
+    font-size: 24px;
     margin-bottom: 18px;
-  }
-}
-
-@media screen and (min-width: 1400px) {
-  .categories-top__block h2 {
-    font-size: 30px;
   }
 }
 
@@ -1914,6 +1909,13 @@ ol.features-list li::before {
 
 .categories-top__filters-item.active {
   margin-bottom: 1px;
+}
+
+.rur {
+  width: 11px;
+  height: 11px;
+  display: inline;
+  fill: #0A1831;
 }
 
 .popup {
@@ -1960,6 +1962,7 @@ ol.features-list li::before {
   padding: 30px;
   text-align: center;
   color: #0A1831;
+  position: relative;
 }
 
 .popup-close-button {
@@ -1984,6 +1987,14 @@ ol.features-list li::before {
 .popup-close-button:active {
   -webkit-filter: brightness(0.8);
   filter: brightness(0.8);
+}
+
+.popup-close-button.cross {
+  background: url("../../img/appointment/close-cross.svg") center no-repeat;
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin-top: 0;
 }
 
 .layer1, .layer2, .layer3, .layer4 {
@@ -2858,6 +2869,12 @@ ol.features-list li::before {
   position: relative;
 }
 
+.dropdown-menu__open-button .with-arrow {
+  right: 0;
+  width: 100%;
+  background-position: calc(100% - 15px) center;
+}
+
 .dropdown-menu {
   width: 100%;
   position: relative;
@@ -3711,7 +3728,7 @@ ol.features-list li::before {
     -webkit-transform: skewX(-17deg);
     -ms-transform: skewX(-17deg);
     transform: skewX(-17deg);
-    z-index: 10;
+    z-index: 0;
   }
 }
 

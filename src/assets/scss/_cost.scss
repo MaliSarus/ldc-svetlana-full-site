@@ -1,60 +1,67 @@
-.cost{
+.cost {
   margin-bottom: 30px;
   background: white;
-  @media screen and (min-width: 961px){
+  @media screen and (min-width: 961px) {
     margin-bottom: 0;
   }
-  &__wrapper{
+
+  &__wrapper {
     width: 100%;
     overflow: hidden;
-    @media screen and (min-width: 653px){
+    @media screen and (min-width: 653px) {
       width: 100%;
     }
-    @media screen and (min-width: 1400px){
+    @media screen and (min-width: 1400px) {
       max-width: 1360px;
     }
   }
-  &__block{
+
+  &__block {
     flex-grow: 1;
     overflow: hidden;
     padding: 18px 15px;
     //@media screen and (min-width: 577px){
     //  padding: 18px 0
     //}
-    @media screen and (min-width: 961px){
+    @media screen and (min-width: 961px) {
       padding: 60px 0 90px 0;
     }
-    .title{
+
+    .title {
       margin-bottom: 18px;
-      @media screen and (min-width: 961px){
+      @media screen and (min-width: 961px) {
         margin-bottom: 36px;
       }
     }
-    ul{
+
+    ul {
       width: 623px;
-      @media screen and (min-width: 650px){
+      @media screen and (min-width: 650px) {
         width: 100%;
         box-sizing: border-box;
         max-width: 100%;
       }
-      > li{
+
+      > li {
         background: $main-color;
         color: white;
         margin-bottom: 1px;
-        > span{
+
+        > span {
           box-sizing: border-box;
           padding: 16px 56px;
           cursor: pointer;
           position: relative;
           transition: background-color .25s;
-          @media screen and (min-width: 769px){
+          @media screen and (min-width: 769px) {
             padding: 16px 36px;
           }
-          &:hover{
+
+          &:hover {
             background: $main-color-light;
           }
 
-          &::before{
+          &::before {
             width: 17px;
             height: 10px;
             content: '';
@@ -68,62 +75,73 @@
             filter: invert(1) grayscale(1) brightness(5.5);
             transform: translateY(-50%) rotate(180deg);
             transition: transform .5s;
-            @media screen and (min-width: 769px){
+            @media screen and (min-width: 769px) {
               left: unset;
               right: 36px;
             }
-            @media screen and (min-width: 961px){
+            @media screen and (min-width: 961px) {
               width: 21px;
               height: 17px;
             }
           }
         }
-        >ul{
+
+        > ul {
           display: none;
           border: 1px solid #E3E5E8;
           box-sizing: border-box;
-          >li{
+
+          > li {
             border-bottom: 1px solid rgba(10, 24, 49, 0.15);
             background: #F1F1F1;
             color: $main-color;
             margin-bottom: 0;
-            &:last-child{
-              >.cost__list_content{
+
+            &:last-child {
+              > .cost__list_content {
                 border: none;
               }
             }
-            >span{
+
+            > span {
               box-sizing: border-box;
               padding: 16px 56px;
-              @media screen and (min-width: 768px){
+              @media screen and (min-width: 768px) {
                 padding: 16px 36px;
               }
-              &:hover{
+
+              &:hover {
                 color: $main-color;
                 background: unset;
               }
-              &::before{
-                filter:none;
+
+              &::before {
+                filter: none;
               }
             }
-            >span.active{
+
+            > span.active {
               border-bottom: 1px solid rgba(10, 24, 49, 0.15);
             }
-            >ul{
+
+            > ul {
               display: none;
               border: none;
-              >li{
+
+              > li {
                 border: none;
                 background: white;
-                color:$main-color;
+                color: $main-color;
                 box-sizing: border-box;
-                &:last-child{
-                  >.cost__list_content{
+
+                &:last-child {
+                  > .cost__list_content {
                     border: none;
                   }
                 }
-                span{
-                  &::before{
+
+                span {
+                  &::before {
                     display: none;
                   }
                 }
@@ -134,93 +152,113 @@
       }
     }
   }
-  &__list{
+
+  &__list {
     width: 100%;
     margin: 0;
     padding: 0;
     list-style: none;
-    &_item{
+
+    &_item {
       position: relative;
       width: 100%;
       padding: 0;
-      &.price-element{
+
+      &.price-element {
         background: white;
       }
-      span{
+
+      span {
         display: flex;
         box-sizing: border-box;
         font-size: 14px;
-        @media screen and (min-width: 961px){
+        @media screen and (min-width: 961px) {
           font-size: 17px;
         }
-        &.active{
-          &::before{
+
+        &.active {
+          &::before {
             transform: translateY(-50%) rotate(0deg) !important;
           }
         }
       }
     }
-    &_content{
+
+    &_content {
       margin: 0 18px;
-      @media screen and (min-width: 961px){
+      @media screen and (min-width: 961px) {
         margin: 0 36px;
       }
       display: flex;
       padding: 8px 0;
       align-items: center;
-      border-bottom: 1px solid rgba($main-color-dark,.15);
+      border-bottom: 1px solid rgba($main-color-dark, .15);
 
-      &:hover{
-        button{
+      &:hover {
+        button {
           visibility: visible;
         }
       }
-      &.tv{
+
+      &.tv {
         position: relative;
-        &::before{
+        @media screen and (max-width: 961px){
+          margin: 0 25px;
+        }
+
+        &::before {
           position: absolute;
           display: block;
           content: '';
-          width: 12px;
-          height: 12px;
+          width: 18px;
+          height: 18px;
           background: url("../../img/cost/tv.svg") center / contain no-repeat;
           top: 50%;
           transform: translateY(-50%);
-          left: -15px;
-          @media screen and (min-width: 961px){
+          left: -22px;
+          @media screen and (min-width: 961px) {
             width: 20px;
             height: 20px;
             left: -28px;
           }
         }
       }
-      &_additional{
+
+      &_additional {
         flex-basis: 15%;
         text-align: center;
         padding: 0 10px;
         box-sizing: border-box;
       }
-      &_title{
+
+      &_title {
         flex-basis: 50%;
         flex-grow: 1;
       }
-      &_price{
+
+      &_price {
         text-align: center;
         color: $main-color-dark;
-        margin: 0 20px;
-        &:hover{
+        margin: 0 10px;
+        @media screen and (min-width: 961px){
+          margin: 0 20px;
+        }
+
+        &:hover {
           text-decoration: none;
         }
       }
-      &_del{
+
+      &_del {
         flex-basis: 100%;
         display: block;
         color: #858C98;
         position: relative;
         margin-left: auto;
         margin-right: auto;
-        padding: 0!important;
-        &:hover{
+        padding: 0 !important;
+
+        &:hover {
           text-decoration: none !important;
         }
 
@@ -237,13 +275,14 @@
           opacity: 1;
         }
       }
-      button{
+
+      button {
         visibility: hidden;
         max-width: 115px;
-        @media screen and (min-width: 961px){
+        @media screen and (min-width: 961px) {
           padding: 5px 0;
         }
-        @media screen and (min-width: 1200px){
+        @media screen and (min-width: 1200px) {
           max-width: 235px;
         }
       }
@@ -251,13 +290,47 @@
   }
 }
 
-.cost__list_content_price::after {
-  content: "₽";
-  margin-left: 0.3em;
-  font-size: 0.95em;
+//.cost__list_content_price::after {
+//  content: "\20BD";
+//  margin-left: 0.3em;
+//  font-size: 0.95em;
+//}
+//
+//.cost__list_content_del::after {
+//  content: "\20BD";
+//  margin-left: 0.3em;
+//  font-size: 0.95em;
+//}
+
+.cost__wrapper {
+  @media screen and (max-width: 960px) {
+    position: relative;
+  }
+
+  &::after {
+    display: block;
+    content: '';
+    position: absolute;
+    right: 15%;
+    top: 16px;
+    width: 20px;
+    height: 20px;
+    background: url("../../img/cost/hand.svg") center / contain no-repeat;
+    animation: slides 1.5s infinite linear;
+    @media screen and (min-width: 653px) {
+      display: none;
+    }
+  }
 }
-.cost__list_content_del::after {
-  content: "₽";
-  margin-left: 0.3em;
-  font-size: 0.95em;
+
+@keyframes slides {
+  from {
+    right: 15%;
+  }
+  50% {
+    right: 5%;
+  }
+  to {
+    right: 15%;
+  }
 }

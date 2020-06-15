@@ -8,11 +8,11 @@ $bg-gray: #F1F1F1;
 *{
   -webkit-font-smoothing: antialiased;
   font-smooth: antialiased;
+  font-family: 'Exo 2', sans-serif;
 }
 body, html {
   margin: 0;
   padding: 0;
-  font-family: 'Exo 2', sans-serif;
   background: $bg-gray;
 }
 body{

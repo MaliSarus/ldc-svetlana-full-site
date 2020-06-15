@@ -35,9 +35,7 @@
       background-size: auto 100%;
     }
     .slick-list,.slick-track{
-      @media screen and (min-width: 577px){
-        display: flex;
-      }
+      display: block;
     }
   }
 

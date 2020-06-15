@@ -318,10 +318,10 @@
   width: 30%;
   height: 100%;
   display: block;
-  background: url("../../img/header/arrow.svg") right no-repeat;
+  background: url("../../img/header/arrow.svg") calc(100% - 15px) no-repeat;
   position: absolute;
   z-index: 10;
-  right: 15px;
+  right: 0;
   top: 50%;
   transform: translateY(-50%);
   pointer-events: all;
@@ -1506,18 +1506,16 @@ ol.features-list {
 .categories-top {
   &__block {
     h2 {
-      font-size: 20px;
+      font-size: 18px;
       color: $main-color-dark;
-      font-weight: bold;
+      font-weight: 600;
       margin-bottom: 12px;
       @media screen and (min-width: 577px) {
-        font-size: 24px;
+        font-size: 20px;
       }
       @media screen and (min-width: 961px) {
+        font-size: 24px;
         margin-bottom: 18px;
-      }
-      @media screen and (min-width: 1400px) {
-        font-size: 30px;
       }
     }
   }
@@ -1528,4 +1526,11 @@ ol.features-list {
       margin-bottom: 1px;
     }
   }
+}
+
+.rur{
+  width: 11px;
+  height: 11px;
+  display: inline;
+  fill: $main-color-dark;
 }

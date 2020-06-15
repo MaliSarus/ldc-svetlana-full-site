@@ -138,14 +138,20 @@
     padding: 18px 15px;
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     @media screen and (min-width: 961px){
       background: none;
       padding: 0;
     }
     &_item{
-      flex-basis: calc(100% / 2 - 4.5px);
-      @media screen and (min-width: 961px){
+      flex-basis: 100%;
+      margin-bottom: 12px;
+      &:last-child{
+        margin-bottom: 0;
+      }
+      @media screen and (min-width: 769px){
         flex-basis: calc(100% / 2 - 11px);
+        margin-bottom: 0;
       }
     }
     &_icon{

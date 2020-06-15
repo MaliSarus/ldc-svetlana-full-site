@@ -1,7 +1,8 @@
 <div class="popup">
     <div class="popup__block">
-        Спасибо! Ваша заявка принята
-        <span class="popup-close-button">lol</span>
+        <span class="popup-close-button cross"></span>
+        <span class="text">Спасибо! Ваша заявка принята</span>
+        <span class="popup-close-button"></span>
     </div>
 </div>
 
