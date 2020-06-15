@@ -474,15 +474,17 @@
         transform: skewX(15deg);
         padding: 10px 15px;
 
-        svg{
+        >svg{
           margin-right: 10px;
+          height: 30px;
+          width: 50px;
+          display: inline-block;
           * {
             fill: white;
           }
         }
         >span{
-          margin-top: -5px;
-          font-weight: normal;
+          margin-top: -3px;
         }
       }
     }

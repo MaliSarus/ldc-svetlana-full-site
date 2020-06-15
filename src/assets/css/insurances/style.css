@@ -2806,15 +2806,17 @@ ol.features-list li::before {
     transform: skewX(15deg);
     padding: 10px 15px;
   }
-  .header__emergency-call a svg {
+  .header__emergency-call a > svg {
     margin-right: 10px;
+    height: 30px;
+    width: 50px;
+    display: inline-block;
   }
-  .header__emergency-call a svg * {
+  .header__emergency-call a > svg * {
     fill: white;
   }
   .header__emergency-call a > span {
-    margin-top: -5px;
-    font-weight: normal;
+    margin-top: -3px;
   }
 }
 
@@ -4675,6 +4677,12 @@ ol.features-list li::before {
   -webkit-transform: skewX(15deg);
   -ms-transform: skewX(15deg);
   transform: skewX(15deg);
+}
+
+.tap-menu__button_logo_emergency > svg {
+  height: 25px;
+  width: 25px;
+  display: inline-block;
 }
 
 .tap-menu__button_logo_emergency > svg * {

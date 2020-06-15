@@ -28,7 +28,7 @@
                         Врачи
                     </a>
                     <a href="#" class="tap-menu__button">
-                        <div class="tap-menu__button_logo tap-menu__button_logo_emergency"><svg style="height: 25px; width: 25px; display: inline-block"><use xlink:href="#logo" ></use></svg></div>
+                        <div class="tap-menu__button_logo tap-menu__button_logo_emergency"><svg><use xlink:href="#logo" ></use></svg></div>
                         Травмпункт
                     </a>
                     <a href="#" class="tap-menu__button">
