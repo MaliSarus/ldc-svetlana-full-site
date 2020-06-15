@@ -95,8 +95,8 @@
                 </div>
                 <div class="header__emergency-call">
                     <a href="../emergency-room.php">
-                        <img src="./assets/img/header/emergency-call-24-7.svg" alt="Срочный звонок">
-                        Травмпункт
+                        <svg style="height: 30px; width: 50px; display: inline-block"><use xlink:href="#logo" ></use></svg>
+                        <strong>Травмпункт</strong>
                     </a>
                 </div>
             </div>

@@ -218,8 +218,13 @@
         background-color: $accent-color;
         margin-bottom: 6px;
 
-        img {
+        >* {
           transform: skewX(15deg);
+        }
+        >svg{
+          *{
+            fill: white;
+          }
         }
       }
     }

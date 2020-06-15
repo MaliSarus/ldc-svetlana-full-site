@@ -2763,8 +2763,16 @@ ol.features-list li::before {
 
 @media screen and (min-width: 961px) {
   .header__emergency-call {
-    display: block;
-    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: 60px;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
     background-color: #E84E2C;
     -webkit-transform: skewX(-15deg) translateX(-10px);
     -ms-transform: skewX(-15deg) translateX(-10px);
@@ -2782,7 +2790,15 @@ ol.features-list li::before {
     background-color: #3F5A8A;
   }
   .header__emergency-call a {
-    display: block;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
     height: 100%;
     color: white;
     -webkit-transform: skewX(15deg);
@@ -2790,9 +2806,15 @@ ol.features-list li::before {
     transform: skewX(15deg);
     padding: 10px 15px;
   }
-  .header__emergency-call a img {
+  .header__emergency-call a svg {
     margin-right: 10px;
-    vertical-align: middle;
+  }
+  .header__emergency-call a svg * {
+    fill: white;
+  }
+  .header__emergency-call a > span {
+    margin-top: -5px;
+    font-weight: normal;
   }
 }
 
@@ -6539,10 +6561,14 @@ ol.features-list li::before {
   margin-bottom: 6px;
 }
 
-.tap-menu__button_logo_emergency img {
+.tap-menu__button_logo_emergency > * {
   -webkit-transform: skewX(15deg);
   -ms-transform: skewX(15deg);
   transform: skewX(15deg);
+}
+
+.tap-menu__button_logo_emergency > svg * {
+  fill: white;
 }
 
 @media screen and (min-width: 961px) {
