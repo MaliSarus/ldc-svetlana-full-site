@@ -35,9 +35,8 @@
     }
 
     ul {
-      width: 623px;
+      width: 100%;
       @media screen and (min-width: 650px) {
-        width: 100%;
         box-sizing: border-box;
         max-width: 100%;
       }
@@ -186,17 +185,22 @@
 
     &_content {
       margin: 0 18px;
-      @media screen and (min-width: 961px) {
-        margin: 0 36px;
-      }
       display: flex;
+      flex-wrap: wrap;
       padding: 8px 0;
       align-items: center;
+      justify-content: space-between;
       border-bottom: 1px solid rgba($main-color-dark, .15);
-
+      @media screen and (min-width: 961px) {
+        justify-content: flex-start;
+        margin: 0 36px;
+        flex-wrap: nowrap;
+      }
       &:hover {
-        button {
-          visibility: visible;
+        @media screen and (min-width: 961px){
+          button {
+            visibility: visible;
+          }
         }
       }
 
@@ -225,21 +229,34 @@
       }
 
       &_additional {
-        flex-basis: 15%;
+        flex-basis: 25%;
         text-align: center;
         padding: 0 10px;
         box-sizing: border-box;
+        font-size: 14px;
+        @media screen and (min-width: 961){
+          flex-basis: 15%;
+          font-size: 17px;
+        }
       }
 
       &_title {
-        flex-basis: 50%;
+        flex-basis: 100%;
         flex-grow: 1;
+        margin-bottom: 10px;
+        font-size: 14px;
+        @media screen and (min-width: 961px){
+          flex-basis: 50%;
+          margin-bottom: 0;
+          font-size: 17px;
+        }
       }
 
       &_price {
+        white-space: nowrap;
         text-align: center;
         color: $main-color-dark;
-        margin: 0 10px;
+        margin-right: 10px;
         @media screen and (min-width: 961px){
           margin: 0 20px;
         }
@@ -277,10 +294,10 @@
       }
 
       button {
-        visibility: hidden;
         max-width: 115px;
+        padding: 5px 0;
         @media screen and (min-width: 961px) {
-          padding: 5px 0;
+          visibility: hidden;
         }
         @media screen and (min-width: 1200px) {
           max-width: 235px;
@@ -307,20 +324,20 @@
     position: relative;
   }
 
-  &::after {
-    display: block;
-    content: '';
-    position: absolute;
-    right: 15%;
-    top: 16px;
-    width: 20px;
-    height: 20px;
-    background: url("../../img/cost/hand.svg") center / contain no-repeat;
-    animation: slides 1.5s infinite linear;
-    @media screen and (min-width: 653px) {
-      display: none;
-    }
-  }
+  //&::after {
+  //  display: block;
+  //  content: '';
+  //  position: absolute;
+  //  right: 15%;
+  //  top: 16px;
+  //  width: 20px;
+  //  height: 20px;
+  //  background: url("../../img/cost/hand.svg") center / contain no-repeat;
+  //  animation: slides 1.5s infinite linear;
+  //  @media screen and (min-width: 653px) {
+  //    display: none;
+  //  }
+  //}
 }
 
 @keyframes slides {

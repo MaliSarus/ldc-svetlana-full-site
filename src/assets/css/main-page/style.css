@@ -3214,6 +3214,7 @@ ol.features-list li::before {
 
 @media screen and (min-width: 961px) {
   .about__item {
+    min-height: 600px;
     width: 100%;
   }
 }

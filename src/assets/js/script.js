@@ -14,9 +14,9 @@ let dropdownFlag = 0;
 let appendFlag = 0;
 let resizeFlag = 0;
 let prependFlag = 0;
-let sbPrice;
+// let sbPrice;
 let sbNavLinks;
-let sbCost;
+// let sbCost;
 let sbNews;
 let sbPartners;
 let posTop = 0;
@@ -794,29 +794,29 @@ $(window).on('resize', function () {
             }
         }
 
-        if (isSet($('.price'))) {
-            if ($(window).width() > 677 && typeof (sbPrice) != 'undefined') {
-                if (isSet($('.price__list'))) {
-                    sbPrice.destroy();
-                    sbPrice = undefined;
-                }
-            } else if ($(window).width() <= 677 && typeof (sbPrice) === 'undefined') {
-                sbPrice = new ScrollBooster({
-                    viewport: document.querySelector('.price__list'),
-                    content: document.querySelector('.price__list_wrapper'),
-                    scrollMode: "transform", // use CSS 'transform' property
-                    direction: "horizontal", // allow only horizontal scrolling
-                    pointerMode: 'all',
-                    pointerDownPreventDefault: false,
-                    onClick: (state, event) => {
-                        if ($('.form-call-button').is(event.target)) {
-                            popupFormHandler();
-                        }
-                    }
-                    // emulateScroll: true, // scroll on wheel events
-                });
-            }
-        }
+        // if (isSet($('.price'))) {
+        //     if ($(window).width() > 677 && typeof (sbPrice) != 'undefined') {
+        //         if (isSet($('.price__list'))) {
+        //             sbPrice.destroy();
+        //             sbPrice = undefined;
+        //         }
+        //     } else if ($(window).width() <= 677 && typeof (sbPrice) === 'undefined') {
+        //         sbPrice = new ScrollBooster({
+        //             viewport: document.querySelector('.price__list'),
+        //             content: document.querySelector('.price__list_wrapper'),
+        //             scrollMode: "transform", // use CSS 'transform' property
+        //             direction: "horizontal", // allow only horizontal scrolling
+        //             pointerMode: 'all',
+        //             pointerDownPreventDefault: false,
+        //             onClick: (state, event) => {
+        //                 if ($('.form-call-button').is(event.target)) {
+        //                     popupFormHandler();
+        //                 }
+        //             }
+        //             // emulateScroll: true, // scroll on wheel events
+        //         });
+        //     }
+        // }
         if (isSet($('.nav-links'))) {
             if ($(window).width() > 960 && typeof (sbNavLinks) != 'undefined') {
                 sbNavLinks.destroy();
@@ -1025,45 +1025,45 @@ $(window).on('resize', function () {
             }
         }
 
-        if (isSet($('.cost'))) {
-            if ($(window).width() > 768 && typeof (sbCost) != 'undefined') {
-                if ($('.cost').length == 1) {
-                    sbCost.destroy();
-                    sbCost = undefined;
-                }
-                if ($('.cost').length > 1) {
-                    sbCost.forEach(function (el, i) {
-                        el.destroy();
-                    });
-                    sbCost = undefined;
-                }
-            } else if ($(window).width() <= 768 && typeof (sbCost) === 'undefined') {
-                if ($('.cost').length == 1) {
-                    sbCost = new ScrollBooster({
-                        viewport: document.querySelector('.cost__wrapper'),
-                        content: document.querySelector('.cost__wrapper > ul.cost__list'),
-                        scrollMode: "transform", // use CSS 'transform' property
-                        direction: "horizontal", // allow only horizontal scrollin
-                        pointerMode: 'all',
-                        pointerDownPreventDefault: false
-                    });
-                }
-                if ($('.cost').length > 1) {
-                    sbCost = Array(sbCost);
-                    sbCost = [];
-                    $('.cost').each(function () {
-                        sbCost.push(new ScrollBooster({
-                            viewport: $(this).find('.cost__wrapper')[0],
-                            content: $(this).find('.cost__wrapper').children()[0],
-                            scrollMode: "transform", // use CSS 'transform' property
-                            direction: "horizontal", // allow only horizontal scrollin
-                            pointerMode: 'all',
-                            pointerDownPreventDefault: false
-                        }));
-                    });
-                }
-            }
-        }
+        // if (isSet($('.cost'))) {
+        //     if ($(window).width() > 768 && typeof (sbCost) != 'undefined') {
+        //         if ($('.cost').length == 1) {
+        //             sbCost.destroy();
+        //             sbCost = undefined;
+        //         }
+        //         if ($('.cost').length > 1) {
+        //             sbCost.forEach(function (el, i) {
+        //                 el.destroy();
+        //             });
+        //             sbCost = undefined;
+        //         }
+        //     } else if ($(window).width() <= 768 && typeof (sbCost) === 'undefined') {
+        //         if ($('.cost').length == 1) {
+        //             sbCost = new ScrollBooster({
+        //                 viewport: document.querySelector('.cost__wrapper'),
+        //                 content: document.querySelector('.cost__wrapper > ul.cost__list'),
+        //                 scrollMode: "transform", // use CSS 'transform' property
+        //                 direction: "horizontal", // allow only horizontal scrollin
+        //                 pointerMode: 'all',
+        //                 pointerDownPreventDefault: false
+        //             });
+        //         }
+        //         if ($('.cost').length > 1) {
+        //             sbCost = Array(sbCost);
+        //             sbCost = [];
+        //             $('.cost').each(function () {
+        //                 sbCost.push(new ScrollBooster({
+        //                     viewport: $(this).find('.cost__wrapper')[0],
+        //                     content: $(this).find('.cost__wrapper').children()[0],
+        //                     scrollMode: "transform", // use CSS 'transform' property
+        //                     direction: "horizontal", // allow only horizontal scrollin
+        //                     pointerMode: 'all',
+        //                     pointerDownPreventDefault: false
+        //                 }));
+        //             });
+        //         }
+        //     }
+        // }
         if ($(window).width() <= ($('.direction-services__tabs').width() + 30) && !($('.direction-services__tabs').hasClass('slick-initialized'))) {
             dirServSliderInit();
         } else if ($(window).width() > ($('.direction-services__tabs').width() + 30) && $('.direction-services__tabs').hasClass('slick-initialized')) {
@@ -2330,23 +2330,23 @@ $(document).ready(function () {
         appendFlag = 1;
     }
 
-    if (isSet($('.price'))) {
-        if ($(window).width() < 677) {
-            sbPrice = new ScrollBooster({
-                viewport: document.querySelector('.price__list'),
-                content: document.querySelector('.price__list_wrapper'),
-                scrollMode: "transform", // use CSS 'transform' property
-                direction: "horizontal", // allow only horizontal scrollin
-                pointerMode: 'all',
-                pointerDownPreventDefault: false,
-                onClick: (state, event) => {
-                    if ($('.form-call-button').is(event.target)) {
-                        popupFormHandler();
-                    }
-                }
-            });
-        }
-    }
+    // if (isSet($('.price'))) {
+    //     if ($(window).width() < 677) {
+    //         sbPrice = new ScrollBooster({
+    //             viewport: document.querySelector('.price__list'),
+    //             content: document.querySelector('.price__list_wrapper'),
+    //             scrollMode: "transform", // use CSS 'transform' property
+    //             direction: "horizontal", // allow only horizontal scrollin
+    //             pointerMode: 'all',
+    //             pointerDownPreventDefault: false,
+    //             onClick: (state, event) => {
+    //                 if ($('.form-call-button').is(event.target)) {
+    //                     popupFormHandler();
+    //                 }
+    //             }
+    //         });
+    //     }
+    // }
 
     if (isSet($('.science-articles'))) {
         if ($('.science-articles__content_item').length > 2) {
@@ -2429,32 +2429,32 @@ $(document).ready(function () {
                 border: 'none'
             })
         }
-        if ($(window).width() <= 768) {
-            if ($('.cost').length == 1) {
-                sbCost = new ScrollBooster({
-                    viewport: document.querySelector('.cost__wrapper'),
-                    content: document.querySelector('.cost__wrapper > ul.cost__list'),
-                    scrollMode: "transform", // use CSS 'transform' property
-                    direction: "horizontal", // allow only horizontal scrollin
-                    pointerMode: 'all',
-                    pointerDownPreventDefault: false
-                });
-            }
-            if ($('.cost').length > 1) {
-                sbCost = Array(sbCost);
-                sbCost = [];
-                $('.cost').each(function () {
-                    sbCost.push(new ScrollBooster({
-                        viewport: $(this).find('.cost__wrapper')[0],
-                        content: $(this).find('.cost__wrapper').children()[0],
-                        scrollMode: "transform", // use CSS 'transform' property
-                        direction: "horizontal", // allow only horizontal scrollin
-                        pointerMode: 'all',
-                        pointerDownPreventDefault: false
-                    }));
-                });
-            }
-        }
+        // if ($(window).width() <= 768) {
+        //     if ($('.cost').length == 1) {
+        //         sbCost = new ScrollBooster({
+        //             viewport: document.querySelector('.cost__wrapper'),
+        //             content: document.querySelector('.cost__wrapper > ul.cost__list'),
+        //             scrollMode: "transform", // use CSS 'transform' property
+        //             direction: "horizontal", // allow only horizontal scrollin
+        //             pointerMode: 'all',
+        //             pointerDownPreventDefault: false
+        //         });
+        //     }
+        //     if ($('.cost').length > 1) {
+        //         sbCost = Array(sbCost);
+        //         sbCost = [];
+        //         $('.cost').each(function () {
+        //             sbCost.push(new ScrollBooster({
+        //                 viewport: $(this).find('.cost__wrapper')[0],
+        //                 content: $(this).find('.cost__wrapper').children()[0],
+        //                 scrollMode: "transform", // use CSS 'transform' property
+        //                 direction: "horizontal", // allow only horizontal scrollin
+        //                 pointerMode: 'all',
+        //                 pointerDownPreventDefault: false
+        //             }));
+        //         });
+        //     }
+        // }
         const firstLevel = $($('.cost__wrapper')[0]).children('ul').children('li:first-child');
         const secondLevel = firstLevel.children('ul');
         $(secondLevel[0]).slideDown().siblings('span').addClass('active');

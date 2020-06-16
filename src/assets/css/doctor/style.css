@@ -3540,10 +3540,13 @@ ol.features-list li::before {
 
 .price__list {
   overflow: hidden;
+  background-color: white;
 }
 
 .price__list_wrapper {
-  min-width: 610px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
   border: 1px solid rgba(42, 68, 114, 0.15);
   padding: 0 8px;
 }
@@ -3572,6 +3575,8 @@ ol.features-list li::before {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
   width: 100%;
   padding: 11px 0;
   -webkit-box-align: center;
@@ -3582,6 +3587,13 @@ ol.features-list li::before {
   justify-content: space-between;
   border-top: 1px solid rgba(42, 68, 114, 0.15);
   border-bottom: 1px solid rgba(42, 68, 114, 0.15);
+}
+
+@media screen and (min-width: 961px) {
+  .price__list_item {
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+  }
 }
 
 .price__list_item::before {
@@ -3646,12 +3658,12 @@ ol.features-list li::before {
   max-width: 115px;
   max-height: 52px;
   margin-right: 5px;
+  padding: 5px 0;
 }
 
 @media screen and (min-width: 961px) {
   .price__list_item button {
     max-width: 234px;
-    padding: 5px 0;
   }
 }
 
@@ -3681,16 +3693,31 @@ ol.features-list li::before {
   -webkit-box-flex: 1;
   -ms-flex-positive: 1;
   flex-grow: 1;
-  -ms-flex-preferred-size: 50%;
-  flex-basis: 50%;
+  -ms-flex-preferred-size: 100%;
+  flex-basis: 100%;
   line-height: 120%;
   color: #2A4472;
+  margin-bottom: 10px;
+}
+
+@media screen and (min-width: 961px) {
+  .price__text {
+    -ms-flex-preferred-size: 50%;
+    flex-basis: 50%;
+    margin-bottom: 0;
+  }
 }
 
 .price__pricing {
   display: block;
-  margin: 0 20px;
+  margin-right: 20px;
   text-align: center;
+}
+
+@media screen and (min-width: 961px) {
+  .price__pricing {
+    margin: 0 20px;
+  }
 }
 
 .price__pricing_del {
