@@ -42,35 +42,39 @@ require "./modules/dropdown-menu.php";
 <!-------------------------------------------------------------------------------------------------------------------->
 <link rel="stylesheet"
       href="./assets/css/<?php echo basename(__FILE__, '.php'); ?>/style.css?ver=<?php echo date("His") ?>">
-<section class="test">
-    <div class="container">
-        <div class="row">
-            <div class="test__block">
-                <div class="infoblock__item">
-                    <div class="infoblock__row">
-                        <div class="infoblock__item_content">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur, eos explicabo
-                                incidunt laborum maiores porro totam voluptate! Accusantium, exercitationem, fuga.</p>
-                        </div>
-                        <div class="infoblock__item_content">
-                            <img src="./assets/img/tools/2.jpg" alt="" height="100px">
-                        </div>
+<!--<section class="test">-->
+<!--    <div class="container">-->
+<!--        <div class="row">-->
+<!--            <div class="test__block">-->
+<!--                <div class="infoblock__item">-->
+<!--                    <div class="infoblock__row">-->
+<!--                        <div class="infoblock__item_content">-->
+<!--                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur, eos explicabo-->
+<!--                                incidunt laborum maiores porro totam voluptate! Accusantium, exercitationem, fuga.</p>-->
+<!--                        </div>-->
+<!--                        <div class="infoblock__item_content">-->
+<!--                            <img src="./assets/img/tools/2.jpg" alt="" height="100px">-->
+<!--                        </div>-->
+<!---->
+<!--                    </div>-->
+<!--                    <div class="infoblock__row">-->
+<!--                        <div class="infoblock__item_content">-->
+<!--                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur, eos explicabo-->
+<!--                                incidunt laborum maiores porro totam voluptate! Accusantium, exercitationem, fuga.</p>-->
+<!--                        </div>-->
+<!--                        <div class="infoblock__item_content">-->
+<!--                            <img src="./assets/img/tools/2.jpg" alt="">-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</section>-->
 
-                    </div>
-                    <div class="infoblock__row">
-                        <div class="infoblock__item_content">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur, eos explicabo
-                                incidunt laborum maiores porro totam voluptate! Accusantium, exercitationem, fuga.</p>
-                        </div>
-                        <div class="infoblock__item_content">
-                            <img src="./assets/img/tools/2.jpg" alt="">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+<?
+require "./modules/rent.php";
+?>
 
 <!----------------------------НЕ ТРОГАТЬ---------------------------------->
 <?
