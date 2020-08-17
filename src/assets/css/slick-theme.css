@@ -1,5 +1,7 @@
 @charset "UTF-8";
+
 /* Icons */
+
 @font-face {
   font-family: "slick";
   src: url("./fonts/slick.eot");
@@ -9,6 +11,7 @@
 }
 
 /* Arrows */
+
 .slick-prev,
 .slick-next {
   position: absolute;
@@ -29,7 +32,8 @@
   outline: none;
 }
 
-.slick-prev:hover, .slick-prev:focus,
+.slick-prev:hover,
+.slick-prev:focus,
 .slick-next:hover,
 .slick-next:focus {
   outline: none;
@@ -37,7 +41,8 @@
   color: transparent;
 }
 
-.slick-prev:hover:before, .slick-prev:focus:before,
+.slick-prev:hover:before,
+.slick-prev:focus:before,
 .slick-next:hover:before,
 .slick-next:focus:before {
   opacity: 1;
@@ -94,6 +99,7 @@
 }
 
 /* Dots */
+
 .slick-dotted.slick-slider {
   margin-bottom: 30px;
 }
@@ -133,11 +139,13 @@
   cursor: pointer;
 }
 
-.slick-dots li button:hover, .slick-dots li button:focus {
+.slick-dots li button:hover,
+.slick-dots li button:focus {
   outline: none;
 }
 
-.slick-dots li button:hover:before, .slick-dots li button:focus:before {
+.slick-dots li button:hover:before,
+.slick-dots li button:focus:before {
   opacity: 1;
 }
 

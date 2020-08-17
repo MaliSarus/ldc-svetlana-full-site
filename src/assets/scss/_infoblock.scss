@@ -7,6 +7,7 @@
 
   &__block {
     width: 100%;
+    box-sizing: border-box;
     padding: 18px 15px;
     @media screen and (min-width: 961px) {
       padding: 60px 0;
@@ -139,15 +140,27 @@
             top: 0;
           }
         }
+
         p{
           margin-bottom: 0;
         }
       }
+      a{
+        color: $main-color;
+        text-decoration: none;
+        transition: color .2s;
+        &:hover{
+          color: $accent-color;
+        }
+        &:active{
+          color: $accent-color-light;
+        }
+      }
       .content-image{
         width: 100%;
-        @media screen and (min-width: 769px){
-          width: 50%;
-        }
+        //@media screen and (min-width: 769px){
+        //  width: 50%;
+        //}
       }
       img{
         width: 100%;

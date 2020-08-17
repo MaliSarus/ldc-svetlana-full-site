@@ -1,0 +1,47 @@
+@import "../fonts";
+@import "../common";
+@import "../interface";
+@import "../submit-popup";
+@import "../parallax-squares";
+@import "../header";
+@import "../dropdown-menu";
+@import "../appointment";
+@import "../about-unit";
+@import "../nav-links";
+@import "../infoblock";
+@import "../for-patient";
+@import "../news";
+@import "../rent";
+@import "../footer";
+
+@import "../animations";
+
+.about-unit{
+  background: white;
+  >img{
+    width: 100%;
+    height: 245px;
+    object-fit: contain;
+    object-position: center;
+    z-index: 2;
+    box-sizing: border-box;
+    padding: 5px;
+    @media screen and (min-width: 961px){
+      height: 100%;
+      padding: 10px;
+      width: 50%;
+      position: absolute;
+      right: 0;
+      z-index: 0;
+    }
+  }
+  &__desc{
+    a.btn{
+      margin-top: 12px;
+      @media screen and (min-width: 961px){
+        margin-top: 24px;
+        max-width: 245px;
+      }
+    }
+  }
+}

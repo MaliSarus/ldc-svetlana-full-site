@@ -65,7 +65,7 @@ require "./modules/unit-simple.php";
 require "./modules/tools.php";
 require "./modules/for-patient.php";
 ?>
-<script src="https://api-maps.yandex.ru/2.1/?apikey=d37e0946-ea4c-40d6-abe8-a0dba0b96a11&;width=100%25&amp;lang=ru_RU" type="text/javascript"></script>
+<script src="https://api-maps.yandex.ru/2.1.76/?apikey=d37e0946-ea4c-40d6-abe8-a0dba0b96a11&;width=100%25&amp;lang=ru_RU" type="text/javascript"></script>
 <script src="./assets/js/rounded-yandex/all.js" type="text/javascript"></script>
 <!----------------------------НЕ ТРОГАТЬ---------------------------------->
 <?

@@ -78,6 +78,19 @@
         }
       }
     }
+    ul{
+      padding: 0px 18px;
+      margin-bottom: 0;
+      li{
+        list-style: none;
+        color: white;
+        background-color: #E84E2C;
+        box-sizing: border-box;
+        padding: 5px;
+        margin-bottom: 3px;
+        display: inline-block;
+      }
+    }
     p{
       color:rgba($main-color-dark,.85);
       line-height: 140%;

@@ -42,39 +42,162 @@ require "./modules/dropdown-menu.php";
 <!-------------------------------------------------------------------------------------------------------------------->
 <link rel="stylesheet"
       href="./assets/css/<?php echo basename(__FILE__, '.php'); ?>/style.css?ver=<?php echo date("His") ?>">
-<!--<section class="test">-->
-<!--    <div class="container">-->
-<!--        <div class="row">-->
-<!--            <div class="test__block">-->
-<!--                <div class="infoblock__item">-->
-<!--                    <div class="infoblock__row">-->
-<!--                        <div class="infoblock__item_content">-->
-<!--                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur, eos explicabo-->
-<!--                                incidunt laborum maiores porro totam voluptate! Accusantium, exercitationem, fuga.</p>-->
-<!--                        </div>-->
-<!--                        <div class="infoblock__item_content">-->
-<!--                            <img src="./assets/img/tools/2.jpg" alt="" height="100px">-->
-<!--                        </div>-->
-<!---->
-<!--                    </div>-->
-<!--                    <div class="infoblock__row">-->
-<!--                        <div class="infoblock__item_content">-->
-<!--                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur, eos explicabo-->
-<!--                                incidunt laborum maiores porro totam voluptate! Accusantium, exercitationem, fuga.</p>-->
-<!--                        </div>-->
-<!--                        <div class="infoblock__item_content">-->
-<!--                            <img src="./assets/img/tools/2.jpg" alt="">-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--</section>-->
+<section class="test">
+    <div class="container">
+        <div class="row">
+            <div class="test__block">
+                <div class="infoblock__item">
+                    <div class="infoblock__row">
+                        <div class="infoblock__item_content">
+                            <div class="table__wrapper">
+                                <table>
+                                    <thead>
+                                        <th>Code</th>
+                                        <th>Company</th>
+                                        <th>Price</th>
+                                        <th>Change</th>
+                                        <th>Change %</th>
 
-<?
-require "./modules/rent.php";
-?>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>AAC</td>
+                                        <td>AUSTRALIAN COMPANY </td>
+                                        <td>$1.38</td>
+                                        <td>+2.01</td>
+                                        <td>-0.36%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>AAD</td>
+                                        <td>AUSENCO</td>
+                                        <td>$2.38</td>
+                                        <td>-0.01</td>
+                                        <td>-1.36%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>AAX</td>
+                                        <td>ADELAIDE</td>
+                                        <td>$3.22</td>
+                                        <td>+0.01</td>
+                                        <td>+1.36%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>XXD</td>
+                                        <td>ADITYA BIRLA</td>
+                                        <td>$1.02</td>
+                                        <td>-1.01</td>
+                                        <td>+2.36%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>AAC</td>
+                                        <td>AUSTRALIAN COMPANY </td>
+                                        <td>$1.38</td>
+                                        <td>+2.01</td>
+                                        <td>-0.36%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>AAD</td>
+                                        <td>AUSENCO</td>
+                                        <td>$2.38</td>
+                                        <td>-0.01</td>
+                                        <td>-1.36%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>AAX</td>
+                                        <td>ADELAIDE</td>
+                                        <td>$3.22</td>
+                                        <td>+0.01</td>
+                                        <td>+1.36%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>XXD</td>
+                                        <td>ADITYA BIRLA</td>
+                                        <td>$1.02</td>
+                                        <td>-1.01</td>
+                                        <td>+2.36%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>AAC</td>
+                                        <td>AUSTRALIAN COMPANY </td>
+                                        <td>$1.38</td>
+                                        <td>+2.01</td>
+                                        <td>-0.36%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>AAD</td>
+                                        <td>AUSENCO</td>
+                                        <td>$2.38</td>
+                                        <td>-0.01</td>
+                                        <td>-1.36%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>AAX</td>
+                                        <td>ADELAIDE</td>
+                                        <td>$3.22</td>
+                                        <td>+0.01</td>
+                                        <td>+1.36%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>XXD</td>
+                                        <td>ADITYA BIRLA</td>
+                                        <td>$1.02</td>
+                                        <td>-1.01</td>
+                                        <td>+2.36%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>AAC</td>
+                                        <td>AUSTRALIAN COMPANY </td>
+                                        <td>$1.38</td>
+                                        <td>+2.01</td>
+                                        <td>-0.36%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>AAD</td>
+                                        <td>AUSENCO</td>
+                                        <td>$2.38</td>
+                                        <td>-0.01</td>
+                                        <td>-1.36%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>AAX</td>
+                                        <td>ADELAIDE</td>
+                                        <td>$3.22</td>
+                                        <td>+0.01</td>
+                                        <td>+1.36%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>XXD</td>
+                                        <td>ADITYA BIRLA</td>
+                                        <td>$1.02</td>
+                                        <td>-1.01</td>
+                                        <td>+2.36%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>AAC</td>
+                                        <td>AUSTRALIAN COMPANY </td>
+                                        <td>$1.38</td>
+                                        <td>+2.01</td>
+                                        <td>-0.36%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>AAD</td>
+                                        <td>AUSENCO</td>
+                                        <td>$2.38</td>
+                                        <td>-0.01</td>
+                                        <td>-1.36%</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
 
 <!----------------------------НЕ ТРОГАТЬ---------------------------------->
 <?

@@ -29,7 +29,7 @@
       -webkit-transform: skewX(-17deg);
       -ms-transform: skewX(-17deg);
       transform: skewX(-17deg);
-      z-index: 10;
+      z-index: 2;
     }
     .container{
       padding: 0 15px;
@@ -65,6 +65,7 @@
     height: 100%;
     width: 100%;
     background: rgba(white,.6);
+    z-index: 1;
 
     @media screen and (min-width: 961px) {
       left: 20px;
@@ -95,8 +96,37 @@
       }
     }
   }
+  &__bages,&__tags{
+    margin-bottom: 12px;
+
+    span{
+      display: inline-block;
+      padding: 5px 10px;
+      color: white;
+      margin-bottom: 2px;
+      a{
+        color: white;
+      }
+    }
+  }
+
+  &__bages{
+    span{
+      background: $accent-color;
+    }
+  }
+  &__tags{
+    @media screen and (min-width: 961px){
+      margin-top: -20px;
+    }
+    span{
+      background: $main-color;
+    }
+  }
+
   &__block{
     box-sizing: border-box;
+    flex-basis: 100%;
     @media screen and (min-width: 961px){
       flex-basis: 50%;
       max-width: 685px;

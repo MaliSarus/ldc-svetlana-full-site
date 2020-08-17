@@ -23,6 +23,9 @@
         font-size: 24px;
         margin-bottom: 18px;
       }
+      @media screen and (min-width: 1400px) {
+        font-size: 30px;
+      }
     }
   }
   &__content{
@@ -54,19 +57,33 @@
       @media screen and (min-width: 961px){
         flex-basis: calc(100% / 4 - 20px);
         margin-bottom: 0;
+        border: 1px solid transparent;
+        transition: background-color .3s, border-color .25s, transform .2s;
+        &:hover{
+          border: 1px solid rgba(42, 68, 114, 0.3);
+          transform: scale(1.02);
+        }
       }
       &-content{
         box-sizing: border-box;
         padding: 18px 15px 45px;
         position: relative;
+        >p{
+          font-weight: bold;
+          font-size: 18px;
+          line-height: 120%;
+          color: $main-color-dark;
+          padding: 0;
+          margin-bottom: 28px;
+        }
         >span{
           position: absolute;
           left: 15px;
           bottom: 15px;
           font-weight: bold;
+          color: $main-color-dark;
           font-size: 24px;
           line-height: 32px;
-          color: $main-color-dark
         }
       }
     }

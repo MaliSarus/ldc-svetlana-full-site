@@ -14,13 +14,12 @@ let dropdownFlag = 0;
 let appendFlag = 0;
 let resizeFlag = 0;
 let prependFlag = 0;
-// let sbPrice;
 let sbNavLinks;
-// let sbCost;
 let sbNews;
 let sbPartners;
 let posTop = 0;
-let sbTable;
+
+window.aboutInterval = undefined;
 
 const isSlickLoaded = (typeof $.fn.slick !== 'undefined');
 
@@ -28,6 +27,92 @@ function isSet(element) {
     return element.length !== 0;
 }
 
+function autoplayHandler() {
+    const sliderButtons = $('.select-buttons__button');
+    const slides = $('.about__item');
+    const currentSlideIndex = slides.index($('.about__item_active'));
+    sliderButtons.off('click');
+    $(slides[currentSlideIndex]).addClass('about__item_deactivate');
+    sliderButtons.removeClass('select-buttons__button_active');
+
+    if (currentSlideIndex === slides.length - 1) {
+        const timerId = setTimeout(function () {
+            sliderButtons.off('click');
+            $(slides[currentSlideIndex]).removeClass('about__item_deactivate');
+            $(slides[currentSlideIndex]).removeClass('about__item_active');
+            slides.removeClass('about__item_active');
+            $(slides[0]).addClass('about__item_active');
+            $(sliderButtons[0]).addClass('select-buttons__button_active');
+            let sliderFlag = 0;
+            sliderButtons.on('click', function (event) {
+                const index = sliderButtons.index(event.currentTarget);
+                if ($(window).width() >= 1400) {
+                    if (sliderFlag == 0) {
+                        sliderButtons.removeClass('select-buttons__button_active');
+                        const prevItem = $('.about__item_active');
+                        const sliderItems = $('.about__item');
+                        const sliderItem = sliderItems[index];
+                        sliderButtons.removeClass('select-buttons__button_active');
+                        event.currentTarget.classList.add('select-buttons__button_active');
+                        prevItem.addClass('about__item_deactivate');
+                        sliderFlag = 1;
+                        const sliderTimeout = setTimeout(function () {
+                            prevItem.removeClass('about__item_deactivate');
+                            prevItem.removeClass('about__item_active');
+                            sliderItem.classList.add('about__item_active');
+                            sliderFlag = 0;
+                            clearTimeout(sliderTimeout);
+                        }, 900);
+                    }
+
+                } else {
+                    $('.about__slider').slick('slickGoTo', index, false);
+                    sliderButtons.removeClass('select-buttons__button_active');
+                    event.currentTarget.classList.add('select-buttons__button_active');
+                }
+            });
+            clearTimeout(timerId);
+        }, 900);
+    } else {
+        const timerId = setTimeout(function () {
+            sliderButtons.off('click');
+            $(slides[currentSlideIndex]).removeClass('about__item_deactivate');
+            $(slides[currentSlideIndex]).removeClass('about__item_active');
+            slides.removeClass('about__item_active');
+            $(slides[currentSlideIndex + 1]).addClass('about__item_active');
+            $(sliderButtons[currentSlideIndex + 1]).addClass('select-buttons__button_active');
+            let sliderFlag = 0;
+            sliderButtons.on('click', function (event) {
+                const index = sliderButtons.index(event.currentTarget);
+                if ($(window).width() >= 1400) {
+                    if (sliderFlag == 0) {
+                        sliderButtons.removeClass('select-buttons__button_active');
+                        const prevItem = $('.about__item_active');
+                        const sliderItems = $('.about__item');
+                        const sliderItem = sliderItems[index];
+                        sliderButtons.removeClass('select-buttons__button_active');
+                        event.currentTarget.classList.add('select-buttons__button_active');
+                        prevItem.addClass('about__item_deactivate');
+                        sliderFlag = 1;
+                        const sliderTimeout = setTimeout(function () {
+                            prevItem.removeClass('about__item_deactivate');
+                            prevItem.removeClass('about__item_active');
+                            sliderItem.classList.add('about__item_active');
+                            sliderFlag = 0;
+                            clearTimeout(sliderTimeout);
+                        }, 900);
+                    }
+
+                } else {
+                    $('.about__slider').slick('slickGoTo', index, false);
+                    sliderButtons.removeClass('select-buttons__button_active');
+                    event.currentTarget.classList.add('select-buttons__button_active');
+                }
+            });
+            clearTimeout(timerId);
+        }, 900);
+    }
+}
 
 const aboutSliderInit = () => {
     if (isSet($('.about__slider'))) {
@@ -36,8 +121,11 @@ const aboutSliderInit = () => {
             dots: false,
             arrows: false,
             infinite: false,
+            autoplay: true,
+            autoplaySpeed: 10000
         })
     }
+
 };
 const specSliderInit = () => {
     const specSlick = $('.specialists__slider');
@@ -266,6 +354,26 @@ const feedSliderInit = () => {
     $('.feedback__item-content').on('focus click', function () {
         feedSlick.children().removeAttr('style');
     });
+    feedSlick.on('beforeChange', function (event, slick, currentSlide, nextSlide) {
+            $('.feedback__item-content').each(function () {
+                if ($(this).hasClass('feedback__item-content_fill')) {
+                    $(this).animate({
+                        'max-height': '162px'
+                    }, function () {
+                        $(this).removeClass('feedback__item-content_unhide');
+                        $(this).parents('.feedback__item').css('height', maxHeight + 'px');
+                    });
+                } else {
+                    $(this).animate({
+                        'max-height': '90px'
+                    }, function () {
+                        $(this).removeClass('feedback__item-content_unhide');
+                        $(this).parents('.feedback__item').css('height', maxHeight + 'px');
+                    });
+                }
+            })
+        }
+    );
     feedSlick.on('breakpoint', function (event, slick, breakpoint) {
         if ($('.feedback__item').length <= slick.options.slidesToShow) {
             feedSlick.slick('unslick').css({
@@ -700,6 +808,7 @@ const navLinkScroll = (navLinkTop) => {
 //Действия при изменении размеров окна
 
 $(window).on('resize', function () {
+
         if ($(window).width() >= 961) {
             if (resizeFlag == 0) {
                 windowDesktopSizeChange();
@@ -772,6 +881,9 @@ $(window).on('resize', function () {
             if (isSet($('.about__slider'))) {
                 $('.about__slider').filter('.slick-initialized').slick("unslick");
                 $('.about__slider').children().removeAttr('tabindex');
+                if (aboutInterval === undefined) {
+                    aboutInterval = setInterval(autoplayHandler, 10000)
+                }
             }
         } else if (!$('.about__slider').hasClass('slick-initialized')) {
             if (isSet($('.about__slider'))) {
@@ -779,8 +891,12 @@ $(window).on('resize', function () {
                 aboutSliderInit();
                 $('.about__slider').slick('setPosition');
                 selectButtons.appendTo('.about__slider');
+                clearInterval(aboutInterval);
+                aboutInterval = undefined;
+
             }
         }
+
 
         if ($(window).width() > 1130) {
             if (isSet($('.units__menu > ul'))) {
@@ -1400,12 +1516,19 @@ window.onload = function () {
                         sliderFlag = 0
                     }, 900);
                 }
+
             } else {
                 $('.about__slider').slick('slickGoTo', index, false);
                 sliderButtons.removeClass('select-buttons__button_active');
                 event.currentTarget.classList.add('select-buttons__button_active');
             }
         });
+    }
+    if (isSet($('.about__slider')) && $(window).width() > 1399 && aboutInterval === undefined) {
+        // $('.select-buttons__button').off('click');
+        aboutInterval = setInterval(
+            autoplayHandler
+            , 10000)
     }
 
     //Изменение поля поиска
@@ -1736,13 +1859,35 @@ $(document).ready(function () {
             } else {
                 $(this).addClass('image_blur_top_0');
             }
-        })
+            if(!($(this).hasClass('image_blur--off'))){
+                $(this).append('<div class="image_blur-hover" style="height:' + $(this).children('img').height() + 'px;"></div>');
+            }
+            // $(this).append(`<div class="image_blur-hover" style="height: ${$(this).children('img').height()}px;"></div>`);
+        });
 
     }
     if (isSet($('.licenses'))) {
         const images = $('.licenses__images > li');
         images.magnificPopup({
             delegate: 'img',
+            type: 'image',
+            callbacks: {
+                elementParse: function (item) {
+                    item.src = item.el.attr('src');
+                }
+            },
+            gallery: {
+                enabled: true, // set to true to enable gallery
+            }
+        });
+        images.on('click', function () {
+            images.magnificPopup('open', images.index($(this)));
+        });
+    }
+
+    if (isSet($('.rent-image'))) {
+        const images = $('.rent-image');
+        images.magnificPopup({
             type: 'image',
             callbacks: {
                 elementParse: function (item) {
@@ -1833,7 +1978,7 @@ $(document).ready(function () {
                 $(this)[0].reset();
                 $(this).find('input [type="hidden"]').val('');
             });
-            if(window.popupOriginalText !== undefined){
+            if (window.popupOriginalText !== undefined) {
                 $('.popup__block .text').text(window.popupOriginalText);
             }
         });
@@ -1926,7 +2071,7 @@ $(document).ready(function () {
 
         appointmentNameInput.on('input', function (event) {
             $(appointmentNameInput).each(function () {
-                $(this).val($(event.currentTarget).val().replace(/[^А-Яа-я\s]/, ''));
+                $(this).val($(event.currentTarget).val().replace(/[^А-яA-z\s]/, ''));
             });
         });
 
@@ -2057,11 +2202,11 @@ $(document).ready(function () {
         staffSearch.on('input', function () {
             const pattern = /[^А-Яа-я\s]/;
             const labelOriginalText = 'Начните вводить фамилию или специализацию';
-            if ( staffSearch.val().search(pattern) != -1){
+            if (staffSearch.val().search(pattern) != -1) {
                 $('.staff__search-form').addClass('invalid');
                 $('label[for="finder_doc_val"]').text('Разрешен ввод только русских букв');
-                staffSearch.val(staffSearch.val().replace(/[^А-Яа-я\s]/, ''));
-            }else{
+                staffSearch.val(staffSearch.val().replace(/[^А-яA-z\s]/, ''));
+            } else {
                 $('.staff__search-form').removeClass('invalid');
                 $('label[for="finder_doc_val"]').text(labelOriginalText);
             }
@@ -2184,7 +2329,7 @@ $(document).ready(function () {
 
     if (isSet($('.feedback__slider')) || isSet($('.all-feedback'))) {
 
-        let maxHeight = 0;
+        window.maxHeight = 0;
         $('.feedback__item').each(function () {
             if (maxHeight < $(this).innerHeight()) {
                 maxHeight = $(this).innerHeight();
@@ -2194,23 +2339,97 @@ $(document).ready(function () {
         $('.feedback__item').css('height', maxHeight + 'px');
 
         const feedbackContent = $('.feedback__item-content');
-        $(document).on('click', '.feedback__item-content', function (event) {
-            if ($(this).hasClass('feedback__item-content_unhide')) {
-                $(this).removeClass('feedback__item-content_unhide');
-                $(this).parents('.feedback__item').css('height',maxHeight + 'px');
+
+        $(document).on('click', '.feedback__item-content', function (e) {
+            const that = $(this);
+            var div = $('.docs_wrapper');
+            if (div.is(e.target) // если клик был не по нашему блоку
+                || $(e.target).parents('.docs_wrapper').length !== 0) {
             } else {
-                $(this).addClass('feedback__item-content_unhide');
-                $(this).parents('.feedback__item').css('height','auto');
+                $('.feedback__item-content').each(function () {
+                    if (!$(this).is(that)) {
+                        if ($(this).hasClass('feedback__item-content_fill')) {
+                            $(this).animate({
+                                'max-height': '162px'
+                            }, function () {
+                                that.removeClass('feedback__item-content_unhide');
+                                that.parents('.feedback__item').css('height', maxHeight + 'px');
+                            });
+                        } else {
+                            $(this).animate({
+                                'max-height': '90px'
+                            }, function () {
+                                $(this).removeClass('feedback__item-content_unhide');
+                                $(this).parents('.feedback__item').css('height', maxHeight + 'px');
+                            });
+                        }
+                    }
+                })
+
+                if (that.hasClass('feedback__item-content_unhide')) {
+                    if (that.hasClass('feedback__item-content_fill')) {
+                        that.animate({
+                            'max-height': '162px'
+                        }, function () {
+                            that.removeClass('feedback__item-content_unhide');
+                            that.parents('.feedback__item').css('height', maxHeight + 'px');
+                        });
+                    } else {
+                        that.animate({
+                            'max-height': '90px'
+                        }, function () {
+                            that.removeClass('feedback__item-content_unhide');
+                            that.parents('.feedback__item').css('height', maxHeight + 'px');
+                        });
+                    }
+
+                } else {
+                    that.parents('.feedback__item').css('height', 'auto');
+                    that.animate({
+                        'max-height': '1000px'
+                    }, function () {
+                        that.addClass('feedback__item-content_unhide');
+                        that.css({
+                            'max-height': that.children('div.feedback__item-content-text').height()
+                        })
+                    });
+                }
             }
         });
-        feedbackContent.on('blur', function () {
-            $(this).removeClass('feedback__item-content_unhide');
-            $(this).parents('.feedback__item').css('height',maxHeight + 'px');
+        $(document).on('blur', '.feedback__item-content', function (e) {
+            var div = $('.docs_wrapper');
+            console.log(e.target // если клик был не по нашему блоку
+            );
+
+            // if (div.is(e.target) // если клик был не по нашему блоку
+            //     || $(e.target).parents('.docs_wrapper').length !== 0) {
+            // } else {
+            //
+            //     if ($(this).hasClass('feedback__item-content_fill')) {
+            //         $(this).animate({
+            //             'max-height': '162px'
+            //         }, function () {
+            //             $(this).removeClass('feedback__item-content_unhide');
+            //             $(this).parents('.feedback__item').css('height', maxHeight + 'px');
+            //         });
+            //     } else {
+            //         $(this).animate({
+            //             'max-height': '90px'
+            //         }, function () {
+            //             $(this).removeClass('feedback__item-content_unhide');
+            //             $(this).parents('.feedback__item').css('height', maxHeight + 'px');
+            //         });
+            //     }
+            //
+            // }
         });
 
         //ОБРАБОТЧИК ОТКРЫТИЯ ДОКУМЕНТА ПРИ КЛИКЕ НА ИКОНКУ
-        $('.feedback__item-head-user-image').on('click', function (event) {
+        $('.feedback__item-head-doc').on('click', function (event) {
+            $(this).parents('.feedback__item-content').trigger('focusin');
             event.preventDefault();
+
+
             if ($(this).attr('href').indexOf('.pdf') < 0) {
                 $(this).magnificPopup({
                     type: 'image'
@@ -2423,6 +2642,16 @@ $(document).ready(function () {
         }
 
     }
+    if (isSet($('.scroll-to'))) {
+        $('.scroll-to').off('click');
+        $('.scroll-to').on('click', function (event) {
+            const elementClick = $(this).attr("href");
+            const destination = $(elementClick).position().top;
+            const navLinkHeight = isSet($('.nav-links')) ? $('.nav-links').height() : 0;
+            $('html').animate({scrollTop: destination - ($('.header').height() + navLinkHeight)}, 500);
+            return false;
+        });
+    }
     if (isSet($('.cost'))) {
         if (isSet($('ul.cost__list > li > ul > li > .cost__list_content'))) {
             $('ul.cost__list > li > ul > li > .cost__list_content').parent().css({
@@ -2556,14 +2785,17 @@ $(document).ready(function () {
         })
     }
 
-    if (isSet($('.all-feedback'))) {
+    if (isSet($('.feedback-call-modal'))) {
         const modalFormContainer = $('.all-feedback-modal');
         const modalForm = $('.all-feedback-modal__content form');
         const modalFormFields = $('.all-feedback-modal__input-wrapper');
         const confident = $('.all-feedback-modal__confident');
         const submitButton = $('.all-feedback-modal__content form button');
         let labelText = '';
-        $('.all-feedback__head .call-modal').on('click', function () {
+        $('#feedback-file').on('change', function () {
+            $(this).siblings('span').text('Фото загружено')
+        });
+        $('.feedback-call-modal').on('click', function () {
             modalFormContainer.removeClass('all-feedback-modal_unactive').css('opacity', '0').animate({
                 opacity: 1
             });
@@ -2621,7 +2853,7 @@ $(document).ready(function () {
             }
         });
         modalForm.find('#customerName').on('input', function () {
-            $(this).val($(this).val().replace(/[^А-Яа-я\s]/, ''));
+            $(this).val($(this).val().replace(/[^А-яA-z\s]/, ''));
             // if ($(this).val().length > 3) {
             //     $(this).siblings('label').removeClass('invalid').addClass('valid').removeAttr('style');
             //     $(this).removeAttr('style');
@@ -2670,7 +2902,7 @@ $(document).ready(function () {
                     $(this).addClass('all-feedback-modal_unactive').removeAttr('style');
                     $('.all-feedback-modal__content').find('input, textarea').val('').prop('checked', false);
                 });
-                $('.popup').css('display','flex');
+                $('.popup').css('display', 'flex');
                 window.popupOriginalText = $('.popup__block .text').text();
                 $('.popup__block .text').text('Спасибо за Ваш отзыв!')
                 // $('body').removeAttr('style');
@@ -2686,11 +2918,11 @@ $(document).ready(function () {
         });
 
     }
-    if(isSet('.infoblock__block')){
+    if (isSet('.infoblock__block')) {
         $('.infoblock__item_content img').each(function () {
-            if ($(this).attr('height') !== undefined){
+            if ($(this).attr('height') !== undefined) {
                 $(this).css({
-                    height:$(this).attr('height'),
+                    height: $(this).attr('height'),
                     'object-fit': 'contain'
                 });
             }
@@ -2876,7 +3108,7 @@ if (isSet($('#map'))) {
         var secondButton = new ymaps.control.Button({
             data: {
                 // Зададим текст и иконку для кнопки.
-                title: 'Button Text',
+                // content: 'Button Text',
                 // Иконка имеет размер 16х16 пикселей.
                 image: 'assets/img/about-emergency-room/route-icon.svg'
             },

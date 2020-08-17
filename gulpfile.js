@@ -4,7 +4,8 @@ const
     browserSync   = require("browser-sync").create(),
     del           = require('del'),
     cache         = require('gulp-cache'),
-    autoPrefixer  = require('gulp-autoprefixer');
+    autoPrefixer  = require('gulp-autoprefixer'),
+    gcmq = require('gulp-group-css-media-queries');
 
 function gulpSass() {
     return gulp
@@ -14,6 +15,7 @@ function gulpSass() {
             browsers: ['last 4 versions'],
             cascade: false
         }))
+        .pipe(gcmq())
         .pipe(gulp.dest('./src/assets/css'))
         .pipe(browserSync.stream());
 }

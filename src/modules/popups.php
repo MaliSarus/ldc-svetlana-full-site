@@ -59,3 +59,38 @@
         </div>
     </div>
 </section>
+
+<div class="all-feedback-modal all-feedback-modal_unactive">
+    <div class="all-feedback-modal__block">
+        <div class="all-feedback-modal__head">
+            <h2>Оставьте свой отзыв о центре</h2>
+            <img class="all-feedback-modal__close" src="./assets/img/appointment/close-cross.svg"
+                 alt="Кнопка закрыть">
+        </div>
+        <div class="all-feedback-modal__content">
+            <form action="#">
+                <div class="all-feedback-modal__input-wrapper">
+                    <input type="text" id="customerName" name="name"
+                           required>
+                    <label for="customerName">Ваше ФИО</label>
+                </div>
+                <div class="all-feedback-modal__input-wrapper">
+                        <textarea type="text" id="customerMessage" name="message"
+                                  required></textarea>
+                    <label for="customerMessage">Текст отзыва (Вы можете написать в своем отзыве имя и фамилию
+                        врачей, которые помогли Вам, а также описать услугу)</label>
+                </div>
+                <label for="feedback-file" class="btn btn_dark valid"><span>Загрузите ваше фото</span>
+                    <input type="file" name="file" id="feedback-file"></label>
+                <label class="confident-label"><input class="all-feedback-modal__confident" name="confident"
+                                                      type="checkbox" value="yes"
+                                                      required>
+                    <small>Даю согласие на обработку <a href="#">персональных данных</a></small>
+                </label>
+                <button type="submit" class="btn btn_white">Отправить отзыв <img
+                        src="./assets/img/appointment/submit-icon.svg"
+                        alt="Иконка кнопки"></button>
+            </form>
+        </div>
+    </div>
+</div>
