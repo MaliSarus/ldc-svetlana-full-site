@@ -1162,13 +1162,13 @@ p.list-title {
 
 ul.list,
 ol.list {
-  margin: 0;
-  margin-bottom: 18px;
+  margin: -18px 0 18px;
   padding-left: 24px;
 }
 
 ul.list li,
 ol.list li {
+  margin-top: 18px;
   list-style: none;
   position: relative;
   padding-left: 24px;
@@ -1303,12 +1303,12 @@ ol.features-list li::before {
   filter: hue-rotate(180deg) brightness(0.5);
 }
 
-.accent__info ul {
+.accent__info > ul {
   margin: 0 10px;
   padding-left: 24px;
 }
 
-.accent__info ul li {
+.accent__info > ul li {
   font-size: 14px;
   list-style: none;
   position: relative;
@@ -1318,7 +1318,7 @@ ol.features-list li::before {
   margin-left: -24px;
 }
 
-.accent__info ul li::before {
+.accent__info > ul li::before {
   display: block;
   content: url("../../img/for-patient/red-square.svg");
   -webkit-transform: translateY(-2px);
@@ -1675,6 +1675,10 @@ ol.features-list li::before {
   -webkit-transform: none;
   -ms-transform: none;
   transform: none;
+}
+
+a.non-active {
+  color: #858C98;
 }
 
 .popup {
@@ -3347,6 +3351,10 @@ ol.features-list li::before {
     bottom: 20px;
   }
 
+  ol.features-list {
+    padding: 30px 0;
+  }
+
   ol.features-list li {
     -ms-flex-preferred-size: 25%;
     flex-basis: 25%;
@@ -3368,7 +3376,7 @@ ol.features-list li::before {
     padding: 20px 18px;
   }
 
-  .accent__info ul li {
+  .accent__info > ul li {
     font-size: 16px;
   }
 
@@ -3434,6 +3442,10 @@ ol.features-list li::before {
   .all-feedback-modal__input-wrapper label[for="customerMessage"] {
     top: 15px;
     left: 18px;
+  }
+
+  .bg-lg-none {
+    background: none !important;
   }
 
   .header__logo-mobile {
