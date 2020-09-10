@@ -4286,7 +4286,8 @@ a.non-active {
   .about__item {
     -ms-flex-wrap: nowrap;
     flex-wrap: nowrap;
-    background: url("../../img/about/bg-h-figure.svg") bottom right no-repeat;
+    background: url("../../img/about/bg-h-figure.svg") no-repeat;
+    background-position: calc(100% - 33px) 100%;
     background-size: auto 100%;
   }
 
@@ -6029,6 +6030,7 @@ a.non-active {
   .about__item {
     width: 100%;
     display: none;
+    background-position: calc(100% - 19px) 100%;
   }
 
   .about__item_active {

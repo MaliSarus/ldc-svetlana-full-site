@@ -47,7 +47,8 @@
     margin-right: 0;
     @media screen and (min-width: 577px){
       flex-wrap: nowrap;
-      background: url("../../img/about/bg-h-figure.svg") bottom right no-repeat;
+      background: url("../../img/about/bg-h-figure.svg") no-repeat;
+      background-position:  calc(100% - 33px) 100%;
       background-size: auto 100%;
     }
     @media screen and (min-width: 961px) {
@@ -57,6 +58,8 @@
     @media screen and (min-width: 1400px) {
       width: 100%;
       display: none;
+      background-position: calc(100% - 19px) 100%;
+
       &_active {
         display: flex !important;
         animation-name: slideIn;
