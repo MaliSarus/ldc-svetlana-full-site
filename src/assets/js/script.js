@@ -1859,7 +1859,7 @@ $(document).ready(function () {
             } else {
                 $(this).addClass('image_blur_top_0');
             }
-            if(!($(this).hasClass('image_blur--off'))){
+            if (!($(this).hasClass('image_blur--off'))) {
                 $(this).append('<div class="image_blur-hover" style="height:' + $(this).children('img').height() + 'px;"></div>');
             }
             // $(this).append(`<div class="image_blur-hover" style="height: ${$(this).children('img').height()}px;"></div>`);
@@ -1984,6 +1984,7 @@ $(document).ready(function () {
         });
 
         //ОБРАБОТКА ФОРМЫ ЗАПИСИ
+
         appointmentSubmitButton.on('click', function (event) {
             if (appointmentNameInput.val() == '') {
                 appointmentNameInput.css({
@@ -2031,31 +2032,67 @@ $(document).ready(function () {
         });
 
         $('.appointment__form .appointment__input-wrapper > input').on('input', function (event) {
-            if ($(event.target).val() !== '') {
-                $(event.target).attr('style', '');
-                $(event.target).siblings('label').attr('style', '');
-                $('.appointment__form').bind('submit')
-            } else {
-                $(event.target).css({
-                    borderColor: '#E84E2C',
-                    color: '#E84E2C'
-                });
-                $(event.target).siblings('label').css({
-                    color: '#E84E2C'
-                });
-
-            }
-            if (!Inputmask.isValid(appointmentPhoneInput.val(), "+7-(999)-999-9999")) {
-                appointmentPhoneInput.css({
-                    borderColor: '#E84E2C',
-                    color: '#E84E2C'
-                });
-                appointmentPhoneInput.siblings('label').css({
-                    color: '#E84E2C'
-                });
-                $('.appointment__form').unbind('submit');
+            if (!($(this).is(appointmentPhoneInput))) {
+                if ($(event.target).val() !== '') {
+                    $(event.target).attr('style', '');
+                    $(event.target).siblings('label').attr('style', '');
+                    $('.appointment__form').bind('submit')
+                } else {
+                    $(event.target).css({
+                        borderColor: '#E84E2C',
+                        color: '#E84E2C'
+                    });
+                    $(event.target).siblings('label').css({
+                        color: '#E84E2C'
+                    });
+                }
             }
         });
+        appointmentPhoneInput.on('input paste', function (event) {
+            switch (event.type) {
+                case 'input':
+                    if (!Inputmask.isValid($(this).val(), "+7-(999)-999-9999")) {
+                        appointmentPhoneInput.css({
+                            borderColor: '#E84E2C',
+                            color: '#E84E2C'
+                        });
+                        appointmentPhoneInput.siblings('label').css({
+                            color: '#E84E2C'
+                        });
+                        $('.appointment__form').unbind('submit');
+                    } else {
+                        $(event.target).attr('style', '');
+                        $(event.target).siblings('label').attr('style', '');
+                        $('.appointment__form').bind('submit')
+                    }
+                    break;
+                case 'paste':
+                    var pastedData = event.originalEvent.clipboardData.getData('Text');
+                    var numPattern = /^\+7\(\d{3}\)-\d{3}-\d{4}$/;
+                    console.log(pastedData)
+                    console.log((pastedData.search(/^\+7-\(\d{3}\)-\d{3}-\d{4}$/)) < 0)
+                    if ((pastedData.search(/^\+7-\(\d{3}\)-\d{3}-\d{4}$/)) < 0) {
+                        appointmentPhoneInput.css({
+                            borderColor: '#E84E2C',
+                            color: '#E84E2C'
+                        });
+                        appointmentPhoneInput.siblings('label').css({
+                            color: '#E84E2C'
+                        });
+                        $('.appointment__form').unbind('submit');
+                    } else {
+                        $(event.target).attr('style', '');
+                        $(event.target).siblings('label').attr('style', '');
+                        $('.appointment__form').bind('submit')
+                    }
+                    break;
+                default:
+                    break;
+
+            }
+
+        });
+
 
         appointmentPhoneInput.on('keyup', function (event) {
             if (typeof (event.originalEvent) != 'undefined') {
@@ -2066,7 +2103,6 @@ $(document).ready(function () {
                     }
                 });
             }
-
         });
 
         appointmentNameInput.on('input', function (event) {
@@ -2097,20 +2133,18 @@ $(document).ready(function () {
         });
 
         appointmentPhoneInput.on('focus', function () {
-            setTimeout(function () {
-                appointmentPhoneInput.inputmask({
-                    "mask": "+7-(999)-999-9999",
-                    showMaskOnHover: false,
-                    showMaskOnFocus: true,
-                    'onincomplete': function () {
-                        appointmentPhoneInput.inputmask("remove")
-                    },
-                    "oncomplete": function () {
-                        appointmentPhoneInput.attr('style', '');
-                        appointmentPhoneInput.siblings('label').attr('style', '');
-                    }
-                });
-            }, 300)
+            appointmentPhoneInput.inputmask({
+                "mask": "+7-(999)-999-9999",
+                // showMaskOnHover: false,
+                // showMaskOnFocus: true,
+                // 'onincomplete': function () {
+                //     appointmentPhoneInput.inputmask("remove")
+                // },
+                "oncomplete": function () {
+                    appointmentPhoneInput.attr('style', '');
+                    appointmentPhoneInput.siblings('label').attr('style', '');
+                }
+            });
         });
     }
     if (isSet($('.staff'))) {

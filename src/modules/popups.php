@@ -40,7 +40,7 @@
                             <label for="popup-customerName">Имя</label>
                         </div>
                         <div class="appointment__input-wrapper">
-                            <input type="tel" class="appointment__phone" id="popup-phone" name="phone" required>
+                            <input type="tel" class="appointment__phone" id="popup-phone" name="phone" autocomplete="off" required>
                             <label for="popup-phone">Телефон</label>
                         </div>
                         <input name="name-of-service" type="hidden" value=""><!--            Здесь хранится название страницы (Фио врача или название услуги-->
