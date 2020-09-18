@@ -2149,19 +2149,29 @@ $(document).ready(function () {
         });
 
         appointmentPhoneInput.on('focus', function () {
-            appointmentPhoneInput.inputmask({
-                "mask": "+7-(999)-999-9999",
-                // showMaskOnHover: false,
-                // showMaskOnFocus: true,
-                // 'onincomplete': function () {
-                //     appointmentPhoneInput.inputmask("remove")
-                // },
-                "oncomplete": function () {
-                    appointmentPhoneInput.attr('style', '');
-                    appointmentPhoneInput.siblings('label').attr('style', '');
+                appointmentPhoneInput.attr('style', '');
+                appointmentPhoneInput.siblings('label').attr('style', '');
+                var that = $(this);
+                if ($(this).val() == '') {
+                    setTimeout(function () {
+                        appointmentPhoneInput.inputmask({
+                            "mask": "+7-(999)-999-9999",
+                            // showMaskOnHover: false,
+                            // showMaskOnFocus: true,
+                            'onincomplete': function () {
+                                if (that.val() == '') {
+                                    appointmentPhoneInput.inputmask("remove")
+                                }
+                            },
+                            // "oncomplete": function () {
+                            //     appointmentPhoneInput.attr('style', '');
+                            //     appointmentPhoneInput.siblings('label').attr('style', '');
+                            // }
+                        });
+                    }, 300)
                 }
-            });
-        });
+            }
+        );
     }
     if (isSet($('.staff'))) {
         const staffTabs = $('.staff__tabs_item');

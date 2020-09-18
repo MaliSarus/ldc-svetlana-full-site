@@ -1678,7 +1678,7 @@ ol.features-list li::before {
 }
 
 a.non-active {
-  color: #858C98;
+  color: #858C98 !important;
 }
 
 .popup {
@@ -2371,6 +2371,37 @@ a.non-active {
   font-size: 16px;
   line-height: 140%;
   color: rgba(10, 24, 49, 0.8);
+}
+
+.about-block__desc ul {
+  margin: 0;
+  margin-bottom: 18px;
+  padding-left: 24px;
+}
+
+.about-block__desc ul li {
+  color: rgba(10, 24, 49, 0.8);
+  list-style: none;
+  position: relative;
+  font-size: 16px;
+  line-height: 140%;
+  padding-left: 24px;
+  margin-left: -24px;
+}
+
+.about-block__desc ul li::before {
+  display: block;
+  content: url("../../img/for-patient/red-square.svg");
+  -webkit-transform: translateY(-2px);
+  -ms-transform: translateY(-2px);
+  transform: translateY(-2px);
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.about-block__desc ul p {
+  margin-bottom: 0;
 }
 
 .about-block__features {
