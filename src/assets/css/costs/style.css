@@ -1162,8 +1162,13 @@ p.list-title {
 
 ul.list,
 ol.list {
-  margin: -18px 0 18px;
+  margin: 18px 0 18px;
   padding-left: 24px;
+}
+
+ul.list :first-child,
+ol.list :first-child {
+  margin-top: 0;
 }
 
 ul.list li,
@@ -1284,7 +1289,7 @@ ol.features-list li::before {
 
 .accent__info {
   background-color: white;
-  margin: 12px 0;
+  margin: 20px 0;
   padding: 8px;
   border: 1px solid #E84E2C;
 }
@@ -2955,19 +2960,23 @@ a.non-active {
 }
 
 .infoblock__item_content a {
-  color: #2A4472;
+  color: #3F5A8A;
   text-decoration: none;
-  -webkit-transition: color .2s;
-  -o-transition: color .2s;
-  transition: color .2s;
+  padding-bottom: 1px;
+  border-bottom: 1px solid #3F5A8A;
+  -webkit-transition: color .2s, border-color .2s;
+  -o-transition: color .2s, border-color .2s;
+  transition: color .2s, border-color .2s;
 }
 
 .infoblock__item_content a:hover {
   color: #E84E2C;
+  border-bottom-color: #E84E2C;
 }
 
 .infoblock__item_content a:active {
   color: #FF785A;
+  border-bottom-color: #FF785A;
 }
 
 .infoblock__item_content .content-image {
@@ -3922,7 +3931,7 @@ a.non-active {
   }
 
   .accent__info {
-    margin: 18px 0;
+    margin: 40px 0;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;

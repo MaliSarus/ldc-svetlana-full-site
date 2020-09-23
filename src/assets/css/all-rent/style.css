@@ -1162,8 +1162,13 @@ p.list-title {
 
 ul.list,
 ol.list {
-  margin: -18px 0 18px;
+  margin: 18px 0 18px;
   padding-left: 24px;
+}
+
+ul.list :first-child,
+ol.list :first-child {
+  margin-top: 0;
 }
 
 ul.list li,
@@ -1284,7 +1289,7 @@ ol.features-list li::before {
 
 .accent__info {
   background-color: white;
-  margin: 12px 0;
+  margin: 20px 0;
   padding: 8px;
   border: 1px solid #E84E2C;
 }
@@ -3366,7 +3371,7 @@ a.non-active {
   }
 
   .accent__info {
-    margin: 18px 0;
+    margin: 40px 0;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;

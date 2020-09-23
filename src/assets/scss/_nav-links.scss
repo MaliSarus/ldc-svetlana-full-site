@@ -1,14 +1,94 @@
 .nav-links{
   background: white;
   margin-bottom: 30px;
+  width: 100%;
+  position: relative;
+  &::before,&::after{
+    z-index: 10;
+    content: '';
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 15px;
+    display: block;
+    background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+  }
+  &::before{
+    left: 0;
+  }
+  &::after{
+    right: 0;
+    transform: rotate(180deg);
+  }
+  @media screen and (min-width: 961px){
+    width: auto;
+    position: fixed;
+    top: 50%;
+    transform:translateY(-50%);
+    right: -50%;
+    z-index: 100;
+    transition: right .5s .1s ease-in-out, transform .5s .1s ease-in-out;
+    box-shadow: 0 5px 60px rgba(10, 24, 49, 0.3);
+    &::before,&::after{
+      content: none;
+    }
+  }
+  &.open{
+    position: fixed;
+    z-index: 100;
+    top: 54px;
+    box-shadow: 0 5px 60px rgba(10, 24, 49, 0.3);
+    @media screen and (min-width: 961px){
+      top: 50%;
+      transform:translateY(-50%);
+      right: 0;
+    }
+    &.hidden{
+      transform: translateY(-50%) translateX(100%);
+      .nav-links__button{
+        transform: translateY(-50%) rotate(180deg);
+      }
+    }
+  }
+  &.hidden{
+    transform: translateY(-50%) translateX(100%);
+    .nav-links__button{
+      transform: translateY(-50%) rotate(180deg);
+    }
+  }
   .container{
     padding: 0;
   }
   @media screen and (min-width: 961px){
-    background: none;
+    background: white;
     margin-bottom: 0;
     .container{
       padding: 0 15px;
+    }
+  }
+  &__button{
+    @media screen and (min-width: 961px){
+      width: 50px;
+      height: 50px;
+      background: white;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: -65px;
+      border-radius: 50%;
+      box-shadow: 0 5px 60px rgba(10, 24, 49, 0.3);
+      transition: transform .5s .1s ease-in-out;
+      &::before{
+        position: absolute;
+        content: '';
+        display: block;
+        width: 20px;
+        height: 20px;
+        left: calc(50% + 2px);
+        top: 50%;
+        transform: translate(-50%,-50%) rotate(90deg);
+        background: url("../../img/cost/arrow.svg") center / contain no-repeat;
+      }
     }
   }
   &__block{
@@ -18,7 +98,7 @@
     overflow: hidden;
     @media screen and (min-width: 961px){
       width: 100%;
-      padding: 0;
+      padding: 0 0 5px;
     }
   }
   &__list{
@@ -27,7 +107,9 @@
     min-width: 915px;
     padding: 0;
     @media screen and (min-width: 961px){
-      padding: 0 85px;
+      min-width: auto;
+      flex-direction: column;
+      //padding: 0 85px;
       display: flex;
       justify-content: space-between;
     }
@@ -50,6 +132,10 @@
     font-weight: normal;
     box-sizing: border-box;
     height: 100%;
+    @media screen and (min-width: 961px){
+      padding-top: 5px;
+      padding-bottom: 10px;
+    }
     &::after{
       display: block;
       opacity: 0;

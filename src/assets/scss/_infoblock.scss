@@ -159,14 +159,19 @@
         }
       }
       a{
-        color: $main-color;
+        color: $main-color-light;
         text-decoration: none;
-        transition: color .2s;
+        padding-bottom: 1px;
+        border-bottom: 1px solid $main-color-light;
+        transition: color .2s, border-color .2s;
         &:hover{
           color: $accent-color;
+          border-bottom-color: $accent-color;
         }
         &:active{
           color: $accent-color-light;
+          border-bottom-color: $accent-color-light;
+
         }
       }
       .content-image{

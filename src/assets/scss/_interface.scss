@@ -1169,8 +1169,11 @@ p.list-title {
 
 
 ul.list, ol.list {
-  margin: -18px 0 18px;
+  margin: 18px 0 18px;
   padding-left: 24px;
+  & :first-child{
+    margin-top: 0;
+  }
 
   li {
     margin-top: 18px;
@@ -1298,11 +1301,11 @@ ol.features-list {
 
 .accent__info {
   background-color: white;
-  margin: 12px 0;
+  margin: 20px 0;
   padding: 8px;
   border: 1px solid $accent-color;
   @media screen and (min-width: 961px) {
-    margin: 18px 0;
+    margin: 40px 0;
     display: flex;
     align-items: center;
     padding: 20px 18px;

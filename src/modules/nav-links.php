@@ -1,4 +1,5 @@
 <section class="nav-links">
+    <span class="nav-links__button"></span>
     <div class="container">
         <div class="row">
             <div class="nav-links__block">
