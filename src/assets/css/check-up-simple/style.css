@@ -1092,6 +1092,7 @@ button.mfp-arrow {
   bottom: 97px;
   -webkit-box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
   box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
   -webkit-transition: background-color .25s, -webkit-box-shadow .25s;
   transition: background-color .25s, -webkit-box-shadow .25s;
   -o-transition: background-color .25s, box-shadow .25s;
@@ -4576,6 +4577,12 @@ a.non-active {
   }
 }
 
+@media screen and (min-width: 961px) and (min-width: 1400px) {
+  .header__main-menu ul li a {
+    font-size: 16px;
+  }
+}
+
 @media screen and (min-width: 961px) {
   body {
     min-height: calc(100vh - 130px);
@@ -4715,8 +4722,9 @@ a.non-active {
   }
 
   .up-button {
-    right: 20px;
-    bottom: 20px;
+    padding: 25px;
+    right: 15px;
+    bottom: 15px;
   }
 
   ol.features-list {
@@ -5922,12 +5930,6 @@ a.non-active {
 
   .checkup-features__block {
     padding-top: 0;
-  }
-}
-
-@media screen and (min-width: 961px) and (min-width: 1400px) {
-  .header__main-menu ul li a {
-    font-size: 16px;
   }
 }
 

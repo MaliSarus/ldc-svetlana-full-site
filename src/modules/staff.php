@@ -44,6 +44,7 @@
                             </div>
 
                             <div class="staff__filters">
+                                <button class="staff__filters-button"></button>
                                 <div class="staff__filters_item">Доктора медицинских наук</div>
                                 <div class="staff__filters_item">Профессора</div>
                                 <div class="staff__filters_item">Кандидаты медицинских наук</div>

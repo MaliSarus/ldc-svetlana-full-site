@@ -1092,6 +1092,7 @@ button.mfp-arrow {
   bottom: 97px;
   -webkit-box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
   box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
   -webkit-transition: background-color .25s, -webkit-box-shadow .25s;
   transition: background-color .25s, -webkit-box-shadow .25s;
   -o-transition: background-color .25s, box-shadow .25s;
@@ -2765,6 +2766,30 @@ a.non-active {
   margin-bottom: 30px;
 }
 
+.staff__filters-button {
+  display: none;
+  width: 30px;
+  height: 30px;
+  background-color: white;
+  border: 1px solid #2A4472;
+  background-image: url("../../img/staff/filter.svg");
+  background-position: center;
+  background-size: 70% 70%;
+  background-repeat: no-repeat;
+  margin-bottom: 10px;
+}
+
+.staff__filters-button:hover,
+.staff__filters-button:active,
+.staff__filters-button:focus {
+  outline: none;
+}
+
+.staff__filters-button.active {
+  background-color: #2A4472;
+  background-image: url("../../img/staff/filter_white.svg");
+}
+
 .staff__filters_item {
   position: relative;
   font-size: 14px;
@@ -4040,6 +4065,12 @@ a.non-active {
   }
 }
 
+@media screen and (min-width: 961px) and (min-width: 1400px) {
+  .header__main-menu ul li a {
+    font-size: 16px;
+  }
+}
+
 @media screen and (min-width: 961px) {
   body {
     min-height: calc(100vh - 130px);
@@ -4179,8 +4210,9 @@ a.non-active {
   }
 
   .up-button {
-    right: 20px;
-    bottom: 20px;
+    padding: 25px;
+    right: 15px;
+    bottom: 15px;
   }
 
   ol.features-list {
@@ -5107,12 +5139,6 @@ a.non-active {
   }
 }
 
-@media screen and (min-width: 961px) and (min-width: 1400px) {
-  .header__main-menu ul li a {
-    font-size: 16px;
-  }
-}
-
 @media screen and (min-width: 1025px) {
   .staff__content-top {
     display: -webkit-box;
@@ -5144,9 +5170,17 @@ a.non-active {
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
     -webkit-box-pack: start;
     -ms-flex-pack: start;
     justify-content: flex-start;
+  }
+
+  .staff__filters-button {
+    display: none;
   }
 
   .staff__filters_item {

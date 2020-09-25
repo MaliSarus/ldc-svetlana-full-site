@@ -2188,6 +2188,11 @@ $(document).ready(function () {
             const staffTabIndex = $('.staff__tabs_item').index($('.staff__tabs_item_active'));
         });
 
+        $('.staff__filters-button').on('click',function () {
+            $('.staff__filters').find('.staff__filters_item').slideToggle();
+            $(this).toggleClass('active');
+        })
+
         const staffFilters = $('.staff__filters_item');
         staffFilters.on('click', function (event) {
             if ($('.staff__filters_item').is(event.target)) {

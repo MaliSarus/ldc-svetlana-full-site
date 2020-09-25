@@ -1108,10 +1108,12 @@ button.mfp-arrow {
   right: 15px;
   bottom: 97px;
   box-shadow: 0 0 15px rgba(white, .2);
+  border-radius: 50%;
   transition: background-color .25s, box-shadow .25s;
   @media screen and (min-width: 961px) {
-    right: 20px;
-    bottom: 20px;
+    padding: 25px;
+    right: 15px;
+    bottom: 15px;
   }
 
   &:hover {
