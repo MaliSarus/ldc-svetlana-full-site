@@ -2701,6 +2701,7 @@ a.non-active {
 
 #price_search .staff__head {
   padding: 15px;
+  background-color: white;
 }
 
 #price_search .staff__content-top {
@@ -2716,6 +2717,7 @@ a.non-active {
 }
 
 #price_search .staff__search-form-field ~ label[for="finder_doc_val"] {
+  color: #2a4472;
   position: absolute;
   top: 50%;
   left: 15px;
@@ -4823,8 +4825,11 @@ a.non-active {
     bottom: -22px;
   }
 
+  #price_search {
+    margin-bottom: -90px;
+  }
+
   #price_search .staff__head {
-    background-color: #F1F1F1;
     padding: 40px 15px;
   }
 

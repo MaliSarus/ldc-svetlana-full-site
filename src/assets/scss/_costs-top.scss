@@ -1,12 +1,15 @@
 #price_search{
+  @media screen and (min-width: 961px){
+    margin-bottom: -90px;
+  }
   .staff{
     &__block{
       margin-top: 0;
     }
     &__head{
       padding: 15px;
+      background-color: white;
       @media screen and (min-width: 961px) {
-        background-color: $bg-gray;
         padding: 40px 15px;
       }
     }
@@ -21,6 +24,7 @@
     }
     &__search-form-field{
       ~ label[for="finder_doc_val"]{
+        color: #2a4472;
         position: absolute;
         top: 50%;
         left: 15px;
