@@ -49,145 +49,42 @@ require "./modules/dropdown-menu.php";
                 <div class="infoblock__item">
                     <div class="infoblock__row">
                         <div class="infoblock__item_content">
-                            <div class="table__wrapper">
-                                <table>
-                                    <thead>
-                                        <th>Code</th>
-                                        <th>Company</th>
-                                        <th>Price</th>
-                                        <th>Change</th>
-                                        <th>Change %</th>
-
-                                    </thead>
-                                    <tbody>
-                                    <tr>
-                                        <td>AAC</td>
-                                        <td>AUSTRALIAN COMPANY </td>
-                                        <td>$1.38</td>
-                                        <td>+2.01</td>
-                                        <td>-0.36%</td>
-                                    </tr>
-                                    <tr>
-                                        <td>AAD</td>
-                                        <td>AUSENCO</td>
-                                        <td>$2.38</td>
-                                        <td>-0.01</td>
-                                        <td>-1.36%</td>
-                                    </tr>
-                                    <tr>
-                                        <td>AAX</td>
-                                        <td>ADELAIDE</td>
-                                        <td>$3.22</td>
-                                        <td>+0.01</td>
-                                        <td>+1.36%</td>
-                                    </tr>
-                                    <tr>
-                                        <td>XXD</td>
-                                        <td>ADITYA BIRLA</td>
-                                        <td>$1.02</td>
-                                        <td>-1.01</td>
-                                        <td>+2.36%</td>
-                                    </tr>
-                                    <tr>
-                                        <td>AAC</td>
-                                        <td>AUSTRALIAN COMPANY </td>
-                                        <td>$1.38</td>
-                                        <td>+2.01</td>
-                                        <td>-0.36%</td>
-                                    </tr>
-                                    <tr>
-                                        <td>AAD</td>
-                                        <td>AUSENCO</td>
-                                        <td>$2.38</td>
-                                        <td>-0.01</td>
-                                        <td>-1.36%</td>
-                                    </tr>
-                                    <tr>
-                                        <td>AAX</td>
-                                        <td>ADELAIDE</td>
-                                        <td>$3.22</td>
-                                        <td>+0.01</td>
-                                        <td>+1.36%</td>
-                                    </tr>
-                                    <tr>
-                                        <td>XXD</td>
-                                        <td>ADITYA BIRLA</td>
-                                        <td>$1.02</td>
-                                        <td>-1.01</td>
-                                        <td>+2.36%</td>
-                                    </tr>
-                                    <tr>
-                                        <td>AAC</td>
-                                        <td>AUSTRALIAN COMPANY </td>
-                                        <td>$1.38</td>
-                                        <td>+2.01</td>
-                                        <td>-0.36%</td>
-                                    </tr>
-                                    <tr>
-                                        <td>AAD</td>
-                                        <td>AUSENCO</td>
-                                        <td>$2.38</td>
-                                        <td>-0.01</td>
-                                        <td>-1.36%</td>
-                                    </tr>
-                                    <tr>
-                                        <td>AAX</td>
-                                        <td>ADELAIDE</td>
-                                        <td>$3.22</td>
-                                        <td>+0.01</td>
-                                        <td>+1.36%</td>
-                                    </tr>
-                                    <tr>
-                                        <td>XXD</td>
-                                        <td>ADITYA BIRLA</td>
-                                        <td>$1.02</td>
-                                        <td>-1.01</td>
-                                        <td>+2.36%</td>
-                                    </tr>
-                                    <tr>
-                                        <td>AAC</td>
-                                        <td>AUSTRALIAN COMPANY </td>
-                                        <td>$1.38</td>
-                                        <td>+2.01</td>
-                                        <td>-0.36%</td>
-                                    </tr>
-                                    <tr>
-                                        <td>AAD</td>
-                                        <td>AUSENCO</td>
-                                        <td>$2.38</td>
-                                        <td>-0.01</td>
-                                        <td>-1.36%</td>
-                                    </tr>
-                                    <tr>
-                                        <td>AAX</td>
-                                        <td>ADELAIDE</td>
-                                        <td>$3.22</td>
-                                        <td>+0.01</td>
-                                        <td>+1.36%</td>
-                                    </tr>
-                                    <tr>
-                                        <td>XXD</td>
-                                        <td>ADITYA BIRLA</td>
-                                        <td>$1.02</td>
-                                        <td>-1.01</td>
-                                        <td>+2.36%</td>
-                                    </tr>
-                                    <tr>
-                                        <td>AAC</td>
-                                        <td>AUSTRALIAN COMPANY </td>
-                                        <td>$1.38</td>
-                                        <td>+2.01</td>
-                                        <td>-0.36%</td>
-                                    </tr>
-                                    <tr>
-                                        <td>AAD</td>
-                                        <td>AUSENCO</td>
-                                        <td>$2.38</td>
-                                        <td>-0.01</td>
-                                        <td>-1.36%</td>
-                                    </tr>
-                                    </tbody>
-                                </table>
+                            <div class="button-links">
+                                <ul>
+                                    <li><a href="#">Текст</a></li>
+                                    <li><a href="#">Текст</a></li>
+                                    <li><a href="#">Текст</a></li>
+                                </ul>
+                            </div>
+                            <div class="accordeon-list">
+                                <ul>
+                                    <li >
+                                        <div class="accordeon-list__title">Заголовок</div>
+                                        <div class="accordeon-list__text">
+                                            <p>Текст</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="accordeon-list__title">Заголовок</div>
+                                        <div class="accordeon-list__text">
+                                            <p>Текст</p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="text-and-link">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="text-and-link__block">
+                                            <div class="text-and-link__text">
+                                                <p>Текст с информацией</p>
+                                            </div>
+                                            <div class="text-and-link__link">
+                                                <a href="#" class="">Текст ссылки</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

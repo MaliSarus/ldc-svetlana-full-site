@@ -1,3 +1,43 @@
+#price_search{
+  .staff{
+    &__block{
+      margin-top: 0;
+    }
+    &__head{
+      padding: 15px;
+      @media screen and (min-width: 961px) {
+        background-color: $bg-gray;
+        padding: 40px 15px;
+      }
+    }
+    &__content-top{
+      margin-bottom: 0;
+      padding-top: 0;
+    }
+    &__search-form-wrapper {
+      margin-bottom: 0;
+      flex-basis: 100%;
+      margin-right: 0;
+    }
+    &__search-form-field{
+      ~ label[for="finder_doc_val"]{
+        position: absolute;
+        top: 50%;
+        left: 15px;
+        transform: translateY(-50%);
+        transition: top .2s, font-size .2s;
+      }
+      &:focus, &.focused {
+        ~ label[for="finder_doc_val"] {
+          top: 20% !important;
+          font-size: 10px;
+          left: 15px;
+        }
+      }
+    }
+  }
+}
+
 .costs-top{
   background: white;
   &__block{

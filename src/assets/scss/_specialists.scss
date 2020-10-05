@@ -59,12 +59,25 @@
 
   &__content {
     background-color: white;
+
+    .slick-prev,.slick-next{
+      width: 60px;
+      height: 60px;
+      background-color: $main-color;
+      border-radius: 50%;
+    }
+
+    .slick-prev{
+      left: -60px;
+    }
+    .slick-next{
+      right: -70px;
+    }
     @media screen and (max-width: 960px) {
       padding: 0 15px;
       .specialists__control-panel {
         padding-top: 0;
         background: white;
-
         .arrows {
           display: none;
         }
