@@ -3434,18 +3434,22 @@ a.non-active {
 
 .feedback__item-about-doctor a {
   color: rgba(10, 24, 49, 0.7);
-  -webkit-transition: color .25s;
-  -o-transition: color .25s;
-  transition: color .25s;
+  -webkit-transition: color .25s, border-bottom-color .25s;
+  -o-transition: color .25s, border-bottom-color .25s;
+  transition: color .25s, border-bottom-color .25s;
   outline: none;
+  padding-bottom: 1px;
+  border-bottom: 1px solid rgba(10, 24, 49, 0.7);
 }
 
 .feedback__item-about-doctor a:hover {
   color: #0A1831;
+  border-bottom-color: #0A1831;
 }
 
 .feedback__item-about-doctor a:active {
   color: #2A4472;
+  border-bottom-color: #2A4472;
 }
 
 .feedback__item-about-ordinary {
@@ -3454,18 +3458,21 @@ a.non-active {
 
 .feedback__item-about-ordinary a {
   color: rgba(10, 24, 49, 0.7);
-  -webkit-transition: color .25s;
-  -o-transition: color .25s;
-  transition: color .25s;
+  -webkit-transition: color .25s, border-bottom-color .25s;
+  -o-transition: color .25s, border-bottom-color .25s;
+  transition: color .25s, border-bottom-color .25s;
   outline: none;
+  border-bottom: 1px solid rgba(10, 24, 49, 0.7);
 }
 
 .feedback__item-about-ordinary a:hover {
   color: #0A1831;
+  border-bottom-color: #0A1831;
 }
 
 .feedback__item-about-ordinary a:active {
   color: #2A4472;
+  border-bottom-color: #2A4472;
 }
 
 .feedback__button {

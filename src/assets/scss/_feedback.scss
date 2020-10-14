@@ -314,13 +314,17 @@
         }
         a{
           color:rgba($main-color-dark, .7);
-          transition: color .25s;
+          transition: color .25s, border-bottom-color .25s;
           outline: none;
+          padding-bottom: 1px;
+          border-bottom: 1px solid rgba(10, 24, 49, 0.7);
           &:hover{
             color: $main-color-dark;
+            border-bottom-color: $main-color-dark;
           }
           &:active{
             color: $main-color;
+            border-bottom-color: $main-color;
           }
         }
       }
@@ -332,13 +336,16 @@
         }
         a{
           color:rgba($main-color-dark, .7);
-          transition: color .25s;
+          transition: color .25s, border-bottom-color .25s;
           outline: none;
+          border-bottom: 1px solid rgba(10, 24, 49, 0.7);
           &:hover{
             color: $main-color-dark;
+            border-bottom-color: $main-color-dark;
           }
           &:active{
             color: $main-color;
+            border-bottom-color: $main-color;
           }
         }
       }

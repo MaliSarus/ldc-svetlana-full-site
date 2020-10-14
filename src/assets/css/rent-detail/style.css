@@ -2901,6 +2901,10 @@ a.non-active {
   padding: 0;
 }
 
+.nav-links__button {
+  cursor: pointer;
+}
+
 .nav-links__block {
   padding: 0 15px;
   -webkit-box-sizing: border-box;

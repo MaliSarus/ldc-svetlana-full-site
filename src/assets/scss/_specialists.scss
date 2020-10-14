@@ -13,6 +13,7 @@
   }
 
   &__block {
+    overflow: hidden;
     width: 100%;
     position: relative;
     z-index: 2;
@@ -60,27 +61,84 @@
   &__content {
     background-color: white;
 
-    .slick-prev,.slick-next{
-      width: 60px;
-      height: 60px;
-      background-color: $main-color;
+    .slick-arrow{
+      width: 50px;
+      height: 50px;
+      background-color: #fcfcfc;
       border-radius: 50%;
+      display: none!important;
+      transition: background-color .25s, box-shadow .3s;
+      border: 1px solid rgba(42, 68, 114, 0.15);
+      @media screen and (min-width: 1600px){
+        display: block!important;
+      }
+      &:before{
+        position: absolute;
+        content: '';
+        display: block;
+        width: 20px;
+        height: 20px;
+        left: calc(50% + 2px);
+        top: 50%;
+        transform: translate(-50%,-50%) rotate(90deg);
+        background: url("../../img/cost/arrow.svg") center / contain no-repeat;
+        transition: filter .3s;
+      }
+      &:hover{
+        background-color: white;
+        border-color: transparent;
+        box-shadow: 0 0 10px rgba($main-color, .4);
+        &::before{
+          color: $main-color;
+        }
+      }
+      &:active{
+        background-color: $main-color;
+        border-color: transparent;
+        &::before{
+          filter: brightness(1000);
+        }
+      }
+    }
+    .slick-prev:before, .slick-next:before {
+      font-size: 35px;
+      opacity: 1;
     }
 
     .slick-prev{
-      left: -60px;
+      left: -70px;
+      &::before{
+        left: calc(50% - 2px);
+        transform: translate(-50%,-50%) rotate(-90deg);
+      }
     }
     .slick-next{
-      right: -70px;
+      right: -80px;
     }
+    @media screen and (max-width: 960px) {
+      .specialists__control-panel {
+        .arrows {
+          display: none;
+        }
+      }
+    }
+
+    @media screen and (min-width: 1600px) {
+      .specialists__control-panel {
+        .arrows {
+          display: none;
+        }
+      }
+    }
+
     @media screen and (max-width: 960px) {
       padding: 0 15px;
       .specialists__control-panel {
         padding-top: 0;
         background: white;
-        .arrows {
-          display: none;
-        }
+        //.arrows {
+        //  display: none;
+        //}
       }
     }
     @media screen and (min-width: 960px){

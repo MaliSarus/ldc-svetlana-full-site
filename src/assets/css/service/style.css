@@ -2593,6 +2593,10 @@ a.non-active {
   padding: 0;
 }
 
+.nav-links__button {
+  cursor: pointer;
+}
+
 .nav-links__block {
   padding: 0 15px;
   -webkit-box-sizing: border-box;
@@ -3027,7 +3031,7 @@ a.non-active {
   position: relative;
 }
 
-.cost__list_content.tv::before {
+.cost__list_content.tv .icon {
   position: absolute;
   display: block;
   content: '';
@@ -3979,18 +3983,22 @@ a.non-active {
 
 .feedback__item-about-doctor a {
   color: rgba(10, 24, 49, 0.7);
-  -webkit-transition: color .25s;
-  -o-transition: color .25s;
-  transition: color .25s;
+  -webkit-transition: color .25s, border-bottom-color .25s;
+  -o-transition: color .25s, border-bottom-color .25s;
+  transition: color .25s, border-bottom-color .25s;
   outline: none;
+  padding-bottom: 1px;
+  border-bottom: 1px solid rgba(10, 24, 49, 0.7);
 }
 
 .feedback__item-about-doctor a:hover {
   color: #0A1831;
+  border-bottom-color: #0A1831;
 }
 
 .feedback__item-about-doctor a:active {
   color: #2A4472;
+  border-bottom-color: #2A4472;
 }
 
 .feedback__item-about-ordinary {
@@ -3999,18 +4007,21 @@ a.non-active {
 
 .feedback__item-about-ordinary a {
   color: rgba(10, 24, 49, 0.7);
-  -webkit-transition: color .25s;
-  -o-transition: color .25s;
-  transition: color .25s;
+  -webkit-transition: color .25s, border-bottom-color .25s;
+  -o-transition: color .25s, border-bottom-color .25s;
+  transition: color .25s, border-bottom-color .25s;
   outline: none;
+  border-bottom: 1px solid rgba(10, 24, 49, 0.7);
 }
 
 .feedback__item-about-ordinary a:hover {
   color: #0A1831;
+  border-bottom-color: #0A1831;
 }
 
 .feedback__item-about-ordinary a:active {
   color: #2A4472;
+  border-bottom-color: #2A4472;
 }
 
 .feedback__button {
@@ -5845,7 +5856,7 @@ a.non-active {
     visibility: visible;
   }
 
-  .cost__list_content.tv::before {
+  .cost__list_content.tv .icon {
     width: 20px;
     height: 20px;
     left: -28px;

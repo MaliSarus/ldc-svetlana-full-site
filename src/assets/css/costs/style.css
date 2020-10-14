@@ -2958,7 +2958,7 @@ a.non-active {
   position: relative;
 }
 
-.cost__list_content.tv::before {
+.cost__list_content.tv .icon {
   position: absolute;
   display: block;
   content: '';
@@ -4893,7 +4893,7 @@ a.non-active {
     visibility: visible;
   }
 
-  .cost__list_content.tv::before {
+  .cost__list_content.tv .icon {
     width: 20px;
     height: 20px;
     left: -28px;

@@ -1106,7 +1106,6 @@ $(window).on('resize', function () {
                     maxWidth: 325 + 'px',
                 });
                 specSliderInit();
-
             }
         }
 
@@ -1872,6 +1871,9 @@ window.onload = function () {
 // });
 //Обработка событий после загрузки страницы
 $(document).ready(function () {
+    if (isSet($('.cost__list_content.tv'))) {
+        $('.cost__list_content.tv').append('<span class="icon" title="Дистанционная услуга"></span>');
+    }
     $('.tap-menu__button').on('click', function (event) {
         if ($('.tap-menu__button').index($(this)) !== 1 && $('.tap-menu__button').index($(this)) !== 2) {
             event.preventDefault();
@@ -2084,7 +2086,7 @@ $(document).ready(function () {
             }
         });
         appointmentPhoneInput.on('blur', function (event) {
-            if (!Inputmask.isValid($(this).val(), "+7-(999)-999-9999")) {
+            if ($(this).val()!=='' && !Inputmask.isValid($(this).val(), "+7-(999)-999-9999")) {
                 appointmentPhoneInput.css({
                     borderColor: '#E84E2C',
                     color: '#E84E2C'
@@ -2208,7 +2210,7 @@ $(document).ready(function () {
             }
         );
     }
-    if(isSet($('#price_search'))){
+    if (isSet($('#price_search'))) {
         const staffSearch = $('#price_search .staff__search-form-field');
         staffSearch.on('blur', function () {
             if ($(this).val() != '') {
@@ -2289,6 +2291,11 @@ $(document).ready(function () {
                 $(event.target).detach();
             }
         });
+        var filtersButton = $('.staff__button');
+        filtersButton.on('click', function () {
+            var filters = $('.staff__filters').find('.staff__filters_item');
+            filters.slideToggle();
+        })
 
         const staffSearch = $('.staff__search-form-field');
         const staffDropdown = $('.staff__search-dropdown');

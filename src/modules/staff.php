@@ -15,6 +15,7 @@
                     <div class="content">
                         <div class="staff__content-top">
                             <div class="staff__search-form-wrapper">
+                                <button class="staff__button"></button>
                                 <form action="#" class="staff__search-form">
                                     <input name="search" type="search" class="staff__search-form-field"
                                            autocomplete="off" id="finder_doc_val">
@@ -44,7 +45,6 @@
                             </div>
 
                             <div class="staff__filters">
-                                <button class="staff__filters-button"></button>
                                 <div class="staff__filters_item">Доктора медицинских наук</div>
                                 <div class="staff__filters_item">Профессора</div>
                                 <div class="staff__filters_item">Кандидаты медицинских наук</div>
