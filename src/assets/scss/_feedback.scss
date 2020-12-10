@@ -47,6 +47,7 @@
     flex-basis: 100%;
     justify-content: space-between;
     margin-bottom: 45px;
+    align-items: center;
     @media screen and (max-width: 960px) {
       margin-bottom: 18px;
       .title {
@@ -63,7 +64,11 @@
       font-size: 16px;
     }
     @media screen and (min-width: 961px) {
-      display: none;
+      margin-left: 15px;
+
+    }
+    @media screen and (min-width: 1400px){
+      margin-bottom: -3px;
     }
 
     &_current {

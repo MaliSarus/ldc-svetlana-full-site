@@ -114,6 +114,7 @@
       max-height: 21px;
       img{
         height: 100%;
+        max-width: 25px;
       }
     }
   }
@@ -160,7 +161,7 @@
 }
 
 .tap-menu {
-  height: 77px;
+  height: 65px;
   width: 100%;
   background-color: rgba(42, 68, 114, .9);
   position: fixed;
@@ -186,6 +187,7 @@
     justify-content: space-between;
     position: relative;
     top: -7px;
+    padding-top: 8px;
     @media screen and (min-width: 577px) {
       justify-content: space-evenly;
     }
@@ -209,18 +211,23 @@
         margin: 0 auto;
         max-width: 45px;
         padding: 8px;
-        transform: skewX(-15deg) translateX(3px);
-        border-radius: 2px;
-        background-color: $accent-color;
+        padding-bottom: 0;
+        //transform: skewX(-15deg) translateX(3px);
+        //border-radius: 2px;
+        //background-color: $accent-color;
         margin-bottom: 6px;
+        display: flex;
+        justify-content: center;
+        align-items: end;
 
         >* {
-          transform: skewX(15deg);
+          //transform: skewX(15deg);
         }
         >svg{
-          height: 25px;
+          height: 22px;
           width: 25px;
           display: inline-block;
+          transform: translateY(2px);
           *{
             fill: white;
           }

@@ -1512,6 +1512,7 @@ window.onload = function () {
                     display: 'flex',
                 });
                 $('.feedback__head .arrows').css('display', 'none');
+                $('.feedback__head .feedback__position').css('display', 'none')
             }
         }
         if ($(window).width() < 960) {

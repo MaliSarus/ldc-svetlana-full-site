@@ -81,6 +81,9 @@
             left: 9px;
             right: 67.5px;
           }
+          &:hover{
+            transform: unset;
+          }
         }
       }
     }

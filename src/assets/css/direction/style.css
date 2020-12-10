@@ -4217,6 +4217,9 @@ a.non-active {
   -ms-flex-pack: justify;
   justify-content: space-between;
   margin-bottom: 45px;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .feedback__position {
@@ -4885,6 +4888,7 @@ a.non-active {
 
 .footer__icons-item img {
   height: 100%;
+  max-width: 25px;
 }
 
 .footer .bottom {
@@ -4911,7 +4915,7 @@ a.non-active {
 }
 
 .tap-menu {
-  height: 77px;
+  height: 65px;
   width: 100%;
   background-color: rgba(42, 68, 114, 0.9);
   position: fixed;
@@ -4945,6 +4949,7 @@ a.non-active {
   justify-content: space-between;
   position: relative;
   top: -7px;
+  padding-top: 8px;
 }
 
 .tap-menu__button {
@@ -4967,24 +4972,26 @@ a.non-active {
   margin: 0 auto;
   max-width: 45px;
   padding: 8px;
-  -webkit-transform: skewX(-15deg) translateX(3px);
-  -ms-transform: skewX(-15deg) translateX(3px);
-  transform: skewX(-15deg) translateX(3px);
-  border-radius: 2px;
-  background-color: #E84E2C;
+  padding-bottom: 0;
   margin-bottom: 6px;
-}
-
-.tap-menu__button_logo_emergency > * {
-  -webkit-transform: skewX(15deg);
-  -ms-transform: skewX(15deg);
-  transform: skewX(15deg);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: end;
+  -ms-flex-align: end;
+  align-items: end;
 }
 
 .tap-menu__button_logo_emergency > svg {
-  height: 25px;
+  height: 22px;
   width: 25px;
   display: inline-block;
+  -webkit-transform: translateY(2px);
+  -ms-transform: translateY(2px);
+  transform: translateY(2px);
 }
 
 .tap-menu__button_logo_emergency > svg * {
@@ -6361,6 +6368,12 @@ a.non-active {
     padding-right: 67.5px;
   }
 
+  .unit-simple__slider .arrows__arrow-right:hover {
+    -webkit-transform: unset;
+    -ms-transform: unset;
+    transform: unset;
+  }
+
   .unit-simple__slider_item {
     min-height: 584px;
   }
@@ -6780,7 +6793,7 @@ a.non-active {
   }
 
   .feedback__position {
-    display: none;
+    margin-left: 15px;
   }
 
   .feedback__control-panel .arrows {
@@ -7252,6 +7265,10 @@ a.non-active {
 
   .appointment .appointment__form {
     padding-left: 20px;
+  }
+
+  .feedback__position {
+    margin-bottom: -3px;
   }
 
   .rent__head h2 {
