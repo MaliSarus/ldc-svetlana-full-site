@@ -67,5 +67,12 @@
         margin-bottom: 0;
       }
     }
+
+    .video-snippet{
+      margin: 10px 0;
+      @media screen and (min-width: 961px){
+        width: 50%;
+      }
+    }
   }
 }

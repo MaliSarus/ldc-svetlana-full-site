@@ -45,55 +45,13 @@ require "./modules/dropdown-menu.php";
 <section class="test">
     <div class="container">
         <div class="row">
-            <div class="test__block">
-                <div class="infoblock__item">
-                    <div class="infoblock__row">
-                        <div class="infoblock__item_content">
-                            <div class="button-links">
-                                <ul>
-                                    <li><a href="#">Текст</a></li>
-                                    <li><a href="#">Текст</a></li>
-                                    <li><a href="#">Текст</a></li>
-                                </ul>
-                            </div>
-                            <div class="accordeon-list">
-                                <ul>
-                                    <li >
-                                        <div class="accordeon-list__title">Заголовок</div>
-                                        <div class="accordeon-list__text">
-                                            <p>Текст</p>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="accordeon-list__title">Заголовок</div>
-                                        <div class="accordeon-list__text">
-                                            <p>Текст</p>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="text-and-link">
-                                <div class="container">
-                                    <div class="row">
-                                        <div class="text-and-link__block">
-                                            <div class="text-and-link__text">
-                                                <p>Текст с информацией</p>
-                                            </div>
-                                            <div class="text-and-link__link">
-                                                <a href="#" class="">Текст ссылки</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="video-snippet" data-id="p8GdpjsGmfg">
+                <div class="video-snippet__ratio"></div>
+                <div class="video-snippet__play-button"></div>
             </div>
         </div>
     </div>
 </section>
-
 
 
 <!----------------------------НЕ ТРОГАТЬ---------------------------------->

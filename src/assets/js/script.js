@@ -2087,7 +2087,7 @@ $(document).ready(function () {
             }
         });
         appointmentPhoneInput.on('blur', function (event) {
-            if ($(this).val()!=='' && !Inputmask.isValid($(this).val(), "+7-(999)-999-9999")) {
+            if ($(this).val() !== '' && !Inputmask.isValid($(this).val(), "+7-(999)-999-9999")) {
                 appointmentPhoneInput.css({
                     borderColor: '#E84E2C',
                     color: '#E84E2C'
@@ -3108,6 +3108,20 @@ $(document).ready(function () {
             $(this).parent('li').toggleClass('active');
             $(this).siblings('.accordeon-list__text').slideToggle();
         })
+    }
+
+    if (isSet($('.video-snippet'))) {
+        var videoSnippet = $('.video-snippet');
+        var videoId = videoSnippet.data('id');
+        var videoPlayButton = $('.video-snippet__play-button');
+        videoSnippet.css({
+            backgroundImage: 'url(http://i.ytimg.com/vi/' + videoId + '/sddefault.jpg)'
+        });
+        videoPlayButton.on('click', function () {
+            var video = '<iframe src="https://www.youtube.com/embed/' + videoId + '?autoplay=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+            videoSnippet.append(video)
+        })
+
     }
 });
 
