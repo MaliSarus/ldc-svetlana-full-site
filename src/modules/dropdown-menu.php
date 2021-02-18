@@ -20,7 +20,7 @@
                 <div class="dropdown-menu__column">
                     <ul>
                         <li class="dropdown-menu__list-item"><span class="main-letter">А</span><a
-                                class="dropdown-menu__item-link"
+                                class="dropdown-menu__item-link new"
                                 href="#">Аллергология</a>
                         </li>
                         <li class="dropdown-menu__list-item"><a class="dropdown-menu__item-link"

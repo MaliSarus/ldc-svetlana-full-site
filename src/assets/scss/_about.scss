@@ -27,6 +27,7 @@
       padding: 0 15px;
     }
   }
+
   .slider__control {
     box-sizing: border-box;
     display: none;
@@ -45,7 +46,7 @@
     @media screen and (min-width: 1400px) {
       bottom: 88px;
       padding-left: 0;
-      .row{
+      .row {
         //margin: 0 -15px;
       }
     }
@@ -77,7 +78,8 @@
     @media screen and (min-width: 1400px) {
       background-size: auto 100%;
     }
-    .slick-list,.slick-track{
+
+    .slick-list, .slick-track {
       display: block;
     }
   }
@@ -89,10 +91,10 @@
     overflow: hidden;
     //width: 100%;
     margin-right: 0;
-    @media screen and (min-width: 577px){
+    @media screen and (min-width: 577px) {
       flex-wrap: nowrap;
       background: url("../../img/about/bg-h-figure.svg") no-repeat;
-      background-position:  calc(100% - 33px) 100%;
+      background-position: calc(100% - 33px) 100%;
       background-size: auto 100%;
     }
     @media screen and (min-width: 961px) {
@@ -117,16 +119,18 @@
       //  animation-duration: 1000ms;
       //}
     }
-    .container{
+
+    .container {
       width: 100%;
       height: auto;
-      .row{
+
+      .row {
         display: flex;
         flex-wrap: wrap;
-        @media screen and (min-width: 961px){
+        @media screen and (min-width: 961px) {
           height: 100%;
         }
-        @media screen and (min-width: 1400px){
+        @media screen and (min-width: 1400px) {
           flex-wrap: nowrap;
         }
       }
@@ -138,7 +142,7 @@
     padding: 18px 15px;
     background: white;
     width: 100%;
-    @media screen and (min-width: 577px){
+    @media screen and (min-width: 577px) {
       flex-basis: calc(100vw / 2 - 50px);
       display: flex;
       flex-direction: column;
@@ -167,12 +171,24 @@
       padding: 15px 0;
       width: 100%;
       max-width: none;
-      @media screen and (min-width: 577px){
+      @media screen and (min-width: 577px) {
         max-width: 325px;
       }
       @media screen and (min-width: 1400px) {
         margin-bottom: 55px;
 
+      }
+    }
+
+    li a{
+      color: $main-color;
+
+      &:hover {
+        color: $accent-color
+      }
+
+      &:active {
+        color: $main-color-light;
       }
     }
 
@@ -219,6 +235,7 @@
       margin-bottom: 30px;
     }
 
+
   }
 
   &__doctor {
@@ -234,7 +251,7 @@
     padding-top: 20px;
     background-clip: border-box;
     order: -1;
-    @media screen and (min-width: 577px){
+    @media screen and (min-width: 577px) {
       order: initial;
       flex-basis: calc(100vw / 2);
       height: auto;
