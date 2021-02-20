@@ -2194,11 +2194,11 @@ a.non-active {
     right: 0;
     display: inline-block;
     content: 'new';
-    font-size: 16px;
+    font-size: 11px;
     font-weight: 500;
     color: white;
     background: $main-color;
-    padding: 5px;
+    padding: 5px 8px;
     text-transform: uppercase;
     transform: translateY(-50%) translateX(calc(100% + 10px));
   }

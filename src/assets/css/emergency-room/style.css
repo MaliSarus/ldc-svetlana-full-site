@@ -2029,11 +2029,11 @@ a.non-active {
   right: 0;
   display: inline-block;
   content: 'new';
-  font-size: 16px;
+  font-size: 11px;
   font-weight: 500;
   color: white;
   background: #2A4472;
-  padding: 5px;
+  padding: 5px 8px;
   text-transform: uppercase;
   -webkit-transform: translateY(-50%) translateX(calc(100% + 10px));
   -ms-transform: translateY(-50%) translateX(calc(100% + 10px));
@@ -5187,6 +5187,20 @@ a.non-active {
   }
 }
 
+@media screen and (min-width: 961px) and (min-width: 1400px) {
+  .header__main-menu ul li a {
+    font-size: 16px;
+  }
+}
+
+@media screen and (min-width: 961) {
+  .cost__list_content_additional {
+    -ms-flex-preferred-size: 15%;
+    flex-basis: 15%;
+    font-size: 17px;
+  }
+}
+
 @media screen and (min-width: 961px) {
   body {
     min-height: calc(100vh - 130px);
@@ -6671,20 +6685,6 @@ a.non-active {
   .for-patient__block {
     background: none;
     padding-top: 60px;
-  }
-}
-
-@media screen and (min-width: 961px) and (min-width: 1400px) {
-  .header__main-menu ul li a {
-    font-size: 16px;
-  }
-}
-
-@media screen and (min-width: 961) {
-  .cost__list_content_additional {
-    -ms-flex-preferred-size: 15%;
-    flex-basis: 15%;
-    font-size: 17px;
   }
 }
 
